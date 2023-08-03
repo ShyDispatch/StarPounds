@@ -143,6 +143,7 @@ function update(dt)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
+	starPounds.slosh(dt)
 	starPounds.exercise(dt)
 	starPounds.drink(dt)
 	starPounds.lactating(dt)
@@ -169,6 +170,7 @@ function update(dt)
 
 	starPounds.optionChanged = false
 	if starPounds.hasOption("showDebug") then
+		starPounds.debug("crouching", storage.starPounds.enabled and string.format("^#665599;Crouching:^gray; %s", mcontroller.crouching()) or "^gray;Mod disabled")
 		starPounds.debug("experience", storage.starPounds.enabled and string.format("^#665599;Level:^gray; %s ^#665599;Experience:^gray; %.0f/%.0f ^#665599;Multiplier:^gray; %s", storage.starPounds.level, storage.starPounds.experience, starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement), starPounds.getStat("experienceMultiplier")) or "^gray;Mod disabled")
 		starPounds.debug("stomach", storage.starPounds.enabled and string.format("^#665599;Capacity:^gray; %.1f/%.1f ^#665599;Food:^gray; %.1f ^#665599;Bloat:^gray; %.1f ^#665599;Entity:^gray; %.1f", starPounds.stomach.contents, starPounds.stomach.capacity, starPounds.stomach.food, starPounds.stomach.bloat, starPounds.stomach.contents - (starPounds.stomach.food + starPounds.stomach.bloat)) or "^gray;Mod disabled")
 		starPounds.debug("breasts", storage.starPounds.enabled and string.format("^#665599;Type:^gray; %s ^#665599;Capacity:^gray; %.1f/%.1f ^#665599;Contents:^gray; %.1f", starPounds.breasts.type, starPounds.breasts.contents, starPounds.breasts.capacity, storage.starPounds.breasts) or "^gray;Mod disabled")

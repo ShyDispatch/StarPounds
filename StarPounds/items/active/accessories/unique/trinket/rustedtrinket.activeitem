@@ -1,0 +1,22 @@
+{
+  "itemName" : "rustedtrinket",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "An old ankh, weathered and tarnished with rust. It's awfully heavy.",
+  "shortdescription" : "Rusted Ankh",
+  "inventoryIcon" : "rustedtrinket.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "stats": [
+    {"name": "movement", "modifier": -0.1},
+    {"name": "experienceMultiplier", "modifier": 0.25}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {}
+}

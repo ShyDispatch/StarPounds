@@ -27,6 +27,10 @@ starPounds = {
 	digest = function(dt, isGurgle, bloatMultiplier)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
+		bloatMultiplier = tonumber(bloatMultiplier) or 1
 		-- Don't do anything if stomach is empty.
 		if starPounds.stomach.contents == 0 then
 			starPounds.gurgleTimer, starPounds.rumbleTimer = nil
@@ -79,7 +83,6 @@ starPounds = {
 		local amount = math.min(math.round((food/100 + 1) * starPounds.getStat("digestion") * foodRatio * dt, 4), food)
 		storage.starPounds.stomach = math.round(math.max(food - amount, 0), 3)
 		-- Ditto for bloat.
-		local bloatMultiplier = bloatMultiplier or 1
 		local bloatAmount = math.min(math.round((bloat/100 + 1) * starPounds.getStat("digestion") * (1 - foodRatio) * starPounds.getStat("bloatDigestion") * bloatMultiplier * dt, 4), bloat)
 		storage.starPounds.bloat = math.round(math.max(bloat - bloatAmount, 0), 3)
 		-- Don't need to run the rest if there's no actual food.
@@ -167,6 +170,10 @@ starPounds = {
 	belch = function(volume, pitch, loops, skipParticles)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		volume = tonumber(volume) or 1
+		pitch = tonumber(pitch) or 1
+		loops = tonumber(loops)
 		-- Skip if belches are disabled.
 		if starPounds.hasOption("disableBelches") then return end
 		world.sendEntityMessage(entity.id(), "starPounds.playSound", "belch", volume, pitch, loops)
@@ -199,8 +206,8 @@ starPounds = {
 		}
 		-- 7.5 (Rounded to 8) to 10 particles, decreased or increased by up to 2x, -5
 		-- Ends up yielding around 10 - 15 particles if the belch is very loud and deep, 3 - 5 at normal volume and pitch, and none if it's half volume or twice as high pitch.
-		local volumeMultiplier = math.max(math.min(volume or 1, 1.5), 0)
-		local pitchMultiplier = 1/math.max(pitch or 1, 2/3)
+		local volumeMultiplier = math.max(math.min(volume, 1.5), 0)
+		local pitchMultiplier = 1/math.max(pitch, 2/3)
 		local particleCount = math.round(math.max(math.random(75, 100) * 0.1 * pitchMultiplier * volumeMultiplier - 5, 0))
 		-- Belches give momentum in zero g based on the particle count, because why not.
 		if mcontroller.zeroG() then
@@ -218,6 +225,9 @@ starPounds = {
 	exercise = function(dt)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
 		-- Skip this if we're in a sphere.
 		if status.stat("activeMovementAbilities") > 1 then return end
 		-- Jumping > Running > Walking
@@ -279,6 +289,9 @@ starPounds = {
 	drink = function(dt)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
 		-- Don't do anything if drinking is disabled.
 		if starPounds.hasOption("disableDrinking") then return end
 		-- Don't drink inside distortion spheres.
@@ -479,6 +492,9 @@ starPounds = {
 	gainExperience = function(amount, multiplier, isLevel)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		amount = tonumber(amount) or 0
+		multiplier = tonumber(multiplier) or 1
 		-- Skip everything else if we're just adding straight levels.
 		if isLevel then
 			storage.starPounds.level = storage.starPounds.level + math.max(math.round(amount))
@@ -519,14 +535,20 @@ starPounds = {
 	end,
 
 	getOptionsMultiplier = function(stat)
+		-- Argument sanitisation
+		stat = tostring(stat)
 		return storage.starPounds.optionMultipliers[stat] or 1
 	end,
 
 	hasOption = function(option)
+		-- Argument sanitisation
+		stat = tostring(option)
 		return storage.starPounds.options[option]
 	end,
 
 	getStat = function(stat)
+		-- Argument sanitisation
+		stat = tostring(stat)
 		-- Only recalculate per tick, otherwise use the cached value. (starPounds.statCache gets reset every tick)
 		if not starPounds.statCache[stat] then
 			-- Default amount (or 1), modified by accessory values.
@@ -540,29 +562,42 @@ starPounds = {
 	end,
 
 	getSkillUnlockedLevel = function(skill)
+		-- Argument sanitisation
+		skill = tostring(skill)
 		return math.min(storage.starPounds.skills[skill] and storage.starPounds.skills[skill][2] or 0, starPounds.skills[skill] and (starPounds.skills[skill].levels or 1) or 0)
 	end,
 
 	hasUnlockedSkill = function(skill, level)
-		return (starPounds.getSkillUnlockedLevel(skill) >= (level or 1))
+		-- Argument sanitisation
+		skill = tostring(skill)
+		level = tonumber(level) or 1
+		return (starPounds.getSkillUnlockedLevel(skill) >= level)
 	end,
 
 	getSkillLevel = function(skill)
+		-- Argument sanitisation
+		skill = tostring(skill)
 		return math.min(storage.starPounds.skills[skill] and storage.starPounds.skills[skill][1] or 0, starPounds.skills[skill] and (starPounds.skills[skill].levels or 1) or 0)
 	end,
 
 	hasSkill = function(skill, level)
-		return (starPounds.getSkillLevel(skill) >= (level or 1))
+		-- Argument sanitisation
+		skill = tostring(skill)
+		level = tonumber(level) or 1
+		return (starPounds.getSkillLevel(skill) >= level)
 	end,
 
 	upgradeSkill = function(skill, cost)
+		-- Argument sanitisation
+		skill = tostring(skill)
+		cost = tonumber(cost) or 0
 		storage.starPounds.skills[skill] = storage.starPounds.skills[skill] or jarray()
 		if starPounds.getSkillUnlockedLevel(skill) == starPounds.getSkillLevel(skill) then
 			storage.starPounds.skills[skill][1] = math.min(starPounds.getSkillUnlockedLevel(skill) + 1, starPounds.skills[skill].levels or 1)
 		end
 		storage.starPounds.skills[skill][2] = math.min(starPounds.getSkillUnlockedLevel(skill) + 1, starPounds.skills[skill].levels or 1)
 
-		storage.starPounds.level = math.max(storage.starPounds.level - math.round(cost or 0), 0)
+		storage.starPounds.level = math.max(storage.starPounds.level - math.round(cost), 0)
 		starPounds.gainExperience()
 		starPounds.parseSkillStats()
 	  starPounds.updateStats(true)
@@ -570,6 +605,13 @@ starPounds = {
 	end,
 
 	setSkill = function(skill, level)
+		-- Argument sanitisation
+		skill = tostring(skill)
+		level = tonumber(level)
+		-- Need a level to do anything here.
+		if not level then return end
+		-- Skip if there's no such skill.
+		if not storage.starPounds.skills[skill] then return end
 		if starPounds.getSkillUnlockedLevel(skill) > 0 then
 			storage.starPounds.skills[skill] = storage.starPounds.skills[skill] or jarray()
 			storage.starPounds.skills[skill][1] = math.max(math.min(level, starPounds.getSkillUnlockedLevel(skill)), 0)
@@ -610,6 +652,9 @@ starPounds = {
 	end,
 
 	getStatBonus = function(stat)
+		-- Argument sanitisation
+		stat = tostring(stat)
+		if not starPounds.stats[stat] then return 0 end
 		return starPounds.stats[stat].base + (storage.starPounds.stats[stat] or 0)
 	end,
 
@@ -643,18 +688,26 @@ starPounds = {
 	end,
 
 	getEffectMultiplier = function(stat)
+		-- Argument sanitisation
+		stat = tostring(stat)
 		return starPounds.statusEffectModifiers.multipliers[stat] or 1
 	end,
 
 	getEffectBonus = function(stat)
+		-- Argument sanitisation
+		stat = tostring(stat)
 		return starPounds.statusEffectModifiers.bonuses[stat] or 0
 	end,
 
 	getAccessory = function(slot)
+		-- Argument sanitisation
+		slot = tostring(slot)
 		return storage.starPounds.accessories[slot]
 	end,
 
 	getAccessoryModfiers = function(stat)
+		-- Argument sanitisation
+		stat = stat and tostring(stat) or nil
 		if not stat then
 			local accessoryModifiers = {}
 			for _, accessory in pairs(storage.starPounds.accessories) do
@@ -671,6 +724,9 @@ starPounds = {
 	end,
 
 	setAccessory = function(item, slot)
+		-- Argument sanitisation
+		slot = tostring(slot)
+		if not slot then return end
 		storage.starPounds.accessories[slot] = item
 		starPounds.accessoryModifiers = starPounds.getAccessoryModfiers()
 		starPounds.optionChanged = true
@@ -682,6 +738,8 @@ starPounds = {
 		if not storage.starPounds.enabled then
 			return starPounds.sizes[1], 1
 		end
+		-- Argument sanitisation
+		weight = math.max(tonumber(weight) or 0, 0)
 
 		local sizeIndex = 0
 		-- Go through all starPounds.sizes (smallest to largest) to find which size.
@@ -712,6 +770,9 @@ starPounds = {
 	hunger = function(dt)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
 		-- Check upgrade for preventing starving and they have weight loss enabled.
 		if starPounds.hasSkill("preventStarving") and not starPounds.hasOption("disableLoss") then
 			-- 1% more than the food delta.
@@ -779,6 +840,8 @@ starPounds = {
 	getChestVariant = function(size)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		size = sb.jsonMerge({variants = jarray()}, type(size) == "table" and size or {})
 
 		local variant = nil
 
@@ -818,13 +881,13 @@ starPounds = {
 
 	getVisualSpecies = function(species)
 		-- Get entity species.
-		local species = species or world.entitySpecies(entity.id())
+		local species = species and tostring(species) or world.entitySpecies(entity.id())
 		return starPounds.species[species] and (starPounds.species[species].override or species) or species
 	end,
 
 	getSpeciesData = function(species)
 		-- Get merged species data.
-		local species = species or world.entitySpecies(entity.id())
+		local species = species and tostring(species) or world.entitySpecies(entity.id())
 		return sb.jsonMerge(starPounds.species.default, starPounds.species[species] or {})
 	end,
 
@@ -1022,6 +1085,10 @@ starPounds = {
 	feed = function(amount)
 		-- Runs eat, but adapts for player food.
 		-- Use this rather than eat() unless we don't care about the hunger bar for some reason.
+
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
+
 		if not storage.starPounds.enabled then
 			if status.isResource("food") then
 				status.giveResource("food", amount)
@@ -1034,6 +1101,8 @@ starPounds = {
 	eat = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Insert food into stomach.
 		amount = math.round(amount, 3)
 		storage.starPounds.stomach = storage.starPounds.stomach + amount
@@ -1042,6 +1111,8 @@ starPounds = {
 	gainBloat = function(amount, fullAmount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Set bloat, rounded to 4 decimals.
 		amount = math.round(amount * (fullAmount and 1 or starPounds.getStat("bloatAmount")), 3)
 		storage.starPounds.bloat = storage.starPounds.bloat + amount
@@ -1050,6 +1121,8 @@ starPounds = {
 	gainWeight = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return 0 end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Don't do anything if weight gain is disabled.
 		if starPounds.hasOption("disableGain") then return end
 		-- Increase weight by amount.
@@ -1061,6 +1134,8 @@ starPounds = {
 	loseWeight = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return 0 end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Don't do anything if weight loss is disabled.
 		if starPounds.hasOption("disableLoss") then return end
 		-- Decrease weight by amount (min: 0)
@@ -1072,6 +1147,8 @@ starPounds = {
 	setWeight = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Set weight, rounded to 4 decimals.
 		amount = math.round(amount, 4)
 		storage.starPounds.weight = math.max(math.min(amount, starPounds.settings.maxWeight), starPounds.sizes[(starPounds.getSkillLevel("minimumSize") + 1)].weight)
@@ -1082,6 +1159,9 @@ starPounds = {
 	lactating = function(dt)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
 		-- Check if breast capacity is exceeded.
 		if starPounds.breasts.contents > starPounds.breasts.capacity then
 			if starPounds.hasOption("disableLeaking") then
@@ -1101,8 +1181,9 @@ starPounds = {
 	lactate = function(amount, noConsume)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
-		-- Don't do anything if amount is 0.
-		if amount <= 0 then return end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
+		if amount == 0 then return end
 		-- Don't spawn milk automatically if leaking is disabled, gain it instead.
 		if starPounds.hasOption("disableLeaking") and noConsume then starPounds.gainMilk(amount) return end
 		amount = math.min(math.round(amount, 4), starPounds.breasts.contents)
@@ -1117,6 +1198,8 @@ starPounds = {
 	setMilkType = function(liquidType)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		liquidType = tostring(liquidType)
 		-- Skip if it's the same type of milk.
 		if liquidType == storage.starPounds.breastType then return end
 		-- Only allow liquids we have values for.
@@ -1131,6 +1214,8 @@ starPounds = {
 	setMilk = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Set milk, rounded to 4 decimals.
 		amount = math.round(amount, 4)
 		storage.starPounds.breasts = amount
@@ -1139,6 +1224,8 @@ starPounds = {
 	gainMilk = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return 0 end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Set milk, rounded to 4 decimals.
 		if starPounds.hasOption("disableMilkGain") then return end
 		amount = math.max(math.round(math.min(amount, (starPounds.breasts.capacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)) - starPounds.breasts.contents), 4), 0)
@@ -1148,6 +1235,8 @@ starPounds = {
 	loseMilk = function(amount)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return 0 end
+		-- Argument sanitisation
+		amount = math.max(tonumber(amount) or 0, 0)
 		-- Decrease milk by amount (min: 0)
 		amount = math.min(amount, storage.starPounds.breasts)
 		storage.starPounds.breasts = math.max(0, math.round(storage.starPounds.breasts - amount, 4))
@@ -1177,6 +1266,9 @@ starPounds = {
 	voreDigest = function(dt)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
 		-- Don't do anything if disabled.
 		if starPounds.hasOption("disablePredDigestion") then return end
 		-- Don't do anything if there's no eaten entities.
@@ -1191,6 +1283,11 @@ starPounds = {
 	end,
 
 	eatNearbyEntity = function(position, range, querySize, force, check)
+		-- Argument sanitisation
+		position = (type(position) == "table" and type(position[1]) == "number" and type(position[2]) == "number") and position or mcontroller.position()
+		range = math.max(tonumber(range) or 0, 0)
+		querySize = math.max(tonumber(querySize) or 0, 0)
+
 		local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
 		local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
 		local preferredEntities = position and world.entityQuery(position, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()}) or jarray()
@@ -1221,6 +1318,9 @@ starPounds = {
 	eatEntity = function(preyId, force, check)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return false end
+		-- Argument sanitisation
+		preyId = tonumber(preyId)
+		if not preyId then return false end
 		-- Counting this as 'combat', so no eating stuff on protected worlds. (e.g. the outpost)
 		if world.getProperty("nonCombat") then return false end
 		-- Don't do anything if pred is disabled.
@@ -1312,6 +1412,9 @@ starPounds = {
 	end,
 
 	ateEntity = function(preyId)
+		-- Argument sanitisation
+		preyId = tonumber(preyId)
+		if not preyId then return false end
 		for _, prey in ipairs(storage.starPounds.entityStomach) do
 			if prey.id == preyId then return true end
 		end
@@ -1321,6 +1424,9 @@ starPounds = {
 	digestEntity = function(preyId, items, preyStomach)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		preyId = tonumber(preyId)
+		if not preyId then return end
 		-- Don't do anything if disabled.
 		if starPounds.hasOption("disablePredDigestion") then return end
 		-- Find the entity's entry in the stomach.
@@ -1507,6 +1613,10 @@ starPounds = {
 	preyStruggle = function(preyId, struggleStrength, escape)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		preyId = tonumber(preyId)
+		struggleStrength = math.max(tonumber(struggleStrength) or 0, 0)
+		if not preyId then return end
 		-- Only continue if they're actually eaten.
 		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
 			if prey.id == preyId then
@@ -1550,6 +1660,8 @@ starPounds = {
 	releaseEntity = function(preyId, releaseAll)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		preyId = tonumber(preyId)
 		-- Delete the entity's entry in the stomach.
 		local releasedEntity = nil
 		local statusEffect = starPounds.hasSkill("regurgitateSlimeStatus") and "starpoundsslimyupgrade" or nil
@@ -1588,6 +1700,9 @@ starPounds = {
 	eaten = function(dt)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		dt = math.max(tonumber(dt) or 0, 0)
+		if dt == 0 then return end
 		-- Don't do anything if we're not eaten.
 		if not storage.starPounds.pred then starPounds.voreHeartbeat = nil return end
 		-- Check that the entity actually exists.
@@ -1669,6 +1784,9 @@ starPounds = {
 	getEaten = function(predId)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return false end
+		-- Argument sanitisation
+		predId = tonumber(predId)
+		if not predId then return false end
 		-- Don't do anything if disabled.
 		if starPounds.hasOption("disablePrey") then return false end
 		-- Don't do anything if already eaten.
@@ -1734,10 +1852,13 @@ starPounds = {
 	predEaten = function(predId)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		predId = tonumber(predId)
+		if not predId then return false end
 		-- Don't do anything if disabled.
-		if starPounds.hasOption("disablePrey") then return end
+		if starPounds.hasOption("disablePrey") then return false end
 		-- Don't do anything if not already eaten.
-		if not storage.starPounds.pred then return end
+		if not storage.starPounds.pred then return false end
 		-- New pred.
 		storage.starPounds.pred = predId
 		return true
@@ -1746,6 +1867,9 @@ starPounds = {
 	getDigested = function(digestionRate)
 		-- Don't do anything if the mod is disabled.
 		if not storage.starPounds.enabled then return end
+		-- Argument sanitisation
+		digestionRate = math.max(tonumber(digestionRate) or 0, 0)
+		if digestionRate == 0 then return end
 		-- Don't do anything if disabled.
 		if starPounds.hasOption("disablePreyDigestion") then return end
 		-- Don't do anything if we're not eaten.
@@ -1815,6 +1939,9 @@ starPounds = {
 	getReleased = function(source, overrideStatus)
 		-- Don't do anything if we're not eaten.
 		if not storage.starPounds.pred then return end
+		-- Argument sanitisation
+		source = tonumber(source)
+		overrideStatus = tostring(overrideStatus)
 		-- Reset damage team.
 		entity.setDamageTeam(storage.starPounds.damageTeam)
 		storage.starPounds.damageTeam = nil

@@ -1,0 +1,81 @@
+{
+  "projectileName" : "starpoundserchipulse",
+  "physics" : "laser",
+  "bounces" : 0,
+  "pointLight" : true,
+  "timeToLive" : 3,
+  "image" : "starpoundserchipulse.png",
+  "damageKindImage" : "icon.png",
+  "speed" : 30,
+  "animationCycle" : 3,
+  "lightColor" : [112, 10, 133],
+  "frameNumber" : 25,
+  "damagePoly" : [ [-1, 0], [-2, -2], [0, -1], [2, -2], [1, 0], [2, 2], [0, 1], [-2, 2] ],
+
+  "statusEffects" : [{"effect": "starpoundsbloat", "duration": 100}],
+
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/pulsecannon_blast1.ogg" ]
+    },
+	{
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 90
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 180
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 270
+    },
+	{
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 90
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 180
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "caloricsmoke",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 270
+    }
+  ],
+  "power" : 50,
+  "damageKind" : "caloricplasma"
+}

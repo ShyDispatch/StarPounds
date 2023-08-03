@@ -1,0 +1,38 @@
+{
+  "itemName" : "uncommontrinket",
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "A jewelled trinket.",
+  "shortdescription" : "Uncommon Trinket",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "statConfig" : {
+    "amplitude" : [0.10, 0.25],
+    "count" : 2,
+    "negativeCount" : 2,
+    "experienceMultiplier": true,
+    "list" : [
+      {"name": "absorption", "weight": 1},
+      {"name": "capacity", "weight": 0.8},
+      {"name": "digestion", "weight": 0.8},
+      {"name": "health", "weight": 0.8},
+      {"name": "movement", "weight": 3}
+    ]
+  },
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {
+    "tier" : 2,
+    "fullbright": true,
+    "nameGenerator" : "trinketnames.config:nameGen",
+    "metalPalette" : "/items/active/accessories/uncommonaccessories_metal.colors",
+    "trimPalette" : "/items/active/accessories/uncommonaccessories_trim.colors",
+    "crystalPalette" : "/items/active/accessories/uncommonaccessories_crystal.colors",
+    "accessoryType" : "trinket"
+  }
+}

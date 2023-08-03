@@ -1,0 +1,7 @@
+{
+	"name": "starpoundssaturated",
+	"scripts": [ ],
+	"defaultDuration": 1,
+	"label": "Saturated",
+	"icon": "/interface/statuses/starpoundsvanity/starpoundssaturated.png"
+}

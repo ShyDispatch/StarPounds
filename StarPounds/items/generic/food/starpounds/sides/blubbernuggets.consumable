@@ -1,0 +1,15 @@
+{
+  "itemName" : "starpoundsblubbernuggets",
+  "rarity" : "Uncommon",
+  "price" : 250,
+  "category" : "preparedFood",
+  "inventoryIcon" : "blubbernuggets.png",
+  "description" : "Tasty, all white meat. ",
+  "shortdescription" : "Blubber Nuggets",
+  "foodValue": 25,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

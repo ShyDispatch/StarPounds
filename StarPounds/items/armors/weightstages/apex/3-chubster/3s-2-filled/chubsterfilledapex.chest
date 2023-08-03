@@ -1,0 +1,28 @@
+{
+  "itemName" : "chubsterfilledapexchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "So wide, so chubby. Eat any experimental bananas to get so fat?",
+  "shortdescription" : "Filled Chubby Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundschubster",
+    "starpoundsfilled"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

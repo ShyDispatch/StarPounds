@@ -1,0 +1,32 @@
+{
+  "objectName" : "trolleatposter",
+  "colonyTags" : ["tirastrolls"],
+  "rarity" : "Rare",
+  "description" : "Eat and consume product.",
+  "shortdescription" : "Eat Poster",
+  "race" : "tirastrolls",
+  "category" : "decorative",
+  "price" : 100,
+  "printable" : true,
+
+  "apexDescription" : "I don't understand it.",
+  "avianDescription" : "We have forks of similar color.",
+  "floranDescription" : "Yesss, thisss isss a possster Floran can get behind!",
+  "glitchDescription" : "Intrigued. I can't quite read it.",
+  "humanDescription" : "Advertising? Disgusting.",
+  "hylotlDescription" : "What an odd language.",
+  "novakidDescription" : "I don't really get it.",
+  "tirastrollsDescription" : "Crocker propaganda. She does have a way with words...",
+  
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "trolleatposter.png:<color>",
+      "imagePosition" : [0, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

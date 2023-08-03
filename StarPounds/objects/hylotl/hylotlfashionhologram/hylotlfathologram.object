@@ -1,0 +1,35 @@
+{
+  "objectName" : "hylotlfathologram",
+  "colonyTags" : ["hylotl","hylotloceancity","electronic","commerce"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 140,
+  "lightColor" : [65, 175, 225],
+
+  "description" : "A hologram displaying the latest trends in Hylotl fashion.",
+  "shortdescription" : "Hylotl Fat Fashion Hologram",
+  "race" : "hylotl",
+
+  "apexDescription" : "The Hylotl have interesting view on fat.",
+  "avianDescription" : "These styles are not what I'm used to...",
+  "floranDescription" : "Fishman nice and plump. Floran like.",
+  "glitchDescription" : "Intrigued. I wonder if these clothes would fit me.",
+  "humanDescription" : "For all their pretentiousness, I have to admit the Hylotl are stylish.",
+  "hylotlDescription" : "Fat is being capitalized as a trend and yet somehow, it's working.",
+  "novakidDescription" : "Look at em whales bein' proud.",
+
+  "inventoryIcon" : "hylotlfathologramicon.png",
+  "orientations" : [
+    {
+      "leftImage" : "hylotlfathologramleft.png:<color>.<frame>",
+      "rightImage" : "hylotlfathologramright.png:<color>.<frame>",
+      "imagePosition" : [-12, 0],
+      "frames" : 21,
+      "animationCycle" : 1.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

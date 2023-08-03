@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsbuttersnack",
+  "rarity" : "Rare",
+  "price" : 100,
+  "category" : "preparedFood",
+  "inventoryIcon" : "buttersnack.png",
+  "description" : "Compact, dense and tasty. Sometimes you just need to put worry about calories behind you.",
+  "shortdescription" : "Buttersnack",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 90
+    }
+  ] ],
+  "foodValue": 20,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 15,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsbuttersnack" ]
+}

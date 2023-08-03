@@ -1,0 +1,33 @@
+{
+  "objectName" : "smokespecialobject",
+  "colonyTags" : ["starpounds","evil"],
+  "rarity" : "Common",
+
+  "price" : 580,
+  "description" : "A number 9 large. A number 7. Two number 45's. One with cheese, and a large soda.",
+  "shortdescription" : "The Smoke Special",
+  "race" : "generic",
+
+  "apexDescription" : "Seems like an order meant for four.",
+  "avianDescription" : "This is quite a lot of food. Is it for a group?",
+  "floranDescription" : "Appetizer sssmells deliciousss.",
+  "glitchDescription" : "Query. Is this meal for a fast food king?",
+  "humanDescription" : "Ah, a true feast.",
+  "hylotlDescription" : "Couldn't there at least be a salad to go with all this grease?",
+  "novakidDescription" : "I can't wait to dig in.",
+
+  "inventoryIcon" : "smokespecialicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "smokespecial.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

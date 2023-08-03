@@ -1,0 +1,70 @@
+{
+  "objectName" : "dripdispatch",
+  "colonyTags" : [],
+  "rarity" : "Common",
+  "description" : "Slime is dripping from this place.",
+  "shortdescription" : "Drop Source",
+  "race" : "human",
+  "category" : "decorative",
+  "price" : 0,
+  "printable" : false,
+
+  "apexDescription" : "Where is this slime coming from?",
+  "avianDescription" : "I'd rather not get slime on my feathers.",
+  "floranDescription" : "Floran is not a fan of ssslime.",
+  "glitchDescription" : "Disgusted. There appears to be dripping slime.",
+  "humanDescription" : "Better not walk under this dripping slime.",
+  "hylotlDescription" : "A constant dripping of slime.",
+  "novakidDescription" : "Slime seems to get everywhere if you let it.",
+
+  "particleEmitter" : {
+    "emissionRate" : 0.05,
+    "emissionVariance" : 0.2,
+    "pixelOrigin" : [4, 4],
+
+    "particle" : {
+      "type" : "ember",
+      "size" : 2,
+      "light" : [49, 41, 58],
+      "color" : [168, 150, 196, 255],
+      "fullbright" : true,
+      "collidesForeground": true,
+      "destructionTime" : 2,
+      "destructionAction" : "shrink",
+      "initialVelocity" : [0.0, 0],
+      "finalVelocity" : [0.0, -50],
+      "approach" : [0, 20],
+      "timeToLive" : 5,
+      "layer" : "front",
+      "variance": {
+        "position": [1, 1]
+      }
+    }
+  },
+
+  "inventoryIcon" : "dripdispatchicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "dripdispatch.png:<color>.<frame>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    },
+    {
+      "dualImage" : "dripdispatch.png:<color>.<frame>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+
+    }
+  ]
+}

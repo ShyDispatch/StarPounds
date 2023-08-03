@@ -1,0 +1,42 @@
+[
+  {
+    "op" : "add",
+    "path" : "/particleEmitters/caloriccharge",
+    "value" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "emissionRate" : 10,
+      "offsetRegion" : [-0.5, 0.0, 0.5, 1.5],
+      "particles" : [
+        {"particle" : "caloricswoosh1"},
+        {"particle" : "caloricswoosh2"},
+        {"particle" : "fireswoosh2"}
+      ]
+    }
+  },
+  {
+    "op" : "copy",
+    "from" : "/sounds/poisoncharge",
+    "path" : "/sounds/caloriccharge"
+  },
+  {
+    "op" : "copy",
+    "from" : "/sounds/poisonfullcharge",
+    "path" : "/sounds/caloricfullcharge"
+  },
+  {
+    "op" : "copy",
+    "from" : "/sounds/poisonchargedloop",
+    "path" : "/sounds/caloricchargedloop"
+  },
+  {
+    "op" : "copy",
+    "from" : "/sounds/poisondischarge",
+    "path" : "/sounds/caloricdischarge"
+  },
+  {
+    "op" : "copy",
+    "from" : "/sounds/poisonactivate",
+    "path" : "/sounds/caloricactivate"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "objectName" : "velhanucrystaltorch",
+  "colonyTags" : ["avian","velhanu","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 60,
+
+  "description" : "A crystal levitates above its frame, emitting an eerie light.",
+  "shortdescription" : "Pink Crystal Torch",
+  "race" : "avian",
+
+  "apexDescription" : "The crystal is floating in place. It appears to be generating the light.",
+  "avianDescription" : "Where more permanent light is required, the Avians use crystals in place of torches. They last many thousands of years.",
+  "floranDescription" : "Eerie glowing. Colour of blood.",
+  "glitchDescription" : "Intrigued. This crystal appears to float, generating its own gravitational field and also produces its own light.",
+  "humanDescription" : "The crystal glows but is entirely cold to the touch.",
+  "hylotlDescription" : "Such beautiful technology. How did the Avians learn to harness it?",
+  "novakidDescription" : "This floating shiny rock is glowin' just a like a torch.",
+
+  "statusEffects" : [ ],
+
+  "lightColor" : [217, 55, 156],
+
+  "flickerPeriod" : 0.5,
+  "flickerMinIntensity" : 0.725,
+  "flickerMaxIntensity" : 0.8,
+  "flickerPeriodVariance" : 0,
+  "flickerIntensityVariance" : 0,
+
+  "inventoryIcon" : "velhanucrystaltorchicon.png",
+  "orientations" : [
+    {
+      "image" : "velhanucrystaltorch.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      
+      "direction" : "left",
+      "flipImages" : true,
+      "animationPosition" : [0, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "velhanucrystaltorch.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      
+      "direction" : "right",
+      "animationPosition" : [0, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "background" ]
+    }
+  ],
+  
+  "pointLight" : true,
+  "pointBeam" : 0,
+  "pointAngle" : 0,
+
+  "animation" : "velhanucrystaltorch.animation",
+  "animationParts" : {
+    "bg" : "velhanucrystaltorch.png",
+    "fg" : "velhanucrystaltorchlit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 0] ]
+}

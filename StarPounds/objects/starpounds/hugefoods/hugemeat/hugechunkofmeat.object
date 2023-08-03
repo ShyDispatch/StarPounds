@@ -1,0 +1,54 @@
+{
+  "objectName" : "starpoundshugechunkofmeat",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Rare",
+  "shortdescription" : "Huge Chunk of Meat",
+  "description" : "When you kill something this big, you sure as hell better eat it",
+  "race" : "generic",
+  "category" : "other",
+  "price" : 1000,
+  "smashOnBreak" : true,
+
+  "stages": 5,
+  "bitesPerStage": 4,
+  "food": 2500,
+
+  "apexDescription" : "An incredibly large chunk of meat. The beast this used to be must've been massive.",
+  "avianDescription" : "I've never seen such a large amount of meat before, all from the same creature.",
+  "floranDescription" : "Sssmall ssnack for Floran, hunt beassstss thisss ssize all the time.",
+  "glitchDescription" : "Interested. This hunk of meat would be perfect for the dining tables of nobility.",
+  "humanDescription" : "Did I drink a shrinking potion? Will I go back to normal if I eat this?",
+  "hylotlDescription" : "I'm impressed by how large this is, but is it well cooked I wonder?",
+  "novakidDescription" : "Now dis is a hunk of meat fit for a village.",
+  "throgDescription" : "I wish to know what creature can be so large and meaty so I can have more.",
+  "mootantDescription" : "Something that was bigger then a Mooshi, it makes me hungry.",
+  "harpyDescription" : "Is this dragon meat? Let's find out!",
+  "avaliDescription" : "Such a large piece of meat, I'm curious what could've made it.",
+
+  "inventoryIcon" : "hugechunkofmeaticon.png",
+  "orientations" : [
+    {
+      "dualImage" : "hugechunkofmeat.png:<stage>",
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {}
+  },
+
+  "scripts" : [
+    "/objects/starpounds/hugefoods/hugefood.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 1,
+
+  "animation" : "hugechunkofmeat.animation",
+  "animationParts" : {
+    "meat" : "hugechunkofmeat.png"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "itemName" : "starpoundstrashbag",
+  "rarity" : "Common",
+  "price" : 10,
+  "category" : "preparedFood",
+  "inventoryIcon" : "trashbag.png",
+  "description" : "A normal trash bag. Could you imagine eating all of this?",
+  "shortdescription" : "Trash Bag",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 3
+    },
+    {
+        "effect" : "foodpoison",
+        "duration" : 120
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0
+}

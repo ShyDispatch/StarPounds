@@ -1,0 +1,80 @@
+{
+  "projectileName" : "caloricneedlerthorns",
+  "physics" : "arrow",
+  "image" : "caloricneedlerthorns.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "timeToLive" : 3,
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/objects/vase_break_medium1.ogg",
+        "/sfx/objects/vase_break_medium2.ogg",
+        "/sfx/objects/vase_break_medium3.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 3,
+      "body" : [
+        {
+          "action" : "option",
+          "options" : [
+            {
+              "action" : "particle",
+              "specification" : {
+                "type" : "animated",
+                "animation" : "/animations/mediumflamecaloric/mediumflamecaloric.animation",
+                "approach" : [0.5, 0.5],
+                "timeToLive" : 0.4,
+                "variance" : {
+                  "timeToLive" : 0.15,
+                  "position" : [0.5, 0.5],
+                  "initialVelocity" : [1, 1],
+                  "rotation" : 180
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+	{
+      "action" : "projectile",
+      "type" : "smallregularexplosion",
+      "inheritDamageFactor" : 1,
+	  "config" : {
+	    "damageKind" : "caloric"
+	  }
+    }
+  ],
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/ropehook_impact1.ogg",
+        "/sfx/projectiles/ropehook_impact2.ogg",
+        "/sfx/projectiles/ropehook_impact3.ogg",
+        "/sfx/projectiles/ropehook_impact4.ogg",
+        "/sfx/projectiles/ropehook_impact5.ogg",
+        "/sfx/projectiles/ropehook_impact6.ogg",
+        "/sfx/projectiles/ropehook_impact7.ogg",
+        "/sfx/projectiles/ropehook_impact8.ogg",
+        "/sfx/projectiles/ropehook_impact9.ogg",
+        "/sfx/projectiles/ropehook_impact10.ogg",
+        "/sfx/projectiles/ropehook_impact11.ogg",
+        "/sfx/projectiles/ropehook_impact12.ogg"
+      ]
+    }
+  ],
+  "statusEffects" : [
+    {"effect": "starpoundsrategainslow", "duration": 3},
+    {"effect": "starpoundsratebloatfast", "duration": 3}
+  ],
+  "power" : 15.0,
+  "speed" : 100,
+  "damageKind" : "caloric"
+}

@@ -1,0 +1,25 @@
+{
+  "projectileName" : "caloricplasmarocketstatus",
+  "image" : "caloricplasmarocket.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 4,
+  "damageKindImage" : "icon.png",
+  "fallSpeed" : 0,
+  "lightColor" : [105, 65, 72],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/caloricexplosionknockbackstatus.config"
+    }
+  ],
+  "statusEffects" : [ ],
+  "emitters" : [ "caloricplasmarocket" ],
+  "flippable" : true,
+  "power" : 10.0,
+  "speed" : 1.0,
+  "acceleration" : 150,
+  "physics" : "rocket",
+  "damageType" : "NoDamage",
+  "damageKind" : "caloricplasma"
+}

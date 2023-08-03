@@ -1,0 +1,7 @@
+{
+  "input" : [
+    { "item" : "liquidmilk", "count" : 4 }
+  ],
+  "output" : { "item" : "milk", "count" : 1 },
+  "groups" : [ "craftingfood", "drinks" ]
+}

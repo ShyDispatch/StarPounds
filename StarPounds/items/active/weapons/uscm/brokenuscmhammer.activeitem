@@ -1,0 +1,40 @@
+{
+  "itemName" : "brokenuscmhammer",
+  "price" : 500,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A very nice hammer in very poor condition.",
+  "shortdescription" : "Broken Hammer",
+  "tooltipKind" : "sword",
+  "category" : "hammer",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","hammer"],
+
+  "inventoryIcon" : "brokenuscmhammer.png",
+
+  "animation" : "/items/active/weapons/melee/hammer/hammer.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "brokenuscmhammer.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_hammer.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "hammersmash",
+  "primaryAbility" : {
+    "fireTime" : 1,
+    "baseDps" : 9
+  },
+
+  "altAbilityType" : "physicalshockwave",
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

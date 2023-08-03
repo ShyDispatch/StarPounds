@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundshive",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "starpoundshive.png",
+  "description" : "Sticky hive combs made from the remains of fallen creatures.",
+  "shortdescription" : "Honey Hive Block",
+  "glitchdescription" : "Revolted. This hive material is made up of crushed creatures.",
+  "florandescription" : "Hive made from crusshed animalss.",
+  "novakiddescription" : "Some sorta hive made from crushed critters.",
+
+  "materialId" : 51420
+}

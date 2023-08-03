@@ -1,0 +1,18 @@
+{
+  "itemName" : "thickglaceonfoxlegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Thick thighs that would be tempting to sway if it weren't for the risk of knocking things over.",
+  "shortdescription" : "Thick Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick"
+  ],
+
+  "maleFrames" : "pants.png",
+  "femaleFrames" : "pants.png"
+}

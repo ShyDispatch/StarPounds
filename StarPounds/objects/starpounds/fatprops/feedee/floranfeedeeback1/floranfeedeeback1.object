@@ -1,0 +1,34 @@
+{
+  "objectName" : "floranfeedeeback1",
+  "colonyTags" : ["floran","apexresearchlab","science","evil"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 20,
+  "description" : "A Floran being fattened.",
+  "shortdescription" : "Fat Subject: Red Berry",
+  "race" : "Floran",
+
+  "apexDescription" : "This poor Floran is a lost one.",
+  "avianDescription" : "This is... is she enjoying this?",
+  "floranDescription" : "Big Floran mussst be fearsssome hunter. Ssso fat.",
+  "glitchDescription" : "Sad. This Floran is beyond saving.",
+  "humanDescription" : "I feel like I've seen this exact scene on the internet. Except this is real.",
+  "hylotlDescription" : "How awful, to be mentally broken by such feeding.",
+  "novakidDescription" : "This is sum mighty weird torture.",
+  "throgDescription" : "Some Throgs consider this cheating.",
+  "avaliDescription" : "Who would do this? This is horrifying.",
+
+  "inventoryIcon" : "floranfeedeeback1.png:default.default",
+  "orientations" : [
+    {
+      "dualImage" : "floranfeedeeback1.png:<color>.<frame>",
+      "imagePosition" : [-58, 0],
+      "frames" : 4,
+      "animationCycle" : 0.6,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

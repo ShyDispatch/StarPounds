@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "path": "/species/throg",
+    "value": {
+      "aiFrames": "throgAI.png",
+      "portraitFrames": "portraits/throgportrait.png",
+      "staticFrames": "staticthrog.png"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/species/mootant",
+    "value": {
+      "aiFrames": "humanAI.png",
+      "portraitFrames": "portraits/humanportrait.png",
+      "staticFrames": "statichuman.png"
+    }
+  }  
+]

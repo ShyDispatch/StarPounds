@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsbloodshake",
+  "rarity" : "Rare",
+  "price" : 1045,
+  "category" : "drink",
+  "inventoryIcon" : "bloodshake.png",
+  "description" : "Named for its meat flavor. Not because it's for vampires.",
+  "shortdescription" : "Blood Shake",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 675
+    }
+  ] ],
+  "foodValue": 75,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "emitters" : [ "drinking" ]
+}

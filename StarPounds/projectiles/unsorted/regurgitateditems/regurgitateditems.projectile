@@ -1,0 +1,26 @@
+{
+  "projectileName" : "regurgitateditems",
+  "image" : "regurgitateditems.png",
+  "physics" : "grenade",
+  "animationCycle" : 0.25,
+  "animationLoops" : true,
+  "frameNumber" : 2,
+  "timeToLive" : 3,
+  "speed" : 8,
+  "emitters" : [ "poisondrip" ],
+  "actionOnHit" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/waterballoon1.ogg", "/sfx/projectiles/waterballoon2.ogg", "/sfx/projectiles/waterballoon3.ogg", "/sfx/projectiles/waterballoon4.ogg", "/sfx/projectiles/waterballoon5.ogg", "/sfx/projectiles/waterballoon6.ogg", "/sfx/projectiles/waterballoon7.ogg" ]
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/goocluster_pop.ogg" ]
+    }
+  ],
+  "damageType" : "NoDamage",
+  "damageKind" : "default",
+  "onlyHitTerrain" : true,
+  "renderLayer" : "Player+1",
+  "scripts" : [ "regurgitateditems.lua" ]
+}

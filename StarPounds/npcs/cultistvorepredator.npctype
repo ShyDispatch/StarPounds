@@ -1,0 +1,27 @@
+{
+  "type" : "cultistvorepredator",
+  "baseType" : "vorepredator",
+
+  "damageTeam" : 2,
+
+  "dropPools" : [ "cultisttreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/cultist.config:attack"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "cultisthead" } ],
+            "chest" : [ { "name" : "cultistchest" } ],
+            "legs" : [ { "name" : "cultistlegs" } ],
+            "legsCosmetic" : [ { "name" : "cultistlegs" } ]
+          }
+        ] ]
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+[  
+  {  
+    "op" : "add",
+    "path" : "/beacon/throg",
+    "value" : {  
+      "default" : [  
+        "What have you called me for?",
+        "You need me for something?",
+        "You needed me, so what is it?",
+        "What is it?",
+        "You wanted to talk to me?"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/rent/throg",
+    "value" : {  
+      "default" : [  
+        "If there's one thing we Throgs are good for. It's paying on time.",
+        "Yeah, yeah. Here's the rent.",
+        "It's been good staying here. For you, the rent.",
+        "I've been enjoying my time living here. Here's the rent.",
+        "My rent, so I can continue to live here."
+      ]
+    }
+  }
+]

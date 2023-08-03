@@ -1,0 +1,63 @@
+{
+  "tryEatEntity": {
+    "type": "action",
+    "name": "tryEatEntity",
+    "title": "tryEatEntity",
+    "properties": {
+      "entity": {"type": "entity", "value": null}
+    },
+    "category": "vore",
+    "script": "/scripts/actions/vore.lua",
+    "output": {}
+  },
+  "hasEatenEntity": {
+    "type": "action",
+    "name": "hasEatenEntity",
+    "title": "hasEatenEntity",
+    "properties": {
+      "entity": {"type": "entity", "value": null}
+    },
+    "category": "vore",
+    "script": "/scripts/actions/vore.lua",
+    "output": {}
+  },
+  "movementPenalty": {
+    "type": "action",
+    "name": "movementPenalty",
+    "title": "movementPenalty",
+    "category": "vore",
+    "script": "/scripts/actions/vore.lua",
+    "output": {
+      "number": {"type": "number", "key": null}
+    }
+  },
+  "fullStomach": {
+    "type": "action",
+    "name": "fullStomach",
+    "title": "fullStomach",
+    "category": "vore",
+    "script": "/scripts/actions/vore.lua",
+    "output": {}
+  },
+  "isEaten": {
+    "type": "action",
+    "name": "isEaten",
+    "title": "isEaten",
+    "category": "vore",
+    "script": "/scripts/actions/vore.lua",
+    "output": {}
+  },
+  "blobOffset": {
+    "type": "action",
+    "name": "blobOffset",
+    "title": "blobOffset",
+    "properties": {
+      "position": {"type": "position", "key": "self"}
+    },
+    "category": "vore",
+    "script": "/scripts/actions/vore.lua",
+    "output": {
+      "position": {"type": "position", "key": null}
+    }
+  }
+}

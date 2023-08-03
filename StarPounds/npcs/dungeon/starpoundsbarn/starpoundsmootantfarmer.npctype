@@ -1,0 +1,200 @@
+{
+  "type" : "starpoundsmootantfarmer",
+  "baseType" : "guard",
+  
+  "identity" : {
+    "gender" : "female"
+  },
+
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "greetingChance" : 0
+    },
+    "starPounds_skills": {
+      "minimumSize": [0, 1]
+    },
+    "starPounds_options": {
+      "bottomHeavy": true,
+      "milky": true
+    },
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+            "The Mootants are kind, but please don't encourage them.",
+            "This does look really weird, but I assure you. I try to do my best for these girls.",
+            "These girls are too far gone, but that doesn't mean they have to suffer."
+          ]
+        },
+        "apex" : {
+          "default" : [
+            "It's quiet out here. No cameras, no chatter. Just peace and quiet.",
+            "Tending to the animals is a relaxation I never experienced in the city.",
+            "Ah hello friend. Out to escape civilization if only for a moment?",
+            "My life has been blessed since I took to farming out here.",
+            "It might sound selfish, but I've grown to not care what goes on under the Miniknog."
+          ],
+          "apex" : [
+            "It's quiet out here. No cameras, no chatter. Just peace and quiet.",
+            "Tending to the animals is a relaxation I never experienced in the city.",
+            "Ah hello friend. Out to escape civilization if only for a moment?",
+            "My life has been blessed since I took to farming out here.",
+            "It might sound selfish, but I've grown to not care what goes on under the Miniknog.",
+            "If the fight becomes too much for you comrade, perhaps settling down like I have would be best."
+          ],
+          "mootant" : [
+            "Ah forgive me but, you look just like a Mooshi.",
+            "Are you by any chance a Miniknog experiment? I've heard rumors of the things they can do with dna.",
+            "What are you- Oh my apologies. I mistook you for one of the girls.",
+            "Oh uh, hello there? This is rather awkward for both of us I imagine.",
+            "You wouldn't happen to have Mooshi dna in you? Just.. curious.",
+            "A walking, talking Mooshi? You see something new everyday."
+          ]
+        },
+        "avian" : {
+          "default" : [
+            "They can be tough sometimes, but I love these animals.",
+            "It can be boring, but there's a certain kind of peace to working here.",
+            "Here or home, I hope my barn can offer you some nice respite.",
+            "Tending to these animals has been quite refreshing for my spirit.",
+            "May Kleux bless my crops and animals."
+          ],
+          "mootant" : [
+            "Ah forgive me but, you look just like a Mooshi.",
+            "My I was not expecting to see something like you on this farm.",
+            "What are you- Oh my apologies. I mistook you for one of my animals.",
+            "Oh uh, hello there? This is rather awkward for both of us I imagine.",
+            "Are you some ascended Mooshi or something?",
+            "A walking, talking Mooshi? You see something new everyday."
+          ]
+        },
+        "floran" : {
+          "default" : [
+            "Floran tendsss to animalss.",
+            "Floran hasss to remember not to eat the animalss.",
+            "Sstranger can sstay if they help Floran with animalsss.",
+            "Floran not undersstand clothesss farmersss wear.",
+            "Working with animalss more nice than Floran expected."
+          ],
+          "mootant" : [
+            "Floran can have new Moossshi?",
+            "Ssspecial Moossshi!",
+            "Doesss Moossshi want to join Floran'sss farm?.",
+            "Floran doesssn't eat Moossshi, promissse!",
+            "Bessst Moossshi Floran hass ssseen. Join farm?"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "This does look really weird, but I assure you. I try to do my best for these girls.",
+            "These girls are too far gone, but that doesn't mean they have to suffer.",
+            "I can't undo what's happened to these girls, all I can is try to make their lives comfortable.",
+            "I used to be USCM, I did some questionable things. Now I just try to help these Mootants.",
+            "Trying to milk these girls can be rough. It's had an impact on my waistline."
+          ],
+          "mootant" : [
+            "I know this looks bad, but I'm taking care of these girls, I promise!",
+            "You got out early to keep your mind huh? I wish these girls were as lucky as you.",
+            "You don't need my help like these others. Don't worry, they're in good hands.",
+            "Forgiveness ain't in my deck, helping these girls is my choice.",
+            "Obviously you can take care of yourself, but if you ever want to relax here, you can.",
+            "I'm not USCM, not anymore. You don't have to fear me."
+          ]
+        },
+        "hylotl" : {
+          "default" : [
+            "Becoming a farmer has certainly taught me somethings.",
+            "It can be peaceful out here. On the otherhand, tending to the animals can be rough.",
+            "Ah hello there, sorry I'm a bit of a mess.",
+            "I do wish handling wasn't so physically intensive."
+          ],
+          "hylotl" : [
+            "Becoming a farmer has certainly taught me somethings.",
+            "It can be peaceful out here. On the otherhand, tending to the animals can be rough.",
+            "Ah hello there, sorry I'm a bit of a mess.",
+            "I do wish handling wasn't so physically intensive.",
+            "Oh I wish I could offer a more traditional welcome to you.",
+            "I'd offer some tea, but it's not the best. Limited options around here."
+          ],
+          "mootant" : [
+            "Ah forgive me but, you look just like a Mooshi.",
+            "My I was not expecting to see something like you on this farm.",
+            "What are you- Oh my apologies. I mistook you for one of the girls.",
+            "Oh uh, hello there? This is rather awkward for both of us I imagine.",
+            "I never heard of a sapient Mooshi before.",
+            "A walking, talking Mooshi? You see something new everyday."
+          ]
+        },
+        "glitch" : {
+          "default" : [
+            "Exhausted. The animals can be needy.",
+            "Fatigued. I have been working hard here. I'm nearly reaching melting point!",
+            "Relaxed. You won't find a more peaceful place here than this farm.",
+            "Eager. Nice meeting you. Feel free to stay awhile and relax.",
+            "Tired. My work isn't over yet!"
+          ],
+          "mootant" : [
+            "Positive. Good Girl.",
+            "Observent. Hmm, something's different about you then the other Mooshi.",
+            "Surprise. You're like a Mooshi, yet also not.",
+            "Curious. Are you in need of a milking?",
+            "Tired. I'll tend to you in a bit, let me rest a bit.",
+            "Observent. I may need to watch how much hay you eat. You're getting rather fatter than you should."
+          ]
+        },
+        "novakid" : {
+          "default" : [
+            "Howdy there partner!",
+            "This heat! I'm pretty parched.",
+            "Growing crops, tendin' to the animals. It ain't gettin' better than this partner.",
+            "Only the hardiest workers can stand working on a farm like this."
+          ],
+          "mootant" : [
+            "Ain't ever seen someone that looks like a Mooshi before..",
+            "You'd make quite an interestin' addition to the farm, partner.",
+            "My, you look mighty cute for a Mooshi.",
+            "My curiousity is gettin' the better of me.",
+            "A walkin', talkin' Mooshi? The universe is quite a funny place.",
+            "How'd you feel living the farm life, Mooshi?"
+          ]
+        },
+        "mootant" : {
+          "default" : [
+            "These are Mootants. Humans spliced with Mooshi dna. I'm a more fortunate Mootant.",
+            "The USCM did this, you know. Turning women into Mooshi's. I just try to help these ones.",
+            "I can't undo what's happened to these Mootants, all I can is try to make their lives comfortable.",
+            "It's rough, but I try to do what I can. They're quite blissfully unaware of the world around them.",
+            "They're nice enough but try not to encourage them. They'll feed you so much milk you'll be as heavy as they are."
+          ],
+          "mootant" : [
+            "It's good to see another Mootant not fully transformed.",
+            "Ah, it's good to see a friendly face!",
+            "If you ever want, you can help out here.",
+            "Try not to let the gluttony take you if you can, it's a slippery slope.",
+            "Obviously you can take care of yourself, but if you ever want to relax here, you can.",
+            "Do you ever wonder? If it's better to be blissfully ignorant then to keep our minds?"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "" }
+            ],
+            "chest" : [
+              { "name" : "novakidsuspenders", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "legsCosmetic" : [
+              { "name" : "novakidsuspenderspants", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "sheathedprimary" : [ "ironrevolver" ]
+          }
+        ] ]
+    ]
+  }
+}

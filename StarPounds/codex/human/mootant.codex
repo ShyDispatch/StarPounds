@@ -1,0 +1,29 @@
+{
+  "id" : "mootant",
+  "species" : "human",
+  "title" : "Mootant Journal",
+  "description" : "Pages from a U.S.C.M captives journal",
+  "icon" : "starpoundsmootant.png",
+  "contentPages" : [
+    "I've got to start writing things down. I'm writing because something terrifies me, I feel like I'm forgetting things. I was arrested by the U.S.C.M for petty thievery, where I was sent to a remote prison. That's normal for how any criminal under the U.S.C.M. is treated. But this place has an undeniable strangeness that unnverves me.",
+
+"It's a standard all woman prison. Yet every last prisoner has been plump and fat, getting larger by the day. Some of the ones still just chubby are scared and paranoid, yet the fatter ones seem so complacent. Almost empty headed. Who's happy to be in prison? It's like their intelligence was sapped, oblivious to what's around them.",
+
+"I'm sounding paranoid myself, yet there's something in the food. I'm sure of it. I was a thin girl, never got an ounce of noticeable fat in my life. Yet here I am just a week in, and I can feel my body jiggle as I move around. That's not normal.",
+
+"They make us eat a lot of this stuff, more than three meals a day. It was surprisingly good, and was relieved over horror stories of prison food. But as my waistline grew, and I noticed how fat and growing fatter everyone was, my nerves became wrecked. To add more crazy to the conspiracy, I swear I'm getting addicted to the stuff. Maybe that's why the real fat ones enjoy it so much.",
+
+"Fear is all that consumes me whenever I look upon the faces of those that are really fat. Only wanting to eat more of what they're serving us in larger quantities. At random they also just moo like a mooshi! Why are they like this? It has to be the food right? It has to be, I can feel my mouth drool with just the word food.",
+
+"I wasn't crazy, even as I feel my thoughts get muddy. My paranoia ran so high, I couldn't sleep last night. I had to know why some of the really fat girls disappear. Faking sleep when the lights went out, I saw it when they thought everyone was asleep. The poor girl waddling with a smile on her face. I saw mooshi ears sticking out of her head. They're turning us into farm animals.",
+
+"I feel my mind slipping as the days go by. It's gotten difficult to update this journal, the purpose to remind me feeling like a failure, when all I can think about is food. My body wobbles when I simply breath, my belly growls constantly, and I'm drooling for more food. Knowing what I know, I grew pale when I suddenly let out a moo as I ate. I'm scared to touch what's underneath my hair.",
+
+"[The last wirtten page is nothing but sloppy handwriting repeating the words moo over and over.]"
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

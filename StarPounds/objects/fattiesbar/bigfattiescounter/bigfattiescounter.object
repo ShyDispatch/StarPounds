@@ -1,0 +1,155 @@
+{
+  "objectName" : "bigfattiescounter",
+  "colonyTags" : ["starpounds","cooking","commerce"],
+  "rarity" : "Common",
+  "category" : "crafting",
+  "description" : "For your gluttonous needs to fatten that waistline.",
+  "shortdescription" : "Big Fatties Counter",
+  "race" : "novakid",
+  "price" : 120000,
+  "printable" : false,
+  "lightColor" : [46, 66, 77],
+
+  "apexDescription" : "Big Fatties? The food must be swimming in calories.",
+  "avianDescription" : "I can smell something delicious from here. Perhaps I could grab some lunch.",
+  "floranDescription" : "Floran can eat feastsss here!",
+  "glitchDescription" : "Interested. A merchant of some sort.",
+  "humanDescription" : "I wonder if their main product is burgers.",
+  "hylotlDescription" : "It's a bold name for sure. Though it doesn't seem too bad.",
+  "novakidDescription" : "Gonna buy me a refreshin' bottle o' dandelion root pop.",
+  "throgDescription" : "Now this is a store I can get behind.",
+  "mootantDescription" : "I could so go for a milkshake right about now.",
+  "harpyDescription" : "Oh! Oh! I wonder if they have cinnamon.",
+
+  "avaliDescription" : "This seems like just a grease trap of food. Yet I'm curious if they have any Avali dishes.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "bigfattiescounter.png:default.<frame>" }, { "image" : "bigfattiescounterlit.png:default.<frame>", "fullbright" : true  } ],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "imagePosition" : [-24, 0],
+      "frames" : 32,
+      "animationCycle" : 3.2,
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [2, 2], [3, 2], [4, 2],
+        [2, 3], [3, 3], [4, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "bigfattiescounter.png:default.<frame>" }, { "image" : "bigfattiescounterlit.png:default.<frame>", "fullbright" : true } ],
+      "direction" : "right",
+
+      "imagePosition" : [-16, 0],
+      "frames" : 32,
+      "animationCycle" : 3.2,
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [1, 2], [2, 2], [3, 2],
+        [1, 3], [2, 3], [3, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "bigfattiescounter.lua" ],
+  "scriptDelta" : 0,
+
+  "interactData" : {
+    "config" : "/interface/fattyshops/fatshops.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Bigfatties",
+        "subtitle" : "^#b9b5b2;Food! Highly fattening and cheap.",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/starpounds.png"
+        }
+      }
+    },
+    "filter" : [],
+	"modTab" : [{
+      "file": "/interface/fattyshops/tabs/mains.png",
+	  "label": "Mains",
+      "filter": [ "mains" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/sides.png",
+	  "label": "Sides",
+      "filter": [ "sides" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/snacks.png",
+	  "label": "Snacks",
+      "filter": [ "snacks" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/drinks.png",
+	  "label": "Drinks",
+      "filter": [ "drinks" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/desserts.png",
+	  "label": "Desserts",
+      "filter": [ "desserts" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/hugefoods.png",
+	  "label": "Big Food",
+      "filter": [ "hugefood" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/medicine.png",
+	  "label": "Medicine",
+      "filter": [ "medicine" ]
+    }]
+  },
+  "storeInventory" : {
+    "mains" : [
+      "starpoundsgreaseburger", "starpoundsdoublegreaseburger", "starpoundsmeatwich", "starpoundsmeatwichdouble", "starpoundsqueenburger", "starpoundsfatfriedchicken", "starpoundschankonabe", "starpoundsgreasepizza", "starpoundsgreasepizzaslice", "starpounds64tbpizzap", "starpoundsramen", "starpoundssoba", "starpoundstaco", "starpoundsburrito"
+    ],
+    "sides" : [
+      "starpoundstastyfries", "starpoundsmeatfries", "starpoundsblubbernuggets", "starpoundstofu", "starpoundshotsauce", "starpoundsghostpepper", "starpoundsbuttersnack", "starpoundscorndog", "starpoundshotdog", "starpoundshotdogk", "starpoundshotdogm", "starpoundshotdogkm", "starpoundshotdogr", "starpoundshotdogc", "starpoundssugarextract"
+    ],
+    "snacks" : [
+      "starpoundssandwich", "starpoundspeanutbutterjellysandwich", "starpoundsgoldenbanana", "starpoundspizzabagel", "starpoundscinnamonroll", "starpoundsdonut", "starpoundspinkdonut", "starpoundschocodonut", "starpoundsjellydonut", "starpoundsglazeddonut", "starpoundschocoglazeddonut", "starpoundsdevildonut", "starpoundszebradonut", "starpoundsspiderdonut", "starpoundsporkchips", "starpoundsbrownie", "starpoundsgingercookie", "starpoundscookie", "starpoundspbcookie", "starpoundspassionpatty"
+    ],
+    "drinks" : [
+      "starpoundsheftycola", "starpoundssoftdrink", "starpoundsdandelionrootpop", "starpoundsbloatcola", "starpoundsbloatcolavintage", "starpoundsblubberslushie", "starpoundsmooshake", "starpoundschocolatemooshake", "starpoundsstrawberrymooshake", "starpoundsmoomilk", "starpoundsmoomilkdeluxe", "starpoundschocolatemoomilk", "starpoundschocolatemoomilkdeluxe", "starpoundsstrawberrymoomilk", "starpoundsstrawberrymoomilkdeluxe"
+    ],
+    "desserts" : [
+      "starpoundsenormouscake", "starpoundsroyalcake", "starpoundschocotaco", "starpoundsicecream", "starpoundschocolateicecream", "starpoundsstrawberryicecream", "starpoundsminticecream", "starpoundsicecreamsandwich", "starpoundsparamitepie", "starpoundsscrabcake", "starpoundsmeechmunchy", "starpoundsjelly", "starpoundsmagicpudding", "starpoundschurro", "starpoundscottoncandy"
+    ],
+    "hugefood" : [
+      "starpoundshugecherrycake-recipe", "starpoundshugepancakes-recipe", "starpoundshugechunkofmeat-recipe"
+    ],
+    "medicine" : [
+      "digestionaid", "digestionaid-recipe", "lactaid", "lactaidoverdrive", "lactaidmilktank"
+    ]
+  },
+
+  "chatRadius" : 10,
+  "chatCooldown" : 40,
+  "chatOptions" : [
+    "Stop on by! Grab a bite! You look like you're starving an' in need of a burger.",
+    "We have a good deal if ya want something simple. Burger, fries, an' a pop. Can't beat that combo!",
+    "Be careful with my monster sized meals! Ya won't stop till you've had every last bite. Eat wisely!",
+    "Can you believe how many empty dandelion root pop bottles there are in this galaxy? Yet I'm the only seller of such drinks.",
+    "Butter ain't a snack ya say? A person who needs more butter in their diet is you dear.",
+    "Florans love the meatwich! A classic forgotten, then revived by yours truly!",
+    "Some Apex are understandably sick of bananas. I'd suggest pineapple for em.",
+    "Where do I get my endomorphic jelly? Gotta keep my secrets for those endangered jellies.",
+    "Fancy some hot sauce? Sure thing! Let's... Hm... Where did I put those things?",
+    "Now you must be exhausted. Care for a shake? I'll throw in a second on the house.",
+    "Pleasure to meet'chya! Name's Anise. I've perfected deliciousness, why not have some grub?",
+    "Howdy there! Can I interest ya in some food? Thinkin' you'll love almost everythin'!",
+    "I could hear ya're stomach growlin a mile away! Get somethin' to eat dear.",
+    "So how's that figure comin along? I think you're doin good! Care to add more grease in that diet?",
+    "Come on in! Want the chef's recommendation? Everythin' is so good. Might as well try em all out!"
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "itemName" : "adipobeam",
+  "level" : 4,
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An experimental fattening laser made for reasons known only to its inventor.",
+  "shortdescription" : "Adipobeam",
+  "tooltipKind" : "starpoundsgun",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged","upgradeableWeapon"],
+
+  "inventoryIcon" : "adipobeam.png",
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "adipobeam.png",
+    "barrel" : "",
+    "muzzleFlash" : "muzzleflash.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "stateTypes" : { "middle" : {
+      "default" : "idle",
+      "states" : {
+        "idle" : {
+          "frames" : 8,
+          "cycle" : 0.6,
+          "mode" : "loop"
+        }
+      }}},
+      "parts" : { "middlefullbright" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [0.625, 0.125],
+          "zLevel" : 1,
+          "transformationGroups" : ["weapon"],
+          "fullbright" : true
+        },
+        "partStates" : {
+          "middle" : {
+            "idle" : {
+              "properties" : {
+                "image" : "adipobeamlit.png:<frame><paletteSwaps>"
+              }
+            }
+          }
+        }
+      }}
+    },
+    "sounds" : {
+      "fire" : ["/sfx/gun/plasma_ar4.ogg"],
+      "altFire" : [ "/sfx/gun/plasma_shotgun1.ogg" ]
+    }
+  },
+  "baseOffset" : [0.625, 0.125],
+  "muzzleOffset" : [1.875, 0.125],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "caloric",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 0.3,
+    "baseDps" : 10.5,
+    "energyUsage" : 25,
+    "projectileCount" : 1,
+    "inaccuracy" : 0.015,
+
+    "burstCount" : 4,
+    "burstTime" : 0.1,
+    "fireType" : "burst",
+
+    "projectileType" : "starpoundscaloricbeam",
+    "projectileParameters" : {},
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.1,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "altAbility" : {
+    "name" : "Adipo-Grenades",
+    "scripts" : ["/items/active/weapons/ranged/abilities/altfire.lua"],
+    "class" : "AltFireAttack",
+
+    "fireTime" : 1.5,
+    "energyUsage" : 60,
+    "projectileCount" : 1,
+    "inaccuracy" : 0.09,
+    "fireType" : "auto",
+
+    "useParticleEmitter" : false,
+
+    "projectileType" : "starpoundslaunchedadipobombs",
+    "projectileParameters" : {},
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 8,
+        "weaponRotation" : 8,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.2,
+        "armRotation" : 8,
+        "weaponRotation" : 8,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua",
+
+  "upgradeParameters" : {
+    "inventoryIcon" : "adipobeam_l6.png",
+    "animationParts" : {
+      "middle" : "adipobeam_l6.png"
+    },
+    "shortdescription" : "Adipobeam ^yellow;^reset;"
+  }
+}

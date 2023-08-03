@@ -1,0 +1,212 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "body" : {
+        "priority" : 0,
+        "default" : "idle",
+        "states" : {
+          "idle" : {
+            "frames" : 13,
+            "cycle" : 2
+          },
+          "walk" : {
+            "frames" : 7,
+            "cycle" : 0.7,
+            "mode" : "loop"
+            /*
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.25
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/nutmidge_step1.ogg", "", "", "", "/sfx/npc/monsters/nutmidge_step2.ogg", "" ]
+            }
+            */
+          },
+          "jump" : {
+            "frames" : 1,
+            "properties" : {
+              "immediateSound" : "/sfx/npc/monsters/monster_hop.ogg",
+              "immediateSoundRangeMultiplier" : 0.5
+            }
+          },
+          "fall" : {
+            "frames" : 1
+          },
+          "chargewindup" : {
+            "frames" : 7,
+            "cycle" : 0.6,
+            "properties" : {
+              "persistentSound" : "/sfx/npc/monsters/nutmidge_windup.ogg"
+            }
+          },
+          "chargewinddown" : {
+            "frames" : 5,
+            "cycle" : 0.6,
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/nutmidge_winddown.ogg", "", "", "" ]
+            }
+          },
+          "charge" : {
+            "frames" : 7,
+            "cycle" : 0.6,
+            "mode" : "loop",
+            "properties" : {
+              "immediateSoundRangeMultiplier" : 0.5
+            },
+            "frameProperties" : {
+              "immediateSound" : [ "", "/sfx/npc/monsters/nutmidge_step1.ogg", "", "", "/sfx/npc/monsters/nutmidge_step2.ogg", "", "" ]
+            }
+          },
+          "break" : {
+            "frames" : 1
+          }
+        }
+      },
+      "damage" : {
+        "priority" : 3,
+        "default" : "none",
+        "states" : {
+          "none" : {
+            "frames" : 1
+          },
+          "stunned" : {
+            "frames" : 1
+          }
+        }
+      },
+      "releaseParticles" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "frames" : 1,
+            "properties" : {
+              "particleEmittersOff" : [ "releaseParticles" ]
+            }
+          },
+          "on" : {
+            "frames" : 1,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "releaseParticles" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "body" : {
+        "properties" : {
+          "transformationGroups" : [ "body" ],
+          "offset" : [-0.0625, 0.6875]
+        },
+        "partStates" : {
+          "body" : {
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle.<frame>"
+              }
+            },
+            "walk" : {
+              "properties" : {
+                "image" : "<partImage>:walk.<frame>"
+              }
+            },
+            "jump" : {
+              "properties" : {
+                "image" : "<partImage>:jump.<frame>"
+              }
+            },
+            "fall" : {
+              "properties" : {
+                "image" : "<partImage>:fall.<frame>"
+              }
+            },
+            "chargewindup" : {
+              "properties" : {
+                "image" : "<partImage>:windup.<frame>"
+              }
+            },
+            "chargewinddown" : {
+              "properties" : {
+                "image" : "<partImage>:winddown.<frame>"
+              }
+            },
+            "charge" : {
+              "properties" : {
+                "image" : "<partImage>:charge.<frame>"
+              }
+            },
+            "break" : {
+              "properties" : {
+                "image" : "<partImage>:break.<frame>"
+              }
+            }
+          },
+          "damage" : {
+            "stunned" : {
+              "properties" : {
+                "image" : "<partImage>:hurt.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "body" : { "interpolated" : true }
+  },
+
+  "effects" : {
+    "blink" : {
+      "type" : "flash",
+      "time" : 0,
+      "directives" : "fade=ffffff;0.5"
+    }
+  },
+
+  "particleEmitters" : {
+    "deathPoof" : {
+      "particles" : [
+        { "particle" : "nutmidgeshard" },
+        { "particle" : "woodshard" },
+        { "particle" : "nutmidgeshard" }       
+      ]
+    },
+    "captureParticles" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "releaseParticles" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "teleportOut" : {
+      "particles" : [
+        { "particle" : "monstercapture" }
+      ]
+    },
+    "teleportIn" : {
+      "particles" : [
+        { "particle" : "monsterrelease" }
+      ]
+    },
+    "levelUp" : {
+      "particles" : [
+        { "particle" : "monsterlevelup" }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
+    "deathPuff" : [ "/sfx/melee/fist_stronghit_wood1.ogg", "/sfx/melee/fist_stronghit_wood2.ogg", "/sfx/melee/fist_stronghit_wood3.ogg" ],
+    "fire" : [ "/sfx/projectiles/spit1.ogg", "/sfx/projectiles/spit2.ogg" ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id" : "fatghost",
+  "species" : "hylotl",
+  "title" : "Old Hylotl Diary",
+  "description" : "A diary of a Hylotl lost in a Floran invasion.",
+  "icon" : "fatghostdiary.png",
+  "contentPages" : [
+    "Having a diary is something seen as expected. But I'm struggling to find a reason to write. I have ideas, but I get flustered easily at the idea of someone reading this. Nobody would of course, I'm just overreacting.
+maybe I can talk about my eating habits. I get teased for it and my weight. It only makes me wanna gain more though, I kind of like how big and soft I am. And there's something about not fitting into my clothes that just...",
+
+"I feel so dumb. My face is beet red. Out of fear, I don't wanna say her name. But this one girl who I really like. I worked up the courage to talk with her beyond a hello. It was going great too, like my fears melted away.
+Then I suggested we should go out to eat sometime. I must've looked like a huge glutton to her. I'm just glad she did agree, though she's probably gonna be judging me all day with how much I eat.",
+
+"I'm a flustered mess. I went out to eat with her today, I was expecting it to be so awkward for her. Despite how nervous I was, I ordered the usual amount I tend to eat. But my chan caught me by surprise, she ordered for herself more than me!
+I hope she never noticed, but when we started eating I just couldn't help but stare at her dig in. She had such a curvy, thin figure. Yet the appetite she had. My mind went wild as I watched, and I thought about her getting plumper. We agreed to eat out more.",
+
+"So some time has passed since I last wrote. Though I'm just as red in the face as I was whenever I do write here. Ever since that day I've been bringing my chan snacks, got us to go out more. Encouraged her to get more dessert at times.
+She has to know I've been starring by now, but I don't think she minds. The extra food I've been giving her seems to have helped push her metabolism as she started gaining weight. It's, so nice to watch start to subtley jiggle. I can't stop myself.",
+
+"This thought only came to me now, but ever since I started actually dating my chan, I've been so, happy. It dawned on me I was putting on more weight lately, but so has she. We've been eating so much in the past few months.
+My heart skipped a beat to know she liked eating and being big just as I do. She even had a crush on me just as I did. Our sharring of food, hanging out, giggling at each others jokes. I've never been so confident in my life. I'm so glad I worked up the courage to talk with her.",
+
+"[Nothing but dried blood stains and the faint smell of plants can be gathered from the rest of the diary and its many blank pages.]"
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 250,
+    "radioMessagesOnPickup" : [ "fathylotlghostintro", "fathylotlghostintro2", "fathylotlghostintro3", "fathylotlghostintro4", "fathylotlghostintro5", "fathylotlghostintro6" ]   	
+  } 
+}

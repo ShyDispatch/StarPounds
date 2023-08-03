@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundschocolateplatform",
+  "price" : 10,
+  "category" : "platform",
+  "rarity" : "Common",
+  "inventoryIcon" : "starpoundschocolateplatform.png",
+  "description" : "Platforms made for chocolate houses.",
+  "shortdescription" : "Chocolate Platform",
+  "glitchDescription" : "Curious. It's a perfect block of chocolate.",
+  "floranDescription" : "Huge chunk of chocolate.",
+  "novakidDescription" : "Silly chocolate. You're for eatin' not buildin'.",
+  
+  "materialId" : 51401
+}

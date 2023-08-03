@@ -1,0 +1,23 @@
+{
+  "projectileName" : "starpoundscaloricbeam",
+  "image" : "starpoundscaloricbeam.png",
+  "physics" : "laser",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKind" : "caloricplasma",
+  "pointLight" : false,
+  "flippable" : true,
+
+  "statusEffects" : [{"effect": "starpoundsratebloatslow", "duration": 10}, {"effect": "starpoundsrategainrapid", "duration": 1}],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/plasmabulletexplosion/plasmabulletexplosion.config"
+    }
+  ],
+  "power" : 5.0,
+  "speed" : 75,
+  "knockback" : 0,
+  "lightColor" : [105, 65, 72],
+  "fullbright" : true
+}

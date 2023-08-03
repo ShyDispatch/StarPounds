@@ -1,0 +1,11 @@
+[
+  {"op": "add", "path": "/pets/-", "value": "starpoundsbeedrone"},
+  {"op": "add", "path": "/pets/-", "value": "mootant"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundsharpybandit"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundsjelly"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundsskeyejelly"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundsslime"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundsskeyeslime"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundshoney"},
+  {"op": "add", "path": "/pets/-", "value": "starpoundsskeyehoney"}
+]

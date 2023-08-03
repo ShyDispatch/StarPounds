@@ -1,0 +1,23 @@
+{
+  "itemName" : "blubberbuttring",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "The ring of the mighty Blubberbutt. Simply holding it makes you feel strange.",
+  "shortdescription" : "Ring of the Blubberbutt",
+  "inventoryIcon" : "blubberbuttring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "absorption", "modifier": 2},
+    {"name": "digestion", "modifier": 3},
+    {"name": "movement", "modifier": -0.2}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

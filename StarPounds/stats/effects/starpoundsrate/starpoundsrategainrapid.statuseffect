@@ -1,0 +1,11 @@
+{
+	"name": "starpoundsrategainrapid",
+	"effectConfig": {
+		"type": "gainWeight",
+		"rate": 25
+	},
+	"defaultDuration": 5,
+	"scripts": [
+		"starpoundsrate.lua"
+	]
+}

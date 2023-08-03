@@ -1,0 +1,23 @@
+{
+  "itemName" : "chubstersumooutfitbag",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "Mawashi Chubby Outfit",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "chubstersumooutfitbagicon.png",
+  "animation" : "chubstersumooutfitbag.animation",
+  "animationCustom" : {},
+  "scripts" : ["/scripts/items/outfitbag.lua"],
+
+  "itemTags" : [ "starpounds" ],
+  
+  "fireTime" : 2.0,
+  "fireOffset" : [1.0, 0.0],
+  
+  "outfitKey" : "chubsterstarpoundssumo"
+}

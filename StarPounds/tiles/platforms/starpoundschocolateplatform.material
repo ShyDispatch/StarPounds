@@ -1,0 +1,23 @@
+{
+  "materialId" : 51401,
+  "materialName" : "starpoundschocolateplatform",
+  "collisionKind" : "platform",
+  "itemDrop" : "starpoundschocolateplatform",
+  "shortdescription" : "Chocolate Platform",
+  "description" : "A simple looking platform.",
+  "glitchDescription" : "Impressed. These platforms can easily support my weight.",
+  "floranDescription" : "Shiny metal platformsss.",
+  "novakidDescription" : "Some fancy lookin' platforms made outta metal.",
+  "footstepSound" : "/sfx/blocks/footstep_crystal.ogg",
+  "category" : "Supports",
+
+  "renderTemplate" : "/tiles/platformtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundschocolateplatform.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : false,
+    "zLevel" : 0
+  }
+}

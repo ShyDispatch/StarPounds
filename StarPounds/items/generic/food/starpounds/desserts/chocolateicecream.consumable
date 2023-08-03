@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundschocolateicecream",
+  "rarity" : "Uncommon",
+  "price" : 370,
+  "category" : "preparedFood",
+  "inventoryIcon" : "chocolateicecream.png",
+  "description" : "With the standard of chocolate. Ice cream has never tasted so good.",
+  "shortdescription" : "Chocolate Ice Cream",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 540
+    }
+  ] ],
+  "foodValue": 60,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

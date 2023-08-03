@@ -1,0 +1,139 @@
+{
+  "animatedParts" : {
+    "parts" : {
+      "accessory" : {
+        "properties" : {
+          "centered" : true,
+          "image" : "<partImage>",
+          "offset" : [0.25, 0.0]
+        }
+      },
+      "accessoryFullbright" : {
+        "properties" : {
+          "centered" : true,
+          "image" : "<partImage>",
+          "fullbright" : true,
+          "offset" : [0.25, 0.0]
+        }
+      }
+    }
+  },
+
+  "particleEmitters" : {
+    "idle" : {
+      "active" : true,
+      "offsetRegion" : [-0.5, -0.75, 1, 0.75],
+      "emissionRate" : 2,
+      "emissionRateVariance" : 1,
+      "particles" : [
+        {
+          "particle": {
+            "type": "ember",
+            "size": 1,
+            "color": [255, 157, 210],
+            "light": [20, 20, 70],
+            "position": [0, 0],
+            "initialVelocity": [0, 1],
+            "finalVelocity": [0, 20],
+            "approach": [0, 10],
+            "destructionAction": "shrink",
+            "destructionTime": 0.25,
+            "fade": 1,
+            "layer": "back",
+            "fullbright": true,
+            "timeToLive": 0.2,
+            "variance": {
+              "initialVelocity": [0, 1],
+              "size": 0.5,
+              "timeToLive": 0.1
+            }
+          }
+        },
+        {
+          "particle": {
+            "type": "ember",
+            "size": 1,
+            "color": [255, 157, 210],
+            "light": [20, 20, 70],
+            "position": [0, 0],
+            "initialVelocity": [0, 1],
+            "finalVelocity": [0, 20],
+            "approach": [0, 10],
+            "destructionAction": "shrink",
+            "destructionTime": 0.25,
+            "fade": 1,
+            "layer": "middle",
+            "fullbright": true,
+            "timeToLive": 0.2,
+            "variance": {
+              "initialVelocity": [0, 1],
+              "size": 0.5,
+              "timeToLive": 0.1
+            }
+          }
+        }
+      ]
+    },
+    "activate" : {
+      "transformationGroups" : ["emitter"],
+      "emissionRate" : 0.0,
+      "burstCount"  : 10,
+      "particles" : [
+        {
+          "particle": {
+            "type": "ember",
+            "size": 1,
+            "color": [255, 157, 210],
+            "light": [20, 20, 70],
+            "position": [0, 0],
+            "initialVelocity": [0, 1],
+            "finalVelocity": [0, 20],
+            "approach": [2, 10],
+            "destructionAction": "shrink",
+            "destructionTime": 0.25,
+            "fade": 1,
+            "layer": "back",
+            "fullbright": true,
+            "timeToLive": 0.2,
+            "variance": {
+              "initialVelocity": [3, 1],
+              "size": 0.5,
+              "timeToLive": 0.1
+            }
+          }
+        },
+        {
+          "particle": {
+            "type": "ember",
+            "size": 1,
+            "color": [255, 157, 210],
+            "light": [20, 20, 70],
+            "position": [0, 0],
+            "initialVelocity": [0, 1],
+            "finalVelocity": [0, 20],
+            "approach": [2, 10],
+            "destructionAction": "shrink",
+            "destructionTime": 0.2,
+            "fade": 1,
+            "layer": "middle",
+            "fullbright": true,
+            "timeToLive": 0.2,
+            "variance": {
+              "initialVelocity": [3, 1],
+              "size": 0.5,
+              "timeToLive": 0.1
+            }
+          }
+        }
+      ]
+    }
+  },
+
+  "transformationGroups" : {
+    "emitter" : {}
+  },
+
+  "sounds" : {
+    "activate" : ["/sfx/objects/mannequin_close.ogg"]
+  }
+}

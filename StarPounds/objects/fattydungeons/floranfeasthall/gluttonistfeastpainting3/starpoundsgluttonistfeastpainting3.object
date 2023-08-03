@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundsgluttonistfeastpainting3",
+  "colonyTags" : ["pretty","floran","fatdungeons","gluttonist"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 900,
+
+  "description" : "What seems to be a weight tally.",
+  "shortdescription" : "Gluttonist Weight Tally",
+  "race" : "generic",
+
+  "apexDescription" : "This seems to be a board to show the weight gain of each tribemember.",
+  "avianDescription" : "Is this for tracking weight?",
+  "floranDescription" : "Floran tracking weight for competition. Ssseems one'sss winning!",
+  "glitchDescription" : "Concerned. A strange number of these are labelled as \"eaten\"...",
+  "humanDescription" : "This is competetive eating taken to the next level!",
+  "hylotlDescription" : "Seems that gluttony is a game for these Floran.",
+  "novakidDescription" : "Didn't think I'd see competetive gaining in my life.",
+
+  "inventoryIcon" : "starpoundsgluttonistfeastpainting3icon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsgluttonistfeastpainting3.png:<color>",
+      "imagePosition" : [-16, -16],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "itemName" : "starpoundshotsauce",
+  "rarity" : "Uncommon",
+  "price" : 235,
+  "category" : "drink",
+  "inventoryIcon" : "hotsauce.png",
+  "description" : "Pure hot sauce! Drink it on your own and question your life desicions as you sweat up a storm from the heat.",
+  "shortdescription" : "Hot Sauce",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 270
+    },
+    {
+        "effect" : "sweat",
+        "duration" : 60
+    },
+    {
+        "effect" : "burning",
+        "duration" : 3
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "maxStack" : 1,
+  "emitters" : [ "drinking" ],
+  "learnBlueprintsOnPickup" : [ "starpoundshotsauce" ]
+}

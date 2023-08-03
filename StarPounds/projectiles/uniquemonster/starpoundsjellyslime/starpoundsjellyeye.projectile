@@ -1,0 +1,53 @@
+{
+  "projectileName" : "starpoundsjellyeye",
+  "image" : "starpoundsjellyeye.png",
+  "physics" : "largeGrenade",
+  "animationCycle" : 2,
+  "frameNumber" : 1,
+  "renderLayer" : "Object+1",
+  "power" : 0,
+  "speed" : 20,
+  "piercing" : true,
+  "initialVelocity" : 20,
+  "timeToLive" : 100,
+  "bounces" : 7,
+  "flippable" : true,
+  "orientationLocked" : false,
+
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/blocks/footstep_mud.ogg" ]
+    }
+  ],
+
+  "actionOnReap" : [
+      {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+             "type" : "textured",
+             "image" : "/monsters/starpounds/jellies/starpoundsjelly/starpoundsjellysplat.png",
+             "size" : 0.3,
+             "initialVelocity" : [0, 10],
+             "finalVelocity" : [0, -30],
+             "approach" : [0, 20],
+             "timeToLive" : 10,
+             "collidesForeground" : true,
+             "destructionTime" : 5,
+             "layer" : "back",
+             "variance" : {
+               "size" : 1,
+               "initialVelocity" : [6, 2]
+             }
+          }
+        }
+      ]
+    }
+  ],
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

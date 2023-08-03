@@ -1,0 +1,184 @@
+{
+  "muteSfx" : false,
+  "muteMusic" : true,
+  "skippable" : true,
+  "letterbox" : false,
+  "scissor" : false,
+  "panels" : [
+    // black background
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/respawn/black.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "zoom" : 500,
+          "alpha" : 1,
+          "position" : [480, 270]
+        },
+        {
+          "timecode" : 5.99,
+          "alpha" : 1
+        },
+        {
+          "timecode" : 7,
+          "alpha" : 0
+        }
+      ]
+    },
+
+    // vignette circle
+    {
+      "startTime" : 3.0,
+      "drawables" : [
+        {
+          "image" : "/cinematics/story/blackcircle.png"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0,
+          "zoom" : 0.01,
+          "alpha" : 1,
+          "position" : [480, 270]
+        },
+        {
+          "timecode" : 5.99,
+          "zoom" : 3.5
+        },
+        {
+          "timecode" : 8.5,
+          "zoom" : 3.5
+        },
+        {
+          "timecode" : 9.5,
+          "zoom" : 30
+        }
+      ]
+    },
+
+    // radio message popup background
+    {
+      "startTime" : 1.5,
+      "endTime" : 10,
+      "drawables" : [
+        {
+          "image" : "/cinematics/radiomessagebg.png:<frame>"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 1.0,
+          "position" : [480, 100],
+          "frame" : 0
+        },
+        {
+          "timecode" : 0.5,
+          "frame" : 6
+        },
+        {
+          "timecode" : 8,
+          "frame" : 6
+        },
+        {
+          "timecode" : 8.5,
+          "frame" : 12
+        }
+      ]
+    },
+
+    // first radio message
+    {
+      "startTime" : 2.0,
+      "endTime" : 6.0,
+      "drawables" : [
+        {
+          "image" : "/ai/portraits/humanportrait.png:talk.<frame>"
+        }
+      ],
+      "animationFrames" : 2,
+      "text" : "Wake up...",
+      "textPosition" : {
+        "position" : [34, 21],
+        "vAnchor" : "top",
+        "wrapWidth" : 218
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 1.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 0.3,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 1,
+          "frame" : 4,
+          "textPercentage" : 1
+        }
+      ]
+    },
+
+    // second radio message
+    {
+      "startTime" : 5.99,
+      "endTime" : 9.5,
+      "drawables" : [
+        {
+          "image" : "/ai/portraits/humanportrait.png:talk.<frame>"
+        }
+      ],
+      "animationFrames" : 2,
+      "text" : "Wake up. You have to escape.",
+      "textPosition" : {
+        "position" : [34, 21],
+        "vAnchor" : "top",
+        "wrapWidth" : 218
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0,
+          "zoom" : 1.0,
+          "position" : [366.5, 100]
+        },
+        {
+          "timecode" : 0.1,
+          "alpha" : 1.0,
+          "zoom" : 1.0,
+          "position" : [366.5, 100],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 1.5,
+          "frame" : 8,
+          "textPercentage" : 1
+        }
+      ]
+    }
+  ],
+  "audio" : [
+    {
+      "timecode" : 2.3,
+      "endTimecode" : 3,
+      "loops" : -1,
+      "resource" : "/sfx/interface/aichatter1_loop.ogg"
+    },
+    {
+      "timecode" : 6,
+      "endTimecode" : 7.5,
+      "loops" : -1,
+      "resource" : "/sfx/interface/aichatter1_loop.ogg"
+    }
+  ]
+}

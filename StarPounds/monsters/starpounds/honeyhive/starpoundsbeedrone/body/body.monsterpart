@@ -1,0 +1,9 @@
+{
+  "name" : "starpoundsbeedrone",
+  "category" : "starpoundsbeedrone",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "starpoundsbeedrone.png"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "itemName" : "audreyring",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A lovingly crafted ring, made to keep someone very yummy close to her fattened tummy.",
+  "shortdescription" : "Audrey's Belly Ring",
+  "inventoryIcon" : "audreyring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "capacity", "modifier": 4},
+    {"name": "gurgleRate", "modifier": 1},
+    {"name": "digestion", "modifier": -0.8}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

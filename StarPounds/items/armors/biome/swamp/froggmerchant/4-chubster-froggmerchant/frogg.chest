@@ -1,0 +1,25 @@
+{
+  "itemName" : "plumpfroggmerchantchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "chestwear",
+  "description" : "A slimy chestpiece.",
+  "shortdescription" : "Frogg Chest",
+  "tooltipKind" : "armor",
+
+  "hideBody" : true,
+
+  "maleFrames" : {
+    "body" : "chest.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chest.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

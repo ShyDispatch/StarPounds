@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "durasteelbar", "count" : 6 },
+    { "item" : "climbingrope", "count" : 4 },
+    { "item" : "meatberries", "count" : 1 }
+  ],
+  "output" : { "item" : "gluttonistgreatfork", "count" : 1 },
+  "groups" : [ "craftinganvil3", "weapons", "all" ]
+}

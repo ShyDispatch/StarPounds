@@ -1,0 +1,50 @@
+{
+  "itemName" : "starpoundssumohylotlchest",
+  "price" : 75,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "chestwear",
+  "description" : "This Mawashi is used for the hylotl sport of sumo wrestling.",
+  "shortdescription" : "Mawashi Top",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "colorOptions" : [
+    // BLACK
+    { "838383" : "838383", "555555" : "555555", "383838" : "383838", "151515" : "151515" },
+    // BLACK
+    { "838383" : "838383", "555555" : "555555", "383838" : "383838", "151515" : "151515" },
+    // GREY
+    { "838383" : "b5b5b5", "555555" : "808080", "383838" : "555555", "151515" : "303030" },
+    // WHITE
+    { "838383" : "e6e6e6", "555555" : "b6b6b6", "383838" : "7b7b7b", "151515" : "373737" },
+    // RED
+    { "838383" : "f4988c", "555555" : "d93a3a", "383838" : "932625", "151515" : "601119" },
+    // ORANGE
+    { "838383" : "ffd495", "555555" : "ea9931", "383838" : "af4e00", "151515" : "6e2900" },
+    // YELLOW
+    { "838383" : "ffffa7", "555555" : "e2c344", "383838" : "a46e06", "151515" : "642f00" },
+    // GREEN
+    { "838383" : "b2e89d", "555555" : "51bd3b", "383838" : "247824", "151515" : "144216" },
+    // BLUE
+    { "838383" : "96cbe7", "555555" : "5588d4", "383838" : "344495", "151515" : "1a1c51" },
+    // PURPLE
+    { "838383" : "d29ce7", "555555" : "a451c4", "383838" : "6a2284", "151515" : "320c40" },
+    // PINK
+    { "838383" : "eab3db", "555555" : "d35eae", "383838" : "97276d", "151515" : "59163f" },
+    // BROWN
+    { "838383" : "ccae7c", "555555" : "a47844", "383838" : "754c23", "151515" : "472b13" }
+  ]
+}

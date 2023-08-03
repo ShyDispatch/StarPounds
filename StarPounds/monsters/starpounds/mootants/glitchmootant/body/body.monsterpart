@@ -1,0 +1,9 @@
+{
+  "name" : "glitchmootant",
+  "category" : "glitchmootant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "glitchmootant.png"
+  }
+}

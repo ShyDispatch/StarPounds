@@ -1,0 +1,29 @@
+{
+  "kind" : "bigfatty",
+  "location" : "mouth",  
+  "definition" : {
+    "duration" : 0.5,
+    "start" : {
+      "particles" : [
+        [ "fattenedmessage" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    },
+    "particles" : [
+      [ ]
+    ],
+    "sounds" : [
+      [ ]
+    ],
+    "stop" : {
+      "particles" : [
+        [ ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    }
+  }
+}

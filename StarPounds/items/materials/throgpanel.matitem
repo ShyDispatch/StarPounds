@@ -1,0 +1,14 @@
+{
+  "itemName" : "throgpanel",
+  "price" : 10,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "throgpanel.png",
+  "description" : "A black metal made up of Hog Steel.",
+  "shortdescription" : "Throg Panel",
+  "glitchDescription" : "Observant. This matter is made of \"Hard Light\".",
+  "floranDescription" : "It feelsss electric.",
+  "novakidDescription" : "It reminds me of me.",
+
+  "materialId" : 51422
+}

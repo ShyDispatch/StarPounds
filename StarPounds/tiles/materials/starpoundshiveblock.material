@@ -1,0 +1,24 @@
+{
+  "materialId" : 51420,
+  "materialName" : "starpoundshiveblock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundshive",
+  "description" : "A solid block of honey hive.",
+  "shortdescription" : "Honey Hive Block",
+  "glitchDescription" : "Curious. It's a perfect block of hive.",
+  "floranDescription" : "Huge chunk of hive.",
+  "novakidDescription" : "A house like this won't last long.",
+  "footstepSound" : "/sfx/blocks/footstep_gravel.ogg",
+  "health" : 16,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundshive.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : true,
+    "zLevel" : 1570
+  }
+}

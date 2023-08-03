@@ -1,0 +1,13 @@
+{
+  "name" : "lactaidoverdrive",
+  "effectConfig" : {
+    "tickTime": 0.1,
+    "amount": 10
+  },
+	"scripts": [
+		"lactating.lua"
+	],
+  "defaultDuration" : 30,
+  "label" : "Lactaid Overdrive",
+  "icon" : "/interface/statuses/lactating.png"
+}

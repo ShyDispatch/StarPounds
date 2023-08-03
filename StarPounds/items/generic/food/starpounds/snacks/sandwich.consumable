@@ -1,0 +1,25 @@
+{
+  "itemName" : "starpoundssandwich",
+  "rarity" : "Rare",
+  "price" : 250,
+  "category" : "preparedFood",
+  "inventoryIcon" : "sandwich.png",
+  "description" : "A nicely cut triangular sandwich. Despite the size, it's quite heavy.",
+  "shortdescription" : "Weighted Sandwich",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 135
+    },
+    {
+        "effect" : "healingwater",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

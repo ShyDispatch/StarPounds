@@ -1,0 +1,55 @@
+{
+  "objectName" : "audreyvore",
+  "printable" : false,
+  "rarity" : "Legendary",
+
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A plump, seemingly human woman with a voracious appetite.",
+  "shortdescription" : "Audrey: Vore",
+  "race" : "generic",
+
+  "apexDescription" : "Reminds me of rumours about miniknog test subjects.",
+  "avianDescription" : "Even with wings she still wouldn't be able to fly.",
+  "floranDescription" : "Fat lady lookss sssoft. Musst be good hunter.",
+  "glitchDescription" : "Curious. This woman has an unusually rotund frame.",
+  "humanDescription" : "Am I hallucinating? She looks extraordinarily soft.",
+  "hylotlDescription" : "I fear that if I get any closer she may consider adding me to her figure.",
+  "novakidDescription" : "Whew! Would ya look at the size of that gut!",
+  "throgDescription" : "I have seen bigger.",
+  "avaliDescription" : "I do not appreciate the look she's giving me.",
+  "audreyDescription" : "Is that... me? This is weird.",
+
+  "inventoryIcon" : "audreyvore.png:default.default",
+
+  "orientations" : [
+    {
+      "image" : "audreyvore.png:default.default",
+      "imagePosition" : [-12, -17],
+
+      "direction" : "right",
+
+      "mouthPosition": [-0.05, -0.5],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [
+    "audreyvore.lua",
+    "/scripts/npcToyObject.lua"
+   ],
+  "scriptDelta" : 1,
+
+  "animation" : "audreyvore.animation",
+  "animationParts" : {
+    "audrey" : "audreyvore.png"
+  },
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {},
+    "maxNpcs" : 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "itemName" : "starpoundsbloatcola",
+  "rarity" : "Common",
+  "price" : 60,
+  "category" : "drink",
+  "inventoryIcon" : "bloatcola.png",
+  "description" : "A refreshing can of Bloat-Cola.",
+  "shortdescription" : "Bloat-Cola",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+        "effect" : "starpoundsratebloat",
+        "duration" : 5
+    },
+    {
+        "effect" : "starpoundsbloat",
+        "duration" : 20
+    },
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 120
+    }
+  ] ],
+  "emitters" : [ "drinking" ]
+}

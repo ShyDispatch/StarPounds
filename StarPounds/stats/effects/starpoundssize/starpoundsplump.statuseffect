@@ -1,0 +1,9 @@
+{
+	"name": "starpoundsplump",
+	"scripts": [
+		"starpoundssize.lua"
+	],
+	"defaultDuration": 100,
+	"label": "Plump",
+	"icon": "/interface/statuses/starpoundssize/starpoundsplump.png"
+}

@@ -1,0 +1,10 @@
+{
+	"name": "starpoundsexperiencelevel",
+	"defaultDuration": 1,
+	"effectConfig" : {
+		"isLevel" : true
+	},
+	"scripts": [
+		"starpoundsexperience.lua"
+	]
+}

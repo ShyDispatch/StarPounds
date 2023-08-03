@@ -1,0 +1,58 @@
+{
+  "gluttonistTreasure" : [
+    [0, {
+      "pool" : [
+        {"weight" : 0.80, "pool" : "basicTreasure"},
+        {"weight" : 0.05, "pool" : "maybeAccessory"},
+        {"weight" : 0.03, "item" : "starpoundsfatfriedchicken"},
+        {"weight" : 0.03, "item" : "starpoundshoneymoomilk"},
+        {"weight" : 0.02, "item" : "starpoundshoneymoomilkdeluxe"},
+        {"weight" : 0.05, "item" : "starpoundsmeatwich"},
+        {"weight" : 0.01, "item" : "starpoundsladle"},
+        {"weight" : 0.01, "item" : "starpoundspotlid"}
+      ],
+      "poolRounds" : [
+        [0.40, 1],
+        [0.50, 2],
+        [0.10, 3]
+      ],
+      "allowDuplication" : false
+    }]
+  ],
+
+  "starpoundsBarnTreasure" : [
+    [0, {
+      "pool" : [
+        {"weight" : 0.75, "pool" : "basicTreasure"},
+        {"weight" : 0.05, "pool" : "maybeAccessory"},
+        {"weight" : 0.05, "item" : "mooshipendant"},
+        {"weight" : 0.05, "item" : "starpoundsmoomilk"},
+        {"weight" : 0.03, "item" : "starpoundsmoomilkdeluxe"},
+        {"weight" : 0.01, "item" : "haypile"},
+        {"weight" : 0.01, "item" : "hayroll"},
+        {"weight" : 0.01, "item" : "haystack"},
+        {"weight" : 0.02, "item" : "lactaid"},
+        {"weight" : 0.02, "item" : "lactaidoverdrive"}
+      ],
+      "poolRounds" : [
+        [0.40, 1],
+        [0.50, 2],
+        [0.10, 3]
+      ],
+      "allowDuplication" : false
+    }]
+  ],
+
+  "starpoundsBribeTreasure" : [
+    [0, {
+      "pool" : [
+        {"weight" : 0.50, "pool" : "valuableTreasure"},
+        {"weight" : 0.10, "item" : "starpoundsgreasepizza"},
+        {"weight" : 0.10, "item" : "starpoundsmeatwich"},
+        {"weight" : 0.10, "item" : "starpoundsqueenburger"},
+        {"weight" : 0.10, "item" : "starpoundspassionpatty"},
+        {"weight" : 0.10, "item" : "accessorybox"}
+      ]
+    }]
+  ]
+}

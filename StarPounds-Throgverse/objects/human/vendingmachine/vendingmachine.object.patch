@@ -1,0 +1,14 @@
+[
+  {
+    "op":"add",
+    "path": "/interactData/items/-",
+    "value":
+      { "item" : "starpoundsheftycola" }
+},
+  {
+    "op":"add",
+    "path": "/interactData/items/-",
+    "value":
+      { "item" : "starpoundsbloatcola" }
+}
+]

@@ -1,0 +1,41 @@
+{
+  "objectName" : "avianweightscale",
+  "colonyTags" : ["starpounds", "avian", "velhanu", "feeding"],
+  "rarity" : "Common",
+  "description" : "A weight scale for seeing just how big you've gotten. Or adjust clothing for your size.",
+  "shortdescription" : "Temple Weight Scale",
+  "subtitle" : "Try to be the biggest fatty you can be.",
+  "race" : "generic",
+  "price" : 10,
+  "category" : "decorative",
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/weightscale.config",
+    "filter" : [ "weightscale" ]
+    },
+  "interactMessage": "You are ^#b8eb00;%slb^reset; over this week's target weight goal.",
+  "apexDescription" : "This machine measures a living creature's weight. From its size, it must be used for large livestock.",
+  "avianDescription" : "A balanced weight is important. Yet my heart grows cold when I approach this...",
+  "floranDescription" : "Sssmooth stone disssplays hunter prowesss. Higher the number, the better hunter floran isss.",
+  "glitchDescription" : "Neutral. A scale for weights. Useless to any glitch.",
+  "humanDescription" : "It sucks when people have to dread looking up their weight. Speaking of...",
+  "hylotlDescription" : "It's always important to keep one's body in shape. Lately, it seems our people have been putting on weight.",
+  "novakidDescription" : "I reckon' I could get a measurement on my mass. See if all those meals caught up on me.",
+  "avaliDescription" : "Just a few extra pounds can be a health risk to Avali. Gotta stay in perfect shape.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "avianweightscale.png",
+
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform",
+      "collisionSpaces" : [ [1, 0], [2, 0], [-1, 0], [0, 0] ]
+    }
+  ],
+
+  "scripts" : [ "/objects/starpounds/weightscale/weightscale.lua" ]
+}

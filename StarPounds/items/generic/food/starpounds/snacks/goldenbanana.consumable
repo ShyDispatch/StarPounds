@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsgoldenbanana",
+  "rarity" : "Uncommon",
+  "price" : 300,
+  "category" : "preparedFood",
+  "inventoryIcon" : "goldenbanana.png",
+  "description" : "Real or not, it's a delicious treasure worth its weight. ",
+  "shortdescription" : "Golden Banana",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

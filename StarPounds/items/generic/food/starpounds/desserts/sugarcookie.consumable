@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundssugarcookie",
+  "rarity" : "Uncommon",
+  "price" : 85,
+  "category" : "preparedFood",
+  "inventoryIcon" : "sugarcookie.png",
+  "description" : "Just such a good treat, made perfect with milk!",
+  "shortdescription" : "Sugar Cookie",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundssugarcookie" ]
+}

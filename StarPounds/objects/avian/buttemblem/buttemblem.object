@@ -1,0 +1,33 @@
+{
+  "objectName" : "buttemblem",
+  "colonyTags" : ["avian","aviantomb","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+
+  "description" : "This emblem signifies the tranquil and life-bringing element of water.",
+  "shortdescription" : "Avian Butt Emblem",
+  "race" : "avian",
+
+  "apexDescription" : "A rather plump Avian.",
+  "avianDescription" : "I don't recognize what this is supposed to mean.",
+  "floranDescription" : "Big fat bird.",
+  "glitchDescription" : "Curious. This depicts a large Avian.",
+  "humanDescription" : "Looks like a fat Avian spilling out of the wall.",
+  "hylotlDescription" : "This doesn't strike me as typical Avian design.",
+  "novakidDescription" : "I don't know what this is tryin' to tell me.",
+  "throgDescription" : "Looks like a plump Avian ready to fall into my mouth.",  
+  "avaliDescription" : "This is concerning.",      
+
+  "inventoryIcon" : "buttemblemicon.png",
+  "orientations" : [
+    {
+      "image" : "buttemblem.png:<color>",
+      "imagePosition" : [-8, -15],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsicecream",
+  "rarity" : "Uncommon",
+  "price" : 250,
+  "category" : "preparedFood",
+  "inventoryIcon" : "icecream.png",
+  "description" : "Ice cream with milk collected from blubbery creatures. So good you'll always have room for more!",
+  "shortdescription" : "Vanilla Ice Cream",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 405
+    }
+  ] ],
+  "foodValue": 45,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

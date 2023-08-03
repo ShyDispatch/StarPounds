@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundsbeeplush",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty", "starpounds"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+
+  "description" : "A soft Bee Girl plush toy.",
+  "shortdescription" : "Bee Girl Plushie",
+  "race" : "hylotl",
+
+  "apexDescription" : "It's a plush of a Bee.",
+  "avianDescription" : "Even in plush form I'm a little jealous of the wings.",
+  "floranDescription" : "Bee plush as soft as the real thing!",
+  "glitchDescription" : "Appreciative. A cuddly Bee plush.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsbeeplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsbeeplush.png:<color>",
+      "imagePosition" : [-8, 0],
+      
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

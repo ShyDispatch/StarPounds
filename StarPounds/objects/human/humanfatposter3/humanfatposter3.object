@@ -1,0 +1,33 @@
+{
+  "objectName" : "humanfatposter3",
+  "colonyTags" : ["human","humanvillage","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+
+  "shortdescription" : "Fat Poster",
+  "description" : "A framed poster of a bottom heavy human woman.",
+  "race" : "human",
+
+  "apexDescription" : "A show of new trends to pull in the young minded.",
+  "avianDescription" : "An ad for body positivity?",
+  "floranDescription" : "Floran ssseess big Human. Great hunter perhapss.",
+  "glitchDescription" : "Interested. So nice to see those who are different being embraced.",
+  "humanDescription" : "I'm gonna need this poster. For reasons.",
+  "hylotlDescription" : "Some well fattened Human on display. ",
+  "novakidDescription" : "Those are sum big moons.",
+
+  "inventoryIcon" : "humanfatposter3icon.png",
+  "orientations" : [
+    {
+      "image" : "humanfatposter3.png:<color>",
+      "imagePosition" : [-8, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

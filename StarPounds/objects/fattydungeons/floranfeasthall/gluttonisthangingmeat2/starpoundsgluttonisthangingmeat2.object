@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsgluttonisthangingmeat2",
+  "colonyTags" : ["floran","fatdungeons","cooking","gluttonist"],
+  "rarity" : "Common",
+  "description" : "Delicious sausages, stuffed with the best of meats~",
+  "shortdescription" : "Hanging Sausages",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 500,
+  "printable" : false,
+
+  "apexDescription" : "The smell alone is tempting.",
+  "avianDescription" : "These look absolutely delicious!",
+  "floranDescription" : "Floran sssausages are bessst sssausagesss!",
+  "glitchDescription" : "Covetous. The breakfast of champions...",
+  "humanDescription" : "Tempting to slurp these like noodles.",
+  "hylotlDescription" : "Fine, I'll admit: the Floran make good sausages.",
+  "novakidDescription" : "Mighty big for breakfast sausages! Not that I'd complain, of course.",
+
+  "inventoryIcon" : "starpoundsgluttonisthangingmeat2icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsgluttonisthangingmeat2.png",
+      "imagePosition" : [-16, -32],
+      "frames" : 1,
+      "animationCycle" : 0.5,	  
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+
+    }
+  ]
+}

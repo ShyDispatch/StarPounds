@@ -1,0 +1,44 @@
+{
+  "metadata" : {
+    "name" : "starpoundsbarn",
+    "species" : "generic",
+    "rules" : [
+    ],
+    "anchor" : [ "mooshibarn1", "fluffalobarn1", "mootantbarn1", "uscmbarn1" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : false
+  },
+
+  "parts" : [
+    {
+      "name" : "mooshibarn1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "mooshibarn1.json" ]
+    },
+    {
+      "name" : "fluffalobarn1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "fluffalobarn1.json" ]
+    },
+    {
+      "name" : "mootantbarn1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "mootantbarn1.json" ]
+    },
+    {
+      "name" : "uscmbarn1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "uscmbarn1.json" ]
+    }
+  ]
+}

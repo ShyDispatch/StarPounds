@@ -1,0 +1,9 @@
+{
+  "name" : "starpoundsskeyejelly",
+  "category" : "starpoundsskeyejelly",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "starpoundsskeyejelly.png"
+  }
+}

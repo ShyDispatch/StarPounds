@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundshirakiplush",
+  "colonyTags" : ["hylotl"],
+  "rarity" : "Rare",
+  "printable" : false,
+  "category" : "decorative",
+  "price" : 250,
+  "description" : "The self proclaimed famous adventurer and writer, ^#ff2b80;Hiraki Corale^reset;.",
+  "shortdescription" : "Hiraki Corale Plush",
+  "race" : "hylotl",
+
+  "apexDescription" : "This is a plush of the author Hiraki Corale.",
+  "avianDescription" : "Oh I think I heard about this author.",
+  "floranDescription" : "Floran resspectss fisssh who ussess rocket launcher.",
+  "glitchDescription" : "Interested. It's a plush of a famous author and adventurer.",
+  "humanDescription" : "A marketable plush to go with Hiraki Corale's books.",
+  "hylotlDescription" : "It's a cute plush of a well known Hylotl author, Hiraki Corale.",
+  "novakidDescription" : "I bet the real thing gives a mean hand shake.",
+
+  "inventoryIcon" : "hirakiplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "hirakiplush.png",
+      "imagePosition" : [-8, -0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

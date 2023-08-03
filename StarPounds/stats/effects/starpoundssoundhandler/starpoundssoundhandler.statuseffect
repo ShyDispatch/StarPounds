@@ -1,0 +1,8 @@
+{
+  "name" : "starpoundssoundhandler",
+  "defaultDuration" : 1,
+  "animationConfig" : "starpoundssoundhandler.animation",
+  "scripts" : [
+    "starpoundssoundhandler.lua"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "itemName" : "uniqueaccessorybox",
+  "price" : 25000,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "Throgg Tribute Box",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "uniqueaccessoryboxicon.png",
+  "animation" : "uniqueaccessorybox.animation",
+  "animationCustom" : {},
+  "scripts" : ["uniqueaccessorybox.lua"],
+
+  "fireTime" : 2.0,
+  "fireOffset" : [3.0, 0.0],
+
+  "treasure" : {
+    "pool" : "uniqueAccessoryBox",
+    "level" : 6
+  }
+}

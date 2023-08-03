@@ -1,0 +1,18 @@
+{
+  "itemName" : "blobglitchlegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Worried: Glitch don't usually come in castle sizes.",
+  "shortdescription" : "Blobby Body",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsblob"
+  ],
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

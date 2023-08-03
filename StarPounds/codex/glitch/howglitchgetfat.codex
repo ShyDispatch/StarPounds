@@ -1,0 +1,21 @@
+{
+  "id" : "howglitchgetfat",
+  "species" : "glitch",
+  "title" : "The Rich Glitch",
+  "description" : "A book describing a common occurance of fat Glitch and their existence.",
+  "icon" : "glitchcover6.png",
+  "contentPages" : [
+    "It's easy to assume that the Glitch all come in one shape. Built as if with a shared template in mind for every new born Glitch. They are robots after all. But even you can guess at an exception. Those playing roles as nobles and royalty. Tyrants in costumes who love the theme of gluttony.",
+
+"Kings and Queens, princes and princesses, pompous dukes and duchesses. Figures with wealth and luxury that seem to match that status in their appearance. And none speaking volumes more than being able to afford feasts every day for the rest of their lives. To be so fat in metal that even their thrones can't even contain them.",
+
+"These Glitch are either born into such a role, made in mind to be either pleasantly plump or massively fat. Or finding the taste of food irresistable, gorging endlessly. Their ability to require and process food much like any organic meaning such gluttony can cause their metal frames to grow. As if storing fat of their own.",
+
+"If a Glitch does not fit into the role of a noble. They will regularly be stuck in their normal frames. If a peasant were to become fat, it's unknown how their programming would react. Would they rise to a better station in life? Or would their society see them as a new outlier to be rid of? "
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 75
+  }
+}

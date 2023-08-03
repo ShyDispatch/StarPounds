@@ -1,0 +1,96 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "firing" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "properties" : {
+              "particleEmittersOff" : [ "confetti" ]
+            }
+          },
+          "fire" : {
+            "frames" : 2,
+            "cycle" : 0.1,
+            "mode" : "transition",
+            "transition" : "confetti",
+            "properties" : {
+              "immediateSound" : "/sfx/objects/musicbox_open.ogg",
+              "particleEmittersOff" : [ "confetti" ]
+            },
+            "frameProperties" : {
+              "stateNudge" : [ [-0.125, 0], [0, 0] ]
+            }
+          },
+          "confetti" : {
+            "cycle" : 0.2,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "particleEmittersOn" : [ "confetti" ]
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "gun" : {
+        "properties" : {
+          "centered" : true,
+          "image" : "uniqueaccessorybox.png",
+          "offset" : [0.0, 0.0]
+        }
+      }
+    }
+  },
+
+  "particleEmitters" : {
+    "confetti" : {
+      "emissionRate" : 100.0,
+      "emissionRateVariance" : 0.0,
+      "active" : true,
+
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/sparkles/sparkle1.animation",
+            "position" : [1.0, 0],
+            "size" : 0.75,
+            "light" : [50, 50, 50],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 3.0],
+            "finalVelocity" : [0.0, -5.0],
+            "approach" : [0, 10],
+            "timeToLive" : 5,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1, -2.0],
+              "size" : 0.5
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "animated",
+            "animation" : "/animations/sparkles/sparkle6.animation",
+            "position" : [1.0, 0],
+            "size" : 0.75,
+            "light" : [50, 50, 50],
+            "fade" : 0.9,
+            "initialVelocity" : [0.0, 3.0],
+            "finalVelocity" : [0.0, -5.0],
+            "approach" : [0, 10],
+            "timeToLive" : 5,
+            "layer" : "middle",
+            "variance" : {
+              "initialVelocity" : [1, -2.0],
+              "size" : 0.5
+            }
+          }
+        }
+      ]
+    }
+  }
+}

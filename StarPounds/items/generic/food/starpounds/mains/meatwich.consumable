@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsmeatwich",
+  "rarity" : "Uncommon",
+  "price" : 215,
+  "category" : "preparedFood",
+  "inventoryIcon" : "meatwich.png",
+  "description" : "Meat and meat and meat. All piled together for one meaty treat. A Floran favorite!",
+  "shortdescription" : "Meatwich",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 900
+    }
+  ] ],
+  "foodValue": 100,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsmeatwich" ]
+}

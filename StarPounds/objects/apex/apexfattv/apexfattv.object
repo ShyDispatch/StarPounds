@@ -1,0 +1,48 @@
+{
+  "objectName" : "apexfattv",
+  "colonyTags" : ["apex","apexresearchlab","electronic", "evil"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 300,
+
+  "description" : "Displaying a relatively fat subject.",
+  "shortdescription" : "Big Ape Fat TV",
+  "race" : "apex",
+
+  "apexDescription" : "Is this Big Ape? I've never met someone that's actually seen him...",
+  "avianDescription" : "That is a large monkey. I think it's a monkey.",
+  "floranDescription" : "It'sss a large person.",
+  "glitchDescription" : "Curious. Is this a show of the oversized?",
+  "humanDescription" : "Is that the infamous Big Ape I keep hearing about?",
+  "hylotlDescription" : "It displays someone huge. It reminds me of a whale.",
+  "novakidDescription" : "A big ol' monitor. Displaying nothin' but a big ol' Ape.",
+
+  "lightColor" : [89, 149, 179],
+
+  "inventoryIcon" : "apexfattvicon.png",
+  "orientations" : [
+    {
+      "image" : "apexfattv.png:<color>.<frame>",
+      "imagePosition" : [-40, -24],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "animation" : "apexfattv.animation",
+  "animationParts" : {
+    "bg" : "apexfattv.png",
+    "fg" : "apexfattvlit.png"
+  },
+  "animationPosition" : [-40, -24],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+}

@@ -1,0 +1,45 @@
+{
+  "objectName" : "tribalchubsterbed2",
+  "colonyTags" : ["avian","avianvillage", "fattybed"],
+  "rarity" : "Common",
+  "description" : "A beautifully carved Avian bed. Built for a chubby body.",
+  "shortdescription" : "Avian Bed",
+  "race" : "avian",
+  "category" : "furniture",
+  "price" : 125,
+
+  "apexDescription" : "A colourful set of warm sheets on a comfortable-looking bed.",
+  "avianDescription" : "Even with their eyes closed the grounded enjoy bright colours around them.",
+  "floranDescription" : "Sssoft bed. Floran could ressst here.",
+  "glitchDescription" : "Sentimental. This is not unlike the bed I used to rest in.",
+  "humanDescription" : "This bed looks wonderfully comfortable.",
+  "hylotlDescription" : "A fine set of warm covers.",
+  "novakidDescription" : "A mighty fine lookin' bed, I must say.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  "sitPosition" : [-10, 14],
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitCoverImage" : "/objects/avian/tribalchubsterbed2/tribalchubsterbed2cover.png",
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "bed1"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "inventoryIcon" : "tribalchubsterbed2icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "tribalchubsterbed2.png:<color>",
+
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

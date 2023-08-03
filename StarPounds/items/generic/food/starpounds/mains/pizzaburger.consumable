@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundspizzaburger",
+  "rarity" : "Uncommon",
+  "price" : 565,
+  "category" : "preparedFood",
+  "inventoryIcon" : "pizzaburger.png",
+  "description" : "A juicy, greasy hamburger. Topped with cheese, pepperoni, and sauce.",
+  "shortdescription" : "Pizza Burg",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 1035
+    }
+  ] ],
+  "foodValue": 115,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

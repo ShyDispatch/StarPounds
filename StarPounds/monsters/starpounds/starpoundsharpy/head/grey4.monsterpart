@@ -1,0 +1,9 @@
+{
+  "name" : "greyhead4",
+  "category" : "starpoundsharpygrey",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "head4.png"
+  }
+}

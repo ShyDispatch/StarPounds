@@ -1,0 +1,20 @@
+{
+  "name" : "calorium",
+
+  "effectConfig" : {
+    "progressStep": 0.02,
+    "tickTime": 1,
+    "tickTimeStep": 0.01,
+    "tickTimeMinimum": 0.35
+  },
+  "defaultDuration" : 1,
+
+  "animationConfig" : "/stats/effects/starpoundssoundhandler/starpoundssoundhandler.animation",
+
+  "label" : "Rapidly Fattening",
+  "icon" : "/interface/statuses/calorium.png",
+
+  "scripts" : [
+    "calorium.lua"
+  ]
+}

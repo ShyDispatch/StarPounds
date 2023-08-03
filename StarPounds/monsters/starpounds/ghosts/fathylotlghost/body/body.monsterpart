@@ -1,0 +1,9 @@
+{
+  "name" : "fathylotlghost",
+  "category" : "fathylotlghost",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "fathylotlghost.png"
+  }
+}

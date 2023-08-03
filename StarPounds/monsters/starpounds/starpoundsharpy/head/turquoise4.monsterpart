@@ -1,0 +1,9 @@
+{
+  "name" : "turquoisehead4",
+  "category" : "starpoundsharpyturquoise",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "head4.png"
+  }
+}

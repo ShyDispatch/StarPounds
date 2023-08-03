@@ -1,0 +1,55 @@
+{
+  "objectName" : "blossomvore",
+  "printable" : false,
+  "rarity" : "Legendary",
+
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A very voracious orchid mantis. He seems hungry~",
+  "shortdescription" : "Blossom: Vore",
+  "race" : "generic",
+
+  "apexDescription" : "A plump hymenopus blossomicus... He seems hungry.",
+  "avianDescription" : "Seems like this bug's too hefty to fly.",
+  "floranDescription" : "Round bug must be good hunter- Floran thinksss he eat much!",
+  "glitchDescription" : "Fascinated. This is a very wellfed bug... does he have an appetite for metal?",
+  "humanDescription" : "That sure is a fat bug... Can bugs even get fat?",
+  "hylotlDescription" : "Appearances can be deceiving... I can see a voracious glint in those buggy eyes.",
+  "novakidDescription" : "That do be a fatass bug! Makes me wonder how he got so plump.",
+  "throgDescription" : "Remarkably fat. For a bug.",
+
+  "inventoryIcon" : "blossomvore.png:default.default",
+
+  "orientations" : [
+    {
+      "image" : "blossomvore.png:default.default",
+      "imagePosition" : [-23, -24],
+
+      "direction" : "right",
+
+      "mouthPosition": [-0.05, -0.5],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [
+    "blossomvore.lua",
+    "/scripts/npcToyObject.lua"
+   ],
+  "scriptDelta" : 1,
+
+  "animation" : "blossomvore.animation",
+  "animationParts" : {
+    "blossom" : "blossomvore.png"
+  },
+
+
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {},
+    "maxNpcs" : 1
+  }
+}

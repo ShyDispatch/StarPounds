@@ -1,0 +1,18 @@
+{
+  "itemName" : "thicknostoslegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Statement: Hips and rear this big are an envy for all.",
+  "shortdescription" : "Thick Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick"
+  ],
+
+  "maleFrames" : "pants.png",
+  "femaleFrames" : "pants.png"
+}

@@ -1,0 +1,108 @@
+{
+  "globalTagDefaults" : {
+    "rotationFrame" : "0",
+    "ballDirectives" : "",
+    "ballScaleDirectives" : ""
+  },
+
+  "animatedParts" : {
+    "stateTypes" : {
+      "ballState" : {
+        "default" : "off",
+        "states" : {
+          "deactivate" : {
+            "frames" : 3,
+            "cycle" : 0.12,
+            "mode" : "transition",
+            "transition" : "off"
+          },
+          "off" : { },
+          "activate" : {
+            "frames" : 3,
+            "cycle" : 0.12,
+            "mode" : "transition",
+            "transition" : "on"
+          },
+          "on" : { }
+        }
+      }
+    },
+
+    "parts" : {
+      "ballGlow" : {
+        "properties" : {
+          "transformationGroups" : [ "ball", "ballScale" ],
+          "centered" : true
+        },
+        "partStates" : {
+          "ballState" : {
+            "on" : {
+              "properties" : {
+                "zLevel" : 1,
+                "fullbright" : true,
+                "image" : "<partImage>:<rotationFrame><ballDirectives><ballScaleDirectives>"
+              }
+            }
+          }
+        }
+      },
+      "ball" : {
+        "properties" : {
+          "transformationGroups" : [ "ball", "ballScale" ],
+          "centered" : true
+        },
+        "partStates" : {
+          "ballState" : {
+            "deactivate" : {
+              "properties" : {
+                "offset" : [0, 0],
+                "fullbright" : true,
+                "image" : "starpoundsthrogspheretransform.png:deactivate.<frame>"
+              }
+            },
+            "activate" : {
+              "properties" : {
+                "offset" : [0, 1.5],
+                "fullbright" : true,
+                "image" : "starpoundsthrogspheretransform.png:activate.<frame>"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "<partImage>:<rotationFrame><ballDirectives><ballScaleDirectives>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "ball" : { "interpolated" : true },
+    "ballScale" : { "interpolated" : true }
+  },
+
+  "particleEmitters" : {
+    "activateParticles" : {
+      "particles" : [ ]
+    },
+    "deactivateParticles" : {
+      "particles" : [ ]
+    },
+    "movementParticles" : {
+      "transformationGroups" : ["ballScale"],
+      "emissionRate" : 20,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [-0.5, -0.85, 0.5, -0.8],
+      "particles" : [ { "particle" : "starpoundsthrogspheredust"} ]
+    }
+  },
+
+  "sounds" : {
+    "activate" : [ "/sfx/tech/tech_sphere_transform.ogg" ],
+    "deactivate" : [ "/sfx/tech/tech_sphere_transform.ogg" ],
+    "forceDeactivate" : [ "/sfx/tech/tech_sonicsphere_charge1.ogg" ],
+    "loop" : [ "/sfx/tech/starpoundsthrogsphere.ogg" ]
+  }
+}

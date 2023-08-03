@@ -1,0 +1,50 @@
+  {
+  "objectName" : "starpoundsgoldstatuette",
+  "colonyTags" : ["hoard","pretty","valuable","starpounds"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A gold statuette of a very fat idol of worship.",
+  "shortdescription" : "Cursed Gold Statue",
+  "race" : "generic",
+
+  "apexDescription" : "A small statuette depicting a rather obese woman.",
+  "avianDescription" : "Such an idol for a large woman as this is reminding me of something.",
+  "floranDescription" : "Big, sshiny woman. Musst've been ssuperior hunter.",
+  "glitchDescription" : "Startled. This idol depicts a rather fat woman.",
+  "humanDescription" : "Hope I won't need a bag of sand for this.",
+  "hylotlDescription" : "Some kind of fertility goddess, maybe? No other reason to depict such an unhealthy figure.",
+  "novakidDescription" : "Now that's quite a lot of gold.",
+  "throgDescription" : "Whoever would spend this much gold has their priorities in order.",  
+  "avaliDescription" : "It is beyond me, but I think this is some other races idea of a fertility goddess.",      
+
+  "inventoryIcon" : "goldstatuetteicon.png",
+  "orientations" : [
+    {
+      "image" : "goldstatuette.png:<color>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [ "fatteningzonespawner.lua" ],
+  "scriptDelta" : 10,
+
+  "inputNodes" : [ [0, 0] ],
+
+  "fireTime" : 2.0, // rate of fire
+  "fireTimeVariance" : 0.0, // variation in rate of fire
+  "projectile" : "fattyEffectProjectile", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "damageTeam" : { "type" : "indiscriminate" },
+    "power" : 0,
+    "speed" : 0
+  }
+}

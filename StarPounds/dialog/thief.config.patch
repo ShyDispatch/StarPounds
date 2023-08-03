@@ -1,0 +1,28 @@
+[
+  {
+	"op": "add",
+	"path": "/accuse/throg",
+	"value": {
+	  "default" : [
+		"That doesn't belong to you!",
+		"Do you know what we do to thieves?",
+		"Nobody said you could take that!",
+		"Hey! Stop that!",
+		"You better put that back or so help me!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/alert/throg",
+	"value": { 
+	  "default" : [
+		"Thief! Thief! Thief!",
+		"Guards! Make stew of this thief!",
+		"We have a thief! Guards!",
+		"We'll be eating good tonight. Guards!",
+		"We know your face thief! Guards!"
+	  ]
+	}
+  }
+]

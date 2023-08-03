@@ -1,0 +1,46 @@
+{
+  "type" : "miprisongunman",
+  "baseType" : "hostile",
+
+  "dropPools" : [ "empty" ],
+  
+  "identity" : {
+    "gender" : "female"
+  },
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : "/dialog/sniper.config:attack"
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "jumpsuitchest", "parameters" : { "colorIndex" : 5 } }, { "name" : "workoutchest", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutchest", "parameters" : { "colorIndex" : 3 } } ],
+            "legs" : [ { "name" : "jumpsuitlegs", "parameters" : { "colorIndex" : 5 } } ],
+            "primary" : [
+              "npcpistol",
+              "npcmachinepistol"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 7.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.2
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

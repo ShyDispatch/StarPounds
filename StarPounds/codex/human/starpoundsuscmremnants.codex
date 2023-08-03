@@ -1,0 +1,55 @@
+{
+  "id" : "starpoundsuscmremnants",
+  "species" : "human",
+  "title" : "On USCM Remnants",
+  "description" : "Reports on identifying remnants of the fallen USCM.",
+  "icon" : "starpoundshuman1.png",
+  "contentPages" : [
+    "^yellow;//RECRUITMENT JOB^white;
+
+Director Palmer wants us to bolster our ranks with former USCM personal to help with her pet project. 
+
+She believes those from the USCM will be best for keeping confidentiality, though as much money as she's throwing around it is not that simple.",
+
+"^yellow;//OVERVIEW^white;
+
+When the USCM fell, it fell hard. Chaos in the cities, military turning to banditry and taking all the equipment they could. Things go to shit when a government body disappears, who knew. 
+
+Now tracking down those who lived is hard enough, but getting them to agree to a job is another.",
+
+"^yellow;//THE BANDITS^white;
+
+A lot of USCM soldiers became bandits to make a living, most people would say it wasn't by choice. But they were former USCM, it was absolutely by choice. 
+
+They choose to go over the deep end, crossing a line that makes them unreasonable. Being civilized and obeying laws and rules is beneath them, it's a life they don't want to go back to.",
+
+"^yellow;//THE MERCS^white;
+
+If anyone was sane enough to not become a full on criminal, most other soldiers would've gone for mercenary work. Hired guns, bounty hunters, whatever. They're more reasonable, and willing to fallback into the comfort of a familiar job. 
+
+Some of them got a stick up their ass though, thinking they're too good now for the 'evil' USCM.",
+
+"^yellow;//THE BUNKERS^white;
+
+Next bet would be the crazies, those guys who decided to hunker down in their bunkers. Content to let the world continue on without them as they breath in musty air and hope their food reserves last a life time. 
+
+Most of the time it's a superior holding them hostage, and can be 'rescued' and coerced. The remaining soldiers are usually grateful.",
+
+"^yellow;//THE IDIOTS^white;
+
+Rarely there's some splinter groups trying to act like nothing ever happened and try to continue the USCM's goals. Though they're understaffed, lack money, and prone to turn to banditry. 
+
+Don't even get me started on the one splinter group who walked up to the Miniknog and asked for Bioweapons. Idiots.",
+
+"^yellow;//RECOMMENDATION^white;
+
+Some goody two shoes even crawled back to the Protectorate with their tails dragging behind them. Serves those bastards right with the recent news, got what they deserved. 
+
+So narrowing down we should mostly be looking for still active bunkers if we want a reliable source of muscle."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

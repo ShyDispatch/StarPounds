@@ -1,0 +1,32 @@
+{
+  "objectName" : "throgbanner",
+  "colonyTags" : ["combat", "throg"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "description" : "A faded banner of a fork and knife.",
+  "shortdescription" : "Throg Banner",
+  "race" : "throg",
+
+  "apexDescription" : "This appears to be some sort of Floran faction banner.",
+  "avianDescription" : "Although this banner is well made, I believe a Floran my have made it.",
+  "floranDescription" : "Floran can recognissse Floran craftsmanship when Floran seesss it!",
+  "glitchDescription" : "Curious. I wonder what kingdom this banner hails from?",
+  "humanDescription" : "I wonder where this banner is from? I get the feeling a Floran made it.",
+  "hylotlDescription" : "Did a Floran make this? It looks crude and uninspired.",
+  "novakidDescription" : "Some sorta nation seems to be represented by this.",
+  "throgDescription" : "Oh the proud military. How I miss the gruel.",  
+
+  "inventoryIcon" : "throgbannericon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "throgbanner.png:<color>"}, { "image" : "throgbannerlit.png:<color>", "fullbright" : true  } ],
+      "imagePosition" : [-8, 0],
+      
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

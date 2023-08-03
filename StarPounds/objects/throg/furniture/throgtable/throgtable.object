@@ -1,0 +1,43 @@
+{
+  "objectName" : "throgtable",
+  "colonyTags" : ["throg","commerce"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 85,
+  "description" : "A round heavy metal table.",
+  "shortdescription" : "Throg Table",
+  "race" : "generic",
+
+  "apexDescription" : "This industrial looking table looks very solid.",
+  "avianDescription" : "It's a simple table, but it does the job.",
+  "floranDescription" : "Thisss metal table is small and round.",
+  "glitchDescription" : "Unimpressed. This small metal table is unremarkable.",
+  "humanDescription" : "It's a short metal table.",
+  "hylotlDescription" : "This simple metal table looks quite sturdy.",
+  "novakidDescription" : "This round table looks like just the thing for a game of cards.",
+
+  "inventoryIcon" : "throgtableicon.png",
+  "orientations" : [
+    {
+     "imageLayers" : [ { "image" : "throgtable.png:<color>", "fullbright" : true }, { "image" : "throgtablelit.png:<color>" } ],
+      "imagePosition" : [-16, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform",
+      "collisionSpaces" : [ [-2, 1], [-1, 1], [0, 1], [1, 1] ]
+    },
+    {
+     "imageLayers" : [ { "image" : "throgtable.png:<color>", "fullbright" : true }, { "image" : "throgtablelit.png:<color>" } ],
+      "imagePosition" : [-16, 0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform",
+      "collisionSpaces" : [ [-2, 1], [-1, 1], [0, 1], [1, 1] ]
+    }
+  ]
+}

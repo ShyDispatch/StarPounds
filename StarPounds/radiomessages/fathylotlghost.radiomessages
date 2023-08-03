@@ -1,0 +1,55 @@
+{
+  "fathylotlghostintro" : {
+      "senderName" : "???",
+      "portraitImage" : "/interface/chatbubbles/fathylotlghost.png:<frame>",
+      "text" : "Hello there. Are you trying to read my diary? It's not nice to read another person's diary, even if they're dead. My spirit is bound to this diary, I'm too embarassed by the things I've written here.",
+      "portraitFrames" : 4,
+      "portraitSpeed" : 0.30,
+      "unique" : true
+  },
+
+  "fathylotlghostintro2" : {
+      "senderName" : "???",
+      "portraitImage" : "/interface/chatbubbles/fathylotlghost.png:<frame>",
+      "text" : "I used to be teased quite a lot for my weight back in the day. Always eating, always jiggling, always out of breath. My kimono had to be patched up multiple times as I outgrew them every time. Oh but I guess you knew that already huh?",
+      "portraitFrames" : 4,
+      "portraitSpeed" : 0.30,
+      "unique" : true
+  },
+
+  "fathylotlghostintro3" : {
+      "senderName" : "???",
+      "portraitImage" : "/interface/chatbubbles/fathylotlghost.png:<frame>",
+      "text" : "Maybe you're wondering why you were getting fatter when I was touching you. My excess ectoplasm passing right through you and channelling blubber onto your figure. You share a sensation for it right?",
+      "portraitFrames" : 4,
+      "portraitSpeed" : 0.30,
+      "unique" : true
+  },
+
+  "fathylotlghostintro4" : {
+      "senderName" : "???",
+      "portraitImage" : "/interface/chatbubbles/fathylotlghost.png:<frame>",
+      "text" : "Yes you like it right? No, you love it. You run away only because you're in denial. But I see through you, I can help you. Help grow that appetite, expand your waistline. Make you love it just as I do, you could be all mine.~",
+      "portraitFrames" : 4,
+      "portraitSpeed" : 0.30,
+      "unique" : true
+  },
+
+  "fathylotlghostintro5" : {
+      "senderName" : "???",
+      "portraitImage" : "/interface/chatbubbles/fathylotlghost.png:<frame>",
+      "text" : "I want your belly to surge with rolls of fat. Your arms and legs to spread real far as you get wider. Your butt to get real squishy. Always out of breath, too slow to outrun me anymore. To be a fat glutton who just wants more to eat.",
+      "portraitFrames" : 4,
+      "portraitSpeed" : 0.30,
+      "unique" : true
+  },
+
+  "fathylotlghostintro6" : {
+      "senderName" : "???",
+      "portraitImage" : "/interface/chatbubbles/fathylotlghost.png:<frame>",
+      "text" : "I want you to be all mine. My nice, blubbery bed. A special tubby sweetheart I can hug and kiss. As hungry as I wish. Oh please do look for me when I return and jump into my plush arms. Get yourself out of shape. I'll treat you so well.~",
+      "portraitFrames" : 4,
+      "portraitSpeed" : 0.30,
+      "unique" : true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id" : "uscmhammer",
+  "prerequisites" : [ "glitch_mission2" ],
+  "requiredItems" : [ "brokenuscmhammer" ],
+  "title" : "^green;The Hero's Forge",
+  "text" : "Impetuous. Give me your hammer! ...Hm, perhaps I should be more specific. Give me your ^orange;Broken Hammer^reset; so that I may fix it! Esther has been telling me how - and it poses no challenge for a swordsman like myself! ^white;However, ^green;I will need ^orange;10 Tech Cards^green; to get the job done^reset;.",
+  "completionText" : "Proud. Here it is! Better than new! You're welcome!",
+  "moneyRange" : [100, 100],
+  "ephemeral" : true,
+  "rewards" : [
+    [ [ "uscmhammer", 1 ] ]
+  ],
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/main.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "default" : "questGiver"
+    },
+    "requireTurnIn" : true,
+    "turnInDescription" : "Speak to ^orange;The Baron^reset; at the ^orange;outpost^reset;",
+    "conditions" : [
+      {
+        "type" : "gatherItem",
+        "itemName" : "brokenuscmhammer",
+        "count" : 1,
+        "consume" : true
+      },
+      {
+        "type" : "gatherItem",
+        "itemName" : "techcard",
+        "count" : 10,
+        "consume" : true
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "objectName" : "apexfeedingbed",
+  "colonyTags" : ["apex","apexresearchlab","evil"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 175,
+  "description" : "A table reserved for malnourished citizens and traitors.-Unfinished- As in it won't look great if used.",
+  "shortdescription" : "Feeding Table-Unfinished",
+  "race" : "apex",
+
+  "apexDescription" : "How many of my brothers and sisters have been strapped to this table...",
+  "avianDescription" : "I'm confused. It looks bad, but it feeds you? Isn't that good?",
+  "floranDescription" : "Floran ssshould use device. Ssso much to eat.",
+  "glitchDescription" : "Worried. This appears like a device used for torture.",
+  "humanDescription" : "I've seen too much of the internet to know where this is going.",
+  "hylotlDescription" : "Torture has no place in an enlightened society.",
+  "novakidDescription" : "The ultimate chugging.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitStatusEffects" : [
+    "forcefed"
+  ],
+
+  "inventoryIcon" : "apexfeedingbedicon.png",
+  "orientations" : [
+    {
+      "image" : "apexfeedingbed.png:<color>",
+      "imagePosition" : [-23, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "flipImages" : true,
+      "direction" : "left",
+      "sitPosition" : [-8, 13],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "apexfeedingbed.png:<color>",
+      "imagePosition" : [-23, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "direction" : "right",
+      "sitPosition" : [-8, 13],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

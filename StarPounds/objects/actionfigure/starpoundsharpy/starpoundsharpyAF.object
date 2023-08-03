@@ -1,0 +1,32 @@
+{
+  "objectName" : "starpoundsharpyaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"They hold a love for cold, high peaks. And the taste of cinnamon.\"",
+  "shortdescription" : "Harpy Figurine",
+
+
+  "inventoryIcon" : "starpoundsharpyaf.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsharpyaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "starpoundsharpyaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

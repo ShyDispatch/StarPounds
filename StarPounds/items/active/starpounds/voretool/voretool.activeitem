@@ -1,0 +1,14 @@
+{
+  "itemName" : "voretool",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "category" : "Tool",
+  "description" : "^#cc164a;[Click]^reset; to eat.^reset;\n^#cc164a;[Shift + Click]^reset; to regurgitate.",
+  "shortdescription" : "^#cc164a;Vore Tool",
+  "twoHanded" : false,
+
+  "inventoryIcon" : "voretoolicon.png",
+  "scripts" : ["voretool.lua"]
+}

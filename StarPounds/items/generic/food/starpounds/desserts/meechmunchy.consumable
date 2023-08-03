@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsmeechmunchy",
+  "rarity" : "Rare",
+  "price" : 360,
+  "category" : "preparedFood",
+  "inventoryIcon" : "meechmunchy.png",
+  "description" : "No preservatives.",
+  "shortdescription" : "Meech Munchy",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 270
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

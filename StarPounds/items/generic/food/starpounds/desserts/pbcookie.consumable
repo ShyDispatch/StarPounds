@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundspbcookie",
+  "rarity" : "Legendary",
+  "price" : 175,
+  "category" : "preparedFood",
+  "inventoryIcon" : "pbcookie.png",
+  "description" : "Peanut butter and chocolate have never tasted so good! You'll want more boxes of them.",
+  "shortdescription" : "PB&C Cookie",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 292.5
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 4.0,
+  "learnBlueprintsOnPickup" : [ "starpoundspbcookie" ]
+}

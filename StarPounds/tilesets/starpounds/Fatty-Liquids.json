@@ -1,0 +1,110 @@
+{
+  "margin" : 0,
+  "name" : "starpounds/liquids",
+  "properties" : {
+  },
+  "spacing" : 0,
+  "tilecount" : 28,
+  "tileheight" : 8,
+  "tileproperties" : {
+    "0" : {
+      "//name" : "lardliquid",
+      "liquid" : "lardliquid"
+    },
+    "1" : {
+      "//name" : "moontantsludgeliquid",
+      "liquid" : "moontantsludgeliquid"
+    },
+    "2" : {
+      "//name" : "starpoundschocolateliquid",
+      "liquid" : "starpoundschocolateliquid"
+    },
+    "3" : {
+      "//name" : "starpoundshoneyliquid",
+      "liquid" : "bees_liquidhoney"
+    },
+    "4" : {
+      "//name" : "starpoundssodaliquid",
+      "liquid" : "starpoundssodaliquid"
+    },
+    "5" : {
+      "//name" : "greaseliquid",
+      "liquid" : "greaseliquid"
+    },
+    "6" : {
+      "//name" : "lardliquid_source",
+      "//shortdescription" : "Endless lard",
+      "liquid" : "lardliquid",
+      "source" : "true"
+    },
+    "7" : {
+      "//name" : "moontantsludgeliquid_source",
+      "//shortdescription" : "Endless moontant sludge",
+      "liquid" : "moontantsludgeliquid",
+      "source" : "true"
+    },
+    "8" : {
+      "//name" : "starpoundschocolateliquid_source",
+      "//shortdescription" : "Endless chocolate",
+      "liquid" : "starpoundschocolateliquid",
+      "source" : "true"
+    },
+    "9" : {
+      "//name" : "starpoundshoneyliquid_source",
+      "//shortdescription" : "Endless honey",
+      "liquid" : "bees_liquidhoney",
+      "source" : "true"
+    },
+    "10" : {
+      "//name" : "starpoundssodaliquid_source",
+      "//shortdescription" : "Endless soda",
+      "liquid" : "starpoundssodaliquid",
+      "source" : "true"
+    },
+    "11" : {
+      "//name" : "greaseliquid_source",
+      "//shortdescription" : "Endless grease",
+      "liquid" : "greaseliquid",
+      "source" : "true"
+    }
+  },
+  "tiles" : {
+    "0" : {
+      "image" : "./../../../../tiled/starpounds/liquids/lard.png"
+    },
+    "1" : {
+      "image" : "./../../../../tiled/starpounds/liquids/moontantsludge.png"
+    },
+    "2" : {
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundschocolate.png"
+    },
+    "3" : {
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundshoney.png"
+    },
+    "4" : {
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundssoda.png"
+    },
+    "5" : {
+      "image" : "./../../../../tiled/starpounds/liquids/grease.png"
+    },
+    "6" : {
+      "image" : "./../../../../tiled/starpounds/liquids/lard_source.png"
+    },
+    "7" : {
+      "image" : "./../../../../tiled/starpounds/liquids/moontantsludge_source.png"
+    },
+    "8" : {
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundschocolate_source.png"
+    },
+    "9" : {
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundshoney_source.png"
+    },
+    "10" : {
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundssoda_source.png"
+    },
+    "11" : {
+      "image" : "./../../../../tiled/starpounds/liquids/grease_source.png"
+    }
+  },
+  "tilewidth" : 8
+}

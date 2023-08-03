@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsponderousknightarmor",
+  "colonyTags" : ["glitch","combat","pretty"],
+  "rarity" : "Uncommon",
+  "description" : "A suit of armor made for hefty Glitch knights.",
+  "shortdescription" : "Ponderous Knight's Armor",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 500,
+
+  "apexDescription" : "An imposing suit of armor. Looks surprisingly durable!",
+  "avianDescription" : "It seems to be made for a very hefty knight!",
+  "floranDescription" : "Whichever metalman who wore thiss must've been great hunter.",
+  "glitchDescription" : "Knowledgable. Armor like this became popular after Ironlace the Ponderous became well known.",
+  "humanDescription" : "A suit with a lion helmet and a spear would complement this gal really well.",
+  "hylotlDescription" : "It looks like it's made for quite a hefty knight!",
+  "novakidDescription" : "Whichever gal wore this armor must've been a real beast!",
+
+  "inventoryIcon" : "starpoundsponderousknightarmoricon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsponderousknightarmor.png:<color>",
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

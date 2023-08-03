@@ -1,0 +1,43 @@
+{
+  "type" : "banditvorepredator",
+  "baseType" : "vorepredator",
+
+  "damageTeamType" : "enemy",
+
+  "dropPools" : [ "banditTreasure" ],
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Food!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Hey look, easy prey!",
+            "Don't think you're getting out of this one easily!",
+            "I bet you'll turn into some squishy fat!",
+            "You've wandered right into the wolf's den!",
+            "Good, a meal! I was getting hungry!",
+            "This isn't personal, I just have a taste for people!",
+            "Surprise, you're about to get shoved into a belly!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "bandithat1" }, { "name" : "bandithat2" } ],
+            "chest" : [ { "name" : "explorerchest" } ],
+            "legs" : [ { "name" : "explorerlegs" } ]
+          }
+        ] ]
+    ]
+  }
+}

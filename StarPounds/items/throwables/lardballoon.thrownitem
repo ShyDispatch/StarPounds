@@ -1,0 +1,30 @@
+{
+  "itemName" : "lardballoon",
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "price" : 10,    
+  "inventoryIcon" : "lardballoonicon.png",
+  "image" : "lardballoon.png",
+  "shortdescription" : "Lard Balloon",
+  "description" : "A balloon filled up with lard.",
+
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 0.4,
+
+  "projectileType" : "lardballoon",
+  "projectileConfig" : {
+    "speed" : 40,
+    "power" : 0,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item_small.ogg" ]
+      }
+    ]
+  }
+}

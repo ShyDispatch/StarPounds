@@ -1,0 +1,34 @@
+{
+  "objectName" : "starpoundsmessypizzaboxstack",
+  "colonyTags" : ["starpounds","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 20,
+
+  "description" : "A simple stack of cardboard boxes for pizza.",
+  "shortdescription" : "Pizza Box Stack",
+  "race" : "hylotl",
+
+  "apexDescription" : "Just an empty box.",
+  "avianDescription" : "Aw, it's empty.",
+  "floranDescription" : "Food gone.",
+  "glitchDescription" : "Sad. It's empty.",
+  "humanDescription" : "Darn, I would love a cold slice of pizza.",
+  "hylotlDescription" : "Pizza does sound good to have right about now.",
+  "novakidDescription" : "This box is as empty as my stomach.",
+
+  "inventoryIcon" : "messypizzaboxicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "messypizzabox.png:<color>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"	  
+
+    }
+  ]
+}

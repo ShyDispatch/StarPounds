@@ -1,0 +1,11 @@
+{
+	"name": "starpoundsratebloatrapid",
+	"effectConfig": {
+		"type": "gainBloat",
+		"rate": 50
+	},
+	"defaultDuration": 5,
+	"scripts": [
+		"starpoundsrate.lua"
+	]
+}

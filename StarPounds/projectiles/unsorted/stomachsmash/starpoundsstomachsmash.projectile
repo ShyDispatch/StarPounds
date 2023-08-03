@@ -1,0 +1,16 @@
+{
+  "projectileName" : "starpoundsstomachsmash",
+  "image": "starpoundsstomachsmash.png",
+  "knockbackDirectional" : true,
+  "movementSettings": {
+    "collisionEnabled": false
+  },
+  "flippable" : true,
+  "piercing" : true,
+  "damagePoly" : [[-8, 0], [8, 0], [8, 32], [-8, 32]],
+  "damageType" : "Knockback",
+  "damageKind" : "starpoundsstomachsmash",
+  "timeToLive" : 0.1,
+  "speed" : 0,
+  "power" : 0
+}

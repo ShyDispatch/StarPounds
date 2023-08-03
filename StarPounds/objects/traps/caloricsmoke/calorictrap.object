@@ -1,0 +1,162 @@
+{
+  "objectName" : "calorictrap",
+  "colonyTags" : ["ancient","evil"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "description" : "This trap shoots a fattening gas. \n^red;Destroyed when broken.",
+  "shortdescription" : "Ancient Fat Trap",
+  "race" : "ancient",
+
+  "apexDescription" : "The Mikinog used a gas like this in their tests..",
+  "avianDescription" : "Heh, they can get in the temple, but never out!",
+  "floranDescription" : "Weight gain without the fun of hunting.",
+  "glitchDescription" : "Confounded. If this affects me, does this prove Glitch must breathe?",
+  "humanDescription" : "Grease, in gaseous form?",
+  "hylotlDescription" : "It smells so great... But I do need to keep form to fit my clothes.",
+  "novakidDescription" : "Smells like a fat Novakid would.",
+
+  "category" : "trap",
+  "price" : 5000,
+
+  "inventoryIcon" : "calorictrapicon.png",
+  "orientations" : [
+    {
+      "image" : "calorictrap.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "calorictrap.png",
+        "fg" : "calorictrap.png"
+      },
+
+      "projectileDirection" : [0, 1],
+      "projectilePosition" : [0, 1.2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "calorictrap.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "calorictrap.png",
+        "fg" : "calorictrap.png"
+      },
+
+      "projectileDirection" : [0, 1],
+      "projectilePosition" : [1, 1.2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "calorictrapleft.png:<color>.<frame>",
+      "imagePosition" : [0, -8],
+      "direction" : "right",
+
+      "animationPosition" : [0, -8],
+      "animationParts" : {
+        "bg" : "calorictrapleft.png",
+        "fg" : "calorictrapleft.png"
+      },
+
+      "projectileDirection" : [1, 0],
+      "projectilePosition" : [1.2, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ]
+    },
+    {
+      "image" : "calorictrapright.png:<color>.<frame>",
+      "imagePosition" : [0, -8],
+      "direction" : "right",
+
+      "animationPosition" : [0, -8],
+      "animationParts" : {
+        "bg" : "calorictrapright.png",
+        "fg" : "calorictrapright.png"
+      },
+
+      "projectileDirection" : [-1, 0],
+      "projectilePosition" : [-0.2, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ]
+    },
+    {
+      "image" : "calorictrapceiling.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "calorictrapceiling.png",
+        "fg" : "calorictrapceiling.png"
+      },
+
+      "projectileDirection" : [0, -1],
+      "projectilePosition" : [0, -0.2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
+    {
+      "image" : "calorictrapceiling.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "calorictrapceiling.png",
+        "fg" : "calorictrapceiling.png"
+      },
+
+      "projectileDirection" : [0, -1],
+      "projectilePosition" : [1, -0.2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/projectiletrap/projectiletrap.lua" ],
+  "scriptDelta" : 2,
+
+  "animation" : "/objects/wired/projectiletrap/projectiletrap.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "shoot" : [ ],
+      "on" : [ ],
+      "off" : [ "/sfx/objects/gasbooster_off.ogg" ]
+    }
+  },
+
+  "soundEffect" : "/sfx/objects/gasbooster_loop.ogg", // this is a thing that also works
+
+  "inputNodes" : [ [0, 0] ],
+
+  "inactiveLightColor" : [0, 0, 0], // light color to emit when the object is 'off'
+  "activeLightColor" : [0, 0, 0], // light color to emit when the object is 'on'
+
+  "fireTime" : 0.16, // rate of fire
+  "fireTimeVariance" : 0.0, // variation in rate of fire
+  "projectile" : "caloricsmoke", // name of projectile (required)
+  "projectileConfig" : {
+    "damageTeam" : { "type" : "environment" },
+    "power" : 0,
+    "speed" : 10
+  },
+
+  "health" : 5,
+
+  "smashOnBreak" : true,
+  "smashSounds" : [ "/sfx/objects/rock_break1.ogg", "/sfx/objects/rock_break2.ogg", "/sfx/objects/rock_break3.ogg", "/sfx/objects/rock_break4.ogg", "/sfx/objects/rock_break5.ogg", "/sfx/objects/rock_crumble1.ogg", "/sfx/objects/rock_crumble2.ogg", "/sfx/objects/rock_crumble3.ogg", "/sfx/objects/rock_crumble4.ogg", "/sfx/objects/rock_crumble5.ogg" ],
+  "smashParticles" : [ { "count" : 6, "particle" : "greystoneshard" } ]
+}

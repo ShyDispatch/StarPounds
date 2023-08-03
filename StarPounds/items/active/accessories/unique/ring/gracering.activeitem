@@ -1,0 +1,23 @@
+{
+  "itemName" : "gracering",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Warm to the touch, the crystal on this ring pulses with other-worldly energy.",
+  "shortdescription" : "Ring of the Fox",
+  "inventoryIcon" : "gracering.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "absorption", "modifier": -0.8},
+    {"name": "capacity", "modifier": -0.4},
+    {"name": "movement", "modifier": 0.50}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

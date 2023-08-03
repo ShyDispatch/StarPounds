@@ -1,0 +1,27 @@
+{
+  "id" : "townhungry",
+  "species" : "hylotl",
+  "title" : "Super Bananas",
+  "description" : "An excerpt from Hylotl Adventurer Hiraki Corale's journal.",
+  "icon" : "hirakicoralejournal2.png",
+  "contentPages" : [
+
+    "by Hiraki Corale, Hylotl adventurer
+
+Recovering from the curse of the fat Avian Goddess statue. I found a pleasant Miniknog village to rest in. For some reason I've been having a terrible hankering for something to sink my teeth into.
+
+Eating much more than I usually would. I must've just forgotten to have breakfast or something. And the food here is quite nice for my palette.",
+
+"When passing a Miniknog store, I grew curious of a shipment being unpacked. The bright shine was enough to make me sneak by and take a peak. What could be so shiny for a normal store?
+
+With the coast clear, I checked an open crate to blindingly bright bananas made of gold! Gold Bananas! Naturally I grabbed as many as I could. The worth of golden bananas could've made me rich.",
+
+"The smell of the bananas was mouth watering though. As soon as I was in the clear, I popped one into my mouth for a taste test. But that taste test turned into emptiness. Before I knew it, I had eaten all those bananas.
+
+How careless of me! I would've gone back for more, but more Apex showed up. Afterwards, I noticed by hips were more flared than usual, while my gut was round and soft. Those must've been some good bananas, because I still wanted more."
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

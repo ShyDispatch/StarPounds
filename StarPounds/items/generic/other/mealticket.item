@@ -1,0 +1,8 @@
+{
+  "itemName" : "starpoundsmealticket",
+  "rarity" : "Common",
+  "category" : "currency",
+  "inventoryIcon" : "mealticket.png",
+  "description" : "A ticket eligable for a free meal.",
+  "shortdescription" : "Meal Ticket"
+}

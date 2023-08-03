@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsskewerplate",
+  "colonyTags" : ["floran","fatdungeons","gluttonist","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "description" : "Well cooked meats skewered for clean* eatings.",
+  "shortdescription" : "Skewer Plate",
+  "race" : "generic",
+
+  "apexDescription" : "Some delicious smelling meat skewers.",
+  "avianDescription" : "Peck-sized delicious meat.",
+  "floranDescription" : "Floran barbecue remindsss floran of sssummersss.",
+  "glitchDescription" : "Entranced. These skewers smell delightful.",
+  "humanDescription" : "Oooo, kebabs!",
+  "hylotlDescription" : "It's like meat mochi.",
+  "novakidDescription" : "These skewers look pretty good if I dare say so myself.",
+
+  "inventoryIcon" : "starpoundsskewerplateicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsskewerplate.png",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaces" : [ [0, 0], [1, 0], [0, 1], [1, 1] ],
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

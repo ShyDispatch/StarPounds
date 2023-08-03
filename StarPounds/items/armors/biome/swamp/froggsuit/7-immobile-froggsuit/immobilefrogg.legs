@@ -1,0 +1,16 @@
+{
+  "itemName" : "immobilefrogglegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Wearing these will make you resemble a Frogg.",
+  "shortdescription" : "Blobby Frogg Legs",
+  "tooltipKind" : "armor",
+  
+  "hideBody" : true,    
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

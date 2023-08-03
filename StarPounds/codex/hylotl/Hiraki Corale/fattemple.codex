@@ -1,0 +1,25 @@
+{
+  "id" : "fattemple",
+  "species" : "hylotl",
+  "title" : "One Big Idol",
+  "description" : "An excerpt from Hylotl Adventurer Hiraki Corale's journal.",
+  "icon" : "hirakicoralejournal2.png",
+  "contentPages" : [
+
+    "by Hiraki Corale, Hylotl Adventurer
+
+Seeking to make brave new discoveries, I was curious about tales of a forbidden Goddess of the Avians. Older than Kluex even. And I think I found just the temple to her! The place was seemingly long abandoned. But I knew I was onto something when those crystals that light up other temples were pink instead of red.",
+
+"To my surprise, one statue shined in the darkness, compelling me closer. It was both small and big. I could pick it up in my hands, but the avian was massive (in weight, not size)!
+
+This single, pink statue must've been the spitting image of that old Goddess. I held it close and closed my eyes, lost in thought. It gave me this nice feeling.",
+
+"But when I opened my eyes, I looked down as I felt odd. And my jaw dropped! I was chubby! And growing! I must have awakened an ancient curse!
+
+Naturally I slammed the statue back onto its pedastal and ran out as fast as I could. I was out of breath quicker than normal, and my thighs were chaffing horribly. But aside from my clothing getting tight on me, things didn't get worse."
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

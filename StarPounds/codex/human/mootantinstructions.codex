@@ -1,0 +1,19 @@
+{
+  "id" : "mootantinstructions",
+  "species" : "human",
+  "title" : "Mootant Instructions",
+  "description" : "An old document about the process of Mootant transformation.",
+  "icon" : "starpoundshuman3.png",
+  "contentPages" : [
+    "Under special orders, this USCM All Female Penal Colony is now under leading scientist, Director Palmer's, command. An additional underground layer to the Penal Colony shall be constructed in aid of this facility being used in her experiments.",
+
+"All prisoners will be subject to a diet change with a special mutagenic altering milkshake that is to be kept at below freezing temperatures at all times. This milkshake upon consumption will slowly start to alter the prisoners dna with Mooshi dna. All personal are to keep an eye on progression as symptoms develop.",
+
+"When a prisoners alterations are more apparent, they shall be escorted to the lower levels to complete their transformation. The iq level of a partially transformed individual should make them easy to handle. Once fully transformed, Mootants are to be escorted to a supply ship that'll transport them to Director Palmer's labs personally."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

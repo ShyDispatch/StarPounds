@@ -1,0 +1,83 @@
+[
+  { "op" : "add",
+    "path" : "/throgweapons",
+    "value" : [
+      [ 0, [
+        { "item": { "name": "throgdinnerplate" }, "rarity" : 0.02 },
+        { "item": { "name": "adipobeamcomponent" }, "rarity" : 0.02 },
+        { "item": { "name": "depletedgaincrystal" }, "rarity" : 0.02 },
+        { "item": { "name": "erchiusbloatcatalyzer" }, "rarity" : 0.02 },
+        { "item": { "name": "meatberries" }, "rarity" : 0.02 },
+        { "item": { "name": "onikillersake" }, "rarity" : 0.02 },
+        { "item": { "name": "ponderouscore" }, "rarity" : 0.02 },
+        { "item": { "name": "rootpopfroth" }, "rarity" : 0.02 }
+      ] ]
+    ]
+  },
+  { "op" : "add",
+    "path" : "/throgfurniture",
+    "value" : [
+      [ 0, [
+        { "item": { "name": "throgfeedingtube" }, "rarity" : 0.06 },
+        { "item": { "name": "throgweightscale" }, "rarity" : 0.06 },
+        { "item": { "name": "throglargebanner" }, "rarity" : 0.06 },
+        { "item": { "name": "throgbench" }, "rarity" : 0.06 },
+        { "item": { "name": "throgchair" }, "rarity" : 0.06 },
+        { "item": { "name": "throgtable" }, "rarity" : 0.06 },
+        { "item": { "name": "throgwalllight" }, "rarity" : 0.06 },
+        { "item": { "name": "throgcanister" }, "rarity" : 0.06 }
+      ] ]
+    ]
+  },
+  { "op" : "add",
+    "path" : "/throgingredients",
+    "value" : [
+      [ 0, [
+        { "item" : { "name" : "rawtentacle" }, "rarity" : 0.05 },
+        { "item" : { "name" : "alienmeat" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rawribmeat" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rawbacon" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rawham" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rawpoultry" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rawfish" }, "rarity" : 0.05 },
+        { "item" : { "name" : "sugar" }, "rarity" : 0.05 },
+        { "item" : { "name" : "chocolate" }, "rarity" : 0.05 },
+        { "item" : { "name" : "milk" }, "rarity" : 0.05 },
+        { "item" : { "name" : "adiposeportion" }, "rarity" : 0.05 },
+        { "item" : { "name" : "starpoundshugecherrycake" }, "rarity" : 0.01 },
+        { "item" : { "name" : "starpoundshugechunkofmeat" }, "rarity" : 0.01 },
+        { "item" : { "name" : "starpoundshugepancakes" }, "rarity" : 0.01 }
+      ] ]
+    ]
+  },
+  { "op" : "add",
+    "path" : "/throgarmour",
+    "value" : [
+      [ 0, [
+        { "item": { "name": "throgtier1head" }, "rarity" : 0.1 }
+      ] ],
+      [ 1.9, [
+        { "item": { "name": "throgtier2head" }, "rarity" : 0.1 }
+      ] ],
+      [ 2.9, [
+        { "item": { "name": "throgtier3head" }, "rarity" : 0.1 }
+      ] ],
+      [ 3.9, [
+        { "item": { "name": "throgtier4head" }, "rarity" : 0.1 }
+      ] ],
+      [ 4.9, [
+        { "item": { "name": "throgtier5ahead" }, "rarity" : 0.1 },
+        { "item": { "name": "throgtier5mhead" }, "rarity" : 0.1 },
+        { "item": { "name": "throgtier5shead" }, "rarity" : 0.1 }
+      ] ]
+    ]
+  },
+  { "op" : "add",
+    "path" : "/starpoundsaccessories",
+    "value" : [
+      [ 0, [
+        { "item": { "name": "accessorybox" }, "rarity" : 1.0 }
+      ] ]
+    ]
+  }
+]

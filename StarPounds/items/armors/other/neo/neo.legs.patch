@@ -1,0 +1,62 @@
+[
+{
+  "op" : "replace",
+  "path" : "/colorOptions/0",
+  "value" : { "ffca8a" : "96cbe7fe", "e0975c" : "5588d4fe", "a85636" : "344495fe", "6f2919" : "1a1c51fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/1",
+  "value" : { "ffca8a" : "838383fe", "e0975c" : "555555fe", "a85636" : "383838fe", "6f2919" : "151515fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/2",
+  "value" : { "ffca8a" : "b5b5b5fe", "e0975c" : "808080fe", "a85636" : "555555fe", "6f2919" : "303030fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/3",
+  "value" : { "ffca8a" : "e6e6e6fe", "e0975c" : "b6b6b6fe", "a85636" : "7b7b7bfe", "6f2919" : "373737fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/4",
+  "value" : { "ffca8a" : "f4988cfe", "e0975c" : "d93a3afe", "a85636" : "932625fe", "6f2919" : "601119fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/5",
+  "value" : { "ffca8a" : "ffd495fe", "e0975c" : "ea9931fe", "a85636" : "af4e00fe", "6f2919" : "6e2900fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/6",
+  "value" : { "ffca8a" : "ffffa7fe", "e0975c" : "e2c344fe", "a85636" : "a46e06fe", "6f2919" : "642f00fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/7",
+  "value" : { "ffca8a" : "b2e89dfe", "e0975c" : "51bd3bfe", "a85636" : "247824fe", "6f2919" : "144216fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/8",
+  "value" : { "ffca8a" : "96cbe7fe", "e0975c" : "5588d4fe", "a85636" : "344495fe", "6f2919" : "1a1c51fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/9",
+  "value" : { "ffca8a" : "d29ce7fe", "e0975c" : "a451c4fe", "a85636" : "6a2284fe", "6f2919" : "320c40fe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/10",
+  "value" : { "ffca8a" : "eab3dbfe", "e0975c" : "d35eaefe", "a85636" : "97276dfe", "6f2919" : "59163ffe" }
+},
+{
+  "op" : "replace",
+  "path" : "/colorOptions/11",
+  "value" : { "ffca8a" : "ccae7cfe", "e0975c" : "a47844fe", "a85636" : "754c23fe", "6f2919" : "472b13fe" }
+}
+]

@@ -1,0 +1,10 @@
+{
+  "projectileName" : "starpoundsthrogsphere",
+  "timeToLive" : 5,
+  "image": "starpoundsthrogsphere.png",
+  "rayCheckToSource": true,
+  "damagePoly": [[8, 8], [8, -8], [-8, -8], [-8, 8]],
+  "damageRepeatGroup" : "starpoundsthrogsphere",
+  "damageRepeatTimeout" : 0.25,
+  "scripts" : [ "starpoundsthrogsphere.lua" ]
+}

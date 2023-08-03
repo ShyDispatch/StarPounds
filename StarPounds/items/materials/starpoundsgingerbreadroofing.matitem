@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundsgingerbreadroofing",
+  "price" : 10,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "starpoundsgingerbreadroofing.png",
+  "description" : "A large, perfectly shaped block of gingerbread.",
+  "shortdescription" : "Gingerbread Block",
+  "glitchdescription" : "Intrigued. It's all gingerbread",
+  "florandescription" : "Material sssmellss tasssty.",
+  "novakiddescription" : "A big ol' gingerbreadblock.",
+
+  "materialId" : 51412
+}

@@ -1,0 +1,9 @@
+{
+	"name": "starpoundssoft",
+	"scripts": [
+		"starpoundssize.lua"
+	],
+	"defaultDuration": 100,
+	"label": "Soft",
+	"icon": "/interface/statuses/starpoundssize/starpoundssoft.png"
+}

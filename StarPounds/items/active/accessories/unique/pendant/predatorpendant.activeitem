@@ -1,0 +1,23 @@
+{
+  "itemName" : "predatorpendant",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Taboo among many Floran tribes, this amulet proves useful for more voracious diets.",
+  "shortdescription" : "Predator's Amulet",
+  "inventoryIcon" : "predatorpendant.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "stats": [
+    {"name": "capacity", "modifier": 0.5},
+    {"name": "digestion", "modifier": 0.25},
+    {"name": "voreDamage", "modifier": 1}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {}
+}

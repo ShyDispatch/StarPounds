@@ -1,0 +1,47 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "firing" : {
+        "default" : "off",
+        "states" : {
+          "off" : {
+            "properties" : {
+            }
+          },
+          "fire" : {
+            "cycle" : 1,
+            "mode" : "transition",
+            "transition" : "off",
+            "properties" : {
+              "immediateSound" : "/sfx/gun/pumpgun_blast1.ogg"
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "gun" : {
+        "properties" : {
+          "centered" : true,
+          "image" : "starpoundsmilkingtool.png",
+          "offset" : [0.0, 0.0]
+        },
+        "partStates" : {
+          "firing" : {
+            "off" : {
+              "properties" : {
+                "offset" : [0.0, 0.0]
+              }
+            },
+            "fire" : {
+              "properties" : {
+                "offset" : [-0.625, -0.25]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

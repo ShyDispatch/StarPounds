@@ -1,0 +1,9 @@
+{
+  "name" : "head2",
+  "category" : "starpoundsharpy",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "head2.png"
+  }
+}

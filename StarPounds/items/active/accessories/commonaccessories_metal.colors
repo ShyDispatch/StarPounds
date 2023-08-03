@@ -1,0 +1,13 @@
+{
+  "name" : "commonaccessories_metal",
+  "swaps" : [
+    // TUNGSTEN
+    { "735e3a" : "3b3e42", "a38d59" : "72767d", "d9c189" : "b8babd", "f7e7b2" : "d6d8da" },
+    // SILVER (VANILLA)
+    { "735e3a" : "647080", "a38d59" : "8799aa", "d9c189" : "b3cbdf", "f7e7b2" : "d7ecfa" },
+    // COPPER (VANILLA)
+    { "735e3a" : "89360d", "a38d59" : "bd795a", "d9c189" : "e7ab89", "f7e7b2" : "fcd6b8" },
+    // IRON (VANILLA)
+    { "735e3a" : "433539", "a38d59" : "696f67", "d9c189" : "ada197", "f7e7b2" : "ebe1dc" }
+  ]
+}

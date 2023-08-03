@@ -1,0 +1,9 @@
+{
+  "name" : "floranmootant",
+  "category" : "floranmootant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "mootant.png"
+  }
+}

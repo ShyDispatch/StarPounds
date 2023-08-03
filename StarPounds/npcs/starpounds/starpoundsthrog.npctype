@@ -1,0 +1,27 @@
+{
+  "type" : "starpoundsthrog",
+  "baseType" : "villager",
+
+ "scriptConfig" : {
+    "starPounds_skills": {
+      "minimumSize": [3, 5]
+    },
+    "offeredQuests" : [ ],
+    "turnInQuests" : [ ],
+    "behaviorConfig" : {
+      "greetingChance" : 0
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest" } ],
+            "legsCosmetic": [ { "name": "throgneolegs" } ]
+          }
+        ] ]
+    ]
+  }
+}

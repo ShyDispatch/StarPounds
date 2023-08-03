@@ -1,0 +1,9 @@
+{
+	"name": "starpoundschubster",
+	"scripts": [
+		"starpoundssize.lua"
+	],
+	"defaultDuration": 100,
+	"label": "Chubster",
+	"icon": "/interface/statuses/starpoundssize/starpoundschubster.png"
+}

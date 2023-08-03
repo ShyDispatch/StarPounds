@@ -1,0 +1,15 @@
+{
+  "name" : "starpoundsslimy",
+  "blockingStat" : "wetImmunity",
+  "effectConfig" : {},
+  "defaultDuration" : 2,
+
+  "scripts" : [
+    "starpoundsslimy.lua"
+  ],
+
+  "animationConfig" : "starpoundsslimy.animation",
+
+  "label" : "Slimy",
+  "icon" : "/interface/statuses/starpoundsslimy.png"
+}

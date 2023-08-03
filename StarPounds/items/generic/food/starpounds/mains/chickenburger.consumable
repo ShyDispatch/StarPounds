@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundschickenburger",
+  "rarity" : "Uncommon",
+  "price" : 375,
+  "category" : "preparedFood",
+  "inventoryIcon" : "chickenburger.png",
+  "description" : "A thick patty of chicken.",
+  "shortdescription" : "Chicken Burger",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 675
+    }
+  ] ],
+  "foodValue": 75,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

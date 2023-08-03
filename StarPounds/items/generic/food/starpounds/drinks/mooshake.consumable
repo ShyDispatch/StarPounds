@@ -1,0 +1,23 @@
+{
+  "itemName" : "starpoundsmooshake",
+  "rarity" : "Rare",
+  "price" : 250,
+  "category" : "drink",
+  "inventoryIcon" : "mooshake.png",
+  "description" : "A moo shake! Your stomach likes it, you like it. Drink up! Fatten up.",
+  "shortdescription" : "Vanilla Mooshake",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 405
+    }
+  ] ],
+  "foodValue": 45,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsmooshake" ],
+  "emitters" : [ "drinking" ]
+}

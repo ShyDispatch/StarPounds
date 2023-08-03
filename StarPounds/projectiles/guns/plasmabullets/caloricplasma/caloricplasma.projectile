@@ -1,0 +1,22 @@
+{
+  "projectileName" : "caloricplasma",
+  "physics" : "laser",
+  "bounces" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "caloricplasma.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 3,
+  "power" : 50,
+  "speed" : 150,
+  "supportsProcessing" : true,
+  "emitters" : [ "caloricplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/plasmabulletexplosion/plasmabulletexplosion.config"
+    }
+  ],
+  "statusEffects" : [ ],
+  "lightColor" : [105, 65, 72],
+  "damageKind" : "caloricplasmabullet"
+}

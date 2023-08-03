@@ -1,0 +1,14 @@
+{
+  "name" : "starpoundsgroundslam",
+  "type" : "legs",
+
+  "scripts" : ["starpoundsgroundslam.lua"],
+  "animator" : "starpoundsgroundslam.animation",
+
+  "description" : "Perform an additional slam that damages enemies!",
+  "shortDescription" : "Ground Slam",
+  "rarity" : "Legendary",
+  "icon" : "/tech/starpoundsgroundslam.png",
+
+  "chipCost" : 8
+}

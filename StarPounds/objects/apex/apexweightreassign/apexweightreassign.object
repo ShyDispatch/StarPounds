@@ -1,0 +1,33 @@
+{
+  "objectName" : "apexweightreassign",
+  "colonyTags" : ["apex","apexresearchlab","evil"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 80,
+
+  "description" : "Eat up! Grow bigger!",
+  "shortdescription" : "Reassignment Sign",
+  "race" : "apex",
+
+  "apexDescription" : "Weight reassignment... I've had heavenly dreams about it.",
+  "avianDescription" : "Thoughts are sacred, how dare they!",
+  "floranDescription" : "Floran likessss to eat.",
+  "glitchDescription" : "Curious. What is it like to gain weight?",
+  "humanDescription" : "This sign is incredibly creepy.",
+  "hylotlDescription" : "Quite an aggressive ad to eat more. At least, I hope it's an ad.",
+  "novakidDescription" : "The sign is speakin' my language. I'm havin' a hankerin' for some ribs.",
+
+  "inventoryIcon" : "apexweightreassignicon.png",
+  "orientations" : [
+    {
+      "image" : "apexweightreassign.png:<color>",
+      "imagePosition" : [-23, -8],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

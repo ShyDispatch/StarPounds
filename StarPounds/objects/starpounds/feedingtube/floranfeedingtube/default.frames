@@ -1,0 +1,14 @@
+{
+  "frameGrid" : {
+    "size" : [64, 64],
+    "dimensions" : [5, 2],
+    "names" : [
+      [ "idle", "feeding.1", "feeding.2", "feeding.3", "feeding.4" ],
+      [ "feeding.5", "feeding.6", "feeding.7", "feeding.8", "feeding.9" ]
+    ]
+  },
+
+  "aliases" : {
+    "default" : "feeding.1"
+  }
+}

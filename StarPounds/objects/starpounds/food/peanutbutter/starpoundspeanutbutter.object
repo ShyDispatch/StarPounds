@@ -1,0 +1,33 @@
+{
+  "objectName" : "emptyfattypeanutbutter",
+  "colonyTags" : ["starpounds","cooking"],
+  "rarity" : "Common",
+
+  "price" : 5,
+  "description" : "Once this jar used to attract a foolish jelly into a trap. Now you'd fall into a trap to eat it all up.",
+  "shortdescription" : "Peanut Butter",
+  "race" : "generic",
+
+  "apexDescription" : "Peanut butter goes great with bananas. It shows on our waistlines.",
+  "avianDescription" : "It's hard to resist taking a scoop for a snack.",
+  "floranDescription" : "Usseful for attracting prey. Yet Floran wantss to eat deliciouss bait.",
+  "glitchDescription" : "Skeptical. Surely I wouldn't blindly try to obtain some peanut butter.",
+  "humanDescription" : "I've shamefully fallen for many traps trying to get this peanut butter goodness...",
+  "hylotlDescription" : "Some peanut butter. With jelly would make a nice sandwich. Why am I so hungry?",
+  "novakidDescription" : "Tussling with space jellies for our sandwiches works up one massive appetite.",
+
+  "inventoryIcon" : "starpoundspeanutbuttericon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundspeanutbutter.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

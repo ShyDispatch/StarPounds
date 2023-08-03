@@ -1,0 +1,59 @@
+{
+  "itemName" : "npcgluttonistspear",
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "This spear is perfect for enemies just out of reach.",
+  "shortdescription" : "NPC Gluttonist Spear",
+  "tooltipKind" : "sword",
+  "category" : "spear",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","spear"],
+
+  "inventoryIcon" : "/items/active/weapons/npc/npcgluttonistspear/npcgluttonistspear.png",
+
+  "animation" : "/items/active/weapons/melee/spear/spear.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "/items/active/weapons/npc/npcgluttonistspear/npcgluttonistspear.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "swoosh" : { "properties" : {
+      "offset" : [2.0, 0.0]
+    }}}}
+  },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "scriptDelta" : 2,
+
+  "elementalType" : "physical",
+
+  "aimOffset" : -1.0,
+
+  "primaryAbilityType" : "spearstab",
+  "primaryAbility" : {
+    "fireTime" : [1.4, 1.4],
+    "baseDps" : [3, 4],
+
+    "allowHold" : false,
+    "stances" : {
+      "idle" : {
+        "allowRotate" : false
+      },
+      "windup" : {
+        "hold" : true,
+        "duration" : 0.55,
+
+        "allowRotate" : false
+      },
+      "fire" : {
+        "allowRotate" : false
+      },
+      "hold" : {
+        "allowRotate" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildweapon.lua"
+}

@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundshotdogkm",
+  "rarity" : "Uncommon",
+  "price" : 330,
+  "category" : "preparedFood",
+  "inventoryIcon" : "hotdogkm.png",
+  "description" : "The useless bits of meat made useful and tasty with condiments",
+  "shortdescription" : "K&M Hot Dog",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 270
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

@@ -1,0 +1,24 @@
+{
+  "materialId" : 51402,
+  "materialName" : "starpoundsgingerbreadblock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundsgingerbreadblock",
+  "description" : "A solid block of chocolate.",
+  "shortdescription" : "Gingerbread Block",
+  "glitchDescription" : "Curious. It's a perfect block of gingerbread.",
+  "floranDescription" : "Huge chunk of gingerbread.",
+  "novakidDescription" : "A house like this won't last long.",
+  "footstepSound" : "/sfx/blocks/footstep_ash.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundsgingerbread.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : false,
+    "zLevel" : 1570
+  }
+}

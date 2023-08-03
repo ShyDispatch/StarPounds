@@ -1,0 +1,191 @@
+{
+  "type" : "floranmootant",
+  "shortdescription" : "Floran Mootant",
+  "description" : "What was once a Floran is now a mindless, milky fat cow girl.",
+
+  "categories" : [ "floranmootant" ],
+  "parts" : [ "body" ],
+
+  "animation" : "floranmootant.animation",
+  "reversed" : false,
+
+  "dropPools" : [ { "default" : "floranmootantTreasure", "bow" : "floranmootantHunting" } ],
+
+  "baseParameters" : {
+    "scripts" : [
+      "/monsters/monster.lua"
+    ],
+
+    "behavior" : "monster",
+
+    "behaviorConfig" : {
+      "damageOnTouch" : true,
+
+      "targetQueryRange" : 30,
+      "targetOnDamage" : true,
+      "keepTargetInSight" : true,
+      "keepTargetInRange" : 60,
+      "targetOutOfSightTime" : 2.5,
+
+      "hostileActions" : [
+        {
+          "name" : "action-fire",
+          "cooldown" : 3.0,
+          "parameters" : {
+            "requireLineOfSight" : true,
+            "maximumRange" : 15,
+            "minimumRange" : 1,
+            "windupState" : "windup",
+            "windupTime" : 0.9,
+
+            "projectileType" : "mootantsap",
+            "aimAtTarget" : true,
+            "fireOffset" : [1, -1],
+            "projectileCount" : 4,
+            "projectileInterval" : 0.066,
+            "fireState" : "fire",
+            "fireDelay" : 0.0,
+            "fireSound" : "fire",
+
+            "fireArc": true,
+            "projectileSpeed": 30,
+            "gravityMultiplier": 0.6,
+
+            "winddownState" : "fire",
+            "winddownTime" : 0.5
+          }
+        }
+      ],
+
+      "periodicActions" : [],
+
+      "approachActions" : [
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 2,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 30,
+            "jumpXControlForce" : 15,
+            "minXRange" : 10
+          }
+        }
+      ],
+
+      "followActions" : [
+        {
+          "name" : "approach-teleport",
+          "parameters" : {
+          }
+        },
+        {
+          "name" : "approach-walk",
+          "parameters" : {
+            "canJump" : true,
+            "maxJumps" : 2,
+            "jumpXVelocity" : 12,
+            "jumpYVelocity" : 30,
+            "jumpXControlForce" : 15
+          }
+        }
+      ],
+
+      "wanderActions" : [
+        {
+          "name" : "wander-walk",
+          "cooldown" : 6.0,
+          "parameters" : {
+            "wanderTime" : [5, 15]
+          }
+        }
+      ]
+    },
+
+    "pathing" : {
+      "canOpenDoors" : false
+    },
+
+    "scale" : 1.0,
+
+    "knockoutTime" : 0.3,
+    "knockoutEffect" : "",
+    "knockoutAnimationStates" : {
+      "damage" : "stunned"
+    },
+    "deathParticles" : "deathPoof",
+
+    "movementSettings" : {
+      "collisionPoly" : [ [1.75, 2.55], [2.05, 2.05],  [2.25, -2.25], [1.85, -3.45],  [-1.85, -3.45], [-2.25, -2.25],  [-2.05, 2.05], [-1.75, 2.55] ],
+      "mass" : 2.5,
+      "walkSpeed" : 4,
+      "runSpeed" : 12
+    },
+    "metaBoundBox" : [-2, -2, 2, 2],
+
+    "touchDamage" : {
+      "poly" : [ [1.75, 2.55], [2.05, 2.05],  [2.25, -2.25], [1.85, -3.45],  [-1.85, -3.45], [-2.25, -2.25],  [-2.05, 2.05], [-1.75, 2.55] ],
+      "damage" : 10,
+
+      "teamType" : "enemy",
+      "damageSourceKind" : "slash",
+      "knockback" : 20,
+      "statusEffects" : [ ]
+    },
+
+    "colors" : "floranmootant",
+    "statusSettings" : {
+      "statusProperties" : {
+        "targetMaterialKind" : "organic"
+      },
+
+      "appliesEnvironmentStatusEffects" : false,
+      "appliesWeatherStatusEffects" : true,
+      "minimumLiquidStatusEffectPercentage" : 0.1,
+
+      "primaryScriptSources" : [
+        "/stats/monster_primary.lua"
+      ],
+      "primaryScriptDelta" : 5,
+
+      "stats" : {
+        "knockbackStunTime" : {
+          "baseValue" : 0.25
+        },
+        "knockbackThreshold" : {
+          "baseValue" : 22
+        },
+        "maxHealth" : {
+          "baseValue" : 125
+        },
+        "protection" : {
+          "baseValue" : 0
+        },
+        "healthRegen" : {
+          "baseValue" : 0.0
+        },
+        "powerMultiplier" : {
+          "baseValue" : 1.0
+        }
+      },
+
+      "resources" : {
+        "stunned" : {
+          "deltaValue" : -1.0,
+          "initialValue" : 0.0
+        },
+        "health" : {
+          "maxStat" : "maxHealth",
+          "deltaStat" : "healthRegen",
+          "defaultPercentage" : 200
+        }
+      }
+    },
+
+    "mouthOffset" : [1.0, -1.5],
+    "feetOffset" : [0, -21],
+    "capturable" : true,
+    "captureHealthFraction" : 0.5,
+    "nametagColor" : [64, 200, 255]
+  }
+}

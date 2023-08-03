@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsgluttonisthangingmeat1",
+  "colonyTags" : ["floran","fatdungeons","cooking","gluttonist"],
+  "rarity" : "Common",
+  "description" : "A hanging hunk of giant alien ham. It smells delicious~",
+  "shortdescription" : "Hanging Hamshank",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 500,
+  "printable" : false,
+
+  "apexDescription" : "I must wonder what massive animal this cut of meat came from.",
+  "avianDescription" : "Freshly cooked! Makes me wanna take a peck.",
+  "floranDescription" : "Big meatsss! Floran wants to eat whole thing!",
+  "glitchDescription" : "Longing. A feast fit for a king...",
+  "humanDescription" : "I wanna try eating this all in one sitting.",
+  "hylotlDescription" : "The scent is alluring...",
+  "novakidDescription" : "Hot dang that must've come from a huge hog!",
+
+  "inventoryIcon" : "starpoundsgluttonisthangingmeat1icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsgluttonisthangingmeat1.png",
+      "imagePosition" : [-16, -32],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+
+    }
+  ]
+}

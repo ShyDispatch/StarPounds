@@ -1,0 +1,31 @@
+[
+	{
+		"op": "add",
+		"path": "/scripts/-",
+		"value": "/scripts/starpounds/starpounds_npc.lua"
+	},
+	{
+		"op": "add",
+		"path": "/scriptConfig/starPounds_options",
+		"value": {
+			"disableStomachMeter": true,
+			"disableSizeMeter": true
+		}
+	},
+	{
+		"op": "add",
+		"path": "/scriptConfig/chatSounds/throg",
+		"value": {
+		"male": [ "/sfx/humanoid/throg_chatter_male1.ogg", "/sfx/humanoid/throg_chatter_male2.ogg", "/sfx/humanoid/throg_chatter_male3.ogg" ],
+		"female": [ "/sfx/humanoid/throg_chatter_female1.ogg", "/sfx/humanoid/throg_chatter_female2.ogg", "/sfx/humanoid/throg_chatter_female3.ogg" ]
+		}
+	},
+	{
+		"op": "add",
+		"path": "/scriptConfig/chatSounds/mootant",
+		"value": {
+		"male": [ "/sfx/humanoid/mootant_chatter_male1.ogg", "/sfx/humanoid/mootant_chatter_male2.ogg", "/sfx/humanoid/mootant_chatter_male3.ogg" ],
+		"female": [ "/sfx/humanoid/mootant_chatter_female1.ogg", "/sfx/humanoid/mootant_chatter_female2.ogg", "/sfx/humanoid/mootant_chatter_female3.ogg" ]
+		}
+	}
+]

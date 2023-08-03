@@ -1,0 +1,46 @@
+{
+  "projectileName" : "caloricbouncer",
+  "physics" : "laser",
+  "timeToLive" : 5,
+  "image" : "caloricbouncer.png",
+  "animationCycle" : 0.3,
+  "lightColor" : [105, 65, 72],
+  "frameNumber" : 4,
+  "periodicActions" : [ ],
+  "actionOnCollide" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/caloricimpact2.config"
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/caloricimpact.config"
+    }
+  ],
+  "speed" : 0,
+  "power" : 30,
+  "piercing" : true,
+  "damageKind" : "poison",
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "statusEffects" : [
+    {"effect": "starpoundsratebloat", "duration": 10},
+    {"effect": "starpoundsrategain", "duration": 10}
+  ],
+
+  "fullbright" : true,
+  "emitters" : [ "caloricplasma" ],
+
+  "bounces" : 6,
+
+  "scripts" : [ "/projectiles/activeitems/staff/staffprojectile.lua", "/projectiles/activeitems/staff/elementbouncer/bouncespikes.lua" ],
+
+  "spikeProjectile" : "caloricstickyspikes",
+  "spikeDamageFactor" : 0.1,
+
+  "controlMovement" : {
+    "maxSpeed" : 60,
+    "controlForce" : 60
+  }
+}

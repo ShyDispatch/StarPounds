@@ -1,0 +1,53 @@
+[	
+  //TIER 3 (starter)
+  {
+    "op" : "add",
+    "path" : "/throgproto",
+    "value" : {
+	  "stats" : {
+		"energy" : 3,
+		"protection" : 3
+	  },
+	  "partParameters" : {},
+	  "partImages" : {
+		"bodyBack" : "body/throgproto_back.png",
+		"bodyFront" : "body/throgproto_front.png",
+		"bodyFullbright" : "body/throgproto_fullbright.png"
+	  },
+	  "defaultPrimaryColors" : ["6c6c6c", "454545", "2d2d2d", "1a1a1a"],	//From LIGHT to DARK
+	  "defaultSecondaryColors" : ["6c6c6c", "454545", "2d2d2d", "1a1a1a"],	//From LIGHT to DARK
+	  "animationCustom" : {
+		"animatedParts" : { "parts" : { "bodyFront" : { "properties" : {
+		  "sitPosition" : [0.25, 1.0]
+		}}}}
+	  }
+	}
+  },
+
+  //TIER 5
+  {
+    "op" : "add",
+    "path" : "/throg",
+    "value" : {
+	  "stats" : {
+		"energy" : 5,
+		"protection" : 5
+	  },
+	  "partParameters" : {
+		"hazardImmunities" : ["biomeradiation", "biomecold"]
+	  },
+	  "partImages" : {
+		"bodyBack" : "body/throg_back.png",
+		"bodyFront" : "body/throg_front.png",
+		"bodyFullbright" : "body/throg_fullbright.png"
+	  },
+	  "defaultPrimaryColors" : ["6c6c6c", "454545", "2d2d2d", "1a1a1a"],
+	  "defaultSecondaryColors" : ["6c6c6c", "454545", "2d2d2d", "1a1a1a"],
+	  "animationCustom" : {
+		"animatedParts" : { "parts" : { "bodyFront" : { "properties" : {
+		  "sitPosition" : [0.25, 1.0]
+		}}}}
+	  }
+	}
+  }
+]

@@ -1,0 +1,33 @@
+[
+	{
+		"op": "add",
+		"path": "/fattiesbar",
+		"value": {
+			"primaryDungeon": "fattiesbar",
+			"threatLevel": 1,
+			"gravity": 80,
+			"worldSize": [2000, 2000],
+			"dungeonBaseHeight": 1000,
+			"ambientLightLevel": [141, 120, 169],
+			"ambientNoises": "/sfx/environmental/fattiesbar.ogg",
+			"musicTrack": "/music/the-peacekeepers.ogg",
+			"biome": "fattiesbar"
+		}
+	},
+	{
+		"op": "add",
+		"path": "/mootantintro",
+		"value": {
+			"primaryDungeon": "mootantintro",
+			"threatLevel": 1,
+			"gravity": 80,
+			"worldSize": [2000, 2000],
+			"dungeonBaseHeight": 800,
+			"dungeonSurfaceHeight": 340,
+			"ambientLightLevel": [141, 120, 169],
+			"ambientNoises" : "/sfx/environmental/space_loop4.ogg",
+			"biome": "jungle",
+			"environmentStatusEffects": [ "dontstarve", "starpoundsmootantintro" ]
+		}
+	}
+]

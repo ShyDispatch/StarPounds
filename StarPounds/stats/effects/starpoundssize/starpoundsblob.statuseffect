@@ -1,0 +1,9 @@
+{
+	"name": "starpoundsblob",
+	"scripts": [
+		"starpoundssize.lua"
+	],
+	"defaultDuration": 100,
+	"label": "Blob",
+	"icon": "/interface/statuses/starpoundssize/starpoundsblob.png"
+}

@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsslimeaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"Made from a slime substance. It's attracted to peanut butter.\"",
+  "shortdescription" : "Slime Figurine",
+
+
+
+  "inventoryIcon" : "starpoundsslimef.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsslimeaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "starpoundsslimeaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

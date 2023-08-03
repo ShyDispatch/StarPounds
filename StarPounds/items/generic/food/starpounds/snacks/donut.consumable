@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsdonut",
+  "rarity" : "Uncommon",
+  "price" : 220,
+  "category" : "preparedFood",
+  "inventoryIcon" : "donut.png",
+  "description" : "A donut in its simplest and purest form.",
+  "shortdescription" : "Classic Donut",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 405
+    }
+  ] ],
+  "foodValue": 45,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsdonut" ]
+}

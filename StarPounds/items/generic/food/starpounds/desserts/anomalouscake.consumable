@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundsanomalouscake",
+  "rarity" : "Legendary",
+  "price" : 0,
+  "category" : "preparedFood",
+  "inventoryIcon" : "anomalouscake.png",
+  "description" : "An enormous, mysterious cake. It hums to the touch.",
+  "shortdescription" : "Anomalous Cake",
+  "effects" : [  ["anomalouscake"] ],
+  "foodValue": 50,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildanomalouscake.lua",
+  "maxStack" : 1
+}

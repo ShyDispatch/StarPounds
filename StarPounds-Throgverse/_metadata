@@ -1,0 +1,10 @@
+{
+  "version" : "1.0.0",
+  "author" : "^#ccbbff;ShyDispatch^reset; (& ^#77aaff;LittleVulpine^reset;)",
+  "description" : "Official Addon for ^#ccbbff;StarPounds!^reset;\n\nProvides various encounters that can be fattening to the player and fattens up the appearance of shopkeepers.\n\nJoin the discord!\n^#ccbbff;discord.gg/starpounds",
+  "requires" : ["starpounds"],
+  "name" : "starpoundsthrogverse",
+  "friendlyName" : "^#ccbbff;StarPounds Addon: ^reset;Throgverse",
+  "priority" : 789,
+  "link" : "https://forum.weightgaming.com/t/starbound-mod-big-fatties/1649"
+}

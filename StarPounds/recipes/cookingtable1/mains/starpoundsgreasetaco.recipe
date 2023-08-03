@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "starpoundshotsauce", "count" : 1 },
+    { "item" : "starpoundsbuttersnack", "count" : 1 },	
+    { "item" : "alienmeat", "count" : 1 },
+    { "item" : "cheese", "count" : 1 },
+    { "item" : "wheat", "count" : 1 }
+  ],
+  "output" : { "item" : "starpoundstaco", "count" : 1 },
+  "groups" : [ "craftingfood", "mains" ]
+}

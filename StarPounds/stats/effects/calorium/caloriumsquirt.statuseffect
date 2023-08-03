@@ -1,0 +1,14 @@
+{
+  "name" : "caloriumsquirt",
+
+  "effectConfig" : {
+    "progressStep": 0.01
+  },
+  "defaultDuration" : 1,
+
+  "animationConfig" : "/stats/effects/starpoundssoundhandler/starpoundssoundhandler.animation",
+
+  "scripts" : [
+    "caloriumsquirt.lua"
+  ]
+}

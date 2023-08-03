@@ -1,0 +1,45 @@
+{
+  "objectName" : "fayanebutt",
+  "printable" : false,
+  "rarity" : "Legendary",
+
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A large floran, with an even larger booty.",
+  "shortdescription" : "Fayane: Butt",
+  "race" : "generic",
+
+  "apexDescription" : "Reminds me of rumours about miniknog test subjects.",
+  "avianDescription" : "With a rump that size, you'd be hard pressed to fly using a ship, let alone wings.",
+  "floranDescription" : "Floran hasss big tushy. Good for ressting when on hunt.",
+  "glitchDescription" : "Curious. This floran has a significant rear.",
+  "humanDescription" : "Am I hallucinating? Her legs alone probably weigh more than a person.",
+  "hylotlDescription" : "It's hard to imagine how much food it must've taken to produce that backside.",
+  "novakidDescription" : "This here rear probably weighs more your average joe.",
+  "throgDescription" : "Now this is an impressive size for a Floran.",  
+  "avaliDescription" : "The gluttony and size of this Floran is concerning.",      
+
+  "inventoryIcon" : "fayanebutt.png:default.default",
+
+  "orientations" : [
+    {
+      "image" : "fayanebutt.png:default.default",
+      "imagePosition" : [-23, -24],
+
+      "direction" : "right",
+
+      "mouthPosition": [-0.05, -0.5],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "fayanebutt.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "fayanebutt.animation",
+  "animationParts" : {
+    "fayane" : "fayanebutt.png"
+  }
+}

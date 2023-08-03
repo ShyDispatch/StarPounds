@@ -1,0 +1,59 @@
+{
+  "projectileName" : "ponderousbolt",
+  "physics" : "laser",
+  "bounces" : 6,
+  "timeToLive" : 4,
+  "image" : "ponderousbolt.png",
+  "lightColor" : [178, 75, 6],
+  "frameNumber" : 4,
+  "speed" : 0,
+  "animationCycle" : 0.2,
+
+  "power" : 30,
+  "damageKind" : "caloricspear",
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "piercing" : true,
+  "statusEffects" : [
+    {"effect": "starpoundsbloat", "duration": 30},
+    {"effect": "starpoundsfood", "duration": 10},
+    {"effect": "starpoundsrategainrapid", "duration": 5}
+  ],
+
+  "fullbright" : true,
+
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_plasma.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 5,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "sparkle2",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "sparkle4",
+          "time" : 0.1,
+          "repeat" : true
+        }
+      ]
+    }
+  ],
+  "scripts" : [ "/projectiles/activeitems/staff/plasmablade/plasmablade.lua" ],
+
+  "triggerSpeed" : 80,
+
+  "controlRotation" : {
+    "maxSpeed" : 9,
+    "controlForce" : 70,
+    "friction" : 10
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "objectName" : "arcadenotdance",
+  "colonyTags" : ["hylotl","hylotloceancity","electronic","musical"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 240,
+  "lightColor" : [245, 210, 235],
+  "lightPosition" : [0, 3],
+
+  "description" : "Let's play some Not Dance-Dance!",
+  "shortdescription" : "Not Dance-Dance Machine",
+  "race" : "hylotl",
+
+  "apexDescription" : "What. How is this beatable?",
+  "avianDescription" : "My eyes hurt just looking at this.",
+  "floranDescription" : "Stupid Dance-Dance arrows move too fassst!! Frustrate Floran!",
+  "glitchDescription" : "Concerned. The patterns flip and move so drastically. It's hard to tell what's what.",
+  "humanDescription" : "I think I remember seeing this. Some modified arcade of Dance-Dance made impossible.",
+  "hylotlDescription" : "This is quite difficult to process. It all seems possible though, I think.",
+  "novakidDescription" : "Even I'm not sure I can keep up with this all. Not without a drink at least.",
+
+  "inventoryIcon" : "arcadedanceicon.png",
+  "orientations" : [
+    {
+      "image" : "arcadedanceleft.png:<color>.<frame>",
+      "imagePosition" : [-24, 0],
+      "animationPosition" : [-24, 0],
+      "animationParts" : {
+        "image" : "arcadedanceright_flipped.png"
+      },
+      "direction" : "left",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "arcadedanceright.png:<color>.<frame>",
+      "imagePosition" : [-16, 0],
+      "animationPosition" : [-16, 0],
+      "animationParts" : {
+        "image" : "arcadedanceright.png"
+      },
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "arcadedance.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/console_button2.ogg" ],
+      "off" : [ "/sfx/objects/console_button3.ogg" ]
+    }
+  },
+
+  "defaultLightState" : false,
+
+  "soundEffect" : "/sfx/objects/dancebound.ogg",
+  "soundEffectRangeMultiplier" : 1.0,
+
+  "scripts" : [
+    "/objects/wired/light/light.lua",
+    "/scripts/npcToyObject.lua",
+    "/objects/human/jukebox/jukebox.lua"
+  ],
+  "npcToy" : {
+    "influence" : [
+      "music",
+      "music",
+      "music",
+      "musicFinished"
+    ],
+    "defaultReactions" : {
+      "musicFinished" : [
+        [1.0, "smile"],
+        [1.0, "laugh"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-1, 0.0],
+    "preciseStandPositionRight" : [1, 0.0],
+    "maxNpcs" : 1
+  },
+
+  "inputNodes" : [ [0, 3] ]
+}

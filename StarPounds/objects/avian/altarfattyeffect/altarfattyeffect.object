@@ -1,0 +1,50 @@
+  {
+  "objectName" : "altarfattyeffect",
+  "colonyTags" : ["avian","aviantomb","pretty","valuable"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 60,
+  "description" : "A statue of a well fattened Avian.",
+  "shortdescription" : "Cursed Goddess Statue",
+  "race" : "avian",
+
+  "apexDescription" : "A golden Avian altar decorated with symbols I don't recognise.",
+  "avianDescription" : "Legends speak of the time when ancient avians lost their wings, they found their own goddess of the ground.",
+  "floranDescription" : "Big, sshiny birdwoman. Musst've been ssuperior hunter.",
+  "glitchDescription" : "Startled. This Avian statue depicts an unreasonably fattened bird.",
+  "humanDescription" : "I hope those symbols don't say something about how much this Avian ate.",
+  "hylotlDescription" : "I wouldn't think of the Avian's to worship obesity.",
+  "novakidDescription" : "Never understood if the Avians want to fly or stay planted on the ground.",
+  "throgDescription" : "Those birds seem to have a good taste for worship.",  
+  "avaliDescription" : "I know Avians who defy their faith call themselves the grounded, but this seems a bit much.",      
+
+  "inventoryIcon" : "altarfattyeffecticon.png",
+  "orientations" : [
+    {
+      "leftImage" : "altarfattyeffectleft.png:default.off",
+      "rightImage" : "altarfattyeffectright.png:default.off",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [ "fatteningzonespawner.lua" ],
+  "scriptDelta" : 10,
+
+  "inputNodes" : [ [0, 0] ],
+
+  "fireTime" : 2.0, // rate of fire
+  "fireTimeVariance" : 0.0, // variation in rate of fire
+  "projectile" : "fattyEffectProjectile", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "damageTeam" : { "type" : "indiscriminate" },
+    "power" : 0,
+    "speed" : 0
+  }
+}

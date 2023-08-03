@@ -1,0 +1,48 @@
+{
+  "ability" : {
+    "name" : "Meat Shot",
+    "type" : "starpoundsnpcmeatshot",
+    "scripts" : ["/items/active/weapons/ranged/abilities/flamethrower/flamethrower.lua"],
+    "class" : "FlamethrowerAttack",
+
+    "baseDps" : 10,
+    "energyUsage" : 30,
+    "fireTime" : 0.065,
+    "inaccuracy" : 0.05,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "starpoundsgreatforkmeat",
+    "projectileParameters" : { },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "cooldown" : {
+        "duration" : 0.05,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      }
+    }
+  }
+}

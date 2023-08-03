@@ -1,0 +1,74 @@
+[
+{
+  "op": "add",
+  "path": "/metadata/anchor/-",
+  "value":  
+	 "starpounds_gluttonistcamp1"	
+},
+{
+  "op": "add",
+  "path": "/parts/-",
+  "value":  
+    {
+      "name" : "starpounds_gluttonistcamp1",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starpounds_gluttonistcamp1.json" ]
+    }	
+},
+{
+  "op": "add",
+  "path": "/metadata/anchor/-",
+  "value":  
+	 "starpounds_gluttonistcamp2"	
+},
+{
+  "op": "add",
+  "path": "/parts/-",
+  "value":  
+    {
+      "name" : "starpounds_gluttonistcamp2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starpounds_gluttonistcamp2.json" ]
+    }	
+},
+{
+  "op": "add",
+  "path": "/metadata/anchor/-",
+  "value":  
+	 "starpounds_mysteriousmirror"	
+},
+{
+  "op": "add",
+  "path": "/parts/-",
+  "value":  
+    {
+      "name" : "starpounds_mysteriousmirror",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starpounds_mysteriousmirror.json" ]
+    }	
+},
+{
+  "op": "add",
+  "path": "/metadata/anchor/-",
+  "value":  
+	 "starpounds_merchant_throg"	
+},
+{
+  "op": "add",
+  "path": "/parts/-",
+  "value":  
+    {
+      "name" : "starpounds_merchant_throg",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "starpounds_merchant_throg.json" ]
+    }	
+}
+]

@@ -1,0 +1,9 @@
+{
+  "name" : "starpoundsnicecream",
+  "category" : "starpoundsnicecream",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "starpoundsnicecream.png"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundstakeoutbag1",
+  "colonyTags" : ["starpounds","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 80,
+
+  "description" : "A basic bag filled with fastfood.",
+  "shortdescription" : "Takeout Bag",
+  "race" : "hylotl",
+
+  "apexDescription" : "A cheap meal of a vast chain that's seemingly everywhere.",
+  "avianDescription" : "I'd love some apple pie to go with my meal.",
+  "floranDescription" : "Bag won't ssstop Floran! Floran will eat bag with food!",
+  "glitchDescription" : "Eager. These kinds of food are usually filling.",
+  "humanDescription" : "Ah that delicious, fast food smell.",
+  "hylotlDescription" : "Grease is dripping out of this bag!",
+  "novakidDescription" : "Stealin' fries on the way home is practically tradition.",
+
+  "inventoryIcon" : "takeoutbagicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "takeoutbag.png:<color>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

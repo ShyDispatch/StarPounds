@@ -1,0 +1,25 @@
+{
+  "itemName" : "starpoundsmagicpudding",
+  "rarity" : "Rare",
+  "price" : 360,
+  "category" : "preparedFood",
+  "inventoryIcon" : "magicpudding.png",
+  "description" : "Pudding that wobbles on its own.",
+  "shortdescription" : "Magic Pudding",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 135
+    },
+    {
+        "effect" : "ragefood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

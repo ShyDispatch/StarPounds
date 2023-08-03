@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsstrawberrymoomilkdeluxe",
+  "rarity" : "Legendary",
+  "price" : 1250,
+  "category" : "drink",
+  "inventoryIcon" : "strawberrymoomilkdeluxe.png",
+  "description" : "Only from the finest mooshis is this special, extra fattening drink a reality.",
+  "shortdescription" : "Chateau Strawberry Milk",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 450
+    }
+  ] ],
+  "foodValue": 50,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "emitters" : [ "drinking" ]
+}

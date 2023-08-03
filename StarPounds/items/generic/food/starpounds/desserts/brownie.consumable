@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsbrownie",
+  "rarity" : "Uncommon",
+  "price" : 195,
+  "category" : "preparedFood",
+  "inventoryIcon" : "brownie.png",
+  "description" : "Pure chocolate snack.",
+  "shortdescription" : "Brownie",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 90
+    }
+  ] ],
+  "foodValue": 10,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

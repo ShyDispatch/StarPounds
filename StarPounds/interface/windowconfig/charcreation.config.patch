@@ -1,0 +1,1108 @@
+[
+  [
+    {
+      "op": "add",
+      "path": "/speciesOrdering/-",
+      "value": "throg"
+    },
+    {
+      "op": "add",
+      "path": "/speciesOrdering/-",
+      "value": "mootant"
+    }
+  ],
+  [
+    {
+      "op": "test",
+      "path": "/paneLayout/species/buttons/7",
+      "inverse": true
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/background/fileBody",
+      "value": "/interface/title/sp_charactercreation.png"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/background/fileFooter",
+      "value": "/interface/title/sp_charactercreationfooter.png"
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelGender"
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelCustomise"
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelName"
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelDifficulty"
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelRandomise"
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelRandomize",
+      "value": {
+        "type": "label",
+        "position": [
+          386,
+          117
+        ],
+        "hAnchor": "left",
+        "value": "RANDOMIZE:"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelSpeciesModded",
+      "value": {
+        "type": "label",
+        "position": [
+          96,
+          173
+        ],
+        "hAnchor": "mid",
+        "value": "Non-Protectorate"
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/bgShine/file",
+      "value": "/interface/title/sp_charactercreationshine.png"
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/bgShine/position/0"
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/bgShine/position/1",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelSpeciesRadio/position/0",
+      "value": 96
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelSpeciesRadio/position/1",
+      "value": 216
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelSpeciesRadio/value",
+      "value": "Protectorate"
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelToggleClothing/color",
+      "value": [
+        190,
+        190,
+        190
+      ]
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelToggleClothing/position/0",
+      "value": 218
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelToggleClothing/position/1",
+      "value": 140
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelToggleClothing/hAnchor",
+      "value": "left"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelToggleClothing/value",
+      "value": "Show Clothing"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/btnToggleClothing/position/0",
+      "value": 206
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/btnToggleClothing/position/1",
+      "value": 140
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelPortrait/color"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPortrait/position/0",
+      "value": 240
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPortrait/position/1",
+      "value": 215
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelMainSkinColor/position/0",
+      "value": 290
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelMainSkinColor/position/1",
+      "value": 169
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mainSkinColor/position/0",
+      "value": 360
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mainSkinColor/position/1",
+      "value": 169
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelHairStyle/position/0",
+      "value": 290
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelHairStyle/position/1",
+      "value": 156
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/hairStyle/position/0",
+      "value": 360
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/hairStyle/position/1",
+      "value": 156
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelShirt/position/0",
+      "value": 290
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelShirt/position/1",
+      "value": 143
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/shirt/position/0",
+      "value": 360
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/shirt/position/1",
+      "value": 143
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPants/position/0",
+      "value": 290
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPants/position/1",
+      "value": 130
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/pants/position/0",
+      "value": 360
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/pants/position/1",
+      "value": 130
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPersonality/position/0",
+      "value": 290
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPersonality/position/1",
+      "value": 117
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/personality/position/0",
+      "value": 360
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/personality/position/1",
+      "value": 117
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelAlty/position/0",
+      "value": 386
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelAlty/position/1",
+      "value": 169
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/alty/position/0",
+      "value": 456
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/alty/position/1",
+      "value": 169
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelHeady/position/0",
+      "value": 386
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelHeady/position/1",
+      "value": 156
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/heady/position/0",
+      "value": 456
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/heady/position/1",
+      "value": 156
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelShirtColor/position/0",
+      "value": 386
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelShirtColor/position/1",
+      "value": 143
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/shirtColor/position/0",
+      "value": 456
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/shirtColor/position/1",
+      "value": 143
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPantsColor/position/0",
+      "value": 386
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelPantsColor/position/1",
+      "value": 130
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/pantsColor/position/0",
+      "value": 456
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/pantsColor/position/1",
+      "value": 130
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/randomize/base",
+      "value": "/interface/title/sp_dice.png"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/randomize/hover",
+      "value": "/interface/title/sp_dicehover.png"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/randomize/position/0",
+      "value": 460
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/randomize/position/1",
+      "value": 114
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/randomName/position/0",
+      "value": 436
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/randomName/position/1",
+      "value": 194
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/saveChar/position/0",
+      "value": 266
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/saveChar/position/1",
+      "value": 33
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/cancel/position/0",
+      "value": 365
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/cancel/position/1",
+      "value": 33
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/position/0",
+      "value": 20
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/position/1",
+      "value": 220
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/0",
+      "value": {
+        "id": 0,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          -10,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/1",
+      "value": {
+        "id": 1,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          14,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/2",
+      "value": {
+        "id": 2,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          38,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/3",
+      "value": {
+        "id": 3,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          62,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/4",
+      "value": {
+        "id": 4,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          86,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/5",
+      "value": {
+        "id": 5,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          110,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/species/buttons/6",
+      "value": {
+        "id": 6,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          134,
+          -29
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 7,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          -10,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 8,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          14,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 9,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          38,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 10,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          62,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 11,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          86,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 12,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          110,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 13,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          134,
+          -72
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 14,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          -10,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 15,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          14,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 16,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          38,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 17,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          62,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 18,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          86,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 19,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          110,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 20,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          134,
+          -98
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 21,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          -10,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 22,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          14,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 23,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          38,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 24,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          62,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 25,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          86,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 26,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          110,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 27,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          134,
+          -124
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 28,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          -10,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 29,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          14,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 30,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          38,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 31,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          62,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 32,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          86,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 33,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          110,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 34,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          134,
+          -150
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 35,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          -10,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 36,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          14,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 37,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          38,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 38,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          62,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 39,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          86,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 40,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          110,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 41,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          134,
+          -176
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/gender/position/0",
+      "value": 163
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/gender/position/1",
+      "value": 164
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/gender/buttons/0",
+      "value": {
+        "id": 0,
+        "image": "/interface/title/male.png",
+        "position": [
+          50,
+          -52
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/gender/buttons/1",
+      "value": {
+        "id": 1,
+        "image": "/interface/title/female.png",
+        "selected": true,
+        "position": [
+          79,
+          -52
+        ]
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelMode/position/0",
+      "value": 344
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelMode/position/1",
+      "value": 72
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelCasualMode/zlevel"
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelCasualMode/hAnchor",
+      "value": "mid"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelCasualMode/position/0",
+      "value": 273
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelCasualMode/position/1",
+      "value": 88
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelSurvivalMode/zlevel"
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelSurvivalMode/hAnchor",
+      "value": "mid"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelSurvivalMode/position/0",
+      "value": 340
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelSurvivalMode/position/1",
+      "value": 88
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/labelHardcoreMode/zlevel"
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelHardcoreMode/hAnchor",
+      "value": "mid"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelHardcoreMode/position/0",
+      "value": 405
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/labelHardcoreMode/position/1",
+      "value": 88
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mode/position/0",
+      "value": 163
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mode/position/1",
+      "value": 70
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mode/buttons/0",
+      "value": {
+        "id": 0,
+        "image": "",
+        "text": "",
+        "selected": true,
+        "position": [
+          83,
+          18
+        ],
+        "data": {
+          "description": "No need to eat and no death penalties."
+        }
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mode/buttons/1",
+      "value": {
+        "id": 1,
+        "image": "",
+        "text": "",
+        "position": [
+          147,
+          18
+        ],
+        "data": {
+          "description": "Eat to survive, drop items on death."
+        }
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/mode/buttons/2",
+      "value": {
+        "id": 2,
+        "image": "",
+        "text": "",
+        "position": [
+          211,
+          18
+        ],
+        "data": {
+          "description": "When you die your character stays dead!"
+        }
+      }
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/charPreview/position/0",
+      "value": 240
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/charPreview/position/1",
+      "value": 188
+    },
+    {
+      "op": "remove",
+      "path": "/paneLayout/name/regex"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/name/position/0",
+      "value": 318
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/name/position/1",
+      "value": 199
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/name/hint",
+      "value": "name"
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/btnSkipIntro/position/0",
+      "value": 300
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/btnSkipIntro/position/1",
+      "value": 52
+    },
+    {
+      "op": "replace",
+      "path": "/paneLayout/lblSkipIntro/position/0",
+      "value": 312
+    }
+  ]
+]

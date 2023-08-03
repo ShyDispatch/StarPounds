@@ -1,0 +1,45 @@
+{
+  "objectName" : "royalchubsterbed",
+  "colonyTags" : ["glitch","glitchcastle","valuable", "fattybed"],
+  "rarity" : "Common",
+  "description" : "A beautiful bed made of shiny gold. Built for a plump body.-Unfinished",
+  "shortdescription" : "Ornate Royal Bed",
+  "race" : "glitch",
+  "category" : "furniture",
+  "price" : 245,
+
+  "apexDescription" : "A bed of silk and gold. Fit for a king.",
+  "avianDescription" : "A bed forged from precious metals. Who sleeps amongst such precious materials? Built for chubby bodies.",
+  "floranDescription" : "Floran want to try out shiny bed.",
+  "glitchDescription" : "Identify. A bed built for royalty.",
+  "humanDescription" : "I suspect this was built for royalty.",
+  "hylotlDescription" : "Does a king require such splendour? Does it make him a better king?",
+  "novakidDescription" : "Sure is a fancy bed, fit for a king almost!",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  "sitPosition" : [-10, 15],
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitCoverImage" : "/objects/glitch/royalchubsterbed/royalchubsterbedcover.png",
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "bed1"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "inventoryIcon" : "royalchubsterbedicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "royalchubsterbed.png:<color>",
+
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

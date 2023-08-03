@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundschocotaco",
+  "rarity" : "Common",
+  "price" : 220,
+  "category" : "preparedFood",
+  "inventoryIcon" : "chocotaco.png",
+  "description" : "Frozen solid, this chocolate casing for ice cream is to die for.",
+  "shortdescription" : "Choco Taco",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 225
+    }
+  ] ],
+  "foodValue": 25,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 4.0,
+  "learnBlueprintsOnPickup" : [ "starpoundschocotaco" ]
+}

@@ -1,0 +1,9 @@
+{
+  "name" : "body8",
+  "category" : "starpoundsharpyorange",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body8.png"
+  }
+}

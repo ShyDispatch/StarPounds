@@ -1,0 +1,45 @@
+{
+  "itemName" : "hirakigrapplinghook",
+  "price" : 3000,
+  "inventoryIcon" : "hirakigrapplinghookicon.png",
+  "rarity" : "Legendary",
+  "maxStack" : 1,
+  "description" : "A strong grappling hook used by the adventurous Hiraki",
+  "shortdescription" : "Hiraki's Grappling Hook",
+  "largeImage" : "hirakigrapplinghookbig.png",
+  "tooltipKind" : "tool",
+  "category" : "Tool",
+  "fireTime" : 0,
+  "twoHanded" : false,
+
+  "scripts" : ["/items/active/grapplinghooks/grapplinghook.lua"],
+  "animationScripts" : ["/items/active/effects/renderrope.lua"],
+
+  "animation" : "hirakigrapplinghook.animation",
+
+  "fireOffset" : [0, 0.3],
+  "ropeOffset" : [-1.75, 0.3],
+  "ropeVisualOffset" : [0.75, 0.3],
+
+  "consumeOnUse" : false,
+
+  "projectileType" : "grapplehook",
+  "projectileParameters" : {
+    "speed" : 80,
+    "timeToLive" : 2
+  },
+
+  "ropeWidth" : 1.0,
+  "ropeColor" : [52, 61, 64, 255],
+
+  "reelInDistance" : 3.5,
+  "reelOutLength" : 50,
+  "breakLength" : 60,
+
+  "minSwingDistance" : 1.5,
+
+  "reelSpeed" : 5,
+  "controlForce" : 3000,
+
+  "groundLagTime" : 0.2
+}

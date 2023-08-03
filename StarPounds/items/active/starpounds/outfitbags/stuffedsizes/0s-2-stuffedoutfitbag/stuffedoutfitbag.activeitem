@@ -1,0 +1,23 @@
+{
+  "itemName" : "0stuffedoutfitbag",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "0s-2 Stuffed Effigy",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "stuffedoutfitbagicon.png",
+  "animation" : "stuffedoutfitbag.animation",
+  "animationCustom" : {},
+  "scripts" : ["/scripts/items/outfitbag.lua"],
+
+  "itemTags" : [ "starpounds" ],
+  
+  "fireTime" : 2.0,
+  "fireOffset" : [1.0, 0.0],
+  
+  "outfitKey" : "stuffed"
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "op": "add",
+    "path": "/baseParameters/starPounds_options",
+    "value": {
+      "disablePrey": true
+    }
+  }
+]

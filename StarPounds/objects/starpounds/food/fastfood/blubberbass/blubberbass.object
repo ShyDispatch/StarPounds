@@ -1,0 +1,38 @@
+{
+  "objectName" : "blubberbassobject",
+  "colonyTags" : ["starpounds","evil"],
+  "rarity" : "Common",
+
+  "price" : 200,
+  "description" : "A double triple bossy deluxe on a raft. Four by four animal style. Extra shingles with a shimmy and a squeeze. Light axle grease, make it cry, burn it and let it swim.",
+  "shortdescription" : "The Blubber Bass",
+  "race" : "generic",
+
+  "apexDescription" : "I feel sympathy for all retail workers who deal with customers who order stuff like this.",
+  "avianDescription" : "I, how many calories is this?",
+  "floranDescription" : "Floran doesssn't back down from snack.",
+  "glitchDescription" : "Unnerved. Do people actually eat this stuff?",
+  "humanDescription" : "I swear I've seen this somewhere before. And it's making me hungry.",
+  "hylotlDescription" : "This... this isn't even food.",
+  "novakidDescription" : "Hoowee now that's a burger!",
+  "throgDescription" : "I'd be very disappointed if this doesn't have pickles.", 
+  "cowbridDescription" : "I swear I've seen this somewhere before. And it's making me hungry.",
+  "harpystarpoundsDescription" : "Would my hips grow as wide as this sandwich is tall if I eat it?",
+  
+  "avaliDescription" : "Human 'cuisine' I'd have to assume. It's the only explanation.",    
+
+  "inventoryIcon" : "blubberbassicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "blubberbass.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

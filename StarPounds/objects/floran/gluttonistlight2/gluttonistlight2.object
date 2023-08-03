@@ -1,0 +1,45 @@
+{
+  "objectName" : "gluttonistlight2",
+  "colonyTags" : ["floran","gluttonist","light","nature"],
+  "rarity" : "Common",
+  "description" : "A light made of vines. Or a vine made of lights?",
+  "shortdescription" : "Small Vine Lights",
+  "race" : "floran",
+
+  "apexDescription" : "Such pretty lights.",
+  "avianDescription" : "A plant that lights up. Remarkable.",
+  "floranDescription" : "Plant lightss not burn Floran.",
+  "glitchDescription" : "Impressed. The Floran are able to harness nature most effectively.",
+  "humanDescription" : "This light looks like it was grown, not made.",
+  "hylotlDescription" : "Even the vile Florans appreciate beauty it seems.",
+  "novakidDescription" : "This plant can sure give off some light.",
+
+  "category" : "light",
+  "price" : 75,
+  "lightColor" : [197, 80, 156],
+  
+  "pointLight" : true,
+  "pointBeam" : 0,
+  "pointAngle" : 0,
+
+  "inventoryIcon" : "gluttonistlight2icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "gluttonistlight2.png:<color>.<frame>", "fullbright" : true }, { "image" : "gluttonistlight2lit.png:<color>.<frame>" } ],
+      "flipImages" : true,
+      "imagePosition" : [0, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "left",
+      "lightPosition" : [0, 1]
+    },
+    {
+      "imageLayers" : [ { "image" : "gluttonistlight2.png:<color>.<frame>", "fullbright" : true }, { "image" : "gluttonistlight2lit.png:<color>.<frame>" } ],
+      "imagePosition" : [0, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+      "lightPosition" : [0, 1]
+    }
+  ]
+}

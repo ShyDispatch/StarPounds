@@ -1,0 +1,17 @@
+[
+  {
+    "op": "add",
+    "path": "/throgDescription",
+    "value": "Things are getting crazy. If I'm to get over any obstacle and stay lazy, I need this matter manipulator."
+  },
+  {
+    "op": "add",
+    "path": "/pickedUpParameters/throgDescription",
+    "value": "It's already gonna take awhile to waddle to my ship. Standing around won't help!"
+  },
+  {
+    "op": "add",
+    "path": "/scripts/-",
+    "value": "starpoundsmootantpatch.lua"
+  }
+]

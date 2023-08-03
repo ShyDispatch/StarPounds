@@ -1,0 +1,24 @@
+{
+  "materialId" : 51404,
+  "materialName" : "starpoundswhitechocolateblock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundswhitechocolateblock",
+  "description" : "A solid block of white chocolate.",
+  "shortdescription" : "White Chocolate Block",
+  "glitchDescription" : "Curious. It's a perfect block of chocolate.",
+  "floranDescription" : "Huge chunk of chocolate.",
+  "novakidDescription" : "Silly chocolate. You're for eatin' not buildin'.",
+  "footstepSound" : "/sfx/blocks/footstep_crystal.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundswhitechocolateblock.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : true,
+    "zLevel" : 1570
+  }
+}

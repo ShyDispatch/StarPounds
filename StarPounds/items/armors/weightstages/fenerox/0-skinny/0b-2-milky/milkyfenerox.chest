@@ -1,0 +1,28 @@
+{
+  "itemName" : "milkyfeneroxchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "Audible sloshing. Feeling full. Pretty milky.",
+  "shortdescription" : "XBusty Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundsmilky"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id" : "floranbehemoth",
+  "species" : "floran",
+  "title" : "The Behemoth",
+  "description" : "A book talking about a rare Floran",
+  "icon" : "florancover5.png",
+  "contentPages" : [
+    "Florans are an impressive breed. Primitive, yet capable of repairing technology they have no experience in. Always wanting to hunt to adapt and evolve to any harsh conditions and worlds. Causing some to sprout wings and fly, or others to breath underwater like a fish.",
+
+"But one sight is unnatural. Have you ever seen those strange pods? Large and spherical, sometimes covered in meaty veins or bone like spikes. No one knows their origin. Some say they're an Agaran plot, others an experiment by an evil Greenfinger. Maybe even the Miniknog has taken interest in the dangerous savages that Florans are.",
+
+"No one knows the truth. Perhaps even it's merely a coincidence that does not bring an answer to this great mystery. But be warned should you find such a pod, for you may encounter a terrifying beast that was clearly once a Floran. A beast I'm simply calling the Behemoth.",
+
+"A towering giant of a Floran bloated with fat. Distorted and without any sentience left in their head. A head that is just a monstrous row of teeth, and legs shambling like twitching roots. The skin is too thick to pierce normally, it is not something to take lightly in a fight.",
+
+"I only relate it to the pods because of a similarity between them. Where ever this abnormal fat Floran came from, it is a hunter like no other. Shaking the very ground as it writhes. Its size makes it slow, giving you an opportunity to run if you can manage. Beware the Behemoth and hope you never encounter it."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

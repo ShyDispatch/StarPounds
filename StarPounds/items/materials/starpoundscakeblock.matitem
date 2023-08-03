@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundscakeblock",
+  "price" : 10,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "starpoundscakeblock.png",
+  "description" : "A large, perfectly shaped block of cake.",
+  "shortdescription" : "Cake Block",
+  "glitchDescription" : "Curious. It's a pure block of cake.",
+  "floranDescription" : "Huge chunk of cake.",
+  "novakidDescription" : "Silly cake. You're for eatin' not buildin'.",
+
+  "materialId" : 51406
+}

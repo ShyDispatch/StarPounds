@@ -1,0 +1,62 @@
+[
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic" ],
+	  {
+		"name" : "Wild Eye Jellies",
+		"typeName" : "starpoundsjelly"
+	  }
+	]
+  },
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic" ],
+	  {
+		"name" : "Wild Skeye Jellies",
+		"typeName" : "starpoundsskeyejelly"
+	  }
+	]
+  },
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic" ],
+	  {
+		"name" : "Wild Slimes",
+		"typeName" : "starpoundsslime"
+	  }
+	]
+  },
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic" ],
+	  {
+		"name" : "Wild Flying Slimes",
+		"typeName" : "starpoundsskeyeslime"
+	  }
+	]
+  },
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic" ],
+	  {
+		"name" : "Harpy bandits",
+		"typeName" : "starpoundsharpybandit"
+	  }
+	]
+  },
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic" ],
+	  {
+		"name" : "Wild Bees",
+		"typeName" : "starpoundsbeedrone"
+	  }
+	]
+  }
+]

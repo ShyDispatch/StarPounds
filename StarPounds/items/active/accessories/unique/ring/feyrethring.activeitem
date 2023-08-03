@@ -1,0 +1,23 @@
+{
+  "itemName" : "feyrethring",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "This ring made of an unknown, gooey substance is constantly shifting and changing shape. Creepy.",
+  "shortdescription" : "Shifting Ring",
+  "inventoryIcon" : "feyrethring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "absorption", "modifier": 2},
+    {"name": "healing", "modifier": 2},
+    {"name": "digestion", "modifier": -0.8}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {}
+}

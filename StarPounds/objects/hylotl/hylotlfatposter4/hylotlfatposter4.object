@@ -1,0 +1,33 @@
+{
+  "objectName" : "hylotlfatposter4",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+
+  "shortdescription" : "Fat Poster",
+  "description" : "A framed poster from the series \"Whale Princess\".",
+  "race" : "hylotl",
+
+  "apexDescription" : "A show of new trends to pull in the young minded.",
+  "avianDescription" : "An ad for body positivity? Oh it's a show.",
+  "floranDescription" : "Floran ssseess big fissh. Great hunter perhapss.",
+  "glitchDescription" : "Interested. So nice to see those who are different being embraced.",
+  "humanDescription" : "I'm very tempted to give this a watch.",
+  "hylotlDescription" : "A series growing in popularity about 'body positivity.' I've seen... a few episodes...",
+  "novakidDescription" : "That's a big gal. But I ain't watchin' no Ana May.",
+
+  "inventoryIcon" : "hylotlfatposter4icon.png",
+  "orientations" : [
+    {
+      "image" : "hylotlfatposter4.png:<color>",
+      "imagePosition" : [-8, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

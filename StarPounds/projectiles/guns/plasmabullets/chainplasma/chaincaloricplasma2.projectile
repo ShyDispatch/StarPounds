@@ -1,0 +1,27 @@
+{
+  "projectileName" : "chaincaloricplasma2",
+  "physics" : "illusion",
+  "damageKindImage" : "icon.png",
+  "image" : "caloricplasma.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 3,
+  "power" : 50,
+  "speed" : 100,
+  "supportsProcessing" : true,
+  "emitters" : [ "caloricplasma" ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/plasmabulletexplosion/plasmabulletexplosion.config"
+    }
+  ],
+  "statusEffects" : [
+    {"effect": "starpoundsratebloat", "duration": 10},
+    {"effect": "starpoundsrategain", "duration": 10}
+  ],
+  "lightColor" : [105, 65, 72],
+  "damageKind" : "caloricplasma",
+  "piercing" : true,
+
+  "scripts" : [ "/scripts/projectiles/chainbullet.lua" ]
+}

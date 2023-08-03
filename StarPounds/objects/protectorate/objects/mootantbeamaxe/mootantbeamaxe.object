@@ -1,0 +1,35 @@
+{
+  "objectName" : "mootantbeamaxe",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "This is... a Matter Manipulator. It might just make the difference on getting out of here.",
+  "shortdescription" : "Matter Manipulator",
+  "race" : "protectorate",
+
+  "keepAlive" : true,
+
+  "pickedUpParameters" : {
+    "description" : "I need to get out of here."
+  },
+
+  "inventoryIcon" : "mootantbeamaxeicon.png",
+  "orientations" : [
+    {
+      "image" : "mootantbeamaxe.png:active",
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "renderLayer" : "FrontParticle+1"
+    }
+  ],
+
+  "animation" : "mootantbeamaxe.animation",
+  "animationPosition" : [-8, 0],
+
+  "scripts" : ["mootantbeamaxe.lua"],
+  "scriptDelta" : 0
+}

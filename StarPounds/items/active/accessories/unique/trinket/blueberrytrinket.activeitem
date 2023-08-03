@@ -1,0 +1,23 @@
+{
+  "itemName" : "blueberrytrinket",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "An ankh woven from plants, adorned with a peculiarly large blueberry at it's centre.",
+  "shortdescription" : "Ankh of the Blueberry",
+  "inventoryIcon" : "blueberrytrinket.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "stats": [
+    {"name": "bloatAmount", "modifier": 1},
+    {"name": "bloatDigestion", "modifier": -0.5},
+    {"name": "experienceMultiplier", "modifier": 0.5}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {}
+}

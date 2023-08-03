@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsgluttonistfeasttable",
+  "colonyTags" : ["floran","fatdungeons","gluttonist","commerce"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 180,
+  "description" : "Hundreds of massive meals were had on this tribal table.",
+  "shortdescription" : "Gluttonist Feast Table",
+  "race" : "floran",
+
+  "apexDescription" : "A primitive dining table. Floran certainly eat much off of it.",
+  "avianDescription" : "A large banquet table- seems these Floran throw large parties.",
+  "floranDescription" : "Sssomeone sssay... FEASSST?!",
+  "glitchDescription" : "Inspective. This table seems to serve a ceremonial purpose- most Floran aren't this cleanly.",
+  "humanDescription" : "This table's more well done than I'd expect for Florans.",
+  "hylotlDescription" : "I wonder how much gluttony this table's seen.",
+  "novakidDescription" : "This table's tad big for poker... wait it's a dinner table, duh.",
+
+  "inventoryIcon" : "starpoundsgluttonistfeasttableicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsgluttonistfeasttable.png:<color>",
+      "imagePosition" : [-40, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ]
+}

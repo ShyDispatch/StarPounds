@@ -1,0 +1,24 @@
+{
+  "margin" : 0,
+  "name" : "starpounds/Fat-Interactives",
+  "properties" : {
+  },
+  "spacing" : 0,
+  "tilecount" : 80,
+  "tileheight" : 44,
+  "tileproperties" : {
+    "0" : {
+      "//name" : "throgwalllight",
+      "imagePositionX" : "-8",
+      "imagePositionY" : "-8",
+      "object" : "throgwalllight",
+      "tilesetDirection" : "right"
+    }
+  },
+  "tiles" : {
+    "0" : {
+      "image" : "..\/..\/..\/..\/tiled\/starpounds\/objects\/throgwalllight.png"
+    }
+  },
+  "tilewidth" : 48
+}

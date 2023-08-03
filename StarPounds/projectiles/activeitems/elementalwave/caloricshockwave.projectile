@@ -1,0 +1,23 @@
+{
+  "projectileName" : "caloricshockwave",
+  "image" : "caloricshockwave.png",
+  "animationCycle" : 0.25,
+  "animationLoops" : false,
+  "timeToLive" : 0.25,
+  "frameNumber" : 5,
+  "power" : 50,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "damagePoly" : [ [-4, 11], [4, 11], [4, -11], [-4, -11] ],
+  "lightColor" : [105, 65, 72],
+  "damageKind" : "caloricplasma",
+  "statusEffects" : [
+    {"effect": "starpoundsratebloat", "duration": 10},
+    {"effect": "starpoundsrategain", "duration": 10}
+  ],
+  "emitters" : ["caloricthrowertrail"]
+}

@@ -1,0 +1,43 @@
+{
+  "type" : "starpoundsponderousvisitor",
+  "baseType" : "outpostvisitor",
+  
+	"identity" : {
+     "species" : "glitch"
+	 },
+
+  "scriptConfig" : {
+  "starPounds_skills": {
+      "minimumSize": [3, 3]
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"Proud: I am an honorable knight of the Ponderous Order.",
+						"Curious: The bountiful food provided here is incredible.",
+						"Content: I could gorge here for weeks.",
+						"Truthful: Many Knights of the Ponderous Order were purged under claims of heretic beliefs.",
+						"Hesitant: Would you care to spar with an experienced knight?",
+						"Wistful: I do wonder, if the displays of gluttony might attract more of my order.",
+						"Bold: This armor is of the highest quality, never bending under blows, yet fitting a fattening figure."
+					]
+				}
+			}
+		}
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic" : [ { "name" : "starpoundsponderoushead" } ],
+            "chestCosmetic" : [ { "name" : "starpoundsponderouschest" } ],
+            "legsCosmetic" : [ { "name" : "starpoundsponderouslegs" } ],
+            "backCosmetic" : [ { "name" : "starpoundsponderousback" } ]
+          }
+        ] ]
+    ]
+  }
+}

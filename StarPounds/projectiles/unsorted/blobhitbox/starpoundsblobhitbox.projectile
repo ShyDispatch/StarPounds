@@ -1,0 +1,43 @@
+{
+  "projectileName" : "starpoundsblobhitbox",
+  "timeToLive" : 3,
+  "image": "starpoundsblobhitbox.png",
+
+  "onlyHitTerrain" : true,
+
+  "physicsCollisions" : {
+    "hitbox" : {
+      "collision" : [[4.8, -1.85], [1.6, 0.0], [0.75, 0.25], [-0.75, 0.25], [-1.6, 0.0], [-4.8, -1.85]],
+      "collisionKind" : "Platform",
+      "categoryBlacklist" : ["itemdrop"]
+    }
+  },
+  "physicsForces" : {
+    "vacuumMiddle" : {
+      "type" : "DirectionalForceRegion",
+      "polyRegion" : [[-2.5, 0.0], [2.5, 0], [2.5, -4.5], [-2.5, -4.5]],
+      "xTargetVelocity" : 0,
+      "yTargetVelocity" : 25,
+      "controlForce" : 500,
+      "categoryWhitelist" : ["itemdrop"]
+    },
+    "vacuumLeft" : {
+      "type" : "DirectionalForceRegion",
+      "polyRegion" : [[-2.5, 0.0], [-4.8, -1.85], [-5.3, -3.5], [-4.9, -4.0], [-2.5, -4.5]],
+      "xTargetVelocity" : 25,
+      "yTargetVelocity" : 15,
+      "controlForce" : 500,
+      "categoryWhitelist" : ["itemdrop"]
+    },
+    "vacuumRight" : {
+      "type" : "DirectionalForceRegion",
+      "polyRegion" : [[2.5, 0.0], [4.8, -1.85], [5.3, -3.5], [4.9, -4.0], [2.5, -4.5]],
+      "xTargetVelocity" : -25,
+      "yTargetVelocity" : 15,
+      "controlForce" : 500,
+      "categoryWhitelist" : ["itemdrop"]
+    }
+  },
+
+  "scripts" : [ "starpoundsblobhitbox.lua" ]
+}

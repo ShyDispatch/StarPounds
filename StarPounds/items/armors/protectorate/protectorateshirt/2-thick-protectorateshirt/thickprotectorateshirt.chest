@@ -1,0 +1,49 @@
+{
+  "itemName" : "thickprotectorateshirtchest",
+  "price" : 75,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "chestwear",
+  "description" : "A comfy tee, emblazoned with the logo of the Terrene Protectorate.",
+  "shortdescription" : "Protectorate L T-Shirt",
+  "tooltipKind" : "armor",
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "colorOptions" : [
+    // PROTECTORATE BLUE
+    { "ffca8a" : "7db8d6", "e0975c" : "5588ab", "a85636" : "325a81", "6f2919" : "1c3553", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // BLACK
+    { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // GREY
+    { "ffca8a" : "b5b5b5", "e0975c" : "808080", "a85636" : "555555", "6f2919" : "303030", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // WHITE
+    { "ffca8a" : "e6e6e6", "e0975c" : "b6b6b6", "a85636" : "7b7b7b", "6f2919" : "373737", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // RED
+    { "ffca8a" : "f4988c", "e0975c" : "d93a3a", "a85636" : "932625", "6f2919" : "601119", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // ORANGE
+    { "ffca8a" : "ffd495", "e0975c" : "ea9931", "a85636" : "af4e00", "6f2919" : "6e2900", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // YELLOW
+    { "ffca8a" : "ffffa7", "e0975c" : "e2c344", "a85636" : "a46e06", "6f2919" : "642f00", "fdd14d" : "e6e6e6", "d9af31" : "e6e6e6"  },
+    // GREEN
+    { "ffca8a" : "b2e89d", "e0975c" : "51bd3b", "a85636" : "247824", "6f2919" : "144216", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // BLUE
+    { "ffca8a" : "96cbe7", "e0975c" : "5588d4", "a85636" : "344495", "6f2919" : "1a1c51", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // PURPLE
+    { "ffca8a" : "d29ce7", "e0975c" : "a451c4", "a85636" : "6a2284", "6f2919" : "320c40", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // PINK
+    { "ffca8a" : "eab3db", "e0975c" : "d35eae", "a85636" : "97276d", "6f2919" : "59163f", "fdd14d" : "fdd14d", "d9af31" : "d9af31" },
+    // BROWN
+    { "ffca8a" : "ccae7c", "e0975c" : "a47844", "a85636" : "754c23", "6f2919" : "472b13", "fdd14d" : "fdd14d", "d9af31" : "d9af31" }
+  ]
+}

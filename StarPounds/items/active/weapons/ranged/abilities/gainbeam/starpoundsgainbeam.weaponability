@@ -1,0 +1,79 @@
+{
+  "ability" : {
+    "name" : "Ray of Gain",
+    "type" : "starpoundsgainbeam",
+    "scripts" : ["/items/active/weapons/ranged/abilities/gainbeam/starpoundsgainbeam.lua"],
+    "class" : "BeamFire",
+
+    "fireTime" : 0.2,
+    "baseDps" : 10,
+    "energyUsage" : 20,
+
+    "damageConfig" : {
+      "statusEffects" : [{"effect": "starpoundsbloat", "duration": 30},  {"effect": "starpoundsrategainrapid", "duration" : 3} ],
+      "damageSourceKind" : "caloricplasma",
+      "knockback" : 8
+    },
+
+    "beamLength" : 50,
+
+    "beamTransitionTime" : 0.25,
+    "beamTransitionFrames" : 4,
+
+    "chain" : {
+      "startOffset" : [0, 0],
+      "startSegmentImage" : "/items/active/weapons/ranged/abilities/gainbeam/beamstart.png:<beamFrame>",
+      "segmentImage" : "/items/active/weapons/ranged/abilities/gainbeam/beam.png:<beamFrame>",
+      "endSegmentImage" : "/items/active/weapons/ranged/abilities/gainbeam/beamend.png:<beamFrame>",
+      "segmentSize" : 0.48,
+      "overdrawLength" : 0.2,
+      "taper" : 0,
+      "waveform" : {
+        "frequency" : 4.0,
+        "amplitude" : 0.5,
+        "movement" : 33.0
+      },
+      "fullbright" : true
+    },
+
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : false,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+        "animationStates" : {
+          "erchiuseye" : "squirm"
+        }
+      },
+      "fire" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+        "animationStates" : {
+          "erchiuseye" : "fire"
+        }
+      },
+      "cooldown" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true,
+
+        "animationStates" : {
+          "erchiuseye" : "idle"
+        }
+      }
+    }
+  }
+}

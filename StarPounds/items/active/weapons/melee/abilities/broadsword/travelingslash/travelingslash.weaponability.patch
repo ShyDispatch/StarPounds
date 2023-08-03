@@ -1,0 +1,12 @@
+[
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonTravelSlash",
+    "path" : "/animationCustom/sounds/caloricTravelSlash"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "projectileType" : "calorictravelingswoosh" }
+  }
+]

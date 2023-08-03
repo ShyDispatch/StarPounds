@@ -1,0 +1,17 @@
+{
+  "itemName" : "starpoundsmootantshake",
+  "price" : 1600,
+  "rarity" : "Legendary",
+  "category" : "drink.",
+  "inventoryIcon" : "mootantshake.png",
+  "description" : "A Milkshake mixed with mutagenic properties to bring out the Mooshi in you. ^pink;Unlocks Skill\nDairy Development^reset;",
+  "shortdescription" : "Mootagenic Milkshake",
+  "maxStack" : 1,
+  "effects": [[
+      "lactaid"
+  ]],
+  "foodValue": 25,  
+  "tooltipKind" : "food",
+  "emote" : "",
+  "emitters" : [ "drinking" ]
+}

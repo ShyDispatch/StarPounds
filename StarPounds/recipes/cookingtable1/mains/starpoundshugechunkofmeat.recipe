@@ -1,0 +1,7 @@
+{
+  "input" : [
+    { "item" : "alienmeat", "count" : 40 }
+  ],
+  "output" : { "item" : "starpoundshugechunkofmeat", "count" : 1 },
+  "groups" : [ "craftingfood", "mains" ]
+}

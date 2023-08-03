@@ -1,0 +1,20 @@
+{
+  "projectileName" : "starpoundssteak",
+  "physics" : "grenade",
+  "bounces" : 0,
+  "timeToLive" : 2,
+  "image" : "starpoundssteak.png",
+  "damageKindImage" : "icon.png",
+  "damagePoly" : [ [-6, 3], [-3, 6], [3, 6], [6, 3], [6, -3], [3, -6], [-3, -6], [-6, -3] ],
+  "animationCycle" : 0.5,
+  "frameNumber" : 1,
+  "speed" : 19,
+  "power" : 50,
+  "damageKind" : "caloric",
+  "emitters" : [ ],
+  "statusEffects" : [
+    {"effect": "starpoundsbloat", "duration": 4},
+    {"effect": "starpoundsfood", "duration" : 2},
+    {"effect": "starpoundsrategainrapid", "duration" : 3}
+  ]
+}

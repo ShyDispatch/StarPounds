@@ -1,0 +1,67 @@
+{
+  "animationParts" : { },
+  "animationCustom" : {
+    "particleEmitters" : {
+      "physicalCharge" : {
+        "active" : false,
+        "emissionRate" : 30,
+        "particles" : [ ]
+      }
+    },
+    "sounds" : {
+      "physicalcharge" : [ ],
+      "physicalfull" : [ ],
+      "physicalimpact" : [ "/sfx/gun/grenadeblast_ice2.ogg" ]
+    }
+  },
+
+  "ability" : {
+    "name" : "Sake Wave",
+    "type" : "starpoundssakewave",
+    "scripts" : ["/items/active/weapons/melee/abilities/hammer/shockwave/shockwave.lua"],
+    "class" : "ShockWave",
+
+    "energyUsage" : 60.0,
+    "cooldownTime" : 1.5,
+
+    "chargeTime" : 0.8,
+    "minChargeTime" : 0.4,
+
+    "projectileType" : "starpoundssakeshockwave",
+    "projectileParameters" : {
+      "power" : 3.5,
+      "knockback" : 35,
+      "knockbackMode" : "facing"
+    },
+    "shockWaveBounds" : [-0.4, -1.375, 0.4, 0.0],
+    "shockwaveHeight" : 1.475,
+    "maxDistance" : 40,
+    "bothDirections" : true,
+
+    "impactLine" : [ [1.25, -1.5], [1.25, -4.5] ],
+    "impactWeaponOffset" : 0.75,
+
+    "stances" : {
+      "windup" : {
+        "armRotation" : 0,
+        "endArmRotation" : 110,
+        "weaponRotation" : 180,
+        "endWeaponRotation" : 130,
+        "weaponOffset" : [0, 0.5],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : -180,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "verticalOrigin" : -180,
+
+  "layers" : [
+    {
+      "kind" : "fattiesbarbelow1",
+      "offset" : [0, 190],
+      "parallax" : [1.8, 2]
+    },
+    {
+      "kind" : "fattiesbarbelow2",
+      "offset" : [0, 190],
+      "parallax" : [1.8001, 2]
+    },
+    {
+      "kind" : "fattiesbarbelow3",
+      "offset" : [0, 190],
+      "parallax" : [1.8002, 2]
+    },
+    {
+      "kind" : "fattiesbarbelow3",
+      "offset" : [0, 330],
+      "parallax" : [1.8, 2]
+    },
+    {
+      "kind" : "fattiesbar1",
+      "offset" : [0, 50],
+      "parallax" : [1.8, 2]
+    },
+    {
+      "kind" : "fattiesbar1",
+      "offset" : [0, 50],
+      "parallax" : [1.8, 2.2]
+    },
+    {
+      "kind" : "fattiesbar2",
+      "offset" : [0, 50],
+      "parallax" : [2, 2.4]
+    },
+    {
+      "kind" : "fattiesbar3",
+      "offset" : [0, 50],
+      "parallax" : [3, 2.6]
+    },
+    {
+      "kind" : "fattiesbar4",
+      "offset" : [0, 50],
+      "parallax" : [4, 2.8]
+    },
+    {
+      "kind" : "fattiesbar5",
+      "offset" : [0, 50],
+      "parallax" : [5, 3]
+    },
+    {
+      "kind" : "fattiesbar6",
+      "offset" : [0, 50],
+      "parallax" : [6, 3.2]
+    },
+    {
+      "kind" : "fattiesbar7",
+      "offset" : [0, 50],
+      "parallax" : [7, 3.4]
+    },
+    {
+      "kind" : "fattiesbar8",
+      "offset" : [0, 50],
+      "parallax" : [8, 3.6]
+    },
+    {
+      "kind" : "fattiesbar9",
+      "offset" : [0, 50],
+      "parallax" : [8, 3.8]
+    },
+    {
+      "kind" : "fattiesbarpeach",
+      "offset" : [0, 454],
+      "parallax" : [8.01, 4.1]
+    },
+    {
+      "kind" : "fattiesbarglow",
+      "offset" : [0, 15],
+      "parallax" : [8.01, 4]
+    },
+    {
+      "kind" : "fattiesbarbelow1",
+      "offset" : [0, -150],
+      "parallax" : [1.8, 2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbarbelow2",
+      "offset" : [0, -150],
+      "parallax" : [1.8001, 2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbarbelow3",
+      "offset" : [0, -150],
+      "parallax" : [1.8002, 2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbarbelow3",
+      "offset" : [0, -290],
+      "parallax" : [1.8, 2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar1",
+      "offset" : [0, -84],
+      "parallax" : [1.8, 2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar1",
+      "offset" : [0, -84],
+      "parallax" : [1.8, 2.2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar2",
+      "offset" : [0, -84],
+      "parallax" : [2, 2.4],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar3",
+      "offset" : [0, -84],
+      "parallax" : [3, 2.6],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar4",
+      "offset" : [0, -84],
+      "parallax" : [4, 2.8],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar5",
+      "offset" : [0, -84],
+      "parallax" : [5, 3],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar6",
+      "offset" : [0, -84],
+      "parallax" : [6, 3.2],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar7",
+      "offset" : [0, -84],
+      "parallax" : [7, 3.4],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar8",
+      "offset" : [0, -84],
+      "parallax" : [8, 3.6],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbar9",
+      "offset" : [0, -84],
+      "parallax" : [8, 3.8],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbarpeach",
+      "offset" : [0, -90],
+      "parallax" : [8.01, 4.1],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "fattiesbarglow",
+      "offset" : [0, -55],
+      "parallax" : [8.01, 4],
+      "directives" : "?flipy"
+    },
+    {
+      "kind" : "glitters",
+      "baseCount" : 7,
+      "offset" : [0, 35],
+      "parallax" : [20, 20]
+    },
+    {
+      "kind" : "throgships",
+      "offset" : [0, 140],
+      "parallax" : 6.999,
+      "minSpeed" : 50000,
+      "maxSpeed" : 50000,
+      "fadePercent" : 0.20
+    },
+    {
+      "kind" : "throgships",
+      "offset" : [0, 160],
+      "parallax" : 7.5,
+      "minSpeed" : 30000,
+      "maxSpeed" : 30000,
+      "fadePercent" : 0.20
+    },
+    {
+      "kind" : "throgships",
+      "offset" : [0, 180],
+      "parallax" : 7.5,
+      "minSpeed" : 30000,
+      "maxSpeed" : 30000,
+      "fadePercent" : 0.20
+    }
+  ]
+}

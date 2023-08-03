@@ -1,0 +1,14 @@
+{
+  "name" : "fatray",
+  "effectConfig" : {},
+  "defaultDuration" : 0.25,
+
+  "scripts" : [
+    "fatray.lua"
+  ],
+
+  "animationConfig" : "fatray.animation",
+
+  "label": "Rapidly Fattening",
+  "icon": "/interface/statuses/fatray.png"
+}

@@ -1,0 +1,135 @@
+{
+  "style" : "window",
+  "size" : [400, 200],
+  "title" : "Skills",
+  "icon" : "icon.png",
+  "accentColor" : "8866ff",
+  "uniqueBy" : "path",
+  "uniqueMode" : "toggle",
+  "scripts" : [ "skills.lua" ],
+  "children" : [
+    {"mode": "vertical"},
+    [
+      {"size" : 179},
+      [
+        {
+          "type": "tabField",
+          "id": "tabField",
+          "layout": "vertical",
+          "tabWidth": 18,
+          "tabs": [],
+          "data": [{"type": "panel", "style": "convex", "children": [
+            {
+              "type": "scrollArea",
+              "id": "skillTree",
+              "scrollDirections" : [1, 1],
+              "scrollBars" : false,
+              "thumbScrolling" : false,
+              "children": [
+                {"mode": "manual"},
+                {"type": "image", "noAutoCrop": true, "file": "body.png"},
+                {"type": "canvas", "id": "skillCanvas", "size": [480, 320]},
+                {"type": "layout", "id": "skillWidgets", "size": [480, 320], "mode": "manual", "children": [
+
+                ]}
+              ]
+            }]
+          }]
+        }
+      ],
+      [
+        {"size" : 120},
+        {"type": "panel", "style": "convex", "children": [
+          1,
+          {"type": "image", "id": "descriptionIcon", "noAutoCrop": true, "scale": 2, "file": "/assetmissing.png"},
+          1,
+          {"type": "label", "id": "descriptionTitle", "align": "center", "fontSize": 10, "text": ""},
+          1,
+          {"type": "label", "id": "descriptionText", "align": "center", "text": ""},
+          "spacer",
+          {"type": "layout", "id": "descriptionWidget", "mode": "vertical", "children": []}
+        ]},
+        {"type": "layout", "id": "infoPanel", "mode": "vertical", "children": [
+            {"type": "panel", "style": "convex", "expandMode": [2, 0], "children": [
+              1,
+              [
+                {"mode": "stack"},
+                {"type": "label", "id": "infoCurrent", "align": "center", "text": ""},
+                [{"mode": "manual"}, {"type": "iconButton", "id": "statInfo", "position": [103, 8],
+                    "image": "statInfo.png",
+                    "hoverImage": "statInfo.png",
+                    "pressImage": "statInfo.png"
+                }]
+              ],
+              1
+            ]}
+        ]},
+        {"type": "layout", "id": "unlockPanel", "mode": "vertical", "children": [{"type": "panel", "style": "convex", "children": [
+          1,
+          {"type": "layout", "mode": "horizontal", "children": [
+            1,
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "image", "position": [0, 0], "noAutoCrop": true, "file": "unlockLevel.png"},
+              {"type": "label", "position": [0, 8], "size": [36, 12], "id": "unlockExperience", "align": "center", "text": "0 XP"},
+              {"type": "label", "position": [36, 8], "size": [36, 12], "id": "unlockText", "align": "center", "text": "?/?"},
+              {"type": "iconButton", "id": "unlockIncrease", "position": [73, 0],
+                "image": "unlockIncrease.png",
+                "hoverImage": "unlockIncrease.png",
+                "pressImage": "unlockIncrease.png?border=1;00000000;00000000?crop=1;2;13;15"
+              },
+              {"type": "iconButton", "id": "unlockDecrease", "position": [73, 12],
+                "image": "unlockDecrease.png",
+                "hoverImage": "unlockDecrease.png",
+                "pressImage": "unlockDecrease.png?border=1;00000000;00000000?crop=1;2;13;15"
+              },
+              {"type": "iconButton", "id": "unlockToggle", "position": [73, 0],
+                "image": "unlockToggle.png:off.disabled",
+                "hoverImage": "unlockToggle.png:off.disabled",
+                "pressImage": "unlockToggle.png:off.disabled?border=1;00000000;00000000?crop=1;2;13;27"
+              }
+            ]},
+            "spacer",
+            {"id": "unlockButton", "type": "iconButton",
+              "image": "unlock.png",
+              "hoverImage": "unlock.png",
+              "pressImage": "unlock.png?border=1;00000000;00000000?crop=1;2;25;27"
+            },
+            1
+          ]},
+          1
+        ]}]}
+      ]
+    ],
+    [
+      12,
+      "spacer",
+      {"type": "layout", "id": "barPadding", "visible": true, "size": [39, 19], "children": []},
+      {"type": "iconButton", "id": "weightDecrease", "visible": false, "toolTip": "Decrease your weight by 1 stage.", "image" : "weightDecrease.png", "hoverImage" : "weightDecrease.png", "pressImage" : "weightDecrease.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      {"type": "iconButton", "id": "weightIncrease", "visible": false, "toolTip": "Increase your weight by 1 stage.", "image" : "weightIncrease.png", "hoverImage" : "weightIncrease.png", "pressImage" : "weightIncrease.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      {"type": "iconButton", "id": "enable", "toolTip": "Enable or Disable the mod.", "image" : "enabled.png", "hoverImage" : "enabled.png", "pressImage" : "enabled.png?border=1;00000000;00000000?crop=1;2;87;21"},
+      {"type": "iconButton", "id": "reset", "toolTip": "Reset the mod.", "image" : "reset.png", "hoverImage" : "reset.png", "pressImage" : "reset.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      "spacer",
+      18,
+      {
+        "type": "layout",
+        "mode": "manual",
+        "size" : [104, 18],
+        "children": [
+          {"type": "image", "position": [0, 0], "noAutoCrop": true, "file": "bar_body.png"},
+          {"type": "label", "position": [2, 5], "size": [28, 12], "id": "experienceText", "align": "center", "text": "0 XP"},
+          {
+            "type": "layout",
+            "mode": "horizontal",
+            "position": [32, 2],
+            "size" : [70, 14],
+            "children": [
+              {"type": "image", "id": "experienceBar", "file": "bar.png"}
+            ]
+          },
+          {"type": "image", "position": [32, 2], "noAutoCrop": true, "file": "bar_overlay.png"}
+        ]
+      },
+      6
+    ]
+  ]
+}

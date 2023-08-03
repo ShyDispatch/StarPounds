@@ -1,0 +1,13 @@
+{
+	"name": "starpoundsstomach3",
+	"defaultDuration": 100,
+	"effectConfig": {
+		"range": [2, 3],
+		"maxRangeExpire": false
+	},
+	"scripts": [
+		"starpoundsstomach.lua"
+	],
+	"label": "Stomach Capacity",
+	"icon": "/interface/statuses/stomach3.png"
+}

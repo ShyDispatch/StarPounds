@@ -1,0 +1,29 @@
+{
+  "kind" : "largecaloriccloud",
+  "definition" : {
+    "duration" : 0.03,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "largecaloriccloud2", "largefirecloud2", "largecaloriccloud2", "largefirecloud2", "largecaloriccloud2", "largefirecloud2" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    },
+    "particles" : [
+      [ "largecaloriccloud1", "largecaloriccloud2", "largefirecloud2" ]
+    ],
+    "sounds" : [
+      [ ]
+    ],
+    "stop" : {
+      "particles" : [
+        [ "largefirecloud4", "largefirecloud4", "largefirecloud4", "largefirecloud4", "largefirecloud4", "largefirecloud4" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    }
+  }
+}

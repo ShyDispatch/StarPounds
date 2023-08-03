@@ -1,0 +1,13 @@
+{
+  "frameGrid" : {
+    "size" : [50, 50],
+    "dimensions" : [3, 1],
+    "names" : [ ["activate.1", "activate.2", "activate.3"] ]
+  },
+
+  "aliases" : {
+    "deactivate.1" : "activate.3",
+    "deactivate.2" : "activate.2",
+    "deactivate.3" : "activate.1"
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "name": "vorecombat-leap",
+  "description": "",
+  "scripts": [
+    "/scripts/actions/world.lua",
+    "/scripts/actions/movement.lua",
+    "/scripts/actions/status.lua",
+    "/scripts/actions/math.lua",
+    "/scripts/actions/vore.lua",
+    "/scripts/actions/projectiles.lua",
+    "/scripts/behavior.lua"
+  ],
+  "parameters": {},
+  "root": {
+    "title": "sequence",
+    "type": "composite",
+    "name": "sequence",
+    "parameters": {},
+    "children": [
+      {
+        "title": "inverter",
+        "type": "decorator",
+        "name": "inverter",
+        "parameters": {},
+        "child": {
+          "title": "entityInRange",
+          "type": "action",
+          "name": "entityInRange",
+          "parameters": {
+            "entity": {"key": "target"},
+            "position": {"key": "self"},
+            "xRange": {"value": 10}
+          }
+        }
+      },
+      {
+        "title": "onGround",
+        "type": "action",
+        "name": "onGround",
+        "parameters": {}
+      },
+      {
+        "title": "entityPosition",
+        "type": "action",
+        "name": "entityPosition",
+        "parameters": {
+          "entity": {"key": "target"}
+        },
+        "output": {
+          "position": "targetPosition"
+        }
+      },
+      {
+        "title": "sequence",
+        "type": "composite",
+        "name": "sequence",
+        "parameters": {},
+        "children": [
+          {
+            "title": "stat",
+            "type": "action",
+            "name": "stat",
+            "parameters": {
+              "statName": {"value": "jumpModifier"}
+            },
+            "output": {
+              "value": "jumpModifier"
+            }
+          },
+          {
+            "title": "multiply",
+            "type": "action",
+            "name": "multiply",
+            "parameters": {
+              "factor": {"key": "jumpModifier"},
+              "number": {"value": 45}
+            },
+            "output": {
+              "result": "speedModifier"
+            }
+          },
+          {
+            "title": "add",
+            "type": "action",
+            "name": "add",
+            "parameters": {
+              "addend": {"value": 45},
+              "number": {"key": "speedModifier"}
+            },
+            "output": {
+              "result": "leapSpeed"
+            }
+          },
+          {
+            "title": "movementPenalty",
+            "type": "action",
+            "name": "movementPenalty",
+            "parameters": {},
+            "output": {
+              "number": "movementPenalty"
+            }
+          },
+          {
+            "title": "multiply",
+            "type": "action",
+            "name": "multiply",
+            "parameters": {
+              "factor": {"key": "leapSpeed"},
+              "number": {"key": "movementPenalty"}
+            },
+            "output": {
+              "result": "leapSpeed"
+            }
+          }
+        ]
+      },
+      {
+        "title": "selector",
+        "type": "composite",
+        "name": "selector",
+        "parameters": {},
+        "children": [
+          {
+            "title": "projectileAimVector",
+            "type": "action",
+            "name": "projectileAimVector",
+            "parameters": {
+              "collisionCheck": {"value": false},
+              "fromPosition": {"key": "self"},
+              "gravityMultiplier": {"value": 1},
+              "speed": {"key": "leapSpeed"},
+              "toPosition": {"key": "targetPosition"},
+              "useHighArc": {"value": false}
+            },
+            "output": {
+              "aimVector": "jumpVector"
+            }
+          },
+          {
+            "title": "projectileAimVector",
+            "type": "action",
+            "name": "projectileAimVector",
+            "parameters": {
+              "collisionCheck": {"value": false},
+              "fromPosition": {"key": "self"},
+              "gravityMultiplier": {"value": 1},
+              "speed": {"key": "leapSpeed"},
+              "toPosition": {"key": "targetPosition"},
+              "useHighArc": {"value": true}
+            },
+            "output": {
+              "aimVector": "jumpVector"
+            }
+          }
+        ]
+      },
+      {
+        "title": "succeeder",
+        "type": "decorator",
+        "name": "succeeder",
+        "parameters": {},
+        "child": {
+          "title": "parallel",
+          "type": "composite",
+          "name": "parallel",
+          "parameters": {
+            "fail": {"value": -1},
+            "success": {"value": -1}
+          },
+          "children": [
+            {
+              "title": "succeeder",
+              "type": "decorator",
+              "name": "succeeder",
+              "parameters": {},
+              "child": {
+                "title": "selector",
+                "type": "composite",
+                "name": "selector",
+                "parameters": {},
+                "children": [
+                  {
+                    "title": "projectileAimVector",
+                    "type": "action",
+                    "name": "projectileAimVector",
+                    "parameters": {
+                      "collisionCheck": {"value": false},
+                      "fromPosition": {"key": "self"},
+                      "gravityMultiplier": {"value": 1},
+                      "speed": {"key": "leapSpeed"},
+                      "toPosition": {"key": "targetPosition"},
+                      "useHighArc": {"value": false}
+                    },
+                    "output": {
+                      "aimVector": "jumpVector"
+                    }
+                  },
+                  {
+                    "title": "projectileAimVector",
+                    "type": "action",
+                    "name": "projectileAimVector",
+                    "parameters": {
+                      "collisionCheck": {"value": false},
+                      "fromPosition": {"key": "self"},
+                      "gravityMultiplier": {"value": 1},
+                      "speed": {"key": "leapSpeed"},
+                      "toPosition": {"key": "targetPosition"},
+                      "useHighArc": {"value": true}
+                    },
+                    "output": {
+                      "aimVector": "jumpVector"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "title": "sequence",
+              "type": "composite",
+              "name": "sequence",
+              "parameters": {},
+              "children": [
+                {
+                  "title": "setFlag",
+                  "type": "action",
+                  "name": "setFlag",
+                  "parameters": {
+                    "name": {"value": "run"}
+                  }
+                },
+                {
+                  "title": "onGround",
+                  "type": "action",
+                  "name": "onGround",
+                  "parameters": {}
+                },
+                {
+                  "title": "vecMultiply",
+                  "type": "action",
+                  "name": "vecMultiply",
+                  "parameters": {
+                    "first": {"key": "jumpVector"},
+                    "number": {"key": "leapSpeed"}
+                  },
+                  "output": {
+                    "vector": "jumpVelocity"
+                  }
+                },
+                {
+                  "title": "setVelocity",
+                  "type": "action",
+                  "name": "setVelocity",
+                  "parameters": {
+                    "velocity": {"key": "jumpVelocity"}
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "title": "dynamic",
+        "type": "composite",
+        "name": "dynamic",
+        "parameters": {},
+        "children": [
+          {
+            "title": "onGround",
+            "type": "action",
+            "name": "onGround",
+            "parameters": {}
+          },
+          {
+            "title": "runner",
+            "type": "action",
+            "name": "runner",
+            "parameters": {}
+          }
+        ]
+      }
+    ]
+  }
+}

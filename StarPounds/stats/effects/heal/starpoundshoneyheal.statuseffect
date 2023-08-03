@@ -1,0 +1,17 @@
+{
+  "name" : "starpoundshoneyheal",
+  "effectConfig" : {
+    "healAmount" : 100,
+    "emissionRate" : 4
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "heal.lua"
+  ],
+
+  "animationConfig" : "starpoundshoneyheal.animation",
+
+  "label" : "Honey Healing",
+  "icon" : "/interface/statuses/honeyheal.png"
+}

@@ -1,0 +1,17 @@
+{
+  "name" : "erchiusbloat",
+
+  "effectConfig" : {
+    "bloatAmount": 10,
+    "tickTime": 1,
+    "desaturateAmount" : 0,
+    "multiplyColor" : [0, 0, 0]
+  },
+  "defaultDuration" : 1,
+
+  "animationConfig" : "erchiusbloat.animation",
+
+  "scripts" : [
+    "erchiusbloat.lua"
+  ]
+}

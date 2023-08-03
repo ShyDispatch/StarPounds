@@ -1,0 +1,57 @@
+{
+  "objectName" : "flagthrog",
+  "colonyTags" : ["throg"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "teleporter",
+  "category" : "teleportMarker",
+  "price" : 70,
+  "radioMessagesOnPickup" : [ "pickupflag" ],
+  
+  "description" : "The Throg flag. Use ^green;[E]^white; to bookmark a teleportation location.",
+  "shortdescription" : "Throg Flag",
+  "race" : "throg",
+
+  "apexDescription" : "A throg flag. I can use this as a waypoint for teleportation.",
+  "avianDescription" : "This throg flag can be bookmarked as a destination for my ship teleporter.",
+  "floranDescription" : "Throg flag makess good point to teleport back to ussing teleporter!",
+  "glitchDescription" : "Observant. A small locator module attached to this throg flag allows it to be bookmarked for teleportation.",
+  "humanDescription" : "This throg flag can be saved as a location for my teleporter. Then I can return to it at any time.",
+  "hylotlDescription" : "This throg flag can act as a way point, enabling me to return to this point using a teleporter.",
+  "novakidDescription" : "I can bookmark this throg flag for quick teleportin'.",
+  "throgDescription" : "Locator Modules on flags are weird, but hey free mark for my teleporter.",  
+  "cowbridDescription" : "This Harpy flag can be saved as a location for my teleporter. Then I can return to it at any time.",  
+  "harpystarpoundsDescription" : "This Harpy flag can be bookmarked as a destination for my ship teleporter.",    
+  
+  "avaliDescription" : "This Throg flag has a module attached to it that I can connect to my ship's teleporter too. Handy!",  
+
+  "interactAction" : "OpenTeleportDialog",
+  "interactData" : "/interface/warping/destinationonly.config",
+
+  "inventoryIcon" : "flagthrogicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "flagthrog.png:<color>.<frame>"}, { "image" : "flagthroglit.png:<color>.<frame>", "fullbright" : true  } ],
+      "flipImages" : true,
+      "direction" : "left",
+      "imagePosition" : [-17, 0],
+      "frames" : 6,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "flagthrog.png:<color>.<frame>"}, { "image" : "flagthroglit.png:<color>.<frame>", "fullbright" : true  } ],
+      "direction" : "right",
+      "imagePosition" : [1, 0],
+      "frames" : 6,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+
+  //"soundEffect" : "/sfx/objects/flag_flap_loop.ogg"
+}

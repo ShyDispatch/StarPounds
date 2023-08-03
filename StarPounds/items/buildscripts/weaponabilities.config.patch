@@ -1,0 +1,42 @@
+[
+  { "op": "add",
+    "path": "/fatray",
+    "value": "/items/active/weapons/ranged/abilities/fatray/fatray.weaponability"
+  },
+  { "op": "add",
+    "path": "/miniknogfatray",
+    "value": "/items/active/weapons/ranged/abilities/miniknogfatray/miniknogfatray.weaponability"
+  },
+  { "op": "add",
+    "path": "/antifatray",
+    "value": "/items/active/weapons/ranged/abilities/antifatray/antifatray.weaponability"
+  },
+  { "op": "add",
+  "path": "/starpoundssodanade",
+  "value": "/items/active/weapons/ranged/abilities/starpoundssodanade/starpoundssodanade.weaponability"
+  },
+  { "op": "add",
+  "path": "/starpoundssakewave",
+  "value": "/items/active/weapons/melee/abilities/hammer/shockwave/starpoundssakewave.weaponability"
+  },
+  { "op": "add",
+  "path": "/starpoundsmeatshot",
+  "value": "/items/active/weapons/melee/abilities/spear/meatshot/starpoundsmeatshot.weaponability"
+  },
+  { "op": "add",
+  "path": "/ponderouszone",
+  "value": "/items/active/weapons/staff/abilities/effectzone/ponderouszone.weaponability"
+  },
+  { "op": "add",
+  "path": "/starpoundsgainbeam",
+  "value": "/items/active/weapons/ranged/abilities/gainbeam/starpoundsgainbeam.weaponability"
+  },
+  { "op": "add",
+  "path": "/starpoundsrayofgain",
+  "value": "/items/active/weapons/ranged/abilities/rayofgain/starpoundsrayofgain.weaponability"
+  },
+  { "op": "add",
+  "path": "/throgbolt",
+  "value": "/items/active/weapons/melee/abilities/spear/throgbolt/throgbolt.weaponability"
+  }  
+]  

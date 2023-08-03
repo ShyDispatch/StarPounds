@@ -1,0 +1,61 @@
+{
+  "objectName" : "starpoundswhitechocolatedoor",
+  "colonyTags" : ["door"],
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 95,
+  "description" : "A door made out of white chocolate.",
+  "shortdescription" : "White Chocolate Door",
+  "race" : "generic",
+
+  "apexDescription" : "A chocolate door. It reminds me of Miniknog gameshows I've watched.",
+  "avianDescription" : "This is strange. A door made out of chocolate. Wouldn't this melt in no time?",
+  "floranDescription" : "Floran prefersss doorss that Floran won't wanna eat.",
+  "glitchDescription" : "Observant. This door appears to have been made out of chocolate.",
+  "humanDescription" : "Oh phew it's just made of chocolate. If it was a ginerbread door I'd be concerned.",
+  "hylotlDescription" : "This.. Who would make a door out of chocolate?",
+  "novakidDescription" : "This door is made o' chocolate. That's just poor thinkin'.",
+  "throgDescription" : "If they wanted this to be effective. They shouldn't have made it so edible.",  
+  "avaliDescription" : "What? It's made of chocolate. A chocolate door. Who would make this?",    
+
+  "inventoryIcon" : "starpoundswhitechocolatedooricon.png",
+
+  "tooltipKind" : "door",
+  "largeImage" : "starpoundswhitechocolatedoor.png:right",
+  
+  "orientations" : [
+    {
+      "dualImage" : "starpoundswhitechocolatedoor.png:default",
+      "imagePosition" : [-16, 0],
+      "renderLayer" : "Object+5",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/wooddoor_open.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/wooddoor_close.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "starpoundschocolatedoor.png"
+  },
+  "animationPosition" : [-16, 0],
+
+  "inputNodes" : [ [0, 4] ],
+  "outputNodes" : [ [0, 0] ]
+}

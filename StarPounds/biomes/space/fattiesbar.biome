@@ -1,0 +1,14 @@
+{
+  "name" : "fattiesbar",
+  "friendlyName" : "Fatties Bar",
+  "airless" : false,
+
+  "parallax" : "/parallax/space/fattiesbar.parallax",
+
+  "spawnProfile" : {
+    "groups" : [],
+    "monsterParameters" : {}
+  },
+
+  "hueShiftOptions" : [0]
+}

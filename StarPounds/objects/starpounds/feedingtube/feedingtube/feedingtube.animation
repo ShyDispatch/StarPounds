@@ -1,0 +1,68 @@
+{
+  "globalTagDefaults" : {
+    "liquidDirectives" : "",
+    "liquidImage" : "",
+    "liquidLevel" : "0"
+  },
+  "animatedParts" : {
+    "stateTypes" : {
+      "feedState" : {
+        "default" : "default",
+        "states" : {
+          "default" : {},
+          "idle" : {},
+          "feeding" : {
+            "frames" : 9,
+            "cycle" : 0.8,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "hose" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "feedState" : {
+            "default" : {
+              "properties" : {
+                "image" : "<partImage>:default"
+              }
+            },
+            "idle" : {
+              "properties" : {
+                "image" : "<partImage>:idle"
+              }
+            },
+            "feeding" : {
+              "properties" : {
+                "image" : "<partImage>:feeding.<frame>"
+              }
+            }
+          }
+        }
+      },
+      "tank" : {
+        "properties" : {
+          "centered" : false,
+          "image" : "<partImage>"
+        }
+      },
+      "liquid" : {
+        "properties" : {
+          "centered" : false,
+          "offset" : [3.625, 0.625],
+          "image" : "<liquidImage>?crop=0;0;32;<liquidLevel>"
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "drink" : ["/sfx/humanoid/drink.ogg"]
+  }
+}

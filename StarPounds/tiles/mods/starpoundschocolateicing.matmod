@@ -1,0 +1,15 @@
+{
+  "modId" : 51409,
+  "modName" : "starpoundschocolateicing",
+  "description" : "Sweet, delicious chocolate icing",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 0,
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundschocolateicing.png",
+    "variants" : 5,
+    "multiColored" : false,
+    "zLevel" : 0
+  }
+}

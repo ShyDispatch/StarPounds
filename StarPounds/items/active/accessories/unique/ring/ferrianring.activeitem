@@ -1,0 +1,23 @@
+{
+  "itemName" : "ferrianring",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "It's looks to be a ring, but it's so big that you may as well use it as a bracelet.",
+  "shortdescription" : "Silver Drake's Band",
+  "inventoryIcon" : "ferrianring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "absorption", "modifier": -0.75},
+    {"name": "capacity", "modifier": 3},
+    {"name": "digestion", "modifier": 2}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

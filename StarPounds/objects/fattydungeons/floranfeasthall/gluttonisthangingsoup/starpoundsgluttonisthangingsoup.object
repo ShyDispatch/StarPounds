@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsgluttonisthangingsoup",
+  "colonyTags" : ["floran","fatdungeons","cooking","gluttonist"],
+  "rarity" : "Common",
+  "description" : "A finely made pot of soup",
+  "shortdescription" : "Hanging Soup Pot",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 500,
+  "printable" : false,
+
+  "apexDescription" : "Note to self: find out the ingredients of this for future reference.",
+  "avianDescription" : "A pot of delicious soup~",
+  "floranDescription" : "Sssoup pots remind Floran of home~",
+  "glitchDescription" : "Greedy. The smell of this soup could make me drool...",
+  "humanDescription" : "Smells like a clothes store.",
+  "hylotlDescription" : "A potent smell wafts from this covered pot.",
+  "novakidDescription" : "Oughta ladle up some of this for myself sometime.",
+
+  "inventoryIcon" : "starpoundsgluttonisthangingsoupicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsgluttonisthangingsoup.png",
+      "imagePosition" : [-16, -32],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+
+    }
+  ]
+}

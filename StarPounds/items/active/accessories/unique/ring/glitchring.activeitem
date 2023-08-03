@@ -1,0 +1,22 @@
+{
+  "itemName" : "glitchring",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "Often worn by Glitch nobility, this ring enhances the density of the wearer.",
+  "shortdescription" : "Royal Glitch Ring",
+  "inventoryIcon" : "glitchring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "health", "modifier": 0.5},
+    {"name": "movement", "modifier": -0.1}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

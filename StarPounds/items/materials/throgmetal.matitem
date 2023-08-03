@@ -1,0 +1,14 @@
+{
+  "itemName" : "throgmetal",
+  "price" : 10,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "throgmetal.png",
+  "description" : "A black metal made up of Hog Steel and glowing lights.",
+  "shortdescription" : "Throg Metal",
+  "glitchDescription" : "Observant. This matter is made of \"Hard Light\".",
+  "floranDescription" : "It feelsss electric.",
+  "novakidDescription" : "It reminds me of me.",
+
+  "materialId" : 51426
+}

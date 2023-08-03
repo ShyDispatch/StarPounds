@@ -1,0 +1,62 @@
+{
+  "id" : "mootantintro",
+  "mainQuest" : true,
+  "title" : "The Moo Prison",
+  "text" : "Find a way to escape the facade of a prison complex.",
+  "completionText" : "With the help of SAIL you are free of the USCM Remnants. Forever changed.",
+  "moneyRange" : [50, 50],
+  "canBeAbandoned" : false,
+  "showAcceptDialog" : false,
+  "showCompleteDialog" : false,
+  "showFailDialog" : false,
+
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/tutorial/mootantintro.lua",
+  "scriptConfig" : {
+    "portraits" : {
+      "default" : "player"
+    },
+    "startingMusicTime" : 3.5,
+    "startingMusicTracks" : ["/music/ocean-battle1-loop.ogg"],
+    "openingCinematic" : "/cinematics/intro/mootantintrostart.cinematic",
+    "midpointMusicTime" : 48.0,
+    "midpointMusicTracks" : ["/music/arctic-battle1-loop.ogg"],
+    "endpointCinematic" : "/cinematics/intro/mootantintrocomplete.cinematic",
+    "confiscateItems" : [
+      "brokenuscmhammer",
+      "protectoratechest",
+      "protectoratepants",
+      "protectorateflowerhead",
+      "raggedprotectoratecape",
+      "starpoundsinfusiontable",
+      "mooshipendant",
+      "commonpistol",
+      ["starpoundsmootantshake", 1000],
+      ["starpoundsgreaseburger", 1000],
+      ["starpoundsgreasepizzaslice", 1000],
+      ["starpoundstaco", 1000],
+      ["starpoundsheftycola", 1000],
+      ["salve", 1000],
+      ["bandage", 1000],
+      ["oculemonade", 1000],
+      ["chocolate", 1000],
+      "protectorateflyer",
+      ["money", 1000],
+      ["grassy", 1000],
+      ["drydirt", 1000],
+      ["glassmaterial", 1000]
+    ],
+    "skipIntroItems" : [
+      "brokenuscmhammer"
+    ],
+
+    "descriptions" : {
+      "graduate" : "Get out while you have the chance",
+      "weapon" : "Arm yourself",
+      "matterManipulator" : "Take the matter manipulator",
+      "escape" : "Escape the complex"
+    },
+
+    "followUp" : "bootship"
+  }
+}

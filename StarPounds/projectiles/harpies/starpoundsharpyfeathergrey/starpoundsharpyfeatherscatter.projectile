@@ -1,0 +1,34 @@
+{
+  "projectileName" : "starpoundsharpygreyfeatherscatter",
+  "image" : "starpoundsharpyfeather.png",
+  "physics" : "arrow",  
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "timeToLive" : 0.01,
+  "actionOnReap" : [
+    {
+      "action" : "projectile",
+      "type" : "starpoundsharpygreyfeather",
+      "inheritDamageFactor" : 0.333,
+      "angleAdjust" : 15
+    },
+    {
+      "action" : "projectile",
+      "type" : "starpoundsharpygreyfeather",
+      "inheritDamageFactor" : 0.333,
+      "angleAdjust" : -15
+    },
+    {
+      "action" : "projectile",
+      "type" : "starpoundsharpygreyfeather",
+      "inheritDamageFactor" : 0.333,
+      "angleAdjust" : 0
+    }
+  ],
+  "power" : 5.0,
+  "speed" : 75,
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

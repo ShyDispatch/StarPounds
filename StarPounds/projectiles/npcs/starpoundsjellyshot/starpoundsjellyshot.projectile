@@ -1,0 +1,50 @@
+{
+  "projectileName" : "starpoundsjellyshot",
+  "image" : "starpoundsjellyshot.png",
+  "physics" : "grenade",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "actionOnReap" : [
+      {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+             "type" : "textured",
+             "image" : "/monsters/starpounds/jellies/starpoundsjelly/starpoundsjellysplat.png",
+             "size" : 0.3,
+             "initialVelocity" : [0, 10],
+             "finalVelocity" : [0, -30],
+             "approach" : [0, 20],
+             "timeToLive" : 10,
+             "collidesForeground" : true,
+             "destructionTime" : 5,
+             "layer" : "back",
+             "variance" : {
+               "size" : 1,
+               "initialVelocity" : [6, 2]
+             }
+          }
+        }
+      ]
+    },
+	{
+      "action" : "config",
+      "file" : "/projectiles/explosions/acidspitexplosion/acidspitexplosion.config"
+    }
+  ],
+  "power" : 5.0,
+  "speed" : 50,
+  "damageKind" : "caloric",
+  "emitters" : [ ],
+  "statusEffects" : [
+    {"effect": "starpoundsbloat", "duration": 20},
+    {"effect": "starpoundsfood", "duration": 10}
+  ],
+
+  "renderLayer" : "Monster+50"
+}

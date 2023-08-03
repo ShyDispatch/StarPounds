@@ -1,0 +1,14 @@
+{
+  "name" : "thickfemalebody",
+  "category" : "moontant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "thickfemalebody.png"
+  },
+
+  "parameters" : {
+    "meleeProjectile" : "meleeslash",
+    "projectileSourcePosition" : [1, -1]
+  }
+}

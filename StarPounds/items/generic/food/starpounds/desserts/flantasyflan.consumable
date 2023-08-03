@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsflantasyflan",
+  "rarity" : "Uncommon",
+  "price" : 300,
+  "category" : "preparedFood",
+  "inventoryIcon" : "flantasyflan.png",
+  "description" : "Flan with a big F. So irresistable it's a flantasy come true. ",
+  "shortdescription" : "Flantasy Flan",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

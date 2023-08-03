@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundschurro",
+  "rarity" : "Uncommon",
+  "price" : 290,
+  "category" : "preparedFood",
+  "inventoryIcon" : "churro.png",
+  "description" : "Crunchy, fried dough covered in sugar.",
+  "shortdescription" : "Churro",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

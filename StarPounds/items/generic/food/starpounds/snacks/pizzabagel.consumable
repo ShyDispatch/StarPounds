@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundspizzabagel",
+  "rarity" : "Uncommon",
+  "price" : 200,
+  "category" : "preparedFood",
+  "inventoryIcon" : "pizzabagel.png",
+  "description" : "A small treat to satiate your hunger.",
+  "shortdescription" : "Pizza Bagel",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundspizzabagel" ]
+}

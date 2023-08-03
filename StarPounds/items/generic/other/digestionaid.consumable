@@ -1,0 +1,19 @@
+{
+  "itemName": "digestionaid",
+  "price": 500,
+  "rarity": "uncommon",
+  "category": "medicine",
+  "inventoryIcon": "digestionaid.png",
+  "description": "A less-than-legal vial of metabolism boosters for rapid digestion.",
+  "shortdescription": "Digestion Aid",
+  "maxStack": 1,
+  "effects": [
+    [
+      "digesting"
+    ]
+  ],
+  "emote": "",
+  "emitters": [
+    "drinking"
+  ]
+}

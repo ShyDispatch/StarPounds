@@ -1,0 +1,42 @@
+{
+  "objectName" : "throgcanister",
+  "colonyTags" : ["storage","throg"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "category" : "storage",
+  "price" : 85,
+  "description" : "A sealed metal canister, that might be used to store hazardous liquids.",
+  "shortdescription" : "Throg Canister",
+  "race" : "throg",
+  "health" : 1.5,
+
+  "apexDescription" : "This canister seems ideal for transporting volatile substances in.",
+  "avianDescription" : "What a curious canister - I wonder what is inside?",
+  "floranDescription" : "Yellow tube. Might have ssstuff inside.",
+  "glitchDescription" : "Observant. A short analysis concludes that this canister is built to safely store valuable liquids.",
+  "humanDescription" : "The sound this canister makes when opened is quite satisfying.",
+  "hylotlDescription" : "What a curious looking storage container. Perhaps it is built to store fuel?",
+  "novakidDescription" : "Is this a big ol' oil barrel? Mighty odd lookin' barrel if I say so myself.",
+
+  "inventoryIcon" : "throgcanistericon.png",
+  "orientations" : [
+    {
+      "dualImage" : "throgcanister.png:<color>.<key>",
+      "imagePosition" : [-12, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+
+  ],
+
+  "openSounds" : [ "/sfx/objects/castleswitchon.ogg" ],
+  "closeSounds" : [ "/sfx/objects/castleswitchoff.ogg" ],
+  "frameCount" : 5,
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 1,
+  "openFrameIndex" : 4,
+  "autoCloseCooldown" : 3600
+}

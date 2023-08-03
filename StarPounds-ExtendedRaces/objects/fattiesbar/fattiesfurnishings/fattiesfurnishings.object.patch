@@ -1,0 +1,97 @@
+[
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "avaliweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsavalitreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "avalifeedingtube" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "shoggothweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsshoggothtreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "shoggothfeedingtube" 
+	  } 
+	],
+
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "saturnianweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "saturnianfeedingtube" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/decor/-",
+	  "value": "trolleatposter" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/interactables/-",
+	  "value": "condescebutt" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "angelweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsangeltreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "angelfeedingtube" 
+	  } 
+	]
+]

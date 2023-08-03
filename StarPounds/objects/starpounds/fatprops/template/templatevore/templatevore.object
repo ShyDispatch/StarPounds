@@ -1,0 +1,56 @@
+{
+  "objectName" : "templatevore",
+  "printable" : false,
+  "rarity" : "Legendary",
+
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A chubby and hungry looking person. Very hungry.",
+  "shortdescription" : "Template: Vore",
+  "race" : "generic",
+
+  "apexDescription" : "She looks like she could drain a whole vat of lard.",
+  "avianDescription" : "They keep staring at me with that hungry glare... Did I just hear their stomach?",
+  "floranDescription" : "Fat lady lookss sssoft. Musst be good hunter.",
+  "glitchDescription" : "Curious. What a hungry sounding belly!",
+  "humanDescription" : "I've never seen anyone like her. They're giving me hungry eyes...",
+  "hylotlDescription" : "She looks like she's still digesting her last meal.",
+  "novakidDescription" : "Well shoot, this here girly could probably fit a whole Floran in there!",
+  "throgDescription" : "They've certainly packed on some pounds... Good.",
+  "avaliDescription" : "She looks like she eats very well! ...Why are they looking at me like that?",
+
+  "inventoryIcon" : "templatevore.png:default.default",
+
+  "orientations" : [
+    {
+      "image" : "templatevore.png:default.default",
+      "imagePosition" : [-23, -24],
+
+      "direction" : "right",
+
+      "mouthPosition": [-0.05, -0.5],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [
+    "templatevore.lua",
+    "/scripts/npcToyObject.lua"
+   ],
+  "scriptDelta" : 1,
+
+  "animation" : "templatevore.animation",
+  "animationParts" : {
+    "blossom" : "templatevore.png"
+  },
+
+  
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {},
+    "maxNpcs" : 1
+  }
+}

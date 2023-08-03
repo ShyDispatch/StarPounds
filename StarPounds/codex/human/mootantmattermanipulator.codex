@@ -1,0 +1,19 @@
+{
+  "id" : "mootantmattermanipulator",
+  "species" : "human",
+  "title" : "To Director Palmer",
+  "description" : "Report on capturing a Matter Manipulator",
+  "icon" : "starpoundshuman2.png",
+  "contentPages" : [
+    "Director Palmer, you're not gonna believe what just walked right into our hands earlier today. A lone protectorate with a Matter Manipulator. A technological marvel we're still unsure how the Protectorate made, and now we just have one to reverse engineer.",
+
+"I know you're more interested in your pet project Director, and I am thankful for the steady job. But we could go from your private merecenary force to an actual reestablished USCM. Unlocking the secrets of this device, especially in the wake of the Protectorate's destruction, is huge.",
+
+"Please consider, I'll get this Matter Manipulator in your hands after the next shuttle drop off. It's a- "
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

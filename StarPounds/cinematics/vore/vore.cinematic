@@ -1,0 +1,22 @@
+{
+  "skippable" : true,
+  "panels" : [
+    {
+      "drawables" : [
+        {
+          "image" : "/cinematics/black.png?setcolor=ffffff?multiply=b8eb0033"
+        }
+      ],
+      "keyframes" : [
+        {
+          "timecode" : 0,
+          "zoom" : 500,
+          "alpha" : 1,
+          "position" : [480, 270]
+        }
+      ]
+    }
+  ],
+  "audio" : [
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name" : "head3",
+  "category" : "fathylotlghost",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "head3.png"
+  }
+}

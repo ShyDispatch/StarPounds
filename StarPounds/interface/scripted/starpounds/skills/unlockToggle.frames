@@ -1,0 +1,11 @@
+{
+  "frameGrid" : {
+    "size" : [12, 25],
+    "dimensions" : [2, 2],
+
+    "names" : [
+      [ "on.enabled", "on.disabled" ],
+      [ "off.enabled", "off.disabled" ]
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsbottledhoney",
+  "price" : 25,
+  "rarity" : "Common",
+  "category" : "medicine",
+  "inventoryIcon" : "starpoundsbottledhoney.png",
+  "description" : "The restorative power of this honey is incredible.",
+  "shortdescription" : "Bottled Honey",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+      "effect" : "starpoundshoneyheal",
+      "duration" : 30
+    }
+  ] ],
+  "blockingEffects" : [
+    "healingwater"
+  ],
+  "emote" : "",
+  "emitters" : [ "drinkinghealing" ]
+}

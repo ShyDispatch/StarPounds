@@ -1,0 +1,33 @@
+{
+  "objectName" : "sodawastebin",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "printable" : false,
+
+  "description" : "A simple waste bin for soda.",
+  "shortdescription" : "Soda Waste Bin",
+  "race" : "human",
+
+  "apexDescription" : "I emptied this just yesterday! It's someone elses turn today.",
+  "avianDescription" : "Did someone throw food in the waste bin again? It stinks.",
+  "floranDescription" : "Bin is full of cans.",
+  "glitchDescription" : "Displeased. Who keeps throwing things in the bin when it's clearly full?",
+  "humanDescription" : "Someone should empty this waste bin... I'll do it later!",
+  "hylotlDescription" : "An overflowing waste bin. I live with pigs.",
+  "novakidDescription" : "This bin needs emptyin'.",
+
+
+  "inventoryIcon" : "sodawastebinicon.png",
+  "orientations" : [
+    {
+      "image" : "sodawastebin.png",
+      "imagePosition" : [-1, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ]
+}

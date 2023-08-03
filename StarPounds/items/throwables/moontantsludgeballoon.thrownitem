@@ -1,0 +1,30 @@
+{
+  "itemName" : "moontantsludgeballoon",
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "price" : 100,    
+  "inventoryIcon" : "moontantsludgeballoonicon.png",
+  "image" : "moontantsludgeballoon.png",
+  "shortdescription" : "Moontant Sludge Balloon",
+  "description" : "A balloon filled up with moontant sludge.",
+
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 0.4,
+
+  "projectileType" : "moontantsludgeballoon",
+  "projectileConfig" : {
+    "speed" : 40,
+    "power" : 0,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item_small.ogg" ]
+      }
+    ]
+  }
+}

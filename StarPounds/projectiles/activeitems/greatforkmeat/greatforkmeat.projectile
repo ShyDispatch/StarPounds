@@ -1,0 +1,115 @@
+{
+  "projectileName" : "starpoundsgreatforkmeat",
+  "image" : "starpoundsgreatforkmeat.png",
+  "animationCycle" : 1,
+  "frameNumber" : 1,
+  "timeToLive" : 0.01,
+  "physics" : "grenade",
+  "damageKindImage" : "icon.png",
+  "pointLight" : false,
+  "onlyHitTerrain" : true,
+  "actionOnReap" : [
+    {
+      "action" : "option",
+      "options" : [
+        {
+          "action" : "projectile",
+          "type" : "starpoundssteak",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundsham",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundsfish",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundspoultry",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        }
+      ]
+    },
+    {
+      "action" : "option",
+      "options" : [
+        {
+          "action" : "projectile",
+          "type" : "starpoundssteak",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundsham",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundsfish",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundspoultry",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        }
+      ]
+    },
+    {
+      "action" : "option",
+      "options" : [
+        {
+          "action" : "projectile",
+          "type" : "starpoundssteak",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundsham",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundsfish",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        },
+        {
+          "action" : "projectile",
+          "type" : "starpoundspoultry",
+          "fuzzAngle" : 20,
+          "inheritDamageFactor" : 0.35,
+          "inheritSpeedFactor" : 1
+        }
+      ]
+    }
+  ],
+  "damagePoly" : [ ],
+  "power" : 0.0,
+  "damageKind" : "caloric"
+}

@@ -1,0 +1,74 @@
+{
+  "objectName" : "saturnianfeedingtube",
+  "colonyTags" : ["saturn", "starpounds", "feeding"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 300,
+  "description" : "A tank that can be filled with any liquid. ^green;Fill by using the [Q] key to drop liquids.^reset;",
+  "shortdescription" : "Saturnian Feeding Tube",
+  "race" : "saturn",
+
+  "apexDescription" : "This brings a bad feeling to me. But of what, I cannot say.",
+  "avianDescription" : "I'm confused. It looks bad, but it feeds you? Isn't that good?",
+  "floranDescription" : "Floran ssshould use device. Ssso much to eat.",
+  "glitchDescription" : "Worried. This appears like a device used for feeding.",
+  "humanDescription" : "I've seen too much of the internet to know where this is going.",
+  "hylotlDescription" : "Who would be so gluttonous as to drink from this? And all of it?",
+  "novakidDescription" : "The ultimate chugging.",
+  "throgDescription" : "Gonna be draining this tank dry in no time.",
+  "avaliDescription" : "No. No this can't... Why?",
+  "saturnDescription" : "This thing looks like a giant alembic, but I don't think its intended use is anything as innocent as that.",
+  "saturn2Description" : "This thing looks like a giant alembic, but I don't think its intended use is anything as innocent as that.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+  "sitOrientation" : "stand",
+  "sitCoverImage" : "/objects/starpounds/feedingtube/saturnianfeedingtube/feedingtubecover.png",
+  "sitAngle" : 0,
+
+  "gulpDelay" : 0.8,
+
+  "inventoryIcon" : "feedingtubeicon.png",
+  "orientations" : [
+    {
+      "image" : "feedingtubepreview.png",
+      "imagePosition" : [-16, 0],
+      "frames" : 10,
+      "animationCycle" : 0.8,
+      "flipImages" : true,
+      "direction" : "left",
+      "sitPosition" : [-41, 32],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "feedingtubepreview.png",
+      "imagePosition" : [-16, 0],
+      "frames" : 10,
+      "animationCycle" : 0.8,
+      "direction" : "right",
+      "sitPosition" : [-9, 32],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "feedingtube.animation",
+  "animationPosition" : [-15, 0],
+  "animationParts" : {
+    "tank" : "feedingtubetank.png",
+    "hose" : "feedingtubehose.png"
+  },
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {},
+    "maxNpcs" : 1
+  },
+  "scripts" : [
+    "/objects/starpounds/feedingtube/feedingtube.lua",
+    "/scripts/npcToyObject.lua"
+   ]
+}

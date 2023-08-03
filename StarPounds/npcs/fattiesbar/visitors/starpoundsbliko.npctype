@@ -1,0 +1,48 @@
+{
+  "type" : "starpoundsbliko",
+  "baseType" : "outpostvisitor",
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_skills": {
+      "minimumSize": [3, 3]
+    },
+    "starPounds_options": {
+      "disableGain": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"-Todo-"
+					]
+				}
+			}
+		}
+  },
+
+  "identity":  {
+    "bodyDirectives" : "?replace;786440=aeafaf;a2885c=d3d4d4;ccb07f=f1f2f2;42331c=8a8b8b?replace;4e4e4e=1cb4d5;787878=68e0ff;212121=1c2f42;3c3c3c=17688d?replace;1b8d78=17688c;1c3b42=1c2f41;67ffa2=68e0fe;1ad589=1cb4d4?replace;1b8d78=17688c;1c3b42=1c2f41;67ffa2=68e0fe;1ad589=1cb4d4",
+    "color" : [ 51, 117, 237 ],
+    "emoteDirectives" : "?replace;786440=aeafaf;a2885c=d3d4d4;ccb07f=f1f2f2;42331c=8a8b8b?replace;4e4e4e=1cb4d5;787878=68e0ff;212121=1c2f42;3c3c3c=17688d?replace;1b8d78=17688c;1c3b42=1c2f41;67ffa2=68e0fe;1ad589=1cb4d4?replace;1b8d78=17688c;1c3b42=1c2f41;67ffa2=68e0fe;1ad589=1cb4d4",
+    "facialHairDirectives" : "",
+    "facialHairGroup" : "",
+    "facialMaskDirectives" : "",
+    "facialHairType" : "",
+    "facialMaskGroup" : "",
+    "facialMaskType" : "",
+    "gender" : "female",
+    "hairDirectives" : "?replace;4e4e4e=1cb4d5;787878=68e0ff;212121=1c2f42;3c3c3c=17688d?replace;1b8d78=17688c;1c3b42=1c2f41;67ffa2=68e0fe;1ad589=1cb4d4",
+    "hairGroup" : "hair",
+    "hairType" : "2",
+    "name" : "Bliko",
+    "personalityArmIdle" : "idle.1",
+    "personalityArmOffset" : [ 0, 0 ],
+    "personalityHeadOffset" : [ 0, 0 ],
+    "personalityIdle" : "idle.4",
+    "species" : "avali"
+  }
+}

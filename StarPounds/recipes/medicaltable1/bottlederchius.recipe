@@ -1,0 +1,8 @@
+{
+  "input" : [
+    { "item" : "liquidfuel", "count" : 10 },
+    { "item" : "bottle", "count" : 1 }
+  ],
+  "output" : { "item" : "bottlederchius", "count" : 1 },
+  "groups" : [ "craftingmedical", "healing" ]
+}

@@ -1,0 +1,16 @@
+{
+  "kind" : "starpoundsdash",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/dash/dash.animation?replace;ffffff00=00000000;00a3becc=7650c5cc;00a3be85=685ac485;00a3be29=7154c429;59e8ffcc=b6a2e0cc;59e8ff85=b6a2e085;59e8ff29=b6a2e029",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [0, 0],
+    "fade" : 1,
+    "size" : 1,
+    "layer" : "back",
+    "timeToLive" : 0.85,
+    "variance" : {
+    }
+  }
+}

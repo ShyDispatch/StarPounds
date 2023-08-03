@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsmootantplush",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty","starpounds"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 45,
+
+  "description" : "A soft Mootant plush toy.",
+  "shortdescription" : "Mootant Plushie",
+  "race" : "generic",
+
+  "apexDescription" : "It's a plush of a Mootant.",
+  "avianDescription" : "An incredibly soft plush of a Mootant.",
+  "floranDescription" : "Mootant plush as ssoft as the real thing!",
+  "glitchDescription" : "Appreciative. A cuddly Mootant plush.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsmootantplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsmootantplush.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

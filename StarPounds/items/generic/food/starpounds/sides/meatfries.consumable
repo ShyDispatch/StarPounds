@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsmeatfries",
+  "rarity" : "Rare",
+  "price" : 150,
+  "category" : "preparedFood",
+  "inventoryIcon" : "meatfries.png",
+  "description" : "Meat in bite sized portions, great to go alongside some meat. Florans love this side dish.",
+  "shortdescription" : "Meat Fries",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 270
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsmeatfries" ]
+}

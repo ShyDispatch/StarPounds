@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundscorndog",
+  "rarity" : "Rare",
+  "price" : 480,
+  "category" : "preparedFood",
+  "inventoryIcon" : "corndog.png",
+  "description" : "Deep fried food has never been so carnival like! Still unhealthy, though.",
+  "shortdescription" : "Corn Dog",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 20
+    }
+  ] ],
+  "foodValue": 25,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

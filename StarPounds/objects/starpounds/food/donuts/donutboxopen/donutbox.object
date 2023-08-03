@@ -1,0 +1,37 @@
+{
+  "objectName" : "starpoundsdonutboxopen",
+  "colonyTags" : ["starpounds","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 20,
+
+  "description" : "A simple cardboard box of donuts.",
+  "shortdescription" : "Donut Box",
+
+  "apexDescription" : "I wonder if there's a banana cream donut?",
+  "avianDescription" : "Oo I'd love a cake donut right about now.",
+  "floranDescription" : "Sssweetss that can be dumped in Floransss mouth!",
+  "glitchDescription" : "Eager. Do they stock iron donuts?",
+  "humanDescription" : "Mmm... Donuts...",
+  "hylotlDescription" : "Oh just one glazed donut won't hurt right?",
+  "novakidDescription" : "Gotta get me sum' of dat zebra donut.",
+  "throgDescription" : "It's an appetizer of donuts. Don't mind me.",  
+  "cowbridDescription" : "Mmm... Donuts...",  
+  "harpystarpoundsDescription" : "Cinnamon donuts sound good. Don't see them though.",
+  
+  "avaliDescription" : "A donut doesn't sound too bad. But I'd rather something else.",      
+
+  "inventoryIcon" : "donutboxicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "donutbox.png:<color>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

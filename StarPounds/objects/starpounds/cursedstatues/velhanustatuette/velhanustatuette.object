@@ -1,0 +1,63 @@
+  {
+  "objectName" : "velhanustatuettee",
+  "colonyTags" : ["avian","aviantomb","pretty","velhanu","valuable","starpounds"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A statuette of a forgotten, fat Avian Goddess.",
+  "shortdescription" : "Velhanu Statue",
+  "race" : "avian",
+
+  "apexDescription" : "A avolite Avian statuette decorated with symbols I don't recognise.",
+  "avianDescription" : "Legends speak of the time when ancient avians lost their wings, they found their own goddess of the ground.",
+  "floranDescription" : "Big, sshiny birdwoman. Musst've been ssuperior hunter.",
+  "glitchDescription" : "Startled. This Avian statue depicts an unreasonably fattened bird.",
+  "humanDescription" : "Hope I won't need a bag of sand for this.",
+  "hylotlDescription" : "I wouldn't think of the Avian's to worship obesity.",
+  "novakidDescription" : "Never understood if the Avians want to fly or stay planted on the ground.",
+  "throgDescription" : "Those birds seem to have a good taste for worship.",  
+  "avaliDescription" : "I know Avians who defy their faith call themselves the grounded, but this seems a bit much.",      
+
+  "inventoryIcon" : "velhanustatuetteicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "velhanustatuette.png:<color>.<frame>"}, { "image" : "velhanustatuettelit.png:<color>.<frame>", "fullbright" : true  } ],
+
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+      "frames" : 1,
+      "animationCycle" : 0.5,
+	  
+      "animationParts" : {
+        "bg" : "velhanustatuette.png",
+        "fg" : "velhanustatuettelit.png"
+      },
+      "animationPosition" : [-8, 0],
+	  
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+  
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "velhanustatuette.png",
+    "fg" : "velhanustatuettelit.png"
+  },
+
+  "scripts" : [ "fatteningzonespawner.lua" ],
+  "scriptDelta" : 10,
+
+  "inputNodes" : [ [0, 0] ],
+
+  "fireTime" : 2.0, // rate of fire
+  "fireTimeVariance" : 0.0, // variation in rate of fire
+  "projectile" : "fattyEffectProjectile", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "damageTeam" : { "type" : "indiscriminate" },
+    "power" : 0,
+    "speed" : 0
+  }
+}

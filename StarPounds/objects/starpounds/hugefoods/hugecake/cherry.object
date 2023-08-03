@@ -1,0 +1,54 @@
+{
+  "objectName" : "starpoundshugecherrycake",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Uncommon",
+  "shortdescription" : "Huge Black Forest Cherry Cake",
+  "description" : "The name is already a mouthful, and the cake itself will so be even more.",
+  "race" : "generic",
+  "category" : "other",
+  "price" : 1750,
+  "smashOnBreak" : true,
+
+  "stages": 5,
+  "bitesPerStage": 4,
+  "food": 1750,
+
+  "apexDescription" : "This is an absurdly big cake.",
+  "avianDescription" : "What a huge cake. The amount of sugar in this would make a person sick.",
+  "floranDescription" : "Cake will be eaten by Floran.",
+  "glitchDescription" : "Curious. A cake this large is well suited for a king.",
+  "humanDescription" : "Did I drink a shrinking potion? Will I go back to normal if I eat this?",
+  "hylotlDescription" : "Who would make such a ridiculously large cake?",
+  "novakidDescription" : "Now dis is a cake fit for a village.",
+  "throgDescription" : "Oh good, a slice for me.",
+  "mootantDescription" : "Mmm, cake~",
+  "harpyDescription" : "That's a lot of cake. It's not cinnamon though.",
+  "avaliDescription" : "Impressive. Though the frosting to cake ratio is horrifying.",
+
+  "inventoryIcon" : "cherryicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "cherry.png:<stage>",
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {}
+  },
+
+  "scripts" : [
+    "/objects/starpounds/hugefoods/hugefood.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 1,
+
+  "animation" : "cherry.animation",
+  "animationParts" : {
+    "cake" : "cherry.png"
+  }
+}

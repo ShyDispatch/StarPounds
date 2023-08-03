@@ -1,0 +1,11 @@
+{
+  "itemName" : "dispatchblock",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "dispatchblock.png",
+  "description" : "I know you spawned this in. You are being judged.",
+  "shortdescription" : "Blubberbutt Flab",
+
+  "materialId" : 51424
+}

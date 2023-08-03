@@ -1,0 +1,64 @@
+{
+  "type" : "miuscmremnant",
+  "baseType" : "hostile",
+
+  "dropPools" : [ "empty" ],
+  
+  "damageTeam" : 3,
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "Damnit, a Moo is escaping!",
+            "You're worth more alive, but I'm sick of this!",
+            "Go back to your cell and we won't have to do anything!",
+            "Still a free thinker huh? Let's fix that!",
+            "You're supposed to be nice and dumb!",
+            "This isn't personal, but you gotta drink up!",
+            "Oh why is everything going to hell?"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "soldierhead", "parameters" : { "colorIndex" : 7 } }, { "name" : "humantier2head", "parameters" : { "directives" : "?replace;e0975c=4c4e37;a85636=26281c;6f2919=0f100b;a32c1c=4c4e37;6e1e14=26281c;" } }, { "name" : "humantier1head" } ],
+            "chest" : [ { "name" : "soldierchest", "parameters" : { "colorIndex" : 7 } } ],
+            "legs" : [ { "name" : "soldierpants", "parameters" : { "colorIndex" : 7 } } ],
+            "primary" : [
+              "npcassaultrifle",
+              "npcpistol",
+              "npcmachinepistol",
+              "npcshotgun",
+              "npcsniperrifle"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 20.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.5
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

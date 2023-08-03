@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsblossomgraffitti",
+  "colonyTags" : ["odd"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "Pretty pink graffitti.",
+  "shortdescription" : "Blossom Was Here",
+  "race" : "generic",
+
+  "apexDescription" : "Appears I'm not the first one here.",
+  "avianDescription" : "Some girl's beaten me to this area.",
+  "floranDescription" : "Floran wants to eat this Blossom.",
+  "glitchDescription" : "Neutral. Someone reached this place before me.",
+  "humanDescription" : "Blossom must be an adventurous gal!",
+  "hylotlDescription" : "Seems someone has been here before me.",
+  "novakidDescription" : "Darn, I'm not the first one here.",
+
+  "inventoryIcon" : "starpoundsgraffitiicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsblossomgraffitti.png:<color>",
+      "imagePosition" : [-32, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

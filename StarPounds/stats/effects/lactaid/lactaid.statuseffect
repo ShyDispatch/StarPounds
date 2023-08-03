@@ -1,0 +1,10 @@
+{
+  "name" : "lactaid",
+  "effectConfig" : {
+    "skill": "breastProduction"
+  },
+	"scripts": [
+		"lactaid.lua"
+	],
+  "defaultDuration" : 1
+}

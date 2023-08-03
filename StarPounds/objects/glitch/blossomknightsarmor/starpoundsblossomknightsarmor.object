@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsblossomknightsarmor",
+  "colonyTags" : ["glitch","combat","pretty"],
+  "rarity" : "Legendary",
+  "description" : "A suit of armor made for a fabulous (and dense) knight.",
+  "shortdescription" : "Blossom Knight's Armor",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 500,
+
+  "apexDescription" : "A particularly fabulous suit of armor. Guess whoever made it liked pink.",
+  "avianDescription" : "The knight who wore this must've been quite... flamboyant.",
+  "floranDescription" : "Metalman wearss pink! Smells pink too!",
+  "glitchDescription" : "Curious. Its scarf smells like flowers.",
+  "humanDescription" : "Whoever had this armor made for them must've been a real weeb.",
+  "hylotlDescription" : "This armor seems to mix Hylotl and Glitch techniques.",
+  "novakidDescription" : "Whoever wore this certainly liked pink",
+
+  "inventoryIcon" : "starpoundsblossomknightsarmoricon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsblossomknightsarmor.png:<color>",
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

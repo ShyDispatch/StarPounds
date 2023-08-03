@@ -1,0 +1,24 @@
+{
+  "itemName" : "accessorybox",
+  "price" : 5000,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "Jewellery Box",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "accessoryboxicon.png",
+  "animation" : "accessorybox.animation",
+  "animationCustom" : {},
+  "scripts" : ["accessorybox.lua"],
+
+  "fireTime" : 2.0,
+  "fireOffset" : [3.0, 0.0],
+
+  "treasure" : {
+    "pool" : "accessoryBox",
+    "level" : 6
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundschocolatepizzaslice",
+  "rarity" : "Uncommon",
+  "price" : 200,
+  "category" : "preparedFood",
+  "inventoryIcon" : "chocolatepizzaslice.png",
+  "description" : "A cold slice of pizza made up of chocolate.",
+  "shortdescription" : "Chocolate Pizza Slice",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

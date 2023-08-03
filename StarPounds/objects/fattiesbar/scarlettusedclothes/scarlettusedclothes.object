@@ -1,0 +1,123 @@
+{
+  "objectName" : "scarlettusedclothes",
+  "colonyTags" : ["outpost","commerce"],
+  "rarity" : "Common",
+  "category" : "other",
+  "description" : "Sometimes you're in need of something new. Well new for you.",
+  "shortdescription" : "Scarlett's Used Clothes",
+  "race" : "novakid",
+  "price" : 8000,    
+  "printable" : false,
+  "lightColor" : [86, 46, 57],  
+
+  "apexDescription" : "This appears to be a shop for clothing.",
+  "avianDescription" : "So many clothes. Most of them are smaller than the merchant!",
+  "floranDescription" : "Floran ssseess lotsss of clothess. Floran excited.",
+  "glitchDescription" : "Impressed. I've never seen most of these clothes.",
+  "humanDescription" : "Finally, a store that has clothing in sizes larger than XS.",
+  "hylotlDescription" : "Despite the intimidating appearance, this shopkeep seems quite humble.",
+  "novakidDescription" : "This place seems great for getting dressed up.",
+  "throgDescription" : "Strange to think other races don't have their clothing built to stretch.",
+  "mootantDescription" : "Finally, a store that has clothing in sizes larger than XS.",
+  "harpyDescription" : "There could be a fun top here I could wear.",
+
+  "avaliDescription" : "Awfully nice of this shopkeep to provide clothing for any size.",
+  
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+	{
+      "imageLayers" : [ { "image" : "scarlettusedclothes.png:<color>.<frame>", "fullbright" : true }, { "image" : "scarlettusedclotheslit.png:<color>.<frame>" } ],
+      "imagePosition" : [-48, 0],
+
+      "direction" : "left",
+      "flipImages" : true,	  
+
+      "frames" : 37,
+      "animationCycle" : 4.0,
+      "questIndicatorPosition" : [1.3, -4.5],
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [-6, 0], [-5, 0], [-4, 0], [-3, 0], [-2, 0],
+        [-6, 1], [-5, 1], [-4, 1], [-3, 1], [-2, 1],
+        [-6, 2], [-5, 2], [-4, 2], [-3, 2], [-2, 2],
+        [-5, 3], [-4, 3], [-3, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "scarlettusedclothes.png:<color>.<frame>", "fullbright" : true }, { "image" : "scarlettusedclotheslit.png:<color>.<frame>" } ],
+      "imagePosition" : [-48, 0],
+
+      "direction" : "right",
+
+      "frames" : 37,
+      "animationCycle" : 4.0,
+      "questIndicatorPosition" : [1.3, -4.5],
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [-6, 0], [-5, 0], [-4, 0], [-3, 0], [-2, 0],
+        [-6, 1], [-5, 1], [-4, 1], [-3, 1], [-2, 1],
+        [-6, 2], [-5, 2], [-4, 2], [-3, 2], [-2, 2],
+        [-5, 3], [-4, 3], [-3, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    }	
+  ],
+  
+  "scripts" : [ "scarlettusedclothes.lua" ],
+  "scriptDelta" : 0,  
+
+  "interactData" : {
+    "config" : "/interface/fattyshops/fatshops.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Scarlett's Used Clothes",
+        "subtitle" : "^#b9b5b2;Offers plenty of clothes!",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/scarlett.png"
+        }
+      }
+    },
+    "filter" : [],
+	"modTab" : [{
+      "file": "/interface/fattyshops/tabs/exclusive.png",
+	  "label": "Exclusive",
+      "filter": [ "exclusive" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/racial.png",
+	  "label": "Racial",
+      "filter": [ "racial" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/costume.png",
+	  "label": "Costume",
+      "filter": [ "costume" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/invisible.png",
+	  "label": "Invisible",
+      "filter": [ "invisible" ]
+    }]
+  },
+  "storeInventory" : {
+    "exclusive" : [
+      "cosmicbanditchest", "cosmicbanditlegs", "cosmicblacksmithchest", "cosmicblacksmithlegs", "meatdresserhead", "starpoundsbunnysuithead", "starpoundsbunnysuitchest", "starpoundsbunnysuitlegs", "starpoundsrubberhead", "starpoundsrubberchest", "starpoundsrubberlegs", "starpoundsimmunesuithead", "starpoundsbarriersuithead",
+	  "starpoundshaydeehead", "starpoundshaydeechest", "starpoundshaydeelegs", "starpoundsponderoushead", "starpoundsponderouschest", "starpoundsponderouslegs", "starpoundsponderousback", "starpoundsmooshihead", "starpoundsuniformhead", "mootantcostumelegs", "starpoundsgiantlips", "starpoundsartificerhead", "starpoundshuntresshead"
+    ],
+    "racial" : [
+      "protectoratechest", "protectoratepants", "protectorateshirtchest", "protectoratevestchest", "jeans1legs", "workoutlegs", "tshirtchest", "hoodiechest", "sweatervestchest", "coolchest", "conceptchest", "shirtchest", "noblechest", "noblelegs", "merchantchest", "merchantlegs",
+	  "apexofficerjacket", "apexofficerpants", "apexnavyjacket", "apexnavypants", "kimonochest", "kimonolegs", "traditionalchest", "traditionallegs", "novakidsuspenders", "novakidsuspenderspants"
+    ],	
+    "costume" : [
+      "cowboychest", "cowboylegs", "chefhead", "chefchest", "cheflegs", "bettyhead", "bettychest", "bettylegs", "jumpsuitchest", "jumpsuitlegs", "hazmathead", "hazmatchest", "hazmatlegs", "scientisthead", "scientistchest", "scientistlegs",
+	  "neohead", "neochest", "neolegs", "pilothead", "pilotchest", "pilotlegs", "moneybagschest", "moneybagspants", "mrclauschest", "mrclauspants", "startrackchest", "startracklegs", "slimehead", "slimechest", "slimelegs", "darkdisguisechest", "darkdisguiselegs",
+	  "prismchest", "prismlegs", "neckruffle", "snowinfantrychest", "snowinfantrypants", "explorerchest", "explorerlegs", "tarchest", "tarlegs", "icearmorchest", "icearmorlegs"
+    ],	
+    "invisible" : [
+      "starpoundsinvisiblehead", "starpoundsinvisiblechest", "starpoundsinvisiblelegs", "starpoundsinvisibleback"
+    ]
+  }
+}

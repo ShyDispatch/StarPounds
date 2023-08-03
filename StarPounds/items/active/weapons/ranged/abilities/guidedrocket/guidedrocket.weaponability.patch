@@ -1,0 +1,12 @@
+[
+  {
+    "op" : "add",
+    "path" : "/animationCustom/sounds/caloricGuided",
+    "value" : [ "/sfx/gun/rocket_poison1.ogg" ]
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "projectileType" : "caloricguidedrocket" }
+  }
+]

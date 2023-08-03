@@ -1,0 +1,61 @@
+{
+  "type" : "starpoundsuscmfarmer",
+  "baseType" : "hostile",
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "These are my Mooshi! You stay away from them!",
+            "You'll make a fine addition with some tweaking!",
+            "Don't you judge me!",
+            "My girls! Not yours!",
+            "I'll make you moo just like my girls!",
+            "How dare you sneak onto my private property!",
+            "I got these girls together! You won't take that from me!"
+          ],
+          "mootant" : [
+            "Oho! Yes, come closer Mooshi~",
+            "You'll fit in nicely with the others~",
+            "Oh? Another Mootant to join my barn?~",
+            "I thought I'd never expand my line up of Mooshi~",
+            "Moo for me, Mooshi~",
+            "I'll treat you so much better then the remnants did~",
+            "You won't go hungry anymore Mooshi, come here~"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [
+              { "name" : "humantier1head" }
+            ],
+            "chestCosmetic" : [
+              { "name" : "novakidsuspenders", "parameters" : { "colorIndex" : 7 } }
+            ],
+            "legsCosmetic" : [
+              { "name" : "novakidsuspenderspants", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "primary" : [
+              "npcassaultrifle",
+              "npcpistol",
+              "npcmachinepistol",
+              "npcshotgun",
+              "npcsniperrifle"
+            ]
+          }
+        ] ]
+    ]
+  }
+}

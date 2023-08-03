@@ -1,0 +1,57 @@
+[  
+  {  
+    "op" : "add",
+    "path" : "/tagCriteria/throg",
+    "value" : {  
+      "default" : [  
+        "You better be giving me a replacement.",
+        "Hey. I need my stuff. Put it back!",
+        "When you make things mine. They're mine. Put them back."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/enclosedArea/throg",
+    "value" : {  
+      "default" : [  
+        "It's drafty. Might have something to do with that hole.",
+        "Hey pal, are your eyes worse than mine because you're ignoring that hole.",
+        "I sure do love my landlord not doing a thing about the lack of a wall in my home."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/otherDeed/throg",
+    "value" : {  
+      "default" : [  
+        "It's tight enough with just me in here. I'm not sharing it with someone else.",
+        "We had a deal! No roommates!",
+        "I never agreed to sharring this place with another."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/severe/throg",
+    "value" : {  
+      "default" : [  
+        "Typical landlord, ignoring complaints.",
+        "Hey, you suck at your job. You better start doing something about this mess.",
+        "I'm supposed to pay for this? Well I ain't if you don't fix this. Now."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/final/throg",
+    "value" : {  
+      "default" : [  
+        "And others look down on Throgs for their actions. I'm leaving.",
+        "I deserve better living conditions than this!",
+        "That's it. I'm leaving. You're horrible at your job."
+      ]
+    }
+  }
+]

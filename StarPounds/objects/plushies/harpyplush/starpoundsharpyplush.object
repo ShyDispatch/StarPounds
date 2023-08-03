@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsharpyplush",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 45,
+
+  "description" : "A soft Harpy plush toy.",
+  "shortdescription" : "Harpy Plushie",
+  "race" : "generic",
+
+  "apexDescription" : "It's a plush of a Harpy.",
+  "avianDescription" : "Even in plush form I'm a little jealous of the wings.",
+  "floranDescription" : "Harpy plush as soft as the real thing!",
+  "glitchDescription" : "Appreciative. A cuddly Harpy plush.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsharpyplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsharpyplush.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

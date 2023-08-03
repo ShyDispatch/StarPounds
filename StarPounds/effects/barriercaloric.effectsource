@@ -1,0 +1,29 @@
+{
+  "kind" : "barriercaloric",
+  "definition" : {
+    "duration" : 1.9,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "caloricswoosh1", "caloricswoosh2", "fireswoosh2", "caloricswoosh2", "fireswoosh2", "caloricswoosh1", "caloricswoosh2", "fireswoosh2" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    },
+    "particles" : [
+      [ "caloricswoosh1", "caloricswoosh2", "fireswoosh2", "caloricswoosh2", "fireswoosh2", "caloricswoosh2", "fireswoosh2" ]
+    ],
+    "sounds" : [
+      [ ]
+    ],
+    "stop" : {
+      "particles" : [
+        [ "fireswoosh4", "fireswoosh4", "fireswoosh4", "fireswoosh4", "fireswoosh4", "fireswoosh4" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "objectName" : "gluttonistlamp1",
+  "colonyTags" : ["floran","gluttonist","light"],
+  "rarity" : "Common",
+  "description" : "A strange pink light pod is hanging loosely from a curved wooden post.",
+  "shortdescription" : "Vine Pod Lamp",
+  "race" : "floran",
+
+  "apexDescription" : "It appears to be a luminous plant of some kind.",
+  "avianDescription" : "The plant gives off a pink glow.",
+  "floranDescription" : "Thiss light not made by Greenfinger.",
+  "glitchDescription" : "Amazed. The plant appears to absorb sunrays during the day, causing it to glow.",
+  "humanDescription" : "It has an eerie pink glow. I wonder what's inside the pod.",
+  "hylotlDescription" : "Something about this plant seems unnatural.",
+  "novakidDescription" : "How is this tree also a lamp?",
+
+  "category" : "light",
+  "price" : 105,
+  "lightColor" : [197, 80, 156],
+
+  "inventoryIcon" : "gluttonistlamp1icon.png",
+  "orientations" : [
+    {
+      "image" : "gluttonistlamp1.png:<color>.<frame>",
+      "flipImages" : true,
+      "imagePosition" : [-16, 0],
+      "spaces" : [ [-2, 1], [-2, 2], [-2, 3], [-1, 1], [-1, 2], [-1, 3], [0, 0], [0, 1], [0, 2], [0, 3] ],
+      "anchors" : [ "bottom" ],
+      "direction" : "left",
+      "animationPosition" : [-16, 0],
+      "lightPosition" : [-2, 1]
+    },
+    {
+      "image" : "gluttonistlamp1.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "spaces" : [ [0, 0], [0, 1], [0, 2], [0, 3], [1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3] ],
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+      "animationPosition" : [0, 0],
+      "lightPosition" : [2, 1]
+    }
+  ],
+  
+  "pointLight" : true,
+  "pointBeam" : 0,
+  "pointAngle" : 0,
+  
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gluttonistlamp1.png",
+    "fg" : "gluttonistlamp1lit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 1] ],
+  
+  "interactive" : false
+}

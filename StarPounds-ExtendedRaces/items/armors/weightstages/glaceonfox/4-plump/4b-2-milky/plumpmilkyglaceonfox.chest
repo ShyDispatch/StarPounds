@@ -1,0 +1,28 @@
+{
+  "itemName" : "plumpmilkyglaceonfoxchest",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",
+  "description" : "It's hard to believe you've made so many trips to the freezer with how big you are. Then again, maybe it isn't.",
+  "shortdescription" : "XBusty Plump Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsplump",
+    "starpoundsmilky"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

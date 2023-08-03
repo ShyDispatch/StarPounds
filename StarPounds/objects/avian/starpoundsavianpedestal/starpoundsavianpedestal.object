@@ -1,0 +1,36 @@
+{
+  "objectName" : "starpoundsavianpedestal",
+  "colonyTags" : ["avian","aviantomb","pretty","valuable","starpounds"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 60,
+  "description" : "An avian pedestal to display anything of importance.",
+  "shortdescription" : "Avian Pedestal",
+  "race" : "avian",
+
+  "apexDescription" : "An Avian pedestal. Usually for busts of Avians or bunnies.",
+  "avianDescription" : "Religious artifacts are placed upon these pedestals. It's rare to find one without anything.",
+  "floranDescription" : "Floran can't read birdman ssscratchess.",
+  "glitchDescription" : "Statement. This is a pedestal made by Avians.",
+  "humanDescription" : "I hope those symbols don't say something important.",
+  "hylotlDescription" : "There's a lack of a statue on this pedestal, curious.",
+  "novakidDescription" : "I think the Avians forgot to put their fancy statue up for this pedestal.",
+  "throgDescription" : "It's just a stupid rock for birds.",  
+  "avaliDescription" : "Avians put up statues to worship on these pedestals.",    
+
+  "inventoryIcon" : "starpoundsavianpedestalicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsavianpedestal.png:default",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  [
+    { "op": "test", "path": "/valuableTreasure/0/1/fill", "inverse" : true },
+    { "op": "add", "path": "/valuableTreasure/0/1/fill", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/valuableTreasure/1/1/fill", "inverse" : true },
+    { "op": "add", "path": "/valuableTreasure/1/1/fill", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/valuableTreasure/2/1/fill", "inverse" : true },
+    { "op": "add", "path": "/valuableTreasure/2/1/fill", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/valuableTreasure/3/1/fill", "inverse" : true },
+    { "op": "add", "path": "/valuableTreasure/3/1/fill", "value": [] }
+  ],
+  [
+    {
+      "op" : "add",
+      "path" : "/valuableTreasure/0/1/fill/-",
+      "value" : {"pool" : "maybeAccessory"}
+    },
+    {
+      "op" : "add",
+      "path" : "/valuableTreasure/1/1/fill/-",
+      "value" : {"pool" : "maybeAccessory"}
+    },
+    {
+      "op" : "add",
+      "path" : "/valuableTreasure/2/1/fill/-",
+      "value" : {"pool" : "maybeAccessory"}
+    },
+    {
+      "op" : "add",
+      "path" : "/valuableTreasure/3/1/fill/-",
+      "value" : {"pool" : "maybeAccessory"}
+    }
+  ],
+  [
+    { "op": "test", "path": "/basicTreasure/0/1/fill", "inverse" : true },
+    { "op": "add", "path": "/basicTreasure/0/1/fill", "value": [] }
+  ],
+  [
+    {
+      "op" : "add",
+      "path" : "/basicTreasure/0/1/fill/-",
+      "value" : {"pool" : "rarelyAccessory"}
+    }
+  ]
+]

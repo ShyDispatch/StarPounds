@@ -1,0 +1,14 @@
+{
+  "itemName" : "throgtech",
+  "price" : 10,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "throgtech.png",
+  "description" : "Cybernetics in metal glass.",
+  "shortdescription" : "Throg Tech",
+  "glitchDescription" : "Observant. This matter is made of \"Hard Light\".",
+  "floranDescription" : "It feelsss electric.",
+  "novakidDescription" : "It reminds me of me.",
+
+  "materialId" : 51425
+}

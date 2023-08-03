@@ -1,0 +1,10 @@
+{
+  "itemName" : "starpoundsliquidjelly",
+  "rarity" : "common",
+  "category" : "liquid",
+  "inventoryIcon" : "starpoundsjellyicon.png",
+  "shortdescription" : "Jelly",
+  "description" : "A slimey liquid.",
+
+  "liquid" : "jellyliquid"
+}

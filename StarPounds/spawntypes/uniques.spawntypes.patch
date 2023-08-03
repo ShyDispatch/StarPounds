@@ -1,0 +1,245 @@
+[
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "fathylotlghost",
+			"spawnParameters":
+			{
+				"area": "air",
+				"region": "all",
+				"time": "night"
+			},
+
+			"spawnChance": 0.001,
+			"monsterType" : "fathylotlghost",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsbeedrone",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "day"
+			},
+
+			"spawnChance": 0.15,
+			"monsterType" : "starpoundsbeedrone",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsjelly",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.15,
+			"monsterType" : "starpoundsjelly",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsskeyejelly",
+			"spawnParameters":
+			{
+				"area": "air",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.02,
+			"monsterType" : "starpoundsskeyejelly",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsslime",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.15,
+			"monsterType" : "starpoundsslime",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsskeyeslime",
+			"spawnParameters":
+			{
+				"area": "air",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.02,
+			"monsterType" : "starpoundsskeyeslime",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundshoney",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.15,
+			"monsterType" : "starpoundshoney",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsskeyehoney",
+			"spawnParameters":
+			{
+				"area": "air",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.02,
+			"monsterType" : "starpoundsskeyehoney",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsharpy",
+			"spawnParameters":
+			{
+				"area": "air",
+				"region": "all",
+				"time": "all"
+			},
+
+			"groupSize" : [1, 2],
+			"spawnChance": 0.003,
+			"monsterType" : [
+			[0.083, "starpoundsharpy"],
+			[0.083, "starpoundsharpyred"],
+			[0.083, "starpoundsharpyblue"],
+			[0.083, "starpoundsharpygreen"],
+			[0.083, "starpoundsharpyyellow"],
+			[0.083, "starpoundsharpypurple"],
+			[0.083, "starpoundsharpyturquoise"],
+			[0.083, "starpoundsharpypink"],
+			[0.083, "starpoundsharpyorange"],
+			[0.083, "starpoundsharpygrey"]
+			],
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "mootant",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "day"
+			},
+
+			"spawnChance": 0.04,
+			"monsterType" : "mootant",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "floranmootant",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "night"
+			},
+
+			"spawnChance": 0.03,
+			"monsterType" : "floranmootant",
+			"monsterParameters":
+			{
+				"aggressive": true
+			}
+		}
+	}
+]

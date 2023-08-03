@@ -1,0 +1,50 @@
+{
+  "particleEmitters" : {
+    "drips" : {
+      "enabled" : true,
+      "emissionRate" : 5.0,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [90, 211, 133, 170],
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.4,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, -2.0],
+            "finalVelocity" : [0, -4],
+            "approach" : [0, 5],
+            "timeToLive" : 0.3,
+            "variance" : {
+              "initialVelocity" : [0.2, 0],
+              "size" : 0.5
+            }
+          }
+        },
+        {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [47, 116, 110, 170],
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.4,
+            "position" : [0.0, 0.0],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, -2.0],
+            "finalVelocity" : [0, -4],
+            "approach" : [0, 5],
+            "timeToLive" : 0.3,
+            "variance" : {
+              "initialVelocity" : [0.2, 0],
+              "size" : 0.5
+            }
+          }
+        }
+      ]
+    }
+  }
+}

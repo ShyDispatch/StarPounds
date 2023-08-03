@@ -1,0 +1,49 @@
+{
+  "background" : {
+    "type" : "background",
+    "fileHeader" : "/interface/tooltips/header.png",
+    "fileBody" : "/interface/tooltips/bodyobject.png",
+    "fileFooter" : "/interface/tooltips/footerobject.png"
+  },
+  "moneyIcon" : {
+    "type" : "image",
+    "position" : [97, 23],
+    "file" : "/interface/money.png"
+  },
+  "priceLabel" : {
+    "type" : "label",
+    "position" : [110, 23],
+    "hAnchor" : "left",
+    "value" : "0"
+  },
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [11, 69],
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 123
+  },
+  "rarityLabel" : {
+    "type" : "label",
+    "position" : [7, 23],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "damageKindImage" : {
+    "type" : "image",
+    "position" : [120, 82],
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [16, 16],
+    "minSize" : [16, 16]
+  },
+  "largeImage" : {
+    "type" : "image",
+    "position" : [70, 100],
+    "centered" : true,
+    "file" : "/interface/money.png",
+    "maxSize" : [72, 72],
+    "minSize" : [72, 72]
+  }
+}

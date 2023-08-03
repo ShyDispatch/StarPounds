@@ -1,0 +1,11 @@
+{
+  "name" : "starpoundseaten_head",
+  "type" : "head",
+
+  "scripts" : ["starpoundseaten.lua"],
+
+  "description" : "You've been eaten!",
+  "shortDescription" : "Eaten",
+  "rarity" : "Essential",
+  "icon" : "/interface/inventory/techdisabled.png"
+}

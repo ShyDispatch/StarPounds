@@ -1,0 +1,24 @@
+{
+  "name" : "starpoundsstomachsmash",
+  "type" : "body",
+
+  "scripts" : ["dash.lua", "starpoundsstomachsmash.lua", "/tech/starpoundstech.lua"],
+  "animator" : "starpoundsstomachsmash.animation",
+
+  "description" : "A powerful dash that stuns and knocks away enemies! Cooldown: 0.8s",
+  "shortDescription" : "Stomach Smash",
+  "rarity" : "Legendary",
+  "icon" : "/tech/starpoundsstomachsmash.png",
+
+  "chipCost" : 8,
+
+  "rechargeDirectives": "?fade=ccbbff=0.25",
+
+  "maximumDoubleTapTime" : 0.25,
+  "dashControlForce" : 2000,
+  "dashSpeed" : 50,
+  "dashDuration" : 0.15,
+  "dashCooldown" : 0.8,
+  "stopAfterDash" : true,
+  "groundOnly" : true
+}

@@ -1,0 +1,36 @@
+{
+  "projectileName" : "ponderouszone",
+  "physics" : "laser",
+  "timeToLive" : 10,
+  "image" : "ponderouszone.png",
+  "animationCycle" : 0.8,
+  "frameNumber" : 12,
+  "windupFrames" : 3,
+  "winddownFrames" : 3,
+  "periodicActions" : [
+    {
+      "time" : 9.7,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/tech/vehicle_disappear1.ogg" ]
+    }
+  ],
+  "actionOnReap" : [],
+  "speed" : 0,
+  "power" : 0,
+
+  "onlyHitTerrain" : true,
+  "persistentStatusEffects" : ["starpoundsrategainslow", "starpoundsratebloatfast", "energyregen", "staffregeneration"],
+  "statusEffectArea" : [ [-6.0, 0], [-4.0, -4.0], [0, -6.0], [4.0, -4.0], [6.0, 0], [4.0, 4.0], [0, 6.0], [-4.0, 4.0] ],
+
+  "orientationLocked" : true,
+  "fullbright" : true,
+  "emitters" : [],
+
+  "piercing" : true,
+  "bounces" : -1,
+
+  "scripts" : ["/projectiles/activeitems/staff/staffprojectile.lua"],
+
+  "persistentAudio" : "/sfx/projectiles/zone_healing_loop.ogg"
+}

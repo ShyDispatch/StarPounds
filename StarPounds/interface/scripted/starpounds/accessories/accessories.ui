@@ -1,0 +1,80 @@
+{
+  "style" : "window",
+  "size" : [280, 192],
+  "title" : "Accessories",
+  "icon" : "icon.png",
+  "accentColor" : "8866ff",
+  "uniqueBy" : "path",
+  "uniqueMode" : "toggle",
+  "inputData": {},
+  "scripts" : [ "accessories.lua" ],
+  "children" : [
+    [
+      {"size" : 172},
+      [
+        {"size" : 80},
+        {"expandMode": [1, 1]},
+        {"type": "panel", "style": "convex", "mode": "vertical", "children": [
+          {"type": "panel", "style": "convex", "expandMode": [1, 0], "children": [
+            {"type": "layout", "mode": "manual", "size": [74, 20], "children": [
+              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Accessories"}
+            ]}
+          ]},
+          {"type": "panel", "style": "concave", "children": [
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Pendant"},
+              {"type": "itemSlot", "id": "pendant", "glyph": "backingimagependant.png", "autoInteract": true, "position": [27, 16]}
+            ]}
+          ]},
+          {"type": "panel", "style": "concave", "children": [
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Ring"},
+              {"type": "itemSlot", "id": "ring", "glyph": "backingimagering.png", "autoInteract": true, "position": [27, 16]}
+            ]}
+          ]},
+          {"type": "panel", "style": "concave", "children": [
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Trinket"},
+              {"type": "itemSlot", "id": "trinket", "glyph": "backingimagetrinket.png", "autoInteract": true, "position": [27, 16]}
+            ]}
+          ]}
+        ]}
+      ],
+      [
+        {"expandMode": [1, 1]},
+        {"type": "panel", "style": "convex", "mode": "vertical", "children": [
+          {"type": "panel", "style": "convex", "expandMode": [1, 0], "children": [
+            {"type": "layout", "mode": "manual", "size": [190, 20], "children": [
+              {"type": "label", "position": [0, 6], "size": [190, 9], "align": "center", "text": "Effects"}
+            ]}
+          ]},
+          {"type": "panel", "style": "concave", "children": [
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "label", "id": "pendantDescription", "position": [2, 7], "size": [190, 34], "align": "left", "text": ""}
+            ]}
+          ]},
+          {"type": "panel", "style": "concave", "children": [
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "label", "id": "ringDescription", "position": [2, 7], "size": [190, 34], "align": "left", "text": ""}
+            ]}
+          ]},
+          {"type": "panel", "style": "concave", "children": [
+            {"type": "layout", "mode": "manual", "children": [
+              {"type": "label", "id": "trinketDescription", "position": [2, 7], "size": [190, 34], "align": "left", "text": ""}
+            ]}
+          ]}
+        ]}
+      ]
+    ],
+    [
+      "spacer",
+      {"type": "layout", "id": "barPadding", "visible": true, "size": [39, 19], "children": []},
+      {"type": "iconButton", "id": "weightDecrease", "visible": false, "toolTip": "Decrease your weight by 1 stage.", "image" : "weightDecrease.png", "hoverImage" : "weightDecrease.png", "pressImage" : "weightDecrease.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      {"type": "iconButton", "id": "weightIncrease", "visible": false, "toolTip": "Increase your weight by 1 stage.", "image" : "weightIncrease.png", "hoverImage" : "weightIncrease.png", "pressImage" : "weightIncrease.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      {"type": "iconButton", "id": "enable", "toolTip": "Enable or Disable the mod.", "image" : "enabled.png", "hoverImage" : "enabled.png", "pressImage" : "enabled.png?border=1;00000000;00000000?crop=1;2;87;21"},
+      {"type": "iconButton", "id": "reset", "toolTip": "Reset the mod.", "image" : "reset.png", "hoverImage" : "reset.png", "pressImage" : "reset.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      "spacer",
+      18
+    ]
+  ]
+}

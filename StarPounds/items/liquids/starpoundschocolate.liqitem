@@ -1,0 +1,11 @@
+{
+  "itemName" : "starpoundsliquidchocolate",
+  "rarity" : "Common",
+  "category" : "liquid",
+  "inventoryIcon" : "starpoundsliquidchocolateicon.png",
+  "shortdescription" : "Chocolate",
+  "description" : "A chocolate so delicious it'll go straight to your waistline.",
+
+  "liquid" : "starpoundschocolateliquid",
+  "price" : 0
+}

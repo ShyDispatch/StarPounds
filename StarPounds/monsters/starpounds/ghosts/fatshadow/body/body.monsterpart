@@ -1,0 +1,9 @@
+{
+  "name" : "fatshadow",
+  "category" : "fatshadow",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "fatshadow.png"
+  }
+}

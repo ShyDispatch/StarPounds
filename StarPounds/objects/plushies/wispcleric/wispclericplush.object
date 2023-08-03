@@ -1,0 +1,31 @@
+{
+  "objectName" : "wispclericplush",
+  "colonyTags" : ["glitch","ponderousorder","pretty","starpounds"],
+  "rarity" : "Rare",
+  "printable" : false,
+  "category" : "decorative",
+  "price" : 250,
+  "description" : "A cute Wisp plush, cleric class.",
+  "shortdescription" : "Wisp Cleric Plush",
+  "race" : "glitch",
+
+  "apexDescription" : "It's a plush of a Wisp.",
+  "avianDescription" : "A plush of a magical Wisp.",
+  "floranDescription" : "Floran wantsss to eat Wisssp.",
+  "glitchDescription" : "Interested. It's a plush of a wisp.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "I think the real thing is supposed to glow like me.",
+
+  "inventoryIcon" : "wispclericplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "wispclericplush.png",
+      "imagePosition" : [-8, -0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

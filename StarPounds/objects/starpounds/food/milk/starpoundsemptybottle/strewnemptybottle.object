@@ -1,0 +1,32 @@
+{
+  "objectName" : "starpoundsemptybottle1",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "printable" : false,
+  "description" : "A simple bottle of milk. Well had milk.",
+  "shortdescription" : "Empy Milk Bottle",
+  "race" : "generic",
+
+  "apexDescription" : "A bottle of milk. Good for healthy bones.",
+  "avianDescription" : "A bottle of milk, probably should be kept cold.",
+  "floranDescription" : "Floran doesssn't get much milk.",
+  "glitchDescription" : "Observent. This is a bottle of milk.",
+  "humanDescription" : "Did the milkman stop by recently?",
+  "hylotlDescription" : "Milk can be a quite a refreshing choice of drink.",
+  "novakidDescription" : "A glass of milk can hit the spot.",
+
+
+  "inventoryIcon" : "emptybottleicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "emptybottle.png",
+      "imagePosition" : [-1, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ]
+}

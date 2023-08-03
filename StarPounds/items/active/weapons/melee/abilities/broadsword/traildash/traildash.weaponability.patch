@@ -1,0 +1,32 @@
+[
+  {
+    "op" : "add",
+    "path" : "/animationCustom/particleEmitters/caloricSwordCharge",
+    "value" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "emissionRate" : 30,
+      "offsetRegion" : [-0.75, 0.0, 0.75, 5.5],
+      "particles" : [
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "caloricswoosh3"}
+      ]
+    }
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonTrailDashCharge",
+    "path" : "/animationCustom/sounds/caloricTrailDashCharge"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonTrailDashFire",
+    "path" : "/animationCustom/sounds/caloricTrailDashFire"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "projectileType" : "calorictrail" }
+  }
+]

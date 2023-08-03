@@ -1,0 +1,108 @@
+{
+  "background" : {
+    "type" : "background",
+    "fileHeader" : "/interface/tooltips/header.png",
+    "fileBody" : "/interface/tooltips/bodyaccessory.png",
+    "fileFooter" : "/interface/tooltips/footer.png"
+  },
+  "rarityLabel" : {
+    "type" : "label",
+    "position" : [7, 23],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "moneyIcon" : {
+    "type" : "image",
+    "position" : [97, 23],
+    "file" : "/interface/money.png"
+  },
+  "priceLabel" : {
+    "type" : "label",
+    "position" : [110, 23],
+    "hAnchor" : "left",
+    "value" : "0"
+  },
+  "objectImage" : {
+    "type" : "image",
+    "position" : [30, 124],
+    "file" : "",
+    "centered" : true,
+    "scale" : 2,
+    "maxSize" : [ 32, 32 ],
+    "minSize" : [ 32, 32 ]
+  },
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [12, 91],
+    "wrapWidth" : 120,
+    "hAnchor" : "left",
+    "vAnchor" : "top"
+  },
+  "extraLabel" : {
+    "type" : "label",
+    "position" : [12, 50],
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 127,
+    "value" : "",
+    "color" : "gray"
+  },
+  "stat1_Label" : {
+    "type" : "label",
+    "position" : [127, 136],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "stat1_Image" : {
+    "scissoring" : false,
+    "type" : "image",
+    "position" : [62, 133],
+    "file" : "",
+    "zlevel" : 8
+  },
+  "stat1_BackgroundImage" : {
+    "scissoring" : false,
+    "type" : "image",
+    "position" : [61, 135],
+    "file" : ""
+  },
+  "stat2_Label" : {
+    "type" : "label",
+    "position" : [127, 118],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "stat2_Image" : {
+    "scissoring" : false,
+    "type" : "image",
+    "position" : [62, 115],
+    "file" : "",
+    "zlevel" : 8
+  },
+  "stat2_BackgroundImage" : {
+    "scissoring" : false,
+    "type" : "image",
+    "position" : [61, 117],
+    "file" : ""
+  },
+  "stat3_Label" : {
+    "type" : "label",
+    "position" : [127, 100],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "stat3_Image" : {
+    "scissoring" : false,
+    "type" : "image",
+    "position" : [62, 97],
+    "file" : "",
+    "zlevel" : 8
+  },
+  "stat3_BackgroundImage" : {
+    "scissoring" : false,
+    "type" : "image",
+    "position" : [61, 99],
+    "file" : ""
+  }
+}

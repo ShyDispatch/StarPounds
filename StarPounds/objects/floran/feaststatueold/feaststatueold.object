@@ -1,0 +1,32 @@
+{
+  "objectName" : "feaststatueold",
+  "colonyTags" : ["floran","floranhuntinggrounds","pretty"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 450,
+  "description" : "A statue of a very fat Floran. It looks more like a gluttonous hog than a great hunter.",
+  "shortdescription" : "Fat Floran Statue",
+  "race" : "floran",
+
+  "apexDescription" : "An imposing Floran overlord no doubt.",
+  "avianDescription" : "I'm not sure if this is supposed to depict a hunting master.",
+  "floranDescription" : "Thiss hunter big. Fattened up by thousssandss of prey. Floran wissshess to be asss great.",
+  "glitchDescription" : "Impressed. This Floran had no shortage of food.",
+  "humanDescription" : "I know Florans are supposed to be great hunters. But I can't see this hunting anything.",
+  "hylotlDescription" : "A frightfully oversized Floran. How much has this Floran killed to get so large?",
+  "novakidDescription" : "Now I've seen big ol' statues. And this takes the cake alright.",
+
+  "inventoryIcon" : "feaststatueoldicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "feaststatueold.png:<color>",
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

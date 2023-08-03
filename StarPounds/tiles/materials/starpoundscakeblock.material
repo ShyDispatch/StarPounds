@@ -1,0 +1,24 @@
+{
+  "materialId" : 51406,
+  "materialName" : "starpoundscakeblock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundscakeblock",
+  "description" : "A solid block of cake.",
+  "shortdescription" : "Cake Block",
+  "glitchDescription" : "Curious. It's a pure block of cake.",
+  "floranDescription" : "Huge chunk of cake.",
+  "novakidDescription" : "Silly cake. You're for eatin' not buildin'.",
+  "footstepSound" : "/sfx/blocks/footstep_dirt.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundscakeblock.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : true,
+    "zLevel" : 1570
+  }
+}

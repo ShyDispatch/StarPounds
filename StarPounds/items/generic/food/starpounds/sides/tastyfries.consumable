@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundstastyfries",
+  "rarity" : "Rare",
+  "price" : 200,
+  "category" : "preparedFood",
+  "inventoryIcon" : "tastyfries.png",
+  "description" : "A bunch of fries so good, you just can't get your fingers off them.",
+  "shortdescription" : "Tasty Fries",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 360
+    }
+  ] ],
+  "foodValue": 40,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundstastyfries" ]
+}

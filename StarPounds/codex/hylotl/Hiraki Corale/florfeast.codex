@@ -1,0 +1,37 @@
+{
+  "id" : "florfeast",
+  "species" : "hylotl",
+  "title" : "Floran Feast",
+  "description" : "An excerpt from Hylotl Adventurer Hiraki Corale's journal.",
+  "icon" : "hirakicoralejournal2.png",
+  "contentPages" : [
+
+    "by Hiraki Corale, Hylotl Adventurer
+
+After filling up, I ventured to get more of an idea of various Floran tribes. The differences between each and every one must be countless, brimming with opportunity to explore.
+
+Naturally I sought for one of the most obscure tribes I could find in the book of obscure Floran tribes. Gluttonists cought my three eyes as they are somehow large, yet secluded.",
+
+"Discovering one location was no problem. Gluttonists are said to have their hunting grounds decorted in ominous pink lights rather than the natural green ones. And ominous indeed! Putting side the familiarty of the pink lights. 
+
+I watched the impressive stonework from a far. Seeing how the tubby Florans carried in building sized prey to be made into hamburger. The thought got my mind wandering, and my belly rumbling. To which the Florans might've heard.",
+
+"My attempt to sneak away from the plants didn't pan out. Something about the slap of cheeks if I overheard them right. Those super bananas had more of an impact on me than I thought. Despite a poke in my bum from a spear, they seem friendly! 
+
+They rushed me along to a dining table. My mouth was a waterfall at all the delicious food they had to offer! It was no Hylotl cuisine, but the Florans certainly new how to cook. How kind of them to let me join them for dinner.",
+
+"I must've been an impressive eater because the florans were watching me intently. Always smiling, they must've been enjoying this as much as I was. It ended up being a blur for how long I was eating.
+
+After what must've felt like enough for eight families, I found myself to be quite bloated all of a sudden. They patted my sloshing belly with delight. I was the best eater they've ever had!",
+
+"With a wave, I tried to take my leave. Struggling to lift myself out of the seat. They didn't seem to like that. Sensing the danger, my trusty grappling hook swiftly carried me up and out of their entrance. 
+
+That headstart was valuable as my fat ass couldn't outrun them. Safe and out of breath, I took the time to inspect my softer form. It seems I have packed on like, five pounds lately."
+
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

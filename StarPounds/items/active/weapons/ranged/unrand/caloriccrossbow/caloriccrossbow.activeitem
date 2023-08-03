@@ -1,0 +1,82 @@
+{
+  "itemName" : "caloriccrossbow",
+  "price" : 1200,
+  "inventoryIcon" : "caloriccrossbow.png",
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "Shoots powerful bolts.",
+  "shortdescription" : "Caloric Crossbow",
+  "level" : 2,
+  "tooltipKind" : "gun",
+  "category" : "uniqueWeapon",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "caloriccrossbow.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/crossbow1.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.5, 0.0],
+  "muzzleOffset" : [1.875, 0.125],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "caloric",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 1.0,
+    "baseDps" : 10,
+    "energyUsage" : 24,
+    "inaccuracy" : 0.008,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "florancaloricdart",
+    "projectileParameters" : {
+      "knockback" : 20
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.25,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

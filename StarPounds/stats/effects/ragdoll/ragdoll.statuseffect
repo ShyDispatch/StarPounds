@@ -1,0 +1,14 @@
+{
+  "name" : "ragdoll",
+  "blockingStat" : "stunImmunity",
+
+  "effectConfig" : {},
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "ragdoll.lua"
+  ],
+
+  "label" : "Stunned",
+  "icon" : "/interface/statuses/stop.png"
+}

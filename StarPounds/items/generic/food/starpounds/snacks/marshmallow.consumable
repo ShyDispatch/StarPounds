@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsmarshmallow",
+  "rarity" : "Common",
+  "price" : 75,
+  "category" : "preparedFood",
+  "inventoryIcon" : "marshmallow.png",
+  "description" : "Perfect for roasting or making smores.",
+  "shortdescription" : "Marshmallow",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 90
+    }
+  ] ],
+  "foodValue": 10,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

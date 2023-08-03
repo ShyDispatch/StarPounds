@@ -1,0 +1,25 @@
+{
+  "itemName" : "starpoundsbloatcolavintage",
+  "rarity" : "Uncommon",
+  "price" : 120,
+  "category" : "drink",
+  "inventoryIcon" : "bloatcolavintage.png",
+  "description" : "A refreshing bottle of bloat-cola. A bit old but certainly not flat.",
+  "shortdescription" : "Bloat-Cola Classic",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+        "effect" : "starpoundsratebloatfast",
+        "duration" : 5
+    },
+    {
+        "effect" : "starpoundsbloat",
+        "duration" : 35
+    },
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 120
+    }
+  ] ],
+  "emitters" : [ "drinking" ]
+}

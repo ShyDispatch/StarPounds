@@ -1,0 +1,75 @@
+{
+  "type" : "miprisonberserker",
+  "baseType" : "hostile",
+
+  "dropPools" : [ "empty" ],
+  
+  "identity" : {
+    "gender" : "female"
+  },
+
+  "scriptConfig" : {
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Intruder!"
+          ]
+        },
+        "human" : {
+          "default" : [
+            "What are you?!",
+            "Finally, something interesting to punch.",
+            "Is that a mooshi?",
+            "When did beef starting walking on two?",
+            "Drop the mooshi!",
+            "Put the mooshi down!",
+            "It's one of them... cows. Space cows. Damn, whatever.",
+            "I knew it! You ain't making a moo out of me!",
+            "What the heck is that?",
+            "Shoot first, ask questions later!",
+            "The hell's going on in this prison?",
+            "Those soldiers ain't gonna get me!",
+            "Grr! You're dead meat!",
+            "Get the walking milk tank!",
+            "C'mere!"
+          ]
+        }
+      }
+    }
+  },
+
+  "movementParameters" : {
+    "airJumpProfile" : {
+      "jumpSpeed" : 50.0
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "chest" : [ { "name" : "jumpsuitchest", "parameters" : { "colorIndex" : 5 } }, { "name" : "workoutchest", "parameters" : { "colorIndex" : 1 } }, { "name" : "workoutchest", "parameters" : { "colorIndex" : 3 } } ],
+            "legs" : [ { "name" : "jumpsuitlegs", "parameters" : { "colorIndex" : 5 } } ],
+            "primary" : [
+              "npcdagger"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 7.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 0.2
+      },
+      "protection" : {
+        "baseValue" : 1.0
+      }
+    }
+  }
+}

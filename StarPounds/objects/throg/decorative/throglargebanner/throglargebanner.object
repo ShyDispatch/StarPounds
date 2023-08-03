@@ -1,0 +1,34 @@
+{
+  "objectName" : "throglargebanner",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "printable" : false,
+
+  "description" : "A Protectorate wallbanner from the Protectorate academy.",
+  "shortdescription" : "Throg Wall Banner",
+  "race" : "throg",
+
+  "apexDescription" : "A yellow protectorate banner. Wonderful.",
+  "avianDescription" : "Bright like the beaming sun. This colour represents the protectorate well.",
+  "floranDescription" : "Yellow Protectorate banner makesss Floran feel happy.",
+  "glitchDescription" : "Proud. The iconic Protectorate banner. I'm glad to be a part of this.",
+  "humanDescription" : "A big bright Protectorate banner! I wish I could fit one in my dorm.",
+  "hylotlDescription" : "The Protectorate banner represents so much. It means a lot to us all.",
+  "novakidDescription" : "I love the bright colour of the protectorate banner.",
+
+
+  "inventoryIcon" : "throglargebannericon.png",
+  "orientations" : [
+    {
+     "imageLayers" : [ { "image" : "throglargebanner.png:<color>"}, { "image" : "throglargebannerlit.png:<color>", "fullbright" : true } ],
+      "imagePosition" : [-17, -40],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : []
+
+    }
+  ]
+}

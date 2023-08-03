@@ -1,0 +1,12 @@
+{
+	"name": "starpoundsstomach",
+	"defaultDuration": 100,
+	"effectConfig": {
+		"range": [0, 1]
+	},
+	"scripts": [
+		"starpoundsstomach.lua"
+	],
+	"label": "Stomach Capacity",
+	"icon": "/interface/statuses/stomach.png"
+}

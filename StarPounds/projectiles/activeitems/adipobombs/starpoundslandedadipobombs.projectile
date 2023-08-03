@@ -1,0 +1,28 @@
+{
+  "projectileName" : "starpoundslandedadipobombs",
+  "image" : "starpoundslandedadipobombs.png",
+  "physics" : "hover",
+  "animationCycle" : 2,
+  "frameNumber" : 1,
+  "power" : 0,
+  "speed" : 0,
+  "piercing" : true,
+  "initialVelocity" : 0,
+  "timeToLive" : 5,
+  "bounces" : -1,
+  "flippable" : true,
+  "orientationLocked" : false,
+
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/electrical_barrier_break3.ogg" ]
+    },  
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/heavybulletexplosion/heavybulletexplosion.config"
+    }
+  ],
+  "damageType" : "NoDamage",
+  "damageKind" : "caloric"
+}

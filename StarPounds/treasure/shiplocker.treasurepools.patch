@@ -1,0 +1,12 @@
+[	
+  { "op" : "add",
+	"path" : "/throgStarterTreasure",
+	"value" : [
+	  [0, {
+		"fill" : [
+		  {"pool" : "starterTreasure"}
+		]
+	  }]
+	]	
+  }
+]

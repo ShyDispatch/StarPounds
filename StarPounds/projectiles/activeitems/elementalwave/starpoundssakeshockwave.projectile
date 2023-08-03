@@ -1,0 +1,22 @@
+{
+  "projectileName" : "starpoundssakeshockwave",
+  "image" : "starpoundssakeshockwave.png",
+  "animationCycle" : 0.25,
+  "animationLoops" : false,
+  "timeToLive" : 0.25,
+  "frameNumber" : 5,
+  "power" : 50,
+  "speed" : 0,
+  "orientationLocked" : true,
+  "piercing" : true,
+  "flippable" : true,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "damagePoly" : [ [-4, 0], [4, 0], [4, -11], [-4, -11] ],
+  "damageKind" : "caloric",
+  "statusEffects" : [
+    {"effect": "starpoundsfood", "duration": 50},
+    {"effect": "starpoundsrategainrapid", "duration" : 3},
+    {"effect": "stun", "duration" : 3}
+  ]
+}

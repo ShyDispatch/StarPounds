@@ -1,0 +1,29 @@
+{
+  "kind" : "caloricdrip",
+  "definition" : {
+    "duration" : 0.0175,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    },
+    "particles" : [
+      [ "caloricdrip1" ]
+    ],
+    "sounds" : [
+      [ ]
+    ],
+    "stop" : {
+      "particles" : [
+      [ "caloricdrip1" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    }
+  }
+}

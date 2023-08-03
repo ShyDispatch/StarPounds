@@ -1,0 +1,33 @@
+{
+  "objectName" : "apexfatsign3",
+  "colonyTags" : ["apex","apexvillage","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+
+  "description" : "I'd better do what they say.",
+  "shortdescription" : "Eat Sign",
+  "race" : "apex",
+
+  "apexDescription" : "Eat... I did... so much.",
+  "avianDescription" : "Eat? do Apex forget to eat often?",
+  "floranDescription" : "Floran eatsss all the time.",
+  "glitchDescription" : "Courageous. Never!!!",
+  "humanDescription" : "That's a strange reminder.",
+  "hylotlDescription" : "This seems like more than just a note of healthy eating.",
+  "novakidDescription" : "I ain't takin' orders from no picture.",
+
+  "inventoryIcon" : "apexfatsignicon.png",
+  "orientations" : [
+    {
+      "image" : "apexfatsign.png:<color>",
+      "imagePosition" : [-8, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "itemName" : "winch",
+  "price" : 5000,
+  "inventoryIcon" : "winchicon.png",
+  "rarity" : "Legendary",
+  "maxStack" : 1,
+  "description" : "A heavy duty grappling hook able to carry those of much larger size.",
+  "shortdescription" : "Winch",
+  "largeImage" : "winchbig.png",
+  "tooltipKind" : "tool",
+  "category" : "Tool",
+  "fireTime" : 0,
+  "twoHanded" : false,
+
+  "scripts" : ["/items/active/grapplinghooks/grapplinghook.lua"],
+  "animationScripts" : ["/items/active/effects/renderrope.lua"],
+
+  "animation" : "winch.animation",
+
+  "fireOffset" : [0, 0.3],
+  "ropeOffset" : [-1.75, 0.3],
+  "ropeVisualOffset" : [0.75, 0.3],
+
+  "consumeOnUse" : false,
+
+  "projectileType" : "winchhook",
+  "projectileParameters" : {
+    "speed" : 50,
+    "timeToLive" : 3
+  },
+
+  "ropeWidth" : 2.0,
+  "ropeColor" : [52, 61, 64, 255],
+
+  "reelInDistance" : 3.5,
+  "reelOutLength" : 40,
+  "breakLength" : 50,
+
+  "minSwingDistance" : 1.5,
+
+  "reelSpeed" : 5,
+  // There's math behind this, I swear.
+  "controlForce" : 9635,
+
+  "groundLagTime" : 0.2
+}

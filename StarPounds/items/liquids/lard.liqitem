@@ -1,0 +1,11 @@
+{
+  "itemName" : "liquidlard",
+  "rarity" : "Common",
+  "category" : "liquid",
+  "inventoryIcon" : "liquidlardicon.png",
+  "shortdescription" : "Lard",
+  "description" : "The properties of this literal fat is quite... fattening.",
+
+  "liquid" : "lardliquid",
+  "price" : 0
+}

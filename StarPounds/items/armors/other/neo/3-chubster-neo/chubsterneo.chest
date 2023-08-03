@@ -1,0 +1,50 @@
+{
+  "itemName" : "chubsterneochest",
+  "price" : 5000,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "chestwear",
+  "description" : "Fashioned from breathable fabrics and double seamed for larger sizes.",
+  "shortdescription" : "Neo XL Chestpiece",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "colorOptions" : [
+    // BLUE
+    { "ffca8a" : "96cbe7fe", "e0975c" : "5588d4fe", "a85636" : "344495fe", "6f2919" : "1a1c51fe" },
+    // BLACK
+    { "ffca8a" : "838383fe", "e0975c" : "555555fe", "a85636" : "383838fe", "6f2919" : "151515fe" },
+    // GREY
+    { "ffca8a" : "b5b5b5fe", "e0975c" : "808080fe", "a85636" : "555555fe", "6f2919" : "303030fe" },
+    // WHITE
+    { "ffca8a" : "e6e6e6fe", "e0975c" : "b6b6b6fe", "a85636" : "7b7b7bfe", "6f2919" : "373737fe" },
+    // RED
+    { "ffca8a" : "f4988cfe", "e0975c" : "d93a3afe", "a85636" : "932625fe", "6f2919" : "601119fe" },
+    // ORANGE
+    { "ffca8a" : "ffd495fe", "e0975c" : "ea9931fe", "a85636" : "af4e00fe", "6f2919" : "6e2900fe" },
+    // YELLOW
+    { "ffca8a" : "ffffa7fe", "e0975c" : "e2c344fe", "a85636" : "a46e06fe", "6f2919" : "642f00fe" },
+    // GREEN
+    { "ffca8a" : "b2e89dfe", "e0975c" : "51bd3bfe", "a85636" : "247824fe", "6f2919" : "144216fe" },
+    // BLUE
+    { "ffca8a" : "96cbe7fe", "e0975c" : "5588d4fe", "a85636" : "344495fe", "6f2919" : "1a1c51fe" },
+    // PURPLE
+    { "ffca8a" : "d29ce7fe", "e0975c" : "a451c4fe", "a85636" : "6a2284fe", "6f2919" : "320c40fe" },
+    // PINK
+    { "ffca8a" : "eab3dbfe", "e0975c" : "d35eaefe", "a85636" : "97276dfe", "6f2919" : "59163ffe" },
+    // BROWN
+    { "ffca8a" : "ccae7cfe", "e0975c" : "a47844fe", "a85636" : "754c23fe", "6f2919" : "472b13fe" }
+  ]
+}

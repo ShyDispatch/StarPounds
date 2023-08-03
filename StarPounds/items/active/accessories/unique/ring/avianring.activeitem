@@ -1,0 +1,22 @@
+{
+  "itemName" : "avianring",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "An Avolite crystal embedded inside a ring, often worn by devotees of Velhanu.",
+  "shortdescription" : "Velhanu Zealot Ring",
+  "inventoryIcon" : "avianring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "fallDamageReduction", "modifier": 0.5},
+    {"name": "health", "modifier": -0.25}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

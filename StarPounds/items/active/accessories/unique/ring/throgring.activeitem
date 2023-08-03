@@ -1,0 +1,23 @@
+{
+  "itemName" : "throgring",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A Throg styled ring, widely known for bringing out the pig in you.",
+  "shortdescription" : "Throggish Ring",
+  "inventoryIcon" : "throgring.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "absorption", "modifier": 0.5},
+    {"name": "digestion", "modifier": 0.75},
+    {"name": "movement", "modifier": -0.15}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

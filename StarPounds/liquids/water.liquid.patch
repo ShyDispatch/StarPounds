@@ -1,0 +1,26 @@
+[
+  {
+    "op": "add",
+    "path": "/interactions/-",
+    "value": {
+      "liquid": 91,
+      "liquidResult": 91
+    }
+  },
+  {
+    "op": "add",
+    "path": "/interactions/-",
+    "value": {
+      "liquid": 92,
+      "liquidResult": 92
+    }
+  },
+  {
+    "op": "add",
+    "path": "/interactions/-",
+    "value": {
+      "liquid": 83,
+      "materialResult": "starpoundshoneyblock"
+    }
+  }   
+]

@@ -1,0 +1,24 @@
+{
+  "kind" : "icecoldsodasquirt",
+  "location" : "mouth",
+  "definition" : {
+    "duration" : 0.001,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "icecoldsodasquirt" ]
+      ],
+      "sounds" : [ [ ] ]
+    },
+    "particles" : [
+      [ "icecoldsodasquirt" ]
+    ],
+    "sounds" : [ [ ] ],
+    "stop" : {
+      "particles" : [
+        [ ]
+      ],
+      "sounds" : [ [ ] ]
+    }
+  }
+}

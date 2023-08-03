@@ -1,0 +1,41 @@
+{
+  "objectName" : "starpoundsmeatberryplant",
+  "colonyTags" : ["floran","fatdungeons","gluttonist","nature"],
+  "rarity" : "Common",
+  "description" : "A strange kind of plant that produces meaty berries.",
+  "shortdescription" : "Meatberry Plant",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 100,
+
+  "apexDescription" : "Interesting. These berries seem to have meatlike qualities.",
+  "avianDescription" : "Smells like meat, oddly enough.",
+  "floranDescription" : "Berriesss smell like all meatss at once!",
+  "glitchDescription" : "Fascinated. This plant has a strange, meaty quality.",
+  "humanDescription" : "This smells weirdly like meat.",
+  "hylotlDescription" : "How odd. A meaty berry.",
+  "novakidDescription" : "Strange lil berries here.",
+
+  "inventoryIcon" : "starpoundsmeatberryplanticon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsmeatberryplant.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "scriptDelta" : 0,
+
+  "breakDropOptions" : [
+    [ [ "meatberries", 1, { } ] ]
+  ]  
+  
+}

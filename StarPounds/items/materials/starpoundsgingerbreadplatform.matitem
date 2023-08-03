@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundsgingerbreadplatform",
+  "price" : 10,
+  "category" : "platform",
+  "rarity" : "Common",
+  "inventoryIcon" : "starpoundsgingerbreadplatform.png",
+  "description" : "Platforms made for use in gingerbread houses.",
+  "shortdescription" : "Gingerbread Platform",
+  "glitchDescription" : "Curious. It's a perfect block of gingerbread.",
+  "floranDescription" : "Huge chunk of gingerbread.",
+  "novakiddescription" : "Some sorta tasty lookin' platform.",
+  
+  "materialId" : 51403
+}

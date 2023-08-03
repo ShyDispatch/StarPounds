@@ -1,0 +1,71 @@
+{
+	"sounds": {
+		"digest": [
+			"/sfx/starpounds/digesting/digesting1.ogg",
+			"/sfx/starpounds/digesting/digesting2.ogg",
+			"/sfx/starpounds/digesting/digesting3.ogg",
+			"/sfx/starpounds/digesting/digesting4.ogg",
+			"/sfx/starpounds/digesting/digesting5.ogg",
+			"/sfx/starpounds/digesting/digesting6.ogg",
+			"/sfx/starpounds/digesting/digesting7.ogg",
+			"/sfx/starpounds/digesting/digesting8.ogg"
+		],
+		"rumble": [
+			"/sfx/starpounds/rumble/rumble1.ogg",
+		  "/sfx/starpounds/rumble/rumble2.ogg",
+		  "/sfx/starpounds/rumble/rumble3.ogg",
+		  "/sfx/starpounds/rumble/rumble4.ogg",
+		  "/sfx/starpounds/rumble/rumble5.ogg",
+		  "/sfx/starpounds/rumble/rumble6.ogg",
+		  "/sfx/starpounds/rumble/rumble7.ogg",
+		  "/sfx/starpounds/rumble/rumble8.ogg",
+		  "/sfx/starpounds/rumble/rumble9.ogg",
+		  "/sfx/starpounds/rumble/rumble10.ogg",
+		  "/sfx/starpounds/rumble/rumble11.ogg",
+		  "/sfx/starpounds/rumble/rumble12.ogg",
+		  "/sfx/starpounds/rumble/rumble13.ogg",
+		  "/sfx/starpounds/rumble/rumble14.ogg",
+		  "/sfx/starpounds/rumble/rumble15.ogg"
+		],
+		"drink": ["/sfx/humanoid/drink.ogg"],
+		"struggle": [
+			"/sfx/starpounds/struggle/struggle1.ogg",
+			"/sfx/starpounds/struggle/struggle2.ogg",
+			"/sfx/starpounds/struggle/struggle3.ogg",
+			"/sfx/starpounds/struggle/struggle4.ogg",
+			"/sfx/starpounds/struggle/struggle5.ogg",
+			"/sfx/starpounds/struggle/struggle6.ogg",
+			"/sfx/starpounds/struggle/struggle7.ogg",
+			"/sfx/starpounds/struggle/struggle8.ogg",
+			"/sfx/starpounds/struggle/struggle9.ogg",
+			"/sfx/starpounds/struggle/struggle10.ogg",
+			"/sfx/starpounds/struggle/struggle11.ogg"
+		],
+		"swallow": [
+			"/sfx/starpounds/swallow/swallow1.ogg",
+		  "/sfx/starpounds/swallow/swallow2.ogg",
+		  "/sfx/starpounds/swallow/swallow3.ogg",
+		  "/sfx/starpounds/swallow/swallow4.ogg",
+		  "/sfx/starpounds/swallow/swallow5.ogg",
+		  "/sfx/starpounds/swallow/swallow6.ogg",
+		  "/sfx/starpounds/swallow/swallow7.ogg",
+		  "/sfx/starpounds/swallow/swallow8.ogg",
+		  "/sfx/starpounds/swallow/swallow9.ogg",
+		  "/sfx/starpounds/swallow/swallow10.ogg",
+		  "/sfx/starpounds/swallow/swallow11.ogg",
+		  "/sfx/starpounds/swallow/swallow12.ogg",
+		  "/sfx/starpounds/swallow/swallow13.ogg"
+		],
+		"secret": ["/sfx/starpounds/secret/secret.ogg"],
+		"belch": [
+			"/sfx/starpounds/belch/belch1.ogg",
+		  "/sfx/starpounds/belch/belch2.ogg",
+		  "/sfx/starpounds/belch/belch3.ogg",
+		  "/sfx/starpounds/belch/belch4.ogg",
+		  "/sfx/starpounds/belch/belch5.ogg",
+		  "/sfx/starpounds/belch/belch6.ogg",
+		  "/sfx/starpounds/belch/belch7.ogg",
+		  "/sfx/starpounds/belch/belch8.ogg"
+		]
+	}
+}

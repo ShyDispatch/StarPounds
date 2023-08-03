@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsgreaseburger",
+  "rarity" : "Uncommon",
+  "price" : 565,
+  "category" : "preparedFood",
+  "inventoryIcon" : "greaseburger.png",
+  "description" : "A juicy, greasy hamburger. Topped with cheese, bacon, and extra grease.",
+  "shortdescription" : "Greaseburger",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 1035
+    }
+  ] ],
+  "foodValue": 115,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsgreaseburger" ]
+}

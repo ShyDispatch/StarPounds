@@ -1,0 +1,23 @@
+{
+  "itemName" : "keapendant",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Enchanted talisman given to pirates to subdue their hunger during long voyages.\n\n^orange;'Yarr'^gray;s increased by ^green;100%",
+  "shortdescription" : "Salty Magamata",
+  "inventoryIcon" : "keapendant.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "stats": [
+    {"name": "absorption", "modifier": 0.5},
+    {"name": "health", "modifier": 1},
+    {"name": "hunger", "modifier": -0.5}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

@@ -1,0 +1,9 @@
+{
+  "name" : "mootant",
+  "category" : "mootant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "mootant.png"
+  }
+}

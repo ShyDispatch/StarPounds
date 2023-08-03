@@ -1,0 +1,18 @@
+{
+  "itemName" : "starpoundsheftycola",
+  "rarity" : "Rare",
+  "price" : 80,
+  "category" : "drink",
+  "inventoryIcon" : "heftycola.png",
+  "description" : "A refreshing bottle of Hefty Cola.",
+  "shortdescription" : "Hefty Cola",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "emitters" : [ "drinking" ]
+}

@@ -1,0 +1,5 @@
+{
+  "sounds" : {
+    "geiger" : [ "/sfx/statuseffects/geiger.ogg" ]
+  }
+}

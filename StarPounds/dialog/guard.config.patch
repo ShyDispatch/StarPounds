@@ -1,0 +1,30 @@
+[  
+  {  
+    "op":"add",
+    "path":"/hail/throg",
+    "value":{  
+      "default":[  
+        "Directions? The only place you should head to is the buffet.",
+        "Obey the Throg.",
+        "Hungry eyes watch, stranger.",
+        "We all really hope you try something.",
+        "Go on, just give us a reason.",
+        "Respect our tradition and eat a lot.",
+        "You wouldn't want to know what we do with troublemakers.",
+        "Just hurry up and get out of here.",
+        "Wonder what you taste like.",
+        "Advice? Move along and don't become a snack."
+      ],
+      "throg":[  
+        "Hail, fellow Throg.",
+        "Hail Blubberbutt!",
+        "Good to see you waddle, stranger.",
+        "No hostiles detected.",
+        "Remember, we take food theft seriously.",
+        "Heh, how much have you eaten today?",
+        "Fellow Throg, we're here for your protection.",		
+        "No one is above the law. Except Blubberbutt."		
+      ]	  
+    }
+  }
+]

@@ -1,0 +1,9 @@
+{
+	"name": "starpoundsthick",
+	"scripts": [
+		"starpoundssize.lua"
+	],
+	"defaultDuration": 100,
+	"label": "Thick",
+	"icon": "/interface/statuses/starpoundssize/starpoundsthick.png"
+}

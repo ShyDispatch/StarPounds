@@ -1,0 +1,31 @@
+{
+  "id" : "bananapudding",
+  "species" : "apex",
+  "title" : "Worn Pages",
+  "description" : "Pages from a Miniknog Scientist's diary",
+  "icon" : "apexcover4.png",
+  "contentPages" : [
+    "Entry # 490
+With the demise of our great Doctor Lax, there's been quite a vacuum in this scientific division of the Miniknog. By reasons not disclosed to us, the attempt to ensure soldiers that could handle even Florans is being scrapped and needs a fresh start.",
+
+"Drawing the metaphorical short straw, it seems I have to fill the void left by Doctor Lax. I need to figure out a way to provide us soldiers beyond even our heightened Apex genetics can provide.",
+
+"Entry # 492
+Despite my stumps, I think I've figured out something to get me out of the glaring eyes of Big Ape. I've recalled a strange substance, origins I can't quite place at the moment. A bright, glowing goo. To many Apex it reminds them of a mushed up banana. It had unique properties.",
+
+"I shouldn't dabble in theories at this point, but it holds great potential to change anyone when consumed. Just need to figure out where it went.",
+
+"Entry # 501
+It took some effort. Locating the golden banana goo in of all places, a Glitch built sewer. Handling it is dangerous as the properties of it make ones dna melt and change to the environment it's in. Changing in that location is the last thing I'd want.",
+
+"Entry # 514
+The scrubbed notes that prevent me from figuring out the golden banana goo's origins is infuriating at replicating it for more experimentation has resulted in failure. At the very least we've seen what happens when the goo is eaten with no external element around the subjects.",
+
+"Curiously they become pure banana pudding. Like wobbling slimes, they increase in mass at an astonishing rate to match the change of their form until the transformation is complete. Testing on retaining intelligence is still to be determined."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

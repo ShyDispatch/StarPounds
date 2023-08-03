@@ -1,0 +1,33 @@
+{
+  "projectileName" : "caloricguidedrocket",
+  "image" : "caloricguidedrocket.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 4,
+  "damageKindImage" : "icon.png",
+  "fallSpeed" : 0,
+  "lightColor" : [105, 65, 72],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/caloricexplosionknockbackstatus.config"
+    }
+  ],
+  "statusEffects" : [ ],
+  "emitters" : [ "caloricplasmarocket" ],
+  "flippable" : true,
+  "power" : 10.0,
+  "speed" : 1.0,
+  "acceleration" : 20,
+  "physics" : "rocket",
+  "damageType" : "NoDamage",
+  "damageKind" : "caloricplasma",
+
+  "scripts" : [ "guidedrocket.lua" ],
+  "rotationRate" : 5.0,
+  "maxTrackingAngle" : 3.14,
+  "trailProjectile" : "smallcaloriccloud",
+  "trailDistance" : 2.0,
+
+  "persistentAudio" : "/sfx/projectiles/guidedrocket_poison_loop.ogg"
+}

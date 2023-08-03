@@ -1,0 +1,22 @@
+{
+  "itemName": "lactaidoverdrive",
+  "price": 2000,
+  "rarity": "uncommon",
+  "category": "drink",
+  "inventoryIcon": "lactaidoverdrive.png",
+  "description": "A nanite-laden nutrient drink, claiming to grant inhuman milk production. Unknown region of origin.",
+  "shortdescription": "LactAid Overdrive",
+  "maxStack": 1,
+  "effects": [[
+      "lactaidoverdrive",
+      {
+          "effect" : "starpoundsmilk",
+          "duration" : 10
+      }
+  ]],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "rottingMultiplier" : 1.0,
+  "emitters" : [ "drinking" ]
+}

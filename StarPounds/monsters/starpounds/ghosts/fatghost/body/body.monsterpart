@@ -1,0 +1,9 @@
+{
+  "name" : "fatghost",
+  "category" : "fatghost",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "fatghost.png"
+  }
+}

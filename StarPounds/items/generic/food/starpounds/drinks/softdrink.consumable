@@ -1,0 +1,18 @@
+{
+  "itemName" : "starpoundssoftdrink",
+  "rarity" : "Common",
+  "price" : 50,
+  "category" : "drink",
+  "inventoryIcon" : "softdrink.png",
+  "description" : "Unlike other fast food joints, this drink is full of soda rather than ice cubes.",
+  "shortdescription" : "Soft Drink",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 90
+    }
+  ] ],
+  "foodValue": 10,
+  "emitters" : [ "drinking" ]
+}

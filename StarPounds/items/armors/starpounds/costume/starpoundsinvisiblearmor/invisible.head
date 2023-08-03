@@ -1,0 +1,15 @@
+{
+  "itemName" : "starpoundsinvisiblehead",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "headwear",
+  "description" : "You can't see it, but this hat is certainly there.",
+  "shortdescription" : "Invisible Hat",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png"
+}

@@ -1,0 +1,58 @@
+{
+  "type" : "vorepredator",
+  "baseType" : "base",
+
+  "persistent" : true,
+
+  "damageTeam" : 4,
+  "damageTeamType" : "enemy",
+
+  "scriptConfig" : {
+    "behavior" : "hostilepredator",
+
+    "behaviorConfig" : {
+    },
+
+    "starPounds_skills": {
+      "voreCritter": [1, 1],
+      "voreMonster": [1, 1],
+      "voreHumanoid": [1, 1],
+      "minimumSize": [2, 2]
+    },
+
+    "aggressive" : true,
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "reactions" : {
+      "spontaneous" : [
+        [5.0, "sleep", { "timeRange" : [0.7, 0.9] }],
+        [1.0, "patrol"]
+      ]
+    },
+
+    "dialogMode" : "random",
+    "dialog" : {
+      "attack" : "/dialog/vore.config:attack",
+      "reattack" : "/dialog/vore.config:reattack",
+      "killedTarget" : "/dialog/vore.config:killedTarget",
+      "lostTarget" : "/dialog/vore.config:lostTarget",
+      "outOfSight" : "/dialog/vore.config:outOfSight",
+      "cheerOn" : "/dialog/vore.config:cheerOn",
+      "cantReach" : "/dialog/vore.config:cantReach"
+    }
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "knockbackStunTime" : {
+        "baseValue" : 0.1
+      }
+    }
+  }
+}

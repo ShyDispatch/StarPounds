@@ -1,0 +1,33 @@
+{
+  "projectileName" : "caloricswarmer",
+  "physics" : "laser",
+  "timeToLive" : 3,
+  "image" : "caloricswarmer.png",
+  "animationCycle" : 0.3,
+  "lightColor" : [105, 65, 72],
+  "frameNumber" : 4,
+  "periodicActions" : [ ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/caloricimpact.config"
+    }
+  ],
+  "speed" : 10,
+  "power" : 30,
+  "damageKind" : "poison",
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "statusEffects" : [
+    {"effect": "starpoundsratebloat", "duration": 10},
+    {"effect": "starpoundsrategain", "duration": 10}
+  ],
+
+  "fullbright" : true,
+
+  "scripts" : [ "/projectiles/activeitems/staff/staffprojectile.lua" ],
+
+  "controlMovement" : {
+    "maxSpeed" : 60,
+    "controlForce" : 40
+  }
+}

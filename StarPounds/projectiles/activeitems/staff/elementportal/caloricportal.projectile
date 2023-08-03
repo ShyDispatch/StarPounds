@@ -1,0 +1,51 @@
+{
+  "projectileName" : "caloricportal",
+  "physics" : "hover",
+  "timeToLive" : 6,
+  "image" : "caloricportal.png",
+  "animationCycle" : 0.35,
+  "lightColor" : [105, 65, 72],
+  "frameNumber" : 4,
+  "windupFrames" : 3,
+  "winddownFrames" : 3,
+  "periodicActions" : [
+    {
+      "time" : 0,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/melee/astraltear2.ogg" ]
+    },
+    {
+      "time" : 5.65,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/astraltear_stop3.ogg" ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/caloricimpactmute.config"
+    }
+  ],
+  "speed" : 0,
+  "power" : 0,
+  "damagePoly" : [],
+
+  "fullbright" : true,
+  "emitters" : [],
+
+  "renderLayer" : "Projectile-1",
+  "orientationLocked" : true,
+
+  "bounces" : -1,
+  "onlyHitTerrain" : true,
+
+  "scripts" : [ "/projectiles/activeitems/staff/elementportal/elementportal.lua" ],
+
+  "projectileType" : "caloricswarmer",
+  "projectileParameters" : {},
+  "spawnRate" : 0.3,
+
+  "persistentAudio" : "/sfx/projectiles/poisonorb_loop1.ogg"
+}

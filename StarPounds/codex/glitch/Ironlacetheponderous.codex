@@ -1,0 +1,29 @@
+{
+  "id" : "ironlacetheponderous",
+  "species" : "glitch",
+  "title" : "Ironlace The Ponderous",
+  "description" : "A book detailing the tale of Ironlace against the fearsome beast known as Roll.",
+  "icon" : "theponderous.png",
+  "contentPages" : [
+    "The uniqueness of Glitch Kingdoms is their own rich history they can develop in their isolated states. Even as their society stagnates, and the people stuck in their loop. The heroes live on in their memory banks forever.",
+
+"One such kingdom used to be terrorized by the terrifying Roll. A regenerating monster that could not be felled by even the mightiest knights in the kingdom. Only leaving them alone if their food was constantly given in tribute.",
+
+"Fate would bring the wanderer Ironlace, a roaming knight known for her lethal swiftness and big appetite. And her travelling companion and sorceress, Bronzefinger. Hearing the plight of the Glitch, Ironlace was quick to jump into action. But Bronzefinger stopped her friend from certain doom.",
+
+"Roll would regenerate, no matter how much it was cut down. Bronzefinger devised that Roll would have to have its own flesh disolved in order to be completely vanquished. Yet lava nor acid could be found in the area. And even simple fire could not keep up with Roll. Thus the sorceress presented her plan.",
+
+"The two would go forth to battle Roll. And after an exhausting struggle, Roll fell unconcious under their onslaught. With a bit of magic casted on Ironlace, and upon Bronzefinger's instructions, Ironlace began eating Roll. The spell not only allowing Ironlace to perform such a feat with the large beast, but also increasing the strength of her stomach acids.",
+
+"Ironlace could only watch her overstuffed gut work and groan with such a large meal. And despite Bronzefinger's magic, Roll would not be digested quickly. As they both watched, the knight would steadily pile on extra weight. Her frame widening as metal and polymer grew. The once strong knight becoming a rounded and hefty ball of steel when Roll was no more, and left hungry by Bronzefinger's magic.",
+
+"With their tyranny no more, the kingdom showed praise upon the now hefty knight. Rolls death marking a day of celebration every year dedicated to Ironlace's victory. Ironlace struggled for a time to adjust to her weight to remain a strong warrior. Regaining her former strength so quickly that the Glitch forgot she was once skinny.",
+
+"Bronzefinger would settle in the kingdom, expanding her magic in a unique school she would call lipomancy. Inspired in the aftermath of her plan, while Ironlace would depart after her training was complete. Though her figure would never slim, and the kingdom wouldn't forget it either as statues of her magnificence would last to this day."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "legendary",
+    "price" : 2000
+  }
+}

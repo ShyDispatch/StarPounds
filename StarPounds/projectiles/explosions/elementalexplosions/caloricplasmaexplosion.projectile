@@ -1,0 +1,13 @@
+{
+  "projectileName" : "caloricplasmaexplosion",
+  "image" : "/projectiles/invisibleprojectile/invisibleprojectile.png",
+  "damageKindImage" : "icon.png",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/caloricexplosionknockback.config"
+    }
+  ],
+  "damageKind" : "caloricplasma",
+  "timeToLive" : 0
+}

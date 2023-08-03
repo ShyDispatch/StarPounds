@@ -1,0 +1,112 @@
+{
+  "itemName" : "uscmhammer",
+  "price" : 1250,
+  "level" : 7,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A powerful experimental weapon designed by the USCM.",
+  "shortdescription" : "Praetor's Hammer",
+  "tooltipKind" : "sword",
+  "category" : "hammer",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","melee","hammer"],
+
+  "inventoryIcon" : "uscmhammer.png:inactive",
+
+  "animation" : "/items/active/weapons/uscm/uscmhammer/uscmhammer.animation",
+  "animationParts" : {
+    "hammer" : "uscmhammer.png",
+    "hammerfullbright" : "uscmhammerfullbright.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/uscm/uscmhammer/uscmhammer.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "hammersmash",
+  "primaryAbility" : {
+    "fireTime" : 1,
+    "baseDps" : 12,
+
+    "animKeyPrefix" : "inactive"
+  },
+
+  "inactiveBaseDps" : 12,
+  "activeBaseDps" : 15.6,
+
+  "altAbility" : {
+    "name" : "Empowerment",
+    "type" : "empowerment",
+    "scripts" : ["/items/active/weapons/uscm/uscmhammer/empowerment.lua"],
+    "class" : "Empowerment",
+
+    "energyPerSecond" : 20,
+
+    "cooldownTime" : 1.0,
+
+    "damageConfig" : {
+      "damageSourceKind" : "hammer",
+      "baseDamage" : 12.5,
+      "knockback" : 0,
+      "timeout" : 0.6,
+      "timeoutGroup" : "alt"
+    },
+
+    "projectileType" : "electricshockwave",
+    "projectileParameters" : {
+      "power" : 3.5,
+      "knockback" : 35,
+      "knockbackMode" : "facing",
+      "onlyHitTerrain" : true
+    },
+
+    "chargeTime" : 1,
+    "minChargeTime" : 0.35,
+
+    "shockWaveBounds" : [-0.4, -1.375, 0.4, 0.0],
+    "shockwaveHeight" : 1.375,
+    "maxDistance" : 15,
+    "bothDirections" : true,
+
+    "impactLine" : [ [1.25, -1.5], [1.25, -4.5] ],
+    "impactWeaponOffset" : 0.75,
+
+    "stances" : {
+      "empower" : {
+        "durationBefore" : 0.2,
+        "durationAfter" : 0.5,
+        "armRotation" : 90,
+        "weaponRotation" : -90,
+        "twoHanded" : true,
+
+        "weaponOffset" : [0.25, 1],
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "windup" : {
+        "armRotation" : 0,
+        "endArmRotation" : 110,
+        "weaponRotation" : 180,
+        "endWeaponRotation" : 130,
+        "weaponOffset" : [0, 0.5],
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0.5,
+        "armRotation" : 0,
+        "weaponRotation" : -180,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : true
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

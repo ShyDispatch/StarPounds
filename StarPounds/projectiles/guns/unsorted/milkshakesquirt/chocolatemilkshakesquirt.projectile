@@ -1,0 +1,77 @@
+{
+  "projectileName" : "chocolatemilkshakesquirt",
+  "image" : "chocolatemilkshakesquirt.png",
+  "physics" : "squirt",
+  "animationCycle" : 1,
+  "frameNumber" : 2,
+  "periodicActions": [
+    {
+      "time" : 0.1,
+      "action" : "loop",
+      "count" : 1,
+      "fuzzAngle" : 360,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "textured",
+            "image" : "/projectiles/guns/unsorted/milkshakesquirt/chocolatemilkshakesplat.png",
+            "position" : [0, 0],
+            "initialVelocity" : [-3, 3],
+            "finalVelocity" : [0, -30],
+            "approach" : [0, 20],
+            "collidesForeground" : true,
+            "timeToLive" : 1,
+            "size" : 0.75,
+            "layer" : "back",
+            "variance" : {
+              "size" : 0.5,
+              "initialVelocity" : [3, 3]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "loop",
+      "count" : 5,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+             "type" : "textured",
+             "image" : "/projectiles/guns/unsorted/milkshakesquirt/chocolatemilkshakesplat.png",
+             "size" : 0.75,
+             "initialVelocity" : [0, 10],
+             "finalVelocity" : [0, -30],
+             "approach" : [0, 20],
+             "timeToLive" : 1,
+             "collidesForeground" : true,
+             "destructionTime" : 1,
+             "layer" : "back",
+             "variance" : {
+               "size" : 0.5,
+               "initialVelocity" : [6, 2]
+             }
+          }
+        }
+      ]
+    },
+	  {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/bloodvomit1.ogg", "/sfx/projectiles/bloodvomit2.ogg", "/sfx/projectiles/bloodvomit3.ogg", "/sfx/projectiles/bloodvomit4.ogg", "/sfx/projectiles/bloodvomit5.ogg", "/sfx/projectiles/bloodvomit6.ogg", "/sfx/projectiles/bloodvomit7.ogg" ]
+    }
+  ],
+  "power" : 50,
+  "speed" : 40,
+  "bounces" : 0,
+  "piercing" : false,
+  "damagePoly" : [ [-4, 0], [0, 4], [4, 0], [0, -4] ],
+  "damageKind" : "bugnet",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "statusEffects" : ["starpoundschocolatemilkshakesquirt"],
+  "emitters" : [ ],
+  "hydrophobic" : true
+}

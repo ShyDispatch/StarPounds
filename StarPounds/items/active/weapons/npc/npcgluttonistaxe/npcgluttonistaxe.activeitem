@@ -1,0 +1,35 @@
+{
+  "itemName" : "npcgluttonistaxe",
+  "price" : 0,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "Designed for effective chopping.",
+  "shortdescription" : "NPC Axe",
+  "tooltipKind" : "sword",
+  "category" : "axe",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","axe"],
+
+  "animation" : "/items/active/weapons/melee/axe/axe.animation",
+  "animationParts" : {
+    "handle" : "",
+    "blade" : "/items/active/weapons/npc/npcgluttonistaxe/npcgluttonistaxe.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+  "scriptDelta" : 2,
+
+  "elementalType" : "physical",
+
+  "aimOffset" : -1.0,
+
+  "primaryAbilityType" : "axecleave",
+  "primaryAbility" : {
+    "fireTime" : 0.4,
+    "baseDps" : 20
+  },
+  "fireSounds" : [ "/sfx/melee/swing_axe.ogg" ],
+
+  "builder" : "/items/buildscripts/buildweapon.lua"
+}

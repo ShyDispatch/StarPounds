@@ -1,0 +1,22 @@
+{
+  "starpounds_wellfed" : {
+    "unique": false,
+    "text" : "You appear to have completely filled up your stomach capacity. ^orange;While full, you'll be unable to consume any more food^reset; until digestion gives you some room."
+  },
+  "starpounds_digestcrew" : {
+    "unique": false,
+    "text" : "Warning! ^orange;Crew members are unrecoverable when they become part of the Captain's hips^reset;. I would advise you find an alternative source of food."
+  },
+  "starpounds_treadmill" : {
+    "unique": false,
+    "text" : "You appear to be using a treadmill. ^green;Running on it will allow you to quickly lose excess weight^reset; you have gained while exploring."
+  },
+  "starpounds_quickbar" : {
+    "unique": false,
+    "text" : "^red;------------MOD INSTALL WARNING------------\n^reset;You appear to have installed ^orange;Quickbar Mini^reset;, which is depreciated. Install ^cyan;Stardust Core Lite^reset; (not both), or ^#ccbbff;StarPounds^reset; interfaces cannot function."
+  },
+  "starpounds_stardust" : {
+    "unique": false,
+    "text" : "^red;------------MOD INSTALL WARNING------------\n^reset;You don't appear to have installed ^cyan;Stardust Core Lite^reset;. ^#ccbbff;StarPounds^reset; interfaces cannot function without it."
+  }
+}

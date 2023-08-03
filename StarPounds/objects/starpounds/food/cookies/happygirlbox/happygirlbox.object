@@ -1,0 +1,35 @@
+{
+  "objectName" : "emptyhappygirlbox",
+  "colonyTags" : ["starpounds","evil"],
+  "rarity" : "Common",
+
+  "price" : 5,
+  "description" : "An empty box of mint chocolate cookies famous from Happy Girl Scouts.",
+  "shortdescription" : "Girl Scout Cookie Box",
+  "race" : "generic",
+
+  "apexDescription" : "The forced smile is all you need to know about the intent of these cookies.",
+  "avianDescription" : "Mint chocolate? I'm very tempted to try a few.",
+  "floranDescription" : "Floran will easssily empty box of cookiesss.",
+  "glitchDescription" : "Cautious. These cookies melt in my hand, best to eat them quickly.",
+  "humanDescription" : "Where do I recall seeing this? Absolute Operatives? Ah well, girl scout cookies!",
+  "hylotlDescription" : "Odd, these cookies seem easy to melt. Quicker than usual.",
+  "novakidDescription" : "I'm more of a peanut butter cookie person, but I'll happily eat a couple of' boxes.",
+  "throgDescription" : "I'll eat the entire box of cookies if I have to.",  
+  "avaliDescription" : "I like mint, but these cookies melt way too quickly. I don't want chocolate all over my feathers.",    
+
+  "inventoryIcon" : "happygirlboxicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "happygirlbox.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

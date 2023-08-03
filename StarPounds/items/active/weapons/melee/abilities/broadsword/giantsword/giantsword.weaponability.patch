@@ -1,0 +1,37 @@
+[
+  {
+    "op" : "add",
+    "path" : "/animationCustom/particleEmitters/caloricSwordCharge",
+    "value" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "emissionRate" : 30,
+      "offsetRegion" : [-0.75, 0.0, 0.75, 5.5],
+      "particles" : [
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "caloricswoosh3"}
+      ]
+    }
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisoncharge",
+    "path" : "/animationCustom/sounds/caloriccharge"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonfullwindup",
+    "path" : "/animationCustom/sounds/caloricfullwindup"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonfull",
+    "path" : "/animationCustom/sounds/caloricfull"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "damageConfig" : { "statusEffects" : [ { "effect": "starpoundsrategainslow", "duration": 30 }, { "effect": "starpoundsratebloatfast", "duration": 30 } ] } }
+  }
+]

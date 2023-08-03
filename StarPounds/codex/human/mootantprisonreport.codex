@@ -1,0 +1,19 @@
+{
+  "id" : "mootantprisonreport",
+  "species" : "human",
+  "title" : "Prisoner Report",
+  "description" : "Details on obtaining prisoners for the USCM.",
+  "icon" : "starpoundshuman1.png",
+  "contentPages" : [
+    "In the wake of the Protectorate's collapse. It's been a lot easier to get a fresh batch of prisoners to supply Director Palmer's experiments. We can now approach settlements, take unlawful types off their hands, and get a cut of profits from them to make sure we keep them away forever. So long as they don't stop paying, they won't know they won't be a problem anyways.",
+
+"The nature of the experiments means we should be sticking with only any female prisoners we can get. All male prisoners will be sent to standard reestablished Penal Colonies like normal. Pending any changes in Director Palmet's interests of course.",
+
+"So far Director Palmer has been on the ball. When I noted this Penal Colonies abandoned reserves of milkshakes were low, she already sent us a new batch and has a schedule for resupplies at a reasonable rate. This operation isn't being half hearted, the doctor is a real obsessed freak for her Moo Girls."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

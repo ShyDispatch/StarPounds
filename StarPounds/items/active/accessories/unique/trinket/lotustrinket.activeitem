@@ -1,0 +1,22 @@
+{
+  "itemName" : "lotustrinket",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A cursed relic bound to voracious warriors. Your stomach growls just by touching it...",
+  "shortdescription" : "Lotus Insignia",
+  "inventoryIcon" : "lotustrinket.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "stats": [
+    {"name": "hunger", "modifier": 1},
+    {"name": "experienceMultiplier", "modifier": 0.5}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

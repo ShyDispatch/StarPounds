@@ -1,0 +1,188 @@
+{
+  "objectName" : "fattiesoddities",
+  "colonyTags" : ["outpost","commerce"],
+  "rarity" : "Common",
+  "category" : "other",
+  "description" : "Not recognized as a merchant, this Agaran sells items not from this universe. Literally.",
+  "shortdescription" : "Unusual Oddities",
+  "race" : "agaran",
+  "printable" : false,
+
+  "apexDescription" : "This Agaran appears to be stuck. And offering oddities I've never seen.",
+  "avianDescription" : "So many items. I wonder where she gets them from her position.",
+  "floranDescription" : "Floran sees lotsss of itemss. Floran excited.",
+  "glitchDescription" : "Impressed. I feel as though what's being sold.",
+  "humanDescription" : "It's like I'm being sold items from another universe!",
+  "hylotlDescription" : "I wouldn't normally qualify this as a merchant. But the items on sale seem truly unique.",
+  "novakidDescription" : "This place seems to stock crazy, out there things. That's relatable.",
+  "throgDescription" : "Not sure what the deal is, but the stock on sale is breaking all four walls.",  
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "fattiesoddities.png:<color>.<frame>" }, { "image" : "fattiesodditieslit.png:<color>.<frame>", "fullbright" : true } ],
+      "imagePosition" : [-8, 0],
+
+      "direction" : "right",
+
+      "frames" : 21,
+      "animationCycle" : 4.0,
+      "questIndicatorPosition" : [1.3, -4.5],
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [-6, 0], [-5, 0], [-4, 0], [-3, 0], [-2, 0],
+        [-6, 1], [-5, 1], [-4, 1], [-3, 1], [-2, 1],
+        [-6, 2], [-5, 2], [-4, 2], [-3, 2], [-2, 2],
+        [-5, 3], [-4, 3], [-3, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "fattiesoddities.png:<color>.<frame>" }, { "image" : "fattiesodditieslit.png:<color>.<frame>", "fullbright" : true } ],
+      "imagePosition" : [-8, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "frames" : 21,
+      "animationCycle" : 4.0,
+      "questIndicatorPosition" : [1.3, -4.5],
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [-6, 0], [-5, 0], [-4, 0], [-3, 0], [-2, 0],
+        [-6, 1], [-5, 1], [-4, 1], [-3, 1], [-2, 1],
+        [-6, 2], [-5, 2], [-4, 2], [-3, 2], [-2, 2],
+        [-5, 3], [-4, 3], [-3, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  
+  "scripts" : [ "fattiesoddities.lua" ],
+  "scriptDelta" : 0,  
+
+  "interactData" : {
+    "config" : "/interface/fattyshops/fatshops.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Fatties Oddities",
+        "subtitle" : "^#b9b5b2;A strange shop with strange wares.",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/fattiesoddities.png"
+        }
+      }
+    },
+    "filter" : [],
+	"modTab" : [{
+      "file": "/interface/fattyshops/tabs/tabstages.png",
+	  "label": "Stages",
+      "filter": [ "tabstages" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabbusty.png",
+	  "label": "Busty",
+      "filter": [ "tabbusty" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabstuffed.png",
+	  "label": "Stuffed",
+      "filter": [ "tabstuffed" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabsoft.png",
+	  "label": "Size M",
+      "filter": [ "tabsoft" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/tabthick.png",
+	  "label": "Size L",
+      "filter": [ "tabthick" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabchubster.png",
+	  "label": "Size XL",
+      "filter": [ "tabchubster" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabplump.png",
+	  "label": "Size XXL",
+      "filter": [ "tabplump" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/tabfatty.png",
+	  "label": "Size XXXL",
+      "filter": [ "tabfatty" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/tabmisc.png",
+	  "label": "Misc",
+      "filter": [ "tabmisc" ]
+    }]
+  },
+  "storeInventory" : {
+    "tabstages" : [
+      "1softoutfitbag", "2thickoutfitbag", "3chubsteroutfitbag", "4plumpoutfitbag", "5fattyoutfitbag", "6bloboutfitbag"
+    ],
+    "tabbusty" : [
+      "0bustyoutfitbag", "0milkyoutfitbag", "0hyperoutfitbag",
+      "1softbustyoutfitbag", "1softmilkyoutfitbag", "1softhyperoutfitbag",
+      "2thickbustyoutfitbag", "2thickmilkyoutfitbag", "2thickhyperoutfitbag",
+      "3chubsterbustyoutfitbag", "3chubstermilkyoutfitbag", "3chubsterhyperoutfitbag",
+      "4plumpbustyoutfitbag", "4plumpmilkyoutfitbag", "4plumphyperoutfitbag",
+      "5fattybustyoutfitbag", "5fattymilkyoutfitbag", "5fattyhyperoutfitbag"
+    ],
+    "tabstuffed" : [
+      "0saturatedoutfitbag", "0stuffedoutfitbag", "0packedoutfitbag", "0filledoutfitbag", "0gluttedoutfitbag", "0gorgedoutfitbag",
+      "1softstuffedoutfitbag", "1softpackedoutfitbag", "1softfilledoutfitbag", "1softgluttedoutfitbag", "1softgorgedoutfitbag",
+      "2thickstuffedoutfitbag", "2thickpackedoutfitbag", "2thickfilledoutfitbag", "2thickgorgedoutfitbag",
+      "3chubsterstuffedoutfitbag", "3chubsterfilledoutfitbag", "3chubstergorgedoutfitbag",
+      "4plumpstuffedoutfitbag", "4plumpfilledoutfitbag", "4plumpgorgedoutfitbag",
+      "5fattystuffedoutfitbag", "5fattyfilledoutfitbag", "5fattygorgedoutfitbag"
+    ],
+    "tabsoft" : [
+      "softprotectoratechest", "softprotectoratepants", "softprotectorateshirtchest", "softprotectoratevestchest", "softhoodiechest", "softjeans1legs", "softjeans3legs", "softtshirtchest", "softconceptchest", "softcoolchest", "softsweatervestchest", "softworkoutlegs",
+	  "softapexnavyjacket", "softapexnavypants", "softapexofficerjacket", "softapexofficerpants", "softmerchantchest", "softmerchantlegs", "softnoblechest", "softnoblelegs", "softkimonochest", "softkimonolegs", "softtraditionalchest", "softtraditionallegs", "softnovakidsuspenders", "softnovakidsuspenderspants",
+	  "softalpacachest", "softalpacalegs", "softbioluminchest", "softbioluminlegs", "softicearmorchest", "softicearmorlegs", "softdarkchest", "softdarklegs", "softdarkdisguisechest", "softdarkdisguiselegs", "softprismchest", "softprismlegs", "softslimechest", "softslimelegs", "softneckruffle", "softtarchest", "softtarlegs",
+	  "softcultistchest", "softcultistlegs", "softminiknogchest", "softminiknogpants", "softspacesuitchest", "softspacesuitlegs", "softvalorouschest", "softvalorouspants", "softminerchest", "softpredatorychest", "softpredatorypants", "softwizardchest", "softwizardlegs",
+	  "softbettychest", "softbettylegs", "softchefchest", "softcheflegs", "softcowboychest", "softcowboylegs", "softjumpsuitchest", "softjumpsuitlegs", "softmoneybagschest", "softmoneybagspants", "softmrclauschest", "softmrclauspants", "softpilotchest", "softpilotlegs", "softpiratechest", "softpiratelegs", "softscientistchest", "softscientistlegs",
+	  "softshirtchest", "softsmartchest", "softsmartpants", "softstartrackchest", "softstartracklegs", "softexplorerchest", "softexplorerlegs", "softhazmatchest", "softhazmatlegs", "softneochest", "softneolegs", "softpeacekeeperchest", "softpeacekeeperpants", "softsnowinfantrychest", "softsnowinfantrypants"
+    ],	
+    "tabthick" : [
+      "thickprotectoratechest", "thickprotectoratepants", "thickprotectorateshirtchest", "thickprotectoratevestchest", "thickhoodiechest", "thickjeans1legs", "thickjeans3legs", "thicktshirtchest", "thickconceptchest", "thickcoolchest", "thicksweatervestchest", "thickworkoutlegs",
+	  "thickapexnavyjacket", "thickapexnavypants", "thickapexofficerjacket", "thickapexofficerpants", "thickmerchantchest", "thickmerchantlegs", "thicknoblechest", "thicknoblelegs", "thickkimonochest", "thickkimonolegs", "thicktraditionalchest", "thicktraditionallegs", "thicknovakidsuspenders", "thicknovakidsuspenderspants",
+	  "thickalpacachest", "thickalpacalegs", "thickbioluminchest", "thickbioluminlegs", "thickicearmorchest", "thickicearmorlegs", "thickdarkchest", "thickdarklegs", "thickdarkdisguisechest", "thickdarkdisguiselegs", "thickprismchest", "thickprismlegs", "thickslimechest", "thickslimelegs", "thickneckruffle", "thicktarchest", "thicktarlegs",
+	  "thickcultistchest", "thickcultistlegs", "thickminiknogchest", "thickminiknogpants", "thickspacesuitchest", "thickspacesuitlegs", "thickvalorouschest", "thickvalorouspants", "thickminerchest", "thickpredatorychest", "thickpredatorypants", "thickwizardchest", "thickwizardlegs",
+	  "thickbettychest", "thickbettylegs", "thickchefchest", "thickcheflegs", "thickcowboychest", "thickcowboylegs", "thickjumpsuitchest", "thickjumpsuitlegs", "thickmoneybagschest", "thickmoneybagspants", "thickmrclauschest", "thickmrclauspants", "thickpilotchest", "thickpilotlegs", "thickpiratechest", "thickpiratelegs", "thickscientistchest", "thickscientistlegs",
+	  "thickshirtchest", "thicksmartchest", "thicksmartpants", "thickstartrackchest", "thickstartracklegs", "thickexplorerchest", "thickexplorerlegs", "thickhazmatchest", "thickhazmatlegs", "thickneochest", "thickneolegs", "thickpeacekeeperchest", "thickpeacekeeperpants", "thicksnowinfantrychest", "thicksnowinfantrypants"
+    ],	
+    "tabchubster" : [
+      "chubsterprotectoratechest", "chubsterprotectoratepants", "chubsterprotectorateshirtchest", "chubsterprotectoratevestchest", "chubsterhoodiechest", "chubsterjeans1legs", "chubsterjeans3legs", "chubstertshirtchest", "chubsterconceptchest", "chubstercoolchest", "chubstersweatervestchest", "chubsterworkoutlegs",
+	  "chubsterapexnavyjacket", "chubsterapexnavypants", "chubsterapexofficerjacket", "chubsterapexofficerpants", "chubstermerchantchest", "chubstermerchantlegs", "chubsternoblechest", "chubsternoblelegs", "chubsterkimonochest", "chubsterkimonolegs", "chubstertraditionalchest", "chubstertraditionallegs", "chubsternovakidsuspenders", "chubsternovakidsuspenderspants",
+	  "chubsteralpacachest", "chubsteralpacalegs", "chubsterbioluminchest", "chubsterbioluminlegs", "chubstericearmorchest", "chubstericearmorlegs", "chubsterdarkchest", "chubsterdarklegs", "chubsterdarkdisguisechest", "chubsterdarkdisguiselegs", "chubsterprismchest", "chubsterprismlegs", "chubsterslimechest", "chubsterslimelegs", "chubsterneckruffle", "chubstertarchest", "chubstertarlegs",
+	  "chubstercultistchest", "chubstercultistlegs", "chubsterminiknogchest", "chubsterminiknogpants", "chubsterspacesuitchest", "chubsterspacesuitlegs", "chubstervalorouschest", "chubstervalorouspants", "chubsterminerchest", "chubsterpredatorychest", "chubsterpredatorypants", "chubsterwizardchest", "chubsterwizardlegs",
+	  "chubsterbettychest", "chubsterbettylegs", "chubsterchefchest", "chubstercheflegs", "chubstercowboychest", "chubstercowboylegs", "chubsterjumpsuitchest", "chubsterjumpsuitlegs", "chubstermoneybagschest", "chubstermoneybagspants", "chubstermrclauschest", "chubstermrclauspants", "chubsterpilotchest", "chubsterpilotlegs", "chubsterpiratechest", "chubsterpiratelegs", "chubsterscientistchest", "chubsterscientistlegs",
+	  "chubstershirtchest", "chubstersmartchest", "chubstersmartpants", "chubsterstartrackchest", "chubsterstartracklegs", "chubsterexplorerchest", "chubsterexplorerlegs", "chubsterhazmatchest", "chubsterhazmatlegs", "chubsterneochest", "chubsterneolegs", "chubsterpeacekeeperchest", "chubsterpeacekeeperpants", "chubstersnowinfantrychest", "chubstersnowinfantrypants"
+    ],	
+    "tabplump" : [
+      "plumpprotectoratechest", "plumpprotectoratepants", "plumpprotectorateshirtchest", "plumpprotectoratevestchest", "plumphoodiechest", "plumpjeans1legs", "plumpjeans3legs", "plumptshirtchest", "plumpconceptchest", "plumpcoolchest", "plumpsweatervestchest", "plumpworkoutlegs",
+	  "plumpapexnavyjacket", "plumpapexnavypants", "plumpapexofficerjacket", "plumpapexofficerpants", "plumpmerchantchest", "plumpmerchantlegs", "plumpnoblechest", "plumpnoblelegs", "plumpkimonochest", "plumpkimonolegs", "plumptraditionalchest", "plumptraditionallegs", "plumpnovakidsuspenders", "plumpnovakidsuspenderspants",
+	  "plumpalpacachest", "plumpalpacalegs", "plumpbioluminchest", "plumpbioluminlegs", "plumpicearmorchest", "plumpicearmorlegs", "plumpdarkchest", "plumpdarklegs", "plumpdarkdisguisechest", "plumpdarkdisguiselegs", "plumpprismchest", "plumpprismlegs", "plumpslimechest", "plumpslimelegs", "plumpneckruffle", "plumptarchest", "plumptarlegs",
+	  "plumpcultistchest", "plumpcultistlegs", "plumpminiknogchest", "plumpminiknogpants", "plumpspacesuitchest", "plumpspacesuitlegs", "plumpvalorouschest", "plumpvalorouspants", "plumpminerchest", "plumppredatorychest", "plumppredatorypants", "plumpwizardchest", "plumpwizardlegs",
+	  "plumpbettychest", "plumpbettylegs", "plumpchefchest", "plumpcheflegs", "plumpcowboychest", "plumpcowboylegs", "plumpjumpsuitchest", "plumpjumpsuitlegs", "plumpmoneybagschest", "plumpmoneybagspants", "plumpmrclauschest", "plumpmrclauspants", "plumppilotchest", "plumppilotlegs", "plumppiratechest", "plumppiratelegs", "plumpscientistchest", "plumpscientistlegs",
+	  "plumpshirtchest", "plumpsmartchest", "plumpsmartpants", "plumpstartrackchest", "plumpstartracklegs", "plumpexplorerchest", "plumpexplorerlegs", "plumphazmatchest", "plumphazmatlegs", "plumpneochest", "plumpneolegs", "plumppeacekeeperchest", "plumppeacekeeperpants", "plumpsnowinfantrychest", "plumpsnowinfantrypants"
+    ],	
+    "tabfatty" : [
+      "fattyprotectoratechest", "fattyprotectoratepants", "fattyprotectorateshirtchest", "fattyprotectoratevestchest", "fattyhoodiechest", "fattyjeans1legs", "fattyjeans3legs", "fattytshirtchest", "fattyconceptchest", "fattycoolchest", "fattysweatervestchest", "fattyworkoutlegs",
+	  "fattyapexnavyjacket", "fattyapexnavypants", "fattyapexofficerjacket", "fattyapexofficerpants", "fattymerchantchest", "fattymerchantlegs", "fattynoblechest", "fattynoblelegs", "fattykimonochest", "fattykimonolegs", "fattytraditionalchest", "fattytraditionallegs", "fattynovakidsuspenders", "fattynovakidsuspenderspants",
+	  "fattyalpacachest", "fattyalpacalegs", "fattybioluminchest", "fattybioluminlegs", "fattyicearmorchest", "fattyicearmorlegs", "fattydarkchest", "fattydarklegs", "fattydarkdisguisechest", "fattydarkdisguiselegs", "fattyprismchest", "fattyprismlegs", "fattyslimechest", "fattyslimelegs", "fattyneckruffle", "fattytarchest", "fattytarlegs",
+	  "fattycultistchest", "fattycultistlegs", "fattyminiknogchest", "fattyminiknogpants", "fattyspacesuitchest", "fattyspacesuitlegs", "fattyvalorouschest", "fattyvalorouspants", "fattyminerchest", "fattypredatorychest", "fattypredatorypants", "fattywizardchest", "fattywizardlegs",
+	  "fattybettychest", "fattybettylegs", "fattychefchest", "fattycheflegs", "fattycowboychest", "fattycowboylegs", "fattyjumpsuitchest", "fattyjumpsuitlegs", "fattymoneybagschest", "fattymoneybagspants", "fattymrclauschest", "fattymrclauspants", "fattypilotchest", "fattypilotlegs", "fattypiratechest", "fattypiratelegs", "fattyscientistchest", "fattyscientistlegs",
+	  "fattyshirtchest", "fattysmartchest", "fattysmartpants", "fattystartrackchest", "fattystartracklegs", "fattyexplorerchest", "fattyexplorerlegs", "fattyhazmatchest", "fattyhazmatlegs", "fattyneochest", "fattyneolegs", "fattypeacekeeperchest", "fattypeacekeeperpants", "fattysnowinfantrychest", "fattysnowinfantrypants"
+    ],	
+    "tabmisc" : [
+      "burptool", "gurgletool"
+    ]
+  }
+}

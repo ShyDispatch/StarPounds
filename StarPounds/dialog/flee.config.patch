@@ -1,0 +1,32 @@
+[
+  {
+    "op": "add",
+    "path": "/helpme/throg",
+    "value": {
+      "default": [
+        "I need help!",
+        "I can't run very far!",
+        "My Bacon!",		
+        "*Squel*!",				
+        "I am under attack!",
+        "Sound the alarm! Sound all of the alarms!",
+        "Somebody help me!",
+        "Sound the alarm!"
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/safe/throg",
+    "value": {
+      "default": [
+        "Ugh, I'm sweating.",
+        "I'm tired..",
+        "Now I need a snack.",		
+        "Good riddance.",
+        "I need to make up all those lost calories.",
+        "Next time I'll have my fork with me."
+      ]
+    }
+  }
+]

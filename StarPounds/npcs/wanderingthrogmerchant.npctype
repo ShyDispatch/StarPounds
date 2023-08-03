@@ -1,0 +1,35 @@
+{
+  "type" : "wanderingthrogmerchant",
+  "baseType" : "merchant",
+  
+ "scriptConfig" : {
+    "starPounds_skills": {
+      "minimumSize": [3, 3]
+    },
+    "merchant" : {
+      "waitTime" : 40,
+      "storeRadius" : -1,
+      "poolsFile" : "/npcs/merchantpools.config",
+      "categories" : {
+        "default" : ["genericarmour", "basicmerchant", "randomguns", "randomswords", "humaningredients"],
+        "throg" : ["genericarmour", "basicmerchant", "throgfurniture", "randomguns", "randomswords", "throgarmour", "throgingredients", "throgweapons", "starpoundsaccessories" ]
+      },
+      "buyFactorRange" : [ 0.9, 1.2 ],
+      "sellFactorRange" : [ 0.1, 0.1 ],
+      "numItems" : 6
+    }
+  },
+
+  "items" : {
+    "throg" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "throgpreacherhead" } ],
+            "chestCosmetic": [ { "name": "throgneochest" } ],
+            "legsCosmetic": [ { "name": "throgneolegs" } ]
+          }
+      ]]
+    ]
+  }
+}
+

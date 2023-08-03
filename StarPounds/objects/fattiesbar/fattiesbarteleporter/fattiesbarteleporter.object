@@ -1,0 +1,73 @@
+{
+  "objectName" : "fattiesbarteleporter",
+  "objectType" : "teleporter",
+  "colonyTags" : ["misc"],
+  "printable" : false,
+  "price" : 3000,
+  "rarity" : "Uncommon",
+  "description" : "This teleporter can be marked to take you back to the Hog Diner.",
+  "shortdescription" : "Hog Diner Teleporter",
+  "race" : "throg",
+
+  "apexDescription" : "If I mark this teleporter I can return here from a different teleporter at any point.",
+  "avianDescription" : "A functioning teleporter! If I mark it I can return here from a different teleporter at any point.",
+  "floranDescription" : "If Floran marksss this teleporter Floran can return here from other teleport machines!",
+  "glitchDescription" : "Eager. By marking this teleporter I should be able to return to this point from any other teleporter!",
+  "humanDescription" : "It's a teleporter! If I mark it I should be able to return here from a different teleporter whenever I like.",
+  "hylotlDescription" : "A teleporter. If I mark it I should be able to return to this point from a different teleporter.",
+  "novakidDescription" : "By markin' this teleporter I can teleport straight back here if n' when I find another teleporter.",
+
+  "category" : "teleporter",
+  "lightColor" : [102, 44, 155],
+
+  "interactAction" : "OpenTeleportDialog",
+  "interactData" : "/interface/warping/starpoundsfattiesbarteleporter.config",
+
+  "inventoryIcon" : "fattiesbarteleportericon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "fattiesbarteleporter.png:<color>", "fullbright" : true }, { "image" : "fattiesbarteleporterlit.png:<color>" } ],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "solid",
+      "collisionSpaces" : [ [-1, 0], [-0, 0], [1, 0] ]
+    }
+  ],
+  
+  "teleporterFootPosition" : [0, 1],
+
+  "scripts" : [ "2stoptele.lua" ],
+  "scriptDelta" : 60,
+
+  "spawnInterval" : [80, 180],
+  "spawnOffset" : [-1, 3.5],
+
+  "npctypes" : [
+    {
+      "type" : "starpoundsshydispatchvisitor",
+      "species" : [ "human" ]
+    },
+    {
+      "type" : "starpoundsblossomdancervisitor",
+      "species" : [ "floran" ]
+    },
+
+    {
+      "type" : "starpoundsminervisitor",
+      "species" : [ "human" ]
+    },
+    {
+      "type" : "starpoundsgluttonistvisitor",
+      "species" : [ "floran" ]
+    },
+    {
+      "type" : "starpoundsponderousvisitor",
+      "species" : [ "glitch" ]
+    }
+  ]
+}

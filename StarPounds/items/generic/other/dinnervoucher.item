@@ -1,0 +1,8 @@
+{
+  "itemName" : "starpoundsdinnervoucher",
+  "rarity" : "Legendary",
+  "category" : "quest",
+  "inventoryIcon" : "dinnervoucher.png",
+  "description" : "A voucher that grants access to an all you can eat buffet.",
+  "shortdescription" : "Dinner Voucher"
+}

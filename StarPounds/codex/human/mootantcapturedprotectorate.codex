@@ -1,0 +1,19 @@
+{
+  "id" : "mootantcapturedprotectorate",
+  "species" : "human",
+  "title" : "USCM Protectorate Prisoner",
+  "description" : "Details on the imprisonment and torture of a Protectorate by USCM.",
+  "icon" : "humancover8.png",
+  "contentPages" : [
+    "Usually when the USCM builds military bunkers, or Penal Colonies, they're usually on out of the way hunk of rocks where most people wouldn't find them. So imagine our surprise a Protectorate of all things shows up curious about the lights being turned on.",
+
+"Upon entering the facility there was an engagement, managed to take out two soliders before we were able to knock them unconcious. Now strapped to a table in the lower levels, about to be forcefed that Mooshi stuff.",
+
+"Their belongings included a Protectorate Broadsword that got pretty damaged in the explosion that knocked them out. Their gaudy uniform, some spare pixels. And a Matter Manipulator. I can't believe we have that now. Course the Captain had to snag it, said it'll be better off in Director Palmer's hands."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

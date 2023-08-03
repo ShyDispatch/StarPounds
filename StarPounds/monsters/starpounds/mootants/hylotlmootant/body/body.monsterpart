@@ -1,0 +1,9 @@
+{
+  "name" : "hylotlmootant",
+  "category" : "hylotlmootant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "mootant.png"
+  }
+}

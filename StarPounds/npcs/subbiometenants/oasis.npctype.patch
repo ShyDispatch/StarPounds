@@ -1,0 +1,15 @@
+[
+	{
+		"op": "add",
+		"path": "/scripts/-",
+		"value": "/scripts/starpounds/starpounds_npc.lua"
+	},
+	{
+		"op": "add",
+		"path": "/scriptConfig/starPounds_options",
+		"value": {
+			"disableStomachMeter": true,
+			"disableSizeMeter": true
+		}
+	}
+]

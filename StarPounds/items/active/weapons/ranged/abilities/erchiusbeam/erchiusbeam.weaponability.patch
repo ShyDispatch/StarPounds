@@ -1,0 +1,12 @@
+[
+  {
+    "op" : "replace",
+    "path" : "/ability/damageConfig/damageSourceKind",
+    "value" : "caloricplasma"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/damageConfig/statusEffects/-",
+    "value" : {"effect": "starpoundsbloat", "duration": 20}
+  }
+]

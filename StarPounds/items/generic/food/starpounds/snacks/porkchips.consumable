@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsporkchips",
+  "rarity" : "Rare",
+  "price" : 200,
+  "category" : "preparedFood",
+  "inventoryIcon" : "porkchips.png",
+  "description" : "Potato chips with a flavor of smoked bacon.",
+  "shortdescription" : "Pork Chips",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 360
+    }
+  ] ],
+  "foodValue": 40,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

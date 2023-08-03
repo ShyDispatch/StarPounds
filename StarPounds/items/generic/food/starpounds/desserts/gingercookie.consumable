@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsgingercookie",
+  "rarity" : "Uncommon",
+  "price" : 85,
+  "category" : "preparedFood",
+  "inventoryIcon" : "gingercookie.png",
+  "description" : "A gingerbread cookie in the shape of a person.",
+  "shortdescription" : "Gingerbread Cookie",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 135
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundscookie" ]
+}

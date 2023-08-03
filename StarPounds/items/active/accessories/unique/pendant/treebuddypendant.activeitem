@@ -1,0 +1,23 @@
+{
+  "itemName" : "treebuddypendant",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An ominous, glowing amulet. Simply being in its presence gives you a devilish appetite.",
+  "shortdescription" : "Demonic Gluttony Amulet",
+  "inventoryIcon" : "treebuddypendant.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "stats": [
+    {"name": "absorption", "modifier": 0.5},
+    {"name": "capacity", "modifier": 2},
+    {"name": "healing", "modifier": 1}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {}
+}

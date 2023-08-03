@@ -1,0 +1,15 @@
+{
+  "name" : "starpoundshoneyslow",
+  "blockingStat" : "wetImmunity",
+  "effectConfig" : {},
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "starpoundshoneyslow.lua"
+  ],
+
+  "animationConfig" : "starpoundshoneyslow.animation",
+
+  "label" : "Honey Coated",
+  "icon" : "/interface/statuses/starpoundsliquidhoney.png"
+}

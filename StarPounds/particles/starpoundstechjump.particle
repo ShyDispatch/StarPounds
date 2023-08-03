@@ -1,0 +1,18 @@
+{
+  "kind" : "starpoundstechjump",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/doublejump/doublejump.animation?replace;0078d12c=452a7d2c;0078d18e=452a7d8e;0078d1bf=452a7dbf;31a6ffff=7650c5ff;0078d1ff=452a7dff;9bd4ffff=b6a2e0ff",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [0, 50],
+    "size" : 1.0,
+    "timeToLive" : 0.85,
+    "layer" : "back",
+    "light" : [91, 69, 138],
+    "fade" : 0.5,
+    "variance" : {
+      "initialVelocity" : [0.0, 0.0]
+    }
+  }
+}

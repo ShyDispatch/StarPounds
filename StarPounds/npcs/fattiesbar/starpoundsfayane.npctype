@@ -1,0 +1,94 @@
+{
+  "type" : "starpoundsfayane",
+  "baseType" : "outpostcivilian",
+
+  "npcname" : "^#aa99dd;Fayane^reset;",
+  "identity":  {
+      "imagePath" : "fayane",
+      "bodyDirectives": "?replace;6f2919=394659;ffca8a=a8c2c4;e0975c=8ca6b7;a85636=5f7387?replace;f7e7b2=894e96;735e3a=271732;d9c189=4f2d6d;a38d59=431e4e;333241=130f1d;a22424=4f2d6d;c65445=894e96",
+      "emoteDirectives": "?replace;6f2919=394659;ffca8a=a8c2c4;e0975c=8ca6b7;a85636=5f7387?replace;f7e7b2=894e96;735e3a=271732;d9c189=4f2d6d;a38d59=431e4e;333241=130f1d;a22424=4f2d6d;c65445=894e96;a22424=4f2d6d;c65445=894e96",
+      "gender": "female",
+      "hairGroup": "hair",
+      "hairType": "1",
+      "name": "^#aa99dd;Fayane^reset;",
+      "personalityArmIdle": "idle.1",
+      "personalityArmOffset": [
+          0.0,
+          0.0
+      ],
+      "personalityHeadOffset": [
+          -1.0,
+          0.0
+      ],
+      "personalityIdle": "idle.2",
+      "species": "floran"
+  },
+  "humanoidConfig" : "/npcs/fattiesbar/fayaneoid.config",
+  
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_skills": {
+      "voreDamage": [5, 5],
+      "digestion": [20, 20],
+      "health": [20, 20],
+      "capacity": [20, 20],
+      "movement": [20, 20],
+      "absorption": [20, 20],
+      "voreCritter": [1, 1],
+      "voreMonster": [1, 1],
+      "voreHumanoid": [1, 1]
+    },
+    "starPounds_options": {
+      "disablePrey": true,
+      "disableGain": true
+    },
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    },
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+    "behaviorConfig" : {
+      "greetingChance" : 0,
+      "play" : false,
+      "chat" : false
+    },
+	
+  "behavior" : "tutorial",	
+	
+  "persistent" : true,
+
+  "chatPortrait" : "/interface/chatbubbles/fayane.png:<frame>",
+	
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"Hello meat, call me ^#aa99dd;Fayane^reset;. Here to eat or jussst watch?",
+						"Juicy Throgsss have the bessst mealss. Eat here all the time.",
+						"Good mealss make ^#aa99dd;Fayane^reset; pretty big. ^#aa99dd;Fayane^reset; hass a nice butt, yessss?",
+						"^#aa99dd;Fayane^reset; wasssn't alwayss ssso big though. Usssed to be only a little bigger.",
+						"Once ^#aa99dd;Fayane^reset; found a purple rock. Thossse erchiusss crystalsss.",
+						"Rock was filled with life, sssquirming inside. Looked sso tasssty ^#aa99dd;Fayane^reset; ate it.",
+						"Ever sssince, ^#aa99dd;Fayane^reset; hass grown ssso big and ssstrong. Bessst Floran ever."
+					]
+				}
+			}
+		}
+  },
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "starpoundsinvisiblechest" } ],
+            "legsCosmetic": [ { "name": "starpoundsinvisiblelegs" } ]
+          }
+        ] ]
+    ]
+  }
+}

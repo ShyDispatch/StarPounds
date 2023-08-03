@@ -1,0 +1,31 @@
+{
+  "objectName" : "feyrethfeedeeback",
+  "colonyTags" : ["apexresearchlab","science","evil"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 20,
+  "description" : "A Wolf being fattened.",
+  "shortdescription" : "Fat Subject: Feyreth",
+
+  "apexDescription" : "This poor wolf is a lost one.",
+  "avianDescription" : "This is... is he enjoying this?",
+  "floranDescription" : "Big wolf mussst be fearsssome hunter. Ssso fat.",
+  "glitchDescription" : "Sad. This wolf is beyond saving.",
+  "humanDescription" : "I feel like I've seen this exact scene on the internet. Except this is real.",
+  "hylotlDescription" : "How awful, to be mentally broken by such feeding.",
+  "novakidDescription" : "This is sum mighty weird torture.",
+
+  "inventoryIcon" : "feyrethfeedeeback.png:default.default",
+  "orientations" : [
+    {
+      "dualImage" : "feyrethfeedeeback.png:<color>.<frame>",
+      "imagePosition" : [-58, 0],
+      "frames" : 4,
+      "animationCycle" : 0.6,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

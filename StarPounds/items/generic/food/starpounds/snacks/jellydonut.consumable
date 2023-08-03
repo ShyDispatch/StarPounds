@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsjellydonut",
+  "rarity" : "Rare",
+  "price" : 440,
+  "category" : "preparedFood",
+  "inventoryIcon" : "jellydonut.png",
+  "description" : "A delicious treat filled with endomorphic jelly",
+  "shortdescription" : "Jelly Donut",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 585
+    }
+  ] ],
+  "foodValue": 65,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsjellydonut" ]
+}

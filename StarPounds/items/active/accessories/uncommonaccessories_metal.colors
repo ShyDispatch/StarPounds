@@ -1,0 +1,15 @@
+{
+  "name" : "uncommonaccessories_metal",
+  "swaps" : [
+    // DURASTEEL
+    { "735e3a" : "211e55", "a38d59" : "4b4d8c", "d9c189" : "7887b3", "f7e7b2" : "a0b5d4" },
+    // TUNGSTEN
+    { "735e3a" : "3b3e42", "a38d59" : "72767d", "d9c189" : "b8babd", "f7e7b2" : "d6d8da" },
+    // GOLD (VANILLA)
+    { "735e3a" : "b97c01", "a38d59" : "e2af20", "d9c189" : "ffd84d", "f7e7b2" : "fff48f" },
+    // SILVER (VANILLA)
+    { "735e3a" : "647080", "a38d59" : "8799aa", "d9c189" : "b3cbdf", "f7e7b2" : "d7ecfa" },
+    // TITANIUM (VANILLA)
+    { "735e3a" : "685da0", "a38d59" : "c6a5cd", "d9c189" : "dad8ed", "f7e7b2" : "ffffff" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name" : "sweat",
+  "blockingStat" : "wetImmunity",
+  "effectConfig" : {},
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "sweat.lua"
+  ],
+
+  "animationConfig" : "sweat.animation",
+
+  "label" : "Sweating",
+  "icon" : "/interface/statuses/sweat.png"
+}

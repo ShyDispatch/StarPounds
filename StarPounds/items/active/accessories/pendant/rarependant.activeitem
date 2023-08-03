@@ -1,0 +1,35 @@
+{
+  "itemName" : "rarependant",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A jewelled pendant.",
+  "shortdescription" : "Rare Pendant",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "statConfig" : {
+    "amplitude" : [0.15, 0.3],
+    "count" : 3,
+    "list" : [
+      {"name": "absorption", "weight": 1},
+      {"name": "capacity", "weight": 0.8},
+      {"name": "digestion", "weight": 0.8},
+      {"name": "health", "weight": 0.8},
+      {"name": "movement", "weight": 3}
+    ]
+  },
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {
+    "tier" : 3,
+    "fullbright": true,
+    "nameGenerator" : "pendantnames.config:nameGen",
+    "metalPalette" : "/items/active/accessories/rareaccessories_metal.colors",
+    "trimPalette" : "/items/active/accessories/uncommonaccessories_trim.colors",
+    "crystalPalette" : "/items/active/accessories/rareaccessories_crystal.colors"
+  }
+}

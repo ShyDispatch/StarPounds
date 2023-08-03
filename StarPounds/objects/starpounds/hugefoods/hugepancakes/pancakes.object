@@ -1,0 +1,54 @@
+{
+  "objectName" : "starpoundshugepancakes",
+  "colonyTags" : [],
+  "printable" : false,
+  "rarity" : "Common",
+  "shortdescription" : "Huge Pancakes",
+  "description" : "Stacked as high as a wagon! Don't let the syrup slow you down.",
+  "race" : "generic",
+  "category" : "other",
+  "price" : 1000,
+  "smashOnBreak" : true,
+
+  "stages": 5,
+  "bitesPerStage": 3,
+  "food": 1000,
+
+  "apexDescription" : "These pancakes are thicker then bricks.",
+  "avianDescription" : "Oh my, this is a lot of super sized pancakes!",
+  "floranDescription" : "Pancakes will be eaten by Floran.",
+  "glitchDescription" : "Curious. Pancakes this large is well suited for a king.",
+  "humanDescription" : "Did I drink a shrinking potion? Will I go back to normal if I eat this?",
+  "hylotlDescription" : "Who would make such ridiculously large pancakes?",
+  "novakidDescription" : "Now dis is a pancake fit for a village.",
+  "throgDescription" : "Finally a breakfast that's filling.",
+  "mootantDescription" : "Mmm, pancakes~",
+  "harpyDescription" : "That's a lot of pancakes. It's not cinnamon though.",
+  "avaliDescription" : "Who, what? Why are these pancakes so huge?",
+
+  "inventoryIcon" : "pancakesicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "pancakes.png:<stage>",
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "npcToy": {
+    "ownerOnly" : false,
+    "influence" : [],
+    "defaultReactions" : {}
+  },
+
+  "scripts" : [
+    "/objects/starpounds/hugefoods/hugefood.lua",
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 1,
+
+  "animation" : "pancakes.animation",
+  "animationParts" : {
+    "pancake" : "pancakes.png"
+  }
+}

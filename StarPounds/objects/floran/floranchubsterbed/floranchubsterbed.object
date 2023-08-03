@@ -1,0 +1,44 @@
+{
+  "objectName" : "floranchubsterbed",
+  "colonyTags" : ["floran","floranvillage"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 125,
+  "description" : "The bone frame is sort of disturbing, but that fur blanket looks mighty comfy.",
+  "shortdescription" : "Primitive Bed",
+  "race" : "floran",
+
+  "apexDescription" : "A bed of bone and fur. With fur of my own this makes me uncomfortable.",
+  "avianDescription" : "I hope the bed is warm, if nothing else.",
+  "floranDescription" : "Floran sssleep amongsst bone and fur. The sssmell of the hunt make Floran dream good dreams.",
+  "glitchDescription" : "Disgusted. How would such a piece look if made from the remains of a Glitch?",
+  "humanDescription" : "The smell of blood clings to the sheets.",
+  "hylotlDescription" : "Such disrespect, to reduce a living creature to a piece of furniture.",
+  "novakidDescription" : "This bed has rotten stink about it.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  "sitPosition" : [-9, 13],
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitCoverImage" : "/objects/floran/floranchubsterbed/floranchubsterbedcover.png",
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "bed1"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "inventoryIcon" : "floranchubsterbedicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "floranchubsterbed.png:<color>",
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

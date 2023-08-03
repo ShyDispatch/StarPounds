@@ -1,0 +1,36 @@
+[
+  {
+    "op" : "add",
+    "path" : "/animationCustom/particleEmitters/caloricSpin",
+    "value" : {
+      "active" : false,
+      "emissionRate" : 12,
+      "offsetRegion" : [-3.5, -3.5, 3.5, 3.5],
+      "particles" : [
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "caloricswoosh3"}
+      ]
+    }
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonSpin",
+    "path" : "/animationCustom/sounds/caloricSpin"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonSpinFire",
+    "path" : "/animationCustom/sounds/caloricSpinFire"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : {
+      "projectileType" : "caloricspinswoosh",
+      "damageConfig" : {
+        "statusEffects" : [ { "effect" : "starpoundsfood", "duration" : 10 }, {"effect" : "npctracker", "duration" : 1} ]
+      }
+    }
+  }
+]

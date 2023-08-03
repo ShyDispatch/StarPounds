@@ -1,0 +1,8 @@
+{
+  "input" : [
+    { "item" : "starpoundsbuttersnack", "count" : 1 },
+    { "item" : "rawpoultry", "count" : 1 }
+  ],
+  "output" : { "item" : "starpoundsfatfriedchicken", "count" : 1 },
+  "groups" : [ "craftingfood", "mains" ]
+}

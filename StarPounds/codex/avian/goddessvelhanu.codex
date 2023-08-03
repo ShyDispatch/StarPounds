@@ -1,0 +1,23 @@
+{
+  "id" : "goddessvelhanu",
+  "species" : "avian",
+  "title" : "Forgotten Goddess or A Fake?",
+  "description" : "A book describing containing heresy of another Avian God.",
+  "icon" : "aviancover7.png",
+  "contentPages" : [
+    "Kluex is a name all Avians know. A name so widespread even other races can recognize it. For as long as Avians knew, there was Kluex. Existing from the start with natural wings. Yet old tales speak of Kluex not as a god, but a mortal.",
+
+"By many factors, Kluex spearheaded Avian society towards the future. Immortalizing himself as a figure to be respected and feared. One day, he vanished, and how the legends spread. Ascending to where the original gods, the Sunborn, resided. Finding the heavens to be empty, Kluex took a throne as the last god.",
+
+"Of course, mere tales of written lore withered away by time is meaningless. But looking in the right corners of the universe might make the idea seem less impossible. With luck aligned, you too might find remnants of worship to an old goddess. The true last Sunborn Velhanu.",
+
+"Few altars of Velhanu depict the goddess as a figure larger than life. A bright glowing red as round as the sun itself. Velhanu represented the riches of success. To indulge in society, specifically in gluttony. To remain planted home, surrounded by family and friends. Truly a beacon of peace for the Avians. Sharing happiness with growing waistlines, never to dwell on soaring wings.",
+
+"The Grounded exist to defy Kluex, but the rare few who find out about Velhanu's existence find it invigorating. A restoration of faith and a confirmation to Kluex's falsehood. Quickly following this life style of gluttony and fattening. Resulting in the uncommon sight of blubbery Avians. Of course, who's to say Velhanu isn't yet another older, false god? "
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 75
+  }
+}

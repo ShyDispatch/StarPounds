@@ -1,0 +1,22 @@
+{
+  "materialId" : 51424,
+  "materialName" : "dispatchblock",
+  "particleColor" : [168, 150, 196, 255],
+  "itemDrop" : "dispatchblock",
+  "description" : "Squishy, jiggly matter.. I wonder what it is.",
+  "shortdescription" : "Blubberbutt Flab",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 65536,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "dispatchblock.png",
+    "variants" : 1,
+    "lightTransparent" : false,
+    "multiColored" : false,
+    "occludesBelow" : true,
+    "zLevel" : 99999,
+    "radiantLight" : [15, 12, 18]
+  }
+}

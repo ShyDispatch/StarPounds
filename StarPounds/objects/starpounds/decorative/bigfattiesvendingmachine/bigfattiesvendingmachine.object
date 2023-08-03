@@ -1,0 +1,160 @@
+{
+  "objectName" : "bigfattiesvendingmachine",
+  "colonyTags" : ["hylotl","hylotloceancity","commerce"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 5000,
+  "lightColor" : [200, 225, 205],
+  "printable" : false,
+
+  "shortdescription" : "Big Fatties Vending Machine",
+  "description" : "A vending machine filled with sugary drinks and filling meals. Priced up feasts within a few seconds.",
+  "race" : "hylotl",
+
+  "apexDescription" : "It's full of all sorts of soft drinks and packaged snacks.",
+  "avianDescription" : "The drinks and food in here look a little sweet for my taste...",
+  "floranDescription" : "Floran enjoysss deliciousss feassst. Vending machine bountiful.",
+  "glitchDescription" : "Intrigued. I wouldn't mind trying some of these foreign beverages and treats.",
+  "humanDescription" : "The machine is selling soft drinks and snacks. I wonder what whale milk tastes like?",
+  "hylotlDescription" : "Personally, I'm quite partial to whale milk.",
+  "novakidDescription" : "A bite from this will add to my hips.",
+
+  "interactAction" : "OpenMerchantInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/vendingmachine.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : " Vending Machine",
+        "subtitle" : " Tasty Snacks"
+      }
+    },
+    "buyFactor" : 0.5,
+    "sellFactor" : 0.2,
+    "items" : [
+      { "item" : "starpoundsbloatcola" },
+      { "item" : "starpoundsheftycola" },
+      { "item" : "starpoundsdandelionrootpop" },
+      { "item" : "starpoundscookie" },
+      { "item" : "starpoundssugarcookie" },
+      { "item" : "starpoundspbcookie" },
+      { "item" : "starpoundspassionpatty" },
+      { "item" : "starpoundsgingercookie" },
+      { "item" : "starpoundsstarcandy" },
+      { "item" : "starpoundsbuttersnack" },
+      { "item" : "starpoundsbrownie" },
+      { "item" : "starpoundsjelly" },
+      { "item" : "starpoundsendomorphicjelly" },
+      { "item" : "starpoundsflantasyflan" },
+      { "item" : "starpoundsmagicpudding" },
+      { "item" : "starpoundsroyalcake" },
+      { "item" : "starpoundsenormouscake" },
+      { "item" : "starpoundsdonut" },
+      { "item" : "starpoundspinkdonut" },
+      { "item" : "starpoundschocodonut" },
+      { "item" : "starpoundsglazeddonut" },
+      { "item" : "starpoundschocolateglazeddonut" },
+      { "item" : "starpoundscinnamonroll" },
+      { "item" : "starpoundscottoncandy" },
+      { "item" : "starpoundsburrito" },
+      { "item" : "starpoundstaco" },
+      { "item" : "starpoundschurro" },
+      { "item" : "starpoundscorndog" },
+      { "item" : "starpoundshotdogk" },
+      { "item" : "starpoundshotdogm" },
+      { "item" : "starpoundshotdogc" },
+      { "item" : "starpoundsgreaseburger" },
+      { "item" : "starpoundsdoublegreaseburger" },
+      { "item" : "starpoundstastyfries" },
+      { "item" : "starpoundsmeatwich" },
+      { "item" : "starpoundsmeatwichdouble" },
+      { "item" : "starpoundsmeatfries" },
+      { "item" : "starpoundsblubbernuggets" },
+      { "item" : "starpoundschickenburger" },
+      { "item" : "starpoundsfatfriedchicken" },
+      { "item" : "starpoundsmeechmunchy" },
+      { "item" : "starpoundsscrabcake" },
+      { "item" : "starpoundsparamitepie" },
+      { "item" : "starpoundsblubberslushie" },
+      { "item" : "starpoundsmooshake" },
+      { "item" : "starpoundschocolatemooshake" },
+      { "item" : "starpoundsstrawberrymooshake" },
+      { "item" : "starpoundsicecream" },
+      { "item" : "starpoundschocolateicecream" },
+      { "item" : "starpoundsstrawberryicecream" },
+      { "item" : "starpoundsminticecream" },
+      { "item" : "starpoundsicecreamsandwich" },
+      { "item" : "starpoundschocotaco" },
+      { "item" : "starpoundsmoomilk" },
+      { "item" : "starpoundsmoomilkdeluxe" },
+      { "item" : "starpoundschocolatemoomilk" },
+      { "item" : "starpoundschocolatemoomilkdeluxe" },
+      { "item" : "starpoundsstrawberrymoomilk" },
+      { "item" : "starpoundsstrawberrymoomilkdeluxe" },
+      { "item" : "starpoundspeanutbutterjellysandwich" },
+      { "item" : "starpoundsgoldenbanana" },
+      { "item" : "starpoundsramen" },
+      { "item" : "starpoundssoba" },
+      { "item" : "starpoundschankonabe" },
+      { "item" : "starpoundstofu" },
+      { "item" : "starpoundsgreasepizzaslice" },
+      { "item" : "starpoundspizzabagel" },
+      { "item" : "starpoundsghostpepper" },
+      { "item" : "starpounds64tbpizzap" },
+      { "item" : "starpoundshugecherrycake-recipe" },
+      { "item" : "starpoundshugepancakes-recipe" },
+      { "item" : "starpoundshugechunkofmeat-recipe" },
+      { "item" : "digestionaid" },
+	    { "item" : { "name" : "digestionaid-recipe", "parameters" : { "price" : 10 } } },
+      { "item" : "lactaid" },
+      { "item" : "lactaidoverdrive" },
+      { "item" : "lactaidmilktank" },
+      { "item" : "digestionaid" },
+      { "item" : "lactaid" },
+      { "item" : "lactaidoverdrive" },
+      { "item" : "lactaidmilktank" }
+    ]
+  },
+
+  "inventoryIcon" : "bigfattiesvendingmachineicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "bigfattiesvendingmachine.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ],
+
+  "scripts" : [ "/scripts/npcToyObject.lua" ],
+  "npcToy" : {
+    "influence" : [
+      "vendingmachineActivate",
+      "vendingmachineCollect",
+      "vendingmachineConsume",
+      "vendingmachineComplete"
+    ],
+    "defaultReactions" : {
+      "vendingmachineActivate" : [
+        [1.0, "pressbutton"]
+      ],
+      "vendingmachineCollect" : [
+        [1.0, "crouchcollect"]
+      ],
+      "vendingmachineConsume" : [
+        [1.0, "drink"]
+      ],
+      "vendingmachineComplete" : [
+        [1.0, "smile"],
+        [0.1, "vomit"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-0.5, 0.0],
+    "preciseStandPositionRight" : [2.0, 0.0],
+    "maxNpcs" : 1
+  }
+}

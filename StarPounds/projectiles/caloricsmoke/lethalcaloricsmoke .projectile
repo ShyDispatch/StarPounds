@@ -1,0 +1,21 @@
+{
+  "projectileName" : "lethalcaloricsmoke",
+  "image" : "caloricsmoke.png",
+  "physics" : "gas",
+  "animationCycle" : 1.05,
+  "animationLoops" : false,
+  "frameNumber" : 8,
+  "power" : -1,
+  "speed" : 10,
+  "timeToLive" : 0.9,
+  "bounces" : 1,
+  "damagePoly" : [ [-1, 0], [-2, -2], [0, -1], [2, -2], [1, 0], [2, 2], [0, 1], [-2, 2] ],
+  "piercing" : true,
+  "statusEffects" : [
+    {"effect": "starpoundsratebloatslow", "duration": 5},
+    {"effect": "starpoundsrategainrapid", "duration": 5},
+    {"effect": "techstun", "duration": 1}
+  ],
+  "damageType" : "ignoresdef",
+  "damageKind" : "caloric"
+}

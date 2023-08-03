@@ -1,0 +1,23 @@
+{
+  "config" : {
+    "shipUpgrades" : {
+      "capabilities" : ["teleport", "planetTravel"],
+      "crewSize" : 2
+    }
+  },
+
+  "backgroundOverlays" : [
+    {
+      "image" : "throgT2.png",
+      "position" : [9, 12],
+      "fullbright" : true
+    },
+    {
+      "image" : "throgT2lit.png",
+      "position" : [9, 12]
+    }
+  ],
+
+  "blockKey" : "blockKey.config:blockKey",
+  "blockImage" : "throgT2blocks.png"
+}

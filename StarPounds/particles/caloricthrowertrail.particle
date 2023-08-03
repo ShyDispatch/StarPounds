@@ -1,0 +1,21 @@
+{
+  "kind" : "caloricthrowertrail",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/statuseffects/caloric/caloricshort.animation",
+    "fade" : 0.75,
+    "destructionAction" : "shrink",
+    "destructionTime" : 1,
+    "initialVelocity" : [0.5, -0.5],
+    "finalVelocity" : [-1, -0.5],
+    "approach" : [0, 20],
+    "timeToLive" : 0.25,
+    "layer" : "back",
+    "variance" : {
+      "initialVelocity" : [1, 0.5],
+      "finalVelocity" : [-1, -0.5],
+      "position" : [1, 1],
+      "size" : 0
+    }
+  }
+}

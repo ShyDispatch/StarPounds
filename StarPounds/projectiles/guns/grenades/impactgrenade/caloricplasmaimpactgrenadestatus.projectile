@@ -1,0 +1,21 @@
+{
+  "projectileName" : "caloricplasmaimpactgrenadestatus",
+  "physics" : "grenade",
+  "bounces" : 0,
+  "timeToLive" : 3,
+  "damageKindImage" : "caloricicon.png",
+  "pointLight" : true,
+  "lightColor" : [105, 65, 72],
+  "image" : "caloricplasmaimpactgrenade.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/caloricexplosionknockbackstatus.config"
+    }
+  ],
+  "power" : 50,
+  "damageType" : "NoDamage",
+  "damageKind" : "caloricplasma"
+}

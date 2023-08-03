@@ -1,0 +1,74 @@
+{
+  "objectName" : "throgarsenal",
+  "colonyTags" : ["starpounds","throg"],
+  "rarity" : "Uncommon",
+  "category" : "other",
+  "description" : "A store with an assortment of weaponry sold by a Throg.",
+  "shortdescription" : "Throg Arsenal",
+  "race" : "throg",
+  "printable" : false,
+
+  "apexDescription" : "This Throg has some, interesting weapons.",
+  "avianDescription" : "These are an odd collection of weapons being sold.",
+  "floranDescription" : "Floran wantss ssstabby Throg fork.",
+  "glitchDescription" : "Curious. Despite their appearance, weapons are being sold here.",
+  "humanDescription" : "This pig, er Throg is selling some weird weapons.",
+  "hylotlDescription" : "The weaponry sold by this Throg is uh...  unique.",
+  "novakidDescription" : "Got some interestin' weapons here. Makes me wonder what they all do.",
+  "throgDescription" : "Ah, I can reclaim a Throg Greatfork here. And some other weaponry that matches my tastes.",
+  "mootantDescription" : "This pig, er Throg is selling some weird weapons.",
+  "harpyDescription" : "These are an odd collection of weapons being sold.",
+
+  "avaliDescription" : "Weaponry is all well and good. Though these are some weird weapons.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "throgarsenal.png:<color>.<frame>" }, { "image" : "throgarsenal_fullbright.png:<color>.<frame>", "fullbright" : true } ],
+      "imagePosition" : [-24, -24],
+
+      "direction" : "right",
+
+      "frames" : 32,
+      "animationCycle" : 5.8,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "scripts" : [ "throgarsenal.lua" ],
+  "scriptDelta" : 0,
+
+  "interactData" : {
+    "config" : "/interface/fattyshops/fatshops.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Throg Arsenal",
+        "subtitle" : "Weaponry for fat enthusiasts",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/fayane.png"
+        }
+      }
+    },
+    "filter" : [],
+	"modTab" : [{
+      "file": "/interface/fattyshops/tabs/weapons.png",
+	  "label": "Weapons",
+      "filter": [ "weapons" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/utilities.png",
+	  "label": "Utilities",
+      "filter": [ "utilities" ]
+    }]
+  },
+  "storeInventory" : {
+    "weapons" : [
+      "apexdartgun", "aviandartgun", "cultistdartgun", "caloriccrossbow", "caloricneedler", "adipobeamcomponent", "depletedgaincrystal", "erchiusbloatcatalyzer", "meatberries", "onikillersake", "ponderouscore", "rootpopfroth"
+    ],
+    "utilities" : [
+      "winch", "milkshakegun", "chocolatemilkshakegun", "digestiongun", "caloriumgun", "calorictrap", "ancientcaloriccrystaltrap", "ancientcaloricbeamtrap", "starpoundsmilkingtool"
+    ]
+  }
+}

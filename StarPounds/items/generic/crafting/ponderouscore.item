@@ -1,0 +1,11 @@
+{
+  "itemName" : "ponderouscore",
+  "price" : 5000,
+  "rarity" : "Legendary",
+  "category" : "craftingMaterial",
+  "inventoryIcon" : "ponderouscore.png",
+  "description" : "Surging with strange power, this artifact of the Ponderous order belonged to a strong lipomancer.",
+  "shortdescription" : "Ponderous Core",
+  "itemTags" : [ "reagent" ],
+  "learnBlueprintsOnPickup" : [ "ponderousstaff" ]
+}

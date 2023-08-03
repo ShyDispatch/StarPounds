@@ -1,0 +1,164 @@
+{
+  "objectName" : "gluttonistlight",
+  "colonyTags" : ["floran","gluttonist","light"],
+  "rarity" : "Common",
+  "description" : "The pod emits an unnatural pink light.",
+  "shortdescription" : "Vine Wall Light",
+  "race" : "floran",
+
+  "category" : "light",
+  "price" : 75,
+  "lightColor" : [197, 80, 156],
+
+  "apexDescription" : "A spooky pink light.",
+  "avianDescription" : "I wonder how you'd control where plant lighting grows.",
+  "floranDescription" : "Pink light doessn't gain power from sssun.",
+  "glitchDescription" : "Impressed. The growth of these pods appears to be strictly controlled.",
+  "humanDescription" : "The pink glow makes me uncomfortable.",
+  "hylotlDescription" : "These pods seem anything but natural.",
+  "novakidDescription" : "This light is growin' right outta the wall.",
+
+  "inventoryIcon" : "gluttonistlighticon.png",
+  "orientations" : [
+    {
+      "image" : "gluttonistlightback1.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "spaceScan" : 0.1,
+      "direction" : "left",
+      "flipImages" : true,
+      "anchors" : [ "background" ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightback1.png",
+        "fg" : "gluttonistlightback2.png"
+      },
+      "animationPosition" : [-8, 0]
+    },
+    {
+      "image" : "gluttonistlightback1.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "spaceScan" : 0.1,
+      "direction" : "right",
+      "anchors" : [ "background" ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightback1.png",
+        "fg" : "gluttonistlightback2.png"
+      },
+      "animationPosition" : [0, 0]
+    },
+    {
+      "image" : "gluttonistlightceiling1.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "direction" : "left",
+      "flipImages" : true,
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightceiling1.png",
+        "fg" : "gluttonistlightceiling2.png"
+      },
+      "animationPosition" : [-8, 0]
+    },
+    {
+      "image" : "gluttonistlightceiling1.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightceiling1.png",
+        "fg" : "gluttonistlightceiling2.png"
+      },
+      "animationPosition" : [0, 0]
+    },
+    {
+      "image" : "gluttonistlightleft1.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "direction" : "left",
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightright1.png",
+        "fg" : "gluttonistlightright2.png"
+      },
+      "animationPosition" : [0, 0]
+    },
+    {
+      "image" : "gluttonistlightright1.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightright1.png",
+        "fg" : "gluttonistlightright2.png"
+      },
+      "animationPosition" : [0, 0]
+    },
+    // PREVIEW IMAGES
+    {
+      "image" : "gluttonistlightback1.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "spaceScan" : 0.1,
+      "direction" : "left",
+      "flipImages" : true,
+      "fgAnchors" : [ [0,0] ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightback1.png",
+        "fg" : "gluttonistlightback2.png"
+      },
+      "animationPosition" : [-8, 0]
+    },
+    {
+      "image" : "gluttonistlightback1.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.3,
+      "spaceScan" : 0.1,
+      "direction" : "right",
+      "fgAnchors" : [ [0,0] ],
+
+      "animationParts" : {
+        "bg" : "gluttonistlightback1.png",
+        "fg" : "gluttonistlightback2.png"
+      },
+      "animationPosition" : [0, 0]
+    }
+  ],
+  
+  "pointLight" : true,
+  "pointBeam" : 0,
+  "pointAngle" : 0,
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gluttonistlightback1.png",
+    "fg" : "gluttonistlightback2.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 0] ],
+
+  "interactive" : false
+}

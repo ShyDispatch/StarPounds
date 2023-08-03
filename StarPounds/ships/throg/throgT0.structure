@@ -1,0 +1,23 @@
+{
+  "config" : {
+    "shipUpgrades" : {
+      "capabilities" : [],
+      "crewSize" : 2
+    }
+  },
+
+  "backgroundOverlays" : [
+    {
+      "image" : "throgT1.png",
+      "position" : [9, 12],
+      "fullbright" : true
+    },
+    {
+      "image" : "throgT1lit.png",
+      "position" : [9, 12]
+    }
+  ],
+
+  "blockKey" : "blockKey.config:blockKey",
+  "blockImage" : "throgT0blocks.png"
+}

@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsixolingroast",
+  "colonyTags" : ["floran","fatdungeons","gluttonist","cooking"],
+  "rarity" : "Uncommon",
+  "category" : "decorative",
+  "price" : 500,
+  "description" : "A roasted larva of a terrifying beast. Bring out the butter!",
+  "shortdescription" : "Roasted Ixoling",
+  "race" : "floran",
+
+  "apexDescription" : "This animal definitely did not go down without a fight.",
+  "avianDescription" : "This creature seems to have been a predator rather than prey.",
+  "floranDescription" : "Ixoling delicacy! Floran hear tastesss like crab-chicken!",
+  "glitchDescription" : "Intrigued. I can see faint spear marks in this insect's chitin.",
+  "humanDescription" : "This is a funky lookin' crab dinner.",
+  "hylotlDescription" : "A savage delicacy.",
+  "novakidDescription" : "This lil varmint looks like it woulda put up a good fight.",
+
+  "inventoryIcon" : "starpoundsixolingroasticon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsixolingroast.png:<color>",
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "itemName" : "starpoundsliquidcalorium",
+  "rarity" : "Rare",
+  "category" : "liquid",
+  "inventoryIcon" : "starpoundsliquidcaloriumicon.png",
+  "shortdescription" : "Liquid Calorium",
+  "description" : "A dense substance imbued with pure fattening energy. Used by Throgs for FTL fuel.",
+
+  "liquid" : "starpoundscaloriumliquid",
+
+  "fuelAmount" : 4,
+  "price" : 4
+}

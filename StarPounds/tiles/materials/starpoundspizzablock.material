@@ -1,0 +1,24 @@
+{
+  "materialId" : 51411,
+  "materialName" : "starpoundspizzablock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundschocolateblock",
+  "description" : "A solid block of pizza.",
+  "shortdescription" : "Pizza Block",
+  "glitchDescription" : "Curious. It's a perfect block of pizza.",
+  "floranDescription" : "Huge chunk of pizza.",
+  "novakidDescription" : "Silly pizza. You're for eatin' not buildin'.",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundspizzablock.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : false,
+    "zLevel" : 1570
+  }
+}

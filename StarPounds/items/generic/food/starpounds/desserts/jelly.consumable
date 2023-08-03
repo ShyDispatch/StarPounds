@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsjelly",
+  "rarity" : "Common",
+  "price" : 120,
+  "category" : "preparedFood",
+  "inventoryIcon" : "jelly.png",
+  "description" : "A slime based dessert. Bad for the waistline.",
+  "shortdescription" : "Jelly",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 90
+    }
+  ] ],
+  "foodValue": 10,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

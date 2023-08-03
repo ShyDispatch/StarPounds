@@ -1,0 +1,58 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "state" : {
+        "default" : "active",
+        "states" : {
+
+          "active" : {
+            "frames" : 1,
+            "mode" : "loop",
+            "cycle" : 0.3
+          },
+          "expire" : {
+            "frames" : 8,
+            "cycle" : 0.15
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "pod" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "state" : {
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:active.<frame>"
+              }
+            },
+            "expire" : {
+              "properties" : {
+                "image" : "<partImage>:expire.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "use" : [
+      "/sfx/objects/ancient_pot_break_small1.ogg",
+      "/sfx/objects/ancient_pot_break_small2.ogg",
+      "/sfx/objects/ancient_pot_break_small3.ogg",
+      "/sfx/objects/ancient_pot_break_small4.ogg",
+      "/sfx/objects/ancient_pot_break_small5.ogg",
+      "/sfx/objects/ancient_pot_break_small6.ogg",
+      "/sfx/objects/ancient_pot_break_small7.ogg",
+      "/sfx/objects/ancient_pot_break_small8.ogg",
+      "/sfx/objects/ancient_pot_break_small9.ogg"
+    ]
+  }
+}

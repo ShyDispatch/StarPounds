@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsclownburger",
+  "rarity" : "Rare",
+  "price" : 500,
+  "category" : "preparedFood",
+  "inventoryIcon" : "clownburger.png",
+  "description" : "Just a simple, hot burger.",
+  "shortdescription" : "Simple Burger",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 450
+    }
+  ] ],
+  "foodValue": 50,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

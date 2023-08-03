@@ -1,0 +1,22 @@
+[
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic", "largespace" ],
+	  {
+		"name" : "Floran Mootant",
+		"typeName" : "floranmootant"
+	  }
+	]
+  },
+  { "op" : "add",
+	"path" : "/0/1/-",
+	"value" : [
+	  [ "generic", "largespace" ],
+	  {
+		"name" : "Feeder Hylotl Ghost",
+		"typeName" : "fathylotlghost"
+	  }
+	]
+  }
+]

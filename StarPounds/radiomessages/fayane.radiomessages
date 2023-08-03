@@ -1,0 +1,16 @@
+{
+  "fayanetest" : {
+      "senderName" : "Fayane",
+      "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>",
+      "text" : "Ah. I see you are performing a test. Is my face nice and good?",
+      "unique" : false	  
+  },
+  
+  "fayanetest2" : {
+      "senderName" : "Fayane",
+      "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>",
+      "text" : "A",
+      "persistTime" : 0.5,	  
+      "unique" : false	  
+  }
+}

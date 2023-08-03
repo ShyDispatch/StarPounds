@@ -1,0 +1,13 @@
+[
+
+	{
+		"op": "add",
+		"path": "/items/starpounds:menu",
+		"value": {
+			"label": "^#ccbbff;StarPounds",
+			"icon": "/quickbar/starpoundsmenu.png",
+			"weight" : -500,
+			"action": ["ui", "starpounds:menu"]
+		}
+	}
+]

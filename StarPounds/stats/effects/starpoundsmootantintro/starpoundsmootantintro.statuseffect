@@ -1,0 +1,12 @@
+{
+  "name" : "starpoundsmootantintro",
+
+  "effectConfig" : {
+    "healTime" : 300
+  },
+  "defaultDuration" : 5,
+
+  "scripts" : [
+    "starpoundsmootantintro.lua"
+  ]
+}

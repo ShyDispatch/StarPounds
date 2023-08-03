@@ -1,0 +1,86 @@
+{
+  "itemName" : "npcmeatfork",
+  "price" : 960,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "^gray;Floran Gluttonists use forks like this to slay and eat monsters at once.",
+  "shortdescription" : "Gluttonist's Greatfork",
+  "tooltipKind" : "gun",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged","sniperrifle"],
+  "level" : 5,
+
+  "inventoryIcon" : "npcmeatfork.png",
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "npcmeatfork.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/projectiles/bloodvomit1.ogg", "/sfx/projectiles/bloodvomit2.ogg", "/sfx/projectiles/bloodvomit3.ogg", "/sfx/projectiles/bloodvomit4.ogg", "/sfx/projectiles/bloodvomit5.ogg", "/sfx/projectiles/bloodvomit6.ogg", "/sfx/projectiles/bloodvomit7.ogg" ],
+      "fireStart" : [ "/sfx/tech/tech_jetpack_thrust1.ogg" ],
+      "fireLoop" : [ "/sfx/melee/rocketspear_loop_fire.ogg" ],
+      "fireEnd" : [ "/sfx/melee/rocketspear_stop_fire.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.6, -0.3],
+  "muzzleOffset" : [2.9, -0.2],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "baseDps" : 60.5,
+    "energyUsage" : 25.5,
+    "fireTime" : 0.045,	
+    "inaccuracy" : 0.15,
+
+    "projectileCount" : 5,
+    "fireType" : "auto",
+
+    "projectileType" : "starpoundsgreatforkmeat",
+    "projectileParameters" : {
+      "speed" : 60	
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.25,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

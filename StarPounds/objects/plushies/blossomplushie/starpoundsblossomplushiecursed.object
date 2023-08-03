@@ -1,0 +1,62 @@
+{
+  "objectName" : "starpoundsblossomplushiecursed",
+  "colonyTags" : ["pretty"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 7500,
+
+  "description" : "A cute plushie of an orchid mantis boy? Something seems off with this one though",
+  "shortdescription" : "Blossom Plushie?",
+  "race" : "generic",
+
+  "apexDescription" : "A curious insect. I've heard they can be quite ravenous- though this one's a plush toy at least... I hope.",
+  "avianDescription" : "What a weird hungry looking insect... Still cute though!",
+  "floranDescription" : "Cute pink bug looksss sssurprisingly tasssty... Though Floran worries plush might eat Floran.",
+  "glitchDescription" : "Endeared. Surprisingly cute for a bug, even ignoring the stomach noises its making!",
+  "humanDescription" : "What a cute little pink grasshopper!... Why do I hear stomach noises?",
+  "hylotlDescription" : "For some reason this plushie has a very... voracious aura to it.",
+  "novakidDescription" : "This plush bug is too heckin' cute!... Wait is its belly growling?",
+
+  "inventoryIcon" : "starpoundsblossomplushieicon.png",
+  
+  "scripts" : [ "/objects/plushies/blossomplushie/starpoundsblossomplushie.lua" ],
+  "scriptDelta" : 60,
+  
+  "chatRadius" : 50,
+  "chatCooldown" : 30,
+  "chatOptions" : [
+    "^#ff597d;Nerd UvU^reset;",
+	"^#ff597d;Dork^reset;",
+	"^#a1df34;*Grumble grumble*^reset;",
+	"^#ff597d;Tasty~ UvU^reset;",
+	"^#a1df34;*Grrgle grggle~*^reset;",
+	"^#a1df34;*Glllrk~*^reset;",
+	"^#ff597d;I crave violence UvU^reset;",
+	"^#ff597d;I see you UvU^reset;",
+	"^#ff597d;Feed me~^reset;",
+	"^#5d6738;Help this plushie ate me!^reset;",
+	"^#5d6738;Mmmph mmmph!^reset;",
+	"^#5d6738;Hello? Someone help!^reset;",
+	"^#ff597d;Gib belly rubs UvU^reset;",
+	"^#5d6738;Where am I?^reset;",
+	"^#a1df34;Buoorp!~^reset;",
+	"^#a1df34;Urp!~^reset;",
+    "^#a1df34;Uuuuurp!~^reset;",
+    "^#a1df34;Bwoooorup!~^reset;",
+	"^#a1df34;Buuuuuroooop!~^reset;"
+  ],
+  
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsblossomplushie.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

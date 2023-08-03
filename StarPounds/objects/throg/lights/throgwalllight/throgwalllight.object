@@ -1,0 +1,74 @@
+{
+  "objectName" : "throgwalllight",
+  "colonyTags" : ["throg","light"],
+  "rarity" : "Common",
+  "printable" : false,
+  "category" : "light",
+  "lightColor" : [172, 114, 205],
+  "lightPosition" : [0, 0],
+  "price" : 45,
+  "description" : "An ominious purple light glows.",
+  "shortdescription" : "Throg Light",
+  "race" : "throg",
+
+  "apexDescription" : "A light to see by, perhaps a little flashy in design...",
+  "avianDescription" : "Crystals are useful for everything. This lamp sets the mood perfectly.",
+  "floranDescription" : "A shining light fashioned from ssstone.",
+  "glitchDescription" : "Appreciative. What a nice light.",
+  "humanDescription" : "As lamps go, this is a real gem.",
+  "hylotlDescription" : "What an intriguing lamp fashioned from an exemplary gem.",
+  "novakidDescription" : "This crazy light looks like it's made from rock.",
+
+  "inventoryIcon" : "throgwalllighticon.png",
+  "orientations" : [
+    {
+      "image" : "throgwalllight.png:<color>.<frame>",
+      "imagePosition" : [-2, -2],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationParts" : {
+        "bg" : "throgwalllight.png",
+        "fg" : "throgwalllightlit.png"
+      },
+      "animationPosition" : [-2, -2],
+
+      "spaces" : [ [0, 1], [-1, 0], [0, 0], [1, 0], [0, -1] ],
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "throgwalllight.png:<color>.<frame>",
+      "imagePosition" : [-2, -2],
+
+      "direction" : "right",
+
+      "animationParts" : {
+        "bg" : "throgwalllight.png",
+        "fg" : "throgwalllightlit.png"
+      },
+      "animationPosition" : [-2, -2],
+
+      "spaces" : [ [0, 1], [-1, 0], [0, 0], [1, 0], [0, -1] ],
+      "anchors" : [ "background" ]
+    }
+  ],
+  
+  "pointLight" : true,
+  "pointBeam" : 0,
+  "pointAngle" : 0,
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "throgwalllight.png",
+    "fg" : "throgwalllightlit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+
+}

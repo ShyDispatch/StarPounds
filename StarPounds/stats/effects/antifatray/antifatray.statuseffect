@@ -1,0 +1,14 @@
+{
+  "name" : "antifatray",
+  "effectConfig" : {},
+  "defaultDuration" : 0.25,
+
+  "scripts" : [
+    "antifatray.lua"
+  ],
+
+  "animationConfig" : "antifatray.animation",
+
+  "label": "Rapidly Slimming",
+  "icon": "/interface/statuses/antifatray.png"
+}

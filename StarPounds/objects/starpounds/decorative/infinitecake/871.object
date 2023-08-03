@@ -1,0 +1,49 @@
+{
+  "objectName" : "starpounds871",
+  "colonyTags" : ["starpounds","storage","evil"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 50000,
+  "description" : "A box containing cake.",
+  "shortdescription" : "Cake Containment Crate",
+  "race" : "generic",
+  "health" : 3.5,
+
+  "apexDescription" : "An odd amount of security for just a cake.",
+  "avianDescription" : "I bet this cake must be as fresh as the day it was baked.",
+  "floranDescription" : "Sshiny chesst won't sstop floran from getting cake.",
+  "glitchDescription" : "Non-committal. This chest is of unknown origin.",
+  "humanDescription" : "There's a number on this box. Redacted.",
+  "hylotlDescription" : "Why house a simple cake in such a complicated box?",
+  "novakidDescription" : "I reckin it's cake time.",
+  "throgDescription" : "Cake! Must get!",  
+  "avaliDescription" : "Cake is usually very good. Though it's concerning how heavily locked up this is.",    
+
+  "inventoryIcon" : "871icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "871.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+
+  ],
+
+  "openSounds" : [ "/sfx/objects/bunkerslidingdoor_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/bunkerslidingdoor_close.ogg" ],
+  "slotCount" : 1,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600,
+
+  "scripts" : [ "/objects/scripts/autofill.lua" ],
+  "scriptDelta" : 240,
+
+  "autofillContents" : [ {"name" : "starpounds871a", "count" : 1, "parameters" : {}} ]
+
+}

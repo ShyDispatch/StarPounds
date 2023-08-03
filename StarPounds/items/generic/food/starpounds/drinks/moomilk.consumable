@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsmoomilk",
+  "rarity" : "Rare",
+  "price" : 200,
+  "category" : "drink",
+  "inventoryIcon" : "moomilk.png",
+  "description" : "From what's technically referred to either a Cow or Mooshi. Very delicious!",
+  "shortdescription" : "Moo Milk",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 180
+    }
+  ] ],
+  "foodValue": 20,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "emitters" : [ "drinking" ]
+}

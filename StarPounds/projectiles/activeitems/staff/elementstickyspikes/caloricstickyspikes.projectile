@@ -1,0 +1,72 @@
+{
+  "projectileName" : "caloricstickyspikes",
+  "physics" : "wallsticky",
+  "timeToLive" : 5,
+  "image" : "caloricspikes.png",
+  "animationCycle" : 0.5,
+  "animationLoops" : false,
+  "lightColor" : [105, 65, 72],
+  "frameNumber" : 5,
+    "periodicActions" : [
+    {
+      "time" : 0.4,
+      "action" : "loop",
+      "count" : 2,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "animated",
+            "animation" : "/animations/statuseffects/caloric2/caloric2.animation",
+            "initialVelocity" : [0.0, 7.0],
+            "finalVelocity" : [0.0, 3.0],
+            "approach" : [0.3, 60],
+            "timeToLive" : 0.7,
+            "layer" : "back",
+            "size" : 0.4,
+            "collidesForeground" : true,
+            "variance" : {
+            "position" : [0.5, 0.5],
+            "size" : 0.1,
+            "initialVelocity" : [5, 3],
+            "finalVelocity" : [0, 0],
+            "rotation" : 180,
+            "angularVelocity" : 180
+            }
+          }
+        }
+      ]
+    }
+  ],  
+  "actionOnReap" : [
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "caloricshard"
+        }
+      ]
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/poisonstickyspikes_break1.ogg", "/sfx/projectiles/poisonstickyspikes_break2.ogg", "/sfx/projectiles/poisonstickyspikes_break3.ogg" ]
+    }
+  ],
+  "speed" : 0,
+  "power" : 30,
+  "damageKind" : "ice",
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "damageRepeatTimeout" : 0.5,
+  "statusEffects" : [
+    {"effect": "starpoundsratebloat", "duration": 10},
+    {"effect": "starpoundsrategain", "duration": 10}
+  ],
+
+  "fullbright" : true,
+  "emitters" : [ "caloricplasma" ],
+
+  "bounces" : -1,
+  "piercing" : true
+}

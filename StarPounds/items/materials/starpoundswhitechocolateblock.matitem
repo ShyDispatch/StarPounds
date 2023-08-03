@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundswhitechocolateblock",
+  "price" : 10,
+  "category" : "block",
+  "rarity" : "Common",
+  "inventoryIcon" : "starpoundswhitechocolateblock.png",
+  "description" : "A large, perfectly shaped block of chocolate.",
+  "shortdescription" : "White Chocolate Block",
+  "glitchDescription" : "Curious. It's a perfect block of chocolate.",
+  "floranDescription" : "Huge chunk of chocolate.",
+  "novakidDescription" : "Silly chocolate. You're for eatin' not buildin'.",
+
+  "materialId" : 51404
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "op" : "add",
+    "path" : "/animationCustom/lights/caloricflash",
+    "value" : {
+      "active" : false,
+      "position" : [3.0, 0.0],
+      "color" : [105, 65, 72]
+    }
+  },
+  {
+    "op" : "add",
+    "path" : "/animationCustom/particleEmitters/caloricblast",
+    "value" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "emissionRate" : 25,
+      "offsetRegion" : [0.0, -0.5, 3.0, 0.5],
+      "particles" : [
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "caloricswoosh2"}
+      ]
+    }
+  },
+  {
+    "op" : "add",
+    "path" : "/animationCustom/sounds/caloriclancefire",
+    "value" : [ "/sfx/gun/elemental_lance.ogg" ]
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "damageConfig" : { "statusEffects" : [ { "effect": "starpoundsrategainslow", "duration": 6 }, { "effect": "starpoundsratebloatfast", "duration": 6} ] } }
+  }
+]

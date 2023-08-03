@@ -1,0 +1,11 @@
+{
+  "itemName" : "starpoundsliquidsoda",
+  "rarity" : "Common",
+  "category" : "liquid",
+  "inventoryIcon" : "starpoundssodaicon.png",
+  "shortdescription" : "Soda",
+  "description" : "Soda so delicious it'll go straight to your waistline.",
+
+  "liquid" : "starpoundssodaliquid",
+  "price" : 0
+}

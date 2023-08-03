@@ -1,0 +1,51 @@
+{
+  "frameGrid" : {
+    "size" : [46, 48],
+    "dimensions" : [35, 3],
+
+    "names" : [
+      [ null, "default.0", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+      [ null, "swallow.1", "swallow.2", "swallow.3", "swallow.4", "swallow.5", "swallow.6", "swallow.7", "swallow.8", "swallow.9", "swallow.10", "swallow.11", "swallow.12", "swallow.13", "swallow.14", "swallow.15", "swallow.16", "swallow.17", "swallow.18", "swallow.19", "swallow.20", "swallow.21", "swallow.22", "swallow.23", "swallow.24", "swallow.25", "swallow.26", "swallow.27", "swallow.28", "swallow.29", "swallow.30", "swallow.31", "swallow.32", "swallow.33", "swallow.34"],
+      [ null, "digest.1", "digest.2", "digest.3", "digest.4", "digest.5", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    ]
+  },
+
+  "aliases" : {
+    "default.default" : "default.0",
+    "default.vore" : "swallow.34",
+	  "regurgitate.34": "swallow.1",
+	  "regurgitate.33": "swallow.2",
+	  "regurgitate.32": "swallow.3",
+	  "regurgitate.31": "swallow.4",
+	  "regurgitate.30": "swallow.5",
+	  "regurgitate.29": "swallow.6",
+	  "regurgitate.28": "swallow.7",
+	  "regurgitate.27": "swallow.8",
+	  "regurgitate.26": "swallow.9",
+	  "regurgitate.25": "swallow.10",
+	  "regurgitate.24": "swallow.11",
+	  "regurgitate.23": "swallow.12",
+	  "regurgitate.22": "swallow.13",
+	  "regurgitate.21": "swallow.14",
+	  "regurgitate.20": "swallow.15",
+	  "regurgitate.19": "swallow.16",
+	  "regurgitate.18": "swallow.17",
+	  "regurgitate.17": "swallow.18",
+	  "regurgitate.16": "swallow.19",
+	  "regurgitate.15": "swallow.20",
+	  "regurgitate.14": "swallow.21",
+	  "regurgitate.13": "swallow.22",
+	  "regurgitate.12": "swallow.23",
+	  "regurgitate.11": "swallow.24",
+	  "regurgitate.10": "swallow.25",
+	  "regurgitate.9": "swallow.26",
+	  "regurgitate.8": "swallow.27",
+	  "regurgitate.7": "swallow.28",
+	  "regurgitate.6": "swallow.29",
+	  "regurgitate.5": "swallow.30",
+	  "regurgitate.4": "swallow.31",
+	  "regurgitate.3": "swallow.32",
+	  "regurgitate.2": "swallow.33",
+	  "regurgitate.1": "swallow.34"
+  }
+}

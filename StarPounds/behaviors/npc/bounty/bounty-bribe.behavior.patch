@@ -1,0 +1,12 @@
+[
+  {
+    "op": "test",
+    "path": "/root/child/children/5/children/0/children/0/children/0/children/4/children/1/children/1/parameters/pool/value",
+    "value": "valuableTreasure"
+  },
+  {
+    "op": "replace",
+    "path": "/root/child/children/5/children/0/children/0/children/0/children/4/children/1/children/1/parameters/pool/value",
+    "value": "starpoundsBribeTreasure"
+  }
+]

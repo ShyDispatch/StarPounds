@@ -1,0 +1,60 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "aura" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+          "windup" : {
+            "frames" : 3,
+            "cycle" : 0.5,
+            "mode" : "transition",
+            "transition" : "on"
+          },
+          "on" : {
+            "frames" : 10,
+            "cycle" : 0.9,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+    "parts" : {
+      "aura" : {
+        "properties" : {
+          "zLevel" : 0
+        },
+        "partStates" : {
+          "aura" : {
+            "windup" : {
+              "properties" : {
+                "image" : "caloricaura.png:windup.<frame>"
+              }
+            },
+            "on" : {
+              "properties" : {
+                "image" : "caloricaura.png:on.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "particleEmitters" : {
+    "poisonAura" : {
+      "active" : true,
+      "emissionRate" : 15,
+      "offsetRegion" : [-3.0, -3.0, 3.0, 3.0],
+      "particles" : [
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "fireswoosh2"},
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "fireswoosh2"},
+        { "particle" : "caloricaura"}
+      ]
+    }
+  }
+}

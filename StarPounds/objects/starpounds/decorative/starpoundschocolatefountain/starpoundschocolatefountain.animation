@@ -1,0 +1,48 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "state" : {
+        "default" : "active",
+        "states" : {
+
+          "active" : {
+            "frames" : 5,
+            "mode" : "loop",
+            "cycle" : 0.7
+          },
+          "expire" : {
+            "frames" : 5,
+            "cycle" : 0.7
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "pod" : {
+        "properties" : {
+          "centered" : false
+        },
+
+        "partStates" : {
+          "state" : {
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:active.<frame>"
+              }
+            },
+            "expire" : {
+              "properties" : {
+                "image" : "<partImage>:expire.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "use" : [ "/sfx/humanoid/drink.ogg" ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "itemName" : "commonring",
+  "price" : 750,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A jewelled ring.",
+  "shortdescription" : "Common Ring",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "statConfig" : {
+    "amplitude" : [0.05, 0.15],
+    "count" : 2,
+    "negativeCount" : 1,
+    "list" : [
+      {"name": "absorption", "weight": 1},
+      {"name": "capacity", "weight": 0.8},
+      {"name": "digestion", "weight": 0.8},
+      {"name": "health", "weight": 0.8},
+      {"name": "movement", "weight": 3}
+    ]
+  },
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {
+    "tier" : 1,
+    "fullbright": true,
+    "nameGenerator" : "ringnames.config:nameGen",
+    "metalPalette" : "/items/active/accessories/commonaccessories_metal.colors",
+    "trimPalette" : "/items/active/accessories/commonaccessories_trim.colors",
+    "crystalPalette" : "/items/active/accessories/commonaccessories_crystal.colors"
+  }
+}

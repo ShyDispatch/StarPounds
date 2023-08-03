@@ -1,0 +1,47 @@
+{
+  "objectName" : "starpoundschocolatefountain",
+  "colonyTags" : ["human","cooking","electronic","commerce"],
+  "rarity" : "Common",
+  "printable" : false,
+  "category" : "decorative",
+  "price" : 500,
+  "description" : "For when you just need to make everything chocolate.",
+  "shortdescription" : "Chocolate Fountain",
+  "race" : "generic",
+
+  "apexDescription" : "They say chocolate bananas are a pretty sweet treat.",
+  "avianDescription" : "I have an odd compulsion to stick my head in this.",
+  "floranDescription" : "Too much sssweetss for Floran.",
+  "glitchDescription" : "Intrigued. You dip food to cover it in chocolate?",
+  "humanDescription" : "The greatest invention since sliced bread. Now for some chocolate burgers.",
+  "hylotlDescription" : "I cannot see adding chocolate to everything as healthy in the slightest.",
+  "novakidDescription" : "If'n I had a stronger sweet tooth. This'd be right up my alley.",
+  "throgDescription" : "This chocolate fountain is perfect for dipping food, or just chugging from the tap.",
+  "mootantDescription" : "Chocolate does sound good right about now.",
+  "harpyDescription" : "Cinnamon Rolls dunked in chocolate sounds great.",
+
+  "avaliDescription" : "An extravagent display of wealth and the depravity of those obsessed with chocolate.",  
+
+  "inventoryIcon" : "starpoundschocolatefountainicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundschocolatefountain.png:default",
+      "imagePosition" : [-12, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "starpoundschocolatefountain.lua"  ],
+  "scriptDelta" : 10,
+  "activationTime" : 5,
+
+  "animation" : "starpoundschocolatefountain.animation",
+  "animationParts" : {
+    "pod" : "starpoundschocolatefountain.png"
+  },
+  "animationPosition" : [-12, 0],
+
+  "smashOnBreak" : true
+}

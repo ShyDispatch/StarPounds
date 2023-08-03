@@ -1,0 +1,24 @@
+{
+  "materialId" : 51408,
+  "materialName" : "starpoundschocolatecakeblock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundschocolateblock",
+  "description" : "A solid block of chocolate.",
+  "shortdescription" : "Chocolate Cake Block",
+  "glitchDescription" : "Curious. It's a perfect block of chocolate cake.",
+  "floranDescription" : "Huge chunk of chocolate cake.",
+  "novakidDescription" : "Silly cake. You're for eatin' not buildin'.",
+  "footstepSound" : "/sfx/blocks/footstep_dirt.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundschocolatecakeblock.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : false,
+    "zLevel" : 1570
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundsgluttonistfeastpainting2",
+  "colonyTags" : ["Floran","pretty","fatdungeons","gluttonist"],
+  "rarity" : "Uncommon",
+  "description" : "A primitive painting of a very big Floran.",
+  "shortdescription" : "Large Gluttonist Art",
+  "race" : "floran",
+  "category" : "decorative",
+  "price" : 1200,
+  "printable" : false,
+
+  "apexDescription" : "Seems this tribe of Floran considers one's size a factor of a good leader.",
+  "avianDescription" : "That is a big spear- are they the leader?",
+  "floranDescription" : "Thisss Floran is greatessst hunter of tribe!",
+  "glitchDescription" : "Impressed. This Floran seems to be the boss. No doubt because they're the largest.",
+  "humanDescription" : "Gonna go out on a limb and guess this Floran was the big kahuna of the tribe.",
+  "hylotlDescription" : "A corpulent, savage image.",
+  "novakidDescription" : "A big ol plant with a big ol... fork?",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsgluttonistfeastpainting2.png:<color>",
+      "imagePosition" : [-32, -32],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

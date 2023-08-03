@@ -1,0 +1,101 @@
+[  
+  {  
+    "op":"add",
+    "path":"/reattack/throg",
+    "value":{  
+      "default":[  
+        "I love a willing prey.",
+        "I'm annoyed you made me work up an appetite!",
+        "Came back with seasoning I hope!",
+        "Stop toying with my stomach!",
+        "I think I'll skip cooking this time!",
+        "Wait you came back?",
+        "Do you want to be eaten!?",		
+        "Foolish for you, filling for me!"
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/attack/throg",
+    "value":{  
+      "default":[  
+        "Dinner time!",
+        "Finally a snack!",
+        "The appetizers' here!",
+        "Resistance is useless!",		
+        "I was starting to get hungry!",
+        "It's so much tastier when they're lively!",
+        "I love playing with food!",
+        "Fresh Meat!",		
+        "Stand still and get roasted!"
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/killedTarget/throg",
+    "value":{  
+      "default":[  
+        "Meat's on the menu tonight!",
+        "Finally, I'm starving.",
+        "Phew, I'm starving.",
+        "Time to eat!",
+        "Now should I cook, or eat raw?",
+        "Get in my belly!",
+        "I was starting to get sick with hunger.",
+        "Hope you taste better than you fight.",
+        "Eating time!",
+        "I'm so hungry, I could eat an Ixodoom."
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/lostTarget/throg",
+    "value":{  
+      "default":[  
+        "I hate it when they run.",
+        "Worked up an appetite for no food.",		
+        "I'm gonna starve!",			
+        "All that for nothing!"		
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/outOfSight/throg",
+    "value":{  
+      "default":[  
+        "Get back here!",
+        "How am I supposed to catch up?",		
+        "Don't make me chase you! Really, don't!",			
+        "When I get my hands on you!"		
+      ]
+    }
+  },  
+  {  
+    "op":"add",
+    "path":"/cantReach/throg",
+    "value":{  
+      "default":[  
+        "Get back here!",
+        "Stop being a coward!",		
+        "Just jump on my fork!",			
+        "Be a good piece of meat and get over here!"		
+      ]
+    }
+  },    
+  {  
+    "op":"add",
+    "path":"/cheerOn/throg",
+    "value":{  
+      "default":[  
+        "Cook em good!",
+        "Save some for me!",		
+        "Don't hog em all to yourself!",			
+        "Hurry up so we can eat!"		
+      ]
+    }
+  }   
+]

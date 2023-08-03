@@ -1,0 +1,10 @@
+{
+  "itemName" : "starpoundsscrapmetal",
+  "price" : 20,
+  "rarity" : "Common",
+  "category" : "craftingMaterial",
+  "inventoryIcon" : "starpoundsscrapmetal.png",
+  "description" : "A formerly useful mass of metal.",
+  "shortdescription" : "Corroded Scrap",
+  "itemTags" : [ "reagent" ]
+}

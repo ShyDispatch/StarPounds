@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpounds871b",
+  "rarity" : "Legendary",
+  "price" : 0,
+  "category" : "preparedFood",
+  "inventoryIcon" : "871b.png",
+  "description" : "It's just an ordinary cupcake. But there's always more of it.",
+  "shortdescription" : "Replicating Cupcake",
+  "starpounds_disableExperience" : true,
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 20
+    }
+  ] ],
+  "foodValue": 15,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 9.0
+}

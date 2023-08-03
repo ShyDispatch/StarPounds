@@ -1,0 +1,42 @@
+{
+  "type" : "starpoundsgluttonistvisitor",
+  "baseType" : "outpostvisitor",
+  
+	"identity" : {
+     "species" : "floran"
+	 },
+
+  "scriptConfig" : {
+  "starPounds_skills": {
+      "minimumSize": [2, 5]
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"Floran heard thisss place hasss fattening mealsss.",
+						"Floran likesss to ssee like minded fattiesss not from Gluttonissst tribe.",
+						"Floran wantsss to be bessst fatty like Champion.",
+						"In the Gluttonissst tribe, ssstrength comess from fat.",
+						"Never hasss Floran heard of a Throg, Floran likesss them.",
+						"Gluttonissst Floranss aren't like other Floransss, much ssstronger.",
+						"That big Floran, ^#aa99dd;Fayane^reset;, ssshe'd make good Gluttonissst Champion."
+					]
+				}
+			}
+		}
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic" : [ { "name" : "gluttonisthead", "parameters" : { "colorIndex" : 10 } }, { "name" : "goathead" }, { "name" : "sabertoothhelm", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier5shead", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier6ahead", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier5mhead", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier2head", "parameters" : { "colorIndex" : 10 } } ],
+            "chestCosmetic" : [ { "name" : "predatorychest", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "legsCosmetic" : [ { "name" : "predatorypants", "parameters" : { "colorIndex" : 10 } } ]
+          }
+        ] ]
+    ]
+  }
+}

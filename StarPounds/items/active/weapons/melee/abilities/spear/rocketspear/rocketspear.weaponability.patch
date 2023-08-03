@@ -1,0 +1,22 @@
+[
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonStart",
+    "path" : "/animationCustom/sounds/caloricStart"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonBlast",
+    "path" : "/animationCustom/sounds/caloricBlast"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonEnd",
+    "path" : "/animationCustom/sounds/caloricEnd"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "projectileType" : "caloricthrower" }
+  }
+]

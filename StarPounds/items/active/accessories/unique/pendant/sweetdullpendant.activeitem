@@ -1,0 +1,22 @@
+{
+  "itemName" : "sweetdullpendant",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "A small silver necklace with a figure of a fire-breathing dragon. It smells strongly of beer.",
+  "shortdescription" : "Drunken Kobold's Collar",
+  "inventoryIcon" : "sweetdullpendant.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "stats": [
+    {"name": "gurgleRate", "modifier": 0.5},
+    {"name": "voreDamage", "modifier": 0.25}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {}
+}

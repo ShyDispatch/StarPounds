@@ -1,0 +1,18 @@
+{
+  "itemName" : "chubsterglitchlegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Some glitch are built with incredibly large legs.",
+  "shortdescription" : "Chubby Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundschubster"
+  ],
+
+  "maleFrames" : "pantsM.png",
+  "femaleFrames" : "pantsF.png"
+}

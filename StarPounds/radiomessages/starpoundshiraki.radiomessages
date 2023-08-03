@@ -1,0 +1,21 @@
+{
+  "hirakitest" : {
+      "senderName" : "Hiraki Corale",
+      "portraitImage" : "/interface/chatbubbles/starpoundshiraki.png:<frame>",
+      "text" : "Wow, I'm a canon character. Neglected and reused in a fat mod. Neat.",
+      "unique" : false
+  },
+  "hirakitest2" : {
+      "senderName" : "Hiraki Corale",
+      "portraitImage" : "/interface/chatbubbles/starpoundshiraki.png:<frame>",
+      "text" : "A",
+      "persistTime" : 0.5,
+      "unique" : false
+  },
+  "hirakitest3" : {
+      "senderName" : "Hiraki Corale",
+      "portraitImage" : "/interface/chatbubbles/hiraki.png:<frame>",
+      "text" : "Hello there. It's me! The Great ^#ff2b80;Hiraki Corale^reset;! I know, I know. You're speechless.",
+      "unique" : false
+  }
+}

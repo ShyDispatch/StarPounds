@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "avesmingo", "count" : 1 },
+    { "item" : "chili", "count" : 1 },
+    { "item" : "tomato", "count" : 1 }
+  ],
+  "output" : { "item" : "starpoundshotsauce", "count" : 1 },
+  "groups" : [ "craftingfood", "condiments" ]
+}

@@ -1,0 +1,32 @@
+{
+  "objectName" : "fathylotlghostaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"These ethereal ghosts manifest their issues in life onto others.\"",
+  "shortdescription" : "Fat Hylotl Ghost Figurine",
+
+
+  "inventoryIcon" : "fathylotlghostaf.png",
+  "orientations" : [
+    {
+      "image" : "fathylotlghostaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "fathylotlghostaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

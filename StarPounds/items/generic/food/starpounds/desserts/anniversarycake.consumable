@@ -1,0 +1,25 @@
+{
+  "itemName" : "starpoundsanniversarycake",
+  "rarity" : "Essential",
+  "price" : 2500,
+  "category" : "preparedFood",
+  "inventoryIcon" : "anniversarycake.png",
+  "description" : "Celebrating five years of Starpounds. Thank you to all for enjoying the Big Fatties!",
+  "shortdescription" : "Starpounds 5 Year Cake",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 450
+    },
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 450
+    }
+  ] ],
+  "foodValue": 100,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

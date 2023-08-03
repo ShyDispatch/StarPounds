@@ -1,0 +1,177 @@
+{
+  "kind" : "throg",
+
+  "charCreationTooltip" : {
+      "title" : "Throg",
+      "subTitle" : "Tron Hog",
+      "description" : "Throgs are a militant race of pigmen that roam the universe for food to eat. They lack any sense of grace and constantly require nourishment. Their existence was regarded as a myth as they stayed in their corner of the galaxy. Now things have changed."
+  },
+
+  "nameGen" : [ "/species/throgmalenamegen.config:names", "/species/throgfemalenamegen.config:names" ],
+  "ouchNoises" : [ "/sfx/humanoid/throghurt_male1.ogg", "/sfx/humanoid/throghurt_female1.ogg" ],
+  "charGenTextLabels" : [ "Skin colour", "Hair style", "Shirt", "Legwear", "Tusks", "Tuft Colour", "Shirt colour", "Legwear colour", "THROG", "Personality" ],
+  "skull" : "/humanoid/throg/dead.png",
+  "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=b59ce7FF?replace=31a6ffFF=855dd4FF",
+  "defaultBlueprints" : {
+    "tier1" : [
+
+// Empty Hands
+      { "item" : "flagthrog" },
+
+// Anvil
+      { "item" : "throgtier1head" },
+      { "item" : "throgtier1chest" },
+      { "item" : "throgtier1pants" },
+      { "item" : "throgtier2head" },
+      { "item" : "throgtier2chest" },
+      { "item" : "throgtier2pants" },
+
+      { "item" : "ironshortsword" },
+      { "item" : "ironbroadsword" },
+      { "item" : "tungstenaxe" },
+      { "item" : "tungstenhammer" },
+
+// Anvil2
+      { "item" : "throgtier3head" },
+      { "item" : "throgtier3chest" },
+      { "item" : "throgtier3pants" },
+      { "item" : "throgtier4head" },
+      { "item" : "throgtier4chest" },
+      { "item" : "throgtier4pants" },
+
+      { "item" : "titaniumdagger" },
+      { "item" : "titaniumspear" },
+      { "item" : "durasteelbroadsword" },
+      { "item" : "durasteelshortsword" },
+
+// Anvil3
+      { "item" : "throgtier5ahead" },
+      { "item" : "throgtier5achest" },
+      { "item" : "throgtier5apants" },
+      { "item" : "throgtier6ahead" },
+      { "item" : "throgtier6achest" },
+      { "item" : "throgtier6apants" },
+
+      { "item" : "throgtier5mhead" },
+      { "item" : "throgtier5mchest" },
+      { "item" : "throgtier5mpants" },
+      { "item" : "throgtier6mhead" },
+      { "item" : "throgtier6mchest" },
+      { "item" : "throgtier6mpants" },
+
+      { "item" : "throgtier5shead" },
+      { "item" : "throgtier5schest" },
+      { "item" : "throgtier5spants" },
+      { "item" : "throgtier6shead" },
+      { "item" : "throgtier6schest" },
+      { "item" : "throgtier6spants" },
+
+      { "item" : "aegisaltpistol" },
+      { "item" : "aegisaltbow" },
+      { "item" : "feroziumwand" },
+      { "item" : "feroziumstaff" },
+      { "item" : "violiumshortsword" },
+      { "item" : "violiumbroadsword" },
+
+// Furniture Table 2
+      { "item" : "throgstoragelocker" },
+      { "item" : "throgshipdoor" },
+      { "item" : "throgshiphatch" },
+
+// Spinning Wheel
+      { "item" : "apexcommanderjacket" },
+      { "item" : "apexcommanderpants" },
+      { "item" : "apexnavyjacket" },
+      { "item" : "apexnavypants" },
+      { "item" : "apexofficerjacket" },
+      { "item" : "apexofficerpants" },
+      { "item" : "apexspecialistjacket" },
+      { "item" : "apexspecialistpants" }
+    ]
+  },
+  "altOptionAsFacialMask" : true,
+  "headOptionAsHairColor" : true,
+  "hairColorAsBodySubColor" : true,
+  "bodyColorAsFacialMaskSubColor" : true,
+  "genders" : [
+    {
+      "name" : "male",
+      "image" : "/interface/title/male.png",
+      "characterImage" : "/interface/title/throgmale.png",
+      "hairGroup" : "hair",
+      "hair" : [ "1", "2", "3", "4", "5", "6" ],
+      "shirt" : [ "throgneochest" ],
+      "pants" : [ "throgneolegs" ],
+      "facialHairGroup" : "",
+      "facialHair" : [ ],
+      "facialMaskGroup" : "tusks",
+      "facialMask" : [ "1", "2", "3", "4" ]
+    },
+    {
+      "name" : "female",
+      "image" : "/interface/title/female.png",
+      "characterImage" : "/interface/title/throgfemale.png",
+      "hairGroup" : "hair",
+      "hair" : [ "1", "2", "3", "4", "5", "6" ],
+      "shirt" : [ "throgneochest" ],
+      "pants" : [ "throgneolegs" ],
+      "facialHairGroup" : "",
+      "facialHair" : [ ],
+      "facialMaskGroup" : "tusks",
+      "facialMask" : [ "1", "2", "3", "4" ]
+    }
+  ],
+  "bodyColor" : [
+    //COOKED PORKCHOP
+    { "ffca8a" : "cba196", "e0975c" : "B68374", "a85636" : "886257", "6f2919" : "5b413a" },
+    //PALE PORKCHOP
+    { "ffca8a" : "c2a9a7", "e0975c" : "AB8D8B", "a85636" : "8C6664", "6f2919" : "664948" },
+    //FLUSTERED PORKCHOP
+    { "ffca8a" : "cb9796", "e0975c" : "b67774", "a85636" : "885957", "6f2919" : "5b3b3a" },
+    //VALENTINE PORKCHOP
+    { "ffca8a" : "c2a7b4", "e0975c" : "ab8b9b", "a85636" : "8c6479", "6f2919" : "664858" },
+    //RAW PORKCHOP
+    { "ffca8a" : "cb96bb", "e0975c" : "b674a1", "a85636" : "885779", "6f2919" : "5b3a51" },
+    //CHILLED PORKCHOP
+    { "ffca8a" : "aea7c2", "e0975c" : "938bab", "a85636" : "6e648c", "6f2919" : "4f4866" },
+    //STONE PORKCHOP
+    { "ffca8a" : "abb2be", "e0975c" : "9098a6", "a85636" : "6a7486", "6f2919" : "4d5561" },
+    //GREEN HAM
+    { "ffca8a" : "cbbd96", "e0975c" : "b6a674", "a85636" : "887c57", "6f2919" : "5b523a" },
+    //BROWN FUR
+    { "ffca8a" : "bf947c", "e0975c" : "9A6956", "a85636" : "7C4B3C", "6f2919" : "4C2821" },
+    //PINK FUR
+    { "ffca8a" : "EEC4BE", "e0975c" : "DB9890", "a85636" : "C0655A", "6f2919" : "8D403C" },
+    //LIGHT PINK FUR
+    { "ffca8a" : "ECCEDE", "e0975c" : "D7A5BA", "a85636" : "BB718F", "6f2919" : "86475D" },
+    //BLACK FUR
+    { "ffca8a" : "878787", "e0975c" : "666666", "a85636" : "424242", "6f2919" : "1D1D1D" }
+  ],
+  "undyColor" : [ "" ],
+  "hairColor" : [
+    //COOKED PORKCHOP
+    { "f7e7b2" : "cba196", "d9c189" : "B68374", "a38d59" : "886257", "735e3a" : "5b413a" },
+    //PALE PORKCHOP
+    { "f7e7b2" : "c2a9a7", "d9c189" : "AB8D8B", "a38d59" : "8C6664", "735e3a" : "664948" },
+    //FLUSTERED PORKCHOP
+    { "f7e7b2" : "cb9796", "d9c189" : "b67774", "a38d59" : "885957", "735e3a" : "5b3b3a" },
+    //VALENTINE PORKCHOP
+    { "f7e7b2" : "c2a7b4", "d9c189" : "ab8b9b", "a38d59" : "8c6479", "735e3a" : "664858" },
+    //RAW PORKCHOP
+    { "f7e7b2" : "cb96bb", "d9c189" : "b674a1", "a38d59" : "885779", "735e3a" : "5b3a51" },
+    //CHILLED PORKCHOP
+    { "f7e7b2" : "aea7c2", "d9c189" : "938bab", "a38d59" : "6e648c", "735e3a" : "4f4866" },
+    //STONE PORKCHOP
+    { "f7e7b2" : "abb2be", "d9c189" : "9098a6", "a38d59" : "6a7486", "735e3a" : "4d5561" },
+    //GREEN HAM
+    { "f7e7b2" : "cbbd96", "d9c189" : "b6a674", "a38d59" : "887c57", "735e3a" : "5b523a" },
+    //BROWN FUR
+    { "f7e7b2" : "bf947c", "d9c189" : "9A6956", "a38d59" : "7C4B3C", "735e3a" : "4C2821" },
+    //PINK FUR
+    { "f7e7b2" : "EEC4BE", "d9c189" : "DB9890", "a38d59" : "C0655A", "735e3a" : "8D403C" },
+    //LIGHT PINK FUR
+    { "f7e7b2" : "ECCEDE", "d9c189" : "D7A5BA", "a38d59" : "BB718F", "735e3a" : "86475D" },
+    //BLACK FUR
+    { "f7e7b2" : "878787", "d9c189" : "666666", "a38d59" : "424242", "735e3a" : "1D1D1D" }
+  ]
+}

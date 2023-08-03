@@ -1,0 +1,17 @@
+[
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonActive",
+    "path" : "/animationCustom/sounds/caloricActive"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "projectileType" : "caloricbarrier" }
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalLightColors/caloric",
+    "value" : [240, 110, 140]
+  }
+]

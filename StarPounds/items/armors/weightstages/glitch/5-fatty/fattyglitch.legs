@@ -1,0 +1,18 @@
+{
+  "itemName" : "fattyglitchlegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Statement: Upgraded to an xxl model. This unit has girth fitting for a gluttonous noble.",
+  "shortdescription" : "Fatty Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty"
+  ],
+
+  "maleFrames" : "pantsM.png",
+  "femaleFrames" : "pantsF.png"
+}

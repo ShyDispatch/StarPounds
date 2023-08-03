@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsburrito",
+  "rarity" : "Rare",
+  "price" : 345,
+  "category" : "preparedFood",
+  "inventoryIcon" : "burrito.png",
+  "description" : "A bean and cheese burrito. Deliciously unhealthy!",
+  "shortdescription" : "Grease Burrito",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 630
+    }
+  ] ],
+  "foodValue": 70,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsburrito" ]
+}

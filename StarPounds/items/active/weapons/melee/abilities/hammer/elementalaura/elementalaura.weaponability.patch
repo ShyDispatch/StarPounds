@@ -1,0 +1,48 @@
+[
+  {
+    "op" : "add",
+    "path" : "/animationCustom/particleEmitters/caloricCharge",
+    "value" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "emissionRate" : 25,
+      "offsetRegion" : [-1.0, -2.5, 1.0, 1.5],
+      "particles" : [
+        { "particle" : "caloricswoosh1"},
+        { "particle" : "caloricswoosh2"},
+        { "particle" : "caloricswoosh3"},
+        { "particle" : "caloricaura"}
+      ]
+    }
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisoncharge",
+    "path" : "/animationCustom/sounds/caloriccharge"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonfull",
+    "path" : "/animationCustom/sounds/caloricfull"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonactivate",
+    "path" : "/animationCustom/sounds/caloricactivate"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisonactive",
+    "path" : "/animationCustom/sounds/caloricactive"
+  },
+  {
+    "op" : "copy",
+    "from" : "/animationCustom/sounds/poisondeactivate",
+    "path" : "/animationCustom/sounds/caloricdeactivate"
+  },
+  {
+    "op" : "add",
+    "path" : "/ability/elementalConfig/caloric",
+    "value" : { "damageConfig" : { "statusEffects" : [ { "effect": "starpoundsrategainslow", "duration": 3 }, { "effect": "starpoundsratebloatfast", "duration": 3} ] } }
+  }
+]

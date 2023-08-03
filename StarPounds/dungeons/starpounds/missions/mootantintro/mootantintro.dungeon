@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "name" : "mootantintro",
+    "species" : "mootant",
+    "rules" : [
+    ],
+    "anchor" : [ "mootantintro" ],
+    "gravity" : 80,
+    "maxRadius" : 1000000,
+    "maxParts" : 100,
+    "protected" : true
+  },
+
+  "parts" : [
+    {
+      "name" : "mootantintro",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "mootantintro.json" ]
+    }
+  ]
+}

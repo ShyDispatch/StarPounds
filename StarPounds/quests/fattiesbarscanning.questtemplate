@@ -1,0 +1,100 @@
+{
+  "id" : "fattiesbarscanning",
+  "prerequisites" : [],
+  "title" : "Fattiesbar Scanning",
+  "text" : "This was just for handling radio messages for the shops.",
+  "completionText" : "This was just for handling radio messages for the shops.",
+  "moneyRange" : [0, 0],
+  "rewards" : [],
+  "canBeAbandoned" : false,  
+  "showInLog" : false,
+  "showAcceptDialog" : false,
+  "showCompleteDialog" : false,
+  "showFailDialog" : false,  
+  
+  "updateDelta" : 10,
+  "script" : "/quests/scripts/clues.lua",
+  "scriptConfig" : {
+    "portraits" : {},
+    "descriptions" : {},
+    "turnInEntityUid" : "starpoundsfayane",
+    "instanceWorld" : "InstanceWorld:fattiesbar",	
+
+    "targetValue" : 50,
+    "objectValues" : {
+      "bigfattiescounter" : 10,
+      "scarlettusedclothes" : 10,
+      "fattiesfurnishings" : 10,
+      "throgarsenal" : 10,
+      "hirakisfatbooks" : 10
+    },
+    "radioMessages" : {
+      "uniqueProgress" : {
+        "bigfattiescounter" : {
+          "messageId" : "bigfattiescounter",
+          "type" : "quest",
+          "unique" : false,
+          "senderName" : "Fayane",
+          "text" : "Anissse iss a good chef. Makesss the tasstiesst foodss one could hope for. Very cheap too.",
+          "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+        },
+        "scarlettusedclothes" : {
+          "messageId" : "scarlettusedclothes",
+          "type" : "quest",
+          "unique" : false,
+          "senderName" : "Fayane",
+          "text" : "Ssscarlet here can help you if you get too big for clothesss. Sssellss clothing that can expand with you as you get big.",
+          "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+        },
+        "fattiesfurnishings" : {
+          "messageId" : "fattiesfurnishings",
+          "type" : "quest",
+          "unique" : false,
+          "senderName" : "Fayane",
+          "text" : "Frogg iss weird. Workss with Frogg Furnishingss to sell furniture only fattiess will enjoy.",
+          "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+        },
+        "throgarsenal" : {
+          "messageId" : "throgarsenal",
+          "type" : "quest",
+          "unique" : false,
+          "senderName" : "Fayane",
+          "text" : "The Throgss collect and make unique weaponss. If it's not their own, the propertiesss of their weaponss can fatten up prey.",
+          "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+        },
+        "hirakisfatbooks" : {
+          "messageId" : "hirakisfatbooks",
+          "type" : "quest",
+          "unique" : false,
+          "senderName" : "Fayane",
+          "text" : "I think the fish, Hiraki, will sssell ssome of her bookss if you're interested. Ssshe'ss here a lot.",
+          "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+        }
+      },
+      "startWithProgress" : {
+        "messageId" : "fattiesbarstarted",
+        "type" : "quest",
+        "unique" : false,
+        "senderName" : "Fayane",
+        "text" : "You are quite knowledagable.",
+        "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+      },
+      "startAlreadyComplete" : {
+        "messageId" : "fattiesbarknowledgable",
+        "type" : "quest",
+        "unique" : false,
+        "senderName" : "Fayane",
+        "text" : "Guessss you don't need to learn the ropes.",
+        "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+      },	  
+      "complete" : {
+        "messageId" : "fattiesbarend",
+        "type" : "quest",
+        "unique" : false,
+        "senderName" : "Fayane",
+        "text" : "You now know everything about thiss place! Don't forget what you learned.",
+        "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
+      }
+    }
+  }
+}

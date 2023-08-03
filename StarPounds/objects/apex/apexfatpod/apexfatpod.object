@@ -1,0 +1,73 @@
+{
+  "objectName" : "apexfatpod",
+  "colonyTags" : ["apex","apexresearchlab","science","evil","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 180,
+  "lightColor" : [36, 120, 36],
+
+  "flickerPeriod" : 1.5,
+  "flickerMinIntensity" : 0.8,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0,
+  "flickerIntensityVariance" : 0,
+  
+  "description" : "There seems to be an Apex in there, connected to a bunch of wires and tubes.",
+  "shortdescription" : "Fat Support Pod",
+  "race" : "apex",
+
+  "apexDescription" : "Good god... what have they done? I would free her but she appears to be on life support.",
+  "avianDescription" : "What monstrous process is this?",
+  "floranDescription" : "Sssoup!",
+  "glitchDescription" : "Shocked. What is going on here!?",
+  "humanDescription" : "What the hell is going on here?",
+  "hylotlDescription" : "Poor soul...",
+  "novakidDescription" : "This just don't seem right to me.",
+
+  "inventoryIcon" : "apexfatpodicon.png",
+  "orientations" : [
+    {
+      "image" : "apexfatpod.png:<color>.<frame>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      
+      "direction" : "left",
+      "flipImages" : true,
+      "animationPosition" : [-16, 0],
+      "lightPosition" : [0, 3],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "apexfatpod.png:<color>.<frame>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      
+      "direction" : "right",
+      "animationPosition" : [-16, 0],
+      "lightPosition" : [0, 3],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/apexpod.ogg",
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "apexfatpod.png",
+    "fg" : "apexfatpodlit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+
+}

@@ -1,0 +1,18 @@
+{
+  "itemName" : "bellybump",
+  "price" : 2000,
+  "rarity" : "Legendary",
+  "category" : "medicine",
+  "inventoryIcon" : "bellybump.png",
+  "description" : "Take this and your belly will swell out nice and spherical.",
+  "shortdescription" : "Belly Bump",
+  "maxStack" : 1,
+  "effects": [[
+    {
+      "effect" : "starpoundsbloat",
+      "duration" : 40
+    }
+  ]],  
+  "emote" : "",
+  "emitters" : [ "drinking" ]
+}

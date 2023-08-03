@@ -1,0 +1,51 @@
+{
+  "itemName" : "starpoundsladle",
+  "level" : 1,
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "This is a spoon. Not a weapon.",
+  "shortdescription" : "Soup Ladle",
+  "tooltipKind" : "sword",
+  "category" : "axe",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","axe", "upgradeableWeapon"],
+
+  "inventoryIcon" : "starpoundsladle.png",
+
+  "animation" : "/items/active/weapons/melee/axe/axe.animation",
+  "animationParts" : {
+    "blade" : "starpoundsladle.png",
+    "handle" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_axe.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "physical",
+
+  "aimOffset" : -1.0,
+
+  "primaryAbilityType" : "axecleave",
+  "primaryAbility" : {
+    "fireTime" : 0.5,
+    "baseDps" : 1.0,
+    "damageConfig" : {
+      "knockback" : 50
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua",
+
+  "upgradeParameters" : {
+    "inventoryIcon" : "starpoundsladlel6.png",
+    "animationParts" : {
+      "blade" : "/items/active/weapons/starpounds/starpoundsladlel6.png"
+    },
+    "shortdescription" : "Soup Ladle ^yellow;^reset;"
+  }
+}

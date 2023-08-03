@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsjellyplush",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 45,
+
+  "description" : "Eye Jelly Plushie. A cuddly jelly doll.",
+  "shortdescription" : "Eye Jelly Plushie",
+  "race" : "hylotl",
+
+  "apexDescription" : "An adorable jelly doll.",
+  "avianDescription" : "A cute little jelly toy.",
+  "floranDescription" : "Jelly plushie!",
+  "glitchDescription" : "Appreciative. A cuddly little jelly.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsjellyplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsjellyplush.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

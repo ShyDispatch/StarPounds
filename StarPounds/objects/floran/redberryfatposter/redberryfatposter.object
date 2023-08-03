@@ -1,0 +1,33 @@
+{
+  "objectName" : "redberryfatposter",
+  "colonyTags" : ["floran","hylotloceancity","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+
+  "shortdescription" : "Red Berry Poster",
+  "description" : "A framed poster of a Floran who wanted to be the fattest hunter.",
+  "race" : "floran",
+
+  "apexDescription" : "A show of new trends to pull in the young minded.",
+  "avianDescription" : "An ad for body positivity?",
+  "floranDescription" : "Floran ssseess big Floran. Great hunter perhapss.",
+  "glitchDescription" : "Interested. So nice to see those who are different being embraced.",
+  "humanDescription" : "This Floran seems to be grinning quite a lot.",
+  "hylotlDescription" : "I can't understand how Florans view fat as superiority.",
+  "novakidDescription" : "That's a big gal.",
+
+  "inventoryIcon" : "redberryfatpostericon.png",
+  "orientations" : [
+    {
+      "image" : "redberryfatposter.png:<color>",
+      "imagePosition" : [-8, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

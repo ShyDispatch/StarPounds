@@ -1,0 +1,33 @@
+[
+  [
+    {
+      "op": "replace",
+      "path": "/shortdescription",
+      "value": "Milk"
+    },
+    {
+      "op": "replace",
+      "path": "/description",
+      "value": "A measure of creamy milk. The taste is amazing."
+    }
+  ],
+  [
+    {
+      "op": "test",
+      "path": "/learnBlueprintsOnPickup",
+      "inverse" : true
+    },
+    {
+      "op": "add",
+      "path": "/learnBlueprintsOnPickup",
+      "value": []
+    }
+  ],
+  [
+    {
+      "op": "add",
+      "path": "/learnBlueprintsOnPickup/-",
+      "value": "milk"
+    }
+  ]
+]

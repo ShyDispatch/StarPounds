@@ -1,0 +1,12 @@
+{
+  "frameGrid" : {
+    "size" : [32, 32],
+    "dimensions" : [26, 1],
+    "names" : [
+      [null, "idle.1", "idle.2", "idle.3", "idle.4", "idle.5", "idle.6", "idle.7", "idle.8", null, "charge.1", "charge.2", "charge.3", "charge.4", "charge.5", "hurt.1", "windup.1", "windup.2", "windup.3", "windup.4", "windup.5", "fire.1", "fire.2", "fire.3", "fire.4", "fire.5" ]
+    ]
+  },
+  "aliases" : {
+    "winduploop.1" : "windup.5"
+  }
+}

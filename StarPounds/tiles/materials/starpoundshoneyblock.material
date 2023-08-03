@@ -1,0 +1,24 @@
+{
+  "materialId" : 51421,
+  "materialName" : "starpoundshoneyblock",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "starpoundshoneyblock",
+  "description" : "A solid block of honey.",
+  "shortdescription" : "Honey Block",
+  "glitchDescription" : "Curious. It's a perfect block of honey.",
+  "floranDescription" : "Huge chunk of honey.",
+  "novakidDescription" : "Silly honey. You're for eatin' not buildin'.",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundshoneyblock.png",
+    "variants" : 5,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : false,
+    "zLevel" : 1570
+  }
+}

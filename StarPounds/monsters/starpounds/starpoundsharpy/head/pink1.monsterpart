@@ -1,0 +1,9 @@
+{
+  "name" : "pinkhead1",
+  "category" : "starpoundsharpypink",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "head1.png"
+  }
+}

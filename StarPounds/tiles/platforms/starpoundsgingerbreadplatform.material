@@ -1,0 +1,23 @@
+{
+  "materialId" : 51403,
+  "materialName" : "starpoundsgingerbreadplatform",
+  "collisionKind" : "platform",
+  "itemDrop" : "starpoundsgingerbreadplatform",
+  "shortdescription" : "Gingerbread Platform",
+  "description" : "A simple looking platform.",
+  "glitchDescription" : "Impressed. These platforms can easily support my weight.",
+  "floranDescription" : "Shiny metal platformsss.",
+  "novakidDescription" : "Some fancy lookin' platforms made outta metal.",
+  "footstepSound" : "/sfx/blocks/footstep_crystal.ogg",
+  "category" : "Supports",
+
+  "renderTemplate" : "/tiles/platformtemplate.config",
+  "renderParameters" : {
+    "texture" : "starpoundsgingerbreadplatform.png",
+    "variants" : 1,
+    "lightTransparent" : true,
+    "occludesBelow" : false,
+    "multiColored" : false,
+    "zLevel" : 0
+  }
+}

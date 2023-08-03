@@ -1,0 +1,17 @@
+[
+  {
+    "op": "add",
+    "path": "/scriptConfig/starPounds_options",
+    "value": {"disablePrey": true}
+  },
+  {
+    "op": "add",
+    "path": "/scriptConfig/offeredQuests/-",
+    "value": "uscmhammer"
+  },
+  {
+    "op": "add",
+    "path": "/scriptConfig/turnInQuests/-",
+    "value": "uscmhammer"
+  }
+]

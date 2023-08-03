@@ -1,0 +1,41 @@
+{
+  "objectName" : "naomibutt",
+  "printable" : false,
+  "rarity" : "Legendary",
+
+  "category" : "decorative",
+  "price" : 10000,
+  "description" : "A large floran, with an even larger booty.",
+  "shortdescription" : "Naomi: Butt",
+  "race" : "generic",
+
+  "apexDescription" : "Reminds me of rumours about miniknog test subjects.",
+  "avianDescription" : "With a rump that size, you'd be hard pressed to fly using a ship, let alone wings.",
+  "floranDescription" : "Floran hasss big tushy. Good for ressting when on hunt.",
+  "glitchDescription" : "Curious. This floran has a significant rear.",
+  "humanDescription" : "Am I hallucinating? Her legs alone probably",
+  "hylotlDescription" : "It's hard to imagine how much food it must've taken to produce that backside.",
+  "novakidDescription" : "This here rear probably weighs more your average joe.",
+
+  "inventoryIcon" : "naomibutt.png:default.default",
+
+  "orientations" : [
+    {
+      "image" : "naomibutt.png:default.default",
+      "imagePosition" : [-16, -24],
+	  
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "scripts" : [ "/naomibutt.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "naomibutt.animation",
+  "animationParts" : {
+    "naomi" : "naomibutt.png"
+  }
+}

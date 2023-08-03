@@ -1,0 +1,11 @@
+{
+  "itemName" : "starpoundsliquidhoney",
+  "rarity" : "Common",
+  "category" : "liquid",
+  "inventoryIcon" : "starpoundshoneyicon.png",
+  "shortdescription" : "Honey",
+  "description" : "Delicious, pure honey.",
+
+  "liquid" : "bees_liquidhoney",
+  "price" : 0
+}

@@ -1,0 +1,56 @@
+{
+  "objectName" : "starpoundscreator",
+  "colonyTags" : ["starpounds"],
+  "rarity" : "rare",
+  "category" : "decorative",
+  "price" : 100000,
+  "description" : "A blob that's fat incarnate. She has a lot to offer.",
+  "shortdescription" : "Dispatch",
+  "race" : "human",
+
+  "apexDescription" : "Bananas have never been as tasty as they are now. All thanks to you fat stranger.",
+  "avianDescription" : "I hear she's the patron for Velhanu. Her softness certainly shows it!",
+  "floranDescription" : "Floran thanksss pale lady. Sssuch good food becaussse of her.",
+  "glitchDescription" : "Curious. I feel the need to say thanks to this smiling fatty.",
+  "humanDescription" : "This girl needs to get out more. She's a bit pale... oh and out of shape.",
+  "hylotlDescription" : "The food this woman must've eaten to grow so big... I tempted to see how soft she is.",
+  "novakidDescription" : "Thank the stars to this big ol' lady. I get all the grub I could ever want.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+
+  "inventoryIcon" : "starpoundscreatoricon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundscreator.png:<color>",
+      "imagePosition" : [-24, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [0, 41], // Right
+        [-40, 31], // Middle
+        [-54, 41] // Left
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "starpoundscreator.png:<color>",
+      "imagePosition" : [-24, 0],
+      "direction" : "right",
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [0, 41], // Left
+        [14, 31], // Middle
+        [54, 41] // Right
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

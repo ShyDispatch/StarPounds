@@ -1,0 +1,16 @@
+[
+	{
+		"op": "add",
+		"path": "/initialquests/throg",
+		"value": [
+			"protectorate"
+		]
+	},
+	{
+		"op": "add",
+		"path": "/initialquests/mootant",
+		"value": [
+			"mootantintro"
+		]
+	}
+]

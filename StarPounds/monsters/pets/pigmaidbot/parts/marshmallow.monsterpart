@@ -1,0 +1,9 @@
+{
+  "name" : "marshmallow",
+  "category" : "pigmaidbot",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "marshmallow.png"
+  }
+}

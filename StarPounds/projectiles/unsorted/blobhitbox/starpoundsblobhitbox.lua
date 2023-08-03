@@ -1,0 +1,18 @@
+--  Yes, this is empty.
+--
+--  For some god forsaken reason, you can't call
+--  world.callScriptedEntity on a projectile
+--  unless it has a script attached. It refuses
+--  even work if you include the script property,
+--  but set it to an empty array.
+--
+--  I don't know why, it makes no sense, it's dumb,
+--  but that's par for the course when comes
+--  to this game.
+--
+--  Have an ASCII cat.
+--
+--        |\      _,,,---,,_
+--  ZZZzz /,`.-'`'    -.  ;-;;,_
+--       |,4-  ) )-,_. ,\ (  `'-'
+--      '---''(_/--'  `-'\_)

@@ -1,0 +1,23 @@
+{
+  "itemName" : "starpoundsblubberslushie",
+  "rarity" : "Rare",
+  "price" : 870,
+  "category" : "drink",
+  "inventoryIcon" : "blubberslushie.png",
+  "description" : "A drink so thick, you have to try really hard to put a dent in it.",
+  "shortdescription" : "Blubber Slushie",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 540
+    }
+  ] ],
+  "foodValue": 60,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsblubberslushie" ],
+  "emitters" : [ "drinking" ]
+}

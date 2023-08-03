@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "brokenuscmhammer", "count" : 1 },
+    { "item" : "ironbar", "count" : 5 },
+    { "item" : "phasematter", "count" : 1 }
+  ],
+  "output" : {
+    "item" : "brokenprotectoratebroadsword",
+    "count" : 1
+  },
+  "groups" : [ "treasuredtrophies" ]
+}

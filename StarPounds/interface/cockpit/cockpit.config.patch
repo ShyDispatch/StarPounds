@@ -1,0 +1,22 @@
+[
+  {
+    "op": "test",
+    "path": "/displayDungeons"
+  },
+  {
+    "op": "add",
+    "path": "/displayDungeons/starpoundsfloranfeasthall",
+    "value": {
+      "description": "A large feasting hall for the Floran Gluttonist Tribe.",
+      "icon": "/interface/cockpit/dungeons/gluttonist.png"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/displayDungeons/starpoundsbarn",
+    "value": {
+      "description": "A red barn stands out in the open. Data inconclusive.",
+      "icon": "/interface/cockpit/dungeons/starpoundsbarn.png"
+    }
+  }
+]

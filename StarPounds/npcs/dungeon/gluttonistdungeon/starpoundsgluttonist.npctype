@@ -1,0 +1,94 @@
+{
+  "type" : "starpoundsgluttonist",
+  "baseType" : "hostile",
+
+  "dropPools" : [ "gluttonisthuntertreasure" ],
+
+  "damageTeam" : 3,
+
+	"identity" : {
+     "species" : "floran"
+	 },
+
+  "scriptConfig" : {
+    "starPounds_skills": {
+      "minimumSize": [2, 5],
+      "digestion": [5, 20],
+      "health": [10, 20],
+      "capacity": [5, 20],
+      "gurgleRate": [1, 5],
+      "gurgleAmount": [1, 3],
+      "bloatDigestion": [1, 5],
+      "bloatAmount": [1, 3],
+      "knockbackResistance": [1, 5],
+      "movement": [5, 20],
+      "absorption": [5, 20],
+      "voreCritter": [1, 1],
+      "voreMonster": [1, 1],
+      "voreDamage": [3, 5]
+    },
+
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "floran" : {
+          "default" : [
+            "Looksss like sssupper came right to Floran!",
+            "Floran callsss dibsss on this one!",
+            "You will make Floran nice and fat!",
+            "Floran was ssstarting to feel peckish!",
+            "Looksss like dinner isss ssserved!",
+            "Floran'sss ssstomach isss making the grumbliesss!",
+            "Sssnack picked a bad time to get lossst!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic" : [ { "name" : "gluttonisthead", "parameters" : { "colorIndex" : 10 } }, { "name" : "goathead" }, { "name" : "sabertoothhelm", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier5shead", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier6ahead", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier5mhead", "parameters" : { "colorIndex" : 10 } }, { "name" : "florantier2head", "parameters" : { "colorIndex" : 10 } } ],
+            "chestCosmetic" : [ { "name" : "predatorychest", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "legsCosmetic" : [ { "name" : "predatorypants", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "primary" : [
+              "npcgluttonistspear",
+              "npcgluttonistaxe",
+              "caloricneedler",
+              "npcgluttonistbroadsword"
+            ],
+            "sheathedprimary" : [
+              "caloricneedler",
+			  ""
+            ],
+            "alt" : [
+              "floranshield",
+              "floranshield",
+              "starpoundspotlid",
+			  "",
+			  "",
+			  "",
+			  ""
+            ]
+          }
+        ] ]
+    ]
+  },
+
+ "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 80.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.4
+      }
+    }
+  }
+}

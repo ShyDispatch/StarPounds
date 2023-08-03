@@ -1,0 +1,30 @@
+{
+  "itemName" : "greaseballoon",
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "price" : 100,    
+  "inventoryIcon" : "greaseballoonicon.png",
+  "image" : "greaseballoon.png",
+  "shortdescription" : "Grease Balloon",
+  "description" : "A balloon filled up with grease. Be careful!",
+
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 0.4,
+
+  "projectileType" : "greaseballoon",
+  "projectileConfig" : {
+    "speed" : 40,
+    "power" : 0,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item_small.ogg" ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "ability" : {
+    "type" : "starpoundsbladebarrage",
+    "name" : "Wisp Barrage",
+    "scripts" : ["/items/active/weapons/staff/abilities/controlprojectile/starpoundsplasmabarrage.lua"],
+    "class" : "ControlProjectile",
+
+    "energyCost" : 100,
+
+    "maxCastRange" : 25,
+
+    "projectileCount" : 5,
+    "projectileDistance" : 3,
+    "projectileType" : "ponderousbolt",
+    "projectileParameters" : {
+      "baseDamage" : 40
+    },
+    "triggerSound" : ["/sfx/projectiles/plasma1.ogg"],
+
+    "projectileDelayFirst" : 1.0,
+    "projectileDelayEach" : 0.25
+  }
+}

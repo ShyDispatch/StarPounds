@@ -1,0 +1,162 @@
+{
+  "objectName" : "bigfattiesonline",
+  "colonyTags" : ["starpounds","cooking","commerce","crafting","electronic"],
+  "rarity" : "Common",
+  "description" : "For hungry fatties that need delivery.",
+  "shortdescription" : "Bigfatties Terminal",
+  "race" : "generic",
+  "category" : "decorative",
+  "price" : 120000,
+  "lightColor" : [23, 33, 38],
+  "interactAction" : "OpenMerchantInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/vendingmachine.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Bigfatties",
+        "subtitle" : "^#b9b5b2;Food! Highly fattening and cheap.",
+        "icon" : {
+          "file" : "/interface/crafting/bigfatties.png"
+        }
+      }
+    },
+    "buyFactor" : 1.0,
+    "sellFactor" : 0.1,
+    "items" : [
+      { "item" : "starpoundsbloatcola" },
+      { "item" : "starpoundsheftycola" },
+      { "item" : "starpoundsdandelionrootpop" },
+      { "item" : "starpoundscookie" },
+      { "item" : "starpoundssugarcookie" },
+      { "item" : "starpoundspbcookie" },
+      { "item" : "starpoundspassionpatty" },
+      { "item" : "starpoundsgingercookie" },
+      { "item" : "starpoundsstarcandy" },
+      { "item" : "starpoundsbuttersnack" },
+      { "item" : "starpoundsbrownie" },
+      { "item" : "starpoundsjelly" },
+      { "item" : "starpoundsendomorphicjelly" },
+      { "item" : "starpoundsflantasyflan" },
+      { "item" : "starpoundsmagicpudding" },
+      { "item" : "starpoundsroyalcake" },
+      { "item" : "starpoundsenormouscake" },
+      { "item" : "starpoundsdonut" },
+      { "item" : "starpoundspinkdonut" },
+      { "item" : "starpoundschocodonut" },
+      { "item" : "starpoundsglazeddonut" },
+      { "item" : "starpoundschocolateglazeddonut" },
+      { "item" : "starpoundscinnamonroll" },
+      { "item" : "starpoundscottoncandy" },
+      { "item" : "starpoundsburrito" },
+      { "item" : "starpoundstaco" },
+      { "item" : "starpoundschurro" },
+      { "item" : "starpoundscorndog" },
+      { "item" : "starpoundshotdogk" },
+      { "item" : "starpoundshotdogm" },
+      { "item" : "starpoundshotdogc" },
+      { "item" : "starpoundsgreaseburger" },
+      { "item" : "starpoundsdoublegreaseburger" },
+      { "item" : "starpoundstastyfries" },
+      { "item" : "starpoundsmeatwich" },
+      { "item" : "starpoundsmeatwichdouble" },
+      { "item" : "starpoundsmeatfries" },
+      { "item" : "starpoundsblubbernuggets" },
+      { "item" : "starpoundschickenburger" },
+      { "item" : "starpoundsfatfriedchicken" },
+      { "item" : "starpoundsmeechmunchy" },
+      { "item" : "starpoundsscrabcake" },
+      { "item" : "starpoundsparamitepie" },
+      { "item" : "starpoundsblubberslushie" },
+      { "item" : "starpoundsmooshake" },
+      { "item" : "starpoundschocolatemooshake" },
+      { "item" : "starpoundsstrawberrymooshake" },
+      { "item" : "starpoundsicecream" },
+      { "item" : "starpoundschocolateicecream" },
+      { "item" : "starpoundsstrawberryicecream" },
+      { "item" : "starpoundsminticecream" },
+      { "item" : "starpoundsicecreamsandwich" },
+      { "item" : "starpoundschocotaco" },
+      { "item" : "starpoundsmoomilk" },
+      { "item" : "starpoundsmoomilkdeluxe" },
+      { "item" : "starpoundschocolatemoomilk" },
+      { "item" : "starpoundschocolatemoomilkdeluxe" },
+      { "item" : "starpoundsstrawberrymoomilk" },
+      { "item" : "starpoundsstrawberrymoomilkdeluxe" },
+      { "item" : "starpoundspeanutbutterjellysandwich" },
+      { "item" : "starpoundsgoldenbanana" },
+      { "item" : "starpoundsramen" },
+      { "item" : "starpoundssoba" },
+      { "item" : "starpoundschankonabe" },
+      { "item" : "starpoundstofu" },
+      { "item" : "starpoundsgreasepizzaslice" },
+      { "item" : "starpoundspizzabagel" },
+      { "item" : "starpoundsghostpepper" },
+      { "item" : "starpounds64tbpizzap" },
+      { "item" : "starpoundshugecherrycake-recipe" },
+      { "item" : "starpoundshugepancakes-recipe" },
+      { "item" : "starpoundshugechunkofmeat-recipe" },
+      { "item" : "digestionaid" },
+	    { "item" : { "name" : "digestionaid-recipe", "parameters" : { "price" : 10 } } },
+      { "item" : "lactaid" },
+      { "item" : "lactaidoverdrive" },
+      { "item" : "lactaidmilktank" },
+      { "item" : "digestionaid" },
+      { "item" : "lactaid" },
+      { "item" : "lactaidoverdrive" },
+      { "item" : "lactaidmilktank" }
+    ]
+  },
+
+
+  "apexDescription" : "Some kind of terminal.",
+  "avianDescription" : "A terminal.",
+  "floranDescription" : "Beeping terminal.",
+  "glitchDescription" : "Disinterested. A terminal.",
+  "humanDescription" : "A terminal.",
+  "hylotlDescription" : "An interface terminal.",
+  "novakidDescription" : "Just a terminal, prob'ly connects to somethin'.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "bigfattiesonline.png:<color>.<frame>", "fullbright" : true }, { "image" : "bigfattiesonlinelit.png:<color>.<frame>" } ],
+      "flipImages" : true,
+      "direction" : "left",
+
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-8, 0],
+      "frames" : 12,
+      "animationCycle" : 3.2,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "imageLayers" : [ { "image" : "bigfattiesonline.png:<color>.<frame>", "fullbright" : true }, { "image" : "bigfattiesonlinelit.png:<color>.<frame>" } ],
+      "direction" : "right",
+
+      "lightPosition" : [0, 1],
+
+      "imagePosition" : [-8, 0],
+      "frames" : 12,
+      "animationCycle" : 3.2,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "scripts" : [ "/scripts/npcToyObject.lua" ],
+  "npcToy" : {
+    "influence" : [
+      "console"
+    ],
+    "defaultReactions" : {},
+    "preciseStandPositionLeft" : [-0.5, 0.0],
+    "preciseStandPositionRight" : [2.0, 0.0],
+    "maxNpcs" : 1
+  }
+}

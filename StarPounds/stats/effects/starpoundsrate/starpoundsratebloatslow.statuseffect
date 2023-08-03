@@ -1,0 +1,11 @@
+{
+	"name": "starpoundsratebloatslow",
+	"effectConfig": {
+		"type": "gainBloat",
+		"rate": 5
+	},
+	"defaultDuration": 5,
+	"scripts": [
+		"starpoundsrate.lua"
+	]
+}

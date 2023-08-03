@@ -1,0 +1,33 @@
+{
+  "objectName" : "greaseburgerobject",
+  "colonyTags" : ["starpounds","evil"],
+  "rarity" : "Common",
+
+  "price" : 5,
+  "description" : "A steaming burger you can set down.",
+  "shortdescription" : "Grease Burger",
+  "race" : "generic",
+
+  "apexDescription" : "Just the usual fast food meal often used by Smile Burger.",
+  "avianDescription" : "A good burger can never be declined.",
+  "floranDescription" : "Mussst eat meat sssandwich.",
+  "glitchDescription" : "Cautious. Grease is quite bad for my body.",
+  "humanDescription" : "Ah I miss [Insert favorite fast food burger chain].",
+  "hylotlDescription" : "This is the pinnacle of unhealthy junk food.",
+  "novakidDescription" : "Nothing like a burger to stir up an appetite!",
+
+  "inventoryIcon" : "greaseburgericon.png",
+  "orientations" : [
+    {
+      "dualImage" : "greaseburger.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

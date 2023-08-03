@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsdevildonut",
+  "rarity" : "Legendary",
+  "price" : 1332,
+  "category" : "preparedFood",
+  "inventoryIcon" : "devildonut.png",
+  "description" : "This is a real dynamite treat. To die for even.",
+  "shortdescription" : "Devil Donut",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 720
+    }
+  ] ],
+  "foodValue": 80,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundshotdogr",
+  "rarity" : "Uncommon",
+  "price" : 330,
+  "category" : "preparedFood",
+  "inventoryIcon" : "hotdogr.png",
+  "description" : "The useless bits of meat made useful and tasty with relish.",
+  "shortdescription" : "Relish Hot Dog",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 270
+    }
+  ] ],
+  "foodValue": 30,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

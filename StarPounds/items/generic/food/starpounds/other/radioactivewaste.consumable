@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsradioactivewaste",
+  "rarity" : "Common",
+  "price" : 250,
+  "category" : "drink",
+  "inventoryIcon" : "radioactivewaste.png",
+  "description" : "A small barrel of dangerous radioactive waste. Not an appropriate drink.",
+  "shortdescription" : "Radioactive Waste",
+  "maxStack" : 1,
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 880
+    },
+    {
+        "effect" : "foodpoison",
+        "duration" : 920
+    }
+  ] ],
+  "foodValue": 10,
+  "emitters" : [ "drinking" ]
+}

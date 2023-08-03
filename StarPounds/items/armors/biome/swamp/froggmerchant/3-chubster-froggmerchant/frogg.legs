@@ -1,0 +1,16 @@
+{
+  "itemName" : "chubsterfroggmerchantlegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "legwear",
+  "description" : "Wearing these will make you resemble a Frogg.",
+  "shortdescription" : "Frogg Legs",
+  "tooltipKind" : "armor",
+
+  "hideBody" : true,
+
+  "maleFrames" : "pantsM.png",
+  "femaleFrames" : "pantsF.png"
+}

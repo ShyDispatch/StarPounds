@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsblazegraffitti",
+  "colonyTags" : ["odd"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 0,
+  "printable" : false,
+
+  "description" : "Blaze is a hecking bean.",
+  "shortdescription" : "Blaze Was Here",
+  "race" : "generic",
+
+  "apexDescription" : "Appears I'm not the first one here.",
+  "avianDescription" : "Some girl's beaten me to this area.",
+  "floranDescription" : "Floran wants to pat this Blaze.",
+  "glitchDescription" : "Neutral. Someone reached this place before me.",
+  "humanDescription" : " Blaze must be a pattable boy!",
+  "hylotlDescription" : "Seems someone has been here before me.",
+  "novakidDescription" : "Darn, I'm not the first one here.",
+
+  "inventoryIcon" : "starpoundsgraffitiicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsblazegraffitti.png:<color>",
+      "imagePosition" : [-32, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

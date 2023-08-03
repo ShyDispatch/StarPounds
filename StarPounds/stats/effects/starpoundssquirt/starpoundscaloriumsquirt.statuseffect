@@ -1,0 +1,11 @@
+{
+	"name": "starpoundscaloriumsquirt",
+	"effectConfig": {
+		"statusEffects": [{"effect": "starpoundsfood", "duration": 10}, {"effect": "caloriumsquirt", "duration": 1}],
+		"sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 3}, {"effect": "starpoundsbloat", "duration": 7}, {"effect": "caloriumsquirt", "duration": 0.5}]
+	},
+	"defaultDuration": 1,
+	"scripts": [
+		"starpoundssquirt.lua"
+	]
+}

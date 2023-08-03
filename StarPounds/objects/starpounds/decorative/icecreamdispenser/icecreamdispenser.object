@@ -1,0 +1,104 @@
+{
+  "objectName" : "icecreamdispenser",
+  "colonyTags" : ["starpounds","mechanical","commerce"],
+  "rarity" : "Common",
+  "category" : "other",
+  "price" : 800,
+  "printable" : false,
+  "description" : "A dispenser for treats of cold dairy.",
+  "shortdescription" : "Icecream Dispenser",
+  "race" : "generic",
+
+  "apexDescription" : "Too much icecream can end up going anywhere fast. Best to restrain myself.",
+  "avianDescription" : "Icecream sounds lovely right about now.",
+  "floranDescription" : "Floran doessn't like any treats that aren't made of meat.",
+  "glitchDescription" : "Excited. Such treasures lie within!",
+  "humanDescription" : "Ah nothing like the refreshing, sweet taste to beat the heat.",
+  "hylotlDescription" : "This unhealthy treats are not worth polluting my body with. Well... Maybe just one.",
+  "novakidDescription" : "Y'know, I ain't even sure if these are bad for the health o' someone like me.",
+  "throgDescription" : "Ice cream is the treat all Throgs literally scream over.",
+  "avaliDescription" : "While cold treats are always nice. I should control how much I have.",
+
+  "interactAction" : "OpenMerchantInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/vendingmachine.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : " Icecream Dispenser",
+        "subtitle" : " We all scream for ice cream!"
+      }
+    },
+    "buyFactor" : 0.5,
+    "sellFactor" : 0.2,
+    "items" : [
+      { "item" : "bananaicecream" },
+      { "item" : "catiicecream" },
+      { "item" : "coconuticecream" },
+      { "item" : "avesmingoicecream" },
+      { "item" : "eggshooticecream" },
+      { "item" : "starpoundsicecream" },
+      { "item" : "starpoundschocolateicecream" },
+      { "item" : "automatoshake" },
+      { "item" : "reefshake" },
+      { "item" : "starpoundsmooshake" },
+      { "item" : "starpoundschocolatemooshake" },
+      { "item" : "bananasplit" }
+    ]
+  },
+
+  "inventoryIcon" : "icecreamdispensericon.png",
+  "orientations" : [
+    {
+      "image" : "icecreamdispenser.png:<color>?flipx",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "left",
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"],
+      "collision" : "platform"
+    },
+    {
+      "image" : "icecreamdispenser.png:<color>",
+      "imagePosition" : [-16, -0],
+
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"],
+      "collision" : "platform"
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/fluorescent_light_loud.ogg",
+  "soundEffectRangeMultiplier" : 0.5,
+
+  "scripts" : [
+    "/scripts/npcToyObject.lua"
+  ],
+  "scriptDelta" : 60,
+
+  "npcToy" : {
+    "influence" : [
+      "vendingmachineActivate",
+      "vendingmachineCollect",
+      "vendingmachineConsume",
+      "vendingmachineComplete"
+    ],
+    "defaultReactions" : {
+      "vendingmachineActivate" : [
+        [1.0, "pressbutton"]
+      ],
+      "vendingmachineConsume" : [
+        [1.0, "drink"]
+      ],
+      "vendingmachineComplete" : [
+        [1.0, "smile"],
+        [0.1, "vomit"]
+      ]
+    },
+    "preciseStandPositionLeft" : [-2.0, 1.0],
+    "preciseStandPositionRight" : [2.0, 1.0],
+    "maxNpcs" : 1
+  }
+}

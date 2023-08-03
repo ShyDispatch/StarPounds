@@ -1,0 +1,260 @@
+{
+  "globalTagDefaults" : {
+    "paletteSwaps" : ""
+  },
+
+  "animatedParts" : {
+    "stateTypes" : {
+      "swoosh" : {
+        "default" : "idle",
+        "states" : {
+          "idle" : {},
+          "inactivefire" : {
+            "frames" : 3,
+            "cycle" : 0.07,
+            "mode" : "transition",
+            "transition" : "idle"
+          },
+          "activefire" : {
+            "frames" : 3,
+            "cycle" : 0.07,
+            "mode" : "transition",
+            "transition" : "idle"
+          }
+        }
+      },
+      "hammer" : {
+        "default" : "inactive",
+        "states" : {
+          "inactive" : {
+            "properties" : {
+              "lightsOff" : ["glow"],
+              "particleEmittersOff" : ["hammer"]
+            }
+          },
+          "extend" : {
+            "frames" : 5,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "active",
+            "properties" : {
+              "lightsOn" : ["glow"],
+              "particleEmittersOn" : ["hammer"],
+              "immediateSound" : "/sfx/tools/energypickaxe_start.ogg"
+            }
+          },
+          "active" : {
+            "properties" : {
+              "lightsOn" : ["glow"],
+              "particleEmittersOn" : ["hammer"],
+              "persistentSound" : "/sfx/tools/energypickaxe_idle.ogg"
+            }
+          },
+          "retract" : {
+            "frames" : 5,
+            "cycle" : 0.25,
+            "mode" : "transition",
+            "transition" : "inactive",
+            "properties" : {
+              "lightsOn" : ["glow"],
+              "particleEmittersOn" : ["hammer"],
+              "immediateSound" : "/sfx/tools/energypickaxe_stop2.ogg"
+            }
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "hammer" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 0,
+          "transformationGroups" : ["weapon"],
+          "rotationCenter" : [0, 0],
+          "damageArea" : [[-1, 0.25], [-1, 1.5], [1.5, 1.75], [1.5, 0.0]],
+          "groundImpactPoly" : [ [1, 1.75],  [1, 0.0],  [2, 0.0],  [2, 1.75] ],
+          "groundSlamPoint" : [0, 1.5]
+        },
+
+        "partStates" : {
+          "hammer" : {
+            "inactive" : {
+              "properties" : {
+                "image" : "<partImage>:inactive?<directives>?<bladeDirectives>"
+              }
+            },
+            "extend" : {
+              "properties" : {
+                "image" : "<partImage>:extend.<frame>?<directives>?<bladeDirectives>"
+              }
+            },
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:active?<directives>?<bladeDirectives>"
+              }
+            },
+            "retract" : {
+              "properties" : {
+                "image" : "<partImage>:retract.<frame>?<directives>?<bladeDirectives>"
+              }
+            }
+          }
+        }
+      },
+
+      "hammerfullbright" : {
+        "properties" : {
+          "centered" : true,
+          "zLevel" : 1,
+          "fullbright" : true,
+          "transformationGroups" : ["weapon"],
+          "rotationCenter" : [0, 0],
+          "damageArea" : [[-1, 0.25], [-1, 1.5], [1.5, 1.75], [1.5, 0.0]],
+          "groundImpactPoly" : [ [1, 1.75],  [1, 0.0],  [2, 0.0],  [2, 1.75] ]
+        },
+
+        "partStates" : {
+          "hammer" : {
+            "inactive" : {
+              "properties" : {
+                "image" : "<partImage>:inactive?<directives>?<bladeDirectives>"
+              }
+            },
+            "extend" : {
+              "properties" : {
+                "image" : "<partImage>:extend.<frame>?<directives>?<bladeDirectives>"
+              }
+            },
+            "active" : {
+              "properties" : {
+                "image" : "<partImage>:active?<directives>?<bladeDirectives>"
+              }
+            },
+            "retract" : {
+              "properties" : {
+                "image" : "<partImage>:retract.<frame>?<directives>?<bladeDirectives>"
+              }
+            }
+          }
+        }
+      },
+
+      "swoosh" : {
+        "properties" : {
+          "zLevel" : -1,
+          "centered" : true,
+          "offset" : [-2.0, 1.5],
+          "transformationGroups" : ["swoosh"],
+          "rotationCenter" : [0, 0]
+        },
+
+        "partStates" : {
+          "swoosh" : {
+            "idle" : {
+              "properties" : {
+                "fullbright" : false,
+                "image" : ""
+              }
+            },
+            "inactivefire" : {
+              "properties" : {
+                "fullbright" : false,
+                "image" : "/items/active/weapons/melee/hammer/swoosh/<elementalType>swoosh.png:<frame>",
+                "damageArea" : [[-3.5, 2], [-2.5, 3], [1, 3], [3, 1.75], [4, -0.25], [4, -2.25], [3, -3.25], [0, -2.5]]
+              }
+            },
+            "activefire" : {
+              "properties" : {
+                "fullbright" : true,
+                "image" : "/items/active/weapons/melee/hammer/swoosh/uscmhammerenergyswoosh.png:<frame>",
+                "damageArea" : [[-3.5, 2], [-2.5, 3], [1, 3], [3, 1.75], [4, -0.25], [4, -2.25], [3, -3.25], [0, -2.5]]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "weapon" : {},
+    "swoosh" : {}
+  },
+
+  "particleEmitters" : {
+    "inactivephysicalswoosh" : {
+      "active" : false,
+      "particles" : []
+    },
+    "activephysicalswoosh" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "offsetRegion" : [1, 0.5, 1, 1.75],
+      "burstCount" : 4,
+      "particles" : [
+        { "particle" : "energyblade"},
+        { "particle" : "energyblade2"}
+      ]
+    },
+    "hammer" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "offsetRegion" : [-1, 0.5, 1, 1.75],
+      "emissionRate" : 5,
+      "particles" : [
+        { "particle" : "energyblade"},
+        { "particle" : "energyblade2"}
+      ]
+    },
+    "charge" : {
+      "active" : false,
+      "transformationGroups" : ["weapon"],
+      "emissionRate" : 30,
+      "offsetRegion" : [-1, 0.5, 1, 1.75],
+      "particles" : [
+        { "particle" : "electricswooshpurple"}
+      ]
+    },
+    "groundImpact" : {
+      "transformationGroups" : ["weapon"],
+      "particles" : [
+        {
+          "count" : 1,
+          "particle" : {
+            "type" : "animated",
+            "mode" : "LoopForever",
+            "animation" : "/animations/jumpsmoke/jumpsmoke.animation",
+            "fade" : 0.9,
+            "destructionAction" : "shrink",
+            "destructionTime" : 0.4,
+            "position" : [1.0, 0.75],
+            "offsetRegion" : [0, 0, 0, 0],
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [5, 5],
+            "timeToLive" : 0.4
+          }
+        }
+      ]
+    }
+  },
+
+  "lights" : {
+    "glow" : {
+      "position" : [0, 2.0],
+      "color" : [90, 50, 120],
+      "transformationGroups" : ["weapon"]
+    }
+  },
+
+  "sounds" : {
+    "inactivefire" : [ "/sfx/melee/swing_hammer.ogg" ],
+    "activefire" : [ "/sfx/melee/uscm_hammer_active_swing1.ogg", "/sfx/melee/uscm_hammer_active_swing2.ogg", "/sfx/melee/uscm_hammer_active_swing3.ogg" ],
+    "empower" : [],
+    "groundImpact" : [ "/sfx/melee/hammer_hit_ground3.ogg", "/sfx/melee/hammer_hit_ground4.ogg" ],
+    "charge" : [ "/sfx/melee/shockwave_charge_electric.ogg" ],
+    "full" : [ "/sfx/melee/shockwave_full_electric.ogg" ],
+    "impact" : [ "/sfx/gun/grenadeblast_electric2.ogg" ]
+  }
+}

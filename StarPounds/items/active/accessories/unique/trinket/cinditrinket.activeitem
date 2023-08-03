@@ -1,0 +1,23 @@
+{
+  "itemName" : "cinditrinket",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "For the ones you want to savour.",
+  "shortdescription" : "The Personal Touch",
+  "inventoryIcon" : "cinditrinket.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "stats": [
+    {"name": "capacity", "modifier": -0.25},
+    {"name": "digestion", "modifier": -0.2},
+    {"name": "experienceMultiplier", "modifier": 0.25}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

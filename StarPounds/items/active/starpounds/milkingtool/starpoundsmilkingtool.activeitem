@@ -1,0 +1,19 @@
+{
+  "itemName" : "starpoundsmilkingtool",
+  "price" : 1000,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "tool",
+  "description" : "Significantly easier than doing it the old fashioned way.",
+  "shortdescription" : "Breast Pump",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "starpoundsmilkingtool.png",
+  "animation" : "starpoundsmilkingtool.animation",
+  "animationCustom" : {},
+  "scripts" : ["starpoundsmilkingtool.lua"],
+
+  "fireTime" : 1.0,
+  "fireOffset" : [0.0, 0.0]
+}

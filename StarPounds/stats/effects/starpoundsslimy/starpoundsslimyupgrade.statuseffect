@@ -1,0 +1,21 @@
+{
+  "name" : "starpoundsslimyupgrade",
+  "blockingStat" : "slimeImmunity",
+  "effectConfig" : {
+    "powerModifier": 0.5,
+    "color": "48a075",
+    "controlModifiers": {
+      "speedModifier": 0.5
+    }
+  },
+  "defaultDuration" : 4,
+
+  "scripts" : [
+    "starpoundsslimy.lua"
+  ],
+
+  "animationConfig" : "starpoundsslimy.animation",
+
+  "label" : "Slimy",
+  "icon" : "/interface/statuses/starpoundsslimy.png"
+}

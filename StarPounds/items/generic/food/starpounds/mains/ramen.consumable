@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsramen",
+  "rarity" : "Uncommon",
+  "price" : 250,
+  "category" : "preparedFood",
+  "inventoryIcon" : "ramen.png",
+  "description" : "Nothing like a bowl of classic noodles. Might be overly salty though.",
+  "shortdescription" : "Ramen Noodles",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 225
+    }
+  ] ],
+  "foodValue": 25,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsramen" ]
+}

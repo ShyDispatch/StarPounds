@@ -1,0 +1,9 @@
+{
+  "name" : "body6",
+  "category" : "starpoundsharpyturquoise",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body6.png"
+  }
+}

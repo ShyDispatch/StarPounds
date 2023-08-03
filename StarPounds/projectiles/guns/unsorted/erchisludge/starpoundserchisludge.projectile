@@ -1,0 +1,21 @@
+{
+  "projectileName" : "starpoundserchisludge",
+  "image" : "starpoundserchisludge.png",
+  "physics" : "grenadenobounce",
+  "animationCycle" : 0.6,
+  "animationLoops" : false,
+  "damageKindImage" : "icon.png",
+  "frameNumber" : 10,
+  "power" : 90,
+  "speed" : 45,
+  "timeToLive" : 0.5,
+  "bounces" : 0,
+  "statusEffects" : [
+    {"effect": "starpoundsbloat", "duration": 20},
+    {"effect": "erchiusbloat", "duration": 10}
+  ],
+  "piercing" : true,
+  "emitters" : [ "starpoundserchiussludge" ],
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "damageKind" : "caloric"
+}

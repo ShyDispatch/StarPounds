@@ -1,0 +1,88 @@
+{
+  "name": "npcpredatorcombat",
+  "description": "",
+  "scripts": [
+    "/scripts/actions/vore.lua",
+    "/scripts/actions/entity.lua"
+  ],
+  "parameters": {
+    "meleeStandby": true
+  },
+  "root": {
+    "title": "parallel",
+    "type": "composite",
+    "name": "parallel",
+    "parameters": {
+      "fail": {"value": 1},
+      "success": {"value": -1}
+    },
+    "children": [
+      {
+        "title": "sequence",
+        "type": "composite",
+        "name": "sequence",
+        "parameters": {},
+        "children": [
+          {
+            "title": "inverter",
+            "type": "decorator",
+            "name": "inverter",
+            "parameters": {},
+            "child": {
+              "title": "hasEatenEntity",
+              "type": "action",
+              "name": "hasEatenEntity",
+              "parameters": {
+                "entity": {"key": "target"}
+              }
+            }
+          },
+          {
+            "title": "isValidTarget",
+            "type": "action",
+            "name": "isValidTarget",
+            "parameters": {
+              "entity": {"key": "target"}
+            }
+          },
+          {
+            "title": "controlAggressive",
+            "type": "action",
+            "name": "controlAggressive",
+            "parameters": {}
+          }
+        ]
+      },
+      {
+        "title": "dynamic",
+        "type": "composite",
+        "name": "dynamic",
+        "parameters": {},
+        "children": [
+          {
+            "title": "cooldown",
+            "type": "decorator",
+            "name": "cooldown",
+            "parameters": {
+              "cooldown": {"value": 2},
+              "onFail": {"value": true},
+              "onSuccess": {"value": false}
+            },
+            "child": {
+              "title": "vorecombat",
+              "type": "module",
+              "name": "vorecombat",
+              "parameters": {}
+            }
+          },
+          {
+            "title": "runner",
+            "type": "action",
+            "name": "runner",
+            "parameters": {}
+          }
+        ]
+      }
+    ]
+  }
+}

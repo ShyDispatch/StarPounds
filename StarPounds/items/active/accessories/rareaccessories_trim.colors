@@ -1,0 +1,13 @@
+{
+  "name" : "rareaccessories_trim",
+  "swaps" : [
+    // DURASTEEL
+    { "951500" : "211e55", "be1b00" : "4b4d8c", "dc1f00" : "7887b3", "f32200" : "a0b5d4" },
+    // GOLD (VANILLA)
+    { "951500" : "b97c01", "be1b00" : "e2af20", "dc1f00" : "ffd84d", "f32200" : "fff48f" },
+    // SILVER (VANILLA)
+    { "951500" : "647080", "be1b00" : "8799aa", "dc1f00" : "b3cbdf", "f32200" : "d7ecfa" },
+    // TITANIUM (VANILLA)
+    { "951500" : "685da0", "be1b00" : "c6a5cd", "dc1f00" : "dad8ed", "f32200" : "ffffff" }
+  ]
+}

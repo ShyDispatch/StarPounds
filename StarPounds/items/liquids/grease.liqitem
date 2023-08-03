@@ -1,0 +1,11 @@
+{
+  "itemName" : "liquidgrease",
+  "rarity" : "Common",
+  "category" : "liquid",
+  "inventoryIcon" : "liquidgreaseicon.png",
+  "shortdescription" : "Grease",
+  "description" : "This calorie high grease burns to the touch.",
+
+  "liquid" : "greaseliquid",
+  "price" : 0
+}

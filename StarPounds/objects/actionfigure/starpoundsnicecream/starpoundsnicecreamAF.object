@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsnicecreamaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"Sentient Ice Cream that desires to be eaten.\"",
+  "shortdescription" : "Nice Cream Figurine",
+
+
+
+  "inventoryIcon" : "starpoundsnicecreamaf.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsnicecreamaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "starpoundsnicecreamaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

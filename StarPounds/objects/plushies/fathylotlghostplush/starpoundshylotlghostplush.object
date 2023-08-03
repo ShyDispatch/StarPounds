@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundshylotlghostplush",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+
+  "description" : "A soft plush of a fat Hylotl ghost..",
+  "shortdescription" : "Fat Hylotl Ghost Plushie",
+  "race" : "hylotl",
+
+  "apexDescription" : "Poptops give me the creeps, but this one is almost cute.",
+  "avianDescription" : "Why make plushies of such a terrifying little creature?",
+  "floranDescription" : "Awww, Floran likess Poptop plushie bessst.",
+  "glitchDescription" : "Conflicted. Poptops are deadly creatures, but they're quite cute.",
+  "humanDescription" : "Aww, it's almost enough to make you forget how scary real Poptops are.",
+  "hylotlDescription" : "This is quite an adorable plushie of a rather scary creature.",
+  "novakidDescription" : "Too cute to be a real Poptop.",
+
+  "inventoryIcon" : "starpoundshylotlghostplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundshylotlghostplush.png:<color>",
+      "imagePosition" : [-8, 0],
+      
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

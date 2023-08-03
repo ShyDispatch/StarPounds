@@ -1,0 +1,62 @@
+{
+  "itemName" : "throgdinnerplate",
+  "fixedLevel" : 6,
+  "price" : 460,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "shield",
+  "description" : "A small energy shield that can expand for any Throg meal or threat.",
+  "shortdescription" : "Throg Dinner Plate",
+  "tooltipKind" : "Shield",
+  "twoHanded" : false,
+  "itemTags" : ["shield"],
+
+  "inventoryIcon" : "images/throgdinnerplate.png:nearidle",
+
+  "animation" : "shieldfullbright.animation",
+  "animationParts" : {
+    "shield" : "images/throgdinnerplate.png",
+	"shieldFullbright" : "images/throgdinnerplatefullbright.png"
+  },
+  "animationCustom" : {
+    "animatedParts" : { "parts" : { "shield" : { "properties" : {
+        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+    }}}},
+    "sounds" : {
+      "raiseShield" : [ "/sfx/gun/magnorbs_shield.ogg" ],
+      "perfectBlock" : [ "/sfx/gun/aegisaltpistol_start.ogg" ],
+      "block" : [ "/sfx/gun/aegisaltpistol_stop.ogg" ],
+      "break" : [ "/sfx/melee/throg_shield_break.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/shields/shield.lua"],
+
+  "minActiveTime" : 0.3,
+
+  "forceWalk" : false,
+  "baseShieldHealth" : 70,
+  "cooldownTime" : 0.9,
+
+  "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
+  "perfectBlockTime" : 0.2,
+
+  "knockback" : 10,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "raised" : {
+      "armRotation" : 0,
+      "shieldRotation" : 0,
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandshield.lua"
+}

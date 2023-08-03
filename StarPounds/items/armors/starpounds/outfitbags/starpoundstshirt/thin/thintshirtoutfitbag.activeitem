@@ -1,0 +1,23 @@
+{
+  "itemName" : "thintshirtoutfitbag",
+  "price" : 150,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "Tshirt Outfit",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "thintshirtoutfitbagicon.png",
+  "animation" : "thintshirtoutfitbag.animation",
+  "animationCustom" : {},
+  "scripts" : ["/scripts/items/outfitbag.lua"],
+
+  "itemTags" : [ "starpounds" ],
+  
+  "fireTime" : 2.0,
+  "fireOffset" : [1.0, 0.0],
+  
+  "outfitKey" : "starpoundstshirt"
+}

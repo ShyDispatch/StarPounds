@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundschocodonut",
+  "rarity" : "Uncommon",
+  "price" : 340,
+  "category" : "preparedFood",
+  "inventoryIcon" : "chocodonut.png",
+  "description" : "The most basic donut, always a good treat.",
+  "shortdescription" : "Classic Chocolate Donut",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 540
+    }
+  ] ],
+  "foodValue": 60,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundschocodonut" ]
+}

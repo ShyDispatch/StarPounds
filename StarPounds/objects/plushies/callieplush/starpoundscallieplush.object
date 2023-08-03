@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundscallieplush",
+  "colonyTags" : ["hylotl","hylotloceancity","pretty","starpounds"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+
+  "description" : "A soft Callie plush toy.",
+  "shortdescription" : "Callie Plushie",
+  "race" : "hylotl",
+
+  "apexDescription" : "It's a plush of some sort of cake monster?",
+  "avianDescription" : "Frosting? Cream? Cake? This monster girl is made of something sweet.",
+  "floranDescription" : "Plusssh not really made of frosssting.",
+  "glitchDescription" : "Curious. Is this supposed to be a dessert monster?",
+  "humanDescription" : "Legally distinct cream monster girl in plush form!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundscallieplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundscallieplush.png:<color>",
+      "imagePosition" : [-8, 0],
+      
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

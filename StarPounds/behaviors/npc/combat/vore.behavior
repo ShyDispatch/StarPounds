@@ -1,0 +1,233 @@
+{
+  "name": "vorecombat",
+  "description": null,
+  "scripts": [
+    "/scripts/behavior.lua",
+    "/scripts/actions/math.lua",
+    "/scripts/actions/world.lua",
+    "/scripts/actions/movement.lua",
+    "/scripts/actions/vore.lua",
+    "/scripts/actions/time.lua",
+    "/scripts/actions/dialog.lua"
+  ],
+  "parameters": {
+    "leapCooldown": 4,
+    "leapChance": 0.5
+  },
+  "root": {
+    "title": "sequence",
+    "type": "composite",
+    "name": "sequence",
+    "parameters": {},
+    "children": [
+      {
+        "title": "setFlag",
+        "type": "action",
+        "name": "setFlag",
+        "parameters": {
+          "name": {"value": "avoidLiquid"}
+        }
+      },
+      {
+        "title": "parallel",
+        "type": "composite",
+        "name": "parallel",
+        "parameters": {
+          "fail": {"value": -1},
+          "success": {"value": -1}
+        },
+        "children": [
+          {
+            "title": "vorecombat-approach",
+            "type": "module",
+            "name": "vorecombat-approach",
+            "parameters": {}
+          },
+          {
+            "title": "cooldown",
+            "type": "decorator",
+            "name": "cooldown",
+            "parameters": {
+              "cooldown": {"value": 1},
+              "onFail": {"value": false},
+              "onSuccess": {"value": true}
+            },
+            "child": {
+              "title": "selector",
+              "type": "composite",
+              "name": "selector",
+              "parameters": {},
+              "children": [
+                {
+                  "title": "cooldown",
+                  "type": "decorator",
+                  "name": "cooldown",
+                  "parameters": {
+                    "cooldown": {"key": "<leapCooldown>"},
+                    "onFail": {"value": false},
+                    "onSuccess": {"value": true}
+                  },
+                  "child": {
+                    "title": "cooldown",
+                    "type": "decorator",
+                    "name": "cooldown",
+                    "parameters": {
+                      "cooldown": {"value": 0.5},
+                      "onFail": {"value": true},
+                      "onSuccess": {"value": true}
+                    },
+                    "child": {
+                      "title": "sequence",
+                      "type": "composite",
+                      "name": "sequence",
+                      "parameters": {},
+                      "children": [
+                        {
+                          "title": "chance",
+                          "type": "action",
+                          "name": "chance",
+                          "parameters": {
+                            "chance": {"key": "<leapChance>"}
+                          }
+                        },
+                        {
+                          "title": "vorecombat-leap",
+                          "type": "module",
+                          "name": "vorecombat-leap",
+                          "parameters": {
+                            "leapWindup": {"value": 0.1}
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "title": "sequence",
+                  "type": "composite",
+                  "name": "sequence",
+                  "parameters": {},
+                  "children": [
+                    {
+                      "title": "entityInRange",
+                      "type": "action",
+                      "name": "entityInRange",
+                      "parameters": {
+                        "entity": {"key": "target"},
+                        "position": {"key": "self"},
+                        "range": {"value": 5}
+                      }
+                    },
+                    {
+                      "title": "succeeder",
+                      "type": "decorator",
+                      "name": "succeeder",
+                      "parameters": {},
+                      "child": {
+                        "title": "parallel",
+                        "type": "composite",
+                        "name": "parallel",
+                        "parameters": {
+                          "fail": {"value": 1},
+                          "success": {"value": -1}
+                        },
+                        "children": [
+                          {
+                            "title": "onGround",
+                            "type": "action",
+                            "name": "onGround",
+                            "parameters": {}
+                          },
+                          {
+                            "title": "entityInRange",
+                            "type": "action",
+                            "name": "entityInRange",
+                            "parameters": {
+                              "entity": {"key": "target"},
+                              "position": {"key": "self"},
+                              "range": {"value": 5}
+                            }
+                          },
+                          {
+                            "title": "sequence",
+                            "type": "composite",
+                            "name": "sequence",
+                            "parameters": {},
+                            "children": [
+                              {
+                                "title": "tryEatEntity",
+                                "type": "action",
+                                "name": "tryEatEntity",
+                                "parameters": {
+                                  "entity": {"key": "target"}
+                                }
+                              },
+                              {
+                                "title": "reaction-love",
+                                "type": "module",
+                                "name": "reaction-love",
+                                "parameters": {}
+                              },
+                              {
+                                "title": "timer",
+                                "type": "action",
+                                "name": "timer",
+                                "parameters": {
+                                  "time": {"value": 0.5}
+                                }
+                              },
+                              {
+                                "title": "hasEatenEntity",
+                                "type": "action",
+                                "name": "hasEatenEntity",
+                                "parameters": {
+                                  "entity": {"key": "target"}
+                                }
+                              },
+                              {
+                                "title": "selector",
+                                "type": "composite",
+                                "name": "selector",
+                                "parameters": {},
+                                "children": [
+                                  {
+                                    "title": "chance",
+                                    "type": "action",
+                                    "name": "chance",
+                                    "parameters": {
+                                      "chance": {"value": 0.75}
+                                    }
+                                  },
+                                  {
+                                    "title": "sayToEntity",
+                                    "type": "action",
+                                    "name": "sayToEntity",
+                                    "parameters": {
+                                      "dialogType": {"value": "dialog.killedTarget"},
+                                      "entity": {"key": "target"},
+                                      "tags": {"value": {}}
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "title": "runner",
+            "type": "action",
+            "name": "runner",
+            "parameters": {}
+          }
+        ]
+      }
+    ]
+  }
+}

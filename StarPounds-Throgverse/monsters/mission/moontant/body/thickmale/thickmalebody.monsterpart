@@ -1,0 +1,14 @@
+{
+  "name" : "thickmalebody",
+  "category" : "moontant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "thickmalebody.png"
+  },
+
+  "parameters" : {
+    "meleeProjectile" : "meleeslash",
+    "projectileSourcePosition" : [1, -1]
+  }
+}

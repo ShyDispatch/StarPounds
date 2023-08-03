@@ -1,0 +1,10 @@
+{
+  "name" : "lactaidmilktank",
+  "effectConfig" : {
+    "skill": "breastCapacity"
+  },
+	"scripts": [
+		"lactaid.lua"
+	],
+  "defaultDuration" : 1
+}

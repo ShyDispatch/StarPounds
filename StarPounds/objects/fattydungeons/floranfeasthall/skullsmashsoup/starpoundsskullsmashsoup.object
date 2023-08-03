@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsskullsmashsoup",
+  "colonyTags" : ["floran","fatdungeons","gluttonist","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "description" : "A strong odor wafts from this strange soup.",
+  "shortdescription" : "Floran Soupbowl",
+  "race" : "generic",
+
+  "apexDescription" : "This soup certainly has a presence.",
+  "avianDescription" : "I can feel my liver dying just smelling this stuff.",
+  "floranDescription" : "Sssoup is named Ssskullsssmash because next day ssskull feelsss like sssmash!",
+  "glitchDescription" : "Concerned. This soup seems to contain ingredients that have alcohol-like effects.",
+  "humanDescription" : "Is this soup... Alcoholic?",
+  "hylotlDescription" : "It reeks of death and liver failure.",
+  "novakidDescription" : "Hot darn this stuff reeks!",
+
+  "inventoryIcon" : "starpoundsskullsmashsoupicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsskullsmashsoup.png",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaces" : [ [0, 0], [1, 0], [0, 1], [1, 1] ],
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

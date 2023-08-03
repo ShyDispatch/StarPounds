@@ -1,0 +1,19 @@
+[
+  {
+    "op": "add",
+    "path": "/converse/throg",
+    "value": {
+      "default": [
+        "Getting hungry, captain.",
+        "Hey captain. Let's have an eating contest sometime.",
+        "So when's dinner? And dessert?.",		
+        "My belly aches for adventure.",			
+        "You have other staches of food, right?",				
+        "Weapons and armor are clean, captain.",					
+        "Food rations accounted for.",
+        "Ready to head out for fresh meat.",
+        "I'm good for a mission. I'm also good with just sitting on the ship."
+      ]
+    }
+  }
+]

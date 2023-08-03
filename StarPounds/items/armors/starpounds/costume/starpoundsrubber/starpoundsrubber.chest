@@ -1,0 +1,50 @@
+{
+  "itemName" : "starpoundsrubberchest",
+  "price" : 5000,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "chestwear",
+  "description" : "A stretchy skin tight rubber suit that practically becomes one with your body.",
+  "shortdescription" : "Rubber Suit",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "colorOptions" : [
+    // RUBBER
+    { "B5B5B5" : "B5B5B5", "838383" : "838383", "555555" : "555555", "383838" : "383838", "212121" : "212121", "151515" : "151515" },
+    // BLACK
+    { "B5B5B5" : "9C9C9C", "838383" : "6F6F6F", "555555" : "434343", "383838" : "2D2D2D", "212121" : "191919", "151515" : "111111" },
+    // GREY
+    { "B5B5B5" : "E6E6E6", "838383" : "B6B6B6", "555555" : "7B7B7B", "383838" : "555555", "212121" : "373737", "151515" : "303030" },
+    // WHITE
+    { "B5B5B5" : "F9F9F9", "838383" : "D6D6D6", "555555" : "B2B2B2", "383838" : "909090", "212121" : "595959", "151515" : "404040" },
+    // RED
+    { "B5B5B5" : "EAB5B5", "838383" : "F18989", "555555" : "B84B4B", "383838" : "702B2B", "212121" : "562222", "151515" : "422020" },
+    // ORANGE
+    { "B5B5B5" : "FFE5BE", "838383" : "EEBB7A", "555555" : "D1984E", "383838" : "B26E37", "212121" : "855229", "151515" : "62371E" },
+    // YELLOW
+    { "B5B5B5" : "FFFFDD", "838383" : "FFF890", "555555" : "F3DE69", "383838" : "D3B956", "212121" : "A68A3D", "151515" : "8A6931" },
+    // GREEN
+    { "B5B5B5" : "DDF6D3", "838383" : "9BED8A", "555555" : "609C54", "383838" : "2F6A2F", "212121" : "1D401E", "151515" : "1C371D" },
+    // BLUE
+    { "B5B5B5" : "C7E2F1", "838383" : "89B3F1", "555555" : "4B77B8", "383838" : "4B5795", "212121" : "383A66", "151515" : "2A2C52" },
+    // PURPLE
+    { "B5B5B5" : "DBB5EA", "838383" : "C986E3", "555555" : "85469D", "383838" : "5D316D", "212121" : "482256", "151515" : "392042" },
+    // PINK
+    { "B5B5B5" : "F7D4EE", "838383" : "F5B1E0", "555555" : "E49BCD", "383838" : "A55386", "212121" : "6A2B51", "151515" : "541B3E" },
+    // BROWN
+    { "B5B5B5" : "F6DDB2", "838383" : "DAB386", "555555" : "A1835F", "383838" : "6D5134", "212121" : "4D3724", "151515" : "3E2A18" }
+  ]
+}

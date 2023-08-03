@@ -1,0 +1,38 @@
+{
+  "objectName" : "royalwidethrone",
+  "colonyTags" : ["glitch","glitchcastle","valuable"],
+  "rarity" : "Common",
+  "description" : "A throne fit for royal buttocks.=Unfinished",
+  "shortdescription" : "Royal Throne",
+  "race" : "glitch",
+  "category" : "furniture",
+  "price" : 305,
+
+  "apexDescription" : "A large gold throne.",
+  "avianDescription" : "Royalty appear to surround themselves with gold.",
+  "floranDescription" : "Shiny metal chair.",
+  "glitchDescription" : "Impressed. The royalty that uses this throne must be mooshi sized.",
+  "humanDescription" : "A royal throne. Beautifully crafted from gold and satin.",
+  "hylotlDescription" : "The focal point of pompous opulence.",
+  "novakidDescription" : "I can imagine the huffin' of a noble failing to get their butt off this seat.",
+
+  "inventoryIcon" : "royalwidethroneicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "royalwidethrone.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+  "sitPosition" : [2, 20]
+
+}

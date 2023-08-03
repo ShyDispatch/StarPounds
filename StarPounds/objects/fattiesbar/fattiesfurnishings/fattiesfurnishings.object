@@ -1,0 +1,128 @@
+{
+  "objectName" : "fattiesfurnishings",
+  "colonyTags" : ["starpounds","commerce"],
+  "rarity" : "Common",
+  "category" : "other",
+  "printable" : false,
+  "description" : "Fine furnishings, with a fat twist.",
+  "shortdescription" : "Fat Furnishings",
+  "race" : "generic",
+
+  "apexDescription" : "This frog appears to be selling strange furniture.",
+  "avianDescription" : "I suppose I could buy some furniture for myself!",
+  "floranDescription" : "Floran ssslightly scared by silent frog.",
+  "glitchDescription" : "Impressed. This frog has some comfortable looking wares.",
+  "humanDescription" : "I guess \"Frögg Furnishing\" must be a chain store?",
+  "hylotlDescription" : "This curious individual appears to be selling furniture.",
+  "novakidDescription" : "This looks like a mighty fine opportunity for some decoratin'!",
+  "throgDescription" : "I can tell by the look of their eyes. This Frogg has good taste in what they sell.",
+  "mootantDescription" : "I guess \"Frögg Furnishing\" must be a chain store?",
+  "harpyDescription" : "I suppose I could buy some furniture for myself!",
+
+  "avaliDescription" : "Wait, \"Fat Furnishing\" What did I stumble upon?",
+
+  "inventoryIcon" : "fattiesfurnishingsicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "fattiesfurnishings.png:default.<frame>" }, { "image" : "fattiesfurnishingslit.png:default.<frame>", "fullbright" : true  } ],
+      "imagePosition" : [-24, -0],
+
+      "direction" : "right",
+
+      "frames" : 25,
+      "animationCycle" : 3,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ],
+
+  "scripts" : [ "fattiesfurnishings.lua" ],
+  "scriptDelta" : 0,
+
+  "interactData" : {
+    "config" : "/interface/fattyshops/fatshops.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Fat Furnishing",
+        "subtitle" : "Decorate like a fatty.",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/fatfurnishing.png"
+        }
+      }
+    },
+    "filter" : [],
+	"modTab" : [{
+      "file": "/interface/fattyshops/tabs/feedingtube.png",
+	  "label": "FeedTube",
+      "filter": [ "feedingtube" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/scale.png",
+	  "label": "Scales",
+      "filter": [ "scales" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/treadmill.png",
+	  "label": "Tread",
+      "filter": [ "treadmill" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/junkfood.png",
+	  "label": "JunkFood",
+      "filter": [ "junkfood" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/decorations.png",
+	  "label": "Decor",
+      "filter": [ "decor" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/plushes.png",
+	  "label": "Plushes",
+      "filter": [ "plushes" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/interactives.png",
+	  "label": "Interact",
+      "filter": [ "interactables" ]
+    },	
+	{
+      "file": "/interface/fattyshops/tabs/materials.png",
+	  "label": "Material",
+      "filter": [ "materials" ]
+    }]
+  },
+  "storeInventory" : {
+    "feedingtube" : [
+      "starpoundsfeedingtube", "apexfeedingtube", "avianfeedingtube", "floranfeedingtube", "hylotlfeedingtube", "glitchfeedingtube", "throgfeedingtube", "ancientfeedingtube"
+    ],
+    "scales" : [
+      "fattiesweightscale", "apexweightscale", "avianweightscale", "floranweightscale", "glitchweightscale", "hylotlweightscale", "novakidweightscale", "throgweightscale", "ancientweightscale"
+    ],	
+    "treadmill" : [
+      "starpoundstreadmill", "starpoundsapextreadmill", "starpoundsaviantreadmill", "starpoundsflorantreadmill", "starpoundshylotltreadmill", "starpoundsancienttreadmill"
+    ],	
+    "junkfood" : [
+      "smokespecialobject", "blubberbassobject", "starpoundspizzabox", "starpoundspizzaboxstack", "starpoundspizzaboxopen", "starpoundsmessypizzaboxstack", "starpoundsdonutbox", "starpoundsdonutboxopen", "starpoundsdonutboxopen2", "emptyfattypeanutbutter", "emptyhappygirlbox", "novakiddrink1", "novakiddrink2",
+	  "sodawastebin", "strewnsodacan1", "strewnsodacan2", "strewnsodacans1", "strewnsodacans2", "strewnsodacans3", "starpoundstakeoutbag1", "greaseburgerobject", "starpoundsskewerplate", "starpoundsskullsmashsoup", "starpoundsixolingroast", "starpoundsgluttonisthangingmeat1", "starpoundsgluttonisthangingmeat2",
+	  "starpoundsgluttonisthangingsoup", "starpoundschocomilkbottle1", "starpoundschocomilkbottle2", "starpoundsmilkbottle1", "starpoundsmilkbottle2", "starpoundsemptybottle1", "starpoundsemptybottle2"
+    ],		
+    "decor" : [
+      "feaststatue", "apexweightreassign", "apexfatsign", "apexfatsign2", "apexfatsign3", "apexfatpod", "apexfattv", "starpounds871", "redberryfatposter", "humanfatposter1", "humanfatposter2", "humanfatposter3",
+	  "hylotlfatposter1", "hylotlfatposter2", "hylotlfatposter3", "hylotlfatposter4", "hylotlfathologram", "fatstudiesinfemalehylotlgy", "starpoundschocolatefountain", "velhanustatuettee", "starpoundsgoldstatuette",
+	  "bellyemblem", "buttemblem", "starpoundsponderousknightarmor", "starpoundsblossomknightsarmor", "starpoundsgluttonistfeastpainting1", "starpoundsgluttonistfeastpainting2", "starpoundsgluttonistfeastpainting3", "starpoundsgluttonistfeasttable",
+	  "gluttonistlamp1", "gluttonistlight", "gluttonistlight1", "gluttonistlight2", "gluttonistlight3", "gluttoniststatue", "starpoundsavianpedestal",
+	  "gluttonistmamstatue", "mamfathologram", "starpoundsmamblueprint", "starpoundsmambuttposter", "starpoundsmamcavepainting", "starpoundsmampainting", "starpoundsmamportrait", "starpoundsmamposter", "wamfatsign", "mamwantedposter", "mamfrontierpainting", "mamfatsign1", "mamfatsign2", "mamsarco"
+    ],
+    "plushes" : [
+      "starpoundsblossomplushie", "starpoundsjellyplush", "starpoundshylotlghostplush", "starpoundsharpyplush", "starpoundshirakiplush", "starpoundsmootantplush", "starpoundsbeeplush", "starpoundscallieplush", "wispwizardplush", "wispclericplush", "wisprogueplush", "wispknightplush", "starpoundsmamplush"
+    ],	
+    "interactables" : [
+      "fayanebutt", "fayanebelly", "fayanevore", "feyrethfeedeeback", "floranfeedeeback1", "apexfeedeeback1", "blossomvore", "audreyvore", "lapisvore", "rosievore", "mambelly", "mambutt", "mamvore"
+    ],		
+    "materials" : [
+      "starpoundschocolateblock", "starpoundschocolateplatform", "starpoundswhitechocolateblock", "starpoundswhitechocolateplatform", "starpoundsgingerbreadblock", "starpoundsgingerbreadplatform", "starpoundshive", "throgmetal", "throgpanel", "throgpolygon", "throgtech"
+    ]
+  }
+}

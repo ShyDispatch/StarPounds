@@ -1,0 +1,7 @@
+{
+	"name": "starpoundsfood",
+	"defaultDuration": 1,
+	"scripts": [
+		"starpoundsfood.lua"
+	]
+}

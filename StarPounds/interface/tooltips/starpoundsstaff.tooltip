@@ -1,0 +1,94 @@
+{
+  "background" : {
+    "type" : "background",
+    "fileHeader" : "/interface/tooltips/header.png",
+    "fileBody" : "/interface/tooltips/bodyobject4.png",
+    "fileFooter" : "/interface/tooltips/footerobject4.png"
+  },
+  "moneyIcon" : {
+    "type" : "image",
+    "position" : [97, 23],
+    "file" : "/interface/money.png"
+  },
+  "priceLabel" : {
+    "type" : "label",
+    "position" : [110, 23],
+    "hAnchor" : "left",
+    "value" : "tree"
+  },
+  "primaryAbilityTitleLabel" : {
+    "type" : "label",
+    "position" : [9, 82],
+    "hAnchor" : "left",
+    "value" : ""
+  },
+  "primaryAbilityLabel" : {
+    "type" : "label",
+    "position" : [130, 82],
+    "hAnchor" : "right",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "altAbilityTitleLabel" : {
+    "type" : "label",
+    "position" : [9, 73],
+    "hAnchor" : "left",
+    "value" : ""
+  },
+  "altAbilityLabel" : {
+    "type" : "label",
+    "position" : [130, 73],
+    "hAnchor" : "right",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "levelTitleLabel" : {
+    "type" : "label",
+    "position" : [9, 91],
+    "hAnchor" : "left",
+    "value" : "Level:"
+  },
+  "levelLabel" : {
+    "type" : "label",
+    "position" : [130, 91],
+    "hAnchor" : "right",
+    "wrapWidth" : 126
+  },
+  "handednessLabel" : {
+    "type" : "label",
+    "position" : [90, 158],
+    "hAnchor" : "right",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "rarityLabel" : {
+    "type" : "label",
+    "position" : [7, 23],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "damageKindImage" : {
+    "type" : "image",
+    "position" : [120, 120],
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [16, 16],
+    "minSize" : [16, 16]
+  },
+  "objectImage" : {
+    "type" : "image",
+    "position" : [70, 129],
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [75, 45],
+    "minSize" : [65, 35]
+  },
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [9, 70],
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 126
+  }
+}

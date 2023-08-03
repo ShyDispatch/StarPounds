@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundszomburger",
+  "rarity" : "Rare",
+  "price" : 250,
+  "category" : "preparedFood",
+  "inventoryIcon" : "zomburger.png",
+  "description" : "It's pretty much just charcoal on a bun. It's awful.",
+  "shortdescription" : "Zomburger",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 90
+    }
+  ] ],
+  "foodValue": 10,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 1.0
+}

@@ -1,0 +1,87 @@
+{
+  "projectileName" : "digestionsquirt",
+  "image" : "digestionsquirt.png",
+  "fullbright" : true,
+  "physics" : "squirt",
+  "animationCycle" : 1,
+  "frameNumber" : 2,
+  "periodicActions": [
+    {
+      "time" : 0.1,
+      "action" : "loop",
+      "count" : 1,
+      "fuzzAngle" : 360,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "textured",
+            "image" : "/projectiles/guns/unsorted/milkshakesquirt/digestionsplat.png",
+            "position" : [0, 0],
+            "initialVelocity" : [-3, 3],
+            "finalVelocity" : [0, -30],
+            "approach" : [0, 20],
+            "collidesForeground" : true,
+            "fullbright" : true,
+            "timeToLive" : 1,
+            "size" : 0.75,
+            "layer" : "back",
+            "variance" : {
+              "size" : 0.5,
+              "initialVelocity" : [3, 3]
+            },
+            "light" : [39, 49, 2]
+          }
+        }
+      ]
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "loop",
+      "count" : 5,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+             "type" : "textured",
+             "image" : "/projectiles/guns/unsorted/milkshakesquirt/digestionsplat.png",
+             "size" : 0.75,
+             "initialVelocity" : [0, 10],
+             "finalVelocity" : [0, -30],
+             "approach" : [0, 20],
+             "timeToLive" : 1,
+             "collidesForeground" : true,
+             "fullbright" : true,
+             "destructionTime" : 1,
+             "layer" : "back",
+             "variance" : {
+               "size" : 0.5,
+               "initialVelocity" : [6, 2]
+             },
+             "light" : [39, 49, 2]
+          }
+        }
+      ]
+    },
+	  {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/bloodvomit1.ogg", "/sfx/projectiles/bloodvomit2.ogg", "/sfx/projectiles/bloodvomit3.ogg", "/sfx/projectiles/bloodvomit4.ogg", "/sfx/projectiles/bloodvomit5.ogg", "/sfx/projectiles/bloodvomit6.ogg", "/sfx/projectiles/bloodvomit7.ogg" ]
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/goocluster_pop.ogg" ]
+    }
+  ],
+  "power" : 50,
+  "speed" : 40,
+  "bounces" : 0,
+  "piercing" : false,
+  "damagePoly" : [ [-4, 0], [0, 4], [4, 0], [0, -4] ],
+  "damageKind" : "bugnet",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "statusEffects" : ["starpoundsdigestionsquirt"],
+  "emitters" : [ ],
+  "lightColor" : [60, 77, 2],
+  "hydrophobic" : true
+}

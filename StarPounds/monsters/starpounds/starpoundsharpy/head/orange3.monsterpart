@@ -1,0 +1,9 @@
+{
+  "name" : "orangehead3",
+  "category" : "starpoundsharpyorange",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "head3.png"
+  }
+}

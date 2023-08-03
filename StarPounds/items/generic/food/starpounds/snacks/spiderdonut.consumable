@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundsspiderdonut",
+  "rarity" : "Legendary",
+  "price" : 9999,
+  "category" : "preparedFood",
+  "inventoryIcon" : "spiderdonut.png",
+  "description" : "For the frosted webbing from a spider. Not for being made of spiders of course!",
+  "shortdescription" : "Spider Donut",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 20
+    }
+  ] ],
+  "foodValue": 100,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundsspiderdonut" ]
+}

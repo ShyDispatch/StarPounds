@@ -1,0 +1,18 @@
+{
+  "itemName" : "starpoundsinvisibleback",
+  "price" : 0,  
+  "inventoryIcon" : "icon.png",
+  "tooltipKind" : "baseaugment",
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "category" : "backwear",
+  "description" : "You can't see it, but it's there.",
+  "shortdescription" : "Invisible Back",
+  "inspectionKind" : "armor",
+
+  "maleFrames" : "back.png",
+  "femaleFrames" : "back.png",
+
+  "acceptsAugmentType" : "back",
+  "radioMessagesOnPickup" : [ "pickupepp" ]
+}

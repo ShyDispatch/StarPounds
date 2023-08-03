@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundstaco",
+  "rarity" : "Rare",
+  "price" : 305,
+  "category" : "preparedFood",
+  "inventoryIcon" : "taco.png",
+  "description" : "A very simple, yet delicious meal. Stuffed to the brim with meat and cheese.",
+  "shortdescription" : "Grease Taco",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 585
+    }
+  ] ],
+  "foodValue": 65,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundstaco" ]
+}

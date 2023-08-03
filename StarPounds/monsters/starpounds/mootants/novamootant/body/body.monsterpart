@@ -1,0 +1,9 @@
+{
+  "name" : "body",
+  "category" : "novamootant",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body.png"
+  }
+}

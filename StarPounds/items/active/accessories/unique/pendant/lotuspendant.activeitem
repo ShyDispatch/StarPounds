@@ -1,0 +1,23 @@
+{
+  "itemName" : "lotuspendant",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "Worn by voracious warriors of an ancient empire. For the hardiest of predators.",
+  "shortdescription" : "Lotus Brooch",
+  "inventoryIcon" : "lotuspendant.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "stats": [
+    {"name": "capacity", "modifier": 0.5},
+    {"name": "health", "modifier": 0.25},
+    {"name": "voreDamage", "modifier": 0.5}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

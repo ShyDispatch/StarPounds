@@ -1,0 +1,24 @@
+{
+  "kind" : "chocolatemilkshakesquirt",
+  "location" : "mouth",
+  "definition" : {
+    "duration" : 0.001,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "chocolatemilkshakesquirt" ]
+      ],
+      "sounds" : [ [ ] ]
+    },
+    "particles" : [
+      [ "chocolatemilkshakesquirt" ]
+    ],
+    "sounds" : [ [ ] ],
+    "stop" : {
+      "particles" : [
+        [ ]
+      ],
+      "sounds" : [ [ ] ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"name": "starpoundsimmobile",
+	"scripts": [
+		"starpoundssize.lua"
+	],
+	"defaultDuration": 100,
+	"label": "Immobile",
+	"icon": "/interface/statuses/starpoundssize/starpoundsimmobile.png"
+}

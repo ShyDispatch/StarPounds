@@ -1,0 +1,64 @@
+{
+  "type" : "starpoundschika",
+  "baseType" : "outpostcivilian",
+
+  "scriptConfig" : {
+    "starPounds_skills": {
+      "minimumSize": [4, 4]
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"*Urp* Excusse me.",
+						"I'd kill for a Ixoling roasst right now...",
+						"I'm alwayss up for belly rubss~",
+						"If you're looking for a boyfriend- or a friend, I'm here~",
+						"Hmph. Butt sstill could be a bit bigger...",
+						"I'm feeling kinda hungry at the moment... maybe I should sssee if those cakess are sstill there...",
+						"Don't worry, I won't bite... Unless you want be to~"
+					]
+				}
+			}
+		}
+  },
+
+  "identity":  {
+      "bodyDirectives": "?replace;6f2919=603347;ffca8a=d08c9f;e0975c=b27082;a85636=874e62?replace;f7e7b2=a7d13d;735e3a=4d6305;d9c189=a7d13d;a38d59=7fa720",
+      "emoteDirectives": "?replace;6f2919=603347;ffca8a=d08c9f;e0975c=b27082;a85636=874e62?replace;f7e7b2=a7d13d;735e3a=4d6305;d9c189=a7d13d;a38d59=7fa720",
+      "facialHairDirectives": "",
+      "facialHairGroup": "",
+      "facialHairType": "",
+      "facialMaskDirectives": "",
+      "facialMaskGroup": "",
+      "facialMaskType": "",
+      "gender": "male",
+      "hairDirectives": "?replace;f7e7b2=a7d13d;d9c189=a7d13d;a38d59=7fa720;735e3a=4d6305?replace;f32200=BE471B;dc1f00=9B2F0C;be1b00=702710",
+      "hairGroup": "hair",
+      "hairType": "8",
+      "name": "Chika",
+      "personalityArmIdle": "idle.1",
+      "personalityArmOffset": [
+          0.0,
+          0.0
+      ],
+      "personalityHeadOffset": [
+          -1.0,
+          0.0
+      ],
+      "personalityIdle": "idle.2",
+      "species": "floran"
+  },
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "glasses4head" } ],
+            "chestCosmetic": [ { "name": "starpoundsinvisiblechest" } ],
+            "legsCosmetic": [ { "name": "predatorypants" } ]
+          }
+        ] ]
+    ]
+  }
+}

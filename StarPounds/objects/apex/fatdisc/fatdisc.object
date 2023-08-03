@@ -1,0 +1,73 @@
+{
+  "objectName" : "fatdisc",
+  "colonyTags" : ["apex","apexresearchlab","science","electronic","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 105,
+  "description" : "An electrically charged plasma field, powered by erchius. What could go wrong?",
+  "shortdescription" : "Erchius Radiation Disc",
+  "race" : "apex",
+  "fullbright" : true,
+  "lightColor" : [147, 47, 90],
+
+  "flickerPeriod" : 0.2,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.05,
+  "flickerIntensityVariance" : 0.025,
+
+  "apexDescription" : "More Apex equipment. Experimentation or torture, who knows?",
+  "avianDescription" : "Is this electricity? Avians use crystal resonance to power our technology.",
+  "floranDescription" : "Caged lightning. No threat to Floranss.",
+  "glitchDescription" : "Anxious. This device harnesses many millions of volts.",
+  "humanDescription" : "One of those wacky plasma disc things.",
+  "hylotlDescription" : "Such a device likely has a sinister purpose.",
+  "novakidDescription" : "I can't look at that for too long.",
+
+  "inventoryIcon" : "fatdiscicon.png",
+  "orientations" : [
+    {
+      "image" : "fatdisc.png:<color>.<frame>",
+      "imagePosition" : [-6, 1],
+      
+      "direction" : "left",
+      "flipImages" : true,
+      "animationPosition" : [-6, 1],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "fatdisc.png:<color>.<frame>",
+      "imagePosition" : [-6, 1],
+      
+      "direction" : "right",
+      "animationPosition" : [-6, 1],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "soundEffect" : "/sfx/objects/plasmadisc.ogg",
+
+  "animation" : "fatdisc.animation",
+  "animationParts" : {
+    "bg" : "fatdisc.png",
+    "fg" : "fatdisclit.png"
+  },
+
+  "scripts" : [ "fatteningzonespawner.lua" ],
+  "scriptDelta" : 30,
+
+  "inputNodes" : [ [0, 0] ],
+
+  "fireTime" : 2.0, // rate of fire
+  "fireTimeVariance" : 0.0, // variation in rate of fire
+  "projectile" : "fattyEffectProjectile", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "damageTeam" : { "type" : "indiscriminate" },
+    "power" : 0,
+    "speed" : 0
+  }
+}

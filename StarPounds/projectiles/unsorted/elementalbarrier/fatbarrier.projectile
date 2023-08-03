@@ -1,0 +1,25 @@
+{
+  "projectileName" : "fatbarrier",
+  "image" : "fatbarrier.png",
+  "physics" : "gas",
+  "frameNumber" : 3,
+  "animationCycle" : 0.35,
+  "lightColor" : [105, 65, 72],
+  "power" : 2,
+  "speed" : 0,
+  "timeToLive" : 2.0,
+  "bounces" : -1,
+  "knockback" : 25,
+  "knockbackDirectional" : true,
+  "orientationLocked" : true,
+  "damagePoly" : [ [2, 4],  [2, -4],  [-2, -4],  [-2, 4] ],
+  "piercing" : true,
+  "damageKind" : "fatbarrier",
+  "emitters" : ["barrierfat"],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/poison_barrier_break1.ogg" ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "itemName" : "3chubstermilkyoutfitbag",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "3b-2 XBusty Effigy",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "chubstermilkyoutfitbagicon.png",
+  "animation" : "chubstermilkyoutfitbag.animation",
+  "animationCustom" : {},
+  "scripts" : ["/scripts/items/outfitbag.lua"],
+
+  "itemTags" : [ "starpounds" ],
+  
+  "fireTime" : 2.0,
+  "fireOffset" : [1.0, 0.0],
+  
+  "outfitKey" : "chubstermilky"
+}

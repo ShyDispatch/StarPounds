@@ -1,0 +1,128 @@
+{
+  "itemName" : "ponderousstaff",
+  "price" : 2500,
+  "maxStack" : 1,
+  "level" : 4,
+  "rarity" : "Legendary",
+  "description" : "^gray;The energy of a powerful Glitch Lipomancer grants this scepter its power!",
+  "shortdescription" : "Staff of the Ponderous",
+  "tooltipKind" : "starpoundsstaff",
+  "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
+  "category" : "staff",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","staff","upgradeableWeapon"],
+
+  "animation" : "/items/active/weapons/staff/staff.animation",
+  "animationParts" : {
+    "staff" : "ponderousstaff.png",
+    "stone" : "stone.png",
+    "chargeEffect" : "staffglow.png"
+  },
+  "animationCustom" : {
+    "lights" : {
+      "glow" : {
+        "color" : [178, 75, 6]
+      }
+    },
+
+    "sounds" : {
+      "physicalactivate" : ["/sfx/npc/boss/cultistboss_recharge.ogg"],
+      "zoneactivate" : ["/sfx/gun/gnomebeam_start1.ogg"]
+    }
+  },
+
+  "inventoryIcon" : "ponderousstaff.png",
+
+  "scripts" : ["/items/active/weapons/staff/staff.lua"],
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : -90,
+      "weaponRotation" : 0,
+      "twoHanded" : false,
+
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "charge" : {
+      "duration" : 1.4,
+      "armRotation" : 20,
+      "weaponRotation" : -20,
+      "twoHanded" : true,
+
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "charged" : {
+      "armRotation" : 20,
+      "weaponRotation" : -20,
+      "twoHanded" : true,
+
+      "allowRotate" : false,
+      "allowFlip" : true
+    },
+    "discharge" : {
+      "duration" : 0.5,
+      "armRotation" : -10,
+      "weaponRotation" : -50,
+      "twoHanded" : true,
+
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "cooldown" : {
+      "duration" : 0.5,
+      "armRotation" : -45,
+      "weaponRotation" : 0,
+      "twoHanded" : true,
+
+      "allowRotate" : false,
+      "allowFlip" : true
+    }
+  },
+
+  "elementalType" : "physical",
+
+  "primaryAbilityType" : "plasmabladebarrage",
+  "primaryAbility" : {
+    "projectileType" : "ponderousbolt",  
+    "projectileCount" : 6,	
+    "maxCastRange" : 30,
+
+    "projectileParameters" : {
+      "baseDamage" : 24
+    },
+
+    "stances" : {
+      "idle" : {
+        "weaponOffset" : [-0.125, -0.5]
+      },
+      "charge" : {
+        "weaponOffset" : [0.125, 0.75]
+      },
+      "charged" : {
+        "weaponOffset" : [0.125, 0.75]
+      },
+      "discharge" : {
+        "weaponOffset" : [0.125, 0.75]
+      },
+      "cooldown" : {
+        "weaponOffset" : [0, -0.25]
+      }
+    }
+  },
+
+  "altAbilityType" : "ponderouszone",
+  "altAbility" : {},
+
+  "builder" : "/items/buildscripts/buildstarpoundsunrandweapon.lua",
+  
+  "upgradeParameters" : {
+    "inventoryIcon" : "ponderousstaff_l6.png",
+    "animationParts" : {
+      "staff" : "ponderousstaff_l6.png",
+      "stone" : "stone_l6.png"
+    },
+    "shortdescription" : "Staff of the Ponderous ^yellow;^reset;"
+  }
+}

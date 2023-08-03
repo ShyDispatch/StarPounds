@@ -1,0 +1,29 @@
+{
+  "kind" : "caloricpillar",
+  "definition" : {
+    "duration" : 1.9,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "caloricshard", "caloricshard", "caloricshard", "caloricswoosh1", "caloricswoosh1", "caloricswoosh2", "caloricswoosh1", "caloricswoosh1", "caloricswoosh2", "caloricswoosh1", "caloricswoosh1", "caloricswoosh2" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    },
+    "particles" : [
+      [ "caloricswoosh1", "caloricswoosh1", "caloricswoosh2", "caloricswoosh1", "caloricswoosh1", "caloricswoosh2", "caloricswoosh1", "caloricswoosh1", "caloricswoosh2" ]
+    ],
+    "sounds" : [
+      [ ]
+    ],
+    "stop" : {
+      "particles" : [
+        [ "caloricswoosh4", "caloricswoosh4", "caloricswoosh4", "caloricswoosh4", "caloricswoosh4", "caloricswoosh4" ]
+      ],
+      "sounds" : [
+        [ ]
+      ]
+    }
+  }
+}

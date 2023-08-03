@@ -1,0 +1,32 @@
+{
+  "objectName" : "gluttoniststatue",
+  "colonyTags" : ["floran","fatdungeons","gluttonist"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 80,
+  "description" : "A statue of a Floran holding a spear menacingly.",
+  "shortdescription" : "Gluttonist Statue",
+  "race" : "floran",
+
+  "apexDescription" : "A Floran displaying its spear-throwing prowess.",
+  "avianDescription" : "A Floran doing what it does best; preparing to kill something.",
+  "floranDescription" : "This ssstatue depictss the glory of the hunt.",
+  "glitchDescription" : "Analysis. The spear has recently been used to impale a creature.",
+  "humanDescription" : "That's one tough looking Floran. I wonder if it's anyone specific.",
+  "hylotlDescription" : "Even a statue of a Floran makes me feel uncomfortable.",
+  "novakidDescription" : "This Floran looks like he'd be a tough pardner.",
+
+  "inventoryIcon" : "gluttoniststatueicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "gluttoniststatue.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

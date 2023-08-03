@@ -1,0 +1,35 @@
+{
+  "itemName" : "uncommonpendant",
+  "price" : 1500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "A jewelled pendant.",
+  "shortdescription" : "Uncommon Pendant",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "statConfig" : {
+    "amplitude" : [0.1, 0.2],
+    "count" : 2,
+    "list" : [
+      {"name": "absorption", "weight": 1},
+      {"name": "capacity", "weight": 0.8},
+      {"name": "digestion", "weight": 0.8},
+      {"name": "health", "weight": 0.8},
+      {"name": "movement", "weight": 3}
+    ]
+  },
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {
+    "tier" : 2,
+    "fullbright": true,
+    "nameGenerator" : "pendantnames.config:nameGen",
+    "metalPalette" : "/items/active/accessories/uncommonaccessories_metal.colors",
+    "trimPalette" : "/items/active/accessories/uncommonaccessories_trim.colors",
+    "crystalPalette" : "/items/active/accessories/uncommonaccessories_crystal.colors"
+  }
+}

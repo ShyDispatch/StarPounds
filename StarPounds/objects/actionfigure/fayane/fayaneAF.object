@@ -1,0 +1,33 @@
+{
+  "objectName" : "fayaneaf",
+  "colonyTags" : ["starpounds"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"The gluttonous, giant of a Floran\"",
+  "shortdescription" : "Fayane Figurine",
+
+
+
+  "inventoryIcon" : "fayaneaf.png",
+  "orientations" : [
+    {
+      "image" : "fayaneaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "fayaneaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

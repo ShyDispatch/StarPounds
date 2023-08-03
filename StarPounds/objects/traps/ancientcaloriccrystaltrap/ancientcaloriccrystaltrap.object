@@ -1,0 +1,258 @@
+{
+  "objectName" : "ancientcaloriccrystaltrap",
+  "colonyTags" : ["ancient","evil"],
+  "printable" : false,
+  "rarity" : "Legendary",
+  "description" : "An ancient trap designed to deter invaders. \n^red;Destroyed when broken.",
+  "shortdescription" : "Ancient Caloric Crystal Trap",
+  "race" : "ancient",
+
+  "apexDescription" : "This crystal forms a dangerous light beam.",
+  "avianDescription" : "I wouldn't want to get caught in its beam.",
+  "floranDescription" : "Crystal beam hurtsss Floran.",
+  "glitchDescription" : "Exasperated. A crystal that projects fattening beams of light! Now I have seen everything.",
+  "humanDescription" : "That beam looks like it would hurt.",
+  "hylotlDescription" : "If I memorise the pattern of the crystal's beam I can act accordingly.",
+  "novakidDescription" : "Crazy crystal shootin' light right at me!",
+
+  "category" : "trap",
+  "price" : 5000,
+
+  "inventoryIcon" : "ancientcaloriccrystaltrapicon.png",
+  "orientations" : [
+    {
+      "image" : "ancientcaloriccrystaltrapground.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrapground.png",
+        "fg" : "ancientcaloriccrystaltrapground.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [0, 1],
+
+      "beamDirection" : [0, 1],
+      "beamStartOffset" : [0, 1.5],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-4, -4, 4, 54],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "left", "right" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrapground.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrapground.png",
+        "fg" : "ancientcaloriccrystaltrapground.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [0, 1],
+
+      "beamDirection" : [0, 1],
+      "beamStartOffset" : [1, 1.5],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-4, -4, 4, 54],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "left", "right" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrap.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrap.png",
+        "fg" : "ancientcaloriccrystaltrap.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [-1, 0],
+
+      "beamDirection" : [-1, 0],
+      "beamStartOffset" : [-0.5, 1],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-54, -4, 4, 4],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrap.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrap.png",
+        "fg" : "ancientcaloriccrystaltrap.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [1, 0],
+
+      "beamDirection" : [1, 0],
+      "beamStartOffset" : [1.5, 1],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-54, -4, 4, 4],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrapceiling.png:<color>.<frame>",
+      "imagePosition" : [-8, -8],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationPosition" : [-8, -8],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrapceiling.png",
+        "fg" : "ancientcaloriccrystaltrapceiling.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [0, -1],
+
+      "beamDirection" : [0, -1],
+      "beamStartOffset" : [0, -0.5],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-4, -54, 4, 4],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrapceiling.png:<color>.<frame>",
+      "imagePosition" : [0, -8],
+      "direction" : "right",
+
+      "animationPosition" : [0, -8],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrapceiling.png",
+        "fg" : "ancientcaloriccrystaltrapceiling.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [0, -1],
+
+      "beamDirection" : [0, -1],
+      "beamStartOffset" : [1, -0.5],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-4, -54, 4, 4],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrapground.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrapground.png",
+        "fg" : "ancientcaloriccrystaltrapground.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [0, 1],
+
+      "beamDirection" : [0, 1],
+      "beamStartOffset" : [0, 1.5],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-4, -4, 4, 54],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "solid"
+    },
+    {
+      "image" : "ancientcaloriccrystaltrapground.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "ancientcaloriccrystaltrapground.png",
+        "fg" : "ancientcaloriccrystaltrapground.png"
+      },
+
+      "renderLayer" : "Object+50",
+      "lightPosition" : [0, 1],
+
+      "beamDirection" : [0, 1],
+      "beamStartOffset" : [1, 1.5],
+      "maxBeamLength" : 50,
+      "metaBoundBox" : [-4, -4, 4, 54],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "solid"
+    }
+  ],
+
+  "animation" : "/objects/wired/projectiletrap/projectiletrap.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "shoot" : [ ],
+      "on" : [ "/sfx/objects/crystaltrap_on1.ogg" ],
+      "off" : [ "/sfx/objects/crystaltrap_off.ogg" ]
+    }
+  },
+  "animationScripts" : [ "/objects/wired/projectiletrap/beamtraprendering.lua" ],
+
+  "health" : 5,
+
+  "smashOnBreak" : true,
+  "smashSounds" : [ "/sfx/objects/rock_break1.ogg", "/sfx/objects/rock_break2.ogg", "/sfx/objects/rock_break3.ogg", "/sfx/objects/rock_break4.ogg", "/sfx/objects/rock_break5.ogg", "/sfx/objects/rock_crumble1.ogg", "/sfx/objects/rock_crumble2.ogg", "/sfx/objects/rock_crumble3.ogg", "/sfx/objects/rock_crumble4.ogg", "/sfx/objects/rock_crumble5.ogg" ],
+  "smashParticles" : [ { "count" : 10, "particle" : "potshard" } ],
+
+  "scripts" : [ "/objects/wired/projectiletrap/beamtrap.lua" ],
+  "scriptDelta" : 5,
+
+  "soundEffect" : "/sfx/objects/crystaltrap_loop.ogg",
+
+  "inputNodes" : [ [0, 0] ],
+
+  "inactiveLightColor" : [0, 0, 0],
+  "activeLightColor" : [128, 0, 128],
+
+  "lightColor" : [128, 0, 128],
+  "beamImages" : {
+    "first" : "/objects/traps/ancientcaloriccrystaltrap/beamstart.png",
+    "body" : "/objects/traps/ancientcaloriccrystaltrap/beambody.png",
+    "last" : "/objects/traps/ancientcaloriccrystaltrap/beamend.png"
+  },
+
+  "beamDamage" : {
+    "damage" : 20,
+
+    "teamType" : "enemy",
+    "damageSourceKind" : "plasma",
+    "damageType" : "Environment",
+	  "statusEffects" : [
+      {"effect": "fatray", "duration" : 6}
+	  ],
+    "knockback" : 0,
+    "damageRepeatTimeout" : 0.5
+  }
+}

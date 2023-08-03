@@ -1,0 +1,31 @@
+{
+  "objectName" : "fatstudiesinfemalehylotlgy",
+  "colonyTags" : ["hylotl","pretty","valuable"],
+  "rarity" : "Rare",
+  "description" : "A very famous portrait of a mysterious lady.",
+  "shortdescription" : "Studies in Female Hylotlgy",
+  "race" : "hylotl",
+  "category" : "decorative",
+  "price" : 2400,
+  "printable" : false,
+
+  "apexDescription" : "It is nice to see artwork that doesn't feature Big Ape.",
+  "avianDescription" : "This painting of a Hylotl would be better with an Avian instead.",
+  "floranDescription" : "Picture doesn't have ssstabbing. Floran thinks thiss isss boring.",
+  "glitchDescription" : "Impressed. This picture of a Hylotl woman is very detailed.",
+  "humanDescription" : "I'm not sure how I'm meant to feel about this piece of art...",
+  "hylotlDescription" : "What a beautiful and alluring piece of art. It captures so much emotion.",
+  "novakidDescription" : "Now that's one strange lookin' dame.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "fatstudiesinfemalehylotlgy.png:<color>",
+      "imagePosition" : [-32, -32],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

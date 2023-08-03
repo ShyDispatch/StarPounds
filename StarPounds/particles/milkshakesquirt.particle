@@ -1,0 +1,17 @@
+{
+  "kind" : "milkshakesquirt",
+  "definition" : {
+    "type" : "ember",
+    "size" : 4.0,
+    "color" : [240, 223, 213, 200],
+    "fade" : 0.3,
+    "initialVelocity" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [0, 20],
+    "timeToLive" : 0.2,
+    "layer" : "middle",
+    "variance" : {
+      "size" : 1.0
+    }
+  }
+}

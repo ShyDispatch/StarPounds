@@ -1,0 +1,25 @@
+{
+  "name" : "rareaccessories_crystal",
+  "swaps" : [
+    // DIAMOND
+    { "6f2919" : "1278cf", "a85636" : "3acffe", "e0975c" : "b0ffff", "ffca8a" : "ffffff" },
+    // CORE FRAGMENT
+    { "6f2919" : "880000", "a85636" : "d92e00", "e0975c" : "ffa200", "ffca8a" : "fffe9f" },
+    // SOLARIUM
+    { "6f2919" : "984700", "a85636" : "f4a700", "e0975c" : "fff327", "ffca8a" : "ffffff" },
+    // ERCHIUS
+    { "6f2919" : "7938a6", "a85636" : "af59d2", "e0975c" : "ebb2f7", "ffca8a" : "f9d9ff" },
+    // GEODE RED
+    { "6f2919" : "690204", "a85636" : "a72c1c", "e0975c" : "e3493a", "ffca8a" : "ff7b58" },
+    // GEODE ORANGE
+    { "6f2919" : "782b00", "a85636" : "b25c10", "e0975c" : "ec9b1b", "ffca8a" : "ffcc2f" },
+    // GEODE YELLOW
+    { "6f2919" : "604f03", "a85636" : "a99d19", "e0975c" : "e0de30", "ffca8a" : "f7ff62" },
+    // GEODE GREEN
+    { "6f2919" : "015801", "a85636" : "0d9319", "e0975c" : "2bcd1e", "ffca8a" : "79fa66" },
+    // GEODE BLUE
+    { "6f2919" : "0d3383", "a85636" : "298dc7", "e0975c" : "36bce2", "ffca8a" : "62ebff" },
+    // GEODE PURPLE
+    { "6f2919" : "41047b", "a85636" : "7b1da7", "e0975c" : "b93be3", "ffca8a" : "e259ff" }
+  ]
+}

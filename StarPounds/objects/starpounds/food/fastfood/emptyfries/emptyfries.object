@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsemptyfries",
+  "colonyTags" : ["starpounds","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 20,
+
+  "description" : "A small container for fries.",
+  "shortdescription" : "Empty Fries",
+  "race" : "generic",
+
+  "apexDescription" : "Just an empty box.",
+  "avianDescription" : "Aw, it's empty.",
+  "floranDescription" : "Food gone.",
+  "glitchDescription" : "Sad. It's empty.",
+  "humanDescription" : "Darn, I would have loved some warm fries.",
+  "hylotlDescription" : "Fries does sound good to have right about now.",
+  "novakidDescription" : "This box is as empty as my stomach.",
+
+  "inventoryIcon" : "emptyfriesicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "emptyfries.png:<color>",
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name" : "starpoundswellfed",
+  "effectConfig" : {
+    "healTime" : 120
+  },
+  "defaultDuration" : 120,
+
+  "scripts" : [
+    "starpoundswellfed.lua"
+  ],
+
+  "animationConfig" : "wellfed.animation",
+
+  "label" : "Full Belly",
+  "icon" : "/interface/statuses/starpoundswellfed.png"
+}

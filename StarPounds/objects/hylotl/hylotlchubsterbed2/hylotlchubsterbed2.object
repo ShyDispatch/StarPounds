@@ -1,0 +1,44 @@
+{
+  "objectName" : "hylotlchubsterbed2",
+  "colonyTags" : ["hylotl","hylotlvillage", "fattybed"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 125,
+  "description" : "Legend has it that if you spend the night in this bed, you're incredibly chubby.",
+  "shortdescription" : "Comfy Traditional Bed",
+  "race" : "hylotl",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : true,
+  "sitPosition" : [-10, 11],
+  "sitOrientation" : "lay",
+  "sitAngle" : 90,
+  "sitCoverImage" : "/objects/hylotl/hylotlchubsterbed2/hylotlchubsterbed2cover.png",
+  "sitEmote" : "sleep",
+  "sitStatusEffects" : [
+    "bed1"
+  ],
+  "sitEffectEmitters" : [ "sleepbubbles" ],
+
+  "apexDescription" : "This bed is simple without being basic.",
+  "avianDescription" : "A plain bed, it looks comfortable.",
+  "floranDescription" : "Flat bed. Boring.",
+  "glitchDescription" : "Critical. This bed seems almost too simple, but its materials are high quality.",
+  "humanDescription" : "This bed looks like it has a tradional style that hasn't needed to change.",
+  "hylotlDescription" : "An exquisite traditional bed. Many species could learn from this.",
+  "novakidDescription" : "Seen worse beds than this. Seen better too.",
+
+  "inventoryIcon" : "hylotlchubsterbed2icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "hylotlchubsterbed2.png:<color>",
+      "imagePosition" : [-24, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

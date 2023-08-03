@@ -1,0 +1,9 @@
+{
+  "name" : "body2",
+  "category" : "starpoundsharpyblue",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body2.png"
+  }
+}

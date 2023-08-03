@@ -1,0 +1,30 @@
+{
+  "itemName" : "starpoundssodaballoon",
+  "rarity" : "Common",
+  "category" : "throwableItem",
+  "price" : 10,  
+  "inventoryIcon" : "starpoundssodaballoonicon.png",
+  "image" : "starpoundssodaballoon.png",
+  "shortdescription" : "Soda Balloon",
+  "description" : "A balloon filled up with soda.",
+
+  "ammoUsage" : 1,
+
+  "edgeTrigger" : true,
+  "windupTime" : 0.0,
+  "cooldown" : 0.4,
+
+  "projectileType" : "starpoundssodaballoon",
+  "projectileConfig" : {
+    "speed" : 40,
+    "power" : 0,
+    "periodicActions" : [
+      {
+        "time" : 0,
+        "repeat" : false,
+        "action" : "sound",
+        "options" : [ "/sfx/projectiles/throw_item_small.ogg" ]
+      }
+    ]
+  }
+}

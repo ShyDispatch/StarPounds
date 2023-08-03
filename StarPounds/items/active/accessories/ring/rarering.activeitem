@@ -1,0 +1,36 @@
+{
+  "itemName" : "rarering",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A jewelled ring.",
+  "shortdescription" : "Rare Ring",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "statConfig" : {
+    "amplitude" : [0.15, 0.5],
+    "count" : 2,
+    "negativeCount" : 1,
+    "list" : [
+      {"name": "absorption", "weight": 1},
+      {"name": "capacity", "weight": 0.8},
+      {"name": "digestion", "weight": 0.8},
+      {"name": "health", "weight": 0.8},
+      {"name": "movement", "weight": 3}
+    ]
+  },
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {
+    "tier" : 3,
+    "fullbright": true,
+    "nameGenerator" : "ringnames.config:nameGen",
+    "metalPalette" : "/items/active/accessories/rareaccessories_metal.colors",
+    "trimPalette" : "/items/active/accessories/rareaccessories_trim.colors",
+    "crystalPalette" : "/items/active/accessories/rareaccessories_crystal.colors"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "objectName" : "gluttonistlight1",
+  "colonyTags" : ["floran","gluttonist","light","nature"],
+  "rarity" : "Common",
+  "description" : "A light made of vines. Or a vine made of lights?",
+  "shortdescription" : "Large Vine Lights",
+  "race" : "floran",
+
+  "apexDescription" : "Such pretty lights.",
+  "avianDescription" : "A plant that lights up. Remarkable.",
+  "floranDescription" : "Plant lightss not burn Floran.",
+  "glitchDescription" : "Impressed. The Floran are able to harness nature most effectively.",
+  "humanDescription" : "This light looks like it was grown, not made.",
+  "hylotlDescription" : "Even the vile Florans appreciate beauty it seems.",
+  "novakidDescription" : "This plant can sure give off some light.",
+
+  "category" : "light",
+  "price" : 90,
+  "lightColor" : [187, 80, 156],
+
+  "inventoryIcon" : "gluttonistlight1icon.png",
+  "orientations" : [
+    {
+      "image" : "gluttonistlight1.png:<color>.<frame>",
+      "flipImages" : true,
+      "imagePosition" : [-8, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "left",
+      "lightPosition" : [0, 3]
+    },
+    {
+      "image" : "gluttonistlight1.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "direction" : "right",
+      "lightPosition" : [0, 3]
+    }
+  ],
+  
+  "pointLight" : true,
+  "pointBeam" : 0,
+  "pointAngle" : 0,
+
+  "animation" : "/objects/wired/light/lighttogglebgfullbright.animation",
+  "animationParts" : {
+    "bg" : "gluttonistlight1.png",
+    "fg" : "gluttonistlight1lit.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 0] ]
+}

@@ -1,0 +1,56 @@
+{
+  "objectName" : "throgbench",
+  "colonyTags" : ["throg","misc"],
+  "rarity" : "Common",
+  "description" : "A sleek metal bench.",
+  "shortdescription" : "Throg Bench",
+  "race" : "generic",
+  "category" : "furniture",
+  "price" : 190,
+
+  "apexDescription" : "The stripes of colours on this bench are tastefully decorative.",
+  "avianDescription" : "Benches are best shared with friends.",
+  "floranDescription" : "Bench providesss tactical cover.",
+  "glitchDescription" : "Observant. A long bench for sitting with allies.",
+  "humanDescription" : "Is it a bench, or is it simply a wide chair?",
+  "hylotlDescription" : "A pleasing bench.",
+  "novakidDescription" : "I could go for a lie down on this, but it might not be so polite...",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+
+  "inventoryIcon" : "throgbenchicon.png",
+  "orientations" : [
+    {
+     "imageLayers" : [ { "image" : "throgbench.png:<color>", "fullbright" : true }, { "image" : "throgbenchlit.png:<color>" } ],
+      "imagePosition" : [-24, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [-14, 23], // Right
+        [0, 23], // Middle
+        [14, 23] // Left
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+     "imageLayers" : [ { "image" : "throgbench.png:<color>", "fullbright" : true }, { "image" : "throgbenchlit.png:<color>" } ],
+      "imagePosition" : [-24, 0],
+      "direction" : "right",
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [-14, 23], // Left
+        [0, 23], // Middle
+        [14, 23] // Right
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "op": "add",
+    "path": "/statuses/generic/-",
+    "value": "Feeling peckish"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/generic/-",
+    "value": "Wanting to eat something filling"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/generic/-",
+    "value": "Thinking about having a nice beverage"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/generic/-",
+    "value": "Wondering what's for dessert"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/generic/-",
+    "value": "Unintentionally staring at a jiggly rump"
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/statuses/cheerful/-",
+    "value": "Content after a big meal"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/cheerful/-",
+    "value": "Confident in their current weight"
+  },
+  
+  {
+    "op": "add",
+    "path": "/statuses/jerk/-",
+    "value": "Calling you a Mooshi"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/jerk/-",
+    "value": "Asking how many chairs your oversized behind breaks"
+  },  
+  {
+    "op": "add",
+    "path": "/statuses/jerk/-",
+    "value": "Says you need to cut back on the sweets"
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/statuses/flirty/-",
+    "value": "Wanting someone to rub their belly"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/flirty/-",
+    "value": "Wishing to rub someone's belly"
+  },  
+  {
+    "op": "add",
+    "path": "/statuses/flirty/-",
+    "value": "Wishing to be fed a feast"
+  },
+  {
+    "op": "add",
+    "path": "/statuses/flirty/-",
+    "value": "Wishing to feed someone a feast"
+  },  
+  {
+    "op": "add",
+    "path": "/statuses/flirty/-",
+    "value": "Thinking about big bellies"
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/statuses/anxious/-",
+    "value": "Self conscious about their weight"
+  },  
+  {
+    "op": "add",
+    "path": "/statuses/anxious/-",
+    "value": "Contemplating going on a diet"
+  },
+  
+  
+  {
+    "op": "add",
+    "path": "/statuses/intrusive/-",
+    "value": "Staring at your jiggly rump"
+  }, 
+  {
+    "op": "add",
+    "path": "/statuses/intrusive/-",
+    "value": "Thinking you need to watch what you eat"
+  },  
+  {
+    "op": "add",
+    "path": "/statuses/intrusive/-",
+    "value": "Feels like poking your belly"
+  }  
+]

@@ -1,0 +1,15 @@
+{
+  "itemName" : "starpoundssugarextract",
+  "rarity" : "Common",
+  "price" : 580,
+  "category" : "preparedFood",
+  "inventoryIcon" : "sugarextract.png",
+  "description" : "The secret ingredient for mint chocolate cookies.",
+  "shortdescription" : "Sugar Extract(?)",
+  "foodValue": 10,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 12,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 6
+}

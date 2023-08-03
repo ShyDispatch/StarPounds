@@ -1,0 +1,31 @@
+{
+  "objectName" : "mootantaf",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Legendary",
+  "category" : "actionFigure",
+  "price" : 5000,
+  "printable" : false,
+  "description" : "The label reads, \"What was once a person is now a mindless, milky fat cow girl.\"",
+  "shortdescription" : "Mootant Figurine",
+
+  "inventoryIcon" : "mootantaf.png",
+  "orientations" : [
+    {
+      "image" : "mootantaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "mootantaf.png:<color>",
+      "imagePosition" : [-2, 0],
+      "direction" : "right",
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

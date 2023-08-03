@@ -1,0 +1,28 @@
+{
+  "projectileName" : "caloricarrow",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "caloricarrow.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 1,
+  "pointLight" : true,
+  "lightColor" : [48, 79, 13],
+  "emitters" : [ "caloricplasma" ],
+  "statusEffects" : [
+    {"effect": "starpoundsratebloat", "duration": 10},
+    {"effect": "starpoundsrategain", "duration": 10}
+  ],
+  "power" : 20,
+  "knockback" : 10,
+  "knockbackDirectional" : true,
+  "damageKind" : "caloricbow",
+  "timeToLive" : 10,
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ]
+}

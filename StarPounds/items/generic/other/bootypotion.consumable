@@ -1,0 +1,13 @@
+{
+  "itemName" : "bootypotion",
+  "price" : 5000,
+  "rarity" : "Legendary",
+  "category" : "medicine",
+  "inventoryIcon" : "bootypotion.png",
+  "description" : "Take a swig of this bottom heavy potion to become bottom heavy yourself.",
+  "shortdescription" : "Booty Potion",
+  "maxStack" : 1,
+  "foodValue": 30,
+  "emote" : "",
+  "emitters" : [ "drinking" ]
+}

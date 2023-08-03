@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "wheat", "count" : 1 },
+    { "item" : "sugar", "count" : 2 },	
+    { "item" : "milk", "count" : 1 },
+    { "item" : "egg", "count" : 1 },	
+    { "item" : "chocolate", "count" : 2 },
+    { "item" : "starpoundssugarextract", "count" : 1 }	
+  ],
+  "output" : { "item" : "starpoundspassionpatty", "count" : 1 },
+  "groups" : [ "craftingfood", "snacks" ]
+}

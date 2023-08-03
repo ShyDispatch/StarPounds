@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundshotdogc",
+  "rarity" : "Rare",
+  "price" : 360,
+  "category" : "preparedFood",
+  "inventoryIcon" : "hotdogc.png",
+  "description" : "Nothing like a meal that makes you want to run. Or waddle.",
+  "shortdescription" : "Chili Dog",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 315
+    }
+  ] ],
+  "foodValue": 35,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

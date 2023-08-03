@@ -1,0 +1,23 @@
+{
+  "itemName" : "plumphawaiianoutfitbag",
+  "price" : 0,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "mysteriousReward",
+  "description" : "Use this to open it and reveal its contents. How exciting!",
+  "shortdescription" : "Hawaiian Plump Outfit",
+  "twoHanded" : true,
+
+  "inventoryIcon" : "plumphawaiianoutfitbagicon.png",
+  "animation" : "plumphawaiianoutfitbag.animation",
+  "animationCustom" : {},
+  "scripts" : ["/scripts/items/outfitbag.lua"],
+
+  "itemTags" : [ "starpounds" ],
+  
+  "fireTime" : 2.0,
+  "fireOffset" : [1.0, 0.0],
+  
+  "outfitKey" : "plumpstarpoundshawaiian"
+}

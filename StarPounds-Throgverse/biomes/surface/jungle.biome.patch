@@ -1,0 +1,30 @@
+[
+	{
+		"op": "add",
+		"path": "/surfacePlaceables/items/-",
+		"value":
+		{
+			"mode" : "floor",
+			"priority" : 1,
+			"variants" : 1,
+			"distribution" : "/biomes/starpoundsmicrodungeon.config:starpoundsraremicrodungeon",
+
+			"type" : "microdungeon",
+			"microdungeons" : [ "gluttonisthut" ]
+		}
+	},
+	{
+		"op": "add",
+		"path": "/surfacePlaceables/items/-",
+		"value":
+		{
+			"mode" : "floor",
+			"priority" : 1,
+			"variants" : 1,
+			"distribution" : "/biomes/starpoundsmicrodungeon.config:starpoundsraremicrodungeon",
+
+			"type" : "microdungeon",
+			"microdungeons" : [ "gluttonistcookout" ]
+		}
+	}
+]

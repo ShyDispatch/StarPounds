@@ -1,0 +1,12 @@
+[
+    {
+        "op": "replace",
+        "path": "/layers/5/objects/1/properties/monster",
+        "value": "fathylotlghost"
+    },
+    {
+        "op": "replace",
+        "path": "/layers/5/objects/2/properties/monster",
+        "value": "fathylotlghost"
+    }
+]

@@ -1,0 +1,24 @@
+{
+  "materialId" : 51425,
+  "materialName" : "throgtech",
+  "particleColor" : [191, 130, 200, 255],
+  "itemDrop" : "throgtech",
+  "description" : "A curious material made of \"Hard Light\"",
+  "shortdescription" : "Throg Panel",  
+  "glitchDescription" : "Observant. This matter is made of \"Hard Light\".",
+  "floranDescription" : "It feelsss electric.",
+  "novakidDescription" : "Silly chocolate. You're for eatin' not buildin'.",
+  "footstepSound" : "/sfx/blocks/footstep_crystal.ogg",
+  "health" : 24,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "throgtech.png",
+    "variants" : 10,
+    "lightTransparent" : false,
+    "occludesBelow" : true,
+    "multiColored" : true,
+    "zLevel" : 1570
+  }
+}

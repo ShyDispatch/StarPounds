@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpounds871a",
+  "rarity" : "Legendary",
+  "price" : 0,
+  "category" : "preparedFood",
+  "inventoryIcon" : "871a.png",
+  "description" : "It's just an ordinary cake. But there's always more of it.",
+  "shortdescription" : "Replicating Cake",
+  "starpounds_disableExperience" : true,
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 80
+    }
+  ] ],
+  "foodValue": 50,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 9.0
+}

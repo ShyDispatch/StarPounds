@@ -1,0 +1,114 @@
+{
+  "mootantExitBedPester" : {
+    "type" : "mission",
+    "text" : "Hurry up, or you'll lose what's left of your mind here. ^#71f2f6;Press A or D to get up^white;."
+  },
+
+  "mootantOpenDoor" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "To interact with a nearby person, door, or other object, you should ^#71f2f6;hover over it with your cursor and press E^white;, if you are sapient enough to do so."
+  },
+  
+  "mootantOpenDoorPester" : {
+    "type" : "mission",
+    "text" : "Remember, you can open a door by ^#71f2f6;hovering over it with your cursor and pressing E^white;."
+  },
+
+  "mootantUniform" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "I'm detecting the belongings of my captain nearby. I've lost all traces of them awhile ago. Maybe they turned into you. The data is too limited to say."
+  },
+  
+  "mootantUpdate1" : {
+    "type" : "mission",
+    "text" : "Despite the loss of the captain. It is best I try to rescue someone so their sacrifice is not in vain. Their ship is not far from the prison."
+  },
+  
+  "mootantWeapon" : {
+    "type" : "mission",
+    "text" : "There are hostile lifesigns near your area. It's a USCM facility, they're loaded with guns. Chances are high there's one lying around, find a weapon."
+  },
+  
+  "mootantWrongExit" : {
+    "type" : "mission",
+    "text" : "The captain's ship is on the other side of the prison. There's not much on this side of the forest beyond vicious predators."
+  },
+  
+  "mootantPrisoners" : {
+    "type" : "mission",
+    "text" : "The prisoners don't seem open to negotiation."
+  },
+  
+  "mootantMatterManipulator" : {
+    "type" : "mission",
+    "text" : "The captain's Matter Manipulator. It is best you take it. To aid your escape and prevent it falling into the wrong hands."
+  },
+  
+  "mootantGlass" : {
+    "type" : "mission",
+    "text" : "Anaylsis shows the glass in this room is particularly brittle. Just enough for the Matter Manipulator to tear it down."
+  },
+  
+  "mootantGlassPester" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "You can get past this glass using your Matter Manipulator. ^#71f2f6;Press the R key to equip it^white;."
+  },
+  
+  "mootantGlassNoMM" : {
+    "type" : "mission",
+    "text" : "Anaylsis shows the glass in this room is particularly brittle. You'll need a Matter Manipulator to break it."
+  },
+  
+  "mootantSecurity" : {
+    "type" : "mission",
+    "text" : "Due to the incident, the prisoners and guards are in a lockdown stalemate. You'll need to access the security station to unlock the exit doors."
+  },
+  
+  "mootantSecurityPester" : {
+    "type" : "mission",
+    "text" : "You'll need to find the security console on this level to reach the main floor. It'll light up with green text if activated, and has matching panels next to it and the locked doors."
+  },
+  
+  "mootantSecurity2" : {
+    "type" : "mission",
+    "text" : "I'm detecting the captain's Matter Manipulator as well as a second security lockdown console nearby in this area. Check out both before continuing on."
+  },
+  
+  "mootantSecurityPester2" : {
+    "type" : "mission",
+    "text" : "With the Matter Manipulator in hand, find the second security console. That'll unlock the doors that lead to the prison entrance."
+  },
+
+  "mootantjump" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "The way through is currently locked due to lack of power. You're going to need to find a way through. ^#71f2f6;Use spacebar to jump^white; up to higher platforms."
+  },
+  
+  "mootantProtectorateSword" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "The captain's sword was badly damaged. No sign of the Matter Manipulator here. Take the sword, it'll be of great use to you."
+  },
+  
+  "mootantProtectorateSwordPester" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "I know it has been badly damaged, it is a shell of its former glory. But it can be repaired at a later time. Please take it."
+  },
+  
+  "mootantShip" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "No hostile life signs between you and the ship. Keep moving forward and you'll run into it. You can't miss it."
+  },
+
+  "mootantShipa" : {
+    "important" : true,
+    "type" : "mission",
+    "text" : "The USCM have tried tearing apart the ship where opening locked doors have failed. It is still space worthy with a 63% chance of breakdown. Get Aboard."
+  }   
+}

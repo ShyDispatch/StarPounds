@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsqueenburger",
+  "rarity" : "Legendary",
+  "price" : 1750,
+  "category" : "preparedFood",
+  "inventoryIcon" : "queenburger.png",
+  "description" : "A real royal meal to fill your stomach.",
+  "shortdescription" : "Queen Burger",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 1035
+    }
+  ] ],
+  "foodValue": 115,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundsgluttonistfeastpainting1",
+  "colonyTags" : ["pretty","floran","fatdungeons","gluttonist"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 900,
+
+  "description" : "A proud Floran raises their meal!",
+  "shortdescription" : "Small Gluttonist Art",
+  "race" : "generic",
+
+  "apexDescription" : "A very well fed Floran.",
+  "avianDescription" : "They seem quite happy with their food.",
+  "floranDescription" : "Floran in picture showing off feassst. Floran is well rounded!",
+  "glitchDescription" : "Amused. The Floran in this looks quite fat!",
+  "humanDescription" : "That does look like a good roast.",
+  "hylotlDescription" : "An icon of gluttony and barbarism...",
+  "novakidDescription" : "Boy's got a heck've an appetite!",
+
+  "inventoryIcon" : "starpoundsgluttonistfeastpainting1icon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsgluttonistfeastpainting1.png:<color>",
+      "imagePosition" : [-16, -16],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+    }
+  ]
+}

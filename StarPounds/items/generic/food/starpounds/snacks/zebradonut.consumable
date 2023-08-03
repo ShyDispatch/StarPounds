@@ -1,0 +1,22 @@
+{
+  "itemName" : "starpoundszebradonut",
+  "rarity" : "Rare",
+  "price" : 360,
+  "category" : "preparedFood",
+  "inventoryIcon" : "zebradonut.png",
+  "description" : "With white frosting and chocolate stripes. It's like a zebra!",
+  "shortdescription" : "Zebra Donut",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 540
+    }
+  ] ],
+  "foodValue": 60,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0,
+  "learnBlueprintsOnPickup" : [ "starpoundszebradonut" ]
+}

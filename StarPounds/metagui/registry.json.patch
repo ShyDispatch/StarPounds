@@ -1,0 +1,8 @@
+[
+  { "op" : "add", "path" : "/panes/starpounds", "value" : {
+    "menu" : "/interface/scripted/starpounds/menu/menu.ui",
+    "skills" : "/interface/scripted/starpounds/skills/skills.ui",
+    "accessories" : "/interface/scripted/starpounds/accessories/accessories.ui",
+    "options" : "/interface/scripted/starpounds/options/options.ui"
+  } }
+]

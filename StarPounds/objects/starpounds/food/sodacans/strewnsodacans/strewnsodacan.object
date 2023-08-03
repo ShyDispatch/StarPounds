@@ -1,0 +1,33 @@
+{
+  "objectName" : "strewnsodacans1",
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "printable" : false,
+
+  "description" : "A simple can of Soda.",
+  "shortdescription" : "Soda Can",
+  "race" : "human",
+
+  "apexDescription" : "Empty cans of soda, litering the floor.",
+  "avianDescription" : "Cans just thrown carelessly to the ground.",
+  "floranDescription" : "Awww, cans empty.",
+  "glitchDescription" : "Displeased. Who throws cans onto the floor?",
+  "humanDescription" : "Someone should really pick up these cans... Yeah...",
+  "hylotlDescription" : "Hylotl take great care not to liter. Our oceans are important.",
+  "novakidDescription" : "I missed some wreckless chuggin'.",
+
+
+  "inventoryIcon" : "sodaicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "soda.png",
+      "imagePosition" : [-1, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : ["bottom"]
+    }
+  ]
+}

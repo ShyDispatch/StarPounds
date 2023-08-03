@@ -1,0 +1,13 @@
+{
+  "name" : "lactatingfast",
+  "effectConfig" : {
+    "tickTime": 0.5,
+    "amount": 2
+  },
+	"scripts": [
+		"lactating.lua"
+	],
+  "defaultDuration" : 30,
+  "label" : "Lactating Quickly",
+  "icon" : "/interface/statuses/lactating.png"
+}

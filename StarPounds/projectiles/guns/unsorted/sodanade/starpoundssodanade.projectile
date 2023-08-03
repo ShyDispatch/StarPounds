@@ -1,0 +1,47 @@
+{
+  "projectileName" : "starpoundssodanade",
+  "physics" : "grenade",
+  "bounces" : 0,
+  "timeToLive" : 3,
+  "damageKindImage" : "icon.png",
+  "image" : "starpoundssodanade.png",
+  "animationCycle" : 0.5,
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/gun/grenadeblast_small_poison1.ogg", "/sfx/gun/grenadeblast_small_poison2.ogg", "/sfx/gun/grenadeblast_small_poison3.ogg" ]
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 90
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 180
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.05,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 30,
+      "angleAdjust" : 270
+    }
+  ],
+  "power" : 50,
+  "damageType" : "NoDamage",
+  "damageKind" : "caloricplasma"
+}

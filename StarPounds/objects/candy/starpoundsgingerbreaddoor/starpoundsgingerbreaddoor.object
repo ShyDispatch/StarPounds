@@ -1,0 +1,61 @@
+{
+  "objectName" : "starpoundsgingerbreaddoor",
+  "colonyTags" : ["door"],
+  "rarity" : "Common",
+
+  "category" : "door",
+  "price" : 95,
+  "description" : "A door made out of gingerbread.",
+  "shortdescription" : "Gingerbread Door",
+  "race" : "generic",
+
+  "apexDescription" : "A gingerbread door. It reminds me of Miniknog gameshows I've watched.",
+  "avianDescription" : "This is strange. A door made out of gingerbread.",
+  "floranDescription" : "Floran prefersss doorss that Floran won't wanna eat.",
+  "glitchDescription" : "Observant. This door appears to have been made out of chocolate.",
+  "humanDescription" : "I think I read a book that included a ginerbread door. Is it connected to a gingerbread house?",
+  "hylotlDescription" : "This.. Who would make a door out of gingerbread?",
+  "novakidDescription" : "This door is made o' gingerbread. That's just poor thinkin'.",
+  "throgDescription" : "If they wanted this to be effective. They shouldn't have made it so edible.",  
+  "avaliDescription" : "What? It's made of gingerbread. A gingerbread door. Who would make this?",      
+
+  "inventoryIcon" : "starpoundsgingerbreaddooricon.png",
+
+  "tooltipKind" : "door",
+  "largeImage" : "starpoundsgingerbreaddoor.png:right",
+  
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsgingerbreaddoor.png:default",
+      "imagePosition" : [-16, 0],
+      "renderLayer" : "Object+5",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/wooddoor_open.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/wooddoor_close.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "starpoundsgingerbreaddoor.png"
+  },
+  "animationPosition" : [-16, 0],
+
+  "inputNodes" : [ [0, 4] ],
+  "outputNodes" : [ [0, 0] ]
+}

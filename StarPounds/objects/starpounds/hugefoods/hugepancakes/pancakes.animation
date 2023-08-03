@@ -1,0 +1,86 @@
+{
+  "animatedParts" : {
+    "parts" : {
+      "pancake" : {
+        "properties" : {
+          "centered" : false,
+          "image" : "<partImage>:<stage>"
+        }
+      }
+    }
+  },
+  
+  "particleEmitters" : {
+    "bite" : {
+      "enabled" : false,
+      "emissionRate" : 1.0,
+      "offsetRegion" : [1.0, 1.0, 7.0, 7.0],
+      "particles" : [
+        { // batter, large
+          "count" : 4,
+          "particle" : {
+            "type" : "ember",
+            "size" : 2.0,
+            "color" : [246, 174, 24, 255],
+            "initialVelocity" : [0, 2],
+            "finalVelocity" : [0, -50],
+            "approach" : [0, 50],
+            "timeToLive" : 0.75,
+            "variance" : {
+              "initialVelocity" : [10, 3]
+            }
+          }
+        },
+        { // batter, small
+          "count" : 4,
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.0,
+            "color" : [246, 234, 156, 255],
+            "initialVelocity" : [0, 5],
+            "finalVelocity" : [0, -50],
+            "approach" : [0, 50],
+            "timeToLive" : 0.75,
+            "variance" : {
+              "initialVelocity" : [10, 10]
+            }
+          }
+        },
+        { // Syrup
+          "count" : 4,
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.0,
+            "color" : [212, 198, 52, 255],
+            "initialVelocity" : [0, 5],
+            "finalVelocity" : [0, -50],
+            "approach" : [0, 50],
+            "timeToLive" : 0.75,
+            "variance" : {
+              "initialVelocity" : [10, 10]
+            }
+          }
+        },
+        { // butter
+          "count" : 2,
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.0,
+            "color" : [255, 177, 14, 255],
+            "initialVelocity" : [0, 5],
+            "finalVelocity" : [0, -50],
+            "approach" : [0, 50],
+            "timeToLive" : 0.75,
+            "variance" : {
+              "initialVelocity" : [10, 10]
+            }
+          }
+        }
+      ]
+    }
+  },
+  
+  "sounds" : {
+    "bite" : ["/sfx/humanoid/eat1.ogg", "/sfx/humanoid/eat2.ogg"]
+  }
+}

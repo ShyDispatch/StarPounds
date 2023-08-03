@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "wheat", "count" : 2 },
+    { "item" : "sugar", "count" : 2 },
+    { "item" : "milk", "count" : 2 },
+    { "item" : "egg", "count" : 2 }
+  ],
+  "output" : { "item" : "starpoundsroyalcake", "count" : 1 },
+  "groups" : [ "craftingfood", "desserts" ]
+}

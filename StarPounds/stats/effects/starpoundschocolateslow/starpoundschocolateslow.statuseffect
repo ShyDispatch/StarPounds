@@ -1,0 +1,15 @@
+{
+  "name" : "starpoundschocolateslow",
+  "blockingStat" : "wetImmunity",
+  "effectConfig" : {},
+  "defaultDuration" : 2,
+
+  "scripts" : [
+    "starpoundschocolateslow.lua"
+  ],
+
+  "animationConfig" : "starpoundschocolateslow.animation",
+
+  "label" : "Chocolate Coated",
+  "icon" : "/interface/statuses/starpoundsliquidchocolate.png"
+}

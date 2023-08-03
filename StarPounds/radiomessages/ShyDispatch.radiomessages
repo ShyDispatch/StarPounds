@@ -1,0 +1,21 @@
+{
+  "blubberbutttest" : {
+      "senderName" : "Blubberbutt Shy",
+      "portraitImage" : "/interface/chatbubbles/throgpatch.png:<frame>",
+      "text" : "Your Blubberbutt requires food. More food.",
+      "unique" : false	  
+  },  
+  "blubberbutttest2" : {
+      "senderName" : "Blubberbutt Shy",
+      "portraitImage" : "/interface/chatbubbles/throgpatch.png:<frame>",
+      "text" : "A",
+      "persistTime" : 0.5,	  
+      "unique" : false	  
+  },  
+  "blubberbutttest3" : {
+      "senderName" : "Blubberbutt Shy",
+      "portraitImage" : "/interface/chatbubbles/throgpatch.png:<frame>",
+      "text" : "Hello there. It's me! The Great ^#ff2b80;Hiraki Corale^reset;! I know, I know. You're speechless.", 
+      "unique" : false	  
+  }  
+}

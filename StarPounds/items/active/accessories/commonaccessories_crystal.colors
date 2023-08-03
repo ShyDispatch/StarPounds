@@ -1,0 +1,23 @@
+{
+  "name" : "commonaccessories_crystal",
+  "swaps" : [
+    // SLIME
+    { "6f2919" : "2f746e", "a85636" : "48a075", "e0975c" : "5ad385", "ffca8a" : "c9f080" },
+    // ICE
+    { "6f2919" : "45a0e0", "a85636" : "86d7f8", "e0975c" : "baeeff", "ffca8a" : "f0fcff" },
+    // LAVA
+    { "6f2919" : "ed6e24", "a85636" : "ffc029", "e0975c" : "fff548", "ffca8a" : "fefffe" },
+    // GEODE RED
+    { "6f2919" : "690204", "a85636" : "a72c1c", "e0975c" : "e3493a", "ffca8a" : "ff7b58" },
+    // GEODE ORANGE
+    { "6f2919" : "782b00", "a85636" : "b25c10", "e0975c" : "ec9b1b", "ffca8a" : "ffcc2f" },
+    // GEODE YELLOW
+    { "6f2919" : "604f03", "a85636" : "a99d19", "e0975c" : "e0de30", "ffca8a" : "f7ff62" },
+    // GEODE GREEN
+    { "6f2919" : "015801", "a85636" : "0d9319", "e0975c" : "2bcd1e", "ffca8a" : "79fa66" },
+    // GEODE BLUE
+    { "6f2919" : "0d3383", "a85636" : "298dc7", "e0975c" : "36bce2", "ffca8a" : "62ebff" },
+    // GEODE PURPLE
+    { "6f2919" : "41047b", "a85636" : "7b1da7", "e0975c" : "b93be3", "ffca8a" : "e259ff" }
+  ]
+}

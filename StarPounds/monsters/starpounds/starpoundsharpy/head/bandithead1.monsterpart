@@ -1,0 +1,9 @@
+{
+  "name" : "bandithead1",
+  "category" : "starpoundsharpybandit",
+  "type" : "head",
+
+  "frames" : {
+    "head" : "bandithead1.png"
+  }
+}

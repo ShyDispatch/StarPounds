@@ -1,0 +1,33 @@
+{
+  "itemName" : "fattychaircontroller",
+  "level" : 1,
+  "price" : 20000,
+  "rarity" : "Rare",
+  "category" : "vehicleController",
+  "shortdescription" : "Blob Hoverchair Controller",
+  "description" : "Create a giant hoverchair from stored nanites.",
+  "twoHanded" : true,
+  "maxStack" : 1,
+  "itemTags" : ["vehiclecontroller"],
+
+  "animation" : "vehiclecontroller.animation",
+  "scripts" : ["vehiclecontroller.lua"],
+  "animationScripts" : ["vehiclecursor.lua"],
+  "filled" : true,
+  "tooltipKind" : "vehicle",
+  "largeImage" : "fattychair.png",
+
+  "respawnTime" : 1.0,
+
+  "vehicleType" : "fattyhoverchair",
+  "vehicleBoundingBox" : [-5, -3, 5, 3],
+  "vehicleImage" : "/vehicles/hoverbike/hoverbikewarp.png:warp.7",
+
+  "animationParts" : {
+    "casing" : "hoverbikecontrollerkhaki.png"
+  },
+
+  "inventoryIcon" : "fattychaircontroller.png:full",
+  "emptyInventoryIcon" : "/items/active/vehiclecontroller/fattychaircontroller.png:empty",
+  "filledInventoryIcon" : "/items/active/vehiclecontroller/fattychaircontroller.png:full"
+}

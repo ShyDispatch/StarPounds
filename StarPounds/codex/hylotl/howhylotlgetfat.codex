@@ -1,0 +1,23 @@
+{
+  "id" : "howhylotlgetfat",
+  "species" : "hylotl",
+  "title" : "Hylotl Whales",
+  "description" : "A book describing a common occurance of fat Hylotl and their existence.",
+  "icon" : "hylotlcover4.png",
+  "contentPages" : [
+    "The Hylotl have been a race very in touch with its old ways. Managing to mix tradition with new. One moment you're witnessing the height of Hylotl technology displayed in their city streets, the next their rooms remove it. With paper walls and tables that can't use chairs.",
+
+"Yet the wave of the future has a way of corrupting. To receive maximum retention and monetization. PLaces that have no room for tradition. Where lights are always flashing. Where games and media are addicting. Where the food is fattening to maximize folks wanting more.",
+
+"A lot of the current generations of Hylotl are dealing with a wave of aggressive trends that try to sink its claws into the once near endangered species. As new cities hope to indulge its populace to make them lazy and uncaring.",
+
+"...",
+
+"..."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 25
+  }
+}

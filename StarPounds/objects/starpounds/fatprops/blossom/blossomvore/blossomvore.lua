@@ -31,14 +31,11 @@ function init()
 			"Bwuh, feisty lil snack!~"
 		},
 		stop = {
-			"Oh... Bored of me already?...",
+			"Oh... Bored of me already?",
 			"You have other things to do? Okay...",
 			"Don't want to be bug butt?",
-			"A-am I that boring?",
 			"Bweh, fiiiiiine.",
-			"I thought you wanted to be food?",
-			"W-was I being too mean?",
-			"Oh... Okay... have fun without me."
+			"I thought you wanted to be food?"
 		},
 		digested = {
 			"You make good assfat, <player>~",

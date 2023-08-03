@@ -8,51 +8,44 @@
     "type" : "label",
     "position" : [115, 30],
     "hAnchor" : "left",
-    "value" : "tree"
+    "value" : "0"
   },
-  "speedTitleLabel" : {
+  "toolLabel" : {
     "type" : "label",
-    "position" : [16, 74],
+    "position" : [35, 169],
     "hAnchor" : "left",
-    "value" : "Rate of Fire:"
+    "color" : [185, 181, 178],
+    "value" : "Tool"
   },
-  "speedLabel" : {
+  "descriptionLabel" : {
     "type" : "label",
-    "position" : [133, 74],
-    "hAnchor" : "right",
-    "wrapWidth" : 126
-  },
-  "damagePerShotTitleLabel" : {
-    "type" : "label",
-    "position" : [16, 83],
+    "position" : [16, 91],
     "hAnchor" : "left",
-    "value" : "Damage Per Swing:"
+    "vAnchor" : "top",
+    "wrapWidth" : 122
   },
-  "damagePerShotLabel" : {
-    "type" : "label",
-    "position" : [133, 83],
-    "hAnchor" : "right",
-    "wrapWidth" : 126
+  "largeImage" : {
+    "type" : "image",
+    "position" : [70, 120],
+    "centered" : true,
+    "file" : "/interface/money.png",
+    "maxSize" : [75, 45],
+    "minSize" : [65, 35]
   },
-  "altAbilityTitleLabel" : {
+  "title" : {
     "type" : "label",
-    "position" : [16, 65],
+    "position" : [35, 179],
     "hAnchor" : "left",
     "value" : ""
   },
-  "altAbilityLabel" : {
-    "type" : "label",
-    "position" : [133, 65],
-    "hAnchor" : "right",
-    "centered" : true,
-    "wrapWidth" : 126
-  },
-  "handednessLabel" : {
-    "type" : "label",
-    "position" : [75, 150],
-    "hAnchor" : "mid",
-    "centered" : true,
-    "wrapWidth" : 122
+  "titleIcon" : {
+    "type" : "itemslot",
+    "position" : [9, 167],
+    "callback" : "null",
+    "iconMode" : true,
+    "backingImage" : "/interface/inventory/portrait.png",
+    "showRarity" : false,
+    "showBackingImageWhenFull" : true
   },
   "rarityLabel" : {
     "type" : "label",
@@ -69,34 +62,11 @@
     "maxSize" : [16, 16],
     "minSize" : [16, 16]
   },
-  "largeImage" : {
-    "type" : "image",
-    "position" : [70, 120],
-    "file" : "",
+  "handednessLabel" : {
+    "type" : "label",
+    "position" : [90, 150],
+    "hAnchor" : "right",
     "centered" : true,
-    "maxSize" : [75, 45],
-    "minSize" : [65, 35]
-  },
-  "title" : {
-    "type" : "label",
-    "position" : [35, 179],
-    "hAnchor" : "left",
-    "value" : ""
-  },
-  "subTitle" : {
-    "type" : "label",
-    "position" : [35, 169],
-    "hAnchor" : "left",
-    "color" : [185, 181, 178],
-    "value" : ""
-  },
-  "titleIcon" : {
-    "type" : "itemslot",
-    "position" : [9, 167],
-    "callback" : "null",
-    "iconMode" : true,
-    "backingImage" : "/interface/inventory/portrait.png",
-    "showRarity" : false,
-    "showBackingImageWhenFull" : true
+    "wrapWidth" : 126
   }
 }

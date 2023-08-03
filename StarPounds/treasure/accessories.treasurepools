@@ -146,6 +146,7 @@
     [0, {
       "pool": [
         {"item": "belchpendant", "weight": 1},
+        {"item": "rustypendant", "weight": 1},
         {"item": "sweetdullpendant", "weight": 1},
 
         {"item": "avianring", "weight": 1},
@@ -180,6 +181,7 @@
   "uniqueLegendaryAccessory" : [
     [0, {
       "pool": [
+        {"item": "rivierapendant", "weight": 1},
         {"item": "treebuddypendant", "weight": 1},
 
         {"item": "audreyring", "weight": 1},

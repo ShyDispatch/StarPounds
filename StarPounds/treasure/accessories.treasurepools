@@ -145,8 +145,8 @@
   "uniqueUncommonAccessory" : [
     [0, {
       "pool": [
-        {"item": "sweetdullpendant", "weight": 1},
         {"item": "belchpendant", "weight": 1},
+        {"item": "sweetdullpendant", "weight": 1},
 
         {"item": "avianring", "weight": 1},
         {"item": "floranring", "weight": 1},
@@ -162,14 +162,14 @@
     [0, {
       "pool": [
         {"item": "cassandrapendant", "weight": 1},
-        {"item": "lotuspendant", "weight": 1},
-        {"item": "predatorpendant", "weight": 1},
-        {"item": "mooshipendant", "weight": 1},
         {"item": "keapendant", "weight": 1},
+        {"item": "lotuspendant", "weight": 1},
+        {"item": "mooshipendant", "weight": 1},
+        {"item": "predatorpendant", "weight": 1},
 
+        {"item": "blossomring", "weight": 1},
         {"item": "lotusring", "weight": 1},
         {"item": "throgring", "weight": 1},
-        {"item": "blossomring", "weight": 1},
 
         {"item": "blueberrytrinket", "weight": 1},
         {"item": "lotustrinket", "weight": 1}
@@ -182,11 +182,11 @@
       "pool": [
         {"item": "treebuddypendant", "weight": 1},
 
-        {"item": "blubberbuttring", "weight": 1},
         {"item": "audreyring", "weight": 1},
-        {"item": "gracering", "weight": 1},
+        {"item": "blubberbuttring", "weight": 1},
         {"item": "ferrianring", "weight": 1},
-        {"item": "feyrethring", "weight": 1}
+        {"item": "feyrethring", "weight": 1},
+        {"item": "gracering", "weight": 1}
       ]
     }]
   ]

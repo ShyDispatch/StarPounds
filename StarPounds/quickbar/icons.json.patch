@@ -1,5 +1,4 @@
 [
-
 	{
 		"op": "add",
 		"path": "/items/starpounds:menu",
@@ -8,6 +7,17 @@
 			"icon": "/quickbar/starpoundsmenu.png",
 			"weight" : -500,
 			"action": ["ui", "starpounds:menu"]
+		}
+	},
+	{
+		"op": "add",
+		"path": "/items/starpounds:pizzamenu",
+		"value": {
+			"label": "^#ccbbff;Pizza Menu",
+			"icon": "/quickbar/starpoundsmenu.png",
+			"weight" : -501,
+			"action": ["ui", "starpounds:pizzamenu"],
+			"condition" : [ "admin" ]
 		}
 	}
 ]

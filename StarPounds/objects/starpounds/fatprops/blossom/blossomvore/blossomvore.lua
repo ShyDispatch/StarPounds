@@ -51,7 +51,6 @@ function init()
 		}
 	}
 
-
 	regurgitateTimer = 0
 end
 

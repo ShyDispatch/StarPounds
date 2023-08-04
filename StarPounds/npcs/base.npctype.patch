@@ -6,14 +6,6 @@
 	},
 	{
 		"op": "add",
-		"path": "/scriptConfig/starPounds_options",
-		"value": {
-			"disableStomachMeter": true,
-			"disableSizeMeter": true
-		}
-	},
-	{
-		"op": "add",
 		"path": "/scriptConfig/chatSounds/throg",
 		"value": {
 		"male": [ "/sfx/humanoid/throg_chatter_male1.ogg", "/sfx/humanoid/throg_chatter_male2.ogg", "/sfx/humanoid/throg_chatter_male3.ogg" ],

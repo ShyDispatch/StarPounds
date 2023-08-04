@@ -943,15 +943,19 @@ starPounds = {
 				break
 			end
 		end
+		-- Add append directives, if any. (i.e. novakids have this white patch that doesn't change with default species colours, adding ffffff=ffffff means it gets picked up by the fullbright block)
+		if speciesData.appendDirectives then
+			directives = string.format("%s;%s", directives, speciesData.appendDirectives):gsub(";;", ";")
+		end
 		-- If the species is fullbright (i.e. novakids), append 'fe' to hexcodes to make them fullbright. (99%+ opacity)
 		if speciesData.fullbright then
 			directives = (directives..";"):gsub("(%x)(%?)", function(a) return a..";?" end):gsub(";;", ";"):gsub("(%x+=%x%x%x%x%x%x);", function(colour)
 				return string.format("%sfe;", colour)
 			end)
 		end
-		-- Slip in override directives, if any. (i.e. novakids have this white patch that doesn't change with default species colours)
-		if speciesData.overrideDirectives then
-			directives = string.format("%s;%s", speciesData.overrideDirectives, directives):gsub(";;", ";")
+		-- Slip in override directives, if any. This is after the fullbright block since this is usually used for mimicking species palettes.
+		if speciesData.prependDirectives then
+			directives = string.format("%s;%s", speciesData.prependDirectives, directives):gsub(";;", ";")
 		end
 		return directives
 	end,

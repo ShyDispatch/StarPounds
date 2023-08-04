@@ -406,6 +406,8 @@ starPounds = {
 			return
 		end
 
+		if not (starPounds.type == "player") then return end
+
 		if not starPounds.hasOption("disableStomachMeter") then
 			local stomachTracker = "starpoundsstomach"
 			if starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach2) then
@@ -419,9 +421,11 @@ starPounds = {
 			end
 		end
 
-		if not starPounds.hasOption("disableSizeMeter") and not status.uniqueStatusEffectActive("starpounds"..starPounds.currentSize.size) then
-			starPounds.createStatuses()
-			return
+		if not starPounds.hasOption("disableSizeMeter") then
+			if not status.uniqueStatusEffectActive("starpounds"..starPounds.currentSize.size) then
+				starPounds.createStatuses()
+				return
+			end
 		end
 	end,
 
@@ -1975,7 +1979,7 @@ starPounds = {
 		if not storage.starPounds.pred then return end
 		-- Argument sanitisation.
 		source = tonumber(source)
-		overrideStatus = tostring(overrideStatus)
+		overrideStatus = overrideStatus and tostring(overrideStatus) or nil
 		-- Reset damage team.
 		entity.setDamageTeam(storage.starPounds.damageTeam)
 		storage.starPounds.damageTeam = nil

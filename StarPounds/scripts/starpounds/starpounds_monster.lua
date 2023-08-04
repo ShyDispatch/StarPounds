@@ -19,7 +19,6 @@ function starPoundsInit()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
 	storage.starPounds.options = sb.jsonMerge(storage.starPounds.options, config.getParameter("starPounds_options", {}))
-
 	if not storage.starPounds.parsedInitialSkills then
 		local skills = config.getParameter("starPounds_skills", {})
 		for k, v in pairs(skills) do
@@ -132,7 +131,6 @@ function makeOverrideFunction()
 					entity.weight = entity.weight + math.min(math.round(monsterArea * 10), 50)
 				end
 			end
-
 			entity.experience = entity.weight * starPounds.settings.monsterExperienceMultiplier
 			-- No XP if the monster is a pet (prevents infinite XP).
 			if (capturable and (capturable.tetherUniqueId() or capturable.ownerUuid())) then

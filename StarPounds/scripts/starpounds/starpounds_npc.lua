@@ -148,6 +148,7 @@ function makeOverrideFunction()
       entity.setDeathParticleBurst = npc.setDeathParticleBurst
       entity.setDeathSound = nullFunction
       entity.setDamageOnTouch = npc.setDamageOnTouch
+			entity.setDamageSources = nullFunction
       entity.setDamageTeam = npc.setDamageTeam
       entity.weight = math.round(speciesData.weight * speciesData.nutritionRatio)
       entity.bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio))

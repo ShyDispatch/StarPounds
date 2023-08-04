@@ -107,6 +107,7 @@ function makeOverrideFunction()
 			entity.setDeathParticleBurst = monster.setDeathParticleBurst
 			entity.setDeathSound = monster.setDeathSound
 			entity.setDamageOnTouch = monster.setDamageOnTouch
+			entity.setDamageSources = monster.setDamageSources
 			entity.setDamageTeam = monster.setDamageTeam
 			-- Monsters cause a lot of bloat to make the stomach look full, but not be too overpowered for food.
 			-- ~ 15 bloat and 15 food per block the entity's bounding box occupies.

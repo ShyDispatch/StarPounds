@@ -1781,7 +1781,6 @@ starPounds = {
 				world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
 				starPounds.cycle = math.random(5, 15) / 10
 			end
-
 			if entityType == "npc" then
 				-- Stop NPCs attacking.
 				npc.endPrimaryFire()
@@ -1884,6 +1883,7 @@ starPounds = {
 		})
 		status.addEphemeralEffect("starpoundseaten")
 		entity.setDamageOnTouch(false)
+		entity.setDamageSources()
 		return {
 			weight = entity.weight + storage.starPounds.weight,
 			bloat = entity.bloat,

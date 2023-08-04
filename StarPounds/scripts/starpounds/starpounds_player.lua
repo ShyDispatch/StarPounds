@@ -237,6 +237,7 @@ function makeOverrideFunction()
         setDeathParticleBurst = nullFunction,
         setDeathSound = nullFunction,
         setDamageOnTouch = nullFunction,
+				setDamageSources = nullFunction,
         setDamageTeam = nullFunction,
 	      weight = math.round(speciesData.weight * speciesData.nutritionRatio),
 	      bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio)),

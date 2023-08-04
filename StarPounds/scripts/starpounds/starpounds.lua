@@ -250,7 +250,7 @@ starPounds = {
 			starPounds.sloshTimer = starPounds.settings.sloshTimer
 			starPounds.sloshDeactivateTimer = starPounds.settings.sloshDeactivateTimer
 		end
-		if starPounds.sloshDeactivateTimer == 0 then
+		if starPounds.sloshDeactivateTimer == 0 or (mcontroller.walking() or mcontroller.running()) then
 			starPounds.sloshActivations = 0
 		end
 		starPounds.wasCrouching = crouching

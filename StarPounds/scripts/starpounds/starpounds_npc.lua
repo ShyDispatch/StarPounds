@@ -147,7 +147,6 @@ function makeOverrideFunction()
       entity.setDropPool = function(...) return npc.setDropPools({...}) end
       entity.setDeathParticleBurst = npc.setDeathParticleBurst
       entity.setDeathSound = nullFunction
-      entity.damageOnTouch = nullFunction
       entity.setDamageOnTouch = npc.setDamageOnTouch
       entity.setDamageTeam = npc.setDamageTeam
       entity.weight = math.round(speciesData.weight * speciesData.nutritionRatio)

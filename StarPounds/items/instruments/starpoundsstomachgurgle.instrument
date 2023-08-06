@@ -1,0 +1,19 @@
+{
+  "itemName" : "starpoundsstomachgurgle",
+  "price" : 3000,
+  "category" : "musicalInstrument",
+  "inventoryIcon" : "starpoundsstomachgurgleicon.png",
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "Create a symphony of sloshing!",
+  "shortdescription" : "Musical Gurgles",
+  "largeImage" : "starpoundsstomachgurgleicon.png",
+  "image" : "starpoundsstomachgurgle.png",
+  "tooltipKind" : "tool",
+  "activeImage" : "starpoundsstomachgurgle.png",
+  "activeAngle" : -50,
+  "activeHandPosition" : [0.0, 0],
+  "handPosition" : [0, 0],
+  "twoHanded" : true,
+  "kind" : "starpoundsstomachgurgle"
+}

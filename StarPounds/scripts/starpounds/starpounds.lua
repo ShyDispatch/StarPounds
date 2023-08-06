@@ -235,18 +235,22 @@ starPounds = {
 		local crouching = mcontroller.crouching()
 		starPounds.sloshTimer = math.max((starPounds.sloshTimer or 0) - dt, 0)
 		starPounds.sloshDeactivateTimer = math.max((starPounds.sloshDeactivateTimer or 0) - dt, 0)
-		if crouching and not starPounds.wasCrouching and starPounds.sloshTimer == 0 then
-			starPounds.sloshActivations = math.min(starPounds.sloshActivations or 0, starPounds.settings.sloshActivationCount)
+		local sloshActivationCount = starPounds.settings.sloshActivationCount
+		if crouching and not starPounds.wasCrouching and starPounds.sloshTimer < (starPounds.settings.sloshTimer - starPounds.settings.minimumSloshTimer) then
+			starPounds.sloshActivations = math.min(starPounds.sloshActivations or 0, sloshActivationCount)
+			local activationMultiplier = starPounds.sloshActivations/sloshActivationCount
+			local sloshEffectiveness = (1 - (starPounds.sloshTimer/starPounds.settings.sloshTimer)) * activationMultiplier
+			starPounds.debug("slosh", storage.starPounds.enabled and string.format("^#665599;Delta:^gray; %.3f ^#665599;Effectiveness:^gray; %.1f ^#665599;Digestion:^gray; %.3f", (starPounds.settings.sloshTimer - starPounds.sloshTimer), sloshEffectiveness * 100, starPounds.settings.sloshDigestion * sloshEffectiveness) or "^gray;Mod disabled")
 			-- Sloshy sound, with volume increasing until activated.
-			local soundMultiplier =  0.45 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * starPounds.sloshActivations/starPounds.settings.sloshActivationCount
+			local soundMultiplier =  0.45 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
 			local pitchMultiplier = 1.25 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2)
 			world.sendEntityMessage(entity.id(), "starPounds.playSound", "struggle", soundMultiplier, pitchMultiplier)
-			if starPounds.sloshActivations == starPounds.settings.sloshActivationCount then
-				starPounds.digest(starPounds.settings.sloshDigestion, true)
+			if activationMultiplier > 0 then
+				starPounds.digest(starPounds.settings.sloshDigestion * sloshEffectiveness, true)
 				starPounds.gurgleTimer = math.max((starPounds.gurgleTimer or 0) - (starPounds.settings.sloshPercent * starPounds.settings.gurgleTime), 0)
 				starPounds.rumbleTimer = math.max((starPounds.rumbleTimer or 0) - (starPounds.settings.sloshPercent * starPounds.settings.rumbleTime), 0)
 			end
-			starPounds.sloshActivations = math.min(starPounds.sloshActivations + 1, starPounds.settings.sloshActivationCount)
+			starPounds.sloshActivations = math.min(starPounds.sloshActivations + 1, sloshActivationCount)
 			starPounds.sloshTimer = starPounds.settings.sloshTimer
 			starPounds.sloshDeactivateTimer = starPounds.settings.sloshDeactivateTimer
 		end

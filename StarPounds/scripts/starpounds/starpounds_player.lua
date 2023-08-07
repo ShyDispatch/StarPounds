@@ -62,7 +62,7 @@ function init()
 end
 
 function update(dt)
--- Holy shit why can we not detect what gamemode the player is using.
+	-- Holy shit why can we not detect what gamemode the player is using.
 	if starPounds.hasOption("disableHunger") then
 		status.setResourcePercentage("food", 1)
 	end
@@ -179,6 +179,18 @@ function update(dt)
 end
 
 function uninit()
+	if not status.resourcePositive("health") then
+		local experienceProgress = storage.starPounds.experience/(starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
+		local experienceCost = math.ceil(starPounds.settings.deathExperiencePercentile * storage.starPounds.level * starPounds.getStat("deathPenalty"))
+		local weightCost = math.ceil(storage.starPounds.weight * starPounds.settings.deathWeightPercentile * starPounds.getStat("deathPenalty"))
+		-- Reduce levels and progress to next experience level.
+		storage.starPounds.level = math.max(storage.starPounds.level - experienceCost, 0)
+		storage.starPounds.experience = math.max(experienceProgress - (starPounds.settings.deathExperiencePercentile * starPounds.getStat("deathPenalty")), 0) * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement)
+		-- Lose weight.
+		starPounds.loseWeight(weightCost)
+		-- Reset stomach.
+		starPounds.resetStomach()
+	end
 	starPounds.releaseEntity(nil, true)
 	starPounds.backup()
 end

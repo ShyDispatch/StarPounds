@@ -196,3 +196,19 @@ function makeOverrideFunction()
     end
   end
 end
+
+-- Default override functions
+----------------------------------------------------------------------------------
+die_old = die or nullFunction
+setDying = setDying or nullFunction
+function die()
+	if storage.starPounds.pred then
+		storage.starPounds.pred = nil
+		setDying({shouldDie = true})
+		entity.setDropPool()
+		entity.setDeathSound()
+		entity.setDeathParticleBurst()
+		status.setResource("health", 0)
+	end
+	die_old()
+end

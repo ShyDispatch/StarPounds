@@ -2191,22 +2191,3 @@ configParameter = function(item, keyName, defaultValue)
 		return defaultValue
 	end
 end
-
--- Default override functions
-----------------------------------------------------------------------------------
-die_old = die or nullFunction
-setDying = setDying or nullFunction
-function die()
-	if storage.starPounds.pred then
-		storage.starPounds.pred = nil
-		setDying({shouldDie = true})
-		entity.setDropPool()
-		entity.setDeathSound()
-		entity.setDeathParticleBurst()
-		status.setResource("health", 0)
-		if starPounds.type == "monster" then
-			self.deathBehavior = nil
-		end
-	end
-	die_old()
-end

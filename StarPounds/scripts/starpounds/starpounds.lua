@@ -2155,6 +2155,8 @@ starPounds = {
 
 	resetStomach = function()
 		storage.starPounds.stomach = 0
+		storage.starPounds.bloat = 0
+		storage.starPounds.entityStomach = jarray()
 		return true
 	end,
 

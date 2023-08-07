@@ -240,7 +240,6 @@ starPounds = {
 			starPounds.sloshActivations = math.min(starPounds.sloshActivations or 0, sloshActivationCount)
 			local activationMultiplier = starPounds.sloshActivations/sloshActivationCount
 			local sloshEffectiveness = (1 - (starPounds.sloshTimer/starPounds.settings.sloshTimer)) * activationMultiplier
-			starPounds.debug("slosh", storage.starPounds.enabled and string.format("^#665599;Delta:^gray; %.3f ^#665599;Effectiveness:^gray; %.1f ^#665599;Digestion:^gray; %.3f", (starPounds.settings.sloshTimer - starPounds.sloshTimer), sloshEffectiveness * 100, starPounds.settings.sloshDigestion * sloshEffectiveness) or "^gray;Mod disabled")
 			-- Sloshy sound, with volume increasing until activated.
 			local soundMultiplier =  0.45 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
 			local pitchMultiplier = 1.25 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2)

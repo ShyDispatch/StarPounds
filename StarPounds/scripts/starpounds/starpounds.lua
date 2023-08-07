@@ -1300,9 +1300,6 @@ starPounds = {
 		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
 			if world.entityExists(prey.id) then
 				table.insert(newStomach, prey)
-			-- If not loading in or disabled, digest any missing entities.
-			elseif not status.uniqueStatusEffectActive("beamin") and not starPounds.hasOption("disablePredDigestion") then
-				starPounds.digestEntity(prey.id)
 			end
 		end
 		storage.starPounds.entityStomach = newStomach

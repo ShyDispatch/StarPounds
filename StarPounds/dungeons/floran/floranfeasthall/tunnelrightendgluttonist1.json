@@ -127,18 +127,6 @@
                 {
                  "gid":1266,
                  "height":40,
-                 "id":695,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":40,
-                 "x":1208,
-                 "y":376
-                }, 
-                {
-                 "gid":1266,
-                 "height":40,
                  "id":696,
                  "name":"",
                  "rotation":0,
@@ -464,7 +452,7 @@
                  "properties":
                     {
                      "npc":"floran",
-                     "typeName":"starpoundsgluttonist"
+                     "typeName":"starpoundsgluttonistchampguard"
                     },
                  "propertytypes":
                     {
@@ -485,7 +473,7 @@
                  "properties":
                     {
                      "npc":"floran",
-                     "typeName":"starpoundsgluttonist"
+                     "typeName":"starpoundsgluttonistchampguard"
                     },
                  "propertytypes":
                     {
@@ -822,6 +810,18 @@
                  "width":8,
                  "x":1680,
                  "y":376
+                }, 
+                {
+                 "gid":7691,
+                 "height":40,
+                 "id":763,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":1216,
+                 "y":376
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -892,7 +892,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":763,
+ "nextobjectid":764,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

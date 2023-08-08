@@ -511,18 +511,6 @@
                 {
                  "gid":1266,
                  "height":40,
-                 "id":725,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":40,
-                 "x":856,
-                 "y":464
-                }, 
-                {
-                 "gid":1266,
-                 "height":40,
                  "id":726,
                  "name":"",
                  "rotation":0,
@@ -687,6 +675,18 @@
                  "width":8,
                  "x":1744,
                  "y":480
+                }, 
+                {
+                 "gid":2147491339,
+                 "height":40,
+                 "id":747,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":872,
+                 "y":464
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -717,7 +717,7 @@
                  "properties":
                     {
                      "npc":"floran",
-                     "typeName":"starpoundsgluttonist"
+                     "typeName":"starpoundsgluttonistchampguard"
                     },
                  "propertytypes":
                     {
@@ -738,7 +738,7 @@
                  "properties":
                     {
                      "npc":"floran",
-                     "typeName":"starpoundsgluttonist"
+                     "typeName":"starpoundsgluttonistchampguard"
                     },
                  "propertytypes":
                     {
@@ -820,7 +820,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":747,
+ "nextobjectid":749,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

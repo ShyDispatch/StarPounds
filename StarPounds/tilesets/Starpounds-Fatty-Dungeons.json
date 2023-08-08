@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Starpounds-Fatty-Dungeons",
  "spacing":0,
- "tilecount":21,
+ "tilecount":22,
  "tileheight":88,
  "tileproperties":
     {
@@ -101,6 +101,13 @@
          "imagePositionX":"-16",
          "imagePositionY":"0",
          "object":"gluttoniststatue",
+         "tilesetDirection":"right"
+        },
+     "21":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"bossdoor_feasthall",
          "tilesetDirection":"right"
         },
      "3":
@@ -246,6 +253,13 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "21":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "3":
         {
          "imagePositionX":"string",
@@ -381,6 +395,12 @@
          "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/starpounds\/objects\/gluttoniststatue.png",
          "imageheight":36,
          "imagewidth":40
+        },
+     "21":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/bossdoor_feasthall.png",
+         "imageheight":40,
+         "imagewidth":16
         },
      "3":
         {

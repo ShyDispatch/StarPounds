@@ -31,11 +31,8 @@
     }
   ],
 
-  "scripts" : ["/objects/scripts/breakoninteract.lua"],
+  "scripts" : ["/objects/fattydungeons/dungeonartifactshield.lua"],
   "scriptDelta" : 0,
-
-  "breakDropOptions" : [
-    [ [ "meatberries", 1, { } ] ]
-  ]  
+  "breakDropPool" : "starpoundsmeatberrypool"
   
 }

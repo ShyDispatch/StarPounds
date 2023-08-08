@@ -1,0 +1,83 @@
+{
+  "type" : "starpoundsgluttonistchampguard",
+  "baseType" : "hostile",
+
+  "dropPools" : [ "gluttonisthuntertreasure" ],
+
+  "damageTeam" : 3,
+
+	"identity" : {
+     "species" : "floran"
+	 },
+
+  "scriptConfig" : {
+    "starPounds_skills": {
+      "minimumSize": [4, 5],
+      "digestion": [10, 10],
+      "health": [15, 20],
+      "capacity": [10, 20],
+      "gurgleRate": [2, 5],
+      "gurgleAmount": [1, 3],
+      "bloatDigestion": [2, 5],
+      "bloatAmount": [1, 3],
+      "poisonResistance": [1, 3],
+      "knockbackResistance": [3, 5],
+      "movement": [10, 20],
+      "absorption": [10, 20],
+      "voreCritter": [1, 1],
+      "voreMonster": [1, 1],
+      "voreHumanoid": [1, 1],
+      "voreDamage": [5, 5]
+    },
+
+    "dialog" : {
+      "attack" : {
+        "default" : {
+          "default" : [
+            "Attack!"
+          ]
+        },
+        "floran" : {
+          "default" : [
+            "How dare outsssider disturb the champion!",
+            "For the champion!",
+            "Outsssider!",
+            "Protect the champion!",
+            "Champion needsss protection!"
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic" : [ { "name" : "gluttonisthead", "parameters" : { "colorIndex" : 10 } } ],
+            "chestCosmetic" : [ { "name" : "predatorychest", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "legsCosmetic" : [ { "name" : "predatorypants", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "primary" : [
+              "npcgluttonistspear",
+              "npcgluttonistaxe",
+              "npcgluttonistbroadsword"
+            ],
+            "alt" : [
+              "floranshield"
+            ]
+          }
+        ] ]
+    ]
+  },
+
+ "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 80.0
+      },
+      "powerMultiplier" : {
+        "baseValue" : 1.4
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "itemName" : "angeltrinket",
+  "price" : 5000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "A sanctified, heavenly ankh.\n^gray;\"You can't take it with you.\"",
+  "shortdescription" : "Angelic Ankh",
+  "inventoryIcon" : "angeltrinket.png",
+  "category" : "artifact",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "stats": [
+    {"name": "deathPenalty", "modifier": 7.77},
+    {"name": "health", "modifier": -0.75},
+    {"name": "experienceMultiplier", "modifier": 0.5}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

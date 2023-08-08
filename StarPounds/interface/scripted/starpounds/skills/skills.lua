@@ -187,11 +187,12 @@ function populateSkillTree()
 end
 
 function makeSkillWidget(skill)
+  local toolTip = string.format("%s%s", skill.pretty:gsub("%^.-;", ""), skill.shortDescription and "\n^gray;"..skill.shortDescription or "")
   local skillWidget = {
     type = "layout", position = skill.position, size = {48, 48}, mode = "manual", children = {
       {id = string.format("%sSkill_back", skill.name), type = "image", noAutoCrop = true, position = {12, 8}, file = string.format("back.png?multiply=%s", skill.colour)},
-      {id = string.format("%sSkill", skill.name), toolTip = skill.pretty:gsub("%^.-;", ""), position = {16, 12}, type = "iconButton", image = string.format("icons/skills/%s.png", skill.icon or skill.name), hoverImage = string.format("icons/skills/%s.png", skill.icon or skill.name), pressImage = string.format("icons/skills/%s.png", skill.icon or skill.name).."?border=1;00000000;00000000?crop=1;2;17;18"},
-      {id = string.format("%sSkill_locked", skill.name), toolTip = skill.pretty:gsub("%^.-;", ""), visible = false, type = "iconButton", position = {12, 8}, image = "locked.png", hoverImage = "locked.png", pressImage = "locked.png"},
+      {id = string.format("%sSkill", skill.name), toolTip = toolTip, position = {16, 12}, type = "iconButton", image = string.format("icons/skills/%s.png", skill.icon or skill.name), hoverImage = string.format("icons/skills/%s.png", skill.icon or skill.name), pressImage = string.format("icons/skills/%s.png", skill.icon or skill.name).."?border=1;00000000;00000000?crop=1;2;17;18"},
+      {id = string.format("%sSkill_locked", skill.name), toolTip = toolTip, visible = false, type = "iconButton", position = {12, 8}, image = "locked.png", hoverImage = "locked.png", pressImage = "locked.png"},
       {id = string.format("%sSkill_check", skill.name), visible = false, type = "image", noAutoCrop = true, position = {28, 20}, file = "check.png"}
     }
   }

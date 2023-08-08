@@ -1,0 +1,77 @@
+{
+  "objectName" : "bossdoor_feasthall",
+  "colonyTags" : ["door"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "physics",
+  "breakDropOptions" : [],
+
+  "category" : "door",
+  "price" : 15,
+  "description" : "A force field which can only be passed through one way.",
+  "shortdescription" : "Force Field",
+  "race" : "generic",
+
+  "apexDescription" : "This tribal looking door can only be entered from one direction.",
+  "avianDescription" : "This door is going to keep me marching forward - I will not be able to come back through it.",
+  "floranDescription" : "Old door won't let Floran come back through it.",
+  "glitchDescription" : "Concerned. This door can only be entered from one direction. There's no going back through it.",
+  "humanDescription" : "This door creates a one-way force field. Anyone going through isn't coming back the same way...",
+  "hylotlDescription" : "This door creates a force field that can only be entered from one side. One cannot turn back through it.",
+  "novakidDescription" : "There ain't no turnin' back once I go through this ol' door.",
+
+  "inventoryIcon" : "bossdoor_feasthall.png:closed",
+  "orientations" : [
+    {
+      "dualImage" : "bossdoor_feasthall.png:closed",
+      "imagePosition" : [-8, 0],
+
+      "renderLayer" : "Player+10",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "animation" : "bossdoor_feasthall.animation",
+  "animationParts" : {
+    "door" : "bossdoor_feasthall.png",
+    "doorlit" : "bossdoor_feasthalllit.png"
+  },
+  "animationPosition" : [0, 20],
+
+  "scripts" : [ "/objects/mission/bossdoor/bossdoor.lua" ],
+  "scriptDelta" : 5,
+
+  "physicsCollisions" : {
+    "wall" : {
+      "collision" : [ [-1, 0], [-1, 5], [1, 5], [1, 0] ],
+      "collisionKind" : "slippery",
+      "position" : [0, 0],
+      "categoryBlacklist" : [ "player" ]
+    }
+  },
+
+  "physicsForces" : {
+    "right" : {
+      "type" : "DirectionalForceRegion",
+      "rectRegion" : [-2, 0, 1, 5],
+      "xTargetVelocity" : 4.0,
+      "yTargetVelocity" : 0,
+      "controlForce" : 10000,
+      "categoryWhitelist" : [ "player" ],
+      "enabled" : false
+    },
+    "left" : {
+      "type" : "DirectionalForceRegion",
+      "rectRegion" : [-1, 0, 2, 5],
+      "xTargetVelocity" : -4.0,
+      "yTargetVelocity" : 0,
+      "controlForce" : 10000,
+      "categoryWhitelist" : [ "player" ],
+      "enabled" : false
+    }
+  },
+
+  "playerQueryArea" : [-2, 0, 1.0, 5]
+}

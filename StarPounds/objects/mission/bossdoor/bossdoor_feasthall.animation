@@ -1,0 +1,71 @@
+{
+  "animatedParts" : {
+    "stateTypes" : {
+      "doorState" : {
+        "default" : "closed",
+        "states" : {
+          "open" : {
+            "frames" : 4,
+            "cycle" : 0.4,
+            "mode" : "loop",
+            "properties" : {
+              "persistentSound" : "/sfx/objects/plasmadisc.ogg"
+            }
+          },
+          "closed" : {
+            "frames" : 1
+          }
+        }
+      }
+    },
+
+    "parts" : {
+      "door" : {
+        "properties" : {
+          "centered" : true
+        },
+
+        "partStates" : {
+          "doorState" : {
+            "open" : {
+              "properties" : {
+                "image" : "<partImage>:open.<frame>"
+              }
+            },
+            "closed" : {
+              "properties" : {
+                "image" : "<partImage>:closed"
+              }
+            }
+          }
+        }
+      },
+      "doorlit" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true
+        },
+
+        "partStates" : {
+          "doorState" : {
+            "open" : {
+              "properties" : {
+                "image" : "<partImage>:open.<frame>"
+              }
+            },
+            "closed" : {
+              "properties" : {
+                "image" : "<partImage>:closed"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "open" : [ "/sfx/objects/bardoor2_open.ogg" ],
+    "close" : [ "/sfx/objects/bardoor2_close.ogg" ]
+  }
+}

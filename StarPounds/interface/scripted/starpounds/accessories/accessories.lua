@@ -99,6 +99,24 @@ configParameter = function(item, keyName, defaultValue)
   end
 end
 
+function statClick()
+  statInfoCount = (statInfoCount or 0) + 1
+  if statInfoCount == 50 then
+    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "You know this isn't an actual button right? It doesn't do anything. It will never do anything. It's just the only easy way to get tooltips to work here."})
+  elseif statInfoCount == 100 then
+    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "Since you decided you would click this 100 times you're probably expecting a reward, so have a single pixel. You're welcome."})
+    player.giveItem("money")
+  elseif statInfoCount == 250 then
+    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "Whatever." })
+    player.giveItem("gracecupcake")
+    widget.playSound("/sfx/objects/colonydeed_partyhorn.ogg", nil, 0.75)
+  end
+end
+
+pendantStatInfo.onClick = statClick
+ringStatInfo.onClick = statClick
+trinketStatInfo.onClick = statClick
+
 function weightDecrease:onClick()
   local progress = (starPounds.weight - starPounds.currentSize.weight)/((starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight) - starPounds.currentSize.weight)
   local targetWeight = starPounds.sizes[math.max(starPounds.currentSizeIndex - 1, 1)].weight

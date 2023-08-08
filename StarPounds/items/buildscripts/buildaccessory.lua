@@ -96,11 +96,13 @@ function build(directory, config, parameters, level, seed)
   -- tooltip fields
   config.tooltipFields = {}
   config.tooltipFields.statusList = jarray()
+  local stats = root.assetJson("/scripts/starpounds/starpounds_stats.config")
   for i, stat in ipairs(parameters.stats) do
     config.tooltipFields["stat"..i.."_Label"] = string.format("%s%s%%", stat.modifier > 0 and "+" or "", math.floor(100 * stat.modifier + 0.5))
     config.tooltipFields["stat"..i.."_Image"] = string.format("/interface/tooltips/accessoryicons/%s.png", stat.name)
     -- setting this here so the background shows without the skill
-    config.tooltipFields["stat"..i.."_BackgroundImage"] = "/interface/tooltips/statlistback.png"
+    local backColour = (stats[stat.name].negative and stat.modifier < 0 or stat.modifier > 0) and "4fe646" or "ff4942"
+    config.tooltipFields["stat"..i.."_BackgroundImage"] = "/interface/tooltips/statlistbackaccessory.png?replace;ffffff="..backColour
   end
 
   return config, parameters

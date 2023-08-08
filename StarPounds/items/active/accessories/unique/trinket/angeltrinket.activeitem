@@ -13,8 +13,8 @@
   "accessoryType" : "trinket",
 
   "stats": [
-    {"name": "deathPenalty", "modifier": 1},
-    {"name": "health", "modifier": -0.5},
+    {"name": "deathPenalty", "modifier": 7.77},
+    {"name": "health", "modifier": -0.75},
     {"name": "experienceMultiplier", "modifier": 0.5}
   ],
 

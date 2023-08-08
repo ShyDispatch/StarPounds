@@ -72,19 +72,21 @@ end
 
 function accessoryChanged(slot)
   local item = _ENV[slot]:item()
-
-  local statModifierString = ""
+  local statModifierString
   if item then
-    for _, stat in ipairs(configParameter(item, "stats", jarray())) do
+    statModifierString = ""
+    for i, stat in ipairs(configParameter(item, "stats", jarray())) do
       local negative = (stats[stat.name].negative and stat.modifier > 0) or (not stats[stat.name].negative and stat.modifier < 0)
       local modifierColour = negative and "^red;" or "^green;"
       local amount = (stats[stat.name].invertDescriptor and (stat.modifier * -1) or stat.modifier) * 100
       local statColour = stats[stat.name].colour and ("^#"..stats[stat.name].colour..";") or ""
-      statModifierString = statModifierString..string.format("%s%s^reset; %s by %s%d%%\n", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+      statModifierString = statModifierString..string.format("%s%s%s^reset; %s by %s%d%%", i ~= 1 and "\n" or "", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
     end
   end
 
-  _ENV[slot.."Description"]:setText(statModifierString)
+  local icon = "statInfo.png"..(item ~= nil and "" or "?multiply=00000000;")
+  _ENV[slot.."StatInfo"]:setImage(icon, icon, icon)
+  _ENV[slot.."StatInfo"].toolTip = statModifierString
 end
 
 configParameter = function(item, keyName, defaultValue)

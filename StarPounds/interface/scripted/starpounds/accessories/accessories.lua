@@ -72,19 +72,21 @@ end
 
 function accessoryChanged(slot)
   local item = _ENV[slot]:item()
-
-  local statModifierString = ""
+  local statModifierString
   if item then
-    for _, stat in ipairs(configParameter(item, "stats", jarray())) do
+    statModifierString = ""
+    for i, stat in ipairs(configParameter(item, "stats", jarray())) do
       local negative = (stats[stat.name].negative and stat.modifier > 0) or (not stats[stat.name].negative and stat.modifier < 0)
       local modifierColour = negative and "^red;" or "^green;"
       local amount = (stats[stat.name].invertDescriptor and (stat.modifier * -1) or stat.modifier) * 100
       local statColour = stats[stat.name].colour and ("^#"..stats[stat.name].colour..";") or ""
-      statModifierString = statModifierString..string.format("%s%s^reset; %s by %s%d%%\n", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+      statModifierString = statModifierString..string.format("%s%s%s^reset; %s by %s%d%%", i ~= 1 and "\n" or "", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
     end
   end
 
-  _ENV[slot.."Description"]:setText(statModifierString)
+  local icon = "statInfo.png"..(item ~= nil and "" or "?multiply=00000000;")
+  _ENV[slot.."StatInfo"]:setImage(icon, icon, icon)
+  _ENV[slot.."StatInfo"].toolTip = statModifierString
 end
 
 configParameter = function(item, keyName, defaultValue)
@@ -96,6 +98,24 @@ configParameter = function(item, keyName, defaultValue)
     return defaultValue
   end
 end
+
+function statClick()
+  statInfoCount = (statInfoCount or 0) + 1
+  if statInfoCount == 50 then
+    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "You know this isn't an actual button right? It doesn't do anything. It will never do anything. It's just the only easy way to get tooltips to work here."})
+  elseif statInfoCount == 100 then
+    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "Since you decided you would click this 100 times you're probably expecting a reward, so have a single pixel. You're welcome."})
+    player.giveItem("money")
+  elseif statInfoCount == 250 then
+    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "Whatever." })
+    player.giveItem("gracecupcake")
+    widget.playSound("/sfx/objects/colonydeed_partyhorn.ogg", nil, 0.75)
+  end
+end
+
+pendantStatInfo.onClick = statClick
+ringStatInfo.onClick = statClick
+trinketStatInfo.onClick = statClick
 
 function weightDecrease:onClick()
   local progress = (starPounds.weight - starPounds.currentSize.weight)/((starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight) - starPounds.currentSize.weight)

@@ -101,7 +101,8 @@ function build(directory, config, parameters, level, seed)
     config.tooltipFields["stat"..i.."_Label"] = string.format("%s%s%%", stat.modifier > 0 and "+" or "", math.floor(100 * stat.modifier + 0.5))
     config.tooltipFields["stat"..i.."_Image"] = string.format("/interface/tooltips/accessoryicons/%s.png", stat.name)
     -- setting this here so the background shows without the skill
-    local backColour = (stats[stat.name].negative and stat.modifier < 0 or stat.modifier > 0) and "4fe646" or "ff4942"
+    local negative = (stats[stat.name].negative and stat.modifier > 0) or (not stats[stat.name].negative and stat.modifier < 0)
+    local backColour = negative and "ff4942" or "4fe646"
     config.tooltipFields["stat"..i.."_BackgroundImage"] = "/interface/tooltips/statlistbackaccessory.png?replace;ffffff="..backColour
   end
 

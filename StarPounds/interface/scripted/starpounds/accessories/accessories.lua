@@ -76,7 +76,8 @@ function accessoryChanged(slot)
   local statModifierString = ""
   if item then
     for _, stat in ipairs(configParameter(item, "stats", jarray())) do
-      local modifierColour = (stats[stat.name].negative and stat.modifier < 0 or stat.modifier > 0) and "^green;" or "^red;"
+      local negative = (stats[stat.name].negative and stat.modifier > 0) or (not stats[stat.name].negative and stat.modifier < 0)
+      local modifierColour = negative and "^red;" or "^green;"
       local amount = (stats[stat.name].invertDescriptor and (stat.modifier * -1) or stat.modifier) * 100
       local statColour = stats[stat.name].colour and ("^#"..stats[stat.name].colour..";") or ""
       statModifierString = statModifierString..string.format("%s%s^reset; %s by %s%d%%\n", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))

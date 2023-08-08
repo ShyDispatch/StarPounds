@@ -172,6 +172,7 @@
         {"item": "lotusring", "weight": 1},
         {"item": "throgring", "weight": 1},
 
+        {"item": "angeltrinket", "weight": 1},
         {"item": "blueberrytrinket", "weight": 1},
         {"item": "lotustrinket", "weight": 1}
       ]

@@ -84,9 +84,30 @@ function accessoryChanged(slot)
     end
   end
 
-  local icon = "statInfo.png"..(item ~= nil and "" or "?multiply=00000000;")
+  local icon = "statInfo.png"..(item and "" or "?multiply=00000000;")
   _ENV[slot.."StatInfo"]:setImage(icon, icon, icon)
   _ENV[slot.."StatInfo"].toolTip = statModifierString
+
+  local combinedStats = {}
+  local combinedStatString = ""
+  for _,v in ipairs({"pendant", "ring", "trinket"}) do
+    local item = _ENV[v]:item()
+    if item then
+      for i, stat in ipairs(configParameter(item, "stats", jarray())) do
+        combinedStats[stat.name] = (combinedStats[stat.name] or 0) + stat.modifier
+      end
+    end
+  end
+  for stat, modifier in pairsByKeys(combinedStats, function(a, b) return stats[a].pretty < stats[b].pretty end) do
+    if modifier ~= 0 then
+      local negative = (stats[stat].negative and modifier > 0) or (not stats[stat].negative and modifier < 0)
+      local modifierColour = negative and "^red;" or "^green;"
+      local amount = (stats[stat].invertDescriptor and (modifier * -1) or modifier) * 100
+      local statColour = stats[stat].colour and ("^#"..stats[stat].colour..";") or ""
+      combinedStatString = combinedStatString..string.format("%s%s%s^reset; %s by %s%d%%", combinedStatString ~= "" and "\n" or "", statColour, stats[stat].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+    end
+  end
+  combinedDescription:setText(combinedStatString)
 end
 
 configParameter = function(item, keyName, defaultValue)
@@ -96,6 +117,20 @@ configParameter = function(item, keyName, defaultValue)
     return root.itemConfig(item).config[keyName]
   else
     return defaultValue
+  end
+end
+
+-- https://gist.github.com/tbrunz/1b5e28d3e571c021aa0a440b173e1bfb
+function pairsByKeys(alphaTable, sortFunction)
+  local alphaArray = {}
+  for key, _ in pairs(alphaTable) do
+    alphaArray[ #alphaArray + 1 ] = key
+  end
+  table.sort(alphaArray, sortFunction)
+  local index = 0
+  return function()
+    index = index + 1
+    return alphaArray[index], alphaTable[alphaArray[index]]
   end
 end
 

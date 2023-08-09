@@ -1,6 +1,6 @@
 {
   "style" : "window",
-  "size" : [180, 70],
+  "size" : [180, 180],
   "title" : "Accessories",
   "icon" : "icon.png",
   "accentColor" : "8866ff",
@@ -44,6 +44,17 @@
           11,
           {"type": "itemSlot", "id": "trinket", "glyph": "backingimagetrinket.png", "autoInteract": true},
           {"type": "iconButton", "id": "trinketStatInfo", "image": "statInfo.png", "hoverImage": "statInfo.png", "pressImage": "statInfo.png"},
+          "spacer"
+        ]}
+      ]}
+    ],
+    [
+      {"size": 110},
+      {"type": "panel", "style": "convex", "children": [
+        1,
+        {"type": "label", "align": "center", "text": "Effects"},
+        {"type": "panel", "style": "concave", "children": [
+          {"type": "label", "id": "combinedDescription", "align": "left", "text": ""},
           "spacer"
         ]}
       ]}

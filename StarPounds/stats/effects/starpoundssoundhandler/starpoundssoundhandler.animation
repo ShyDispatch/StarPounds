@@ -41,6 +41,19 @@
 			"/sfx/starpounds/struggle/struggle10.ogg",
 			"/sfx/starpounds/struggle/struggle11.ogg"
 		],
+		"slosh": [
+			"/sfx/starpounds/struggle/struggle1.ogg",
+			"/sfx/starpounds/struggle/struggle2.ogg",
+			"/sfx/starpounds/struggle/struggle3.ogg",
+			"/sfx/starpounds/struggle/struggle4.ogg",
+			"/sfx/starpounds/struggle/struggle5.ogg",
+			"/sfx/starpounds/struggle/struggle6.ogg",
+			"/sfx/starpounds/struggle/struggle7.ogg",
+			"/sfx/starpounds/struggle/struggle8.ogg",
+			"/sfx/starpounds/struggle/struggle9.ogg",
+			"/sfx/starpounds/struggle/struggle10.ogg",
+			"/sfx/starpounds/struggle/struggle11.ogg"
+		],
 		"swallow": [
 			"/sfx/starpounds/swallow/swallow1.ogg",
 		  "/sfx/starpounds/swallow/swallow2.ogg",

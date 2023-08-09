@@ -19,7 +19,7 @@
           "spacer",
           11,
           {"type": "itemSlot", "id": "pendant", "glyph": "backingimagependant.png", "autoInteract": true},
-          {"type": "iconButton", "id": "pendantStatInfo", "image": "statInfo.png", "hoverImage": "statInfo.png", "pressImage": "statInfo.png"},
+          {"type": "checkBox", "id": "pendantStatInfo", "radioGroup": "info", "value": "pendant", "toolTip": "Only show pendant stats."},
           "spacer"
         ]}
       ]},
@@ -31,7 +31,7 @@
           "spacer",
           11,
           {"type": "itemSlot", "id": "ring", "glyph": "backingimagering.png", "autoInteract": true},
-          {"type": "iconButton", "id": "ringStatInfo", "image": "statInfo.png", "hoverImage": "statInfo.png", "pressImage": "statInfo.png"},
+          {"type": "checkBox", "id": "ringStatInfo", "radioGroup": "info", "value": "ring", "toolTip": "Only show ring stats."},
           "spacer"
         ]}
       ]},
@@ -43,7 +43,7 @@
           "spacer",
           11,
           {"type": "itemSlot", "id": "trinket", "glyph": "backingimagetrinket.png", "autoInteract": true},
-          {"type": "iconButton", "id": "trinketStatInfo", "image": "statInfo.png", "hoverImage": "statInfo.png", "pressImage": "statInfo.png"},
+          {"type": "checkBox", "id": "trinketStatInfo", "radioGroup": "info", "value": "trinket", "toolTip": "Only show trinket stats."},
           "spacer"
         ]}
       ]}

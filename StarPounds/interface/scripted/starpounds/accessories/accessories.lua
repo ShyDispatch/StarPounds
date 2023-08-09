@@ -18,9 +18,7 @@ function init()
     pendant:setItem(starPounds.getAccessory("pendant"))
     ring:setItem(starPounds.getAccessory("ring"))
     trinket:setItem(starPounds.getAccessory("trinket"))
-    accessoryChanged("pendant")
-    accessoryChanged("ring")
-    accessoryChanged("trinket")
+    accessoryChanged()
   end
 end
 
@@ -35,10 +33,9 @@ function update()
   if starPounds.optionChanged then
     for _,v in ipairs({"pendant", "ring", "trinket"}) do
       _ENV[v]:setItem(starPounds.getAccessory(v))
-      accessoryChanged(v)
     end
+    accessoryChanged()
   end
-
   -- Check promises.
   promises:update()
 end
@@ -49,7 +46,7 @@ end
 
 function pendant:onItemModified()
   starPounds.setAccessory(pendant:item(), "pendant")
-  accessoryChanged("pendant")
+  accessoryChanged()
 end
 
 function ring:acceptsItem(item)
@@ -58,7 +55,7 @@ end
 
 function ring:onItemModified()
   starPounds.setAccessory(ring:item(), "ring")
-  accessoryChanged("ring")
+  accessoryChanged()
 end
 
 function trinket:acceptsItem(item)
@@ -67,47 +64,57 @@ end
 
 function trinket:onItemModified()
   starPounds.setAccessory(trinket:item(), "trinket")
-  accessoryChanged("trinket")
+  accessoryChanged()
 end
 
-function accessoryChanged(slot)
-  local item = _ENV[slot]:item()
-  local statModifierString
-  if item then
-    statModifierString = ""
-    for i, stat in ipairs(configParameter(item, "stats", jarray())) do
-      local negative = (stats[stat.name].negative and stat.modifier > 0) or (not stats[stat.name].negative and stat.modifier < 0)
-      local modifierColour = negative and "^red;" or "^green;"
-      local amount = (stats[stat.name].invertDescriptor and (stat.modifier * -1) or stat.modifier) * 100
-      local statColour = stats[stat.name].colour and ("^#"..stats[stat.name].colour..";") or ""
-      statModifierString = statModifierString..string.format("%s%s%s^reset; %s by %s%d%%", i ~= 1 and "\n" or "", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
-    end
+function checkBoxClick(slot)
+  for _, v in ipairs({"pendant", "ring", "trinket"}) do
+    _ENV[v.."StatInfo"]:setChecked(slot == v and slot ~= currentSlot)
   end
+  currentSlot = _ENV[slot.."StatInfo"]:getGroupValue()
+  accessoryChanged()
+end
 
-  local icon = "statInfo.png"..(item and "" or "?multiply=00000000;")
-  _ENV[slot.."StatInfo"]:setImage(icon, icon, icon)
-  _ENV[slot.."StatInfo"].toolTip = statModifierString
+function pendantStatInfo:onClick() checkBoxClick("pendant") end
+function ringStatInfo:onClick() checkBoxClick("ring") end
+function trinketStatInfo:onClick() checkBoxClick("trinket") end
 
+function accessoryChanged()
   local combinedStats = {}
-  local combinedStatString = ""
-  for _,v in ipairs({"pendant", "ring", "trinket"}) do
-    local item = _ENV[v]:item()
+  local statModifierString = ""
+  local slot = currentSlot and _ENV[currentSlot.."StatInfo"]:getGroupValue() or nil
+  if not slot then
+    for _, v in ipairs({"pendant", "ring", "trinket"}) do
+        local item = _ENV[v]:item()
+        if item then
+          for i, stat in ipairs(configParameter(item, "stats", jarray())) do
+            combinedStats[stat.name] = (combinedStats[stat.name] or 0) + stat.modifier
+          end
+      end
+    end
+    for stat, modifier in pairsByKeys(combinedStats, function(a, b) return stats[a].pretty < stats[b].pretty end) do
+      if modifier ~= 0 then
+        local negative = (stats[stat].negative and modifier > 0) or (not stats[stat].negative and modifier < 0)
+        local modifierColour = negative and "^red;" or "^green;"
+        local amount = (stats[stat].invertDescriptor and (modifier * -1) or modifier) * 100
+        local statColour = stats[stat].colour and ("^#"..stats[stat].colour..";") or ""
+        statModifierString = statModifierString..string.format("%s%s%s^reset; %s by %s%d%%", statModifierString ~= "" and "\n" or "", statColour, stats[stat].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+      end
+    end
+  else
+    -- Made this a separate block so it won't sort alphabetically with one accessory selected. Stupid code but I'm lazy.
+    local item = _ENV[slot]:item()
     if item then
       for i, stat in ipairs(configParameter(item, "stats", jarray())) do
-        combinedStats[stat.name] = (combinedStats[stat.name] or 0) + stat.modifier
+        local negative = (stats[stat.name].negative and stat.modifier > 0) or (not stats[stat.name].negative and stat.modifier < 0)
+        local modifierColour = negative and "^red;" or "^green;"
+        local amount = (stats[stat.name].invertDescriptor and (stat.modifier * -1) or stat.modifier) * 100
+        local statColour = stats[stat.name].colour and ("^#"..stats[stat.name].colour..";") or ""
+        statModifierString = statModifierString..string.format("%s%s%s^reset; %s by %s%d%%", i ~= 1 and "\n" or "", statColour, stats[stat.name].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
       end
     end
   end
-  for stat, modifier in pairsByKeys(combinedStats, function(a, b) return stats[a].pretty < stats[b].pretty end) do
-    if modifier ~= 0 then
-      local negative = (stats[stat].negative and modifier > 0) or (not stats[stat].negative and modifier < 0)
-      local modifierColour = negative and "^red;" or "^green;"
-      local amount = (stats[stat].invertDescriptor and (modifier * -1) or modifier) * 100
-      local statColour = stats[stat].colour and ("^#"..stats[stat].colour..";") or ""
-      combinedStatString = combinedStatString..string.format("%s%s%s^reset; %s by %s%d%%", combinedStatString ~= "" and "\n" or "", statColour, stats[stat].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
-    end
-  end
-  combinedDescription:setText(combinedStatString)
+  combinedDescription:setText(statModifierString)
 end
 
 configParameter = function(item, keyName, defaultValue)
@@ -133,24 +140,6 @@ function pairsByKeys(alphaTable, sortFunction)
     return alphaArray[index], alphaTable[alphaArray[index]]
   end
 end
-
-function statClick()
-  statInfoCount = (statInfoCount or 0) + 1
-  if statInfoCount == 50 then
-    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "You know this isn't an actual button right? It doesn't do anything. It will never do anything. It's just the only easy way to get tooltips to work here."})
-  elseif statInfoCount == 100 then
-    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "Since you decided you would click this 100 times you're probably expecting a reward, so have a single pixel. You're welcome."})
-    player.giveItem("money")
-  elseif statInfoCount == 250 then
-    player.radioMessage({important = true, unique = false, messageId = "BUT_WHY", text = "Whatever." })
-    player.giveItem("gracecupcake")
-    widget.playSound("/sfx/objects/colonydeed_partyhorn.ogg", nil, 0.75)
-  end
-end
-
-pendantStatInfo.onClick = statClick
-ringStatInfo.onClick = statClick
-trinketStatInfo.onClick = statClick
 
 function weightDecrease:onClick()
   local progress = (starPounds.weight - starPounds.currentSize.weight)/((starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight) - starPounds.currentSize.weight)

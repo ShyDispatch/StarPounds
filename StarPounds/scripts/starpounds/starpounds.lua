@@ -639,7 +639,9 @@ starPounds.upgradeSkill = function(skill, cost)
 	end
 	storage.starPounds.skills[skill][2] = math.min(starPounds.getSkillUnlockedLevel(skill) + 1, starPounds.skills[skill].levels or 1)
 
+	local experienceProgress = storage.starPounds.experience/(starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	storage.starPounds.level = math.max(storage.starPounds.level - math.round(cost), 0)
+	storage.starPounds.experience = math.round(experienceProgress * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	starPounds.gainExperience()
 	starPounds.parseSkillStats()
   starPounds.updateStats(true)

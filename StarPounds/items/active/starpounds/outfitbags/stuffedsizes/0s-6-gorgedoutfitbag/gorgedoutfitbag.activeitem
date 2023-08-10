@@ -10,7 +10,8 @@
   "twoHanded" : true,
 
   "inventoryIcon" : "gorgedoutfitbagicon.png",
-  "animation" : "gorgedoutfitbag.animation",
+  "animation" : "/items/active/starpounds/outfitbags/outfitbag.animation",
+  "animationParts" : {"gun": "gorgedoutfitbag.png"},
   "animationCustom" : {},
   "scripts" : ["/scripts/items/outfitbag.lua"],
 
@@ -19,5 +20,6 @@
   "fireTime" : 2.0,
   "fireOffset" : [1.0, 0.0],
   
+  "outfitTypes": ["chest"],
   "outfitKey" : "gorged"
 }

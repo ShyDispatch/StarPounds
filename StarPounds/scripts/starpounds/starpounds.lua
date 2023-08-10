@@ -940,13 +940,15 @@ starPounds.getSpeciesData = function(species)
 	return sb.jsonMerge(starPounds.species.default, starPounds.species[species] or {})
 end
 
-starPounds.getDirectives = function()
+starPounds.getDirectives = function(target)
+	-- Argument sanitisation.
+	local target = tonumber(target) or entity.id()
 	local directives = ""
 	-- Get entity species.
-	local species = starPounds.getVisualSpecies()
-	local speciesData = starPounds.getSpeciesData()
+	local species = starPounds.getVisualSpecies(world.entitySpecies(target))
+	local speciesData = starPounds.getSpeciesData(species)
 	-- Generate a nude portrait.
-	for _,v in ipairs(world.entityPortrait(entity.id(), "fullnude")) do
+	for _,v in ipairs(world.entityPortrait(target, "fullnude")) do
 		-- Find the player's body sprite.
 		if string.find(v.image, "body.png") then
 			-- Seperate the body sprite's image directives.

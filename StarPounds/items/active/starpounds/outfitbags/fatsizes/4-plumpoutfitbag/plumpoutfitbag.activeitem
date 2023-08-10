@@ -10,7 +10,8 @@
   "twoHanded" : true,
 
   "inventoryIcon" : "plumpoutfitbagicon.png",
-  "animation" : "plumpoutfitbag.animation",
+  "animation" : "/items/active/starpounds/outfitbags/outfitbag.animation",
+  "animationParts" : {"gun": "plumpoutfitbag.png"},
   "animationCustom" : {},
   "scripts" : ["/scripts/items/outfitbag.lua"],
 
@@ -19,5 +20,6 @@
   "fireTime" : 2.0,
   "fireOffset" : [1.0, 0.0],
   
+  "outfitTypes": ["legs", "chest"],
   "outfitKey" : "plump"
 }

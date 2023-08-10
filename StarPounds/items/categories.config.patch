@@ -1,0 +1,12 @@
+[
+  {
+    "op": "add",
+    "path": "/labels/starpoundsaccessory",
+    "value": "Accessory"
+  },
+  {
+    "op": "add",
+    "path": "/labels/starpoundsuniqueaccessory",
+    "value": "Unique Accessory"
+  }
+]

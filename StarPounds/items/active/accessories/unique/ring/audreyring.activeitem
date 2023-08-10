@@ -6,7 +6,7 @@
   "description" : "A lovingly crafted ring, made to keep someone very yummy close to her fattened tummy.",
   "shortdescription" : "Audrey's Belly Ring",
   "inventoryIcon" : "audreyring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

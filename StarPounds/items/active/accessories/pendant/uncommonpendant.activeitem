@@ -5,7 +5,7 @@
   "rarity" : "Uncommon",
   "description" : "A jewelled pendant.",
   "shortdescription" : "Uncommon Pendant",
-  "category" : "artifact",
+  "category" : "starpoundsaccessory",
 
   "tooltipKind": "accessory",
 

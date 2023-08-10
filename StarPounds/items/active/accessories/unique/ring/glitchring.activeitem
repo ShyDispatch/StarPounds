@@ -6,7 +6,7 @@
   "description" : "Often worn by Glitch nobility, this ring enhances the density of the wearer.",
   "shortdescription" : "Royal Glitch Ring",
   "inventoryIcon" : "glitchring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

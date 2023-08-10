@@ -6,7 +6,7 @@
   "description" : "A cursed relic bound to voracious warriors. Your stomach growls just by touching it...",
   "shortdescription" : "Lotus Insignia",
   "inventoryIcon" : "lotustrinket.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

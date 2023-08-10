@@ -6,7 +6,7 @@
   "description" : "An amulet made of unusual crystal. Holding it to the light offers fond suggestions that those you love are safer on your hips.",
   "shortdescription" : "Sacred Moth Amulet",
   "inventoryIcon" : "rivierapendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

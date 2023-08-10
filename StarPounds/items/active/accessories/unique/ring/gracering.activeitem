@@ -6,7 +6,7 @@
   "description" : "Warm to the touch, the crystal on this ring pulses with other-worldly energy.",
   "shortdescription" : "Ring of the Fox",
   "inventoryIcon" : "gracering.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

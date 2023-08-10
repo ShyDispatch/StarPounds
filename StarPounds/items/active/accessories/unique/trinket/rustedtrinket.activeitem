@@ -6,7 +6,7 @@
   "description" : "An old ankh, weathered and tarnished with rust. It's awfully heavy.",
   "shortdescription" : "Rusted Ankh",
   "inventoryIcon" : "rustedtrinket.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

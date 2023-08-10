@@ -6,7 +6,7 @@
   "description" : "Ceremonial for Florans, this ring proves valuable for snacking on the hunt.",
   "shortdescription" : "Floran Hunter's Ring",
   "inventoryIcon" : "floranring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

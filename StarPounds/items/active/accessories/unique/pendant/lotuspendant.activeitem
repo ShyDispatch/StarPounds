@@ -6,7 +6,7 @@
   "description" : "Worn by voracious warriors of an ancient empire. For the hardiest of predators.",
   "shortdescription" : "Lotus Brooch",
   "inventoryIcon" : "lotuspendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

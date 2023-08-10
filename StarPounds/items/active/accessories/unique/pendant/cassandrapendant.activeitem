@@ -6,7 +6,7 @@
   "description" : "A famous streamer's cat bell, become the E-Pig you were always meant to be!",
   "shortdescription" : "E-Pig's Cat Bell",
   "inventoryIcon" : "cassandrapendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

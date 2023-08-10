@@ -13,7 +13,7 @@
   "accessoryType" : "trinket",
 
   "stats": [
-    {"name": "hunger", "modifier": 1},
+    {"name": "hunger", "modifier": 2},
     {"name": "experienceMultiplier", "modifier": 0.5}
   ],
 

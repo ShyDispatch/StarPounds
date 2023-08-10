@@ -6,7 +6,7 @@
   "description" : "It's looks to be a ring, but it's so big that you may as well use it as a bracelet.",
   "shortdescription" : "Silver Drake's Band",
   "inventoryIcon" : "ferrianring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

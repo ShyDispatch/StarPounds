@@ -10,7 +10,8 @@
   "twoHanded" : true,
 
   "inventoryIcon" : "chubsterbustyoutfitbagicon.png",
-  "animation" : "chubsterbustyoutfitbag.animation",
+  "animation" : "/items/active/starpounds/outfitbags/outfitbag.animation",
+  "animationParts" : {"gun": "chubsterbustyoutfitbag.png"},
   "animationCustom" : {},
   "scripts" : ["/scripts/items/outfitbag.lua"],
 
@@ -19,5 +20,6 @@
   "fireTime" : 2.0,
   "fireOffset" : [1.0, 0.0],
   
+  "outfitTypes": ["chest"],
   "outfitKey" : "chubsterbusty"
 }

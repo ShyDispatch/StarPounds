@@ -6,7 +6,7 @@
   "description" : "A flowery ring, named after a bug who loves having a full belly.",
   "shortdescription" : "Blossom's Heart Ring",
   "inventoryIcon" : "blossomring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

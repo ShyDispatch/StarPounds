@@ -6,7 +6,7 @@
   "description" : "A Throg styled ring, widely known for bringing out the pig in you.",
   "shortdescription" : "Throggish Ring",
   "inventoryIcon" : "throgring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

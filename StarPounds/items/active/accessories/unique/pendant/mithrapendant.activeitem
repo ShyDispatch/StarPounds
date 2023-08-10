@@ -1,0 +1,23 @@
+{
+  "itemName" : "mithrapendant",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An artifact of a bounty huntress, embodying swift speed, mirthful digestion, and vicious hunting prowess. You feel lighter...",
+  "shortdescription" : "Tourmaline Lavaliere",
+  "inventoryIcon" : "mithrapendant.png",
+  "category" : "starpoundsuniqueaccessory",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "pendant",
+
+  "stats": [
+    {"name": "movement", "modifier": 0.1},
+    {"name": "strainedPenalty", "modifier": -0.25},
+    {"name": "voreDamage", "modifier": 2}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

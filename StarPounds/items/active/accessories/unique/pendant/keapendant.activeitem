@@ -6,7 +6,7 @@
   "description" : "Enchanted talisman given to pirates to subdue their hunger during long voyages.\n\n^orange;'Yarr'^gray;s increased by ^green;100%",
   "shortdescription" : "Salty Magamata",
   "inventoryIcon" : "keapendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

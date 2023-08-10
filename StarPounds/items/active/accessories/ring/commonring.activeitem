@@ -5,7 +5,7 @@
   "rarity" : "Common",
   "description" : "A jewelled ring.",
   "shortdescription" : "Common Ring",
-  "category" : "artifact",
+  "category" : "starpoundsaccessory",
 
   "tooltipKind": "accessory",
 

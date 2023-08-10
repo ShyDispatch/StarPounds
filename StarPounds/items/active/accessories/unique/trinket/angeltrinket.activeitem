@@ -6,7 +6,7 @@
   "description" : "A sanctified, heavenly ankh.\n^gray;\"You can't take it with you.\"",
   "shortdescription" : "Angelic Ankh",
   "inventoryIcon" : "angeltrinket.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

@@ -5,7 +5,7 @@
   "rarity" : "Rare",
   "description" : "A jewelled trinket.",
   "shortdescription" : "Rare Trinket",
-  "category" : "artifact",
+  "category" : "starpoundsaccessory",
 
   "tooltipKind": "accessory",
 

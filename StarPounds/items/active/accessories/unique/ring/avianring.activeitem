@@ -6,7 +6,7 @@
   "description" : "An Avolite crystal embedded inside a ring, often worn by devotees of Velhanu.",
   "shortdescription" : "Velhanu Zealot Ring",
   "inventoryIcon" : "avianring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

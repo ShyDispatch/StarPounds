@@ -6,7 +6,7 @@
   "description" : "Taboo among many Floran tribes, this amulet proves useful for more voracious diets.",
   "shortdescription" : "Predator's Amulet",
   "inventoryIcon" : "predatorpendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

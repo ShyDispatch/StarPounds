@@ -81,10 +81,12 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	-- Split between food and bloat.
 	local foodRatio = math.min(math.max(math.round(food/(food + bloat), 2), (food > 0) and 0.05 or 0), (bloat > 0) and 0.95 or 1)
 	-- Amount is 1 + 1% of food value, or the remaining food value.
-	local amount = math.min(math.round((food/100 + 1) * starPounds.getStat("digestion") * foodRatio * dt, 4), food)
+	local baseAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * starPounds.getStat("digestion")) * foodRatio
+	local amount = math.min(math.round(baseAmount * dt, 4), food)
 	storage.starPounds.stomach = math.round(math.max(food - amount, 0), 3)
 	-- Ditto for bloat.
-	local bloatAmount = math.min(math.round((bloat/100 + 1) * starPounds.getStat("digestion") * (1 - foodRatio) * starPounds.getStat("bloatDigestion") * bloatMultiplier * dt, 4), bloat)
+	local baseBloatAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * starPounds.getStat("bloatDigestion")) * (1 - foodRatio) * bloatMultiplier
+	local bloatAmount = math.min(math.round(baseBloatAmount * dt, 4), bloat)
 	storage.starPounds.bloat = math.round(math.max(bloat - bloatAmount, 0), 3)
 	-- Don't need to run the rest if there's no actual food.
 	if amount == 0 then return end
@@ -122,15 +124,18 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	if not storage.starPounds.pred then
 		-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
 		if status.resourcePositive("health") then
-			status.modifyResource("health", amount * starPounds.getStat("absorption") * starPounds.getStat("healing"))
-		end
-		-- Energy regenerates faster than health, and energy lock time gets reduced.
-		if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and starPounds.getStat("digestionEnergy") > 0 then
-			if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
-				status.modifyResource("energy", amount * starPounds.getStat("absorption") * starPounds.getStat("digestionEnergy") * 10)
+			local healBaseAmount = amount * starPounds.getStat("absorption")
+			local healAmount = math.min(healBaseAmount * starPounds.getStat("healing") * starPounds.settings.healingRatio, status.resourceMax("health") * starPounds.settings.healingCap)
+			status.modifyResource("health", healAmount)
+			-- Energy regenerates faster than health, and energy lock time gets reduced.
+			if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and starPounds.getStat("digestionEnergy") > 0 then
+				local energyAmount = math.min(healBaseAmount * starPounds.getStat("digestionEnergy") * starPounds.settings.energyRatio, status.resourceMax("energy") * starPounds.settings.energyCap)
+				if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
+					status.modifyResource("energy", energyAmount)
+				end
+				-- Energy regen block is capped at 2x the speed (decreases by the delta)
+				status.modifyResource("energyRegenBlock", math.max(-amount * starPounds.getStat("absorption") * starPounds.getStat("digestionEnergy"), -dt))
 			end
-			-- Energy regen block is capped at 2x the speed (decreases by the delta)
-			status.modifyResource("energyRegenBlock", math.max(-amount * starPounds.getStat("absorption") * starPounds.getStat("digestionEnergy"), -dt))
 		end
 	end
 end
@@ -244,7 +249,7 @@ starPounds.slosh = function(dt)
 		-- Sloshy sound, with volume increasing until activated.
 		local soundMultiplier =  0.45 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
 		local pitchMultiplier = 1.25 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2)
-		world.sendEntityMessage(entity.id(), "starPounds.playSound", "struggle", soundMultiplier, pitchMultiplier)
+		world.sendEntityMessage(entity.id(), "starPounds.playSound", "slosh", soundMultiplier, pitchMultiplier)
 		if activationMultiplier > 0 then
 			starPounds.digest(starPounds.settings.sloshDigestion * sloshEffectiveness, true)
 			starPounds.gurgleTimer = math.max((starPounds.gurgleTimer or 0) - (starPounds.settings.sloshPercent * starPounds.settings.gurgleTime), 0)
@@ -639,7 +644,9 @@ starPounds.upgradeSkill = function(skill, cost)
 	end
 	storage.starPounds.skills[skill][2] = math.min(starPounds.getSkillUnlockedLevel(skill) + 1, starPounds.skills[skill].levels or 1)
 
+	local experienceProgress = storage.starPounds.experience/(starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	storage.starPounds.level = math.max(storage.starPounds.level - math.round(cost), 0)
+	storage.starPounds.experience = math.round(experienceProgress * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	starPounds.gainExperience()
 	starPounds.parseSkillStats()
   starPounds.updateStats(true)
@@ -933,13 +940,15 @@ starPounds.getSpeciesData = function(species)
 	return sb.jsonMerge(starPounds.species.default, starPounds.species[species] or {})
 end
 
-starPounds.getDirectives = function()
+starPounds.getDirectives = function(target)
+	-- Argument sanitisation.
+	local target = tonumber(target) or entity.id()
 	local directives = ""
 	-- Get entity species.
-	local species = starPounds.getVisualSpecies()
-	local speciesData = starPounds.getSpeciesData()
+	local species = starPounds.getVisualSpecies(world.entitySpecies(target))
+	local speciesData = starPounds.getSpeciesData(species)
 	-- Generate a nude portrait.
-	for _,v in ipairs(world.entityPortrait(entity.id(), "fullnude")) do
+	for _,v in ipairs(world.entityPortrait(target, "fullnude")) do
 		-- Find the player's body sprite.
 		if string.find(v.image, "body.png") then
 			-- Seperate the body sprite's image directives.
@@ -1161,7 +1170,8 @@ starPounds.gainBloat = function(amount, fullAmount)
 	amount = math.max(tonumber(amount) or 0, 0)
 	-- Set bloat, rounded to 4 decimals.
 	amount = math.round(amount * (fullAmount and 1 or starPounds.getStat("bloatAmount")), 3)
-	storage.starPounds.bloat = storage.starPounds.bloat + amount
+	local bloatCap = starPounds.settings.stomachCapacity * starPounds.settings.maximumBloatCapacity * starPounds.getStat("capacity")
+	storage.starPounds.bloat = math.min(storage.starPounds.bloat + amount, bloatCap)
 end
 
 starPounds.gainWeight = function(amount)

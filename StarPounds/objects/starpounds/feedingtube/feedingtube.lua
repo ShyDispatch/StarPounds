@@ -146,7 +146,6 @@ function findLiquidDrops()
 							local excess = storage.amount - self.capacity
 							world.spawnItem(storage.liquid.item, entity.position(), excess)
 							storage.amount = self.capacity
-							object.say(excess)
 						end
 					end
 				end

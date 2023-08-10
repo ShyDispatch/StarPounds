@@ -6,7 +6,7 @@
   "description" : "Farmers often use these for keeping track of mooshis. You're not going to wear it, are you?",
   "shortdescription" : "Mooshi Cowbell",
   "inventoryIcon" : "mooshipendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

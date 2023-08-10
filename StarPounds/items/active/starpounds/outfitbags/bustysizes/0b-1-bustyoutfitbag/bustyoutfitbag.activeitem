@@ -10,14 +10,16 @@
   "twoHanded" : true,
 
   "inventoryIcon" : "bustyoutfitbagicon.png",
-  "animation" : "bustyoutfitbag.animation",
+  "animation" : "/items/active/starpounds/outfitbags/outfitbag.animation",
+  "animationParts" : {"gun": "bustyoutfitbag.png"},
   "animationCustom" : {},
   "scripts" : ["/scripts/items/outfitbag.lua"],
 
   "itemTags" : [ "starpounds" ],
-  
+
   "fireTime" : 2.0,
   "fireOffset" : [1.0, 0.0],
-  
+
+  "outfitTypes": ["chest"],
   "outfitKey" : "busty"
 }

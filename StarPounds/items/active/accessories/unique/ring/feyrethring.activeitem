@@ -6,7 +6,7 @@
   "description" : "This ring made of an unknown, gooey substance is constantly shifting and changing shape. Creepy.",
   "shortdescription" : "Shifting Ring",
   "inventoryIcon" : "feyrethring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

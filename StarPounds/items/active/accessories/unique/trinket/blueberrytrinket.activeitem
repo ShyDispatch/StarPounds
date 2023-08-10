@@ -6,7 +6,7 @@
   "description" : "An ankh woven from plants, adorned with a peculiarly large blueberry at it's centre.",
   "shortdescription" : "Ankh of the Blueberry",
   "inventoryIcon" : "blueberrytrinket.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

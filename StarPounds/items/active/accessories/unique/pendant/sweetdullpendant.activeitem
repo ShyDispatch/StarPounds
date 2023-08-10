@@ -6,7 +6,7 @@
   "description" : "A small silver necklace with a figure of a fire-breathing dragon. It smells strongly of beer.",
   "shortdescription" : "Drunken Kobold's Collar",
   "inventoryIcon" : "sweetdullpendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

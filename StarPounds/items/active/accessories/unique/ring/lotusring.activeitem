@@ -6,7 +6,7 @@
   "description" : "An ancient cursed ring befitting voracious warriors. The hunger... it beckons you.",
   "shortdescription" : "Lotus Ring",
   "inventoryIcon" : "lotusring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

@@ -1,6 +1,6 @@
 {
   "style" : "window",
-  "size" : [280, 192],
+  "size" : [180, 180],
   "title" : "Accessories",
   "icon" : "icon.png",
   "accentColor" : "8866ff",
@@ -10,61 +10,54 @@
   "scripts" : [ "accessories.lua" ],
   "children" : [
     [
-      {"size" : 172},
-      [
-        {"size" : 80},
-        {"expandMode": [1, 1]},
-        {"type": "panel", "style": "convex", "mode": "vertical", "children": [
-          {"type": "panel", "style": "convex", "expandMode": [1, 0], "children": [
-            {"type": "layout", "mode": "manual", "size": [74, 20], "children": [
-              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Accessories"}
-            ]}
-          ]},
-          {"type": "panel", "style": "concave", "children": [
-            {"type": "layout", "mode": "manual", "children": [
-              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Pendant"},
-              {"type": "itemSlot", "id": "pendant", "glyph": "backingimagependant.png", "autoInteract": true, "position": [27, 16]}
-            ]}
-          ]},
-          {"type": "panel", "style": "concave", "children": [
-            {"type": "layout", "mode": "manual", "children": [
-              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Ring"},
-              {"type": "itemSlot", "id": "ring", "glyph": "backingimagering.png", "autoInteract": true, "position": [27, 16]}
-            ]}
-          ]},
-          {"type": "panel", "style": "concave", "children": [
-            {"type": "layout", "mode": "manual", "children": [
-              {"type": "label", "position": [0, 6], "size": [74, 9], "align": "center", "text": "Trinket"},
-              {"type": "itemSlot", "id": "trinket", "glyph": "backingimagetrinket.png", "autoInteract": true, "position": [27, 16]}
-            ]}
-          ]}
+      {"expandMode": [1, 1]},
+      {"type": "panel", "style": "convex", "children": [
+        1,
+        {"type": "label", "align": "center", "text": "Pendant"},
+        {"type": "panel", "style": "concave", "children": [
+          {"mode": "horizontal"},
+          "spacer",
+          11,
+          {"type": "itemSlot", "id": "pendant", "glyph": "backingimagependant.png", "autoInteract": true},
+          {"type": "checkBox", "id": "pendantStatInfo", "radioGroup": "info", "value": "pendant", "toolTip": "Only show pendant stats."},
+          "spacer"
         ]}
-      ],
-      [
-        {"expandMode": [1, 1]},
-        {"type": "panel", "style": "convex", "mode": "vertical", "children": [
-          {"type": "panel", "style": "convex", "expandMode": [1, 0], "children": [
-            {"type": "layout", "mode": "manual", "size": [190, 20], "children": [
-              {"type": "label", "position": [0, 6], "size": [190, 9], "align": "center", "text": "Effects"}
-            ]}
-          ]},
-          {"type": "panel", "style": "concave", "children": [
-            {"type": "layout", "mode": "manual", "children": [
-              {"type": "label", "id": "pendantDescription", "position": [2, 7], "size": [190, 34], "align": "left", "text": ""}
-            ]}
-          ]},
-          {"type": "panel", "style": "concave", "children": [
-            {"type": "layout", "mode": "manual", "children": [
-              {"type": "label", "id": "ringDescription", "position": [2, 7], "size": [190, 34], "align": "left", "text": ""}
-            ]}
-          ]},
-          {"type": "panel", "style": "concave", "children": [
-            {"type": "layout", "mode": "manual", "children": [
-              {"type": "label", "id": "trinketDescription", "position": [2, 7], "size": [190, 34], "align": "left", "text": ""}
-            ]}
-          ]}
+      ]},
+      {"type": "panel", "style": "convex", "children": [
+        1,
+        {"type": "label", "align": "center", "text": "Ring"},
+        {"type": "panel", "style": "concave", "children": [
+          {"mode": "horizontal"},
+          "spacer",
+          11,
+          {"type": "itemSlot", "id": "ring", "glyph": "backingimagering.png", "autoInteract": true},
+          {"type": "checkBox", "id": "ringStatInfo", "radioGroup": "info", "value": "ring", "toolTip": "Only show ring stats."},
+          "spacer"
         ]}
-      ]
+      ]},
+      {"type": "panel", "style": "convex", "children": [
+        1,
+        {"type": "label", "align": "center", "text": "Trinket"},
+        {"type": "panel", "style": "concave", "children": [
+          {"mode": "horizontal"},
+          "spacer",
+          11,
+          {"type": "itemSlot", "id": "trinket", "glyph": "backingimagetrinket.png", "autoInteract": true},
+          {"type": "checkBox", "id": "trinketStatInfo", "radioGroup": "info", "value": "trinket", "toolTip": "Only show trinket stats."},
+          "spacer"
+        ]}
+      ]}
+    ],
+    [
+      {"size": 110},
+      {"type": "panel", "style": "convex", "children": [
+        1,
+        {"type": "label", "align": "center", "text": "Effects"},
+        {"type": "panel", "style": "concave", "children": [
+          {"type": "label", "id": "combinedDescription", "align": "left", "text": ""},
+          "spacer"
+        ]}
+      ]}
     ],
     [
       "spacer",

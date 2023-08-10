@@ -146,7 +146,6 @@
     [0, {
       "pool": [
         {"item": "belchpendant", "weight": 1},
-        {"item": "rustypendant", "weight": 1},
         {"item": "sweetdullpendant", "weight": 1},
 
         {"item": "avianring", "weight": 1},
@@ -154,7 +153,8 @@
         {"item": "glitchring", "weight": 1},
         {"item": "unfitbitring", "weight": 1},
 
-        {"item": "cinditrinket", "weight": 1}
+        {"item": "cinditrinket", "weight": 1},
+        {"item": "rustedtrinket", "weight": 1}
       ]
     }]
   ],
@@ -172,6 +172,7 @@
         {"item": "lotusring", "weight": 1},
         {"item": "throgring", "weight": 1},
 
+        {"item": "angeltrinket", "weight": 1},
         {"item": "blueberrytrinket", "weight": 1},
         {"item": "lotustrinket", "weight": 1}
       ]
@@ -181,6 +182,7 @@
   "uniqueLegendaryAccessory" : [
     [0, {
       "pool": [
+        {"item": "mithrapendant", "weight": 1},
         {"item": "rivierapendant", "weight": 1},
         {"item": "treebuddypendant", "weight": 1},
 

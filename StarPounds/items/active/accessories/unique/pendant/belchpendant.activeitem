@@ -6,7 +6,7 @@
   "description" : "A pendant woven from plant fibres, adorned with a green gem. It seems to be bubbling inside.",
   "shortdescription" : "Locket of Belching",
   "inventoryIcon" : "belchpendant.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

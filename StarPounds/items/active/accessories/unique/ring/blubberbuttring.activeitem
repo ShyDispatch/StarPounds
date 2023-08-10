@@ -6,7 +6,7 @@
   "description" : "The ring of the mighty Blubberbutt. Simply holding it makes you feel strange.",
   "shortdescription" : "Ring of the Blubberbutt",
   "inventoryIcon" : "blubberbuttring.png",
-  "category" : "artifact",
+  "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
 

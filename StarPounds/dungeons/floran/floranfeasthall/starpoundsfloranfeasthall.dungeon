@@ -111,7 +111,7 @@
         [ "maxSpawnCount", [1] ],	
         [ "ignorePartMaximumRule" ],		
         [ "doNotConnectToPart", [ "lobby1" ] ],
-        [ "doNotCombineWith", [ "tunnelleftend1", "tunnelleftendgluttonist1" ] ]		
+        [ "doNotCombineWith", [ "tunnelrightend1", "tunnelleftendgluttonist1" ] ]		
       ],
       "def" : [ "tmx", "tunnelleftend1.json" ],
       "chance" : 0.5

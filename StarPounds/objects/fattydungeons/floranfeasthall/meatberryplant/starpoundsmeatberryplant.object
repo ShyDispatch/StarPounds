@@ -7,6 +7,8 @@
   "race" : "generic",
   "category" : "decorative",
   "price" : 100,
+  "printable" : false,
+  
 
   "apexDescription" : "Interesting. These berries seem to have meatlike qualities.",
   "avianDescription" : "Smells like meat, oddly enough.",

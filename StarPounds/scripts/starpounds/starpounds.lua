@@ -468,40 +468,40 @@ starPounds.updateStats = function(force)
 	if not baseParameters then baseParameters = mcontroller.baseParameters() end
 	local parameters = baseParameters
 
-	if not controlParameters or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
+	if not (starPounds.controlModifiers and starPounds.controlParameters) or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
 		starPounds.movementModifier = math.max(0, 1 - (size.movementPenalty - (size.movementPenalty * (starPounds.getStat("movement") - 1))))
 		if size.movementPenalty >= 1 then
 			starPounds.movementModifier = 0
 		end
 		local movementModifier = starPounds.movementModifier
 		local weightMultiplier = starPounds.weightMultiplier
-		controlParameters = sb.jsonMerge(
-			{
-				mass = parameters.mass * weightMultiplier,
-				walkSpeed = parameters.walkSpeed * movementModifier,
-				runSpeed = parameters.runSpeed * movementModifier,
-				flySpeed = parameters.flySpeed * movementModifier,
-				groundForce = parameters.groundForce * weightMultiplier,
-				airForce = parameters.airForce * weightMultiplier,
-				airFriction = parameters.airFriction * weightMultiplier,
-			  liquidBuoyancy = parameters.liquidBuoyancy + math.min(weightMultiplier * 0.01, 0.95),
-				liquidForce = parameters.liquidForce * starPounds.weightMultiplier,
-				liquidFriction = parameters.liquidFriction * weightMultiplier,
-				normalGroundFriction = parameters.normalGroundFriction * weightMultiplier,
-				ambulatingGroundFriction = parameters.ambulatingGroundFriction * weightMultiplier,
-				airJumpProfile = {
-					jumpSpeed = parameters.airJumpProfile.jumpSpeed * movementModifier,
-					jumpControlForce = parameters.airJumpProfile.jumpControlForce * weightMultiplier,
-				},
-				liquidJumpProfile = {
-					jumpSpeed = parameters.liquidJumpProfile.jumpSpeed * movementModifier,
-					jumpControlForce = parameters.liquidJumpProfile.jumpControlForce * weightMultiplier,
-				}
-			},
-			((not size.isBlob and starPounds.hasOption("disableHitbox")) and {} or (size.controlParameters[starPounds.getVisualSpecies()] or size.controlParameters.default))
-		)
+		starPounds.controlModifiers = {
+			groundMovementModifier = movementModifier,
+			liquidMovementModifier = movementModifier,
+			speedModifier = movementModifier,
+			airJumpModifier = movementModifier,
+			liquidJumpModifier = movementModifier
+		}
+		starPounds.controlParameters = {
+			mass = parameters.mass * weightMultiplier,
+			airForce = parameters.airForce * weightMultiplier,
+			groundForce = parameters.groundForce * weightMultiplier,
+			airFriction = parameters.airFriction * weightMultiplier,
+			liquidBuoyancy = parameters.liquidBuoyancy + math.min(weightMultiplier * 0.01, 0.95),
+			liquidForce = parameters.liquidForce * weightMultiplier,
+			liquidFriction = parameters.liquidFriction * weightMultiplier,
+			normalGroundFriction = parameters.normalGroundFriction * weightMultiplier,
+			ambulatingGroundFriction = parameters.ambulatingGroundFriction * weightMultiplier,
+			airJumpProfile = {jumpControlForce = parameters.airJumpProfile.jumpControlForce * weightMultiplier},
+			liquidJumpProfile = {jumpControlForce = parameters.liquidJumpProfile.jumpControlForce * weightMultiplier}
+		}
+		-- Apply hitbox if we don't have the disable option checked, or we're a blob.
+		if size.isBlob or not starPounds.hasOption("disableHitbox") then
+			starPounds.controlParameters = sb.jsonMerge(starPounds.controlParameters, (size.controlParameters[starPounds.getVisualSpecies()] or size.controlParameters.default))
+		end
 	end
-	mcontroller.controlParameters(controlParameters)
+	mcontroller.controlModifiers(starPounds.controlModifiers)
+	mcontroller.controlParameters(starPounds.controlParameters)
 end
 
 starPounds.createStatuses = function()

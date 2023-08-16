@@ -23,12 +23,22 @@ end
 
 function update(args)
   starPounds = getmetatable ''.starPounds
-  self.weightMultiplier = 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
-  self.scale = math.min(math.floor(0.5 + 10 * self.weightMultiplier ^ (1/3))/10, self.sizeCap)
+  self.weightMultiplier = self.shrunk and 1 or 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
+  self.scale = self.shrunk and 1 or math.min(math.floor(0.5 + 10 * self.weightMultiplier ^ (1/3)) * 0.1, self.sizeCap)
+
+  if not self.active and not args.moves["run"] and starPounds.hasSkill("throgSphereShrink") then
+    self.shrunk = true
+  elseif not self.active then
+    self.shrunk = false
+  end
+
+  animator.setGlobalTag("shrunkDirectives", self.shrunk and "?hueshift=100" or "")
+
   if self.force ~= (starPounds and starPounds.getStat("throgSphereForce") or 0) then
     self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
     self.lastScale = nil
   end
+
   local skipScaling = animator.animationState("ballState") == "activate" or animator.animationState("ballState") == "deactivate"
   if self.scale ~= self.lastScale and not skipScaling then
     self.basePoly = starPounds.currentSize and (starPounds.currentSize.controlParameters[starPounds.getVisualSpecies()] or starPounds.currentSize.controlParameters.default).standingPoly or self.baseParameters.standingPoly
@@ -37,7 +47,7 @@ function update(args)
       self.transformedMovementParameters.collisionPoly[i] = vec2.mul(v, self.scale)
     end
     self.transformedMovementParameters.mass = self.baseParameters.mass * self.weightMultiplier
-    self.transformedMovementParameters.groundForce = self.baseParameters.groundForce * (1 + (self.weightMultiplier - 1) * starPounds.getStat("throgSphereForce") * 0.06)
+    self.transformedMovementParameters.groundForce = self.baseParameters.groundForce * (self.shrunk and self.weightMultiplier or (1 + (self.weightMultiplier - 1) * starPounds.getStat("throgSphereForce") * 0.06))
     self.transformedMovementParameters.slopeSlidingFactor = self.baseParameters.slopeSlidingFactor/self.scale
     self.transformedMovementParameters.normalGroundFriction = self.baseParameters.normalGroundFriction * self.weightMultiplier
     self.transformedMovementParameters.airJumpProfile.jumpControlForce = self.baseParameters.airJumpProfile.jumpControlForce * self.weightMultiplier
@@ -47,9 +57,7 @@ function update(args)
     animator.resetTransformationGroup("ballScale")
     animator.scaleTransformationGroup("ballScale", self.scale)
 
-    if self.active then
-      status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor"))}})
-    end
+    status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = (self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor")))}})
 
     self.projectilePositions = jarray()
     local radius = 0.85 * self.scale

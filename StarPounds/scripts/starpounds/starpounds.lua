@@ -292,18 +292,17 @@ starPounds.exercise = function(dt)
 
 	-- Skip the rest if we're not moving.
 	if effort == 0 then return end
-	local strainedThreshhold = starPounds.getStat("strainedThreshhold")
 	local strainedPenalty = starPounds.getStat("strainedPenalty")
 	local threshholds = starPounds.settings.threshholds.strain
-	local speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - (strainedThreshhold * threshholds.starpoundsstomach), 2)/4) * strainedPenalty))
-	local runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy")) and (starPounds.stomach.fullness > (strainedThreshhold * threshholds.starpoundsstomach))
+	local speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - threshholds.starpoundsstomach, 2)/4) * strainedPenalty))
+	local runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy")) and (starPounds.stomach.fullness > threshholds.starpoundsstomach)
 	-- Consume energy based on how far over capacity they are.
-	if starPounds.stomach.fullness > (strainedThreshhold * threshholds.starpoundsstomach) then
+	if starPounds.stomach.fullness > threshholds.starpoundsstomach then
 		-- consume and lock energy when running.
 		if status.isResource("energy") and not status.resourceLocked("energy") and consumeEnergy then
 			local energyCost = status.resourceMax("energy") * strainedPenalty * effort * 0.25 * dt
 			-- Double energy cost from super tummy-too-big-itus
-			if starPounds.stomach.fullness >= (strainedThreshhold * threshholds.starpoundsstomach2) then
+			if starPounds.stomach.fullness >= threshholds.starpoundsstomach2 then
 				energyCost = energyCost * 2
 			end
 			status.modifyResource("energy", -energyCost)
@@ -342,7 +341,7 @@ starPounds.drink = function(dt)
 	-- Can only drink if you're below capacity.
 	if starPounds.stomach.fullness >= 1 and not starPounds.hasSkill("wellfedProtection") then
 		return
-	elseif starPounds.stomach.fullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach3) then
+	elseif starPounds.stomach.fullness >= starPounds.settings.threshholds.strain.starpoundsstomach3 then
 		return
 	end
 	-- More accurately calculate where the entities's mouth is.
@@ -419,9 +418,9 @@ starPounds.updateStatuses = function()
 
 	if not starPounds.hasOption("disableStomachMeter") then
 		local stomachTracker = "starpoundsstomach"
-		if starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach2) then
+		if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach2 then
 			stomachTracker = "starpoundsstomach3"
-		elseif starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach) then
+		elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach then
 			stomachTracker = "starpoundsstomach2"
 		end
 		if not status.uniqueStatusEffectActive(stomachTracker) then
@@ -519,9 +518,9 @@ starPounds.createStatuses = function()
 	if not (starPounds.type == "player") then return end
 
 	local stomachTracker = "starpoundsstomach"
-	if starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach2) then
+	if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach2 then
 		stomachTracker = "starpoundsstomach3"
-	elseif starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach) then
+	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach then
 		stomachTracker = "starpoundsstomach2"
 	end
 	-- Removing them just puts them back in order (Size tracker before stomach tracker)
@@ -841,9 +840,9 @@ starPounds.hunger = function(dt)
 	end
 	-- Set the statuses.
 	if not (starPounds.type == "player") then return end
-	if starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach) and not starPounds.hasSkill("wellfedProtection") then
+	if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") then
 		status.addEphemeralEffect("wellfed")
-	elseif starPounds.stomach.interpolatedFullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach3) then
+	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach3 then
 		status.addEphemeralEffect("wellfed")
 	else
 		if status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")) and starPounds.stomach.food > 0 then
@@ -1327,7 +1326,7 @@ starPounds.voreDigest = function(dt)
 	-- Don't do anything if there's no eaten entities.
 	if not (#storage.starPounds.entityStomach > 0) then return end
 	-- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 5x slower.
-	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach2), 0), 5)
+	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach2, 0), 5)
 	local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
 	-- Reduce health of all entities.
 	for _, prey in pairs(storage.starPounds.entityStomach) do
@@ -1388,9 +1387,9 @@ starPounds.eatEntity = function(preyId, force, check)
 	-- Don't do anything if eaten.
 	if storage.starPounds.pred then return false end
 	-- Can only eat if you're below capacity.
-	if starPounds.stomach.fullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach) and not starPounds.hasSkill("wellfedProtection") and not force then
+	if starPounds.stomach.fullness >= starPounds.settings.threshholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") and not force then
 		return false
-	elseif starPounds.stomach.fullness >= (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach3) and not force then
+	elseif starPounds.stomach.fullness >= starPounds.settings.threshholds.strain.starpoundsstomach3 and not force then
 		return false
 	end
 	-- Don't do anything if they're already eaten.
@@ -1677,7 +1676,7 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local struggleStrength = (1 - starPounds.getStat("struggleResistance")) * struggleStrength/math.max(1, status.stat("powerMultiplier"))
 			local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
-			local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach2), 0), 5)
+			local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach2, 0), 5)
 			if math.random() < (world.entityType(preyId) == "player" and starPounds.settings.vorePlayerEscape or (0.5 * struggleStrength)) and escape then
 				if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > starPounds.settings.voreUnescapableHealth) then
 					starPounds.releaseEntity(preyId)
@@ -1858,15 +1857,17 @@ starPounds.getEaten = function(predId)
 		end
 	end
 	-- Override techs
-	starPounds.oldTech = {}
-	for _,v in pairs({"head", "body", "legs"}) do
-		local equippedTech = player.equippedTech(v)
-		if equippedTech then
-			starPounds.oldTech[v] = equippedTech
+	if starPounds.type == "player" then
+		starPounds.oldTech = {}
+		for _,v in pairs({"head", "body", "legs"}) do
+			local equippedTech = player.equippedTech(v)
+			if equippedTech then
+				starPounds.oldTech[v] = equippedTech
+			end
+			player.makeTechAvailable("starpoundseaten_"..v)
+			player.enableTech("starpoundseaten_"..v)
+			player.equipTech("starpoundseaten_"..v)
 		end
-		player.makeTechAvailable("starpoundseaten_"..v)
-		player.enableTech("starpoundseaten_"..v)
-		player.equipTech("starpoundseaten_"..v)
 	end
 	-- Save the old damage team.
 	storage.starPounds.damageTeam = world.entityDamageTeam(entity.id())
@@ -1949,14 +1950,16 @@ starPounds.getDigested = function(digestionRate)
 			end
 		end
 		-- Restore techs.
-		for _,v in pairs({"head", "body", "legs"}) do
-			player.unequipTech("starpoundseaten_"..v)
-			player.makeTechUnavailable("starpoundseaten_"..v)
+		if starPounds.type == "player" then
+			for _,v in pairs({"head", "body", "legs"}) do
+				player.unequipTech("starpoundseaten_"..v)
+				player.makeTechUnavailable("starpoundseaten_"..v)
+			end
+			for _,v in pairs(starPounds.oldTech or {}) do
+				player.equipTech(v)
+			end
 		end
-		for _,v in pairs(starPounds.oldTech or {}) do
-			player.equipTech(v)
-		end
-
+		-- Add monster type to collection.
 		if starPounds.type == "monster" then
 			local collectables = root.monsterParameters(monster.type()).captureCollectables or {}
 			for collection, collectable in pairs(collectables) do
@@ -2010,12 +2013,14 @@ starPounds.getReleased = function(source, overrideStatus)
 		end
 	end
 	-- Restore techs.
-	for _,v in pairs({"head", "body", "legs"}) do
-		player.unequipTech("starpoundseaten_"..v)
-		player.makeTechUnavailable("starpoundseaten_"..v)
-	end
-	for _,v in pairs(starPounds.oldTech or {}) do
-		player.equipTech(v)
+	if starPounds.type == "player" then
+		for _,v in pairs({"head", "body", "legs"}) do
+			player.unequipTech("starpoundseaten_"..v)
+			player.makeTechUnavailable("starpoundseaten_"..v)
+		end
+		for _,v in pairs(starPounds.oldTech or {}) do
+			player.equipTech(v)
+		end
 	end
 	-- Tell the pred we're out.
 	if world.entityExists(predId) then

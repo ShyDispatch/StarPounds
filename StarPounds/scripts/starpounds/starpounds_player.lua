@@ -247,16 +247,12 @@ function makeOverrideFunction()
 			local speciesData = starPounds.getSpeciesData(player.species())
       entity = {
         id = player.id,
-        setDropPool = nullFunction,
-        setDeathParticleBurst = nullFunction,
-        setDeathSound = nullFunction,
-        setDamageOnTouch = nullFunction,
-				setDamageSources = nullFunction,
-        setDamageTeam = nullFunction,
 	      weight = math.round(speciesData.weight * speciesData.nutritionRatio),
 	      bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio)),
 	      experience = speciesData.experience
       }
+			local mt = {__index = function () return nullFunction end}
+			setmetatable(entity, mt)
     	if not speciesData.weightGain then
     		message.setHandler("starPounds.feed", simpleHandler(function(amount) status.giveResource("food", amount) end))
     		starPounds.getChestVariant = function() return "" end

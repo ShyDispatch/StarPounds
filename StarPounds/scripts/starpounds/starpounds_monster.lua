@@ -87,22 +87,9 @@ function makeOverrideFunction()
 			-- No debug stuffs for monsters
 			starPounds.debug = nullFunction
 			-- Shortcuts to make functions work for monsters.
-			player = {
-				equippedItem = nullFunction,
-				setEquippedItem = nullFunction,
-				isLounging = nullFunction,
-				loungingIn = nullFunction,
-				equippedTech = nullFunction,
-				enableTech = nullFunction,
-				makeTechAvailable = nullFunction,
-				makeTechUnavailable = nullFunction,
-				equipTech = nullFunction,
-				unequipTech = nullFunction,
-				swapSlotItem = nullFunction,
-				setSwapSlotItem = nullFunction,
-				giveItem = nullFunction,
-				consumeItemWithParameter = nullFunction
-			}
+			player = {}
+			local mt = {__index = function () return nullFunction end}
+			setmetatable(player, mt)
 			entity.setDropPool = monster.setDropPool
 			entity.setDeathParticleBurst = monster.setDeathParticleBurst
 			entity.setDeathSound = monster.setDeathSound

@@ -126,15 +126,6 @@ function makeOverrideFunction()
         setEquippedItem = npc.setItemSlot,
         isLounging = npc.isLounging,
         loungingIn = npc.loungingIn,
-        equippedTech = nullFunction,
-        enableTech = nullFunction,
-        makeTechAvailable = nullFunction,
-        makeTechUnavailable = nullFunction,
-        equipTech = nullFunction,
-        unequipTech = nullFunction,
-        swapSlotItem = nullFunction,
-        setSwapSlotItem = nullFunction,
-        giveItem = nullFunction,
         consumeItemWithParameter = function(parameter, value)
           for _, v in pairs({"chest", "legs", "chestCosmetic", "legsCosmetic"}) do
             local item = npc.getItemSlot(v)
@@ -144,6 +135,8 @@ function makeOverrideFunction()
           end
         end
       }
+			local mt = {__index = function () return nullFunction end}
+			setmetatable(player, mt)
       entity.setDropPool = function(...) return npc.setDropPools({...}) end
       entity.setDeathParticleBurst = npc.setDeathParticleBurst
       entity.setDeathSound = nullFunction

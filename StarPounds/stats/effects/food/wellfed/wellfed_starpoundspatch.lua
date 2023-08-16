@@ -13,7 +13,7 @@ function update(dt)
   starPounds = getmetatable ''.starPounds
   starPoundsEnabled = starPounds and starPounds.isEnabled()
 
-  local threshold = starPounds.hasSkill("wellfedProtection") and (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach3) or (starPounds.getStat("strainedThreshhold") * starPounds.settings.threshholds.strain.starpoundsstomach)
+  local threshold = starPounds.hasSkill("wellfedProtection") and starPounds.settings.threshholds.strain.starpoundsstomach3 or starPounds.settings.threshholds.strain.starpoundsstomach
   if starPoundsEnabled and starPounds.stomach.interpolatedFullness < threshold then
     if doHealing then
       status.addEphemeralEffect("starpoundswellfed", effect.duration())

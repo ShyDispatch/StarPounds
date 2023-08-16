@@ -22,7 +22,7 @@
   "inventoryIcon" : "starpoundsponderousidolicon.png",
   "orientations" : [
     {
-      "image" : "starpoundsponderousidol.png:<color>.<frame>",
+      "image" : "starpoundsponderousidol.png:<color>.<frame>", "fullbright" : true,
       "imagePosition" : [-8, 0],
       "frames" : 6,
       "animationCycle" : 0.7,

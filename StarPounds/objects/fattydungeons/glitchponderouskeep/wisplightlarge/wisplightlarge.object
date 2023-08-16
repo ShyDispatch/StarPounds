@@ -1,0 +1,78 @@
+{
+  "objectName" : "wisplightlarge",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 120,
+
+  "description" : "A jar containing a pair of Lipic Wisps.",
+  "shortdescription" : "Large Wisplight",
+  "race" : "glitch",
+
+  "apexDescription" : "I can only wonder how those lights are moving.",
+  "avianDescription" : "These motes of light seem almost alive...",
+  "floranDescription" : "Flame is flying!",
+  "glitchDescription" : "Entranced. The wisps in this bottle are almost hypnotic.",
+  "humanDescription" : "Magical...",
+  "hylotlDescription" : "How ethereal...",
+  "novakidDescription" : "It's like lil pieces of me in there...",
+
+
+  "statusEffects" : [ ],
+    
+  "lightColor" : [209, 105, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "wisplightlargeicon.png",
+  "orientations" : [
+    {
+      "image" : "wisplightlarge.png:<color>.<frame>",
+      "imagePosition" : [-8, -16],
+      "animationPosition" : [-8, -16],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "lightPosition" : [0, -1],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
+    {
+      "image" : "wisplightlarge.png:<color>.<frame>",
+      "imagePosition" : [-8, -16],
+      "animationPosition" : [-8, -16],
+
+      "direction" : "right",
+
+      "lightPosition" : [0, -1],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    }
+  ],
+  
+  "animation" : "wisplightlarge.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "bg" : "wisplightlarge.png",
+    "fg" : "wisplightlargelit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+  
+  "inputNodes" : [ [0, 1] ]
+}

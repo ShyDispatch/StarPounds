@@ -1,0 +1,39 @@
+{
+  "projectileName" : "digestionsquirt",
+  "image" : "digestionsquirt.png",
+  "fullbright" : true,
+  "physics" : "squirt",
+  "animationCycle" : 1,
+  "frameNumber" : 2,
+  "actionOnReap" : [
+    {
+      "action" : "loop",
+      "count" : 5,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "digestionsquirt"
+        }
+      ]
+    },
+	  {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/bloodvomit1.ogg", "/sfx/projectiles/bloodvomit2.ogg", "/sfx/projectiles/bloodvomit3.ogg", "/sfx/projectiles/bloodvomit4.ogg", "/sfx/projectiles/bloodvomit5.ogg", "/sfx/projectiles/bloodvomit6.ogg", "/sfx/projectiles/bloodvomit7.ogg" ]
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/goocluster_pop.ogg" ]
+    }
+  ],
+  "power" : 50,
+  "speed" : 40,
+  "bounces" : 0,
+  "piercing" : false,
+  "damagePoly" : [ [-4, 0], [0, 4], [4, 0], [0, -4] ],
+  "damageKind" : "bugnet",
+  "damageTeam" : { "type" : "indiscriminate" },
+  "statusEffects" : ["starpoundsdigestionsquirt"],
+  "emitters" : ["digestionsquirt"],
+  "lightColor" : [60, 77, 2],
+  "hydrophobic" : true
+}

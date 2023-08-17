@@ -57,8 +57,10 @@ function update(args)
     animator.resetTransformationGroup("ballScale")
     animator.scaleTransformationGroup("ballScale", self.scale)
 
-    status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = (self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor")))}})
-
+    if self.active then
+      status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = (self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor")))}})
+    end
+    
     self.projectilePositions = jarray()
     local radius = 0.85 * self.scale
     for height = -math.floor(radius), math.floor(radius), 2 do

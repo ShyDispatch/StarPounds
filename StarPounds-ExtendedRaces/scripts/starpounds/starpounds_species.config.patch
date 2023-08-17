@@ -12,7 +12,12 @@
   {
 	"op": "add",
 	"path": "/arcanian",
-	"value": { "weightGain": true, "override": "fenerox", "prependDirectives": "?replace;f0e1bb=ffe2c5;cfbc88=ffc181;9e8555=d39c6c;6b583d=c7815b;e6e6e6=ffe2c5;b6b6b6=d39c6c;7b7b7b=c7815b;" }
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/gelsemis",
+	"value": { "weightGain": true, "override": "human" }
   },
   {
 	"op": "add",

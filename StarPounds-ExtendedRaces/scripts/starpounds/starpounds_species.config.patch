@@ -61,6 +61,11 @@
   },
   {
 	"op": "add",
+	"path": "/nightgaunt",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/angel",
 	"value": { "weightGain": true, "override": "human", "prependDirectives": "?replace;dc1f00=ffffff;be1b00=efefef;951500=cacaca;" }
   },

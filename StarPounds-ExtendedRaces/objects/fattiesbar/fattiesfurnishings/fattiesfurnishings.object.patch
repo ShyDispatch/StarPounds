@@ -93,5 +93,42 @@
 	  "path": "/storeInventory/feedingtube/-",
 	  "value": "angelfeedingtube" 
 	  } 
-	]
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "arcanianweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsarcaniantreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "arcanianfeedingtube" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "nostosweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "nostosfeedingtube" 
+	  } 
+	]	
 ]

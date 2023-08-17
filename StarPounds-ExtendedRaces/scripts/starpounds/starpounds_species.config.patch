@@ -36,6 +36,11 @@
   },
   {
 	"op": "add",
+	"path": "/nostos",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/vampire",
 	"value": { "weightGain": true, "override": "human" }
   },

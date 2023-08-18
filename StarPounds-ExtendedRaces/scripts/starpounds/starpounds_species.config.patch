@@ -96,6 +96,11 @@
   },
   {
 	"op": "add",
+	"path": "/felin",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/troll",
 	"value": { "weightGain": true, "override": "human", "prependDirectives": "?replace;ffe2c5=e2e2e2;ffc181=c0c0c0;d39c6c=a0a0a0;c7815b=919191;" }
   },

@@ -5,7 +5,7 @@
   },
   "starpounds_digestcrew" : {
     "unique": false,
-    "text" : "Warning! ^orange;Crew members are unrecoverable when they become part of the Captain's hips^reset;. I would advise you find an alternative source of food."
+    "text" : "Warning! ^orange;Crew members cannot be recovered if you add them to your waistline.^reset; I strongly advise you find an alternative source of food."
   },
   "starpounds_treadmill" : {
     "unique": false,

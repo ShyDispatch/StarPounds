@@ -145,12 +145,16 @@
   "uniqueUncommonAccessory" : [
     [0, {
       "pool": [
-        {"item": "belchpendant", "weight": 1},
-        {"item": "sweetdullpendant", "weight": 1},
-
+        // Species
+        {"item": "apexring", "weight": 1},
         {"item": "avianring", "weight": 1},
         {"item": "floranring", "weight": 1},
         {"item": "glitchring", "weight": 1},
+
+        // Other
+        {"item": "belchpendant", "weight": 1},
+        {"item": "sweetdullpendant", "weight": 1},
+
         {"item": "unfitbitring", "weight": 1},
 
         {"item": "cinditrinket", "weight": 1},
@@ -162,6 +166,10 @@
   "uniqueRareAccessory" : [
     [0, {
       "pool": [
+        // Species
+        {"item": "throgring", "weight": 1},
+
+        // Other
         {"item": "cassandrapendant", "weight": 1},
         {"item": "keapendant", "weight": 1},
         {"item": "lotuspendant", "weight": 1},
@@ -170,7 +178,6 @@
 
         {"item": "blossomring", "weight": 1},
         {"item": "lotusring", "weight": 1},
-        {"item": "throgring", "weight": 1},
 
         {"item": "angeltrinket", "weight": 1},
         {"item": "blueberrytrinket", "weight": 1},

@@ -150,6 +150,7 @@
         {"item": "avianring", "weight": 1},
         {"item": "floranring", "weight": 1},
         {"item": "glitchring", "weight": 1},
+        {"item": "humanring", "weight": 1},
 
         // Other
         {"item": "belchpendant", "weight": 1},

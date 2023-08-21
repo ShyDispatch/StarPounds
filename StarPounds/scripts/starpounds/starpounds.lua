@@ -415,7 +415,7 @@ starPounds.updateStatuses = function()
 	end
 
 	if not (starPounds.type == "player") then return end
-
+	-- Stomach status.
 	if not starPounds.hasOption("disableStomachMeter") then
 		local stomachTracker = "starpoundsstomach"
 		if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach2 then
@@ -428,9 +428,16 @@ starPounds.updateStatuses = function()
 			return
 		end
 	end
-
+	-- Size status.
 	if not starPounds.hasOption("disableSizeMeter") then
 		if not status.uniqueStatusEffectActive("starpounds"..starPounds.currentSize.size) then
+			starPounds.createStatuses()
+			return
+		end
+	end
+	-- Tiddy status.
+	if starPounds.hasOption("breastMeter") then
+		if not status.uniqueStatusEffectActive("starpoundsbreast") then
 			starPounds.createStatuses()
 			return
 		end
@@ -532,6 +539,10 @@ starPounds.createStatuses = function()
 	status.removeEphemeralEffect(stomachTracker)
 	if not starPounds.hasOption("disableStomachMeter") then
 		status.addEphemeralEffect(stomachTracker)
+	end
+	status.removeEphemeralEffect("starpoundsbreast")
+	if starPounds.hasOption("breastMeter") then
+		status.addEphemeralEffect("starpoundsbreast")
 	end
 end
 

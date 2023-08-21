@@ -1,0 +1,9 @@
+{
+	"name": "starpoundsbreast",
+	"defaultDuration": 100,
+	"scripts": [
+		"starpoundsbreast.lua"
+	],
+	"label": "Breast Capacity",
+	"icon": "/interface/statuses/breast.png"
+}

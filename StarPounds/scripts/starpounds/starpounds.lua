@@ -608,7 +608,7 @@ starPounds.getStat = function(stat)
 	-- Only recalculate per tick, otherwise use the cached value. (starPounds.statCache gets reset every tick)
 	if not starPounds.statCache[stat] then
 		-- Default amount (or 1), modified by accessory values.
-		local statAmount = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModfiers(stat)
+		local statAmount = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModifiers(stat)
 		-- Add flat bonuses from skills and status effects.
 		statAmount = statAmount + starPounds.getSkillBonus(stat) + starPounds.getEffectBonus(stat)
 		-- Multiply the total bonuses by status effect and option multipliers.
@@ -763,7 +763,7 @@ starPounds.getAccessory = function(slot)
 	return storage.starPounds.accessories[slot]
 end
 
-starPounds.getAccessoryModfiers = function(stat)
+starPounds.getAccessoryModifiers = function(stat)
 	-- Argument sanitisation.
 	stat = stat and tostring(stat) or nil
 	if not stat then
@@ -786,7 +786,7 @@ starPounds.setAccessory = function(item, slot)
 	slot = tostring(slot)
 	if not slot then return end
 	storage.starPounds.accessories[slot] = item
-	starPounds.accessoryModifiers = starPounds.getAccessoryModfiers()
+	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.optionChanged = true
 	starPounds.backup()
 end
@@ -2074,7 +2074,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.getSkillLevel", simpleHandler(starPounds.getSkillLevel))
 	message.setHandler("starPounds.hasSkill", simpleHandler(starPounds.hasSkill))
 	message.setHandler("starPounds.getAccessory", simpleHandler(starPounds.getAccessory))
-	message.setHandler("starPounds.getAccessoryModfiers", simpleHandler(starPounds.getAccessoryModfiers))
+	message.setHandler("starPounds.getAccessoryModifiers", simpleHandler(starPounds.getAccessoryModifiers))
 	-- Handlers for affecting the entity.
 	message.setHandler("starPounds.digest", simpleHandler(starPounds.digest))
 	message.setHandler("starPounds.gurgle", simpleHandler(starPounds.gurgle))

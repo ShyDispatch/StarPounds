@@ -30,7 +30,7 @@ function init()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
 	starPounds.parseSkills()
-	starPounds.accessoryModifiers = starPounds.getAccessoryModfiers()
+	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.parseEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()

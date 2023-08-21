@@ -18,6 +18,7 @@ function starPoundsInit()
 	starPounds.messageHandlers()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
+	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	storage.starPounds.options = sb.jsonMerge(storage.starPounds.options, config.getParameter("starPounds_options", {}))
 	if not storage.starPounds.parsedInitialSkills then
 		local skills = config.getParameter("starPounds_skills", {})
@@ -65,7 +66,11 @@ function update(dt)
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
-	starPounds.statCache = {}
+	starPounds.statCacheTimer = math.max(starPounds.statCacheTimer - dt, 0)
+	if starPounds.statCacheTimer == 0 then
+		starPounds.statCache = {}
+		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
+	end
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
 	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)

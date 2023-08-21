@@ -605,8 +605,8 @@ end
 starPounds.getStat = function(stat)
 	-- Argument sanitisation.
 	stat = tostring(stat)
-	-- Only recalculate per tick, otherwise use the cached value. (starPounds.statCache gets reset every tick)
 	if not starPounds.stats[stat] then return 0 end
+	-- Only recalculate per tick, otherwise use the cached value. (starPounds.statCache gets reset every tick)
 	if not starPounds.statCache[stat] then
 		-- Default amount (or 1, so we can boost stats that start at 0), modified by accessory values.
 		local accessoryBonus = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModifiers(stat)
@@ -1026,9 +1026,10 @@ starPounds.equipSize = function(size, modifiers)
 	end
 end
 
-starPounds.equipCheck = function(size, modifiers)
+starPounds.equipCheck = function(size)
 	-- Cap size in certain vehicles to prevent clipping.
 	local leftCappedVehicle = false
+	local modifiers = {}
 	if mcontroller.anchorState() then
 		local anchorEntity = world.entityName(mcontroller.anchorState())
 		if anchorEntity and starPounds.settings.vehicleSizeCap[anchorEntity] then
@@ -1036,6 +1037,7 @@ starPounds.equipCheck = function(size, modifiers)
 				modifiers.chestVariant = "busty"
 				modifiers.legsSize = nil
 				modifiers.chestSize = nil
+				modifiers.override = true
 				size = starPounds.sizes[starPounds.settings.vehicleSizeCap[anchorEntity]]
 				inCappedVehicle = true
 			end
@@ -1054,6 +1056,14 @@ starPounds.equipCheck = function(size, modifiers)
 		not (starPounds.swapSlotItem ~= nil and starPounds.swapSlotItem.parameters ~= nil and (starPounds.swapSlotItem.parameters.size ~= nil or starPounds.swapSlotItem.parameters.tempSize ~= nil)) and not
 		starPounds.optionChanged
 	then return end
+	-- Setup modifiers.
+	if not modifiers.override then
+		modifiers = {
+			chestVariant = starPounds.currentVariant,
+			chestSize = storage.starPounds.enabled and (starPounds.hasOption("extraTopHeavy") and 2 or (starPounds.hasOption("topHeavy") and 1 or nil) or nil),
+			legsSize = storage.starPounds.enabled and (starPounds.hasOption("extraBottomHeavy") and 2 or (starPounds.hasOption("bottomHeavy") and 1 or nil) or nil)
+		}
+	end
 	-- Check the item the player is holding.
 	if starPounds.swapSlotItem and starPounds.swapSlotItem.parameters then
 		local item = starPounds.swapSlotItem
@@ -2124,7 +2134,7 @@ starPounds.toggleEnable = function()
 	starPounds.optionChanged = true
 	if not storage.starPounds.enabled then
 		starPounds.movementModifier = 1
-		starPounds.equipCheck(starPounds.getSize(0), {})
+		starPounds.equipCheck(starPounds.getSize(0))
 		world.sendEntityMessage(entity.id(), "starPounds.expire")
 		status.clearPersistentEffects("starpounds")
 		status.clearPersistentEffects("starpoundseaten")
@@ -2171,9 +2181,7 @@ starPounds.resetWeight = function()
 	storage.starPounds.bloat = 0
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
 	-- Reset the fat items.
-	starPounds.equipCheck(starPounds.getSize(storage.starPounds.weight), {
-		chestVariant = starPounds.getChestVariant(starPounds.currentSize),
-	})
+	starPounds.equipCheck(starPounds.getSize(storage.starPounds.weight))
 
 	return true
 end

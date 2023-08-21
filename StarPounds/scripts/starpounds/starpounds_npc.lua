@@ -20,6 +20,7 @@ function init()
 	starPounds.messageHandlers()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
+	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	storage.starPounds.options = sb.jsonMerge(storage.starPounds.options, config.getParameter("starPounds_options", {}))
 
 	if not storage.starPounds.parsedInitialSkills then
@@ -58,7 +59,11 @@ function update(dt)
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
-	starPounds.statCache = {}
+	starPounds.statCacheTimer = math.max(starPounds.statCacheTimer - dt, 0)
+	if starPounds.statCacheTimer == 0 then
+		starPounds.statCache = {}
+		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
+	end
 	-- Check if the entity has gone up a size.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
 	starPounds.stomach = starPounds.getStomach()
@@ -87,11 +92,7 @@ function update(dt)
 	end
 	-- Checks
 	starPounds.voreCheck()
-	starPounds.equipCheck(starPounds.currentSize, {
-		chestVariant = starPounds.currentVariant,
-		chestSize = storage.starPounds.enabled and (starPounds.hasOption("extraTopHeavy") and 2 or (starPounds.hasOption("topHeavy") and 1 or nil) or nil),
-		legsSize = storage.starPounds.enabled and (starPounds.hasOption("extraBottomHeavy") and 2 or (starPounds.hasOption("bottomHeavy") and 1 or nil) or nil)
-	})
+	starPounds.equipCheck(starPounds.currentSize)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)

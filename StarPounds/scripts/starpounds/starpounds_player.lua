@@ -29,6 +29,7 @@ function init()
 	starPounds.messageHandlers()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
+	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	starPounds.parseSkills()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.parseEffectStats(1)
@@ -69,7 +70,11 @@ function update(dt)
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
-	starPounds.statCache = {}
+	starPounds.statCacheTimer = math.max(starPounds.statCacheTimer - dt, 0)
+	if starPounds.statCacheTimer == 0 then
+		starPounds.statCache = {}
+		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
+	end
 	-- Update fall damage listener.
 	starPounds.damageListener:update()
 	-- Check if the entity has gone up a size.
@@ -126,7 +131,7 @@ function update(dt)
 		-- Force stat update.
 		starPounds.updateStats(true)
 		-- Update status effect trackers.
-		starPounds.createStatuses("starpoundsstomach")
+		starPounds.createStatuses()
 		-- Don't play the sound on the first load.
 		if oldSize then
 			-- Play sound to indicate size change.
@@ -135,11 +140,7 @@ function update(dt)
 	end
 	-- Checks
 	starPounds.voreCheck()
-	starPounds.equipCheck(starPounds.currentSize, {
-		chestVariant = starPounds.currentVariant,
-		chestSize = storage.starPounds.enabled and (starPounds.hasOption("extraTopHeavy") and 2 or (starPounds.hasOption("topHeavy") and 1 or nil) or nil),
-		legsSize = storage.starPounds.enabled and (starPounds.hasOption("extraBottomHeavy") and 2 or (starPounds.hasOption("bottomHeavy") and 1 or nil) or nil)
-	})
+	starPounds.equipCheck(starPounds.currentSize)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)

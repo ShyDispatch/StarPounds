@@ -889,21 +889,23 @@ starPounds.getChestVariant = function(size)
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	size = sb.jsonMerge({variants = jarray()}, type(size) == "table" and size or {})
-
 	local variant = nil
+	local thresholdMultiplier = starPounds.currentSize.threshholdMultiplier
+	local breastThreshholds = starPounds.settings.threshholds.breasts
+	local stomachThreshholds = starPounds.settings.threshholds.stomach
 
 	local breastSize = (starPounds.hasOption("disableBreastGrowth") and 0 or starPounds.breasts.contents) + (
-		starPounds.hasOption("busty") and starPounds.settings.threshholds.breasts[1].amount or (
-		starPounds.hasOption("milky") and starPounds.settings.threshholds.breasts[2].amount or 0)
+		starPounds.hasOption("busty") and breastThreshholds[1].amount * thresholdMultiplier or (
+		starPounds.hasOption("milky") and breastThreshholds[2].amount * thresholdMultiplier or 0)
 	)
 
 	local stomachSize = (starPounds.hasOption("disableStomachGrowth") and 0 or storage.starPounds.stomachLerp) + (
-		starPounds.hasOption("stuffed") and starPounds.settings.threshholds.stomach[2].amount * starPounds.currentSize.threshholdMultiplier or (
-		starPounds.hasOption("filled") and starPounds.settings.threshholds.stomach[4].amount * starPounds.currentSize.threshholdMultiplier or (
-		starPounds.hasOption("gorged") and starPounds.settings.threshholds.stomach[6].amount * starPounds.currentSize.threshholdMultiplier or 0))
+		starPounds.hasOption("stuffed") and stomachThreshholds[2].amount * thresholdMultiplier or (
+		starPounds.hasOption("filled") and stomachThreshholds[4].amount * thresholdMultiplier or (
+		starPounds.hasOption("gorged") and stomachThreshholds[6].amount * thresholdMultiplier or 0))
 	)
 
-	for _, v in ipairs(starPounds.settings.threshholds.breasts) do
+	for _, v in ipairs(breastThreshholds) do
 		if contains(size.variants, v.name) then
 			if breastSize >= v.amount then
 				variant = v.name
@@ -911,9 +913,9 @@ starPounds.getChestVariant = function(size)
 		end
 	end
 
-	for _, v in ipairs(starPounds.settings.threshholds.stomach) do
+	for _, v in ipairs(stomachThreshholds) do
 		if contains(size.variants, v.name) then
-			if stomachSize >= (v.amount * starPounds.currentSize.threshholdMultiplier) then
+			if stomachSize >= (v.amount * thresholdMultiplier) then
 				variant = v.name
 			end
 		end

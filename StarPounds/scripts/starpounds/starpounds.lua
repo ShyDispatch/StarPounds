@@ -453,7 +453,7 @@ starPounds.updateStats = function(force)
 	if oldWeightMultiplier ~= starPounds.weightMultiplier or force then
 		status.setPersistentEffects("starpounds", {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
-			{stat = "foodDelta", effectiveMultiplier = math.round(starPounds.getStat("hunger"), 2)},
+			{stat = "foodDelta", effectiveMultiplier = starPounds.hasOption("disableHunger") and 0 or math.round(starPounds.getStat("hunger"), 2)},
 			{stat = "grit", amount = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0},
 			{stat = "fallDamageMultiplier", effectiveMultiplier = 1 + size.healthBonus * (1 - starPounds.getStat("fallDamageReduction"))},
 			{stat = "iceStatusImmunity", amount = sizeIndex >= 3 and starPounds.getSkillLevel("iceImmunity") or 0},
@@ -551,7 +551,8 @@ starPounds.gainExperience = function(amount, multiplier, isLevel)
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	amount = tonumber(amount) or 0
-	multiplier = tonumber(multiplier) or starPounds.getStat("experienceMultiplier")
+	local hungerPenalty = starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0
+	multiplier = tonumber(multiplier) or math.max(starPounds.getStat("experienceMultiplier") - hungerPenalty, 0)
 	-- Skip everything else if we're just adding straight levels.
 	if isLevel then
 		storage.starPounds.level = storage.starPounds.level + math.max(math.round(amount))

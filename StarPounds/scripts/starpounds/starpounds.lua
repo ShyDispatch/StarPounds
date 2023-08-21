@@ -540,7 +540,7 @@ starPounds.gainExperience = function(amount, multiplier, isLevel)
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	amount = tonumber(amount) or 0
-	multiplier = tonumber(multiplier) or 1
+	multiplier = tonumber(multiplier) or starPounds.getStat("experienceMultiplier")
 	-- Skip everything else if we're just adding straight levels.
 	if isLevel then
 		storage.starPounds.level = storage.starPounds.level + math.max(math.round(amount))
@@ -548,7 +548,6 @@ starPounds.gainExperience = function(amount, multiplier, isLevel)
 	end
 
 	-- Main stuff.
-	local multiplier = multiplier or starPounds.getStat("experienceMultiplier")
 	local levelModifier = 1 + storage.starPounds.level * starPounds.settings.experienceIncrement
 	local amount = math.round((amount or 0) * multiplier)
 	local amountRequired = math.round(starPounds.settings.experienceAmount * levelModifier - storage.starPounds.experience)

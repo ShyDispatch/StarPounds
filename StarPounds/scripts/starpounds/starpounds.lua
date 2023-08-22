@@ -292,12 +292,14 @@ starPounds.exercise = function(dt)
 
 	-- Skip the rest if we're not moving.
 	if effort == 0 then return end
-	local strainedPenalty = starPounds.getStat("strainedPenalty")
 	local threshholds = starPounds.settings.threshholds.strain
-	local speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - threshholds.starpoundsstomach, 2)/4) * strainedPenalty))
-	local runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy")) and (starPounds.stomach.fullness > threshholds.starpoundsstomach)
+	local speedModifier = 1
+	local runningSuppressed = false
 	-- Consume energy based on how far over capacity they are.
 	if starPounds.stomach.fullness > threshholds.starpoundsstomach then
+		local strainedPenalty = starPounds.getStat("strainedPenalty")
+		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - threshholds.starpoundsstomach, 2)/4) * strainedPenalty))
+		runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy"))
 		-- consume and lock energy when running.
 		if status.isResource("energy") and not status.resourceLocked("energy") and consumeEnergy then
 			local energyCost = status.resourceMax("energy") * strainedPenalty * effort * 0.25 * dt

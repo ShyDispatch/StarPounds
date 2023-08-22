@@ -168,16 +168,20 @@ function update(dt)
 			storage.starPounds.stomachLerp = starPounds.stomach.contents
 		end
 	end
-
 	starPounds.optionChanged = false
 	if starPounds.hasOption("showDebug") then
-		starPounds.debug("accessories", storage.starPounds.enabled and string.format("^#665599,set;Pendant: ^gray;%s ^reset;Ring: ^gray;%s ^reset;Trinket: ^gray;%s", storage.starPounds.accessories.pendant and storage.starPounds.accessories.pendant.name or "None", storage.starPounds.accessories.ring and storage.starPounds.accessories.ring.name or "None", storage.starPounds.accessories.trinket and storage.starPounds.accessories.trinket.name or "None") or "^gray;Mod disabled")
-		starPounds.debug("experience", storage.starPounds.enabled and string.format("^#665599,set;Level: ^gray;%s ^reset;Experience: ^gray;%.0f/%.0f ^reset;Multiplier: ^gray;%s", storage.starPounds.level, storage.starPounds.experience, starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0)) or "^gray;Mod disabled")
-		starPounds.debug("stomach", storage.starPounds.enabled and string.format("^#665599,set;Fullness: ^gray;%.0f%%%% ^reset;Capacity: ^gray;%.1f/%.1f", starPounds.stomach.interpolatedFullness * 100, starPounds.stomach.contents, starPounds.stomach.capacity) or "^gray;Mod disabled")
-		starPounds.debug("stomachContents", storage.starPounds.enabled and string.format("^#665599,set;Food: ^gray;%.1f ^reset;Bloat: ^gray;%.1f ^reset;Entity: ^gray;%.1f (%d)", starPounds.stomach.food, starPounds.stomach.bloat, starPounds.stomach.contents - (starPounds.stomach.food + starPounds.stomach.bloat), #storage.starPounds.entityStomach) or "^gray;Mod disabled")
-		starPounds.debug("breasts", storage.starPounds.enabled and string.format("^#665599,set;Type: ^gray;%s ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Contents: ^gray;%.1f", starPounds.breasts.type, starPounds.breasts.contents, starPounds.breasts.capacity, storage.starPounds.breasts) or "^gray;Mod disabled")
-		starPounds.debug("size", storage.starPounds.enabled and string.format("^#665599,set;Size: ^gray;%s ^reset;Weight: ^gray;%.2flb ^reset;Multiplier: ^gray;%.1fx", (starPounds.currentSize.size == "" and "none" or starPounds.currentSize.size)..(starPounds.currentVariant and ": "..starPounds.currentVariant or ""), storage.starPounds.weight, starPounds.weightMultiplier) or "^gray;Mod disabled")
-		starPounds.debug("timers", storage.starPounds.enabled and string.format("^#665599,set;Gurgle: ^gray;%.1f ^reset;Rumble: ^gray;%.1f ^reset;Effect Update: ^gray;%.1f", starPounds.gurgleTimer or 0, starPounds.rumbleTimer or 0, starPounds.statusEffectModifierTimer or 0) or "^gray;Mod disabled")
+		local data = storage.starPounds
+		local stomach = starPounds.stomach
+		local breasts = starPounds.breasts
+		local accessories = data.accessories
+		local enabled = data.enabled
+		starPounds.debug("accessories", enabled and string.format("^#665599,set;Pendant: ^gray;%s ^reset;Ring: ^gray;%s ^reset;Trinket: ^gray;%s", accessories.pendant and accessories.pendant.name or "None", accessories.ring and accessories.ring.name or "None", accessories.trinket and accessories.trinket.name or "None") or "^gray;Mod disabled")
+		starPounds.debug("experience", enabled and string.format("^#665599,set;Level: ^gray;%s ^reset;Experience: ^gray;%.0f/%.0f ^reset;Multiplier: ^gray;%s", data.level, data.experience, starPounds.settings.experienceAmount * (1 + data.level * starPounds.settings.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0)) or "^gray;Mod disabled")
+		starPounds.debug("stomach", enabled and string.format("^#665599,set;Fullness: ^gray;%.0f%%%% ^reset;Capacity: ^gray;%.1f/%.1f", stomach.interpolatedFullness * 100, stomach.contents, stomach.capacity) or "^gray;Mod disabled")
+		starPounds.debug("stomachContents", enabled and string.format("^#665599,set;Food: ^gray;%.1f ^reset;Bloat: ^gray;%.1f ^reset;Entity: ^gray;%.1f (%d)", stomach.food, stomach.bloat, stomach.contents - (stomach.food + stomach.bloat), #data.entityStomach) or "^gray;Mod disabled")
+		starPounds.debug("breasts", enabled and string.format("^#665599,set;Type: ^gray;%s ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Contents: ^gray;%.1f", breasts.type, breasts.contents, breasts.capacity, data.breasts) or "^gray;Mod disabled")
+		starPounds.debug("size", enabled and string.format("^#665599,set;Size: ^gray;%s ^reset;Weight: ^gray;%.2flb ^reset;Multiplier: ^gray;%.1fx", (starPounds.currentSize.size == "" and "none" or starPounds.currentSize.size)..(starPounds.currentVariant and ": "..starPounds.currentVariant or ""), data.weight, starPounds.weightMultiplier) or "^gray;Mod disabled")
+		starPounds.debug("timers", enabled and string.format("^#665599,set;Gurgle: ^gray;%.1f ^reset;Rumble: ^gray;%.1f", starPounds.gurgleTimer or 0, starPounds.rumbleTimer or 0) or "^gray;Mod disabled")
 	end
 end
 

@@ -34,11 +34,6 @@ function update(args)
 
   animator.setGlobalTag("shrunkDirectives", self.shrunk and "?hueshift=100" or "")
 
-  if self.force ~= (starPounds and starPounds.getStat("throgSphereForce") or 0) then
-    self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
-    self.lastScale = nil
-  end
-
   local skipScaling = animator.animationState("ballState") == "activate" or animator.animationState("ballState") == "deactivate"
   if self.scale ~= self.lastScale and not skipScaling then
     self.basePoly = starPounds.currentSize and (starPounds.currentSize.controlParameters[starPounds.getVisualSpecies()] or starPounds.currentSize.controlParameters.default).standingPoly or self.baseParameters.standingPoly
@@ -60,7 +55,7 @@ function update(args)
     if self.active then
       status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = (self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor")))}})
     end
-    
+
     self.projectilePositions = jarray()
     local radius = 0.85 * self.scale
     for height = -math.floor(radius), math.floor(radius), 2 do
@@ -73,6 +68,8 @@ function update(args)
   end
 
   if starPounds.optionChanged and self.active then
+    self.lastScale = nil
+    self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
     status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor"))}})
   end
 

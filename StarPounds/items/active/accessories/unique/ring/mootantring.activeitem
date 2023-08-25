@@ -1,0 +1,22 @@
+{
+  "itemName" : "mootantring",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "Based on its Protectorate counterpart, this ring was tailor made for the USCM's mootant project.",
+  "shortdescription" : "USCM Mootagenic Ring",
+  "inventoryIcon" : "mootantring.png",
+  "category" : "starpoundsuniqueaccessory",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "absorption", "modifier": 0.5},
+    {"name": "hunger", "modifier": 0.5}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

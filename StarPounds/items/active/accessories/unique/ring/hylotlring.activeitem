@@ -1,0 +1,22 @@
+{
+  "itemName" : "hylotlring",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "Regardless of hardship, one can always endure the greatest of challenges.",
+  "shortdescription" : "Three Eyed Ring",
+  "inventoryIcon" : "hylotlring.png",
+  "category" : "starpoundsuniqueaccessory",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "healing", "modifier": 0.75},
+    {"name": "health", "modifier": -0.25}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

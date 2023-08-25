@@ -151,6 +151,9 @@
         {"item": "floranring", "weight": 1},
         {"item": "glitchring", "weight": 1},
         {"item": "humanring", "weight": 1},
+        {"item": "hylotlring", "weight": 1},
+        {"item": "mootantring", "weight": 1},
+        {"item": "novakidring", "weight": 1},
 
         // Other
         {"item": "belchpendant", "weight": 1},

@@ -902,7 +902,8 @@ starPounds.getChestVariant = function(size)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
-	size = sb.jsonMerge({variants = jarray()}, type(size) == "table" and size or {})
+	local size = type(size) == "table" and size or {}
+	local variants = size.variants or jarray()
 	local variant = nil
 	local thresholdMultiplier = starPounds.currentSize.threshholdMultiplier
 	local breastThreshholds = starPounds.settings.threshholds.breasts
@@ -920,7 +921,7 @@ starPounds.getChestVariant = function(size)
 	)
 
 	for _, v in ipairs(breastThreshholds) do
-		if contains(size.variants, v.name) then
+		if contains(variants, v.name) then
 			if breastSize >= v.amount then
 				variant = v.name
 			end
@@ -928,7 +929,7 @@ starPounds.getChestVariant = function(size)
 	end
 
 	for _, v in ipairs(stomachThreshholds) do
-		if contains(size.variants, v.name) then
+		if contains(variants, v.name) then
 			if stomachSize >= (v.amount * thresholdMultiplier) then
 				variant = v.name
 			end

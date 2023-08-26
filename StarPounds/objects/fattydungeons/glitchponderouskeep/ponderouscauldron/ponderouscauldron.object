@@ -1,0 +1,32 @@
+{
+  "objectName" : "ponderouscauldron",
+  "colonyTags" : ["glitch","starpounds","fatdungeons","ponderous"],
+  "rarity" : "Rare",
+  "description" : "A massive, brass cauldron designed to contain a strange, fatty energy.",
+  "shortdescription" : "Wisp Cauldron",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 500,
+
+  "apexDescription" : "This massive cauldron seems designed to contain some sort of strange fluid.",
+  "avianDescription" : "That's a big pot! Wonder what it was built for...",
+  "floranDescription" : "Big soup!",
+  "glitchDescription" : "Curious. This vessel is warm to the touch, yet there's no apparant flame. Is this the origin of those wisps?",
+  "humanDescription" : "It's perfect for a giant witch!",
+  "hylotlDescription" : "I wonder how many gallons this cauldron can hold.",
+  "novakidDescription" : "Wonder what kinda grub they served in this big thing.",
+
+  "inventoryIcon" : "ponderouscauldronicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderouscauldron.png:<color>",
+
+      "imagePosition" : [-40, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

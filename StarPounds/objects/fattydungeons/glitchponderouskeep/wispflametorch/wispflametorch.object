@@ -1,0 +1,111 @@
+{
+  "objectName" : "wispflametorch",
+  "colonyTags" : ["glitch","starpounds","fatdungeons","ponderous","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 45,
+  "description" : "A reinforced torch containing a strange substance.",
+  "shortdescription" : "Wispflame Torch",
+  "race" : "glitch",
+
+  "apexDescription" : "This torch holds a substance I'm not familliar with. It's quite hypnotic.",
+  "avianDescription" : "It's not quite fire, but it still lights things up like flame.",
+  "floranDescription" : "Gooflame doesn't burn!",
+  "glitchDescription" : "Fascinated. This substance almost looks like goo...",
+  "humanDescription" : "It looks like a lava lamp without the glass.",
+  "hylotlDescription" : "This substance doesn't burn like fire...",
+  "novakidDescription" : "Kinda looks like the stuff I'm made of.",
+
+  "lightColor" : [209, 105, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "wispflametorchicon.png",
+  "orientations" : [
+    {
+      "image" : "wispflametorch.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      
+      "animationParts" : {
+        "bg" : "wispflametorch.png",
+        "fg" : "wispflametorchlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [0, -1] ],
+
+      "direction" : "right"
+    },
+
+    {
+      "image" : "wispflametorchleft.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      
+      "animationParts" : {
+        "bg" : "wispflametorchleft.png",
+        "fg" : "wispflametorchleftlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [-1, 0] ],
+
+      "direction" : "right"
+    },
+
+    {
+      "image" : "wispflametorchright.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      
+      "animationParts" : {
+        "bg" : "wispflametorchright.png",
+        "fg" : "wispflametorchrightlit.png"
+      },
+      "animationPosition" : [0, 0],
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "fgAnchors" : [ [1, 0] ],
+
+      "direction" : "right"
+    },
+
+    {
+      "image" : "wispflametorch.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      
+      "animationParts" : {
+        "bg" : "wispflametorch.png",
+        "fg" : "wispflametorchlit.png"
+      },
+
+      "spaces" : [ [0, 0], [0, 1] ],
+      "bgAnchors" : [ [0, 0] ],
+
+      "direction" : "right"
+    }
+  ],
+
+  "animation" : "wispflametorch.animation",
+  "animationParts" : {
+    "bg" : "wispflametorch.png",
+    "fg" : "wispflametorchlit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  // "interactive" : false,
+
+  "inputNodes" : [ [0, 0] ]
+}

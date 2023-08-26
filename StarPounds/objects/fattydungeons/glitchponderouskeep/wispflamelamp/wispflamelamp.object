@@ -1,0 +1,69 @@
+{
+  "objectName" : "wispflamelamp",
+  "colonyTags" : ["glitch","starpounds","fatdungeons","ponderous","light"],
+  "rarity" : "Common",
+  "description" : "A tall light designed to hold a glob of some magical energy.",
+  "shortdescription" : "Wispflame Lamp",
+  "race" : "generic",
+  "category" : "light",
+  "price" : 85,
+
+  "apexDescription" : "It produces a gentle warmth and produces so much light... Fascinating.",
+  "avianDescription" : "This bowl has a pleasing warmth.",
+  "floranDescription" : "Floran can ssstare at flowy goop for hoursss...",
+  "glitchDescription" : "Hypnotized. I could stare into this fluid for hours...",
+  "humanDescription" : "This stuff feels pleasantly warm to the touch.",
+  "hylotlDescription" : "It's almost hypnotic. Almost...",
+  "novakidDescription" : "A big, fancy bowl for this... goop?",
+
+  "statusEffects" : [ ],
+
+  "lightColor" : [209, 105, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "wispflamelampicon.png",
+  "orientations" : [
+    {
+      "image" : "wispflamelamp.png:<color>.<frame>",
+      "imagePosition" : [1, 0],
+      "animationPosition" : [1, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "wispflamelamp.png:<color>.<frame>",
+      "imagePosition" : [1, 0],
+      "animationPosition" : [1, 0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+  
+  "animation" : "wispflamelamp.animation",
+  "animationParts" : {
+    "bg" : "wispflamelamp.png",
+    "fg" : "wispflamelamplit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+
+  "inputNodes" : [ [0, 2] ]
+}

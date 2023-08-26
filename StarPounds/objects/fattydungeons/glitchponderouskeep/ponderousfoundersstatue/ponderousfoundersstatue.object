@@ -1,11 +1,11 @@
 {
   "objectName" : "ponderousfoundersstatue",
-  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty","valuable"],
+  "colonyTags" : ["glitch","fatdungeons","starpounds","ponderous","pretty","valuable"],
   "rarity" : "Rare",
   "category" : "decorative",
   "price" : 1000,
   "description" : "A statue dedicated to the Ponderous Order's leaders and founders, Bronzefinger and Ironlace.",
-  "shortdescription" : "Ponderous Founder's Statues",
+  "shortdescription" : "Ponderous Statue",
   "race" : "Glitch",
 
   "apexDescription" : "A finely made bronze statue. Seems that these two are dear friends.",

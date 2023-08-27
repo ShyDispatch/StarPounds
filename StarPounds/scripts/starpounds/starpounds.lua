@@ -76,6 +76,8 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 
 	local food = storage.starPounds.stomach
 	local bloat = storage.starPounds.bloat
+	local absorption = starPounds.getStat("absorption")
+	local foodValue = starPounds.getStat("foodValue")
 	-- Skip the rest if there's nothing to digest.
 	if food == 0 and bloat == 0 then return end
 	-- Split between food and bloat.
@@ -95,7 +97,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		-- Food for weight gain reduced by up to half when filling hunger, with hunger restored increased by absorption.
 		local foodAmount = math.min(status.resourceMax("food") - status.resource("food"), amount)
 		amount = math.round(amount - (foodAmount/2), 4)
-		status.giveResource("food", foodAmount * math.max(starPounds.getStat("absorption")/starPounds.stats.absorption.base, 1) + (not isGurgle and math.abs(math.min(status.stat("foodDelta") * dt, 0)) or 0))
+		status.giveResource("food", foodAmount * foodValue * math.max(absorption/starPounds.stats.absorption.base, 1) + (not isGurgle and math.abs(math.min(status.stat("foodDelta") * dt, 0)) or 0))
 	end
 	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
 	if amount == 0 then return end
@@ -108,8 +110,8 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	if (starPounds.getStat("breastProduction") > 0) and not starPounds.hasOption("disableMilkGain") then
 		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
 		if starPounds.breasts.contents < maxCapacity then
-			milkCost = amount * starPounds.getStat("absorption") * starPounds.getStat("breastProduction")
-			milkProduced = math.round((milkCost/milkRatio) * starPounds.getStat("breastEfficiency"), 4)
+			milkCost = amount * absorption * starPounds.getStat("breastProduction")
+			milkProduced = math.round((milkCost/milkRatio) * starPounds.getStat("breastEfficiency") * foodValue, 4)
 			if (milkCapacity - milkCurrent) < milkProduced then
 				-- Free after you've maxed out capacity, but you only gain a third as much.
 				milkProduced = math.min(math.max((milkCapacity - milkCurrent), milkProduced/3), maxCapacity - milkCurrent)
@@ -119,22 +121,23 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		end
 	end
 	-- Gain weight based on amount digested, milk production, and digestion efficiency.
-	starPounds.gainWeight((amount * starPounds.getStat("absorption")) - milkCost)
+	starPounds.gainWeight((amount * absorption) - milkCost)
 	-- Don't heal if eaten.
 	if not storage.starPounds.pred then
 		-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
 		if status.resourcePositive("health") then
-			local healBaseAmount = amount * starPounds.getStat("absorption")
+			local healBaseAmount = amount * absorption * foodValue
 			local healAmount = math.min(healBaseAmount * starPounds.getStat("healing") * starPounds.settings.healingRatio, status.resourceMax("health") * starPounds.settings.healingCap)
 			status.modifyResource("health", healAmount)
 			-- Energy regenerates faster than health, and energy lock time gets reduced.
-			if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and starPounds.getStat("digestionEnergy") > 0 then
-				local energyAmount = math.min(healBaseAmount * starPounds.getStat("digestionEnergy") * starPounds.settings.energyRatio, status.resourceMax("energy") * starPounds.settings.energyCap)
+			local digestionEnergy = starPounds.getStat("digestionEnergy")
+			if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and digestionEnergy > 0 then
+				local energyAmount = math.min(healBaseAmount * digestionEnergy * starPounds.settings.energyRatio, status.resourceMax("energy") * starPounds.settings.energyCap)
 				if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
 					status.modifyResource("energy", energyAmount)
 				end
 				-- Energy regen block is capped at 2x the speed (decreases by the delta)
-				status.modifyResource("energyRegenBlock", math.max(-amount * starPounds.getStat("absorption") * starPounds.getStat("digestionEnergy"), -dt))
+				status.modifyResource("energyRegenBlock", math.max(-amount * absorption * foodValue * digestionEnergy, -dt))
 			end
 		end
 	end

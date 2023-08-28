@@ -1,0 +1,9 @@
+{
+  "name" : "starpoundsgnomecritter",
+  "category" : "starpoundsgnomecritter",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "body.png"
+  }
+}

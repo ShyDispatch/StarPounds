@@ -1,7 +1,7 @@
 
 # StarPounds
 
-A mod for Starbound that adds body shapes of various sizes and weight gain. Watch your belly swell as you eat, food or others, or subject the npcs of the various worlds to it instead. 
+A mod for Starbound that adds body shapes of various sizes and weight gain. Watch your belly swell as you eat, food or others, or subject the npcs of the various worlds to it instead.
 
 StarPounds is designed to mesh with (and ideally enhance) the existing Starbound gameplay loop.
 
@@ -48,9 +48,9 @@ Assuming you've installed Stardust Core Lite correctly (Bundled in the mod archi
 
 #### How do I unlock skills?
 
-You can unlock skills at an [Infusion Table](#How-do-I-get-an-Infusion-Table?) using [Experience](#How-do-I-get-Experience?).
+You can unlock skills at an [Infusion Table](#how-do-i-get-an-infusion-table) using [Experience](#how-do-i-get-experience).
 
-You can also access the skill menu from the Quickbar at any time, you won't be able to unlock skills ones without an [Infusion Table](#How-do-I-get-an-Infusion-Table?).
+You can also access the skill menu from the Quickbar at any time, you won't be able to unlock skills ones without an [Infusion Table](#how-do-i-get-an-infusion-table).
 
 #### How do I get Experience?
 
@@ -87,4 +87,3 @@ Currently, the following species are supported:
 - [Oni](https://steamcommunity.com/sharedfiles/filedetails/?id=2978143703)
 - [Glaceon](https://steamcommunity.com/sharedfiles/filedetails/?id=2012704863)
 - [Troll](https://steamcommunity.com/sharedfiles/filedetails/?id=1301907771)
-

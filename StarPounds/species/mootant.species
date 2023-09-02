@@ -9,6 +9,13 @@
 
   "nameGen" : [ "/species/humanfemalenamegen.config:names", "/species/humanfemalenamegen.config:names" ],
   "ouchNoises" : [ "/sfx/humanoid/mootanthurt_male1.ogg", "/sfx/humanoid/mootanthurt_female1.ogg" ],
+// StarExtensions features support
+	"humanoidOverrides": {
+		"useBodyMask" : true,
+		"useBodyHeadMask": true,
+		// legacy, the above overriddes it
+		"headSliceY": 25
+	},
   "charGenTextLabels" : [ "Fur colour", "Hair style", "Shirt", "Legwear", "Spot colour", "Hair colour", "Shirt colour", "Legwear colour", "MOOTANT", "Personality" ],
   "skull" : "/humanoid/human/dead.png",
   "effectDirectives" : "?replace=FEFFFFFF=FFFFFFFF?replace=9bd4ffFF=80f4ffFF?replace=31a6ffFF=39b8e3FF",

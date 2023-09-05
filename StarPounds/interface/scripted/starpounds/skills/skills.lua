@@ -210,7 +210,15 @@ function makeSkillWidget(skill)
   if skill.hidden then
     skillWidget.children[2] = {id = string.format("%sSkill", skill.name), position = {16, 12}, type = "iconButton", image = string.format("icons/skills/%s.png", skill.hiddenIcon), hoverImage = string.format("icons/skills/%s.png", skill.hiddenIcon), pressImage = string.format("icons/skills/%s.png", skill.hiddenIcon).."?border=1;00000000;00000000?crop=1;2;17;18"}
     skillWidget.children[4].file = "check.png?multiply=00000000"
+  elseif isAdmin and starPounds.hasOption("showDebug") then
+    local totalSkillCost = 0
+    for skillLevel = 1, skill.levels do
+      totalSkillCost = totalSkillCost + (skill.cost.base + skill.cost.increase * (skillLevel - 1))
+    end
+    skillWidget.children[2].toolTip = skillWidget.children[2].toolTip..string.format("\n\n^#665599;Skill Id: ^gray;%s\n^#665599;Base Cost: ^gray;%s XP\n^#665599;Increase: ^gray;%s XP\n^#665599;Total Cost: ^gray;%s XP", skill.name, skill.cost.base, skill.cost.increase, totalSkillCost)
+    skillWidget.children[4].toolTip = skillWidget.children[2].toolTip
   end
+
   return skillWidget
 end
 

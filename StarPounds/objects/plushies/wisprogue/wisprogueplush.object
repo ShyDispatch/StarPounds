@@ -1,10 +1,10 @@
 {
   "objectName" : "wisprogueplush",
   "colonyTags" : ["glitch","ponderousorder","pretty","starpounds"],
-  "rarity" : "Rare",
+  "rarity" : "Common",
   "printable" : false,
   "category" : "decorative",
-  "price" : 250,
+  "price" : 50,
   "description" : "A cute Wisp plush, rogue class.",
   "shortdescription" : "Wisp Rogue Plush",
   "race" : "glitch",

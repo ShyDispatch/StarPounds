@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsshydispatchplush",
+  "colonyTags" : ["human","shydispatch","pretty","starpounds"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 500,
+
+  "description" : "A soft ^#8968e2;ShyDispatch^reset; plush toy.",
+  "shortdescription" : "^#8968e2;ShyDispatch^reset; Plushie",
+  "race" : "generic",
+
+  "apexDescription" : "It's a plush of ^#8968e2;ShyDispatch^reset;.",
+  "avianDescription" : "An incredibly soft plush of ^#8968e2;ShyDispatch^reset;.",
+  "floranDescription" : "^#8968e2;ShyDispatch^reset; plush as ssoft as the real thing!",
+  "glitchDescription" : "Appreciative. A cuddly ^#8968e2;ShyDispatch^reset; plush.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsshydispatchplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsshydispatchplush.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

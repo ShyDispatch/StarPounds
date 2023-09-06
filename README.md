@@ -44,21 +44,25 @@ Starpounds-Throgverse.pak
 
 #### How do I enable the mod?
 
-Assuming you've installed Stardust Core Lite correctly (Bundled in the mod archive, but you can also download it from the either the [Workshop](https://steamcommunity.com/workshop/filedetails/?id=2512589532) or [GitHub](https://github.com/zetaPRIME/sb.StardustSuite)), you should have a menu icon to access the QuickBar in the right sidebar (☰). Click the StarPounds button to bring up the mod's quick menu, and click the enable button.
+Assuming you've installed Stardust Core Lite correctly (Bundled in the mod archive, but you can also download it from the either the [Workshop](https://steamcommunity.com/workshop/filedetails/?id=2512589532) or [GitHub](https://github.com/zetaPRIME/sb.StardustSuite)), you should have a menu icon to access the QuickBar in the right sidebar (☰). Click the StarPounds button to bring up the mod's quick menu, and click the green button at the bottom to toggle the mod.
 
 #### How do I unlock skills?
 
 You can unlock skills at an [Infusion Table](#how-do-i-get-an-infusion-table) using [Experience](#how-do-i-get-experience).
 
-You can also access the skill menu from the Quickbar at any time, you won't be able to unlock skills ones without an [Infusion Table](#how-do-i-get-an-infusion-table).
+You can also access the skill menu from the QuickBar at any time, however you won't be able to unlock skills ones without an [Infusion Table](#how-do-i-get-an-infusion-table).
 
 #### How do I get Experience?
 
-Experience is gained by eating. The amount gained is directly correlated to how much food an item provides, multiplied by it's rarity.
-- Common: 1x Multiplier
-- Uncommon: 1.125x Multiplier
-- Rare: 1.25x Multiplier
-- Legendary: 1.5x Multiplier
+Experience is gained by eating. The amount gained is directly correlated to how much food an item provides, multiplied by its rarity:
+| Rarity    | Multiplier |
+| :-------- | :--------- |
+| Common    | 1x         |
+| Uncommon  | 1.125x     |
+| Rare      | 1.25x      |
+| Legendary | 1.5x       |
+| Essential | 2x         |
+
 Your progress to the next level can be seen in the Skills menu. Each additional level takes more Experience than the last, so it's recommended you spend your levels instead of accumulating large amounts.
 
 #### How do I get an Infusion Table?

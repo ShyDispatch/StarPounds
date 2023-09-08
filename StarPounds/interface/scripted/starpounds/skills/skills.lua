@@ -249,7 +249,7 @@ function selectSkill(skill)
     end
   end
   if skill then
-    _ENV[string.format("%sSkill_back", skill.name)]:setFile(string.format("back.png?multiply=%s?brightness=30?saturation=-30", skill.colour))
+    _ENV[string.format("%sSkill_back", skill.name)]:setFile(string.format("back.png?multiply=%s?brightness=50?saturation=-15", skill.colour))
     _ENV[string.format("%sSkill_back", skill.name)]:queueRedraw()
     _ENV[string.format("%sSkill", skill.name)]:setImage(
       string.format("icons/skills/%s.png?border=1;ffffffaa;00000000", skill.icon or skill.name),

@@ -160,6 +160,7 @@ function populateSkillTree()
       skill.name = skillName
       skill.levels = skill.levels or 1
       skill.cost.increase = skill.cost.increase or 0
+      skill.cost.max = skill.cost.max or math.huge
     end
   end
 
@@ -213,7 +214,7 @@ function makeSkillWidget(skill)
   elseif isAdmin and starPounds.hasOption("showDebug") then
     local totalSkillCost = 0
     for skillLevel = 1, skill.levels do
-      totalSkillCost = totalSkillCost + (skill.cost.base + skill.cost.increase * (skillLevel - 1))
+      totalSkillCost = math.max(totalSkillCost + (skill.cost.base + skill.cost.increase * (skillLevel - 1)), skill.cost.max)
     end
     skillWidget.children[2].toolTip = skillWidget.children[2].toolTip..string.format("\n\n^#665599;Skill Id: ^gray;%s\n^#665599;Base Cost: ^gray;%s XP\n^#665599;Increase: ^gray;%s XP\n^#665599;Total Cost: ^gray;%s XP", skill.name, skill.cost.base, skill.cost.increase, totalSkillCost)
     skillWidget.children[4].toolTip = skillWidget.children[2].toolTip
@@ -289,7 +290,7 @@ function selectSkill(skill)
     end
 
     local experienceLevel = math.min(starPounds.getSkillUnlockedLevel(skill.name) + 1, skill.levels) - 1
-    experienceCost = isAdmin and 0 or (skill.cost.base + skill.cost.increase * experienceLevel)
+    experienceCost = isAdmin and 0 or math.min(skill.cost.base + skill.cost.increase * experienceLevel, skill.cost.max)
     canDecrease = starPounds.getSkillLevel(skill.name) > 0
     canIncrease = starPounds.getSkillLevel(skill.name) < starPounds.getSkillUnlockedLevel(skill.name)
     useToggle = skill.levels == 1
@@ -452,7 +453,7 @@ end
 
 function unlockButton:onClick()
   local experienceLevel = math.min((starPounds.getSkillUnlockedLevel(selectedSkill.name)) + 1, selectedSkill.levels) - 1
-  local experienceCost = selectedSkill.cost.base + selectedSkill.cost.increase * experienceLevel
+  local experienceCost = math.min(selectedSkill.cost.base + selectedSkill.cost.increase * experienceLevel, selectedSkill.cost.max)
   local canUpgrade = isAdmin or starPounds.level >= experienceCost
   if starPounds.getSkillUnlockedLevel(selectedSkill.name) == selectedSkill.levels or not canUpgrade or not enableUpgrades then
     widget.playSound("/sfx/interface/clickon_error.ogg")

@@ -1273,8 +1273,11 @@ starPounds.lactate = function(amount, noConsume)
 	amount = math.min(math.round(amount, 4), starPounds.breasts.contents)
 	-- Slightly below and in front the head.
 	local spawnPosition = vec2.add(world.entityMouthPosition(entity.id()), {mcontroller.facingDirection(), -1})
+	local existingLiquid = world.liquidAt(spawnPosition) and world.liquidAt(spawnPosition)[1] or nil
+	local lactationLiquid = root.liquidId(starPounds.breasts.type)
+	local doLactation = not existingLiquid or (lactationLiquid == existingLiquid)
 	-- Only remove the milk if it actually spawns.
-	if world.spawnLiquid(spawnPosition, root.liquidId(starPounds.breasts.type), amount) and not noConsume then
+	if doLactation and world.spawnLiquid(spawnPosition, lactationLiquid, amount) and not noConsume then
 		starPounds.loseMilk(amount)
 	end
 end

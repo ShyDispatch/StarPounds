@@ -87,8 +87,6 @@ end
 function makeOverrideFunction()
   function starPounds.overrides()
     if not starPounds.didOverrides then
-			-- Monsters start with the mod enabled.
-			storage.starPounds.enabled = true
 			-- No debug stuffs for monsters
 			starPounds.debug = nullFunction
 			-- Shortcuts to make functions work for monsters.

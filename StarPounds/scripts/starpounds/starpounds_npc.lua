@@ -116,8 +116,6 @@ function makeOverrideFunction()
   function starPounds.overrides()
     if not starPounds.didOverrides then
 			local speciesData = starPounds.getSpeciesData(npc.species())
-      -- NPCs start with the mod enabled (and stuff for stats/options)
-      storage.starPounds.enabled = true
       starPounds.parseSkillStats()
       -- No debug stuffs for NPCs
       starPounds.debug = nullFunction

@@ -66,19 +66,15 @@ function populateOptions()
 end
 
 function toggleOption(option)
-  local toggled = starPounds.toggleOption(option.name)
+  local enabled = starPounds.setOption(option.name, not starPounds.hasOption(option.name))
   if option.group then
     for _, disableOption in ipairs(options) do
-      if disableOption.name ~= option.name then
-        if disableOption.group == option.group then
-          if starPounds.hasOption(disableOption.name) then
-            _ENV[string.format("%sOption", disableOption.name)]:setChecked(starPounds.toggleOption(disableOption.name))
-          end
-        end
+      if (disableOption.name ~= option.name)(disableOption.group == option.group) then
+        _ENV[string.format("%sOption", disableOption.name)]:setChecked(starPounds.setOption(disableOption.name, false))
       end
     end
   end
-  _ENV[string.format("%sOption", option.name)]:setChecked(toggled)
+  _ENV[string.format("%sOption", option.name)]:setChecked(enabled)
   starPounds.setOptionsMultipliers(options)
 end
 

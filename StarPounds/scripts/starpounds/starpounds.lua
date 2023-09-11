@@ -578,13 +578,6 @@ starPounds.gainExperience = function(amount, multiplier, isLevel)
 	end
 end
 
-starPounds.toggleOption = function(option)
-	storage.starPounds.options[option] = not storage.starPounds.options[option] and true or nil
-	starPounds.optionChanged = true
-	starPounds.backup()
-	return storage.starPounds.options[option]
-end
-
 starPounds.setOptionsMultipliers = function(options)
   storage.starPounds.optionMultipliers = {}
   for _, option in ipairs(options) do
@@ -604,7 +597,16 @@ end
 
 starPounds.hasOption = function(option)
 	-- Argument sanitisation.
-	stat = tostring(option)
+	option = tostring(option)
+	return storage.starPounds.options[option]
+end
+
+starPounds.setOption = function(option, enable)
+	-- Argument sanitisation.
+	option = tostring(option)
+	storage.starPounds.options[option] = enable and true or nil
+	starPounds.optionChanged = true
+	starPounds.backup()
 	return storage.starPounds.options[option]
 end
 
@@ -2086,6 +2088,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.getVisualSpecies", simpleHandler(starPounds.getVisualSpecies))
 	-- Handlers for skills/stats/options
 	message.setHandler("starPounds.hasOption", simpleHandler(starPounds.hasOption))
+	message.setHandler("starPounds.setOption", localHandler(starPounds.setOption))
 	message.setHandler("starPounds.gainExperience", simpleHandler(starPounds.gainExperience))
 	message.setHandler("starPounds.upgradeSkill", simpleHandler(starPounds.upgradeSkill))
 	message.setHandler("starPounds.getStat", simpleHandler(starPounds.getStat))

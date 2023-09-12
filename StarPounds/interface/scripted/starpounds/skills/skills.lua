@@ -214,7 +214,7 @@ function makeSkillWidget(skill)
   elseif isAdmin and starPounds.hasOption("showDebug") then
     local totalSkillCost = 0
     for skillLevel = 1, skill.levels do
-      totalSkillCost = math.max(totalSkillCost + (skill.cost.base + skill.cost.increase * (skillLevel - 1)), skill.cost.max)
+      totalSkillCost = totalSkillCost + math.min((skill.cost.base + skill.cost.increase * (skillLevel - 1)), skill.cost.max)
     end
     skillWidget.children[2].toolTip = skillWidget.children[2].toolTip..string.format("\n\n^#665599;Skill Id: ^gray;%s\n^#665599;Base Cost: ^gray;%s XP\n^#665599;Increase: ^gray;%s XP\n^#665599;Total Cost: ^gray;%s XP", skill.name, skill.cost.base, skill.cost.increase, totalSkillCost)
     skillWidget.children[4].toolTip = skillWidget.children[2].toolTip

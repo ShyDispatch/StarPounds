@@ -69,7 +69,7 @@ function toggleOption(option)
   local enabled = starPounds.setOption(option.name, not starPounds.hasOption(option.name))
   if option.group then
     for _, disableOption in ipairs(options) do
-      if (disableOption.name ~= option.name)(disableOption.group == option.group) then
+      if (disableOption.name ~= option.name) and (disableOption.group == option.group) then
         _ENV[string.format("%sOption", disableOption.name)]:setChecked(starPounds.setOption(disableOption.name, false))
       end
     end

@@ -58,9 +58,9 @@ Experience is gained by eating. The amount gained is directly correlated to how 
 | Rarity    | Multiplier |
 | :-------- | :--------- |
 | Common    | 1x         |
-| Uncommon  | 1.125x     |
-| Rare      | 1.25x      |
-| Legendary | 1.5x       |
+| Uncommon  | 1.25x      |
+| Rare      | 1.5x       |
+| Legendary | 1.75x      |
 | Essential | 2x         |
 
 Your progress to the next level can be seen in the Skills menu. Each additional level takes more Experience than the last, so it's recommended you spend your levels instead of accumulating large amounts.

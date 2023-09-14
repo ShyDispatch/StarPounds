@@ -102,20 +102,20 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
 	if amount == 0 then return end
 	-- Costs double the food value to produce.
-	local milkRatio = starPounds.settings.drinkables[starPounds.breasts.type] * 2
-	local milkProduced = 0
+	local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type] * 2
 	local milkCost = 0
+	local milkProduced = 0
 	local milkCurrent = storage.starPounds.breasts
 	local milkCapacity = starPounds.breasts.capacity
 	if (starPounds.getStat("breastProduction") > 0) and not starPounds.hasOption("disableMilkGain") then
 		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
 		if starPounds.breasts.contents < maxCapacity then
 			milkCost = amount * absorption * starPounds.getStat("breastProduction")
-			milkProduced = math.round((milkCost/milkRatio) * starPounds.getStat("breastEfficiency") * foodValue, 4)
+			milkProduced = math.round((milkCost/milkValue) * starPounds.getStat("breastEfficiency") * foodValue, 4)
 			if (milkCapacity - milkCurrent) < milkProduced then
 				-- Free after you've maxed out capacity, but you only gain a third as much.
 				milkProduced = math.min(math.max((milkCapacity - milkCurrent), milkProduced/3), maxCapacity - milkCurrent)
-				milkCost = math.max(0, milkCapacity - milkCurrent) * milkRatio/starPounds.getStat("breastEfficiency")
+				milkCost = math.max(0, milkCapacity - milkCurrent) * milkValue/starPounds.getStat("breastEfficiency")
 			end
 			starPounds.gainMilk(milkProduced)
 		end

@@ -252,8 +252,8 @@ function makeOverrideFunction()
 			local speciesData = starPounds.getSpeciesData(player.species())
       entity = {
         id = player.id,
-	      weight = math.round(speciesData.weight * speciesData.nutritionRatio),
-	      bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio)),
+	      weight = math.round(speciesData.weight * speciesData.foodRatio),
+	      bloat = math.round(speciesData.weight * (1 - speciesData.foodRatio)),
 	      experience = speciesData.experience
       }
 			local mt = {__index = function () return nullFunction end}

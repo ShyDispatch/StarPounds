@@ -142,8 +142,8 @@ function makeOverrideFunction()
       entity.setDamageOnTouch = npc.setDamageOnTouch
 			entity.setDamageSources = nullFunction
       entity.setDamageTeam = npc.setDamageTeam
-      entity.weight = math.round(speciesData.weight * speciesData.nutritionRatio)
-      entity.bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio))
+      entity.weight = math.round(speciesData.weight * speciesData.foodRatio)
+      entity.bloat = math.round(speciesData.weight * (1 - speciesData.foodRatio))
       entity.experience = speciesData.experience
       -- NPCs don't have a food stat, and trying to adjust it crashes the script.
       starPounds.feed = starPounds.eat

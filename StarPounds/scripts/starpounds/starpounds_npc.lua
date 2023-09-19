@@ -116,7 +116,7 @@ function makeOverrideFunction()
   function starPounds.overrides()
     if not starPounds.didOverrides then
 			local speciesData = starPounds.getSpeciesData(npc.species())
-      starPounds.parseSkillStats()
+      starPounds.parseSkills()
       -- No debug stuffs for NPCs
       starPounds.debug = nullFunction
       -- Shortcuts to make functions work for NPCs.

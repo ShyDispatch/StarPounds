@@ -666,7 +666,7 @@ starPounds.upgradeSkill = function(skill, cost)
 	storage.starPounds.level = math.max(storage.starPounds.level - math.round(cost), 0)
 	storage.starPounds.experience = math.round(experienceProgress * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	starPounds.gainExperience()
-	starPounds.parseSkillStats()
+	starPounds.parseSkills()
   starPounds.updateStats(true)
   starPounds.optionChanged = true
 end
@@ -683,7 +683,7 @@ starPounds.setSkill = function(skill, level)
 		storage.starPounds.skills[skill] = storage.starPounds.skills[skill] or jarray()
 		storage.starPounds.skills[skill][1] = math.max(math.min(level, starPounds.getSkillUnlockedLevel(skill)), 0)
 	end
-	starPounds.parseSkillStats()
+	starPounds.parseSkills()
   starPounds.updateStats(true)
   starPounds.optionChanged = true
 end
@@ -1804,6 +1804,16 @@ starPounds.eaten = function(dt)
 	if dt == 0 then return end
 	-- Don't do anything if we're not eaten.
 	if not storage.starPounds.pred then starPounds.voreHeartbeat = nil return end
+	-- Spectating pred stuff.
+	if storage.starPounds.spectatingPred then
+		if not (starPounds.hasOption("spectatePred") and world.entityExists(storage.starPounds.pred)) then
+			starPounds.getReleased()
+			status.setResource("health", 0)
+			return
+		else
+			status.setResource("health", 0.1)
+		end
+	end
 	-- Check that the entity actually exists.
 	if not world.entityExists(storage.starPounds.pred) or starPounds.hasOption("disablePrey") then
 		starPounds.getReleased()
@@ -1811,7 +1821,7 @@ starPounds.eaten = function(dt)
 	end
 
 	starPounds.voreHeartbeat = math.max((starPounds.voreHeartbeat or starPounds.settings.voreHeartbeat) - dt, 0)
-	if starPounds.voreHeartbeat == 0 then
+	if not storage.starPounds.spectatingPred and starPounds.voreHeartbeat == 0 then
 		starPounds.voreHeartbeat = starPounds.settings.voreHeartbeat
 		promises:add(world.sendEntityMessage(storage.starPounds.pred, "starPounds.ateEntity", entity.id()), function(isEaten)
 			if not isEaten then starPounds.getReleased() end
@@ -1850,13 +1860,17 @@ starPounds.eaten = function(dt)
 			struggleStrength = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1) * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) + status.stat("powerMultiplier")) * (0.5 + status.resourcePercentage("health") * 0.5)
 		end
 	elseif entityType == "player" then
-		-- No air time.
-		status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
 		-- Follow the pred's position, struggle if the player is using movement keys.
 		local horizontalDirection = (mcontroller.xVelocity() > 0) and 1 or ((mcontroller.xVelocity() < 0) and -1 or 0)
 		local verticalDirection = (mcontroller.yVelocity() > 0) and 1 or ((mcontroller.yVelocity() < 0) and -1 or 0)
 		starPounds.cycle = 1 + math.sin((os.clock() - (starPounds.startedStruggling or os.clock())) * 2 * math.pi)
 		if not (horizontalDirection == 0 and verticalDirection == 0) then
+			-- Kills the player if they're spectating, but move.
+			if storage.starPounds.spectatingPred then
+				status.setResource("health", 0)
+				starPounds.getReleased()
+				return
+			end
 			if starPounds.cycle > 0.7 and not starPounds.struggled then
 				starPounds.struggled = true
 				world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
@@ -1867,13 +1881,20 @@ starPounds.eaten = function(dt)
 			starPounds.struggled = false
 			starPounds.startedStruggling = os.clock()
 		end
-		local predPosition = vec2.add(world.entityPosition(storage.starPounds.pred), {
-			horizontalDirection * starPounds.cycle,
-			verticalDirection * starPounds.cycle + math.sin(os.clock() * 0.5) - 1
-		})
-		local distance = world.distance(predPosition, mcontroller.position())
-		mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
+		if storage.starPounds.spectatingPred then
+			mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
+		else
+			local predPosition = vec2.add(world.entityPosition(storage.starPounds.pred), {
+				horizontalDirection * starPounds.cycle,
+				verticalDirection * starPounds.cycle + math.sin(os.clock() * 0.5) - 1
+			})
+			local distance = world.distance(predPosition, mcontroller.position())
+			mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
+		end
 	end
+	-- No air time.
+	status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
+	-- Set velocity to zero.
 	mcontroller.setVelocity({0, 0})
 	-- Stop the prey from colliding/moving normally.
 	mcontroller.controlParameters({ airFriction = 0, groundFriction = 0, liquidFriction = 0, collisionEnabled = false, gravityEnabled = false })
@@ -2005,6 +2026,9 @@ starPounds.getDigested = function(digestionRate)
 			for _,v in pairs(starPounds.oldTech or {}) do
 				player.equipTech(v)
 			end
+			if starPounds.hasOption("spectatePred") then
+				storage.starPounds.spectatingPred = true
+			end
 		end
 		-- Add monster type to collection.
 		if starPounds.type == "monster" then
@@ -2051,6 +2075,7 @@ starPounds.getReleased = function(source, overrideStatus)
 	local predId = storage.starPounds.pred
 	-- Remove the pred id from storage.
 	storage.starPounds.pred = nil
+	storage.starPounds.spectatingPred = nil
 	status.clearPersistentEffects("starpoundseaten")
 	status.removeEphemeralEffect("starpoundseaten")
 	entity.setDamageOnTouch(true)

@@ -197,6 +197,7 @@ function uninit()
 		starPounds.loseWeight(weightCost)
 		-- Reset stomach.
 		starPounds.resetStomach()
+		starPounds.resetBreasts()
 	end
 	starPounds.releaseEntity(nil, true)
 	starPounds.backup()

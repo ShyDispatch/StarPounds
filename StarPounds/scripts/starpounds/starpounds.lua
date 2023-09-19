@@ -1866,7 +1866,7 @@ starPounds.eaten = function(dt)
 		starPounds.cycle = 1 + math.sin((os.clock() - (starPounds.startedStruggling or os.clock())) * 2 * math.pi)
 		if not (horizontalDirection == 0 and verticalDirection == 0) then
 			-- Kills the player if they're spectating, but move.
-			if storage.starPounds.spectatingPred then
+			if storage.starPounds.spectatingPred and verticalDirection > 0 then
 				status.setResource("health", 0)
 				starPounds.getReleased()
 				return
@@ -1881,10 +1881,13 @@ starPounds.eaten = function(dt)
 			starPounds.struggled = false
 			starPounds.startedStruggling = os.clock()
 		end
+		local predPosition = world.entityPosition(storage.starPounds.pred)
 		if storage.starPounds.spectatingPred then
 			mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
+			local distance = world.distance(predPosition, mcontroller.position())
+			mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
 		else
-			local predPosition = vec2.add(world.entityPosition(storage.starPounds.pred), {
+			local predPosition = vec2.add(predPosition, {
 				horizontalDirection * starPounds.cycle,
 				verticalDirection * starPounds.cycle + math.sin(os.clock() * 0.5) - 1
 			})
@@ -2019,15 +2022,17 @@ starPounds.getDigested = function(digestionRate)
 		end
 		-- Restore techs.
 		if starPounds.type == "player" then
-			for _,v in pairs({"head", "body", "legs"}) do
-				player.unequipTech("starpoundseaten_"..v)
-				player.makeTechUnavailable("starpoundseaten_"..v)
-			end
-			for _,v in pairs(starPounds.oldTech or {}) do
-				player.equipTech(v)
-			end
 			if starPounds.hasOption("spectatePred") then
+				player.playCinematic("/cinematics/starpounds/starpoundsvore.cinematic")
 				storage.starPounds.spectatingPred = true
+			else
+				for _,v in pairs({"head", "body", "legs"}) do
+					player.unequipTech("starpoundseaten_"..v)
+					player.makeTechUnavailable("starpoundseaten_"..v)
+				end
+				for _,v in pairs(starPounds.oldTech or {}) do
+					player.equipTech(v)
+				end
 			end
 		end
 		-- Add monster type to collection.

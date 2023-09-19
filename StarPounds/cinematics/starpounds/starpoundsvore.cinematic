@@ -1,0 +1,152 @@
+{
+  "muteSfx" : true,
+  "muteMusic" : true,
+  "skippable" : false,
+  "letterbox" : false,
+  "suppressInput" : false,
+  "useCamera" : false,
+  "scissor" : false,
+  "panels" : [
+    // vignette circle
+    {
+      "drawables": [
+        {
+          "image": "/cinematics/story/blackcircle.png"
+        }
+      ],
+      "keyframes": [
+        {
+          "timecode": 0,
+          "zoom": 25,
+          "alpha": 1,
+          "position": [480, 270]
+        },
+        {
+          "timecode": 5,
+          "zoom": 20
+        },
+        {
+          "timecode": 7.5,
+          "zoom": 17.5
+        },
+        {
+          "timecode": 10,
+          "zoom": 15
+        },
+        {
+          "timecode": 12.5,
+          "zoom": 12.5
+        },
+        {
+          "timecode": 15,
+          "zoom": 10
+        },
+        {
+          "timecode": 17.5,
+          "zoom": 8.75
+        },
+        {
+          "timecode": 20,
+          "zoom": 7.5
+        },
+        {
+          "timecode": 22.5,
+          "zoom": 6.25
+        },
+        {
+          "timecode": 25,
+          "zoom": 5
+        },
+        {
+          "timecode": 10000,
+          "zoom": 5
+        }
+      ]
+    },
+    {
+      "startTime" : 0,
+      "endTime" : 10000,
+      "drawables" : [
+      ],
+      "fontSize" : 16,
+      "text" : "Digested",
+      "textPosition" : {
+        "position" : [40, 40],
+        "vAnchor" : "top",
+        "wrapWidth" : 218
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 1.0,
+          "position" : [410.5, 50],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 15,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 16,
+          "frame" : 8,
+          "textPercentage" : 1
+        }
+      ]
+    },
+    {
+      "startTime" : 0,
+      "endTime" : 10000,
+      "drawables" : [
+      ],
+      "fontSize" : 16,
+      "fontColor" : [128, 128, 128, 255],
+      "text" : "Move ^cyan;[UP]^reset; to Respawn",
+      "textPosition" : {
+        "position" : [40, 40],
+        "vAnchor" : "top",
+        "wrapWidth" : 218
+      },
+      "keyframes" : [
+        {
+          "timecode" : 0.0,
+          "alpha" : 1.0,
+          "zoom" : 1.0,
+          "position" : [363.5, 34],
+          "frame" : 0,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 18,
+          "textPercentage" : 0
+        },
+        {
+          "timecode" : 20.5,
+          "frame" : 8,
+          "textPercentage" : 1
+        }
+      ]
+    }
+  ],
+  "audio" : [
+    {
+      "timecode" : 0,
+      "loops" : -1,
+      "endTimecode" : 10000,
+      "resource" : "/sfx/cinematics/starpoundsvorecinematic.ogg"
+    },
+    {
+      "timecode" : 15,
+      "endTimecode" : 16,
+      "loops" : -1,
+      "resource" : "/sfx/interface/aichatter1_loop.ogg"
+    },
+    {
+      "timecode" : 18,
+      "endTimecode" : 19.5,
+      "loops" : -1,
+      "resource" : "/sfx/interface/aichatter1_loop.ogg"
+    }
+  ]
+}

@@ -2035,7 +2035,7 @@ starPounds.getDigested = function(digestionRate)
 			return
 		end
 
-		die()
+		if die then die() end
 	end
 end
 

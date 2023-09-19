@@ -2,7 +2,7 @@
   "objectName" : "shoggothweightscale",
   "colonyTags" : ["starpounds"],
   "rarity" : "Common",
-  "description" : "A weight scale for seeing just how big you've gotten. Or adjust clothing for your size.",
+  "description" : "A weight scale for seeing just how big you've gotten.",
   "shortdescription" : "Shoggoth Weight Scale",
   "subtitle" : "Try to be the biggest fatty you can be.",
   "race" : "shoggoth",

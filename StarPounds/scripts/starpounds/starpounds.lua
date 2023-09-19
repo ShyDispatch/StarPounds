@@ -1407,17 +1407,30 @@ starPounds.eatEntity = function(preyId, force, check)
 	-- Argument sanitisation.
 	preyId = tonumber(preyId)
 	if not preyId then return false end
+	-- Check if they exist.
+	if not world.entityExists(preyId) then return false end
 	-- Counting this as 'combat', so no eating stuff on protected worlds. (e.g. the outpost)
 	if world.getProperty("nonCombat") then return false end
 	-- Don't do anything if pred is disabled.
 	if starPounds.hasOption("disablePred") then return false end
-	-- Need the upgrades for the skill to work.
+	-- Need the upgrades for parts of the skill to work.
+	local canVoreCritter = starPounds.hasSkill("voreCritter")
+	local canVoreMonster = starPounds.hasSkill("voreMonster")
+	local canVoreHumanoid = starPounds.hasSkill("voreHumanoid")
+	local canVoreFriendly = starPounds.hasSkill("voreFriendly")
+	-- Skip if we can't eat anything at all.
 	if not (
-		starPounds.hasSkill("voreCritter") or
-		starPounds.hasSkill("voreMonster") or
-		starPounds.hasSkill("voreHumanoid") or
+		canVoreCritter or
+		canVoreMonster or
+		canVoreHumanoid or
 		force
 	) then return false end
+	-- Store so we don't have to grab multiple times.
+	local preyType = world.entityTypeName(preyId)
+	-- Can't eat friendlies without the skill.
+	if not canVoreFriendly and not world.entityCanDamage(entity.id(), preyId) then return false end
+	starPounds.debug("vore_canVoreFriendly", canVoreFriendly)
+	starPounds.debug("vore_canDamage", world.entityCanDamage(entity.id(), preyId))
 	-- Don't do anything if eaten.
 	if storage.starPounds.pred then return false end
 	-- Can only eat if you're below capacity.
@@ -1430,34 +1443,34 @@ starPounds.eatEntity = function(preyId, force, check)
 	if starPounds.ateEntity(preyId) then return false end
 	-- Don't do anything if they're not a compatible entity.
 	local compatibleEntities = jarray()
-	if starPounds.hasSkill("voreMonster") or starPounds.hasSkill("voreCritter") then
+	if canVoreCritter or canVoreMonster then
 		table.insert(compatibleEntities, "monster")
 	end
-	if starPounds.hasSkill("voreHumanoid") then
+	if canVoreHumanoid then
 		table.insert(compatibleEntities, "npc")
 		table.insert(compatibleEntities, "player")
 	end
-
+	local preyType = world.entityTypeName(preyId)
 	if not force then
 		if not contains(compatibleEntities, world.entityType(preyId)) then return false end
 		if status.isResource("energy") and status.resourceLocked("energy") then return false end
 		-- Need the upgrades for the specific entity type
 		if world.entityType(preyId) == "monster" then
-			local scriptCheck = contains(root.monsterParameters(world.entityTypeName(preyId)).scripts or jarray(), "/scripts/starpounds/starpounds_monster.lua")
+			local scriptCheck = contains(root.monsterParameters(preyType).scripts or jarray(), "/scripts/starpounds/starpounds_monster.lua")
 			if scriptCheck then
-				if (not starPounds.hasSkill("voreMonster")) and (not world.entityTypeName(preyId):find("critter")) then return false end
-				if (not starPounds.hasSkill("voreCritter")) and world.entityTypeName(preyId):find("critter") then return false end
+				if (not canVoreMonster) and (not preyType:find("critter")) then return false end
+				if (not canVoreCritter) and preyType:find("critter") then return false end
 			else
-				local behavior = root.monsterParameters(world.entityTypeName(preyId)).behavior
-				if contains(starPounds.settings.critterBehaviors, behavior) and not starPounds.hasSkill("voreCritter") then return false end
-				if contains(starPounds.settings.monsterBehaviors, behavior) and not starPounds.hasSkill("voreMonster") then return false end
+				local behavior = root.monsterParameters(preyType).behavior
+				if contains(starPounds.settings.critterBehaviors, behavior) and not canVoreCritter then return false end
+				if contains(starPounds.settings.monsterBehaviors, behavior) and not canVoreMonster then return false end
 			end
 		end
 	end
 	-- Skip the rest if the monster/npc can't be eaten to begin with.
 	if world.entityType(preyId) == "monster" then
-		local scriptCheck = contains(root.monsterParameters(world.entityTypeName(preyId)).scripts or jarray(), "/scripts/starpounds/starpounds_monster.lua")
-		local parameters = root.monsterParameters(world.entityTypeName(preyId))
+		local scriptCheck = contains(root.monsterParameters(preyType).scripts or jarray(), "/scripts/starpounds/starpounds_monster.lua")
+		local parameters = root.monsterParameters(preyType)
 		local behaviorCheck = parameters.behavior and (contains(starPounds.settings.critterBehaviors, parameters.behavior) or contains(starPounds.settings.monsterBehaviors, parameters.behavior)) or false
 		if parameters.starPounds_options and parameters.starPounds_options.disablePrey then return false end
 		if not (scriptCheck or behaviorCheck) then
@@ -1466,7 +1479,7 @@ starPounds.eatEntity = function(preyId, force, check)
 	end
 
 	if world.entityType(preyId) == "npc" then
-		if not contains(root.npcConfig(world.entityTypeName(preyId)).scripts or jarray(), "/scripts/starpounds/starpounds_npc.lua") then return false end
+		if not contains(root.npcConfig(preyType).scripts or jarray(), "/scripts/starpounds/starpounds_npc.lua") then return false end
 		if world.getNpcScriptParameter(preyId, "starPounds_options", jarray()).disablePrey then return false end
 	end
 

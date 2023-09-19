@@ -1894,9 +1894,9 @@ starPounds.eaten = function(dt)
 			local distance = world.distance(predPosition, mcontroller.position())
 			mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
 		end
+		-- No air time.
+		status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
 	end
-	-- No air time.
-	status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
 	-- Set velocity to zero.
 	mcontroller.setVelocity({0, 0})
 	-- Stop the prey from colliding/moving normally.

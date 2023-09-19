@@ -1417,7 +1417,7 @@ starPounds.eatEntity = function(preyId, force, check)
 	local canVoreCritter = starPounds.hasSkill("voreCritter")
 	local canVoreMonster = starPounds.hasSkill("voreMonster")
 	local canVoreHumanoid = starPounds.hasSkill("voreHumanoid")
-	local canVoreFriendly = starPounds.hasSkill("voreFriendly")
+	local canVoreFriendly = force or starPounds.hasSkill("voreFriendly")
 	-- Skip if we can't eat anything at all.
 	if not (
 		canVoreCritter or

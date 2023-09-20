@@ -20,6 +20,46 @@
             "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
             "chestCosmetic": [ { "name": "throgneochest" } ],
             "legsCosmetic": [ { "name": "throgneolegs" } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 3 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 3 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 4 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 4 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 5 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 5 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 6 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 6 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 7 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 7 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 8 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 8 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 9 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 9 } } ]
+          },
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : 10 } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : 10 } } ]
           }
         ] ]
     ]

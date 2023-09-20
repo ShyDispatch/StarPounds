@@ -1,21 +1,22 @@
 {
-  "itemName" : "npcgluttonistspear",
+  "itemName" : "npcthroggreatfork",
   "price" : 0,
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "This spear is perfect for enemies just out of reach.",
-  "shortdescription" : "NPC Gluttonist Spear",
+  "shortdescription" : "NPC Throg Greatfork",
   "tooltipKind" : "sword",
   "category" : "spear",
   "twoHanded" : false,
   "itemTags" : ["weapon","melee","spear"],
 
-  "inventoryIcon" : "/items/active/weapons/npc/npcgluttonistspear/npcgluttonistspear.png",
+  "inventoryIcon" : "npcthroggreatfork.png:idle.1",
 
-  "animation" : "/items/active/weapons/melee/spear/spear.animation",
+  "animation" : "npcthroggreatfork.animation",
   "animationParts" : {
     "handle" : "",
-    "blade" : "/items/active/weapons/npc/npcgluttonistspear/npcgluttonistspear.png"
+    "blade" : "npcthroggreatfork.png",
+    "bladefullbright" : "npcthroggreatforkfullbright.png"
   },
   "animationCustom" : {
     "animatedParts" : { "parts" : { "swoosh" : { "properties" : {
@@ -23,7 +24,8 @@
     }}}},
     "sounds" : {
       "physicalTravelSlash" : ["/sfx/melee/ixodoomclaw_web2.ogg"],
-      "fire" : [ "/sfx/melee/swing_spear.ogg" ]
+      "fire" : ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"],
+      "fire2" : ["/sfx/melee/laser_weapon_swing1.ogg", "/sfx/melee/laser_weapon_swing2.ogg", "/sfx/melee/laser_weapon_swing3.ogg"]
     }
   },
 
@@ -42,7 +44,12 @@
     "allowHold" : false,
     "stances" : {
       "idle" : {
-        "allowRotate" : false
+        "aimAngle" : 0,
+        "armRotation" : -20,
+        "weaponRotation" : 20,
+        "twoHanded" : false,
+        "allowRotate" : false,
+        "allowFlip" : true
       },
       "windup" : {
         "hold" : true,

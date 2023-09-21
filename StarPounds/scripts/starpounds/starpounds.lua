@@ -1245,6 +1245,8 @@ end
 starPounds.lactating = function(dt)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
+	-- Don't do anything if eaten.
+	if storage.starPounds.pred then return end
 	-- Argument sanitisation.
 	dt = math.max(tonumber(dt) or 0, 0)
 	if dt == 0 then return end
@@ -1267,6 +1269,8 @@ end
 starPounds.lactate = function(amount, noConsume)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
+	-- Don't do anything if eaten.
+	if storage.starPounds.pred then return end
 	-- Argument sanitisation.
 	amount = math.max(tonumber(amount) or 0, 0)
 	if amount == 0 then return end

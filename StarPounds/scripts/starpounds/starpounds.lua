@@ -1705,9 +1705,9 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			end
 
 			if status.isResource("energy") then
-				local energyAmount = 5 + 30 * struggleStrength
+				local energyAmount = starPounds.settings.voreStruggleEnergyBase + starPounds.settings.voreStruggleEnergy * struggleStrength
 				if status.isResource("energyRegenBlock") and status.resourceLocked("energy") then
-					status.modifyResource("energyRegenBlock", math.min(status.stat("energyRegenBlockTime") * 0.25 * struggleStrength))
+					status.modifyResource("energyRegenBlock", math.min(status.stat("energyRegenBlockTime") * starPounds.settings.voreStruggleEnergyLock * struggleStrength))
 				elseif status.resource("energy") > energyAmount then
 					status.modifyResource("energy", -energyAmount)
 				else

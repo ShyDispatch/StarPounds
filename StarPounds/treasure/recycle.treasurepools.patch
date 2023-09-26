@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/starpoundsinfusiontable",
+    "value": [
+      [1, {
+        "fill" : [
+          {"item" : [ "goldbar", 1 ]},
+          {"item" : [ "silverbar", 2 ]},
+          {"item" : [ "darkwoodmaterial", 15]},
+          {"item" : [ "logblock", 3]}
+        ]
+      } ]
+    ]
+  }
+]

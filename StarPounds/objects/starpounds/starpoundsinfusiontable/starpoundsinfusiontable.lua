@@ -1,6 +1,6 @@
 function init()
   if storage.state == nil then storage.state = config.getParameter("defaultLightState", true) end
-
+  if world.type() == "unknown" then object.setConfigParameter("smashOnBreak", false) end
   if config.getParameter("inputNodes") then
     processWireInput()
   end

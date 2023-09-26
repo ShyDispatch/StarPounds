@@ -4,7 +4,7 @@
   "category" : "crafting",
   "price" : 75,
 
-  "description" : "The infusion table is used to alter how your body utilises food and fat.",
+  "description" : "The infusion table is used to alter how your body utilises food and fat. \n^red;Destroyed when broken.",
   "shortdescription" : "^orange;Infusion Table^white; ",
   "race" : "generic",
 
@@ -60,13 +60,18 @@
   "interactData" : {"gui" : { }, "scripts" : ["/metagui.lua"], "ui" : "starpounds:skills", "data": {"isObject": true, "tabs": ["skills", "abilities"], "title": "Infusion Table", "iconSuffix": "Infusion"}},
   "interactive" : false,
 
+  "smashOnBreak": true,
+  "smashDropPool" : "starpoundsinfusiontable",
+  "smashSounds" : [ "/sfx/objects/wood_break1.ogg", "/sfx/objects/wood_break2.ogg", "/sfx/objects/wood_break3.ogg", "/sfx/objects/wood_break4.ogg", "/sfx/objects/wood_break5.ogg", "/sfx/objects/wood_break6.ogg" ],
+  "smashParticles" : [ { "count" : 5, "particle" : "woodshard" } ],
+
   "animation" : "starpoundsinfusiontable.animation",
   "animationParts" : {
     "bg" : "starpoundsinfusiontable.png",
     "fg" : "starpoundsinfusiontablelit.png"
   },
 
-  "scripts" : [ "starpoundsinfusiontable_light.lua" ],
+  "scripts" : [ "starpoundsinfusiontable.lua" ],
   "scriptDelta" : 60,
 
   "inputNodes" : [ [-2, 4] ]

@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "A meal like this must just be an appetizer for you.",
-  "shortdescription" : "Filled Plump Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Filled Plump Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsplump",
+    "starpoundsfilled"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

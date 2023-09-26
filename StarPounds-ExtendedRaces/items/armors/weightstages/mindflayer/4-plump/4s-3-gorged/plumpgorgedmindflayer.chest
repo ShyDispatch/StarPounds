@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "The food in your stomach weighs more than a person, tubs.",
-  "shortdescription" : "Gorged Plump Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Gorged Plump Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsplump",
+    "starpoundsgorged"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

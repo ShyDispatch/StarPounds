@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Those boobs are as wide as you are tall.",
-  "shortdescription" : "Fatty Hyper Mindflayer Bust",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Fatty Hyper Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty",
+    "starpoundshyper"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

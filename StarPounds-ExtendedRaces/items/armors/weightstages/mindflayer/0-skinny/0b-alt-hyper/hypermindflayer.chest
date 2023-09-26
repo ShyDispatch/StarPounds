@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Someone is a bit well developed.",
-  "shortdescription" : "Hyper Mindflayer Bust",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Hyper Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundshyper"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

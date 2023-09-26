@@ -6,8 +6,12 @@
   "rarity" : "legendary",
   "category" : "legwear",  
   "description" : "That butt is an absolute dumptruck. Only good for sitting down every single day.",
-  "shortdescription" : "Fatty Mindflayer Legs",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Fatty Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty"
+  ],
 
   "maleFrames" : "pantsM.png",
   "femaleFrames" : "pantsF.png"

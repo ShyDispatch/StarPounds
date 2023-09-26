@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Got some real nice melons there.",
-  "shortdescription" : "Hyper Soft Mindflayer Bust",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Hyper Soft Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundssoft",
+    "starpoundshyper"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

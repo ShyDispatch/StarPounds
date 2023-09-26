@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Your gut is the size of a person, you're just a hopeless, fat glutton.",
-  "shortdescription" : "Gorged Fatty Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Gorged Fatty Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty",
+    "starpoundsgorged"
+  ],
 
   "maleFrames" : {
     "body" : "fatty_chestm.png",

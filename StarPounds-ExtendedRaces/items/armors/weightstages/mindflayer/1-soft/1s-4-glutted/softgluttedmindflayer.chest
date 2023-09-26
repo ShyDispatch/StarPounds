@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Either you're just that gluttonous or your stomach is quite elastic.",
-  "shortdescription" : "Glutted Soft Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Glutted Soft Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundssoft",
+    "starpoundsglutted"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

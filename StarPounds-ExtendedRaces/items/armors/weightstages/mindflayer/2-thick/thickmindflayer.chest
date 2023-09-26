@@ -6,8 +6,12 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "First sign of being out of shape is a soft gut that can't be sucked in.",
-  "shortdescription" : "Thick Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Thick Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

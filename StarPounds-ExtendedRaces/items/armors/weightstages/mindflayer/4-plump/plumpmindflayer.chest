@@ -6,8 +6,12 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "When your gut is resting on a table, it's pretty fat porky.",
-  "shortdescription" : "Plump Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Plump Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsplump"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

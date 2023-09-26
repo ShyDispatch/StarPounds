@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "You can hear the sloshing with every bounce.",
-  "shortdescription" : "Xbusty Mindflayer Chest",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Xbusty Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundsmilky"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

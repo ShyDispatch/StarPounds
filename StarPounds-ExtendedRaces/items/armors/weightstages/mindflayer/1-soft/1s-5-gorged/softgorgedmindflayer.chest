@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "You won't be just thick with meals like this.",
-  "shortdescription" : "Gorged Soft Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Gorged Soft Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundssoft",
+    "starpoundsgorged"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

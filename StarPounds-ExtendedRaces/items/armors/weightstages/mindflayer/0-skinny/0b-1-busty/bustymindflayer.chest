@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Someone is a bit well developed.",
-  "shortdescription" : "Busty Mindflayer Chest",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Busty Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundsbusty"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

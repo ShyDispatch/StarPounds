@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Got some real nice melons there.",
-  "shortdescription" : "Hyper Thick Mindflayer Bust",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Hyper Thick Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick",
+    "starpoundshyper"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

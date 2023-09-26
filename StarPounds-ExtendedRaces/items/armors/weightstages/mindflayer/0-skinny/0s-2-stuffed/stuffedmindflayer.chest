@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Quite a large meal you had with that big gut.",
-  "shortdescription" : "Stuffed Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Stuffed Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundsstuffed"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "From a certain angle. Your chest can give the illusion your stomach isn't as big as it is.",
-  "shortdescription" : "Xbusty Fatty Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Xbusty Fatty Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty",
+    "starpoundsmilky"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

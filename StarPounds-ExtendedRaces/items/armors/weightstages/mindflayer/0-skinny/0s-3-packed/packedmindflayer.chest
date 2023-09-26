@@ -6,8 +6,13 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "You've since past the point you could try sucking in this gut.",
-  "shortdescription" : "Packed Mindflayer Belly",
-  "tooltipKind" : "armor",
+  "shortdescription" : "Packed Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundspacked"
+  ],
 
   "maleFrames" : {
     "body" : "chestm.png",

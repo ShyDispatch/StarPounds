@@ -87,8 +87,10 @@
       "allowDuplication" : true
     }]
   ],
+
   "regurgitatedAccelerator": [
     [0, {
+      "fill" : [{"pool" : "regurgitatedClothing"}],
       "pool" : [
         {"weight" : 0.5, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.5, "item" : ["syntheticmaterial", 1, {"shortdescription": "^#a6ba5d;Crude Synthetic Material", "price" : 40, "description" : "A square of synthetic material, worn down on the edges.", "inventoryIcon" : "syntheticmaterial.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
@@ -97,6 +99,7 @@
   ],
   "regurgitatedManipulator": [
     [0, {
+      "fill" : [{"pool" : "regurgitatedClothing"}],
       "pool" : [
         {"weight" : 0.6, "item" : ["silk", 1, {"shortdescription": "^#a6ba5d;Sticky Silk", "price" : 20, "description" : "A square of tacky, sticky silk.", "inventoryIcon" : "silk.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.4, "item" : ["syntheticmaterial", 1, {"shortdescription": "^#a6ba5d;Crude Synthetic Material", "price" : 40, "description" : "A square of synthetic material, worn down on the edges.", "inventoryIcon" : "syntheticmaterial.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
@@ -105,6 +108,7 @@
   ],
   "regurgitatedSeparator": [
     [0, {
+      "fill" : [{"pool" : "regurgitatedClothing"}],
       "pool" : [
         {"weight" : 0.6, "item" : ["canvas", 1, {"shortdescription": "^#a6ba5d;Frayed Canvas", "price" : 30, "description" : "A frayed square of questionable-quality canvas.", "inventoryIcon" : "canvas.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.4, "item" : ["syntheticmaterial", 1, {"shortdescription": "^#a6ba5d;Crude Synthetic Material", "price" : 40, "description" : "A square of synthetic material, worn down on the edges.", "inventoryIcon" : "syntheticmaterial.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}

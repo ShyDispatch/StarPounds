@@ -194,25 +194,10 @@ starPounds.belch = function(volume, pitch, loops, skipParticles)
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
 	local gravity = world.gravity(mouthPosition)
 	local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
-	local particle = {
-		type = "ember",
-		size = 1.25,
-		color = {60, 150, 224, 200},
-		position = {0, 0},
-		approach = {5, 10},
-	  destructionAction = "shrink",
-	  destructionTime = 0.2,
-		layer = "middle",
-		timeToLive = 0.5,
-		initialVelocity = vec2.add({7 * facingDirection, 0}, vec2.add(mcontroller.velocity(), {0, gravity/62.5})), -- Gravity still alters velocity standing still. Why 62.5 you ask? Who knows! :D
-		finalVelocity = {0, -gravity},
-		approach = {friction and 5 or 0, gravity},
-		variance = {
-			initialVelocity = {5.0, 3.0},
-			size = 0.25,
-			timeToLive = 0.25,
-		}
-	}
+	local particle = sb.jsonMerge(starPounds.settings.particleTemplates.belch, {})
+	particle.initialVelocity = vec2.add({7 * facingDirection, 0}, vec2.add(mcontroller.velocity(), {0, gravity/62.5})) -- Weird math but it works I guess.
+	particle.finalVelocity = {0, -gravity}
+	particle.approach = {friction and 5 or 0, gravity}
 	-- 7.5 (Rounded to 8) to 10 particles, decreased or increased by up to 2x, -5
 	-- Ends up yielding around 10 - 15 particles if the belch is very loud and deep, 3 - 5 at normal volume and pitch, and none if it's half volume or twice as high pitch.
 	local volumeMultiplier = math.max(math.min(volume, 1.5), 0)
@@ -1524,6 +1509,63 @@ starPounds.ateEntity = function(preyId)
 	return false
 end
 
+starPounds.digestClothing = function(item)
+	-- Argument sanitisation.
+	if not (item and type(item) == "table") then return end
+	item = root.createItem(item)
+	-- Make sure this exists to start with.
+	item.parameters = item.parameters or {}
+	-- First time digesting the item.
+	if not item.parameters.baseParameters then
+		local baseParameters = {}
+		for k, v in pairs(item.parameters) do
+			baseParameters[k] = v
+		end
+		item.parameters.baseParameters = baseParameters
+	end
+	item.parameters.digestCount = item.parameters.digestCount and math.min(item.parameters.digestCount + 1, 3) or 1
+	-- Reset values before editing.
+	item.parameters.category = item.parameters.baseParameters.category
+	item.parameters.price = item.parameters.baseParameters.price
+	item.parameters.level = item.parameters.baseParameters.level
+	item.parameters.directives = item.parameters.baseParameters.directives
+	item.parameters.colorIndex = item.parameters.baseParameters.colorIndex
+	item.parameters.colorOptions = item.parameters.baseParameters.colorOptions
+	-- Add visual flair and reduce rarity down to common.
+	local label = root.assetJson("/items/categories.config:labels")[configParameter(item, "category", ""):gsub("enviroProtectionPack", "backwear")]
+	item.parameters.category = string.format("^#a6ba5d;Digested %s%s", label, ((item.parameters.digestCount > 1) and string.format(" (x%s)", item.parameters.digestCount) or ""))
+	item.parameters.rarity = configParameter(item, "rarity", "common"):lower():gsub(".+", { uncommon = "common", rare = "uncommon", legendary = "rare" })
+	-- Reduce price to 10% (15% - 5% per digestion) of the original value.
+	item.parameters.price = math.round(configParameter(item, "price", 0) * (0.15 - 0.05 * item.parameters.digestCount))
+	-- Reduce armor level by 1 per digestion. (Or planet threat level, whatever is lower)
+	item.parameters.level = math.max(math.min(configParameter(item, "level", 0) - item.parameters.digestCount, world.threatLevel()), configParameter(item, "level", 0) > 0 and 1 or 0)
+	-- Disable status effects.
+	item.parameters.statusEffects = root.itemConfig(item).statusEffects and jarray() or nil
+	-- Disable effects.
+	item.parameters.effectSources = root.itemConfig(item).effectSources and jarray() or nil
+	-- Disable augments.
+	if configParameter(item, "acceptsAugmentType") then
+		item.parameters.acceptsAugmentType = ""
+	end
+	if configParameter(item, "tooltipKind") == "baseaugment" then
+		item.parameters.tooltipKind = "back"
+	end
+	-- Give the armor some colour changes to make it look digested.
+	item.parameters.colorOptions = configParameter(item, "colorOptions", {})
+	item.parameters.colorIndex = configParameter(item, "colorIndex", 0) % (#item.parameters.colorOptions > 0 and #item.parameters.colorOptions or math.huge)
+	-- Convert colorOptions and colorIndex to directives.
+	if not configParameter(item, "directives") and item.parameters.colorOptions and #item.parameters.colorOptions > 0 then
+		item.parameters.directives = "?replace;"
+		for fromColour, toColour in pairs(item.parameters.colorOptions[item.parameters.colorIndex + 1]) do
+			item.parameters.directives = string.format("%s%s=%s;", item.parameters.directives, fromColour, toColour)
+		end
+	end
+	item.parameters.directives = configParameter(item, "directives", "")..string.rep("?brightness=-20?multiply=e9ffa6?saturation=-20", item.parameters.digestCount)
+	item.parameters.colorIndex = nil
+	item.parameters.colorOptions = jarray()
+	return item
+end
+
 starPounds.digestEntity = function(preyId, items, preyStomach)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
@@ -1563,88 +1605,31 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 
 		if itemType == "clothing" then
 			if math.random() < starPounds.getStat("regurgitateClothingChance") then
-				-- Make sure this exists to start with.
-				item.parameters = item.parameters or {}
-				-- First time digesting the item.
-				if not item.parameters.baseParameters then
-					local baseParameters = {}
-					for k, v in pairs(item.parameters) do
-						baseParameters[k] = v
-					end
-					item.parameters.baseParameters = baseParameters
-				end
-				item.parameters.digestCount = item.parameters.digestCount and math.min(item.parameters.digestCount + 1, 3) or 1
-				-- Reset values before editing.
-				item.parameters.category = item.parameters.baseParameters.category
-				item.parameters.price = item.parameters.baseParameters.price
-				item.parameters.level = item.parameters.baseParameters.level
-				item.parameters.directives = item.parameters.baseParameters.directives
-				item.parameters.colorIndex = item.parameters.baseParameters.colorIndex
-				item.parameters.colorOptions = item.parameters.baseParameters.colorOptions
-				-- Add visual flair and reduce rarity down to common.
-				local label = root.assetJson("/items/categories.config:labels")[configParameter(item, "category", ""):gsub("enviroProtectionPack", "backwear")]
-				item.parameters.category = string.format("^#a6ba5d;Digested %s%s", label, ((item.parameters.digestCount > 1) and string.format(" (x%s)", item.parameters.digestCount) or ""))
-				item.parameters.rarity = configParameter(item, "rarity", "common"):lower():gsub(".+", {
-					uncommon = "common",
-					rare = "uncommon",
-					legendary = "rare"
-				})
-				-- Reduce price to 10% (15% - 5% per digestion) of the original value.
-				item.parameters.price = math.round(configParameter(item, "price", 0) * (0.15 - 0.05 * item.parameters.digestCount))
-				-- Reduce armor level by 1 per digestion. (Capped at the planet threat level)
-				item.parameters.level = math.max(math.min(configParameter(item, "level", 0) - item.parameters.digestCount, world.threatLevel()), configParameter(item, "level", 0) > 0 and 1 or 0)
-				-- Disable status effects.
-				item.parameters.statusEffects = root.itemConfig(item).statusEffects and jarray() or nil
-				-- Disable effects.
-				item.parameters.effectSources = root.itemConfig(item).effectSources and jarray() or nil
-				-- Disable augments.
-				if configParameter(item, "acceptsAugmentType") then
-					item.parameters.acceptsAugmentType = ""
-				end
-				if configParameter(item, "tooltipKind") == "baseaugment" then
-					item.parameters.tooltipKind = "back"
-				end
-				-- Give the armor some colour changes to make it look digested.
-				item.parameters.colorOptions = configParameter(item, "colorOptions", {})
-				item.parameters.colorIndex = configParameter(item, "colorIndex", 0) % (#item.parameters.colorOptions > 0 and #item.parameters.colorOptions or math.huge)
-				-- Convert colorOptions and colorIndex to directives.
-				if not configParameter(item, "directives") and item.parameters.colorOptions and #item.parameters.colorOptions > 0 then
-					item.parameters.directives = "?replace;"
-					for fromColour, toColour in pairs(item.parameters.colorOptions[item.parameters.colorIndex + 1]) do
-						item.parameters.directives = string.format("%s%s=%s;", item.parameters.directives, fromColour, toColour)
-					end
-				end
-				item.parameters.directives = configParameter(item, "directives", "")..string.rep("?brightness=-20?multiply=e9ffa6?saturation=-20", item.parameters.digestCount)
-				item.parameters.colorIndex = nil
-				item.parameters.colorOptions = jarray()
-				-- Spawn the item.
-				table.insert(regurgitatedItems, item)
-			-- Second chance to regurgitate 'scrap' items instead.
-			elseif math.random() < starPounds.getStat("regurgitateChance") then
-				for _, item in ipairs(root.createTreasure("regurgitatedClothing", configParameter(item, "level", 0))) do
+				-- Give them item digested effects
+				item = starPounds.digestClothing(item)
+				-- Spawn the item, but double check if it's still clothing (in case of pgis)
+				if (root.itemType(item.name) == "clothing") or string.find(root.itemType(item.name), "armor") then
 					table.insert(regurgitatedItems, item)
 				end
-				local armorType
+			-- Second chance to regurgitate 'scrap' items instead.
+			elseif math.random() < starPounds.getStat("regurgitateChance") then
+				-- Default to clothing drops.
+				local armorType = "Clothing"
 				-- Check if it's a tier 5/6 armor, since the classes have different components.
 				if configParameter(item, "level", 0) >= 5 then
 					for _, recipe in ipairs(root.recipesForItem(item.name)) do
-						if contains(recipe.groups, "craftingaccelerator") then
-							armorType = "Accelerator"
-						elseif contains(recipe.groups, "craftingmanipulator") then
-							armorType = "Manipulator"
-						elseif contains(recipe.groups, "craftingseparator") then
-							armorType = "Separator"
-						end
-						if armorType then
-							for _, item in ipairs(root.createTreasure("regurgitated"..armorType, configParameter(item, "level", 0))) do
-								table.insert(regurgitatedItems, item)
-							end
-							break
+						if contains(recipe.groups, "craftingaccelerator") then armorType = "Accelerator" break
+						elseif contains(recipe.groups, "craftingmanipulator") then armorType = "Manipulator" break
+						elseif contains(recipe.groups, "craftingseparator") then armorType = "Separator" break
 						end
 					end
 				end
+				-- Add drops to the pool.
+				for _, item in ipairs(root.createTreasure("regurgitated"..armorType, configParameter(item, "level", 0))) do
+					table.insert(regurgitatedItems, item)
+				end
 			end
-		elseif itemType == "currency" and item.name == "essence" then
+		elseif item.name == "essence" then
 			if starPounds.type == "player" then player.giveItem(item) end
 			hasEssence = true
 		end
@@ -1656,37 +1641,22 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	-- Fancy little particles similar to the normal death animation.
 	if not starPounds.hasOption("disableBelchParticles") then
 		local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
-		local particles = {
-			{
-				action = "particle",
-				specification = {
-					type = "ember",
-					size = 1,
-					color = {188, 235, 96},
-					position = {0, 0},
-					initialVelocity = vec2.add({(friction and 2 or 3) * mcontroller.facingDirection(), 0}, vec2.add(mcontroller.velocity(), {0, world.gravity(mouthPosition)/62.5})),
-					finalVelocity = {mcontroller.facingDirection(), 10},
-			    approach = friction and {5, 10} or {0, 0},
-					destructionAction = "fade",
-					destructionTime = 0.25,
-					layer = "middle",
-					timeToLive = friction and 0.2 or 0.075,
-					variance = {
-						initialVelocity = {2.0, 2.0},
-						size = 0.5,
-						timeToLive = 0.05
-					}
-				}
-			}
-		}
+		local particle = {sb.jsonMerge(starPounds.settings.particleTemplates.vore, {})}
+		particle.color = {188, 235, 96}
+		particle.initialVelocity = vec2.add({(friction and 2 or 3) * mcontroller.facingDirection(), 0}, vec2.add(mcontroller.velocity(), {0, world.gravity(mouthPosition)/62.5})) -- Weird math but it works I guess.
+		particle.finalVelocity = {mcontroller.facingDirection(), 10}
+		particle.approach = friction and {5, 10} or {0, 0}
+		particle.timeToLive = friction and 0.2 or 0.075
+		local particles = {{
+			action = "particle",
+			specification = particle
+		}}
 		particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {144, 217, 0}}})
-
 		-- Humanoids get glowy death particles.
 		if digestedEntity.type == "humanoid" then
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {96, 184, 235}, fullbright = true, collidesLiquid = false, timeToLive = 0.5}})
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {0, 140, 217}, fullbright = true, collidesLiquid = false, timeToLive = 0.5}})
 		end
-
 		-- Vault monsters get glowy purple particles.
 		if hasEssence then
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {160, 70, 235}, fullbright = true, collidesLiquid = false, timeToLive = 0.5, light = {134, 71, 179, 255}}})
@@ -2163,6 +2133,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.loseMilk", simpleHandler(starPounds.loseMilk))
 	message.setHandler("starPounds.lactate", simpleHandler(starPounds.lactate))
 	-- Ditto but vore.
+	message.setHandler("starPounds.voreDigest", simpleHandler(starPounds.voreDigest))
 	message.setHandler("starPounds.eatNearbyEntity", simpleHandler(starPounds.eatNearbyEntity))
 	message.setHandler("starPounds.eatEntity", simpleHandler(starPounds.eatEntity))
 	message.setHandler("starPounds.ateEntity", simpleHandler(starPounds.ateEntity))

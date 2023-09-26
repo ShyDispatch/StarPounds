@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "My, my. Your breasts are bigger than your own head.",
-  "shortdescription" : "Hyper Chubby Bust",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundschubster",
-    "starpoundshyper"
-  ],
+  "shortdescription" : "Hyper Chubster Mindflayer Bust",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

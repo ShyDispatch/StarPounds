@@ -130,5 +130,27 @@
 	  "path": "/storeInventory/feedingtube/-",
 	  "value": "nostosfeedingtube" 
 	  } 
-	]	
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "silphweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundssilphtreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "silphfeedingtube" 
+	  } 
+	]
 ]

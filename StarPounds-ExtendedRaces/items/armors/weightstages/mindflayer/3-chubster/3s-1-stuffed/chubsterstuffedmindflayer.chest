@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "It's okay. It's hard to tell you've eaten with that much padding.",
-  "shortdescription" : "Stuffed Chubby Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundschubster",
-    "starpoundsstuffed"
-  ],
+  "shortdescription" : "Stuffed Chubby Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

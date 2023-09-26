@@ -1,0 +1,28 @@
+{
+  "itemName" : "bustyzoroarkchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "Surely no one will notice these growing Poké Balls at this size.",
+  "shortdescription" : "Busty Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundsbusty"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

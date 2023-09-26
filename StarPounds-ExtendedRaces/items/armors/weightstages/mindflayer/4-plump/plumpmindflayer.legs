@@ -6,12 +6,8 @@
   "rarity" : "legendary",
   "category" : "legwear",  
   "description" : "A rear the size of a couch? You're really out of shape.",
-  "shortdescription" : "Plump Legs",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundsplump"
-  ],
+  "shortdescription" : "Plump Mindflayer Legs",
+  "tooltipKind" : "armor",
 
   "maleFrames" : "pantsM.png",
   "femaleFrames" : "pantsF.png"

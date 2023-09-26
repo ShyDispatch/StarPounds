@@ -6,12 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Your stomach is looking a little less flat nowadays.",
-  "shortdescription" : "Soft Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundssoft"
-  ],
+  "shortdescription" : "Soft Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

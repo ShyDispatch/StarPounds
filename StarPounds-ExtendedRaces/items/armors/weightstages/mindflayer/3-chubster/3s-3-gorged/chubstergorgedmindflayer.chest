@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Is this a sign you've given up on losing weight? Or can you not stop yourself?",
-  "shortdescription" : "Gorged Chubby Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundschubster",
-    "starpoundsgorged"
-  ],
+  "shortdescription" : "Gorged Chubby Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

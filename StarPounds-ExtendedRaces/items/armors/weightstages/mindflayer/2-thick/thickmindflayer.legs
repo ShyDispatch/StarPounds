@@ -6,12 +6,8 @@
   "rarity" : "legendary",
   "category" : "legwear",  
   "description" : "Thighs touching one another? Seems like someone is a bit thicker than most.",
-  "shortdescription" : "Thick Legs",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundsthick"
-  ],
+  "shortdescription" : "Thick Mindflayer Legs",
+  "tooltipKind" : "armor",
 
   "maleFrames" : "pants.png",
   "femaleFrames" : "pants.png"

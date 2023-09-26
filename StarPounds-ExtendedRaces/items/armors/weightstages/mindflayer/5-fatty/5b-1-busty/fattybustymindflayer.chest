@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Such impressive boobs you have. If they weren't dwarfed by a big fat gut.",
-  "shortdescription" : "Busty Fatty Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundsfatty",
-    "starpoundsbusty"
-  ],
+  "shortdescription" : "Fatty Mindflayer Bust",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

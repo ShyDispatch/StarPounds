@@ -6,12 +6,8 @@
   "rarity" : "legendary",
   "category" : "legwear",  
   "description" : "It'll be amazing if you can fit into a house since you're now a land whale.",
-  "shortdescription" : "Blobby Body",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundsblob"
-  ],
+  "shortdescription" : "Blobby Mindflayer Body",
+  "tooltipKind" : "armor",
 
   "maleFrames" : "blob_pantsM.png",
   "femaleFrames" : "blob_pantsF.png"

@@ -1,0 +1,28 @@
+{
+  "itemName" : "softgorgedzoroarkchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "Best wear this meal proudly, you ain't hiding this belly with illusions for a while.",
+  "shortdescription" : "Gorged Soft Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundssoft",
+    "starpoundsgorged"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

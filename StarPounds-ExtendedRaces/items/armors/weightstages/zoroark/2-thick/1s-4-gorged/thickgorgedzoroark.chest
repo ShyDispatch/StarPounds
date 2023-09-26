@@ -1,0 +1,28 @@
+{
+  "itemName" : "thickgorgedzoroarkchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "Good luck struting this food filled tank of fatty fluff. You'll need it.",
+  "shortdescription" : "Gorged Thick Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick",
+    "starpoundsgorged"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

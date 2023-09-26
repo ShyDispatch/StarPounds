@@ -6,12 +6,8 @@
   "rarity" : "legendary",
   "category" : "legwear",  
   "description" : "Your hips are a bit flared. No stick legs for you.",
-  "shortdescription" : "Soft Legs",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundssoft"
-  ],
+  "shortdescription" : "Soft Mindflayer Legs",
+  "tooltipKind" : "armor",
 
   "maleFrames" : "pants.png",
   "femaleFrames" : "pants.png"

@@ -1,0 +1,46 @@
+{
+  "objectName" : "starpoundssilphtreadmill",
+  "colonyTags" : ["starpounds"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 300,
+  "description" : "A Silph Co. device suited for working off the pounds.",
+  "shortdescription" : "Silph Treadmill",
+  "race" : "pokemon",
+
+  "apexDescription" : "A standard device for keeping one's legs in good shape.",
+  "avianDescription" : "I can hardly recall workouts being a thing for Avians.",
+  "floranDescription" : "Thisss machine dumb. Why walk in place when prey can be chasssed?",
+  "glitchDescription" : "Query: People use this to become smaller?",
+  "humanDescription" : "Oh thank goodness, a gym machine I can actually use.",
+  "hylotlDescription" : "I have been putting on some weight recently...",
+  "novakidDescription" : "What do folks need a machine for to do the running?",
+  "zoroarkDescription" : "Ark! Isn't battling enough excersize for a Pokémon?",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "silphtreadmill.png:<color>",
+      "imagePosition" : [-8, 0],
+      "animationCycle" : 1.0,
+      "flipImages" : true,
+      "direction" : "left",
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	    "collision" : "platform",
+      "collisionSpaces" : [ [-1, 0], [0, 0], [1, 0], [2, 0], [3, 0] ]
+    },
+    {
+      "image" : "silphtreadmill.png:<color>",
+      "imagePosition" : [-8, 0],
+      "animationCycle" : 1.0,
+      "direction" : "right",
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	    "collision" : "platform",
+      "collisionSpaces" : [ [-1, 0], [0, 0], [1, 0], [2, 0], [3, 0] ]
+    }
+  ],
+
+  "scripts" : [ "/objects/starpounds/treadmill/treadmill.lua" ]
+}

@@ -1,0 +1,28 @@
+{
+  "itemName" : "milkyzoroarkchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "These Poké Balls are rather... sloshy.",
+  "shortdescription" : "Xbusty Bust",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpounds",
+    "starpoundsmilky"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

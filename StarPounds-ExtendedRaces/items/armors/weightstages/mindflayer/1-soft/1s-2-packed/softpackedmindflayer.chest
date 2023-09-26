@@ -7,12 +7,7 @@
   "category" : "chestwear",  
   "description" : "You certainly ain't gonna lose that chub with a meal like this.",
   "shortdescription" : "Packed Soft Mindflayer Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundssoft",
-    "starpoundspacked"
-  ],
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

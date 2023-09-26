@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "Every pound in your stomach you can feel turning into fat right now.",
-  "shortdescription" : "Gorged Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpounds",
-    "starpoundsgorged"
-  ],
+  "shortdescription" : "Gorged Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

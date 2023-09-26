@@ -61,6 +61,11 @@
   },
   {
 	"op": "add",
+	"path": "/mindflayer",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/nightgaunt",
 	"value": { "weightGain": true }
   },
@@ -117,6 +122,11 @@
   {
 	"op": "add",
 	"path": "/glaceonfox",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/zoroark",
 	"value": { "weightGain": true }
   }
 ]

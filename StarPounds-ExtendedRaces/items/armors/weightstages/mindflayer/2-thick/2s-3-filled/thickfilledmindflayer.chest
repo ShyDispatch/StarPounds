@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "No wonder you've packed on weight with meals like this.",
-  "shortdescription" : "Filled Thick Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundsthick",
-    "starpoundsfilled"
-  ],
+  "shortdescription" : "Filled Thick Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

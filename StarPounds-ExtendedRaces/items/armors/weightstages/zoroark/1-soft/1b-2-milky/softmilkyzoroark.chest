@@ -1,0 +1,28 @@
+{
+  "itemName" : "softmilkyzoroarkchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "These Poké Balls are rather... sloshy. Goes well with your sloshy belly, at least.",
+  "shortdescription" : "XBusty Soft Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundssoft",
+    "starpoundsmilky"
+  ],
+
+  "maleFrames" : {
+    "body" : "chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

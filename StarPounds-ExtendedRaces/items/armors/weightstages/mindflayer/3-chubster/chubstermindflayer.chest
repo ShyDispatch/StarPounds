@@ -6,12 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "So wide, so chubby. Someone's been eating too much junk food.",
-  "shortdescription" : "Chubby Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundschubster"
-  ],
+  "shortdescription" : "Chubby Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

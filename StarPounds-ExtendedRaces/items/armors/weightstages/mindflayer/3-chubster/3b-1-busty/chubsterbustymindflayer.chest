@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",  
   "description" : "It's hard to tell your boobs are that big with a gut that still dwarfs them.",
-  "shortdescription" : "Busty Chubby Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundschubster",
-    "starpoundsbusty"
-  ],
+  "shortdescription" : "Busty Chubby Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

@@ -6,13 +6,8 @@
   "rarity" : "legendary",
   "category" : "chestwear",
   "description" : "Those sloshing milk tanks help to obscure that chubby belly of yours.",
-  "shortdescription" : "XBusty Plump Belly",
-  "tooltipKind" : "starpoundsarmor",
-  
-  "statusEffects": [
-    "starpoundsplump",
-    "starpoundsmilky"
-  ],
+  "shortdescription" : "XBusty Plump Mindflayer Belly",
+  "tooltipKind" : "armor",
 
   "maleFrames" : {
     "body" : "chestm.png",

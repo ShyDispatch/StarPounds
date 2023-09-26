@@ -42,7 +42,6 @@ function starPoundsInit()
 	end
 
 	starPounds.parseSkills()
-	storage.starPounds.stats = sb.jsonMerge(storage.starPounds.stats, config.getParameter("starPounds_stats", {}))
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.parseEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()

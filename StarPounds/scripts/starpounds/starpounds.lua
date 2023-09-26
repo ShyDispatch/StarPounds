@@ -1349,8 +1349,8 @@ starPounds.voreDigest = function(dt)
 	if starPounds.hasOption("disablePredDigestion") then return end
 	-- Don't do anything if there's no eaten entities.
 	if not (#storage.starPounds.entityStomach > 0) then return end
-	-- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 5x slower.
-	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach2, 0), 5)
+	-- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
+	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach3, 0), 3)
 	local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
 	-- Reduce health of all entities.
 	for _, prey in pairs(storage.starPounds.entityStomach) do
@@ -1698,7 +1698,6 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local struggleStrength = (1 - starPounds.getStat("struggleResistance")) * struggleStrength/math.max(1, status.stat("powerMultiplier"))
 			local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
-			local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach2, 0), 5)
 			if math.random() < (world.entityType(preyId) == "player" and starPounds.settings.vorePlayerEscape or (0.5 * struggleStrength)) and escape then
 				if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > starPounds.settings.voreUnescapableHealth) then
 					starPounds.releaseEntity(preyId)
@@ -1718,7 +1717,7 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 
 			if not starPounds.hasOption("disablePredDigestion") then
 				-- 1 second worth of digestion per struggle.
-				world.sendEntityMessage(preyId, "starPounds.getDigested", damageMultiplier/vorePenalty)
+				world.sendEntityMessage(preyId, "starPounds.getDigested", damageMultiplier)
 			end
 
 			if not starPounds.hasOption("disableStruggleSounds") then

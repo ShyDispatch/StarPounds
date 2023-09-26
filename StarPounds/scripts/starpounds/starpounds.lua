@@ -441,15 +441,16 @@ starPounds.updateStats = function(force)
 	local size = starPounds.currentSize
 	local sizeIndex = starPounds.currentSizeIndex
 	if oldWeightMultiplier ~= starPounds.weightMultiplier or force then
+		local targetSize = starPounds.settings.targetSize
 		status.setPersistentEffects("starpounds", {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
 			{stat = "foodDelta", effectiveMultiplier = starPounds.hasOption("disableHunger") and 0 or math.round(starPounds.getStat("hunger"), 2)},
 			{stat = "grit", amount = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0},
 			{stat = "fallDamageMultiplier", effectiveMultiplier = 1 + size.healthBonus * (1 - starPounds.getStat("fallDamageReduction"))},
-			{stat = "iceStatusImmunity", amount = sizeIndex >= 3 and starPounds.getSkillLevel("iceImmunity") or 0},
-			{stat = "poisonStatusImmunity", amount = sizeIndex >= 3 and starPounds.getSkillLevel("poisonImmunity") or 0},
-			{stat = "iceResistance", amount = math.min(starPounds.getStat("iceResistance") * (sizeIndex - 1)/3, starPounds.getStat("iceResistance"))},
-			{stat = "poisonResistance", amount = math.min(starPounds.getStat("poisonResistance") * (sizeIndex - 1)/3, starPounds.getStat("poisonResistance"))}
+			{stat = "iceStatusImmunity", amount = sizeIndex >= targetSize and starPounds.getSkillLevel("iceImmunity") or 0},
+			{stat = "poisonStatusImmunity", amount = sizeIndex >= targetSize and starPounds.getSkillLevel("poisonImmunity") or 0},
+			{stat = "iceResistance", amount = math.min(starPounds.getStat("iceResistance") * (sizeIndex - 1)/targetSize, starPounds.getStat("iceResistance"))},
+			{stat = "poisonResistance", amount = math.min(starPounds.getStat("poisonResistance") * (sizeIndex - 1)/targetSize, starPounds.getStat("poisonResistance"))}
 		})
 	end
 	-- Check if the entity is using a morphball (Tech patch bumps this number for the morphball).

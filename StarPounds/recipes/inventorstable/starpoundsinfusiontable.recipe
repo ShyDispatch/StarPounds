@@ -2,8 +2,8 @@
   "input" : [
     { "item" : "darkwoodmaterial", "count" : 20 },
     { "item" : "logblock", "count" : 5 },
-    { "item" : "silverbar", "count" : 4 },
-    { "item" : "goldbar", "count" : 2 }
+    { "item" : "silverbar", "count" : 2 },
+    { "item" : "goldbar", "count" : 1 }
   ],
   "output" : {
     "item" : "starpoundsinfusiontable",

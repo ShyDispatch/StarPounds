@@ -1,0 +1,11 @@
+{
+  "itemName" : "starpoundsskill",
+  "price" : 0,
+  "rarity" : "Common",
+  "category" : "Skill",
+  "inventoryIcon" : "/assetmissing.png",
+  "description" : "<Skill Description>",
+  "shortdescription" : "<Skill Name>",
+  "tooltipKind": "starpoundsskill",
+  "builder" : "/items/buildscripts/buildstarpoundsskill.lua"
+}

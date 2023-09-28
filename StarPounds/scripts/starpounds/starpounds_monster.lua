@@ -47,6 +47,9 @@ function starPoundsInit()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant()
+	if not starPounds.getTrait() then
+		starPounds.setTrait(config.getParameter("starPounds_trait"))
+	end
 end
 
 function init()

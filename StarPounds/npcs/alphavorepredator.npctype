@@ -6,17 +6,7 @@
     "starPounds_skills": {
       "minimumSize": [3, 3]
     },
-
-    "starPounds_stats": {
-      "digestion": 2,
-      "absorption": 0.75,
-      "health": 1,
-      "capacity": 3,
-      "healing": 2,
-      "voreDamage": 2,
-      "struggleResistance": 0.75
-    },
-
+    "starPounds_trait": "npc_alphaPredator",
     "starPounds_options": {
       "disablePrey": true
     }
@@ -26,9 +16,6 @@
     "stats" : {
       "maxHealth" : {
         "baseValue" : 250.0
-      },
-      "grit" : {
-        "baseValue" : 1
       }
     }
   }

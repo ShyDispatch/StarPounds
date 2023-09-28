@@ -11,6 +11,7 @@ starPounds = {
 	sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config"),
 	stats = root.assetJson("/scripts/starpounds/starpounds_stats.config"),
 	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills"),
+	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits"),
 	species = root.assetJson("/scripts/starpounds/starpounds_species.config"),
 	baseData = root.assetJson("/scripts/starpounds/starpounds.config:baseData")
 }
@@ -657,6 +658,26 @@ starPounds.upgradeSkill = function(skill, cost)
   starPounds.optionChanged = true
 end
 
+starPounds.forceUnlockSkill = function(skill, level)
+	-- Argument sanitisation.
+	skill = tostring(skill)
+	level = tonumber(level)
+	-- Need a level to do anything here.
+	if not level then return end
+	-- If we're forcing the skill, also increase the unlocked level (and initialise it).
+	if starPounds.skills[skill] then
+		storage.starPounds.skills[skill] = storage.starPounds.skills[skill] or jarray()
+		storage.starPounds.skills[skill][1] = math.max(level, starPounds.getSkillLevel(skill))
+		storage.starPounds.skills[skill][2] = math.max(level, starPounds.getSkillUnlockedLevel(skill))
+	end
+	starPounds.parseSkills()
+	-- Update stats if we're already up and running.
+	if starPounds.currentSize then
+	  starPounds.updateStats(true)
+	  starPounds.optionChanged = true
+	end
+end
+
 starPounds.setSkill = function(skill, level)
 	-- Argument sanitisation.
 	skill = tostring(skill)
@@ -666,7 +687,6 @@ starPounds.setSkill = function(skill, level)
 	-- Skip if there's no such skill.
 	if not storage.starPounds.skills[skill] then return end
 	if starPounds.getSkillUnlockedLevel(skill) > 0 then
-		storage.starPounds.skills[skill] = storage.starPounds.skills[skill] or jarray()
 		storage.starPounds.skills[skill][1] = math.max(math.min(level, starPounds.getSkillUnlockedLevel(skill)), 0)
 	end
 	starPounds.parseSkills()
@@ -702,6 +722,42 @@ starPounds.parseSkills = function()
 		end
 	end
 	starPounds.parseSkillStats()
+end
+
+starPounds.getTrait = function()
+	return storage.starPounds.trait
+end
+
+starPounds.setTrait = function(trait)
+	-- Argument sanitisation.
+	trait = tostring(trait)
+	-- Don't do anything if we already have a trait, or the trait doesn't exist.
+	if storage.starPounds.trait or not starPounds.traits[trait] then return false end
+	-- Set the trait.
+	storage.starPounds.trait = starPounds.traits[trait].idOverride or trait
+	local selectedTrait = starPounds.traits[trait]
+	local mt = {__index = function (table, key) return starPounds.traits.default[key] end}
+	setmetatable(selectedTrait, mt)
+	-- Unlock trait skills.
+	for _, skill in ipairs(selectedTrait.skills) do
+		starPounds.forceUnlockSkill(skill[1], skill[2])
+	end
+	-- Set trait starting values. Done a bit weirdly so it still applies when the mod is off.
+	storage.starPounds.weight = math.max(storage.starPounds.weight, selectedTrait.weight)
+	starPounds.setWeight(storage.starPounds.weight)
+	-- Give trait milk
+	storage.starPounds.breasts = math.max(storage.starPounds.breasts, selectedTrait.breasts)
+	starPounds.setMilk(storage.starPounds.breasts)
+	-- Give trait experience.
+	storage.starPounds.level = storage.starPounds.level + selectedTrait.experience
+	-- Give trait items to players.
+	if starPounds.type == "player" then
+		for _, item in ipairs(selectedTrait.items) do
+			player.giveItem(item)
+		end
+	end
+	-- Set the trait successfully.
+	return true
 end
 
 starPounds.getSkillBonus = function(stat)
@@ -1419,8 +1475,6 @@ starPounds.eatEntity = function(preyId, force, check)
 	local preyType = world.entityTypeName(preyId)
 	-- Can't eat friendlies without the skill.
 	if not canVoreFriendly and not world.entityCanDamage(entity.id(), preyId) then return false end
-	starPounds.debug("vore_canVoreFriendly", canVoreFriendly)
-	starPounds.debug("vore_canDamage", world.entityCanDamage(entity.id(), preyId))
 	-- Don't do anything if eaten.
 	if storage.starPounds.pred then return false end
 	-- Can only eat if you're below capacity.
@@ -2115,6 +2169,8 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.hasSkill", simpleHandler(starPounds.hasSkill))
 	message.setHandler("starPounds.getAccessory", simpleHandler(starPounds.getAccessory))
 	message.setHandler("starPounds.getAccessoryModifiers", simpleHandler(starPounds.getAccessoryModifiers))
+	message.setHandler("starPounds.getTrait", simpleHandler(starPounds.getTrait))
+	message.setHandler("starPounds.setTrait", localHandler(starPounds.setTrait))
 	-- Handlers for affecting the entity.
 	message.setHandler("starPounds.digest", simpleHandler(starPounds.digest))
 	message.setHandler("starPounds.gurgle", simpleHandler(starPounds.gurgle))

@@ -1,0 +1,25 @@
+{
+  "titleIcon" : {
+    "type" : "itemslot",
+    "position" : [9, 167],
+    "callback" : "null",
+    "iconMode" : true,
+    "backingImage" : "/interface/inventory/portrait.png",
+    "showRarity" : false,
+    "showBackingImageWhenFull" : false
+  },
+
+  "background" : {
+    "type" : "background",
+    "fileHeader" : "/interface/tooltips/headerstarpoundsskill.png",
+    "fileBody" : "/interface/tooltips/bodystarpoundsskill.png",
+    "fileFooter" : "/interface/tooltips/footerstarpoundsskill.png"
+  },
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [11, 46],
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 123
+  }
+}

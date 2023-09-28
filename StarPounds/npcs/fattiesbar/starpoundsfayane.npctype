@@ -24,22 +24,12 @@
       "species": "floran"
   },
   "humanoidConfig" : "/npcs/fattiesbar/fayaneoid.config",
-  
+
   "scriptConfig" : {
     "initialStorage": {
       "homePosition": [0,0]
     },
-    "starPounds_skills": {
-      "voreDamage": [5, 5],
-      "digestion": [20, 20],
-      "health": [20, 20],
-      "capacity": [20, 20],
-      "movement": [20, 20],
-      "absorption": [20, 20],
-      "voreCritter": [1, 1],
-      "voreMonster": [1, 1],
-      "voreHumanoid": [1, 1]
-    },
+    "starPounds_trait": "npc_alphaPredator",
     "starPounds_options": {
       "disablePrey": true,
       "disableGain": true
@@ -56,13 +46,13 @@
       "play" : false,
       "chat" : false
     },
-	
-  "behavior" : "tutorial",	
-	
+
+  "behavior" : "tutorial",
+
   "persistent" : true,
 
   "chatPortrait" : "/interface/chatbubbles/fayane.png:<frame>",
-	
+
 		"dialogMode": "tutorial",
 		"dialog": {
 			"converse": {

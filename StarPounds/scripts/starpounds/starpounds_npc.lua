@@ -22,7 +22,6 @@ function init()
 	starPounds.statCache = {}
 	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	storage.starPounds.options = sb.jsonMerge(storage.starPounds.options, config.getParameter("starPounds_options", {}))
-
 	if not storage.starPounds.parsedInitialSkills then
 		local skills = config.getParameter("starPounds_skills", {})
 		for k, v in pairs(skills) do
@@ -50,6 +49,9 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
+	if not starPounds.getTrait() then
+		starPounds.setTrait(config.getParameter("starPounds_trait", npc.species()))
+	end
 end
 
 function update(dt)

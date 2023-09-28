@@ -7,6 +7,7 @@ function init()
   local buttonIcon = string.format("%s.png", starPounds.enabled and "enabled" or "disabled")
   enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
 	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills")
+	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits")
   tabs = root.assetJson("/scripts/starpounds/starpounds_skills.config:tabs")
   tabNames = {}
 
@@ -40,7 +41,14 @@ function init()
   enableUpgrades = metagui.inputData.isObject or isAdmin
   selectedSkill = nil
   setProgress(starPounds.experience, starPounds.level)
-  populateSkillTree()
+  -- Make the trait tab show first if we don't have one.
+  if not (starPounds.getTrait() or starPounds.hasOption("lowerTraitTab")) then
+    populateTraitTab()
+    populateSkillTree()
+  else
+    populateSkillTree()
+    populateTraitTab()
+  end
   resetInfoPanel()
   checkSkills()
 end
@@ -58,7 +66,11 @@ function update()
       metagui.setIcon(string.format("icon%s.png", metagui.inputData.iconSuffix or ""))
       metagui.queueFrameRedraw()
     end
-    _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    if currentTab.id ~= "selectTrait" then
+      _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    end
+    -- Can't do this in init for some reason.
+    traitBuffers(starPounds.getTrait() ~= nil)
   end
 
   if player.isAdmin() ~= isAdmin then
@@ -113,6 +125,10 @@ function reset:onClick()
       promises:add(world.sendEntityMessage(player.id(), "starPounds.reset"), function()
         checkSkills()
         resetInfoPanel()
+        traitButtons(true)
+        traitBuffers(false)
+        speciesTraitPanel:setVisible(true)
+        selectableTraitPanel:setVisible(true)
         local buttonIcon = "disabled.png"
         enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
       end)
@@ -124,7 +140,7 @@ function populateSkillTree()
   for _, tab in ipairs(tabs) do
     tab.title = " "
     tab.icon = string.format("icons/tabs/%s.png", tab.id)
-    tab.contents = copy(tabField.data)
+    tab.contents = copy(tabField.data.tabTemplate)
     tab.contents[1].children[1].id = tab.id.."_skillTree"
     tab.contents[1].children[1].children[3].id = tab.id.."_skillCanvas"
     tab.contents[1].children[1].children[4].id = tab.id.."_skillWidgets"
@@ -185,6 +201,97 @@ function populateSkillTree()
       _ENV[string.format("%sSkill_locked", skill.name)].onClick = function() widget.playSound("/sfx/interface/clickon_error.ogg") end
     end
   end
+end
+
+function buildTraitTab()
+  selectTrait = tabField:newTab(tabField.data.traitTab)
+  selectTrait.pretty = "Traits"
+  selectTrait.description = "This menu allows you to select a starting trait!\n\nTraits grant you skills, weight, and ^#b8eb00;XP^reset;! \n\nOnce selected, traits cannot be changed unless you reset. Choose wisely!"
+
+  if not currentTab then
+    currentTab = selectTrait
+  end
+
+  speciesTraitSelect.onClick = (function() setTrait(speciesTrait.id, true) end)
+  selectableTraitSelect.onClick = (function() setTrait(selectedTrait.id, false) end)
+  traitCycleLeft.onClick = traitCycleDecrease
+  traitCycleRight.onClick = traitCycleIncrease
+end
+
+function buildTraitPreview(traitType, trait)
+  _ENV[traitType.."TraitLabel"]:setText(trait.description)
+  if traitType == "species" then
+    _ENV[traitType.."TraitIcon"]:setFile(string.format("icons/traits/species/%s.png", trait.id))
+  else
+    _ENV[traitType.."TraitIcon"]:setFile(string.format("icons/traits/%s.png", trait.id))
+  end
+  -- Skill display stuff.
+  local slotCount = 0
+  local slotPosition = 1
+  for _, skill in ipairs(trait.skills or jarray()) do
+    slotCount = slotCount + 1
+  end
+  slotCount = math.min(slotCount, 5)
+  _ENV[traitType.."TraitSkills"].columns = slotCount
+  _ENV[traitType.."TraitSkills"]:setNumSlots(slotCount)
+  for _, skill in ipairs(trait.skills or jarray()) do
+    _ENV[traitType.."TraitSkills"]:setItem(slotPosition, {name = "starpoundsskill", count = 1, parameters = {skill = skill[1], level = skill[2]}})
+    _ENV[traitType.."TraitSkills"].children[slotPosition].hideRarity = true
+    slotPosition = slotPosition + 1
+  end
+  _ENV[traitType.."TraitSkills"]:setVisible(slotCount > 0)
+  _ENV[traitType.."TraitSkillsLabel"]:setVisible(slotCount == 0)
+  -- Default values for attributes. (Starting weight/milk/XP)
+  local attributes = jarray()
+  local attributeString = ""
+  if trait.weight then
+    attributes[#attributes + 1] = string.format("^#%s;Starting Weight:^reset; %slb", starPounds.stats.absorption.colour, trait.weight)
+  end
+  if trait.breasts then
+    attributes[#attributes + 1] = string.format("^#%s;Starting Milk:^reset; %s", starPounds.stats.breastProduction.colour, trait.breasts)
+  end
+  if trait.experience then
+    attributes[#attributes + 1] = string.format("^#%s;Starting XP:^reset; %s", starPounds.stats.experienceMultiplier.colour, trait.experience)
+  end
+  for i, attribute in ipairs(attributes) do
+    if i > 1 then attributeString = attributeString.."\n" end
+    attributeString = attributeString..attribute
+  end
+  if attributeString == "" then attributeString = "^red;None" end
+  _ENV[traitType.."TraitAttributes"]:setText(attributeString)
+end
+
+function populateTraitTab()
+  buildTraitTab()
+  local species = player.species()
+  speciesTrait = traits[species] or traits.none
+  speciesTrait.id = traits[species] and species or "none"
+  selectableTraits = jarray()
+  -- Add the 'No trait' option if it's not being used to replace the species.
+  -- Uses default as the id so that default and the bonus XP show up as the same trait with fetching functions.
+  if speciesTrait.id ~= "none" then
+    selectableTraits[1] = sb.jsonMerge(traits.none, {id = "none"})
+    if starPounds.getTrait() == "default" then selectedTraitIndex = 1 end
+  end
+  for i, trait in ipairs(root.assetJson("/scripts/starpounds/starpounds_traits.config:selectableTraits")) do
+    if starPounds.getTrait() == trait then selectedTraitIndex = i end
+    table.insert(selectableTraits, sb.jsonMerge(traits[trait], {id = trait}))
+  end
+  selectedTraitIndex = selectedTraitIndex or math.random(1, #selectableTraits)
+  selectedTrait = selectableTraits[selectedTraitIndex]
+
+  local hasTrait = starPounds.getTrait()
+  traitButtons(not hasTrait)
+  if (hasTrait == species) or (hasTrait == "default" and speciesTrait.id == "none") then
+    speciesTraitPanel:setVisible(true)
+    selectableTraitPanel:setVisible(false)
+  elseif hasTrait then
+    selectableTraitPanel:setVisible(true)
+    speciesTraitPanel:setVisible(false)
+  end
+
+  buildTraitPreview("selectable", selectedTrait)
+  buildTraitPreview("species", speciesTrait)
 end
 
 function makeSkillWidget(skill)
@@ -436,7 +543,9 @@ function tabField:onTabChanged(tab, previous)
   if currentTab then
     currentTab = tab
     resetInfoPanel()
-    _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    if currentTab.id ~= "selectTrait" then
+      _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    end
   end
 end
 
@@ -501,6 +610,69 @@ function unlockToggle:onClick()
     starPounds.setSkill(selectedSkill.name, (starPounds.getSkillLevel(selectedSkill.name) == 0) and 1 or 0)
     selectSkill(selectedSkill)
   end
+end
+
+function setTrait(trait, isSpecies)
+  if starPounds.setTrait(trait) then
+    traitButtons(false)
+    traitBuffers(true)
+    if isSpecies then
+      speciesTraitPanel:setVisible(true)
+      selectableTraitPanel:setVisible(false)
+    else
+      selectableTraitPanel:setVisible(true)
+      speciesTraitPanel:setVisible(false)
+    end
+    checkSkills()
+    widget.playSound("/sfx/interface/crafting_medical.ogg")
+  end
+end
+
+function traitCycleDecrease()
+  local hasTrait = starPounds.getTrait()
+  if not hasTrait then
+    selectedTraitIndex = (selectedTraitIndex - 2 + #selectableTraits) % #selectableTraits + 1
+    selectedTrait = selectableTraits[selectedTraitIndex]
+    buildTraitPreview("selectable", selectedTrait)
+  end
+end
+
+function traitCycleIncrease()
+  local hasTrait = starPounds.getTrait()
+  if not hasTrait then
+    selectedTraitIndex = (selectedTraitIndex % #selectableTraits) + 1
+    selectedTrait = selectableTraits[selectedTraitIndex]
+    buildTraitPreview("selectable", selectedTrait)
+  end
+end
+
+function traitButtons(enable)
+  speciesTraitSelect:setImage(
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png?border=1;00000000;00000000?crop=1;2;33;18", enable and "" or "Disabled")
+  )
+  selectableTraitSelect:setImage(
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png?border=1;00000000;00000000?crop=1;2;33;18", enable and "" or "Disabled")
+  )
+  traitCycleLeft:setImage(
+    string.format("traitCycleLeft%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleLeft%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleLeft%s.png?border=1;00000000;00000000?crop=1;2;12;15", enable and "" or "Disabled")
+  )
+  traitCycleRight:setImage(
+    string.format("traitCycleRight%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleRight%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleRight%s.png?border=1;00000000;00000000?crop=1;2;12;15", enable and "" or "Disabled")
+  )
+end
+
+
+function traitBuffers(enable)
+  startBuffer:setVisible(enable)
+  endBuffer:setVisible(enable)
 end
 
 function statInfo:onClick()

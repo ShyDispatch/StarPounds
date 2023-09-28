@@ -8,47 +8,7 @@ function init()
 	storage.starPounds = storage.starPounds or starPounds.baseData
 	object.setInteractive(true)
 
-	dialog = {
-		swallow = {
-			"I was starving, thanks for the snack~!",
-			"Try not to slosh around too much.",
-			"I can't wait to make you a part of me~!",
-			"So what do you think <player>? Are you going to my boobs, belly, or butt?",
-			"I really appreciate you doing this <player>~.",
-			"Too bad you won't be here to rub my belly~."
-		},
-		struggle = {
-			"Squirming only makes it go quicker~.",
-			"Hey! I can feel that~!",
-			"Should I even call you <player>, or should I just call you food?",
-			"It's a bit too late to be having second thoughts about this <player>.",
-			"This feels nice, but I really wish there was more of you~."
-		},
-		stop = {
-			"H-Hey! Come back! I'm still hungry...",
-			"Please come back! My belly misses you...",
-			"So now you don't want to be a part of me?",
-			"Don't you want to be my food <player>?",
-			"Just give me a few more minutes! Please?",
-			"Where do you think you're going <player>?",
-			"Hey! Get back in my belly!",
-			"Come on <player>, you know you want to slide back in~."
-		},
-		digested = {
-			"Thanks for the meal~!",
-			"You were delicious~!",
-			"That felt great~.",
-			"Looks like boobs won out~.",
-			"My tummy looks rounder already, thanks <player>~.",
-			"Thanks for the added rear padding~.",
-			"Look how soft you made me~!",
-			"Thanks for the added wobble~.",
-			"Next time you should invite your friends~.",
-			"Come back soon, my belly will be waiting~."
-		}
-	}
-
-
+	dialog = config.getParameter("dialog")
 	regurgitateTimer = 0
 end
 
@@ -175,20 +135,22 @@ starPounds = {
 		if eatenEntity then return false end
 		-- Ask the entity to be eaten, add to stomach if the promise is successful.
 		promises:add(world.sendEntityMessage(preyId, "starPounds.getEaten", entity.id()), function(prey)
-			table.insert(storage.starPounds.entityStomach, {
-				id = preyId,
-				weight = prey.weight or 0,
-				bloat = prey.bloat or 0,
-				experience = prey.experience or 0,
-				type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"})
-			})
-			-- Swallow/stomach rumble
-			playSound("swallow", 1 + math.random(0, 10)/100, 1)
-			playSound("digest", 1, 0.75)
-			playSound("talk", 1, 1.25)
-			animator.burstParticleEmitter("emotehappy")
-			object.say(tostring(dialog.swallow[math.random(1, #dialog.swallow)]:gsub("<player>", world.entityName(preyId).."^reset;")))
-			animator.setAnimationState("interactState", "swallow", true)
+			if prey then
+				table.insert(storage.starPounds.entityStomach, {
+					id = preyId,
+					weight = prey.weight or 0,
+					bloat = prey.bloat or 0,
+					experience = prey.experience or 0,
+					type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"})
+				})
+				-- Swallow/stomach rumble
+				playSound("swallow", 1 + math.random(0, 10)/100, 1)
+				playSound("digest", 1, 0.75)
+				playSound("talk", 1, 1.25)
+				animator.burstParticleEmitter("emotehappy")
+				object.say(tostring(dialog.swallow[math.random(1, #dialog.swallow)]:gsub("<player>", world.entityName(preyId).."^reset;")))
+				animator.setAnimationState("interactState", "swallow", true)
+			end
 		end)
 		return true
 	end,

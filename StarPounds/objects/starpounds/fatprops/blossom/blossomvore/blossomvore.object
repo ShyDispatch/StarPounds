@@ -18,6 +18,49 @@
   "novakidDescription" : "That do be a fatass bug! Makes me wonder how he got so plump.",
   "throgDescription" : "Remarkably fat. For a bug.",
 
+  "dialog": {
+    "swallow": [
+      "Not every day food comes to me~",
+			"You went down easy, <player>~",
+			"Didn't think you'd want to be bug butt so bad~",
+			"Aaaah~ You tasted nice, <player>~",
+			"Mrrrrrrr~ Feeling that bulge go down is always the best~",
+			"Mmmm~ Delicious~",
+			"Aaaah~ Guess you're gonna be my assfat, <player>~",
+			"Hope you don't mind the belly rubs I'm giving myself~",
+			"Nothing like a live, squirmy meal to treat myself~"
+    ],
+    "struggle": [
+      "Yanno, I've eaten muuuuuch bigger~",
+			"Mmmm~ Keep up the massage in there~",
+			"You're a good belly pet, <player>~",
+			"Mrrrrr~ Your squirming feels sooooo good~",
+			"Hey you wanted in, now settle down and let the belly churn ya~.",
+			"We both know where this is going, <player>~",
+			"Shush, <player>- you'll on be my butt soon enough~",
+			"Bwuh, feisty lil snack!~"
+    ],
+    "stop": [
+      "Oh... Bored of me already?",
+			"You have other things to do? Okay...",
+			"Don't want to be bug butt?",
+			"Bweh, fiiiiiine.",
+			"I thought you wanted to be food?"
+    ],
+    "digested": [
+      "You make good assfat, <player>~",
+			"Gonna have to write your name on my butt... <player>, was it?~",
+			"You were good food, <player>~",
+			"Think you'll keep me full for... an hour or so~",
+			"That was fun while it lasted... At least I'm a little thicker from it~",
+			"Thanks for volunteering, snack~",
+			"I think you look cuter wobbling around back there~",
+			"Mmm~ I feel so much softer~",
+			"Aaah~ That hit the spot",
+			"My pants are feeling tighter~"
+    ]
+  },
+
   "inventoryIcon" : "blossomvore.png:default.default",
 
   "orientations" : [
@@ -35,7 +78,7 @@
   ],
 
   "scripts" : [
-    "blossomvore.lua",
+    "/objects/starpounds/fatprops/voreobject.lua",
     "/scripts/npcToyObject.lua"
    ],
   "scriptDelta" : 1,

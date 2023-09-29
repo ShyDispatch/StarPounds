@@ -269,13 +269,13 @@ function populateTraitTab()
   selectableTraits = jarray()
   -- Add the 'No trait' option if it's not being used to replace the species.
   -- Uses default as the id so that default and the bonus XP show up as the same trait with fetching functions.
-  if speciesTrait.id ~= "none" then
-    selectableTraits[1] = sb.jsonMerge(traits.none, {id = "none"})
-    if starPounds.getTrait() == "default" then selectedTraitIndex = 1 end
-  end
   for i, trait in ipairs(root.assetJson("/scripts/starpounds/starpounds_traits.config:selectableTraits")) do
     if starPounds.getTrait() == trait then selectedTraitIndex = i end
     table.insert(selectableTraits, sb.jsonMerge(traits[trait], {id = trait}))
+  end
+  if speciesTrait.id ~= "none" then
+    selectableTraits[#selectableTraits + 1] = sb.jsonMerge(traits.none, {id = "none"})
+    if starPounds.getTrait() == "default" then selectedTraitIndex = #selectableTraits + 1 end
   end
   selectedTraitIndex = selectedTraitIndex or math.random(1, #selectableTraits)
   selectedTrait = selectableTraits[selectedTraitIndex]

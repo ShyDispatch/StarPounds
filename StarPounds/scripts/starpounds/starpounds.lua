@@ -725,6 +725,12 @@ starPounds.parseSkills = function()
 end
 
 starPounds.getTrait = function()
+	-- Reset the trait if it doesn't exist.
+	local trait = storage.starPounds.trait
+	if trait and not starPounds.traits[trait] then
+		starPounds.resetTrait()
+		return
+	end
 	return storage.starPounds.trait
 end
 
@@ -758,6 +764,10 @@ starPounds.setTrait = function(trait)
 	end
 	-- Set the trait successfully.
 	return true
+end
+
+starPounds.resetTrait = function()
+	storage.starPounds.trait = nil
 end
 
 starPounds.getSkillBonus = function(stat)
@@ -2171,6 +2181,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.getAccessoryModifiers", simpleHandler(starPounds.getAccessoryModifiers))
 	message.setHandler("starPounds.getTrait", simpleHandler(starPounds.getTrait))
 	message.setHandler("starPounds.setTrait", localHandler(starPounds.setTrait))
+	message.setHandler("starPounds.resetTrait", localHandler(starPounds.resetTrait))
 	-- Handlers for affecting the entity.
 	message.setHandler("starPounds.digest", simpleHandler(starPounds.digest))
 	message.setHandler("starPounds.gurgle", simpleHandler(starPounds.gurgle))

@@ -1418,9 +1418,10 @@ starPounds.voreDigest = function(dt)
 	-- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
 	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach3, 0), 3)
 	local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
+	local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
 	-- Reduce health of all entities.
 	for _, prey in pairs(storage.starPounds.entityStomach) do
-		world.sendEntityMessage(prey.id, "starPounds.getDigested",  (damageMultiplier/vorePenalty) * dt)
+		world.sendEntityMessage(prey.id, "starPounds.getDigested", (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
 	end
 end
 
@@ -1761,7 +1762,6 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			local preyHealth = world.entityHealth(prey.id)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local struggleStrength = (1 - starPounds.getStat("struggleResistance")) * struggleStrength/math.max(1, status.stat("powerMultiplier"))
-			local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
 			if math.random() < (world.entityType(preyId) == "player" and starPounds.settings.vorePlayerEscape or (0.5 * struggleStrength)) and escape then
 				if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > starPounds.settings.voreUnescapableHealth) then
 					starPounds.releaseEntity(preyId)
@@ -1781,7 +1781,9 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 
 			if not starPounds.hasOption("disablePredDigestion") then
 				-- 1 second worth of digestion per struggle.
-				world.sendEntityMessage(preyId, "starPounds.getDigested", damageMultiplier)
+				local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
+				local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
+				world.sendEntityMessage(preyId, "starPounds.getDigested", damageMultiplier, protectionMultiplier)
 			end
 
 			if not starPounds.hasOption("disableStruggleSounds") then
@@ -2027,11 +2029,12 @@ starPounds.predEaten = function(predId)
 	return true
 end
 
-starPounds.getDigested = function(digestionRate)
+starPounds.getDigested = function(digestionRate, protectionMultiplier)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	digestionRate = math.max(tonumber(digestionRate) or 0, 0)
+	protectionMultiplier = math.max(tonumber(protectionMultiplier) or 1, 0)
 	if digestionRate == 0 then return end
 	-- Don't do anything if disabled.
 	if starPounds.hasOption("disablePreyDigestion") then return end
@@ -2039,7 +2042,8 @@ starPounds.getDigested = function(digestionRate)
 	if not storage.starPounds.pred then return end
 	-- 0.5% of current health + 0.5 or 0.5% max health, whichever is smaller. (Stops low hp entities dying instantly)
 	local amount = (status.resource("health") * 0.005 + math.min(0.005 * status.resourceMax("health"), 1)) * digestionRate
-	amount = root.evalFunction2("protection", amount, status.stat("protection"))
+	amount = root.evalFunction2("protection", amount, status.stat("protection") * protectionMultiplier)
+	world.debugText(tostring(math.round(root.evalFunction2("protection", digestionRate, status.stat("protection") * protectionMultiplier), 2)), mcontroller.position(), "green")
 	-- Remove the health.
 	status.overConsumeResource("health", amount)
 

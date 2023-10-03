@@ -3,7 +3,7 @@ require "/scripts/messageutil.lua"
 function init()
   self.chatOptions = config.getParameter("chatOptions", {})
   self.chatTimer = 0
-  self.sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config")
+  self.sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes")
 	self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
   self.activationTime = config.getParameter("activationTime") or 60
 

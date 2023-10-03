@@ -8,7 +8,7 @@ end
 
 starPounds = {
 	settings = root.assetJson("/scripts/starpounds/starpounds.config:settings"),
-	sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config"),
+	sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes"),
 	stats = root.assetJson("/scripts/starpounds/starpounds_stats.config"),
 	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills"),
 	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits"),

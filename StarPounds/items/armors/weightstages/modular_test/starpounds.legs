@@ -1,0 +1,17 @@
+{
+  "itemName" : "starpoundslegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",
+  "description" : "-todo-",
+  "shortdescription" : "StarPounds Chest",
+  "tooltipKind" : "starpoundsarmor",
+
+  "starPounds" : {
+    "type": "legs"
+  },
+
+  "builder" : "/items/buildscripts/buildstarpoundsarmor.lua"
+}

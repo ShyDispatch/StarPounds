@@ -2043,10 +2043,8 @@ starPounds.getDigested = function(digestionRate, protectionMultiplier)
 	-- 0.5% of current health + 0.5 or 0.5% max health, whichever is smaller. (Stops low hp entities dying instantly)
 	local amount = (status.resource("health") * 0.005 + math.min(0.005 * status.resourceMax("health"), 1)) * digestionRate
 	amount = root.evalFunction2("protection", amount, status.stat("protection") * protectionMultiplier)
-	world.debugText(tostring(math.round(root.evalFunction2("protection", digestionRate, status.stat("protection") * protectionMultiplier), 2)), mcontroller.position(), "green")
 	-- Remove the health.
 	status.overConsumeResource("health", amount)
-
 	if not status.resourcePositive("health") then
 		local items = {}
 		for _, slot in ipairs({"head", "chest", "legs", "back"}) do

@@ -31,7 +31,7 @@ function build(directory, config, parameters, level, seed)
   local imagePath = string.format("%s%s", species, size)
   local variantImagePath = string.format("%s%s", imagePath, variant)
 
-  config.inventoryIcon = string.format("%s%sicons.png:%s", directory, imagePath, config.starPounds.type)
+  config.inventoryIcon = string.format("%s%sicons.png:%s", directory, imagePath, config.starPounds.type:gsub("legs", "pants"))
   config.statusEffects = jarray()
   if starPoundsConfig.size then
     table.insert(config.statusEffects, "starpounds"..starPoundsConfig.size)

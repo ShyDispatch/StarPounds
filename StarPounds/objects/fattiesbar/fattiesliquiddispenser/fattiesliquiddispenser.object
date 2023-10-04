@@ -28,14 +28,14 @@
     },
     "buyFactor" : 1.0,
     "items" : [
-  	  { "item" : { "name" : "liquidmilk", "parameters" : { "price" : 5 } } },
-  	  { "item" : { "name" : "starpoundsliquidchocolate", "parameters" : { "price" : 10 } } },
-  	  { "item" : { "name" : "starpoundsliquidjelly", "parameters" : { "price" : 10 } } },
-  	  { "item" : { "name" : "starpoundsliquidsoda", "parameters" : { "price" : 10 } } },
-  	  { "item" : { "name" : "liquidlard", "parameters" : { "price" : 15 } } },
-  	  { "item" : { "name" : "liquidgrease", "parameters" : { "price" : 15 } } },
-  	  { "item" : { "name" : "starpoundsliquidhoney", "parameters" : { "price" : 15 } } },
-  	  { "item" : { "name" : "starpoundsliquidcalorium", "parameters" : { "price" : 20 } } }
+  	  { "item" : { "name" : "liquidmilk", "parameters" : { "price" : 10 } } },
+  	  { "item" : { "name" : "starpoundsliquidchocolate", "parameters" : { "price" : 20 } } },
+  	  { "item" : { "name" : "starpoundsliquidjelly", "parameters" : { "price" : 20 } } },
+  	  { "item" : { "name" : "starpoundsliquidsoda", "parameters" : { "price" : 20 } } },
+  	  { "item" : { "name" : "liquidlard", "parameters" : { "price" : 30 } } },
+  	  { "item" : { "name" : "liquidgrease", "parameters" : { "price" : 30 } } },
+  	  { "item" : { "name" : "starpoundsliquidhoney", "parameters" : { "price" : 30 } } },
+  	  { "item" : { "name" : "starpoundsliquidcalorium", "parameters" : { "price" : 40 } } }
     ]
   },
 

@@ -102,8 +102,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	end
 	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
 	if amount == 0 then return end
-	-- Costs double the food value to produce.
-	local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type] * 2
+	local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type]
 	local milkCost = 0
 	local milkProduced = 0
 	local milkCurrent = storage.starPounds.breasts

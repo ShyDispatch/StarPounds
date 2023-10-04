@@ -5,6 +5,7 @@
   "inventoryIcon" : "starpoundshoneyicon.png",
   "shortdescription" : "Honey",
   "description" : "Delicious, pure honey.",
+  "learnBlueprintsOnPickup": ["sugar"],
 
   "liquid" : "bees_liquidhoney",
   "price" : 0

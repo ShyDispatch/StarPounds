@@ -1707,7 +1707,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	-- Fancy little particles similar to the normal death animation.
 	if not starPounds.hasOption("disableBelchParticles") then
 		local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
-		local particle = {sb.jsonMerge(starPounds.settings.particleTemplates.vore, {})}
+		local particle = sb.jsonMerge(starPounds.settings.particleTemplates.vore, {})
 		particle.color = {188, 235, 96}
 		particle.initialVelocity = vec2.add({(friction and 2 or 3) * mcontroller.facingDirection(), 0}, vec2.add(mcontroller.velocity(), {0, world.gravity(mouthPosition)/62.5})) -- Weird math but it works I guess.
 		particle.finalVelocity = {mcontroller.facingDirection(), 10}

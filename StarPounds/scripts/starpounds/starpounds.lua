@@ -1758,12 +1758,9 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 	-- Only continue if they're actually eaten.
 	for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
 		if prey.id == preyId then
-			sb.logInfo("Strength: "..struggleStrength)
 			local preyHealth = world.entityHealth(prey.id)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local struggleStrength = struggleStrength/math.max(1, status.stat("powerMultiplier"))
-			sb.logInfo("Power Multiplier: "..math.max(1, status.stat("powerMultiplier")))
-			sb.logInfo("Strength (After Power): "..struggleStrength)
 			if math.random() < (world.entityType(preyId) == "player" and starPounds.settings.vorePlayerEscape or (0.5 * struggleStrength)) and escape then
 				if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > starPounds.settings.voreUnescapableHealth) then
 					starPounds.releaseEntity(preyId)
@@ -1773,8 +1770,6 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			if status.isResource("energy") then
 				local struggleMultiplier = math.max(0, 1 - starPounds.getStat("struggleResistance"))
 				local energyAmount = struggleMultiplier * (starPounds.settings.voreStruggleEnergyBase + starPounds.settings.voreStruggleEnergy * struggleStrength)
-				sb.logInfo("Resistance Multiplier: "..struggleMultiplier)
-				sb.logInfo("Energy Cost: "..energyAmount)
 				if status.isResource("energyRegenBlock") and status.resourceLocked("energy") then
 					status.modifyResource("energyRegenBlock", status.stat("energyRegenBlockTime") * starPounds.settings.voreStruggleEnergyLock * struggleMultiplier * struggleStrength)
 				elseif status.resource("energy") > energyAmount then
@@ -1883,21 +1878,24 @@ starPounds.eaten = function(dt)
 	-- Stop lounging.
 	mcontroller.resetAnchorState()
 	-- Loose calculation for how "powerful" the prey is.
-	local struggleStrength = math.max(1, status.stat("powerMultiplier")) * (0.5 + status.resourcePercentage("health") * 0.5)
+	local healthMultiplier = 0.5 + status.resourcePercentage("health") * 0.5
+	local struggleStrength = math.max(1, status.stat("powerMultiplier")) * healthMultiplier
 	if starPounds.type == "npc" or starPounds.type == "monster" then
 		if starPounds.type == "npc" then
 			-- Stop NPCs attacking.
 			npc.endPrimaryFire()
 			npc.endAltFire()
 		else
-			-- Monsters don't have a powerMultiplier stat.
+			-- Monsters don't (really) use the powerMultiplier stat.
 			pcall(animator.setAnimationState, "body", "idle")
 			pcall(animator.setAnimationState, "damage", "none")
 			pcall(animator.setGlobalTag, "hurt", "hurt")
-			struggleStrength = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1) * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) + status.stat("powerMultiplier")) * (0.5 + status.resourcePercentage("health") * 0.5)
+			local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
+			-- Using the NPC function because the monster one gets stupid high by comparison.
+			struggleStrength = struggleStrength * weightRatio * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1)
 		end
 		mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
-		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * (0.5 + status.resourcePercentage("health") / 2)) or (math.random(10, 15) / 10)
+		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * healthMultiplier) or (math.random(10, 15) / 10)
 		if starPounds.cycle <= 0 then
 			world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
 			starPounds.cycle = math.random(10, 15) / 10

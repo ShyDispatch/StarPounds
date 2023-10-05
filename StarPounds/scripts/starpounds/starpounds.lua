@@ -1882,10 +1882,10 @@ starPounds.eaten = function(dt)
 	local entityType = world.entityType(entity.id())
 	if entityType == "npc" or entityType == "monster" then
 		mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
-		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * (0.5 + status.resourcePercentage("health") / 2)) or 1
+		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * (0.5 + status.resourcePercentage("health") / 2)) or  (math.random(10, 15) / 10)
 		if starPounds.cycle <= 0 then
 			world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
-			starPounds.cycle = math.random(5, 15) / 10
+			starPounds.cycle = math.random(10, 15) / 10
 		end
 		if entityType == "npc" then
 			-- Stop NPCs attacking.
@@ -2120,6 +2120,8 @@ starPounds.getReleased = function(source, overrideStatus)
 	-- Remove the pred id from storage.
 	storage.starPounds.pred = nil
 	storage.starPounds.spectatingPred = nil
+	-- Reset struggle cycle.
+	starPounds.cycle = nil
 	status.clearPersistentEffects("starpoundseaten")
 	status.removeEphemeralEffect("starpoundseaten")
 	entity.setDamageOnTouch(true)

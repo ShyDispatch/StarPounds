@@ -207,7 +207,7 @@ starPounds.belch = function(volume, pitch, loops, skipParticles)
 	if mcontroller.zeroG() then
 		mcontroller.addMomentum({-0.5 * facingDirection * (0.5 + starPounds.weightMultiplier * 0.5) * particleCount, 0})
 	end
-	world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition,  mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
+	world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
 		damageKind = "hidden",
 		universalDamage = false,
 		onlyHitTerrain = true,
@@ -235,7 +235,7 @@ starPounds.slosh = function(dt)
 		local activationMultiplier = starPounds.sloshActivations/sloshActivationCount
 		local sloshEffectiveness = (1 - (starPounds.sloshTimer/starPounds.settings.sloshTimer)) * activationMultiplier
 		-- Sloshy sound, with volume increasing until activated.
-		local soundMultiplier =  0.65 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
+		local soundMultiplier = 0.65 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
 		local pitchMultiplier = 1.25 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2)
 		world.sendEntityMessage(entity.id(), "starPounds.playSound", "slosh", soundMultiplier, pitchMultiplier)
 		if activationMultiplier > 0 then
@@ -565,14 +565,14 @@ starPounds.gainExperience = function(amount, multiplier, isLevel)
 end
 
 starPounds.setOptionsMultipliers = function(options)
-  storage.starPounds.optionMultipliers = {}
-  for _, option in ipairs(options) do
-    if option.statModifiers and starPounds.hasOption(option.name) then
+	storage.starPounds.optionMultipliers = {}
+	for _, option in ipairs(options) do
+		if option.statModifiers and starPounds.hasOption(option.name) then
 			for _, statModifier in ipairs(option.statModifiers) do
-	      storage.starPounds.optionMultipliers[statModifier[1]] = (storage.starPounds.optionMultipliers[statModifier[1]] or 1) + statModifier[2]
+				storage.starPounds.optionMultipliers[statModifier[1]] = (storage.starPounds.optionMultipliers[statModifier[1]] or 1) + statModifier[2]
 			end
-    end
-  end
+		end
+	end
 end
 
 starPounds.getOptionsMultiplier = function(stat)
@@ -653,8 +653,8 @@ starPounds.upgradeSkill = function(skill, cost)
 	storage.starPounds.experience = math.round(experienceProgress * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	starPounds.gainExperience()
 	starPounds.parseSkills()
-  starPounds.updateStats(true)
-  starPounds.optionChanged = true
+	starPounds.updateStats(true)
+	starPounds.optionChanged = true
 end
 
 starPounds.forceUnlockSkill = function(skill, level)
@@ -672,8 +672,8 @@ starPounds.forceUnlockSkill = function(skill, level)
 	starPounds.parseSkills()
 	-- Update stats if we're already up and running.
 	if starPounds.currentSize then
-	  starPounds.updateStats(true)
-	  starPounds.optionChanged = true
+	 	starPounds.updateStats(true)
+		starPounds.optionChanged = true
 	end
 end
 
@@ -689,24 +689,24 @@ starPounds.setSkill = function(skill, level)
 		storage.starPounds.skills[skill][1] = math.max(math.min(level, starPounds.getSkillUnlockedLevel(skill)), 0)
 	end
 	starPounds.parseSkills()
-  starPounds.updateStats(true)
-  starPounds.optionChanged = true
+	starPounds.updateStats(true)
+	starPounds.optionChanged = true
 end
 
 starPounds.parseSkillStats = function()
-  storage.starPounds.stats = {}
-  for skillName in pairs(storage.starPounds.skills) do
-    local skill = starPounds.skills[skillName]
-    if skill.type == "addStat" then
-      storage.starPounds.stats[skill.stat] = (storage.starPounds.stats[skill.stat] or 0) + (skill.amount * starPounds.getSkillLevel(skillName))
-    elseif skill.type == "subtractStat" then
-      storage.starPounds.stats[skill.stat] = (storage.starPounds.stats[skill.stat] or 0) - (skill.amount * starPounds.getSkillLevel(skillName))
-    end
-    if storage.starPounds.stats[skill.stat] == 0 then
-      storage.starPounds.stats[skill.stat] = nil
-    end
-  end
-  starPounds.backup()
+	storage.starPounds.stats = {}
+	for skillName in pairs(storage.starPounds.skills) do
+		local skill = starPounds.skills[skillName]
+		if skill.type == "addStat" then
+			storage.starPounds.stats[skill.stat] = (storage.starPounds.stats[skill.stat] or 0) + (skill.amount * starPounds.getSkillLevel(skillName))
+		elseif skill.type == "subtractStat" then
+			storage.starPounds.stats[skill.stat] = (storage.starPounds.stats[skill.stat] or 0) - (skill.amount * starPounds.getSkillLevel(skillName))
+		end
+		if storage.starPounds.stats[skill.stat] == 0 then
+		storage.starPounds.stats[skill.stat] = nil
+		end
+	end
+	starPounds.backup()
 end
 
 starPounds.parseSkills = function()
@@ -896,10 +896,10 @@ starPounds.hunger = function(dt)
 		local threshhold = math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt
 		-- Check if the player is about to starve.
 		local isStarving = status.resource("food") < (math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt)
-	  -- Rumble sound every 5 seconds when hungry.
-	  if (isStarving or status.uniqueStatusEffectActive("hungry")) and not starPounds.hasOption("disableRumbles") and math.random(1, math.round(5/dt)) == 1 then
-	  	world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", 0.75, (math.random(90,110)/100))
-	  end
+		-- Rumble sound every 5 seconds when hungry.
+		if (isStarving or status.uniqueStatusEffectActive("hungry")) and not starPounds.hasOption("disableRumbles") and math.random(1, math.round(5/dt)) == 1 then
+			world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", 0.75, (math.random(90,110)/100))
+		end
 		if isStarving then
 			local minimumOffset = starPounds.getSkillLevel("minimumSize")
 			local foodAmount = math.min((minimumOffset > 0 and (storage.starPounds.weight - starPounds.sizes[minimumOffset + 1].weight) or storage.starPounds.weight) * 0.1, threshhold - status.resource("food"))
@@ -1728,7 +1728,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {102, 0, 216}, fullbright = true, collidesLiquid = false, timeToLive = 0.5, light = {134, 71, 179, 255}}})
 		end
 
-		world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition,  mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
+		world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
 			damageKind = "hidden",
 			universalDamage = false,
 			onlyHitTerrain = true,
@@ -1758,9 +1758,12 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 	-- Only continue if they're actually eaten.
 	for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
 		if prey.id == preyId then
+			sb.logInfo("Strength: "..struggleStrength)
 			local preyHealth = world.entityHealth(prey.id)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
-			local struggleStrength = (1 - starPounds.getStat("struggleResistance")) * struggleStrength/math.max(1, status.stat("powerMultiplier"))
+			local struggleStrength = struggleStrength/math.max(1, status.stat("powerMultiplier"))
+			sb.logInfo("Power Multiplier: "..math.max(1, status.stat("powerMultiplier")))
+			sb.logInfo("Strength (After Power): "..struggleStrength)
 			if math.random() < (world.entityType(preyId) == "player" and starPounds.settings.vorePlayerEscape or (0.5 * struggleStrength)) and escape then
 				if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > starPounds.settings.voreUnescapableHealth) then
 					starPounds.releaseEntity(preyId)
@@ -1768,9 +1771,12 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			end
 
 			if status.isResource("energy") then
-				local energyAmount = starPounds.settings.voreStruggleEnergyBase + starPounds.settings.voreStruggleEnergy * struggleStrength
+				local struggleMultiplier = math.max(0, 1 - starPounds.getStat("struggleResistance"))
+				local energyAmount = struggleMultiplier * (starPounds.settings.voreStruggleEnergyBase + starPounds.settings.voreStruggleEnergy * struggleStrength)
+				sb.logInfo("Resistance Multiplier: "..struggleMultiplier)
+				sb.logInfo("Energy Cost: "..energyAmount)
 				if status.isResource("energyRegenBlock") and status.resourceLocked("energy") then
-					status.modifyResource("energyRegenBlock", math.min(status.stat("energyRegenBlockTime") * starPounds.settings.voreStruggleEnergyLock * struggleStrength))
+					status.modifyResource("energyRegenBlock", status.stat("energyRegenBlockTime") * starPounds.settings.voreStruggleEnergyLock * struggleMultiplier * struggleStrength)
 				elseif status.resource("energy") > energyAmount then
 					status.modifyResource("energy", -energyAmount)
 				else
@@ -1878,16 +1884,8 @@ starPounds.eaten = function(dt)
 	mcontroller.resetAnchorState()
 	-- Loose calculation for how "powerful" the prey is.
 	local struggleStrength = math.max(1, status.stat("powerMultiplier")) * (0.5 + status.resourcePercentage("health") * 0.5)
-
-	local entityType = world.entityType(entity.id())
-	if entityType == "npc" or entityType == "monster" then
-		mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
-		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * (0.5 + status.resourcePercentage("health") / 2)) or  (math.random(10, 15) / 10)
-		if starPounds.cycle <= 0 then
-			world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
-			starPounds.cycle = math.random(10, 15) / 10
-		end
-		if entityType == "npc" then
+	if starPounds.type == "npc" or starPounds.type == "monster" then
+		if starPounds.type == "npc" then
 			-- Stop NPCs attacking.
 			npc.endPrimaryFire()
 			npc.endAltFire()
@@ -1898,7 +1896,13 @@ starPounds.eaten = function(dt)
 			pcall(animator.setGlobalTag, "hurt", "hurt")
 			struggleStrength = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1) * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) + status.stat("powerMultiplier")) * (0.5 + status.resourcePercentage("health") * 0.5)
 		end
-	elseif entityType == "player" then
+		mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
+		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * (0.5 + status.resourcePercentage("health") / 2)) or (math.random(10, 15) / 10)
+		if starPounds.cycle <= 0 then
+			world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
+			starPounds.cycle = math.random(10, 15) / 10
+		end
+	elseif starPounds.type == "player" then
 		-- Follow the pred's position, struggle if the player is using movement keys.
 		local horizontalDirection = (mcontroller.xVelocity() > 0) and 1 or ((mcontroller.xVelocity() < 0) and -1 or 0)
 		local verticalDirection = (mcontroller.yVelocity() > 0) and 1 or ((mcontroller.yVelocity() < 0) and -1 or 0)
@@ -2258,7 +2262,7 @@ starPounds.reset = function()
 	if starPounds.type == "player" then
 		for _, v in ipairs(player.availableTechs()) do
 			if v:find("starpounds") then
-    		player.makeTechUnavailable(v)
+				player.makeTechUnavailable(v)
 			end
 		end
 	end
@@ -2267,12 +2271,12 @@ end
 
 starPounds.resetConfirm = function()
 	local confirmLayout = root.assetJson("/interface/confirmation/resetstarpoundsconfirmation.config")
-  confirmLayout.images.portrait = world.entityPortrait(player.id(), "full")
-  promises:add(player.confirm(confirmLayout), function(response)
-    if response then
-      starPounds.reset()
-    end
-  end)
+	confirmLayout.images.portrait = world.entityPortrait(player.id(), "full")
+	promises:add(player.confirm(confirmLayout), function(response)
+		if response then
+			starPounds.reset()
+		end
+	end)
 	return true
 end
 

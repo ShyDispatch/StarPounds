@@ -235,7 +235,7 @@ starPounds.slosh = function(dt)
 		local activationMultiplier = starPounds.sloshActivations/sloshActivationCount
 		local sloshEffectiveness = (1 - (starPounds.sloshTimer/starPounds.settings.sloshTimer)) * activationMultiplier
 		-- Sloshy sound, with volume increasing until activated.
-		local soundMultiplier =  0.45 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
+		local soundMultiplier =  0.65 * (0.5 + 0.5 * math.min(starPounds.stomach.contents/starPounds.settings.stomachCapacity, 1)) * activationMultiplier
 		local pitchMultiplier = 1.25 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2)
 		world.sendEntityMessage(entity.id(), "starPounds.playSound", "slosh", soundMultiplier, pitchMultiplier)
 		if activationMultiplier > 0 then

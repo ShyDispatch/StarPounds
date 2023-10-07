@@ -439,18 +439,21 @@ starPounds.updateStats = function(force)
 	if not storage.starPounds.enabled then return end
 	-- Give the entity hitbox, bonus stats, and effects based on fatness.
 	local size = starPounds.currentSize
-	local sizeIndex = starPounds.currentSizeIndex
 	if oldWeightMultiplier ~= starPounds.weightMultiplier or force then
-		local targetSize = starPounds.settings.targetSize
+		-- Shouldn't activate at base size, so both indexes are reduced by one.
+		local sizeIndex = starPounds.currentSizeIndex - 1
+		local targetSize = starPounds.settings.targetSize - 1
+		local applyBonuses = sizeIndex >= targetSize
+		local bonusEffectiveness = math.min(1, (sizeIndex - 1)/(targetSize - 1))
 		status.setPersistentEffects("starpounds", {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
 			{stat = "foodDelta", effectiveMultiplier = starPounds.hasOption("disableHunger") and 0 or math.round(starPounds.getStat("hunger"), 2)},
 			{stat = "grit", amount = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0},
 			{stat = "fallDamageMultiplier", effectiveMultiplier = 1 + size.healthBonus * (1 - starPounds.getStat("fallDamageReduction"))},
-			{stat = "iceStatusImmunity", amount = sizeIndex >= targetSize and starPounds.getSkillLevel("iceImmunity") or 0},
-			{stat = "poisonStatusImmunity", amount = sizeIndex >= targetSize and starPounds.getSkillLevel("poisonImmunity") or 0},
-			{stat = "iceResistance", amount = math.min(starPounds.getStat("iceResistance") * (sizeIndex - 1)/targetSize, starPounds.getStat("iceResistance"))},
-			{stat = "poisonResistance", amount = math.min(starPounds.getStat("poisonResistance") * (sizeIndex - 1)/targetSize, starPounds.getStat("poisonResistance"))}
+			{stat = "iceStatusImmunity", amount = applyBonuses and starPounds.getSkillLevel("iceImmunity") or 0},
+			{stat = "poisonStatusImmunity", amount = applyBonuses and starPounds.getSkillLevel("poisonImmunity") or 0},
+			{stat = "iceResistance", amount = starPounds.getStat("iceResistance") * bonusEffectiveness},
+			{stat = "poisonResistance", amount = starPounds.getStat("poisonResistance") * bonusEffectiveness}
 		})
 	end
 	-- Check if the entity is using a morphball (Tech patch bumps this number for the morphball).

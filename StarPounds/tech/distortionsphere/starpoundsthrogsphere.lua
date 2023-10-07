@@ -6,7 +6,6 @@ function init()
   self.baseParameters = sb.jsonMerge(mcontroller.baseParameters(), config.getParameter("transformedMovementParameters"))
   self.baseCollisionPoly = self.baseParameters.collisionPoly
   self.baseBallRadius = self.ballRadius
-  self.weightMultiplier = 1
   self.scale = 1
   self.sizeCap = world.type() == "unknown" and 2.5 or 4
   self.projectiles = jarray()
@@ -23,8 +22,8 @@ end
 
 function update(args)
   starPounds = getmetatable ''.starPounds
-  self.weightMultiplier = self.shrunk and 1 or 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
-  self.scale = self.shrunk and 1 or math.min(math.floor(0.5 + 10 * self.weightMultiplier ^ (1/3)) * 0.1, self.sizeCap)
+  local weightMultiplier = self.shrunk and 1 or 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
+  self.scale = self.shrunk and 1 or math.min(math.floor(0.5 + 10 * weightMultiplier ^ (1/3)) * 0.1, self.sizeCap)
 
   if not self.active and not args.moves["run"] and starPounds.hasSkill("throgSphereShrink") then
     self.shrunk = true
@@ -41,19 +40,22 @@ function update(args)
     for i, v in ipairs(self.baseCollisionPoly) do
       self.transformedMovementParameters.collisionPoly[i] = vec2.mul(v, self.scale)
     end
-    self.transformedMovementParameters.mass = self.baseParameters.mass * self.weightMultiplier
-    self.transformedMovementParameters.groundForce = self.baseParameters.groundForce * (self.shrunk and self.weightMultiplier or (1 + (self.weightMultiplier - 1) * starPounds.getStat("throgSphereForce") * 0.06))
+    self.transformedMovementParameters.mass = self.baseParameters.mass * weightMultiplier
+    self.transformedMovementParameters.groundForce = self.baseParameters.groundForce * (self.shrunk and weightMultiplier or (1 + (weightMultiplier - 1) * starPounds.getStat("throgSphereForce") * 0.06))
     self.transformedMovementParameters.slopeSlidingFactor = self.baseParameters.slopeSlidingFactor/self.scale
-    self.transformedMovementParameters.normalGroundFriction = self.baseParameters.normalGroundFriction * self.weightMultiplier
-    self.transformedMovementParameters.airJumpProfile.jumpControlForce = self.baseParameters.airJumpProfile.jumpControlForce * self.weightMultiplier
-    self.transformedMovementParameters.liquidJumpProfile.jumpControlForce = self.baseParameters.liquidJumpProfile.jumpControlForce * self.weightMultiplier
+    self.transformedMovementParameters.normalGroundFriction = self.baseParameters.normalGroundFriction * weightMultiplier
+    self.transformedMovementParameters.airJumpProfile.jumpControlForce = self.baseParameters.airJumpProfile.jumpControlForce * weightMultiplier
+    self.transformedMovementParameters.liquidJumpProfile.jumpControlForce = self.baseParameters.liquidJumpProfile.jumpControlForce * weightMultiplier
     self.ballRadius = self.baseBallRadius * self.scale
     self.lastScale = self.scale
     animator.resetTransformationGroup("ballScale")
     animator.scaleTransformationGroup("ballScale", self.scale)
 
     if self.active then
-      status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = (self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor")))}})
+  		local targetSize = starPounds.settings.targetSize - 1
+      local sizeIndex = starPounds.currentSizeIndex - 1
+      local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/targetSize), starPounds.getStat("throgSphereArmor"))
+      status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
     end
 
     self.projectilePositions = jarray()
@@ -70,7 +72,10 @@ function update(args)
   if starPounds.optionChanged and self.active then
     self.lastScale = nil
     self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
-    status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor"))}})
+  	local targetSize = starPounds.settings.targetSize - 1
+    local sizeIndex = starPounds.currentSizeIndex - 1
+    local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/targetSize), starPounds.getStat("throgSphereArmor"))
+    status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
   end
 
   if self.active and mcontroller.groundMovement() then

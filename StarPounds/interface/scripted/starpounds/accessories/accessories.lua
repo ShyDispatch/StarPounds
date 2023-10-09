@@ -23,8 +23,8 @@ function init()
 end
 
 function update()
-  if isAdmin ~= player.isAdmin() then
-    isAdmin = player.isAdmin()
+  if isAdmin ~= admin() then
+    isAdmin = admin()
     weightDecrease:setVisible(isAdmin)
     weightIncrease:setVisible(isAdmin)
     barPadding:setVisible(not isAdmin)
@@ -176,4 +176,8 @@ function reset:onClick()
       end)
     end
   end)
+end
+
+function admin()
+  return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

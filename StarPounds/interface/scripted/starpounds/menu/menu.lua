@@ -7,8 +7,8 @@ function init()
 end
 
 function update()
-  if isAdmin ~= player.isAdmin() then
-    isAdmin = player.isAdmin()
+  if isAdmin ~= admin() then
+    isAdmin = admin()
     weightDecrease:setVisible(isAdmin)
     weightIncrease:setVisible(isAdmin)
     barPadding:setVisible(not isAdmin)
@@ -30,7 +30,7 @@ function accessories:onClick()
 end
 
 function options:onClick()
-  player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:options"}) --string.format("starpounds:options%s", player.isAdmin() and "Admin" or "")})
+  player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:options"}) --string.format("starpounds:options%s", (player.isAdmin() or starPounds.hasOption("admin")) and "Admin" or "")})
   pane.dismiss()
 end
 
@@ -69,4 +69,8 @@ function reset:onClick()
       end)
     end
   end)
+end
+
+function admin()
+  return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

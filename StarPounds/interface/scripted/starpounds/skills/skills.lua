@@ -33,7 +33,7 @@ function init()
 
   descriptionFunctions = {}
 
-  isAdmin = player.isAdmin()
+  isAdmin = admin()
 
   weightDecrease:setVisible(isAdmin)
   weightIncrease:setVisible(isAdmin)
@@ -73,8 +73,8 @@ function update()
     traitBuffers(starPounds.getTrait() ~= nil)
   end
 
-  if player.isAdmin() ~= isAdmin then
-    isAdmin = player.isAdmin()
+  if isAdmin ~= admin() then
+    isAdmin = admin()
     enableUpgrades = metagui.inputData.isObject or isAdmin
     checkSkills()
     if selectedSkill then
@@ -706,4 +706,8 @@ function weightIncrease:onClick()
   local targetWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
   local targetWeight2 = starPounds.sizes[starPounds.currentSizeIndex + 2] and starPounds.sizes[starPounds.currentSizeIndex + 2].weight or starPounds.settings.maxWeight
   starPounds.setWeight(metagui.checkShift() and starPounds.settings.maxWeight or (targetWeight + (targetWeight2 - targetWeight) * progress))
+end
+
+function admin()
+  return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

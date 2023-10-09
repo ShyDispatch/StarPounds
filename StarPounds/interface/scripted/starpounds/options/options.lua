@@ -8,14 +8,19 @@ function init()
   options = root.assetJson("/scripts/starpounds/starpounds_options.config:options")
   stats = root.assetJson("/scripts/starpounds/starpounds_stats.config")
   tabs = root.assetJson("/scripts/starpounds/starpounds_options.config:tabs")
+  tabs[#tabs + 1] = {
+    id = "miscellaneous",
+    description = "Miscellaneous Options",
+    icon = "miscellaneous.png"
+  }
   if starPounds then
     populateOptions()
   end
 end
 
 function update()
-  if isAdmin ~= player.isAdmin() then
-    isAdmin = player.isAdmin()
+  if isAdmin ~= admin() then
+    isAdmin = admin()
     weightDecrease:setVisible(isAdmin)
     weightIncrease:setVisible(isAdmin)
     barPadding:setVisible(not isAdmin)
@@ -113,4 +118,8 @@ function reset:onClick()
       end)
     end
   end)
+end
+
+function admin()
+  return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

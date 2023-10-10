@@ -168,7 +168,7 @@ function makeOverrideFunction()
 			entity.isValidTarget = function(entityId)
 				local eatenEntity = nil
 				if not world.entityExists(entityId) then return false end
-				for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+				for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 					if prey.id == entityId then
 						eatenEntity = prey
 					end

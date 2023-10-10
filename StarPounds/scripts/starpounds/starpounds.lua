@@ -927,7 +927,7 @@ starPounds.getStomach = function()
 		local stomachContents = storage.starPounds.stomach + storage.starPounds.bloat
 		local stomachCapacity = starPounds.settings.stomachCapacity * starPounds.getStat("capacity")
 		-- Add how heavy every entity in the stomach is to the counter.
-		for _, v in pairs(storage.starPounds.entityStomach) do
+		for _, v in pairs(storage.starPounds.stomachEntities) do
 			stomachContents = stomachContents + v.weight + v.bloat
 		end
 
@@ -1396,15 +1396,15 @@ starPounds.voreCheck = function()
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Don't do anything if there's no eaten entities.
-	if not (#storage.starPounds.entityStomach > 0) then return end
+	if not (#storage.starPounds.stomachEntities > 0) then return end
 	-- table.remove is doodoo poop water.
 	local newStomach = jarray()
-	for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+	for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 		if world.entityExists(prey.id) then
 			table.insert(newStomach, prey)
 		end
 	end
-	storage.starPounds.entityStomach = newStomach
+	storage.starPounds.stomachEntities = newStomach
 end
 
 starPounds.voreDigest = function(dt)
@@ -1416,13 +1416,13 @@ starPounds.voreDigest = function(dt)
 	-- Don't do anything if disabled.
 	if starPounds.hasOption("disablePredDigestion") then return end
 	-- Don't do anything if there's no eaten entities.
-	if not (#storage.starPounds.entityStomach > 0) then return end
+	if not (#storage.starPounds.stomachEntities > 0) then return end
 	-- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
 	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach3, 0), 3)
 	local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
 	local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
 	-- Reduce health of all entities.
-	for _, prey in pairs(storage.starPounds.entityStomach) do
+	for _, prey in pairs(storage.starPounds.stomachEntities) do
 		world.sendEntityMessage(prey.id, "starPounds.getDigested", (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
 	end
 end
@@ -1439,7 +1439,7 @@ starPounds.eatNearbyEntity = function(position, range, querySize, force, check)
 	local nearbyEntities = world.entityQuery(mouthPosition, range, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()})
 	local eatenTargets = jarray()
 
-	for _, prey in ipairs(storage.starPounds.entityStomach) do
+	for _, prey in ipairs(storage.starPounds.stomachEntities) do
 		eatenTargets[prey.id] = true
 	end
 
@@ -1546,7 +1546,7 @@ starPounds.eatEntity = function(preyId, force, check)
 	-- Ask the entity to be eaten, add to stomach if the promise is successful.
 	promises:add(world.sendEntityMessage(preyId, "starPounds.getEaten", entity.id()), function(prey)
 		if not (prey and (prey.weight or prey.bloat)) then return end
-		table.insert(storage.starPounds.entityStomach, {
+		table.insert(storage.starPounds.stomachEntities, {
 			id = preyId,
 			weight = prey.weight or 0,
 			bloat = prey.bloat or 0,
@@ -1571,7 +1571,7 @@ starPounds.ateEntity = function(preyId)
 	-- Argument sanitisation.
 	preyId = tonumber(preyId)
 	if not preyId then return false end
-	for _, prey in ipairs(storage.starPounds.entityStomach) do
+	for _, prey in ipairs(storage.starPounds.stomachEntities) do
 		if prey.id == preyId then return true end
 	end
 	return false
@@ -1644,16 +1644,16 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	if starPounds.hasOption("disablePredDigestion") then return end
 	-- Find the entity's entry in the stomach.
 	local digestedEntity = nil
-	for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+	for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 		if prey.id == preyId then
-			digestedEntity = table.remove(storage.starPounds.entityStomach, preyIndex)
+			digestedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)
 			break
 		end
 	end
 	-- Don't do anything if we didn't digest an entity.
 	if not digestedEntity then return end
 	-- Transfer eaten entities.
-	storage.starPounds.entityStomach = util.mergeLists(storage.starPounds.entityStomach, preyStomach or jarray())
+	storage.starPounds.stomachEntities = util.mergeLists(storage.starPounds.stomachEntities, preyStomach or jarray())
 	for _, prey in ipairs(preyStomach or jarray()) do
 		world.sendEntityMessage(prey.id, "starPounds.predEaten", entity.id())
 	end
@@ -1759,7 +1759,7 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 	struggleStrength = math.max(tonumber(struggleStrength) or 0, 0)
 	if not preyId then return end
 	-- Only continue if they're actually eaten.
-	for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+	for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 		if prey.id == preyId then
 			local preyHealth = world.entityHealth(prey.id)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
@@ -1808,8 +1808,8 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 	local releasedEntity = nil
 	local statusEffect = starPounds.hasSkill("regurgitateSlimeStatus") and "starpoundsslimyupgrade" or nil
 	if releaseAll then
-		releasedEntity = storage.starPounds.entityStomach[1]
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		releasedEntity = storage.starPounds.stomachEntities[1]
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if world.entityExists(prey.id) then
 				world.sendEntityMessage(prey.id, "starPounds.getReleased", entity.id(), statusEffect)
 			end
@@ -1818,15 +1818,15 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 			local belchMultiplier = 1 - math.round((releasedEntity.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
 			starPounds.belch(0.75, (math.random(110,130)/100) * belchMultiplier)
 		end
-		storage.starPounds.entityStomach = jarray()
+		storage.starPounds.stomachEntities = jarray()
 	else
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if prey.id == preyId then
-				releasedEntity = table.remove(storage.starPounds.entityStomach, preyIndex)
+				releasedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)
 				break
 			end
 			if not preyId then
-				releasedEntity = table.remove(storage.starPounds.entityStomach)
+				releasedEntity = table.remove(storage.starPounds.stomachEntities)
 				break
 			end
 		end
@@ -2094,7 +2094,7 @@ starPounds.getDigested = function(digestionRate, protectionMultiplier)
 				end
 			end
 		end
-		world.sendEntityMessage(storage.starPounds.pred, "starPounds.digestEntity", entity.id(), items, storage.starPounds.entityStomach)
+		world.sendEntityMessage(storage.starPounds.pred, "starPounds.digestEntity", entity.id(), items, storage.starPounds.stomachEntities)
 
 		-- Are they a crewmate?
 		if recruitable then
@@ -2295,7 +2295,7 @@ end
 starPounds.resetStomach = function()
 	storage.starPounds.stomach = 0
 	storage.starPounds.bloat = 0
-	storage.starPounds.entityStomach = jarray()
+	storage.starPounds.stomachEntities = jarray()
 	return true
 end
 

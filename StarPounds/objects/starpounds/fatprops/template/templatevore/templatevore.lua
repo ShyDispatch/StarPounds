@@ -67,8 +67,8 @@ function update(dt)
 	starPounds.voreCheck()
 	starPounds.digest(dt)
 
-	if storage.starPounds.entityStomach[1] then
-		lastEntity = storage.starPounds.entityStomach[1]
+	if storage.starPounds.stomachEntities[1] then
+		lastEntity = storage.starPounds.stomachEntities[1]
 	end
 
 	if regurgitateTimer > 0 and (regurgitateTimer - dt) <= 0 then
@@ -90,7 +90,7 @@ function playSound(soundPool, volume, pitch, loops)
 			if math.random(1, 600) == 1 then
 				playSound("talk", 1, 1.25)
 				animator.burstParticleEmitter("emotehappy")
-				object.say(tostring(dialog.struggle[math.random(1, #dialog.struggle)]:gsub("<player>", world.entityName(storage.starPounds.entityStomach[1].id).."^reset;")))
+				object.say(tostring(dialog.struggle[math.random(1, #dialog.struggle)]:gsub("<player>", world.entityName(storage.starPounds.stomachEntities[1].id).."^reset;")))
 			end
 		end
 	end
@@ -105,7 +105,7 @@ starPounds = {
 	----------------------------------------------------------------------------------
 	digest = function(dt, isGurgle)
 		-- Don't do anything if stomach is empty.
-		if not (#storage.starPounds.entityStomach > 0) then
+		if not (#storage.starPounds.stomachEntities > 0) then
 			starPounds.gurgleTimer = nil
 			starPounds.voreDigestTimer = 0
 			return
@@ -142,32 +142,32 @@ starPounds = {
 	----------------------------------------------------------------------------------
 	voreCheck = function()
 		-- Don't do anything if there's no eaten entities.
-		if not (#storage.starPounds.entityStomach > 0) then return end
+		if not (#storage.starPounds.stomachEntities > 0) then return end
 		-- table.remove is very inefficient in loops, so we'll make a new table instead and just slap in the stuff we're keeping.
 		local newStomach = jarray()
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if world.entityExists(prey.id) then
 				table.insert(newStomach, prey)
 			end
 		end
-		storage.starPounds.entityStomach = newStomach
+		storage.starPounds.stomachEntities = newStomach
 	end,
 
 	voreDigest = function(digestionRate)
 		-- Don't do anything if there's no eaten entities.
-		if not (#storage.starPounds.entityStomach > 0) then return end
+		if not (#storage.starPounds.stomachEntities > 0) then return end
 		-- Reduce health of all entities.
-		for _, prey in pairs(storage.starPounds.entityStomach) do
+		for _, prey in pairs(storage.starPounds.stomachEntities) do
 			world.sendEntityMessage(prey.id, "starPounds.getDigested", digestionRate)
 		end
 	end,
 
 	eatEntity = function(preyId)
 		-- Max 1 entity for this object.
-		if #storage.starPounds.entityStomach > 0 then return end
+		if #storage.starPounds.stomachEntities > 0 then return end
 		-- Don't do anything if they're already eaten.
 		local eatenEntity = nil
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if prey.id == preyId then
 				eatenEntity = prey
 			end
@@ -175,7 +175,7 @@ starPounds = {
 		if eatenEntity then return false end
 		-- Ask the entity to be eaten, add to stomach if the promise is successful.
 		promises:add(world.sendEntityMessage(preyId, "starPounds.getEaten", entity.id()), function(prey)
-			table.insert(storage.starPounds.entityStomach, {
+			table.insert(storage.starPounds.stomachEntities, {
 				id = preyId,
 				weight = prey.weight or 0,
 				bloat = prey.bloat or 0,
@@ -195,7 +195,7 @@ starPounds = {
 
 	ateEntity = function(preyId)
 		if regurgitateTimer > 0 then return true end
-		for _, prey in ipairs(storage.starPounds.entityStomach) do
+		for _, prey in ipairs(storage.starPounds.stomachEntities) do
 			if prey.id == preyId then return true end
 		end
 		return false
@@ -204,9 +204,9 @@ starPounds = {
 	digestEntity = function(preyId, items, preyStomach)
 		-- Find the entity's entry in the stomach.
 		local digestedEntity = nil
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if prey.id == preyId then
-				digestedEntity = table.remove(storage.starPounds.entityStomach, preyIndex)
+				digestedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)
 				break
 			end
 		end
@@ -222,7 +222,7 @@ starPounds = {
 
 	preyStruggle = function(preyId)
 		-- Only continue if they're actually eaten.
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if prey.id == preyId then
 				local preyHealth = world.entityHealth(prey.id)
 				local preyHealthPercent = preyHealth[1]/preyHealth[2]
@@ -241,13 +241,13 @@ starPounds = {
 	releaseEntity = function(preyId)
 		-- Delete the entity's entry in the stomach.
 		local releasedEntity = nil
-		for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 			if prey.id == preyId then
-				releasedEntity = table.remove(storage.starPounds.entityStomach, preyIndex)
+				releasedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)
 				break
 			end
 			if not preyId then
-				releasedEntity = table.remove(storage.starPounds.entityStomach)
+				releasedEntity = table.remove(storage.starPounds.stomachEntities)
 				break
 			end
 		end

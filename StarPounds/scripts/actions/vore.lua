@@ -9,7 +9,7 @@ function hasEatenEntity(args, board)
   if args.entity == nil then return false end
   local eatenEntity = false
   if storage.starPounds then
-  	for _, prey in ipairs(storage.starPounds.entityStomach) do
+  	for _, prey in ipairs(storage.starPounds.stomachEntities) do
   		if prey.id == args.entity then
   			eatenEntity = true
   			break

@@ -59,12 +59,14 @@ function update(args)
     end
 
     self.projectilePositions = jarray()
-    local radius = 0.85 * self.scale
-    for height = -math.floor(radius), math.floor(radius), 2 do
-      for width = -math.floor(radius), math.floor(radius), 2 do
-        local height = math.min(math.max(-radius + 0.5, height), radius - 0.5)
-        local width = math.min(math.max(-radius + 0.5, width), radius - 0.5)
-        self.projectilePositions[#self.projectilePositions + 1] = {width, height}
+    if not self.shrunk then
+      local radius = 0.85 * self.scale
+      for height = -math.floor(radius), math.floor(radius), 2 do
+        for width = -math.floor(radius), math.floor(radius), 2 do
+          local height = math.min(math.max(-radius + 0.5, height), radius - 0.5)
+          local width = math.min(math.max(-radius + 0.5, width), radius - 0.5)
+          self.projectilePositions[#self.projectilePositions + 1] = {width, height}
+        end
       end
     end
   end
@@ -78,10 +80,10 @@ function update(args)
     status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
   end
 
-  if self.active and mcontroller.groundMovement() then
+  if self.active and (not self.shrunk) and mcontroller.groundMovement() then
     self.movementMagnitude = math.min(vec2.mag(mcontroller.velocity())/10, 1) * (0.5 + ((self.scale - 1)/6))
     animator.setSoundVolume("loop", self.movementMagnitude, 0.25)
-    animator.setParticleEmitterActive("movementParticles", self.projectile and world.entityExists(self.projectile) and not (mcontroller.liquidPercentage() > 0))
+    animator.setParticleEmitterActive("movementParticles", (#self.projectiles > 0) and not (mcontroller.liquidPercentage() > 0))
     animator.setParticleEmitterEmissionRate("movementParticles", 20 * self.movementMagnitude^2)
   elseif self.active then
     self.movementMagnitude = 0

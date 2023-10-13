@@ -29,6 +29,10 @@ function update(args)
     end
   end
 
+  if mcontroller.liquidMovement() or mcontroller.zeroG() then
+    self.slamTimer = 0
+  end
+
   if self.slamTimer > 0 then
     mcontroller.setYVelocity(-75)
     if mcontroller.onGround() then

@@ -41,7 +41,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	end
 
 	if not isGurgle then
-		-- Vore stuff
+		-- Vore stuff.
 		if not starPounds.hasOption("disablePredDigestion") then
 			-- Timer overrun incase function is called directly with multiple seconds.
 			local diff = math.abs(math.min((starPounds.voreDigestTimer or 0) - dt, 0))
@@ -70,9 +70,11 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 				starPounds.rumbleTimer = math.round(util.randomInRange({starPounds.settings.minimumRumbleTime, (starPounds.settings.rumbleTime * 2) - starPounds.settings.minimumRumbleTime}))
 			end
 		end
-	elseif not starPounds.hasOption("disablePredDigestion") then
-		-- 25% strength for vore digestion on gurgles.
-		starPounds.voreDigest(dt * 0.25)
+	else
+		if not starPounds.hasOption("disablePredDigestion") then
+			-- 25% strength for vore digestion on gurgles.
+			starPounds.voreDigest(dt * 0.25)
+		end
 	end
 
 	local food = storage.starPounds.stomach
@@ -262,17 +264,18 @@ starPounds.exercise = function(dt)
 	-- Skip this if we're in a sphere.
 	if status.stat("activeMovementAbilities") > 1 then return end
 	-- Jumping > Running > Walking
+	local weightLoss = starPounds.settings.weightLoss
 	local effort = 0
 	local consumeEnergy = false
 	if mcontroller.groundMovement() then
-		if mcontroller.walking() then effort = 0.125 end
-		if mcontroller.running() then effort = 0.5 consumeEnergy = true end
+		if mcontroller.walking() then effort = weightLoss.walking end
+		if mcontroller.running() then effort = weightLoss.running consumeEnergy = true end
 		-- Reset jump checker while on ground.
 		didJump = false
 		-- Moving through liquid takes up to 50% more effort.
 		effort = effort * (1 + math.min(math.round(mcontroller.liquidPercentage(), 1), 0.5))
 	elseif not mcontroller.liquidMovement() and mcontroller.jumping() and not didJump then
-		effort = 1
+		effort = weightLoss.jumping
 		consumeEnergy = true
 	else
 		didJump = true
@@ -310,10 +313,10 @@ starPounds.exercise = function(dt)
 		speedModifier = speedModifier
 	})
 	-- Lose weight based on weight, effort, and the multiplier.
-	local amount = effort * starPounds.weightMultiplier * starPounds.getStat("metabolism") * dt * 0.125
-	-- Weight loss reduced by half if you're full.
+	local amount = effort * (starPounds.weightMultiplier ^ 0.5) * dt * weightLoss.base * starPounds.getStat("metabolism")
+	-- Weight loss reduced by 75% if you're full, and have food in your stomach.
 	if status.isResource("food") and status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")) and starPounds.stomach.food > 0 then
-		amount = amount * 0.5
+		amount = amount * 0.25
 	end
 	starPounds.loseWeight(amount)
 end
@@ -1390,8 +1393,6 @@ starPounds.loseMilk = function(amount)
 	return amount
 end
 
--- Vore functions
-----------------------------------------------------------------------------------
 starPounds.voreCheck = function()
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end

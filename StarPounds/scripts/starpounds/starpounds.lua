@@ -610,10 +610,9 @@ starPounds.getStat = function(stat)
 	if not starPounds.statCache[stat] then
 		-- Default amount (or 1, so we can boost stats that start at 0), modified by accessory values.
 		local accessoryBonus = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModifiers(stat)
-		-- Add flat bonuses from skills and status effects.
-		local statAmount = starPounds.stats[stat].base + starPounds.getSkillBonus(stat) + starPounds.getEffectBonus(stat) + accessoryBonus
-		-- Multiply the total bonuses by status effect and option multipliers.
-		starPounds.statCache[stat] = math.max(math.min(statAmount * starPounds.getEffectMultiplier(stat) * starPounds.getOptionsMultiplier(stat), starPounds.stats[stat].maxValue or math.huge), 0)
+		-- Total stat is: options * ((base + skill + accessory) * effect (multiplier) + effect (bonus))
+		local statAmount = starPounds.stats[stat].base + starPounds.getSkillBonus(stat) + accessoryBonus
+		starPounds.statCache[stat] = math.max(math.min((statAmount * starPounds.getEffectMultiplier(stat) + starPounds.getEffectBonus(stat)) * starPounds.getOptionsMultiplier(stat), starPounds.stats[stat].maxValue or math.huge), 0)
 	end
 	return starPounds.statCache[stat]
 end

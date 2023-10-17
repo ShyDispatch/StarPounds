@@ -2,89 +2,70 @@
   "regurgitatedClothing" : [
     [0, {
       "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
+        [0.85, 1],
+        [0.10, 2],
+        [0.05, 3]
       ],
       "pool" : [
-        {"weight" : 0.6, "item" : ["string", 1, {"shortdescription" : "^#a6ba5d;Tacky String", "price" : 1, "description" : "You never know when a bit of string might come in handy, even if it is a little sticky.", "inventoryIcon" : "string.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.3, "item" : ["fabric", 1, {"shortdescription" : "^#a6ba5d;Soaked Fabric", "price" : 2, "description" : "If you look past all the goop, there's a small square of woven fabric.", "inventoryIcon" : "fabric.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.1, "item" : ["cottonwool", 1, {"shortdescription": "^#a6ba5d;Melted Cotton", "price" : 8, "description" : "A roll of processed cotton. Some might say a little too processed.", "inventoryIcon" : "cottonwool.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
-      ],
-      "allowDuplication" : true
+        {"weight" : 0.5, "item" : ["string", 1, {"shortdescription" : "^#a6ba5d;Tacky String", "price" : 1, "description" : "You never know when a bit of string might come in handy, even if it is a little sticky.", "inventoryIcon" : "string.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
+        {"weight" : 0.35, "item" : ["fabric", 1, {"shortdescription" : "^#a6ba5d;Soaked Fabric", "price" : 2, "description" : "If you look past all the goop, there's a small square of woven fabric.", "inventoryIcon" : "fabric.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
+        {"weight" : 0.15, "item" : ["cottonwool", 1, {"shortdescription": "^#a6ba5d;Melted Cotton", "price" : 8, "description" : "A roll of processed cotton. Some might say a little too processed.", "inventoryIcon" : "cottonwool.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+      ]
     }],
     [0.9, {
       "fill" : [{"pool" : "regurgitatedScrap"}],
       "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
+        [0.85, 1],
+        [0.10, 2],
+        [0.05, 3]
       ],
       "pool" : [
         {"weight" : 0.75, "item" : ["string", 1, {"shortdescription" : "^#a6ba5d;Tacky String", "price" : 1, "description" : "You never know when a bit of string might come in handy, even if it is a little sticky.", "inventoryIcon" : "string.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.25, "item" : ["fabric", 1, {"shortdescription" : "^#a6ba5d;Soaked Fabric", "price" : 2, "description" : "If you look past all the goop, there's a small square of woven fabric.", "inventoryIcon" : "fabric.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
-      ],
-      "allowDuplication" : true
+      ]
     }],
     [1.9, {
       "fill" : [{"pool" : "regurgitatedScrap"}],
       "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
+        [0.85, 1],
+        [0.10, 2],
+        [0.05, 3]
       ],
       "pool" : [
         {"weight" : 0.75, "item" : ["cottonwool", 1, {"shortdescription": "^#a6ba5d;Melted Cotton", "price" : 8, "description" : "A roll of processed cotton. Some might say a little too processed.", "inventoryIcon" : "cottonwool.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.25, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
-      ],
-      "allowDuplication" : true
+      ]
     }],
     [2.9, {
       "fill" : [{"pool" : "regurgitatedScrap"}],
       "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
+        [0.85, 1],
+        [0.10, 2],
+        [0.05, 3]
       ],
       "pool" : [
         {"weight" : 0.25, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.25, "item" : ["silk", 1, {"shortdescription": "^#a6ba5d;Sticky Silk", "price" : 20, "description" : "A square of tacky, sticky silk.", "inventoryIcon" : "silk.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.5, "item" : ["canvas", 1, {"shortdescription": "^#a6ba5d;Frayed Canvas", "price" : 30, "description" : "A frayed square of questionable-quality canvas.", "inventoryIcon" : "canvas.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
-      ],
-      "allowDuplication" : true
+      ]
     }],
     [3.9, {
       "fill" : [{"pool" : "regurgitatedScrap"}],
       "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
+        [0.85, 1],
+        [0.10, 2],
+        [0.05, 3]
       ],
       "pool" : [
         {"weight" : 0.75, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
         {"weight" : 0.25, "item" : ["silk", 1, {"shortdescription": "^#a6ba5d;Sticky Silk", "price" : 20, "description" : "A square of tacky, sticky silk.", "inventoryIcon" : "silk.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
-      ],
-      "allowDuplication" : true
+      ]
     }],
     [4.9, {
-      "fill" : [{"pool" : "regurgitatedScrap"}],
-      "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
-      ],
-      "pool" : [],
-      "allowDuplication" : true
+      "fill" : [{"pool" : "regurgitatedScrap"}]
     }],
     [5.9, {
-      "fill" : [{"pool" : "regurgitatedScrap"}],
-      "poolRounds" : [
-        [0.6, 1],
-        [0.3, 2],
-        [0.1, 3]
-      ],
-      "pool" : [],
-      "allowDuplication" : true
+      "fill" : [{"pool" : "regurgitatedScrap"}]
     }]
   ],
 
@@ -118,14 +99,11 @@
   "regurgitatedScrap": [
     [0, {
       "poolRounds" : [
-        [0.1, 1],
-        [0.2, 2],
-        [0.4, 3],
-        [0.2, 4],
-        [0.1, 5]
+        [0.50, 1],
+        [0.35, 2],
+        [0.15, 3]
       ],
-      "pool" : [{"weight" : 1, "item" : "starpoundsscrapmetal"}],
-      "allowDuplication" : true
+      "pool" : [{"weight" : 1, "item" : "starpoundsscrapmetal"}]
     }]
   ]
 }

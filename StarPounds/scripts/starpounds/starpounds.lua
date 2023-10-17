@@ -1601,7 +1601,7 @@ starPounds.digestClothing = function(item)
 	item.parameters.colorOptions = item.parameters.baseParameters.colorOptions
 	-- Add visual flair and reduce rarity down to common.
 	local label = root.assetJson("/items/categories.config:labels")[configParameter(item, "category", ""):gsub("enviroProtectionPack", "backwear")]
-	item.parameters.category = string.format("^#a6ba5d;Digested %s%s", label, ((item.parameters.digestCount > 1) and string.format(" (x%s)", item.parameters.digestCount) or ""))
+	item.parameters.category = string.format("%sDigested %s%s", starPounds.hasOption("disableRegurgitatedClothingTint") and "" or "^#a6ba5d;", label, ((item.parameters.digestCount > 1) and string.format(" (x%s)", item.parameters.digestCount) or ""))
 	item.parameters.rarity = configParameter(item, "rarity", "common"):lower():gsub(".+", { uncommon = "common", rare = "uncommon", legendary = "rare" })
 	-- Reduce price to 10% (15% - 5% per digestion) of the original value.
 	item.parameters.price = math.round(configParameter(item, "price", 0) * (0.15 - 0.05 * item.parameters.digestCount))
@@ -1618,6 +1618,7 @@ starPounds.digestClothing = function(item)
 	if configParameter(item, "tooltipKind") == "baseaugment" then
 		item.parameters.tooltipKind = "back"
 	end
+	if starPounds.hasOption("disableRegurgitatedClothingTint") then return item end
 	-- Give the armor some colour changes to make it look digested.
 	item.parameters.colorOptions = configParameter(item, "colorOptions", {})
 	item.parameters.colorIndex = configParameter(item, "colorIndex", 0) % (#item.parameters.colorOptions > 0 and #item.parameters.colorOptions or math.huge)
@@ -1740,7 +1741,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 		})
 	end
 
-	if #regurgitatedItems > 0 then
+	if not starPounds.hasOption("disableItemRegurgitation") and (#regurgitatedItems > 0) then
 		world.spawnProjectile("regurgitateditems", mouthPosition, entity.id(), vec2.rotate({math.random(1,2) * mcontroller.facingDirection(), math.random(0, 2)/2}, mcontroller.rotation()), false, {
 			items = regurgitatedItems
 		})

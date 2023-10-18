@@ -73,6 +73,13 @@ function update()
     traitBuffers(starPounds.getTrait() ~= nil)
   end
 
+  -- Refresh skill panel.
+  refreshSkillTimer = math.max((refreshSkillTimer or 5) - script.updateDt(), 0)
+  if refreshSkillTimer == 0 then
+    refreshSkillTimer = 1
+    selectSkill(selectedSkill)
+  end
+
   if isAdmin ~= admin() then
     isAdmin = admin()
     enableUpgrades = metagui.inputData.isObject or isAdmin
@@ -370,6 +377,25 @@ function selectSkill(skill)
     descriptionIcon:queueRedraw()
     descriptionText:setText(skill.description)
 
+    local currentLevel = starPounds.getSkillLevel(skill.name)
+    local unlockedLevel = starPounds.getSkillUnlockedLevel(skill.name)
+    local nextLevel = math.min(unlockedLevel + 1, skill.levels)
+    local skillItems = getSkillItems(skill)
+    local hasItems = hasSkillItems(skill)
+    -- Clear the slots.
+    local slotCount = math.min(#skillItems, 5)
+    unlockItems.columns = slotCount
+    unlockItems:setNumSlots(slotCount)
+    -- Set the slots, and check player items.
+    for i, item in ipairs(skillItems) do
+      unlockItems.children[i].hideRarity = true
+      if i <= slotCount then
+        unlockItems:setItem(i, {name = item[1], count = item[2], parameters = {}})
+      end
+    end
+
+    itemPanel:setVisible(slotCount > 0)
+
     if skill.type == "addStat" or skill.type == "subtractStat" then
       infoPanel:setVisible(true)
       local baseAmount = starPounds.stats[skill.stat].base
@@ -378,7 +404,7 @@ function selectSkill(skill)
       local nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
       local nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 10)/10
       local nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
-      local nextString = starPounds.getSkillLevel(skill.name) == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+      local nextString = currentLevel == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
 
       local totalAmount = starPounds.getSkillBonus(skill.stat)
       local totalIncrease = math.floor(0.5 + (100 * totalAmount/(baseAmount > 0 and baseAmount or 1)) * 10)/10
@@ -396,14 +422,13 @@ function selectSkill(skill)
 
     end
 
-    local experienceLevel = math.min(starPounds.getSkillUnlockedLevel(skill.name) + 1, skill.levels) - 1
-    experienceCost = isAdmin and 0 or math.min(skill.cost.base + skill.cost.increase * experienceLevel, skill.cost.max)
-    canDecrease = starPounds.getSkillLevel(skill.name) > 0
-    canIncrease = starPounds.getSkillLevel(skill.name) < starPounds.getSkillUnlockedLevel(skill.name)
+    experienceCost = isAdmin and 0 or math.min(skill.cost.base + skill.cost.increase * (nextLevel - 1), skill.cost.max)
+    canDecrease = currentLevel > 0
+    canIncrease = currentLevel < unlockedLevel
     useToggle = skill.levels == 1
-    skillMaxed = starPounds.getSkillUnlockedLevel(skill.name) == skill.levels
-    canUpgrade = (starPounds.level >= experienceCost) and not skillMaxed
-    unlockText:setText(useToggle and (starPounds.getSkillLevel(skill.name) > 0 and "On" or "Off") or string.format("%s/%s", starPounds.getSkillLevel(skill.name), starPounds.getSkillUnlockedLevel(skill.name)))
+    skillMaxed = unlockedLevel == skill.levels
+    canUpgrade = (isAdmin or ((starPounds.level >= experienceCost) and hasItems)) and not skillMaxed
+    unlockText:setText(useToggle and (currentLevel > 0 and "On" or "Off") or string.format("%s/%s", currentLevel, unlockedLevel))
 
     unlockExperience:setText(string.format("^%s;%s XP", skillMaxed and "darkgray" or ((enableUpgrades and canUpgrade) and "green" or "red"), (skillMaxed or not enableUpgrades) and "-" or experienceCost))
 
@@ -434,7 +459,18 @@ function selectSkill(skill)
         unlockButton.toolTip = string.format(unlockButton.toolTip.."\n^gray;Requires %s %s^reset;", useAn and "an" or "a", objectName)
       end
     elseif not canUpgrade then
-      unlockButton.toolTip = string.format(unlockButton.toolTip.."\n^gray;Requires ^#b8eb00;%s XP^reset;", experienceCost)
+      unlockButton.toolTip = unlockButton.toolTip.."\n^gray;Requires"
+      if starPounds.level < experienceCost then
+        unlockButton.toolTip = string.format(unlockButton.toolTip.." ^#b8eb00;%s XP^reset;", experienceCost)
+      end
+      if not hasItems then
+        for _, item in ipairs(skillItems) do
+          local itemCount = player.hasCountOfItem(item[1])
+          local itemName = root.itemConfig(item[1]).config.shortdescription
+          local hasItem = itemCount >= item[2]
+          unlockButton.toolTip = unlockButton.toolTip..string.format("\n^gray;%s ^%s;%s/%s", itemName, hasItem and "green" or "red", itemCount, item[2])
+        end
+      end
     end
 
     unlockToggle:setImage(
@@ -457,7 +493,7 @@ function selectSkill(skill)
       string.format("unlockDecrease%s.png", canDecrease and "" or "Disabled"),
       string.format("unlockDecrease%s.png?border=1;00000000;00000000?crop=1;2;13;15", canDecrease and "" or "Disabled")
     )
-    if skill.widget and (skill.forceWidget or starPounds.getSkillUnlockedLevel(skill.name) > 0) then
+    if skill.widget and (skill.forceWidget or unlockedLevel > 0) then
       require(string.format("/interface/scripted/starpounds/skills/descriptionWidgets/%s.lua", skill.widget.id))
       descriptionWidget:addChild(skill.widget).onClick = descriptionFunctions[skill.widget.id]
     end
@@ -563,10 +599,15 @@ end
 function unlockButton:onClick()
   local experienceLevel = math.min((starPounds.getSkillUnlockedLevel(selectedSkill.name)) + 1, selectedSkill.levels) - 1
   local experienceCost = math.min(selectedSkill.cost.base + selectedSkill.cost.increase * experienceLevel, selectedSkill.cost.max)
-  local canUpgrade = isAdmin or starPounds.level >= experienceCost
+  local canUpgrade = isAdmin or (hasSkillItems(selectedSkill) and starPounds.level >= experienceCost)
   if starPounds.getSkillUnlockedLevel(selectedSkill.name) == selectedSkill.levels or not canUpgrade or not enableUpgrades then
     widget.playSound("/sfx/interface/clickon_error.ogg")
     return
+  end
+  if not isAdmin then
+    for _, item in ipairs(getSkillItems(selectedSkill)) do
+      player.consumeItem({name = item[1], count = item[2]})
+    end
   end
   starPounds.upgradeSkill(selectedSkill.name, isAdmin and 0 or experienceCost)
   local level = starPounds.getSkillUnlockedLevel(selectedSkill.name)
@@ -580,6 +621,33 @@ function unlockButton:onClick()
   checkSkills()
   selectSkill(selectedSkill)
   widget.playSound("/sfx/interface/crafting_medical.ogg")
+end
+
+function getSkillItems(skill)
+  local unlockedLevel = starPounds.getSkillUnlockedLevel(skill.name)
+  local nextLevel = math.min(unlockedLevel + 1, skill.levels)
+  local skillItems = jarray()
+
+  for _, requiredItems in ipairs(skill.upgradeItems or jarray()) do
+    if nextLevel >= requiredItems[1] then
+      skillItems = requiredItems[2]
+    else
+      break
+    end
+  end
+  return skillItems
+end
+
+function hasSkillItems(skill)
+  local skillItems = getSkillItems(skill)
+  local hasItems = true
+  -- Clear the slots.
+  for i, item in ipairs(skillItems) do
+    if player.hasCountOfItem(item[1]) < item[2] then
+      hasItems = false
+    end
+  end
+  return hasItems
 end
 
 function unlockIncrease:onClick()

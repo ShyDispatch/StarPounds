@@ -1,6 +1,6 @@
 {
   "style" : "window",
-  "size" : [400, 200],
+  "size" : [400, 230],
   "title" : "Skills",
   "icon" : "icon.png",
   "accentColor" : "8866ff",
@@ -10,7 +10,7 @@
   "children" : [
     {"mode": "vertical"},
     [
-      {"size" : 179},
+      {"size" : 209},
       [
         {"expandMode": [1, 1]},
         {
@@ -148,6 +148,7 @@
         ]},
         {"type": "layout", "id": "unlockPanel", "mode": "vertical", "children": [{"type": "panel", "style": "convex", "children": [
           1,
+          [{"id": "itemPanel"}, 1, {"type": "panel", "style": "concave", "expandMode": [1, 0], "children": ["spacer", {"type": "itemGrid", "id": "unlockItems", "slots": 5, "columns": 5, "autoInteract": false}, "spacer"]}, 1],
           {"type": "layout", "mode": "horizontal", "children": [
             1,
             {"type": "layout", "mode": "manual", "children": [

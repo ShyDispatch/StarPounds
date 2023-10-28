@@ -73,13 +73,6 @@ function update()
     traitBuffers(starPounds.getTrait() ~= nil)
   end
 
-  -- Refresh skill panel.
-  refreshSkillTimer = math.max((refreshSkillTimer or 5) - script.updateDt(), 0)
-  if refreshSkillTimer == 0 then
-    refreshSkillTimer = 1
-    selectSkill(selectedSkill)
-  end
-
   if isAdmin ~= admin() then
     isAdmin = admin()
     enableUpgrades = metagui.inputData.isObject or isAdmin
@@ -600,6 +593,7 @@ function unlockButton:onClick()
   local experienceLevel = math.min((starPounds.getSkillUnlockedLevel(selectedSkill.name)) + 1, selectedSkill.levels) - 1
   local experienceCost = math.min(selectedSkill.cost.base + selectedSkill.cost.increase * experienceLevel, selectedSkill.cost.max)
   local canUpgrade = isAdmin or (hasSkillItems(selectedSkill) and starPounds.level >= experienceCost)
+  selectSkill(selectedSkill)
   if starPounds.getSkillUnlockedLevel(selectedSkill.name) == selectedSkill.levels or not canUpgrade or not enableUpgrades then
     widget.playSound("/sfx/interface/clickon_error.ogg")
     return

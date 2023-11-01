@@ -1402,6 +1402,8 @@ starPounds.voreCheck = function()
 	for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 		if world.entityExists(prey.id) then
 			table.insert(newStomach, prey)
+		elseif (starPounds.type == "player") and (prey.world == player.worldId()) then
+			starPounds.digestEntity(prey.id)
 		end
 	end
 	storage.starPounds.stomachEntities = newStomach
@@ -1551,6 +1553,7 @@ starPounds.eatEntity = function(preyId, force, check)
 			weight = prey.weight or 0,
 			bloat = prey.bloat or 0,
 			experience = prey.experience or 0,
+			world = (starPounds.type == "player") and player.worldId() or nil,
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"})
 		})
 		if not force then

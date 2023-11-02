@@ -2229,6 +2229,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.resetWeight", localHandler(starPounds.resetWeight))
 	message.setHandler("starPounds.resetStomach", localHandler(starPounds.resetStomach))
 	message.setHandler("starPounds.resetBreasts", localHandler(starPounds.resetBreasts))
+	message.setHandler("starPounds.setResource", localHandler(status.setResource))
 end
 
 -- Other functions

@@ -100,7 +100,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		-- Food for weight gain reduced by up to half when filling hunger, with hunger restored increased by absorption.
 		local foodAmount = math.min(status.resourceMax("food") - status.resource("food"), amount)
 		amount = math.round(amount - (foodAmount/2), 4)
-		status.giveResource("food", foodAmount * foodValue * math.max(absorption/starPounds.stats.absorption.base, 1) + (not isGurgle and math.abs(math.min(status.stat("foodDelta") * dt, 0)) or 0))
+		status.giveResource("food", foodAmount * foodValue + (not isGurgle and math.abs(math.min(status.stat("foodDelta") * dt, 0)) or 0))
 	end
 	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
 	if amount == 0 then return end
@@ -113,7 +113,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
 		if starPounds.breasts.contents < maxCapacity then
 			milkCost = amount * absorption * starPounds.getStat("breastProduction")
-			milkProduced = math.round((milkCost/milkValue) * starPounds.getStat("breastEfficiency") * foodValue, 4)
+			milkProduced = math.round((milkCost/milkValue) * starPounds.getStat("breastEfficiency"), 4)
 			if (milkCapacity - milkCurrent) < milkProduced then
 				-- Free after you've maxed out capacity, but you only gain a third as much.
 				milkProduced = math.min(math.max((milkCapacity - milkCurrent), milkProduced/3), maxCapacity - milkCurrent)
@@ -128,7 +128,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	if not storage.starPounds.pred then
 		-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
 		if status.resourcePositive("health") then
-			local healBaseAmount = amount * absorption * foodValue
+			local healBaseAmount = amount * absorption
 			local healAmount = math.min(healBaseAmount * starPounds.getStat("healing") * starPounds.settings.healingRatio, status.resourceMax("health") * starPounds.settings.healingCap)
 			status.modifyResource("health", healAmount)
 			-- Energy regenerates faster than health, and energy lock time gets reduced.
@@ -139,7 +139,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 					status.modifyResource("energy", energyAmount)
 				end
 				-- Energy regen block is capped at 2x the speed (decreases by the delta)
-				status.modifyResource("energyRegenBlock", math.max(-amount * absorption * foodValue * digestionEnergy, -dt))
+				status.modifyResource("energyRegenBlock", math.max(-amount * absorption * digestionEnergy, -dt))
 			end
 		end
 	end

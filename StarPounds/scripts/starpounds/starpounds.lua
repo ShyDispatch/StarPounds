@@ -983,7 +983,7 @@ starPounds.getChestVariant = function(size)
 
 	for _, v in ipairs(breastThreshholds) do
 		if contains(variants, v.name) then
-			if breastSize >= v.amount then
+			if breastSize >= (v.amount * thresholdMultiplier) then
 				variant = v.name
 			end
 		end

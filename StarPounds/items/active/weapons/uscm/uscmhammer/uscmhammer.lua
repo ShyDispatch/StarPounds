@@ -24,10 +24,9 @@ function init()
   self.activeBaseDps = config.getParameter("activeBaseDps")
 
   self.active = false
-  animator.setAnimationState("hammer", "inactive")
-  self.primaryAbility.animKeyPrefix = "inactive"
+  animator.setAnimationState("blade", "inactive")
+  self.animKeyPrefix = self.primaryAbility.animKeyPrefix
   self.primaryAbility.baseDps = self.inactiveBaseDps
-  self.animKeyPrefix = self.animKeyPrefix or ""
   updateSmashAbility()
 end
 
@@ -45,88 +44,40 @@ function setActive(active)
   if self.active ~= active then
     self.active = active
     if self.active then
-      animator.setAnimationState("hammer", "extend")
+      animator.setAnimationState("blade", "extend")
       self.primaryAbility.animKeyPrefix = "active"
       self.primaryAbility.baseDps = self.activeBaseDps
     else
-      animator.setAnimationState("hammer", "retract")
+      animator.setAnimationState("blade", "retract")
       self.primaryAbility.animKeyPrefix = "inactive"
       self.primaryAbility.baseDps = self.inactiveBaseDps
     end
+    self.animKeyPrefix = self.primaryAbility.animKeyPrefix
     self.primaryAbility.damageConfig.baseDamage = self.primaryAbility.baseDps * self.primaryAbility.fireTime
   end
 end
 
 function updateSmashAbility()
   if HammerSmash then
-    HammerSmash.fire = function(self)
-      self.weapon:setStance(self.stances.fire)
-      self.weapon:updateAim()
+    local hammerSmashFire_old = HammerSmash.fire
+    local hammerSmashSpin_old = HammerSmash.spin
+    local setAnimationState_old = animator.setAnimationState
 
-      animator.setAnimationState("swoosh", self.animKeyPrefix .. "fire")
-      animator.playSound(self.animKeyPrefix .. "fire")
-      animator.burstParticleEmitter(self.animKeyPrefix .. self.weapon.elementalType .. "swoosh")
-
-      local smashMomentum = self.smashMomentum
-      smashMomentum[1] = smashMomentum[1] * mcontroller.facingDirection()
-      mcontroller.addMomentum(smashMomentum)
-
-      local smashTimer = self.stances.fire.smashTimer
-      local duration = self.stances.fire.duration
-      while smashTimer > 0 or duration > 0 do
-        smashTimer = math.max(0, smashTimer - self.dt)
-        duration = math.max(0, duration - self.dt)
-
-        local damageArea = partDamageArea("swoosh")
-        if not damageArea and smashTimer > 0 then
-          damageArea = partDamageArea("hammer")
-        end
-        self.weapon:setDamage(self.damageConfig, damageArea, self.fireTime)
-
-        if smashTimer > 0 then
-          local groundImpact = world.polyCollision(poly.translate(poly.handPosition(animator.partPoly("hammer", "groundImpactPoly")), mcontroller.position()))
-          if mcontroller.onGround() or groundImpact then
-            smashTimer = 0
-            if groundImpact then
-              animator.burstParticleEmitter("groundImpact")
-              animator.playSound("groundImpact")
-            end
-          end
-        end
-        coroutine.yield()
-      end
-
-      self.cooldownTimer = self:cooldownTime()
+    function animator.setAnimationState(partName, partState, startNew)
+      if (partName == "swoosh") and (partState == "fire") then partState = self.animKeyPrefix .. "fire" end
+      setAnimationState_old(partName, partState, startNew)
     end
 
-    HammerSmash.spin = function(self)
-      self.weapon:setStance(self.stances.fire)
-      self.weapon:updateAim()
-
-      animator.setAnimationState("swoosh", self.animKeyPrefix .. "fire")
+    function HammerSmash:fire(...)
       animator.playSound(self.animKeyPrefix .. "fire")
       animator.burstParticleEmitter(self.animKeyPrefix .. self.weapon.elementalType .. "swoosh")
+      hammerSmashFire_old(self, ...)
+    end
 
-      local direction = -mcontroller.facingDirection()
-
-      local spinTimer = self.stances.spin.spinTimer
-      while spinTimer > 0 do
-        spinTimer = spinTimer - self.dt
-
-        local ratio = 1 - ((spinTimer / self.stances.spin.spinTimer) ^ 2)
-        local angle = ratio * self.stances.spin.spinAngle * direction
-        mcontroller.setRotation(angle)
-
-        local damageArea = partDamageArea("swoosh")
-        if damageArea then
-          self.weapon:setDamage(self.damageConfig, poly.rotate(damageArea, angle), self.fireTime)
-        end
-
-        coroutine.yield()
-      end
-
-      mcontroller.setRotation(0)
-      self.cooldownTimer = self:cooldownTime()
+    function HammerSmash:spin(...)
+      animator.playSound(self.animKeyPrefix .. "fire")
+      animator.burstParticleEmitter(self.animKeyPrefix .. self.weapon.elementalType .. "swoosh")
+      hammerSmashSpin_old(self, ...)
     end
   end
 end

@@ -447,7 +447,8 @@ starPounds.updateStats = function(force)
 		local sizeIndex = starPounds.currentSizeIndex - 1
 		local targetSize = starPounds.settings.targetSize - 1
 		local applyBonuses = sizeIndex >= targetSize
-		local bonusEffectiveness = math.min(1, (sizeIndex - 1)/(targetSize - 1))
+		local bonusEffectiveness = math.min(1, sizeIndex/targetSize)
+		starPounds.debug("bonus", bonusEffectiveness)
 		status.setPersistentEffects("starpounds", {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
 			{stat = "foodDelta", effectiveMultiplier = starPounds.hasOption("disableHunger") and 0 or math.round(starPounds.getStat("hunger"), 2)},

@@ -1,7 +1,6 @@
 {
   "itemName" : "throgdinnerplate",
-  "fixedLevel" : 6,
-  "price" : 460,
+  "price" : 1250,
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "shield",
@@ -20,7 +19,7 @@
   },
   "animationCustom" : {
     "animatedParts" : { "parts" : { "shield" : { "properties" : {
-        "shieldPoly" : [ [-0.5, -2.5], [-0.5, 2.25], [0.75, 1.5], [0.75, -1.75] ]
+        "shieldPoly" : [ [-0.5, -1.75], [-0.5, 1.75], [0.5, 1.75], [1.5, 0.625], [1.5, -0.625], [0.75, -1.75] ]
     }}}},
     "sounds" : {
       "raiseShield" : [ "/sfx/gun/magnorbs_shield.ogg" ],
@@ -32,11 +31,11 @@
 
   "scripts" : ["/items/active/shields/shield.lua"],
 
-  "minActiveTime" : 0.3,
+  "minActiveTime" : 0.2,
 
   "forceWalk" : false,
-  "baseShieldHealth" : 70,
-  "cooldownTime" : 0.9,
+  "baseShieldHealth" : 50,
+  "cooldownTime" : 0.45,
 
   "perfectBlockDirectives" : "?border=2;AACCFFFF;00000000",
   "perfectBlockTime" : 0.2,

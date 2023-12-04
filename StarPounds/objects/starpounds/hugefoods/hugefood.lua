@@ -6,7 +6,7 @@ function init()
   self.stages = config.getParameter("stages", 5)
   self.bitesPerStage = config.getParameter("bitesPerStage", 4)
   self.food = config.getParameter("food", 1000)/(self.bitesPerStage * self.stages)
-  self.strainedThreshholds = root.assetJson("/scripts/starpounds/starpounds.config:settings.threshholds.strain")
+  self.strainedThresholds = root.assetJson("/scripts/starpounds/starpounds.config:settings.thresholds.strain")
 
   self.experienceRatio = {
     common = 0.5,
@@ -28,9 +28,9 @@ end
 function onInteraction(args)
   promises:add(world.sendEntityMessage(args.sourceId, "starPounds.getStomach"), function(stomach)
     promises:add(world.sendEntityMessage(args.sourceId, "starPounds.hasSkill", "wellfedProtection"), function(wellfedProtection)
-      if stomach.fullness >= self.strainedThreshholds.starpoundsstomach and not wellfedProtection then
+      if stomach.fullness >= self.strainedThresholds.starpoundsstomach and not wellfedProtection then
       	return
-      elseif stomach.fullness >= self.strainedThreshholds.starpoundsstomach3 then
+      elseif stomach.fullness >= self.strainedThresholds.starpoundsstomach3 then
       	return
       end
       animator.burstParticleEmitter("bite")

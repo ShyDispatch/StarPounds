@@ -283,19 +283,19 @@ starPounds.exercise = function(dt)
 
 	-- Skip the rest if we're not moving.
 	if effort == 0 then return end
-	local threshholds = starPounds.settings.threshholds.strain
+	local thresholds = starPounds.settings.thresholds.strain
 	local speedModifier = 1
 	local runningSuppressed = false
 	-- Consume energy based on how far over capacity they are.
-	if starPounds.stomach.fullness > threshholds.starpoundsstomach then
+	if starPounds.stomach.fullness > thresholds.starpoundsstomach then
 		local strainedPenalty = starPounds.getStat("strainedPenalty")
-		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - threshholds.starpoundsstomach, 2)/4) * strainedPenalty))
+		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - thresholds.starpoundsstomach, 2)/4) * strainedPenalty))
 		runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy"))
 		-- consume and lock energy when running.
 		if status.isResource("energy") and not status.resourceLocked("energy") and consumeEnergy then
 			local energyCost = status.resourceMax("energy") * strainedPenalty * effort * 0.25 * dt
 			-- Double energy cost from super tummy-too-big-itus
-			if starPounds.stomach.fullness >= threshholds.starpoundsstomach2 then
+			if starPounds.stomach.fullness >= thresholds.starpoundsstomach2 then
 				energyCost = energyCost * 2
 			end
 			status.modifyResource("energy", -energyCost)
@@ -334,7 +334,7 @@ starPounds.drink = function(dt)
 	-- Can only drink if you're below capacity.
 	if starPounds.stomach.fullness >= 1 and not starPounds.hasSkill("wellfedProtection") then
 		return
-	elseif starPounds.stomach.fullness >= starPounds.settings.threshholds.strain.starpoundsstomach3 then
+	elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 then
 		return
 	end
 	-- More accurately calculate where the entities's mouth is.
@@ -411,9 +411,9 @@ starPounds.updateStatuses = function()
 	-- Stomach status.
 	if not starPounds.hasOption("disableStomachMeter") then
 		local stomachTracker = "starpoundsstomach"
-		if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach2 then
+		if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach2 then
 			stomachTracker = "starpoundsstomach3"
-		elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach then
+		elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach then
 			stomachTracker = "starpoundsstomach2"
 		end
 		if not status.uniqueStatusEffectActive(stomachTracker) then
@@ -523,9 +523,9 @@ starPounds.createStatuses = function()
 	if not (starPounds.type == "player") then return end
 
 	local stomachTracker = "starpoundsstomach"
-	if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach2 then
+	if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach2 then
 		stomachTracker = "starpoundsstomach3"
-	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach then
+	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach then
 		stomachTracker = "starpoundsstomach2"
 	end
 	-- Removing them just puts them back in order (Size tracker before stomach tracker)
@@ -899,7 +899,7 @@ starPounds.hunger = function(dt)
 	-- Check upgrade for preventing starving and they have weight loss enabled.
 	if starPounds.hasSkill("preventStarving") and not starPounds.hasOption("disableLoss") then
 		-- 1% more than the food delta.
-		local threshhold = math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt
+		local threshold = math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt
 		-- Check if the player is about to starve.
 		local isStarving = status.resource("food") < (math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt)
 		-- Rumble sound every 5 seconds when hungry.
@@ -908,16 +908,16 @@ starPounds.hunger = function(dt)
 		end
 		if isStarving then
 			local minimumOffset = starPounds.getSkillLevel("minimumSize")
-			local foodAmount = math.min((minimumOffset > 0 and (storage.starPounds.weight - starPounds.sizes[minimumOffset + 1].weight) or storage.starPounds.weight) * 0.1, threshhold - status.resource("food"))
+			local foodAmount = math.min((minimumOffset > 0 and (storage.starPounds.weight - starPounds.sizes[minimumOffset + 1].weight) or storage.starPounds.weight) * 0.1, threshold - status.resource("food"))
 			status.giveResource("food", foodAmount)
 			starPounds.loseWeight(2 * foodAmount/math.max(0.01, starPounds.getStat("absorption")))
 		end
 	end
 	-- Set the statuses.
 	if not (starPounds.type == "player") then return end
-	if starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") then
+	if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") then
 		status.addEphemeralEffect("wellfed")
-	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.threshholds.strain.starpoundsstomach3 then
+	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 then
 		status.addEphemeralEffect("wellfed")
 	else
 		if status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")) and starPounds.stomach.food > 0 then
@@ -967,22 +967,22 @@ starPounds.getChestVariant = function(size)
 	local size = type(size) == "table" and size or {}
 	local variants = size.variants or jarray()
 	local variant = nil
-	local thresholdMultiplier = starPounds.currentSize.threshholdMultiplier
-	local breastThreshholds = starPounds.settings.threshholds.breasts
-	local stomachThreshholds = starPounds.settings.threshholds.stomach
+	local thresholdMultiplier = starPounds.currentSize.thresholdMultiplier
+	local breastThresholds = starPounds.settings.thresholds.breasts
+	local stomachThresholds = starPounds.settings.thresholds.stomach
 
 	local breastSize = (starPounds.hasOption("disableBreastGrowth") and 0 or starPounds.breasts.contents) + (
-		starPounds.hasOption("busty") and breastThreshholds[1].amount * thresholdMultiplier or (
-		starPounds.hasOption("milky") and breastThreshholds[2].amount * thresholdMultiplier or 0)
+		starPounds.hasOption("busty") and breastThresholds[1].amount * thresholdMultiplier or (
+		starPounds.hasOption("milky") and breastThresholds[2].amount * thresholdMultiplier or 0)
 	)
 
 	local stomachSize = (starPounds.hasOption("disableStomachGrowth") and 0 or storage.starPounds.stomachLerp) + (
-		starPounds.hasOption("stuffed") and stomachThreshholds[2].amount * thresholdMultiplier or (
-		starPounds.hasOption("filled") and stomachThreshholds[4].amount * thresholdMultiplier or (
-		starPounds.hasOption("gorged") and stomachThreshholds[6].amount * thresholdMultiplier or 0))
+		starPounds.hasOption("stuffed") and stomachThresholds[2].amount * thresholdMultiplier or (
+		starPounds.hasOption("filled") and stomachThresholds[4].amount * thresholdMultiplier or (
+		starPounds.hasOption("gorged") and stomachThresholds[6].amount * thresholdMultiplier or 0))
 	)
 
-	for _, v in ipairs(breastThreshholds) do
+	for _, v in ipairs(breastThresholds) do
 		if contains(variants, v.name) then
 			if breastSize >= (v.amount * thresholdMultiplier) then
 				variant = v.name
@@ -990,7 +990,7 @@ starPounds.getChestVariant = function(size)
 		end
 	end
 
-	for _, v in ipairs(stomachThreshholds) do
+	for _, v in ipairs(stomachThresholds) do
 		if contains(variants, v.name) then
 			if stomachSize >= (v.amount * thresholdMultiplier) then
 				variant = v.name
@@ -1421,7 +1421,7 @@ starPounds.voreDigest = function(dt)
 	-- Don't do anything if there's no eaten entities.
 	if not (#storage.starPounds.stomachEntities > 0) then return end
 	-- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
-	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.threshholds.strain.starpoundsstomach3, 0), 3)
+	local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.thresholds.strain.starpoundsstomach3, 0), 3)
 	local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
 	local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
 	-- Reduce health of all entities.
@@ -1494,9 +1494,9 @@ starPounds.eatEntity = function(preyId, force, check)
 	-- Don't do anything if eaten.
 	if storage.starPounds.pred then return false end
 	-- Can only eat if you're below capacity.
-	if starPounds.stomach.fullness >= starPounds.settings.threshholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") and not force then
+	if starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") and not force then
 		return false
-	elseif starPounds.stomach.fullness >= starPounds.settings.threshholds.strain.starpoundsstomach3 and not force then
+	elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 and not force then
 		return false
 	end
 	-- Don't do anything if they're already eaten.

@@ -445,9 +445,9 @@ starPounds.updateStats = function(force)
 	if oldWeightMultiplier ~= starPounds.weightMultiplier or force then
 		-- Shouldn't activate at base size, so both indexes are reduced by one.
 		local sizeIndex = starPounds.currentSizeIndex - 1
-		local targetSize = starPounds.settings.targetSize - 1
-		local applyBonuses = sizeIndex >= targetSize
-		local bonusEffectiveness = math.min(1, sizeIndex/targetSize)
+		local scalingSize = starPounds.settings.scalingSize - 1
+		local applyImmunity = starPounds.currentSizeIndex >= starPounds.settings.activationSize
+		local bonusEffectiveness = math.min(1, sizeIndex/scalingSize)
 		local gritReduction = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0
 		status.setPersistentEffects("starpounds", {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
@@ -455,8 +455,8 @@ starPounds.updateStats = function(force)
 			{stat = "grit", amount = gritReduction},
 			{stat = "knockbackThreshold", effectiveMultiplier = 1 - gritReduction},
 			{stat = "fallDamageMultiplier", effectiveMultiplier = 1 + size.healthBonus * (1 - starPounds.getStat("fallDamageReduction"))},
-			{stat = "iceStatusImmunity", amount = applyBonuses and starPounds.getSkillLevel("iceImmunity") or 0},
-			{stat = "poisonStatusImmunity", amount = applyBonuses and starPounds.getSkillLevel("poisonImmunity") or 0},
+			{stat = "iceStatusImmunity", amount = applyImmunity and starPounds.getSkillLevel("iceImmunity") or 0},
+			{stat = "poisonStatusImmunity", amount = applyImmunity and starPounds.getSkillLevel("poisonImmunity") or 0},
 			{stat = "iceResistance", amount = starPounds.getStat("iceResistance") * bonusEffectiveness},
 			{stat = "poisonResistance", amount = starPounds.getStat("poisonResistance") * bonusEffectiveness}
 		})

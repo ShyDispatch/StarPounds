@@ -52,9 +52,9 @@ function update(args)
     animator.scaleTransformationGroup("ballScale", self.scale)
 
     if self.active then
-  		local targetSize = starPounds.settings.targetSize - 1
+  		local scalingSize = starPounds.settings.scalingSize - 1
       local sizeIndex = starPounds.currentSizeIndex - 1
-      local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/targetSize), starPounds.getStat("throgSphereArmor"))
+      local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/scalingSize), starPounds.getStat("throgSphereArmor"))
       status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
     end
 
@@ -74,9 +74,9 @@ function update(args)
   if starPounds.optionChanged and self.active then
     self.lastScale = nil
     self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
-  	local targetSize = starPounds.settings.targetSize - 1
+  	local scalingSize = starPounds.settings.scalingSize - 1
     local sizeIndex = starPounds.currentSizeIndex - 1
-    local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/targetSize), starPounds.getStat("throgSphereArmor"))
+    local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/scalingSize), starPounds.getStat("throgSphereArmor"))
     status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
   end
 

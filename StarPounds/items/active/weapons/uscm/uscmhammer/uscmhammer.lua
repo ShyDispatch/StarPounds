@@ -57,6 +57,7 @@ function setActive(active)
   end
 end
 
+-- Unlike the normal melee ability, hammers don't support animKeyPrefix for whatever reason, so enjoy this mess.
 function updateSmashAbility()
   if HammerSmash then
     local hammerSmashFire_old = HammerSmash.fire

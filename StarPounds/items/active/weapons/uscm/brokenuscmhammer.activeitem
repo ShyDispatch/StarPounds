@@ -30,8 +30,8 @@
 
   "primaryAbilityType" : "hammersmash",
   "primaryAbility" : {
-    "fireTime" : 1,
-    "baseDps" : 9
+    "fireTime" : 1.125,
+    "baseDps" : 8.88889 // Would be 9, but this makes the swing damage 10. :(
   },
 
   "altAbilityType" : "physicalshockwave",

@@ -399,9 +399,10 @@ function selectSkill(skill)
       local nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
       local nextString = currentLevel == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
 
-      local totalAmount = starPounds.getSkillBonus(skill.stat) + starPounds.stats[skill.stat].base
+      local bonus = starPounds.getSkillBonus(skill.stat)
+      local totalAmount = (bonus ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (bonus * -1) or bonus) or 0) + starPounds.stats[skill.stat].base
       local totalIncrease = math.floor(0.5 + (100 * totalAmount) * 10)/10
-      local amount = totalIncrease ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (totalIncrease * -1) or totalIncrease) or 0
+      local amount = totalIncrease
       local amountString = string.format("%.1f", amount):gsub("%.?0+$", "").."%"
 
       if starPounds.stats[skill.stat].normalizeBase then

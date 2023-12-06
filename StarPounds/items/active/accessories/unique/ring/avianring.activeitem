@@ -13,7 +13,7 @@
   "accessoryType" : "ring",
 
   "stats": [
-    {"name": "fallDamageReduction", "modifier": 0.5},
+    {"name": "fallDamageResistance", "modifier": 0.5},
     {"name": "health", "modifier": -0.25}
   ],
 

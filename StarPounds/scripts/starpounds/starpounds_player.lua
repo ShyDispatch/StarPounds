@@ -43,7 +43,7 @@ function init()
 			if notification.sourceEntityId == entity.id() and notification.targetEntityId == entity.id() then
 				if notification.damageSourceKind == "falling" and starPounds.currentSizeIndex > 1 then
 					-- "explosive" damage (ignores tilemods) to blocks is reduced by 80%, for a total of 5% damage applied to blocks. (Isn't reduced by the fall damage skill)
-					local baseDamage = (notification.damageDealt)/(1 + starPounds.currentSize.healthBonus * (1 - starPounds.getStat("fallDamageReduction")))
+					local baseDamage = (notification.damageDealt)/(1 + starPounds.currentSize.healthBonus * (1 - starPounds.getStat("fallDamageResistance")))
 					local	tileDamage = baseDamage * (1 + starPounds.currentSize.healthBonus) * 0.25
 					starPounds.damageHitboxTiles(tileDamage)
 					break

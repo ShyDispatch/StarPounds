@@ -449,17 +449,29 @@ starPounds.updateStats = function(force)
 		local applyImmunity = starPounds.currentSizeIndex >= starPounds.settings.activationSize
 		local bonusEffectiveness = math.min(1, sizeIndex/scalingSize)
 		local gritReduction = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0
-		status.setPersistentEffects("starpounds", {
+		local persistentEffects = {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
 			{stat = "foodDelta", effectiveMultiplier = starPounds.hasOption("disableHunger") and 0 or math.round(starPounds.getStat("hunger"), 2)},
 			{stat = "grit", amount = gritReduction},
+			{stat = "shieldHealth", effectiveMultiplier = 1 + starPounds.getStat("shieldHealth") * bonusEffectiveness},
 			{stat = "knockbackThreshold", effectiveMultiplier = 1 - gritReduction},
 			{stat = "fallDamageMultiplier", effectiveMultiplier = 1 + size.healthBonus * (1 - starPounds.getStat("fallDamageResistance"))},
 			{stat = "iceStatusImmunity", amount = applyImmunity and starPounds.getSkillLevel("iceImmunity") or 0},
 			{stat = "poisonStatusImmunity", amount = applyImmunity and starPounds.getSkillLevel("poisonImmunity") or 0},
 			{stat = "iceResistance", amount = starPounds.getStat("iceResistance") * bonusEffectiveness},
 			{stat = "poisonResistance", amount = starPounds.getStat("poisonResistance") * bonusEffectiveness}
-		})
+		}
+		-- Probably not optimal, but don't apply effects if they do nothing.
+		local filteredPersistentEffects = jarray()
+		for i, effect in ipairs(persistentEffects) do
+			local skip = (
+				effect.baseMultiplier and effect.baseMultiplier == 1) or (
+				effect.effectiveMultiplier and effect.effectiveMultiplier == 1) or (
+				effect.amount and effect.amount == 0
+			)
+			if not skip then filteredPersistentEffects[#filteredPersistentEffects + 1] = effect end
+		end
+		status.setPersistentEffects("starpounds", filteredPersistentEffects)
 	end
 	-- Check if the entity is using a morphball (Tech patch bumps this number for the morphball).
 	if status.stat("activeMovementAbilities") > 1 then return end

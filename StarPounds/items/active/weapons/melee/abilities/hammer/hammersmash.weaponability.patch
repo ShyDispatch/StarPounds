@@ -1,0 +1,7 @@
+[
+  {
+    "op": "add",
+    "path": "/ability/scripts/-",
+    "value": "/items/active/weapons/melee/abilities/hammer/starpounds_hammersmash.lua"
+  }
+]

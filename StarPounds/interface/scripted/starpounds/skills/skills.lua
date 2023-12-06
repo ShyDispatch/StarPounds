@@ -368,7 +368,7 @@ function selectSkill(skill)
     descriptionTitle:setText("^shadow;"..skill.pretty)
     descriptionIcon:setFile(string.format("icons/skills/%s.png", skill.icon or skill.name))
     descriptionIcon:queueRedraw()
-    descriptionText:setText(skill.description)
+    descriptionText:setText(skill.description:gsub("<activationSize>", starPounds.sizes[starPounds.settings.activationSize].size:gsub("^%l", string.upper)))
 
     local currentLevel = starPounds.getSkillLevel(skill.name)
     local unlockedLevel = starPounds.getSkillUnlockedLevel(skill.name)
@@ -425,7 +425,9 @@ function selectSkill(skill)
         string.format("^#%s;%s^reset; \n^clear;%s^reset; %s ^gray;%s", textColour, starPounds.stats[skill.stat].pretty:gsub("(%a)([%w_']*)", tchelper), nextString, amountString, nextString)
       )
       statInfo.toolTip = starPounds.stats[skill.stat].description
-
+      if starPounds.stats[skill.stat].scaling then
+        statInfo.toolTip = statInfo.toolTip.."\n^gray,set;This stat scales until ^#00ebce;"..starPounds.sizes[starPounds.settings.scalingSize].size:gsub("^%l", string.upper).."^reset;."
+      end
     end
 
     experienceCost = isAdmin and 0 or math.min(skill.cost.base + skill.cost.increase * (nextLevel - 1), skill.cost.max)

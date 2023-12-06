@@ -47,6 +47,9 @@ function starPoundsInit()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant()
+	starPounds.level = storage.starPounds.level
+	starPounds.experience = storage.starPounds.experience
+	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
@@ -73,9 +76,7 @@ function update(dt)
 		starPounds.statCache = {}
 		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	end
-	starPounds.level = storage.starPounds.level
-	starPounds.experience = storage.starPounds.experience
-	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)
+	starPounds.stomach = starPounds.getStomach()
 	-- Checks
 	starPounds.voreCheck()
 	-- Actions.

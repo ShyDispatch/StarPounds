@@ -9,7 +9,7 @@
     "hitbox" : {
       "collision" : [[4.8, -1.85], [1.6, 0.0], [0.75, 0.25], [-0.75, 0.25], [-1.6, 0.0], [-4.8, -1.85]],
       "collisionKind" : "Platform",
-      "categoryBlacklist" : ["itemdrop"]
+      "categoryBlacklist" : ["itemdrop", "npc", "monster"]
     }
   },
   "physicsForces" : {

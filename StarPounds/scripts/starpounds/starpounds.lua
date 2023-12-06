@@ -104,12 +104,12 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	end
 	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
 	if amount == 0 then return end
-	local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type]
 	local milkCost = 0
-	local milkProduced = 0
-	local milkCurrent = storage.starPounds.breasts
-	local milkCapacity = starPounds.breasts.capacity
 	if (starPounds.getStat("breastProduction") > 0) and not starPounds.hasOption("disableMilkGain") then
+		local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type]
+		local milkProduced = 0
+		local milkCurrent = storage.starPounds.breasts
+		local milkCapacity = starPounds.breasts.capacity
 		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
 		if starPounds.breasts.contents < maxCapacity then
 			milkCost = amount * absorption * starPounds.getStat("breastProduction")

@@ -15,6 +15,7 @@
       "converse" : "/dialog/throg.config:converse"
     }
   },
+  "displayTitle" : "Hog Diner Guard",
 
   "items" : {
     "override" : [

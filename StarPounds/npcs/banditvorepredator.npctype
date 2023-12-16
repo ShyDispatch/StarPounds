@@ -28,6 +28,7 @@
       }
     }
   },
+  "displayTitle" : "Bandit Predator",
 
   "items" : {
     "override" : [

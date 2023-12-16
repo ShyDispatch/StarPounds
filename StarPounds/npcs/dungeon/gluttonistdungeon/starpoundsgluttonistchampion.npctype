@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsgluttonistchampion",
   "baseType" : "hostile",
+  "displayTitle" : "Gluttonist Champion",
 
   "dropPools" : [ "gluttonistchampiontreasure" ],
 

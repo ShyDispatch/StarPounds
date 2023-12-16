@@ -11,6 +11,7 @@
       "attack" : "/dialog/cultist.config:attack"
     }
   },
+  "displayTitle" : "Cultist Predator",
 
   "items" : {
     "override" : [

@@ -53,5 +53,60 @@
         "That's it. I'm leaving. You're horrible at your job."
       ]
     }
+  },
+  {  
+    "op" : "add",
+    "path" : "/tagCriteria/mootant",
+    "value" : {  
+      "default" : [  
+        "Hey give that back!",
+        "Wha- hey that's mine!",
+        "Being my landlord gives no right to taking my things!"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/enclosedArea/mootant",
+    "value" : {  
+      "default" : [  
+        "There's a hole in the wall, it's not ideal.",
+        "So when are you gonna be fixing the hole in the wall?",
+        "If you didn't know, there's a hole in the wall of my home."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/otherDeed/mootant",
+    "value" : {  
+      "default" : [  
+        "I didn't sign up to have a roommate, can you kick them out?",
+        "I'd much rather have this place to myself, thank you.",
+        "Why is there another person here? It's supposed to be a single home."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/severe/mootant",
+    "value" : {  
+      "default" : [  
+        "I've been leniant but you haven't been doing anything about this...",
+        "I shouldn't have to put up with this, place do something about it.",
+        "What am I paying you for exactly?"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/final/mootant",
+    "value" : {  
+      "default" : [  
+        "Landlords never change, I'm getting out of here.",
+        "A barn is looking more preferable to this place, goodbye.",
+        "You've had your chances, I'm leaving!"
+      ]
+    }
   }
 ]

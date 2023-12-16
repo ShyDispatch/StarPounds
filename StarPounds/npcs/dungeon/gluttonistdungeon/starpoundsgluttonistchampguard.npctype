@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsgluttonistchampguard",
   "baseType" : "hostile",
+  "displayTitle" : "Gluttonist Ranger",
 
   "dropPools" : [ "gluttonisthuntertreasure" ],
 

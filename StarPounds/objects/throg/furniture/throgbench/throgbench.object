@@ -29,7 +29,6 @@
 
       "sitPositions" : [
         // Positions from front to back.
-        [-14, 23], // Right
         [0, 23], // Middle
         [14, 23] // Left
       ],
@@ -44,7 +43,6 @@
 
       "sitPositions" : [
         // Positions from front to back.
-        [-14, 23], // Left
         [0, 23], // Middle
         [14, 23] // Right
       ],

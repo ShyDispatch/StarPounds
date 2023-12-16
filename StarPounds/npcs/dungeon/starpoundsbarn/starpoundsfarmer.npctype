@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsfarmer",
   "baseType" : "guard",
+  "displayTitle" : "Farmer",
   
 
   "scriptConfig" : {

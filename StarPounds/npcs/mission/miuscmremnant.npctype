@@ -1,6 +1,7 @@
 {
   "type" : "miuscmremnant",
   "baseType" : "hostile",
+  "displayTitle" : "USCM Remnant",
 
   "dropPools" : [ "empty" ],
   

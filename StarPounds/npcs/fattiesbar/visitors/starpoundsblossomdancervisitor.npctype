@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsblossomdancervisitor",
   "baseType" : "outpostvisitor",
+  "displayTitle" : "Starpounds Dungeon Master",
 
   "scriptConfig" : {
     "initialStorage": {

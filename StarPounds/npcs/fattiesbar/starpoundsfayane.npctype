@@ -24,6 +24,7 @@
       "species": "floran"
   },
   "humanoidConfig" : "/npcs/fattiesbar/fayaneoid.config",
+  "displayTitle" : "Weapon Huntress",
 
   "scriptConfig" : {
     "initialStorage": {

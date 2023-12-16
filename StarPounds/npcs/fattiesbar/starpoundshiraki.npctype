@@ -1,6 +1,7 @@
 {
   "type" : "starpoundshiraki",
   "baseType" : "outpostcivilian",
+  "displayTitle" : "Adventurer Extraordinaire",
 
   "scriptConfig" : {
     "initialStorage": {

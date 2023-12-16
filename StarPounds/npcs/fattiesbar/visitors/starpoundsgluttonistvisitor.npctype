@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsgluttonistvisitor",
   "baseType" : "outpostvisitor",
+  "displayTitle" : "Gluttonist Visitor",
   
 	"identity" : {
      "species" : "floran"

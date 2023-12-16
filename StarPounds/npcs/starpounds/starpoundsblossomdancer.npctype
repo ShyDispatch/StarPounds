@@ -59,6 +59,7 @@
     "personalityIdle": "idle.5",
     "species": "floran"
   },
+  "displayTitle" : "Starpounds Dungeon Master",
 
   "items" : {
     "override" : [

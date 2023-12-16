@@ -1,6 +1,7 @@
 {
   "type" : "starpoundschika",
   "baseType" : "outpostcivilian",
+  "displayTitle" : "Plucky Plunderer",
 
   "scriptConfig" : {
     "starPounds_skills": {

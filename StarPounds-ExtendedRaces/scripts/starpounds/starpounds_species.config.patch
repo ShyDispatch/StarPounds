@@ -72,7 +72,7 @@
   {
 	"op": "add",
 	"path": "/epshadow",
-	"value": { "weightGain": true }
+	"value": { "weightGain": true, "fullbright": true }
   },
   {
 	"op": "add",

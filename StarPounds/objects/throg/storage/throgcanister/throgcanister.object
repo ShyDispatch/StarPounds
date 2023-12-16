@@ -9,7 +9,7 @@
   "description" : "A sealed metal canister, that might be used to store hazardous liquids.",
   "shortdescription" : "Throg Canister",
   "race" : "throg",
-  "health" : 1.5,
+  "health" : 3.5,
 
   "apexDescription" : "This canister seems ideal for transporting volatile substances in.",
   "avianDescription" : "What a curious canister - I wonder what is inside?",
@@ -22,8 +22,24 @@
   "inventoryIcon" : "throgcanistericon.png",
   "orientations" : [
     {
-      "dualImage" : "throgcanister.png:<color>.<key>",
+      "imageLayers" : [ { "image" : "throgcanister.png:<color>.<key>" }, { "image" : "throgcanisterlit.png:<color>.<key>", "fullbright" : true } ],
       "imagePosition" : [-12, 0],
+	  "flipImages" : true,
+      "direction" : "left",
+	  
+	  "frames" : 5,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+	{
+      "imageLayers" : [ { "image" : "throgcanister.png:<color>.<key>" }, { "image" : "throgcanisterlit.png:<color>.<key>", "fullbright" : true } ],
+      "imagePosition" : [-12, 0],
+      "direction" : "right",
+	  
+	  "frames" : 5,
+      "animationCycle" : 1.0,
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]

@@ -1,6 +1,7 @@
 {
   "type" : "miprisongunman",
   "baseType" : "hostile",
+  "displayTitle" : "Prisoner Gunner",
 
   "dropPools" : [ "empty" ],
   

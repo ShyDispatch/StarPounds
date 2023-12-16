@@ -1,6 +1,7 @@
 {
   "type" : "starpoundssol",
   "baseType" : "outpostcivilian",
+  "displayTitle" : "Wayward Gainer",
 
   "scriptConfig" : {
     "starPounds_skills": {

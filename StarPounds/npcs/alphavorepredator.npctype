@@ -11,6 +11,7 @@
       "disablePrey": true
     }
   },
+  "displayTitle" : "Predator",
 
   "statusControllerSettings" : {
     "stats" : {

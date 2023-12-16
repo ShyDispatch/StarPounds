@@ -1,0 +1,46 @@
+{
+  "type" : "starpoundsumiyonivisitor",
+  "baseType" : "outpostvisitor",
+  "displayTitle" : "Umiyoni Visitor",
+  
+	"identity" : {
+     "species" : "hylotl"
+	 },
+
+  "scriptConfig" : {
+  "starPounds_skills": {
+      "minimumSize": [1, 4]
+    },
+  "starPounds_options": {
+      "disableGain": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"I... I don't want to talk about it.",
+						"Hey, you never saw me here. Got it?",
+						"Why do I fantasize about that horrific day? Why do I yearn to stuff my face?",
+						"It's horrible, but I can't stop thinking about when I had that tubby custard forced down my mouth.",
+						"No, that incident in the mine didn't awaken anything in me, I'm just here because... well...",
+						"D-do you have any recommendations to eat? I swear it's just a light lunch break.",
+						"Is it weird to think about myself getting fatter from constant forcefeeding? I'm... asking for a friend."
+					]
+				}
+			}
+		}
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "hylotltier1head" }, { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic" : [ { "name" : "hylotltier1chest" } ],
+            "legsCosmetic" : [ { "name" : "hylotltier1pants" } ]
+          }
+        ] ]
+    ]
+  }
+}

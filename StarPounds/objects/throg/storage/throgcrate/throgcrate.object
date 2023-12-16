@@ -1,0 +1,64 @@
+{
+  "objectName" : "throgcrate",
+  "colonyTags" : ["throg","storage","commerce"],
+  "printable" : false,
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "description" : "A crate containing cargo. What cargo? Who knows.",
+  "shortdescription" : "Metal Cargo Crate",
+  "race" : "throg",
+  "category" : "storage",
+  "price" : 110,
+  "lightColor" : [16, 23, 26],
+  "health" : 3.5,
+
+  "apexDescription" : "A mysterious cargo crate.",
+  "avianDescription" : "I wonder what's in here.",
+  "floranDescription" : "Floran ship Floran in cargo crate. Leap out. Sssurprise!",
+  "glitchDescription" : "Intrigued. A cargo container - anything could be inside.",
+  "humanDescription" : "Ooh, cargo!",
+  "hylotlDescription" : "A cargo crate of modern design.",
+  "novakidDescription" : "A basic lookin' crate. Could hold valuable cargo...",
+
+
+  "inventoryIcon" : "throgcrateicon.png",
+  "orientations" : [
+    {
+
+      "imageLayers" : [ { "image" : "throgcrate.png:<color>" }, { "image" : "throgcratelit.png:<color>", "fullbright" : true } ],
+      "flipImages" : true,
+      "direction" : "left",
+      "lightPosition" : [-1, 1],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+
+      "imageLayers" : [ { "image" : "throgcrate.png:<color>" }, { "image" : "throgcratelit.png:<color>", "fullbright" : true } ],
+      "direction" : "right",
+      "lightPosition" : [-1, 1],
+
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/metalbox_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/metalbox_close.ogg" ],
+  "slotCount" : 24,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

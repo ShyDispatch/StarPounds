@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsmeatdresser",
   "baseType" : "hostile",
+  "displayTitle" : "Gluttonist Meatdresser",
 
   "dropPools" : [ "gluttonistbutchertreasure" ],
 

@@ -9,6 +9,8 @@
   },
 
   "aliases" : {
-    "default" : "feeding.1"
+    "default" : "feeding.1",
+    "defaultdefault" : "feeding.1",
+    "idledefault" : "idle"
   }
 }

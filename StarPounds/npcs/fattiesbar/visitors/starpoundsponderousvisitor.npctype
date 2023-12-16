@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsponderousvisitor",
   "baseType" : "outpostvisitor",
+  "displayTitle" : "Ponderous Order Visitor",
   
 	"identity" : {
      "species" : "glitch"

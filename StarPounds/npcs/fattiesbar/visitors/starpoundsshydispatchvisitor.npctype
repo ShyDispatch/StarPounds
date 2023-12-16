@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsshydispatchvisitor",
   "baseType" : "outpostvisitor",
+  "displayTitle" : "Starpounds Creator",
 
   "scriptConfig" : {
     "initialStorage": {

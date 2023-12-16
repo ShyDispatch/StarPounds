@@ -1,6 +1,7 @@
 {
   "type" : "miprisonberserker",
   "baseType" : "hostile",
+  "displayTitle" : "Prisoner Berserker",
 
   "dropPools" : [ "empty" ],
   

@@ -62,6 +62,7 @@
 		"knockback": 75,
 		"statusEffects": []
 	},
+  "displayTitle" : "Gluttonist Veteran",
 
   "items" : {
     "override" : [

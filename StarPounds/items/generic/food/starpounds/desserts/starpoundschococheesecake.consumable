@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundschococheesecake",
+  "rarity" : "Rare",
+  "price" : 440,
+  "category" : "preparedFood",
+  "inventoryIcon" : "starpoundschococheesecake.png",
+  "description" : "A simple slice of chocolate cheesecake, packing more calories than you'd think.",
+  "shortdescription" : "Chocolate Cheesecake",
+  "effects" : [ [
+    {
+        "effect" : "maxhealthscalingboostfood",
+        "duration" : 810
+    }
+  ] ],
+  "foodValue": 90,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

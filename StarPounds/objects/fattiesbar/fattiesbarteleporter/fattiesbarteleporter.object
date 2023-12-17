@@ -109,6 +109,10 @@
     {
       "type" : "starpoundstonauacvisitor",
       "species" : [ "avian" ]
+    },
+    {
+      "type" : "starpoundscuiavisitor",
+      "species" : [ "avian" ]
     }
   ]
 }

@@ -136,6 +136,11 @@
   },
   {
 	"op": "add",
+	"path": "/hisuzor",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/lucario",
 	"value": { "weightGain": true }
   }

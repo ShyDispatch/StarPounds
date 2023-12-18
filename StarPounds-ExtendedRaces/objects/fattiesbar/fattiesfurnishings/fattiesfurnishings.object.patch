@@ -152,5 +152,27 @@
 	  "path": "/storeInventory/feedingtube/-",
 	  "value": "silphfeedingtube" 
 	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "auraciteweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsauracitetreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "auracitefeedingtube" 
+	  } 
 	]
 ]

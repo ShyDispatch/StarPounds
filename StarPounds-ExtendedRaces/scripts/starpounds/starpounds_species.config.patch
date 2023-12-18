@@ -133,5 +133,10 @@
 	"op": "add",
 	"path": "/zoroark",
 	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/lucario",
+	"value": { "weightGain": true }
   }
 ]

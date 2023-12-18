@@ -1,0 +1,18 @@
+{
+  "itemName" : "chubsterlucariolegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Pillowy thighs can provide stronger kicks for battle. Truly, a sign from your aura to continue your growth!",
+  "shortdescription" : "Chubby Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundschubster"
+  ],
+
+  "maleFrames" : "pantsm.png",
+  "femaleFrames" : "pantsf.png"
+}

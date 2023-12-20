@@ -169,6 +169,11 @@ function update(dt)
 		end
 	end
 	starPounds.optionChanged = false
+	-- StarExtensions/OpenStarbound integrations.
+	if input then
+		checkBindings(dt)
+	end
+	-- Debug stuff.
 	if starPounds.hasOption("showDebug") then
 		local data = storage.starPounds
 		local stomach = starPounds.stomach
@@ -317,4 +322,48 @@ function useDoors()
 
   queryDoors(openBounds, nil, "openDoor")
   queryDoors(closeBounds, 1, "closeDoor")
+end
+
+function checkBindings(dt)
+	-- Menu time.
+	for _, menu in ipairs({"menu", "skills", "accessories", "options"}) do
+		if input.bindDown("starpounds", menu.."Menu") then
+			player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:"..menu})
+		end
+	end
+	-- Toggle the mod.
+	if input.bindDown("starpounds", "toggle") then
+		starPounds.toggleEnable()
+	end
+	-- Burpy.
+	if input.bindDown("starpounds", "belch") then
+		starPounds.belch(0.75, starPounds.belchPitch(), nil, false)
+	end
+	-- Eat entity.
+	if input.bindDown("starpounds", "voreEat") then
+		local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
+		local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+		local aimPosition = player.aimPosition()
+		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), 2)
+		local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
+		starPounds.eatNearbyEntity(targetPosition, 3, 1)
+	end
+	-- Regurgitate last entity.
+	if input.bindDown("starpounds", "voreRegurgitate") then
+		starPounds.releaseEntity()
+	end
+	-- Lactate.
+	if input.bind("starpounds", "lactate") then
+		if input.bindDown("starpounds", "lactate") then
+			starPounds.lactate(math.random(5, 10)/10)
+		end
+		-- Lactate constantly after holding for 1 second.
+		starPounds.lactateBindTimer = math.max((starPounds.lactateBindTimer or 1) - dt, 0)
+		if starPounds.lactateBindTimer == 0 then
+			starPounds.lactate(math.random(5, 10)/10)
+			starPounds.lactateBindTimer = 0.1
+		end
+	else
+		starPounds.lactateBindTimer = nil
+	end
 end

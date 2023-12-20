@@ -160,7 +160,7 @@ starPounds.gurgle = function(noDigest)
 			-- Every 100 bloat pitches the sound down and volume up by 10%, max 25%
 			local belchMultiplier = math.min(bloat/1000, 0.25)
 			bloatMultiplier = starPounds.getStat("belchAmount")
-			starPounds.belch(0.5 + belchMultiplier, (math.random(110,130)/100) * (1 - belchMultiplier))
+			starPounds.belch(0.5 + belchMultiplier, starPounds.belchPitch(1 - belchMultiplier))
 		end
 		starPounds.digest(seconds, true, bloatMultiplier)
 	end
@@ -178,20 +178,30 @@ starPounds.rumble = function()
 	world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", 0.75, (math.random(90,110)/100))
 end
 
-starPounds.belch = function(volume, pitch, loops, skipParticles)
+starPounds.belch = function(volume, pitch, loops, addMomentum)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	volume = tonumber(volume) or 1
 	pitch = tonumber(pitch) or 1
 	loops = tonumber(loops)
+	if addMomentum == nil then addMomentum = true end
 	-- Skip if belches are disabled.
 	if starPounds.hasOption("disableBelches") then return end
 	world.sendEntityMessage(entity.id(), "starPounds.playSound", "belch", volume, pitch, loops)
-	-- Skip if we're not doing particles.
-	if skipParticles or starPounds.hasOption("disableBelchParticles") then return end
-	-- More accurately calculate where the enities's mouth is.
+	-- 7.5 (Rounded to 8) to 10 particles, decreased or increased by up to 2x, -5
+	-- Ends up yielding around 10 - 15 particles if the belch is very loud and deep, 3 - 5 at normal volume and pitch, and none if it's half volume or twice as high pitch.
+	local volumeMultiplier = math.max(math.min(volume, 1.5), 0)
+	local pitchMultiplier = 1/math.max(pitch, 2/3)
+	local particleCount = math.round(math.max(math.random(75, 100) * 0.1 * pitchMultiplier * volumeMultiplier - 5, 0))
+	-- Belches give momentum in zero g based on the particle count, because why not.
 	local facingDirection = mcontroller.facingDirection()
+	if addMomentum and mcontroller.zeroG() then
+		mcontroller.addMomentum({-0.5 * facingDirection * (0.5 + starPounds.weightMultiplier * 0.5) * particleCount, 0})
+	end
+	-- Skip if we're not doing particles.
+	if starPounds.hasOption("disableBelchParticles") then return end
+	-- More accurately calculate where the enities's mouth is.
 	local mouthOffset = {0.375 * facingDirection * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
 	local gravity = world.gravity(mouthPosition)
@@ -200,15 +210,6 @@ starPounds.belch = function(volume, pitch, loops, skipParticles)
 	particle.initialVelocity = vec2.add({7 * facingDirection, 0}, vec2.add(mcontroller.velocity(), {0, gravity/62.5})) -- Weird math but it works I guess.
 	particle.finalVelocity = {0, -gravity}
 	particle.approach = {friction and 5 or 0, gravity}
-	-- 7.5 (Rounded to 8) to 10 particles, decreased or increased by up to 2x, -5
-	-- Ends up yielding around 10 - 15 particles if the belch is very loud and deep, 3 - 5 at normal volume and pitch, and none if it's half volume or twice as high pitch.
-	local volumeMultiplier = math.max(math.min(volume, 1.5), 0)
-	local pitchMultiplier = 1/math.max(pitch, 2/3)
-	local particleCount = math.round(math.max(math.random(75, 100) * 0.1 * pitchMultiplier * volumeMultiplier - 5, 0))
-	-- Belches give momentum in zero g based on the particle count, because why not.
-	if mcontroller.zeroG() then
-		mcontroller.addMomentum({-0.5 * facingDirection * (0.5 + starPounds.weightMultiplier * 0.5) * particleCount, 0})
-	end
 	world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
 		damageKind = "hidden",
 		universalDamage = false,
@@ -216,6 +217,19 @@ starPounds.belch = function(volume, pitch, loops, skipParticles)
 		timeToLive = 5/60,
 		periodicActions = {{action = "loop", time = 0, ["repeat"] = false, count = particleCount, body = {{action = "particle", specification = particle}}}}
 	})
+end
+
+starPounds.belchPitch = function(multiplier)
+	multiplier = tonumber(multiplier) or 1
+	local pitch = util.randomInRange(starPounds.settings.belchPitch)
+	if not starPounds.hasOption("ungenderedBelches") then
+		local gender = world.entityGender(entity.id())
+		if gender then
+			pitch = pitch + (starPounds.settings.belchGenderModifiers[gender] or 0)
+		end
+	end
+	pitch = math.round(pitch * multiplier, 2)
+	return pitch
 end
 
 starPounds.slosh = function(dt)
@@ -368,7 +382,7 @@ starPounds.drink = function(dt)
 		if drinkCounter >= 1 then
 			-- Gets up to 25% deeper depending on how many 'sips' over 10 were taken.
 			local belchMultiplier = 1 - (drinkCounter - 1) * 0.25
-			starPounds.belch(0.75, (math.random(110,130)/100) * belchMultiplier)
+			starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 		end
 		drinkCounter = 0
 	end
@@ -1680,7 +1694,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
 	-- Burp/Stomach rumble.
 	local belchMultiplier = 1 - math.round((digestedEntity.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
-	starPounds.belch(0.75, (math.random(110,130)/100) * belchMultiplier)
+	starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 	-- Iterate over and edit the items.
 	local regurgitatedItems = jarray()
 	-- We get purple particles if we digest something that gives ancient essence.
@@ -1834,7 +1848,7 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 		end
 		if releasedEntity and world.entityExists(releasedEntity.id) then
 			local belchMultiplier = 1 - math.round((releasedEntity.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
-			starPounds.belch(0.75, (math.random(110,130)/100) * belchMultiplier)
+			starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 		end
 		storage.starPounds.stomachEntities = jarray()
 	else
@@ -1851,7 +1865,7 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 		-- Call back to release the entity incase the pred is releasing them.
 		if releasedEntity and world.entityExists(releasedEntity.id) then
 			local belchMultiplier = 1 - math.round((releasedEntity.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
-			starPounds.belch(0.75, (math.random(110,130)/100) * belchMultiplier)
+			starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 			world.sendEntityMessage(releasedEntity.id, "starPounds.getReleased", entity.id(), statusEffect)
 		end
 	end
@@ -2213,6 +2227,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.gurgle", simpleHandler(starPounds.gurgle))
 	message.setHandler("starPounds.rumble", simpleHandler(starPounds.rumble))
 	message.setHandler("starPounds.belch", simpleHandler(starPounds.belch))
+	message.setHandler("starPounds.belchPitch", simpleHandler(starPounds.belchPitch))
 	message.setHandler("starPounds.feed", simpleHandler(starPounds.feed))
 	message.setHandler("starPounds.eat", simpleHandler(starPounds.eat))
 	message.setHandler("starPounds.gainBloat", simpleHandler(starPounds.gainBloat))

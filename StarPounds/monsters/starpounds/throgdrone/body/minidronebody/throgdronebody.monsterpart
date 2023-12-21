@@ -1,9 +1,0 @@
-{
-  "name" : "throgdronebody",
-  "category" : "throgdrone_parts",
-  "type" : "body",
-
-  "frames" : {
-    "body" : "throgdronebody.png"
-  }
-}

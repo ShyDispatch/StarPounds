@@ -1,0 +1,11 @@
+{
+  "itemName" : "avianblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "avianblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Avian Flab",
+
+  "materialId" : 51437
+}

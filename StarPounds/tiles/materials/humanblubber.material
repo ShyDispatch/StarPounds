@@ -1,0 +1,22 @@
+{
+  "materialId" : 51427,
+  "materialName" : "humanblubber",
+  "particleColor" : [168, 150, 196, 255],
+  "itemDrop" : "humanblubber",
+  "description" : "Squishy, jiggly matter.. I wonder what it is.",
+  "shortdescription" : "Human Flab",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "humanblubber.png",
+    "variants" : 6,
+    "lightTransparent" : false,
+    "multiColored" : true,
+    "occludesBelow" : true,
+    "zLevel" : 99999,
+    "radiantLight" : [15, 12, 18]
+  }
+}

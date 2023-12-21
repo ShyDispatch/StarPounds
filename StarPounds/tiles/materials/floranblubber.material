@@ -1,0 +1,22 @@
+{
+  "materialId" : 51429,
+  "materialName" : "floranblubber",
+  "particleColor" : [168, 150, 196, 255],
+  "itemDrop" : "floranblubber",
+  "description" : "Squishy, jiggly matter.. I wonder what it is.",
+  "shortdescription" : "Plant Flab",
+  "footstepSound" : "/sfx/blocks/footstep_tallgrass.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "floranblubber.png",
+    "variants" : 6,
+    "lightTransparent" : false,
+    "multiColored" : true,
+    "occludesBelow" : true,
+    "zLevel" : 99999,
+    "radiantLight" : [15, 12, 18]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "itemName" : "mootantblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "mootantblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Mootant Flab",
+
+  "materialId" : 51430
+}

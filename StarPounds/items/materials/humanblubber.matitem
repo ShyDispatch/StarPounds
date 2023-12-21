@@ -1,0 +1,11 @@
+{
+  "itemName" : "humanblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "humanblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Human Flab",
+
+  "materialId" : 51427
+}

@@ -116,6 +116,11 @@
       "filter": [ "tabfatty" ]
     },
 	{
+      "file": "/interface/fattyshops/tabs/materials.png",
+	  "label": "Blubber",
+      "filter": [ "materials" ]
+    },
+	{
       "file": "/interface/fattyshops/tabs/tabmisc.png",
 	  "label": "Misc",
       "filter": [ "tabmisc" ]
@@ -180,6 +185,9 @@
 	  "fattycultistchest", "fattycultistlegs", "fattyminiknogchest", "fattyminiknogpants", "fattyspacesuitchest", "fattyspacesuitlegs", "fattyvalorouschest", "fattyvalorouspants", "fattyminerchest", "fattypredatorychest", "fattypredatorypants", "fattywizardchest", "fattywizardlegs",
 	  "fattybettychest", "fattybettylegs", "fattychefchest", "fattycheflegs", "fattycowboychest", "fattycowboylegs", "fattyjumpsuitchest", "fattyjumpsuitlegs", "fattymoneybagschest", "fattymoneybagspants", "fattymrclauschest", "fattymrclauspants", "fattypilotchest", "fattypilotlegs", "fattypiratechest", "fattypiratelegs", "fattyscientistchest", "fattyscientistlegs",
 	  "fattyshirtchest", "fattysmartchest", "fattysmartpants", "fattystartrackchest", "fattystartracklegs", "fattyexplorerchest", "fattyexplorerlegs", "fattyhazmatchest", "fattyhazmatlegs", "fattyneochest", "fattyneolegs", "fattypeacekeeperchest", "fattypeacekeeperpants", "fattysnowinfantrychest", "fattysnowinfantrypants"
+    ],
+    "materials" : [
+      "humanblubber", "throgblubber", "floranblubber", "mootantblubber", "glitchblubber", "metalblubber", "hylotlblubber", "hylotl2blubber", "apexblubber", "apexfurblubber", "avianblubber", "novakidblubber", "alienblubber"
     ],
     "tabmisc" : [
       "burptool", "gurgletool", "starpoundsstomachgurgle"

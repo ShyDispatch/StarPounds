@@ -1,0 +1,11 @@
+{
+  "itemName" : "glitchblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "glitchblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Robot Flab",
+
+  "materialId" : 51431
+}

@@ -1,0 +1,11 @@
+{
+  "itemName" : "apexblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "apexblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Apex Flab",
+
+  "materialId" : 51435
+}

@@ -1,0 +1,111 @@
+{
+  "globalTagDefaults" : {
+    "liquidImage" : ""
+  },
+  "animatedParts" : {
+    "stateTypes" : {
+      "pump" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+          "on" : {
+            "frames" : 6,
+            "cycle" : 0.5,
+            "mode" : "loop",
+            "frameProperties" : {
+              "immediateSound" : [ "", "", "/sfx/starpounds/digesting/digesting2.ogg", "", "/sfx/objects/cropshipper_arm_up.ogg", ""]
+            }
+          }
+        }
+      },
+      "liquid" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+          "on" : {
+            "frames" : 14,
+            "cycle" : 0.5,
+            "mode" : "loop"
+          }
+        }
+      },
+      "panel" : {
+        "default" : "default",
+        "states" : {
+          "default" : {
+            "frames" : 8,
+            "cycle" : 1,
+            "mode" : "loop"
+          }
+        }
+      }
+    },
+    "parts" : {
+      "bg" : {
+        "properties" : {
+          "centered" : false,
+          "offset" : [1.875, 0.125],
+          "image" : "<partImage>"
+        }
+      },
+      "liquidBack" : {
+        "properties" : {
+          "centered" : false,
+          "offset" : [2.625, 0.875],
+          "zLevel" : 3,
+          "image" : "<partImage>:1?blendmult=<liquidImage>;0;0;?multiply=ffffff80"
+        },
+        "partStates" : {"liquid" : {
+          "off" : {"properties" : {"image" : "<partImage>:1?blendmult=<liquidImage>;0;0;?multiply=ffffff80"}},
+          "on" : {"properties" : {"image" : "<partImage>:<frame>?blendmult=<liquidImage>;0;0;?multiply=ffffff80"}}
+        }}
+      },
+      "pump" : {
+        "properties" : {
+          "centered" : false,
+          "offset" : [2.25, 0.875],
+          "zLevel" : 2
+        },
+        "partStates" : {"pump" : {
+          "off" : {"properties" : {"image" : "<partImage>:1"}},
+          "on" : {"properties" : {"image" : "<partImage>:<frame>"}}
+        }}
+      },
+      "liquid" : {
+        "properties" : {
+          "centered" : false,
+          "offset" : [2.625, 0.875],
+          "zLevel" : 3
+        },
+        "partStates" : {"liquid" : {
+          "off" : {"properties" : {"image" : "<partImage>:1?blendmult=<liquidImage>;0;0;?multiply=ffffff80"}},
+          "on" : {"properties" : {"image" : "<partImage>:<frame>?blendmult=<liquidImage>;0;0;?multiply=ffffff80"}}
+        }}
+      },
+      "fg" : {
+        "properties" : {
+          "centered" : false,
+          "image" : "<partImage>",
+          "zLevel" : 4
+        }
+      },
+      "fg_fullbright" : {
+        "properties" : {
+          "centered" : false,
+          "image" : "<partImage>",
+          "fullbright" : true,
+          "zLevel" : 5
+        }
+      },
+      "panel" : {
+        "properties" : {
+          "centered" : false,
+          "fullbright" : true,
+          "offset" : [1, 1.125],
+          "zLevel" : 5
+        },
+        "partStates" : {"panel" : {"default" : {"properties" : {"image" : "<partImage>:<frame>"}}}}
+      }
+    }
+  }
+}

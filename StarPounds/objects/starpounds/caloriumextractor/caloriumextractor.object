@@ -1,0 +1,66 @@
+{
+  "objectName" : "starpoundscaloriumextractor",
+  "colonyTags" : ["starpounds", "throg"],
+  "rarity" : "Legendary",
+  "category" : "crafting",
+  "description" : "-todo-",
+  "shortdescription" : "Calorium Extractor",
+  "race" : "throg",
+  "printable" : false,
+
+  "apexDescription" : "-todo-",
+  "avianDescription" : "-todo-",
+  "floranDescription" : "-todo-",
+  "glitchDescription" : "-todo-",
+  "humanDescription" : "-todo-",
+  "hylotlDescription" : "-todo-",
+  "novakidDescription" : "-todo-",
+  "throgDescription" : "-todo-",
+  "mootantDescription" : "-todo-",
+  "harpyDescription" : "-todo-",
+
+  "avaliDescription" : "-todo-",
+
+  "inventoryIcon" : "caloriumextractoricon.png",
+  "orientations" : [
+    {
+      "image" : "caloriumextractorpreview.png",
+      "imagePosition" : [-24, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+      "animationPosition" : [-24, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "caloriumextractorpreview.png",
+      "imagePosition" : [-24, 0],
+
+      "direction" : "right",
+      "animationPosition" : [-24, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "caloriumextractor.animation",
+  "animationParts" : {
+    "bg" : "bg.png",
+    "pump" : "pump.png",
+    "fg" : "caloriumextractor.png",
+    "fg_fullbright" : "caloriumextractor_fullbright.png",
+    "panel" : "panel.png",
+    "liquidBack" : "/objects/starpounds/caloriumextractor/liquidmask.png",
+    "liquid" : "/objects/starpounds/caloriumextractor/liquidmask.png"
+  },
+
+  "interactAction" : "ScriptPane",
+  "interactData" : {"gui" : { }, "scripts" : ["/metagui.lua"], "ui" : "starpounds:caloriumextractor"},
+  "interactive" : false,
+
+  "scripts" : [ "caloriumextractor.lua" ],
+  "scriptDelta" : 1
+}

@@ -1,0 +1,29 @@
+
+{
+  "style" : "window",
+  "size" : [120, 40],
+  "title" : "Calorium Extractor",
+  "icon" : "icon.png",
+  "accentColor" : "8866ff",
+  "uniqueBy" : "path",
+  "uniqueMode" : "toggle",
+  "scripts" : [ "caloriumextractor.lua" ],
+  "children" : [
+    {"type": "panel", "style": "convex", "expandMode": [1, 1], "children": [
+      "spacer",
+      0.5,
+      [
+        "spacer",
+        3,
+        {"type": "image", "id": "statusImage", "file": "status.png:off"},
+        5,
+        {"type": "iconButton", "id": "extract", "image" : "button.png:disabled", "hoverImage" :"button.png:disabled", "pressImage" : "button.png:disabled"},
+        4,
+        {"type": "itemSlot", "id": "caloriumOutput", "glyph": "liquidglyph.png", "autoInteract": true},
+        2,
+        "spacer"
+      ],
+      "spacer"
+    ]}
+  ]
+}

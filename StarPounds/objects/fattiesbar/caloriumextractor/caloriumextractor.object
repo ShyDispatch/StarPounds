@@ -53,8 +53,8 @@
     "fg" : "caloriumextractor.png",
     "fg_fullbright" : "caloriumextractor_fullbright.png",
     "panel" : "panel.png",
-    "liquidBack" : "/objects/starpounds/caloriumextractor/liquidmask.png",
-    "liquid" : "/objects/starpounds/caloriumextractor/liquidmask.png"
+    "liquidBack" : "/objects/fattiesbar/caloriumextractor/liquidmask.png",
+    "liquid" : "/objects/fattiesbar/caloriumextractor/liquidmask.png"
   },
 
   "interactAction" : "ScriptPane",

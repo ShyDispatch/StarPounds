@@ -25,9 +25,9 @@ function increaseWeightProgress(weight, step)
   local currentSize, currentSizeIndex = getSize(weight)
   local nextWeight = self.sizes[currentSizeIndex + 1] and self.sizes[currentSizeIndex + 1].weight or self.settings.maxWeight
   local currentProgress = (weight - currentSize.weight)/(nextWeight - currentSize.weight)
-  local targetProgress = math.ceil(currentProgress/step) * step
+  local targetProgress = currentProgress + step
   local targetWeight = currentSize.weight + (nextWeight - currentSize.weight) * targetProgress
-  world.sendEntityMessage(entity.id(), "starPounds.gainWeight", targetWeight - weight)
+  world.sendEntityMessage(entity.id(), "starPounds.gainWeight", targetWeight - weight, true)
 end
 
 function getSize(weight)

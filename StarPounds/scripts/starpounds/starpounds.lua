@@ -1288,7 +1288,7 @@ starPounds.gainBloat = function(amount, fullAmount)
 	storage.starPounds.bloat = math.min(storage.starPounds.bloat + amount, bloatCap)
 end
 
-starPounds.gainWeight = function(amount)
+starPounds.gainWeight = function(amount, fullAmount)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return 0 end
 	-- Argument sanitisation.
@@ -1296,12 +1296,12 @@ starPounds.gainWeight = function(amount)
 	-- Don't do anything if weight gain is disabled.
 	if starPounds.hasOption("disableGain") then return end
 	-- Increase weight by amount.
-	amount = math.min(amount * starPounds.getStat("weightGain"), starPounds.settings.maxWeight - storage.starPounds.weight)
+	amount = math.min(amount * (fullAmount and 1 or starPounds.getStat("weightGain")), starPounds.settings.maxWeight - storage.starPounds.weight)
 	starPounds.setWeight(storage.starPounds.weight + amount)
 	return amount
 end
 
-starPounds.loseWeight = function(amount)
+starPounds.loseWeight = function(amount, fullAmount)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return 0 end
 	-- Argument sanitisation.
@@ -1309,7 +1309,7 @@ starPounds.loseWeight = function(amount)
 	-- Don't do anything if weight loss is disabled.
 	if starPounds.hasOption("disableLoss") then return end
 	-- Decrease weight by amount (min: 0)
-	amount = math.min(amount * starPounds.getStat("weightLoss"), storage.starPounds.weight)
+	amount = math.min(amount * (fullAmount and 1 or starPounds.getStat("weightLoss")), storage.starPounds.weight)
 	starPounds.setWeight(storage.starPounds.weight - amount)
 	return amount
 end

@@ -48,9 +48,7 @@ function update(dt)
         self.tickTimer = self.tickTime
 
         local foodAmount = self.settings.drinkableVolume * (self.settings.drinkables.starpoundscaloriumliquid or 0)
-        local bloatAmount = math.max(0, self.settings.drinkableVolume - foodAmount)
-        world.sendEntityMessage(entity.id(), "starPounds.feed", foodAmount * consumedLiquid)
-        world.sendEntityMessage(entity.id(), "starPounds.gainBloat", bloatAmount * consumedLiquid)
+        world.sendEntityMessage(entity.id(), "starPounds.gainWeight", foodAmount * consumedLiquid, true)
 
         promises:add(world.sendEntityMessage(entity.id(), "starPounds.getData"), function(starPounds)
           increaseWeightProgress(starPounds.weight, self.progressStep * consumedLiquid, disableBlob)
@@ -88,9 +86,9 @@ function increaseWeightProgress(weight, step)
   local currentSize, currentSizeIndex = getSize(weight)
   local nextWeight = self.sizes[currentSizeIndex + 1] and self.sizes[currentSizeIndex + 1].weight or self.settings.maxWeight
   local currentProgress = (weight - currentSize.weight)/(nextWeight - currentSize.weight)
-  local targetProgress = math.ceil(currentProgress/step) * step
+  local targetProgress = currentProgress + step
   local targetWeight = currentSize.weight + (nextWeight - currentSize.weight) * targetProgress
-  world.sendEntityMessage(entity.id(), "starPounds.gainWeight", targetWeight - weight)
+  world.sendEntityMessage(entity.id(), "starPounds.gainWeight", targetWeight - weight, true)
 end
 
 function getSize(weight)

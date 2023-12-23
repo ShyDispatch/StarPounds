@@ -60,7 +60,7 @@ end
 
 function updateButtonIcon()
   local buttonIcon = string.format("button.png:%s", canExtract() and (extracting and "on" or "off") or "disabled")
-  extract:setImage(buttonIcon, buttonIcon, buttonIcon)
+  extract:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=1;00000000;00000000?crop=1;2;49;35")
 end
 
 function updateStatusImage()

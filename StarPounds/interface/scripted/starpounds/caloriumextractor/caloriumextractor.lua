@@ -2,7 +2,7 @@ starPounds = getmetatable ''.starPounds
 function init()
   maxStack = root.assetJson("/items/defaultParameters.config:defaultMaxStack")
   extracting = false
-  extractTimer = 0.5
+  extractTimer = 0.1
   updateButtonIcon()
 end
 
@@ -21,6 +21,7 @@ function update()
         extractTimer = 0.1
       end
     else
+      extractTimer = 0.1
       extracting = false
       widget.playSound("/sfx/objects/apexcoolcomputer_switchoff.ogg")
     end

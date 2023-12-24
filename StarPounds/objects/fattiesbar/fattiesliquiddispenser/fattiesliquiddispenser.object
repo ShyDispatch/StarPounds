@@ -34,8 +34,7 @@
   	  { "item" : { "name" : "starpoundsliquidsoda", "parameters" : { "price" : 20 } } },
   	  { "item" : { "name" : "liquidlard", "parameters" : { "price" : 30 } } },
   	  { "item" : { "name" : "liquidgrease", "parameters" : { "price" : 30 } } },
-  	  { "item" : { "name" : "starpoundsliquidhoney", "parameters" : { "price" : 30 } } },
-  	  { "item" : { "name" : "starpoundsliquidcalorium", "parameters" : { "price" : 40 } } }
+  	  { "item" : { "name" : "starpoundsliquidhoney", "parameters" : { "price" : 30 } } }
     ]
   },
 

@@ -15,6 +15,7 @@
   "icon" : "/interface/statuses/calorium.png",
 
   "scripts" : [
-    "calorium.lua"
+    "calorium.lua",
+    "caloriumcalculation.lua"
   ]
 }

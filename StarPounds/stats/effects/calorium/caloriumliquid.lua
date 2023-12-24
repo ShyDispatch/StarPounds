@@ -16,11 +16,11 @@ function init()
 end
 
 function update(dt)
+  -- Check promises.
+  promises:update()
   if mcontroller.liquidPercentage() < self.minimumLiquid then return end
   if world.entityType(entity.id()) == "npc" or (getmetatable ''.starPounds and getmetatable ''.starPounds.enabled) then
-  	-- Check promises.
     wasActive = true
-  	promises:update()
     self.tickTimer = self.tickTimer - dt
     if self.tickTimer <= 0 then
       local bounds = translateRect(mcontroller.boundBox(), mcontroller.position())
@@ -39,8 +39,8 @@ function update(dt)
       shuffle(filteredLiquids)
 
       for _, liquid in ipairs(filteredLiquids) do
-        consumedLiquid = math.min(consumedLiquid + world.destroyLiquid(liquid[1])[2], 1)
-        if consumedLiquid == 1 then break end
+        consumedLiquid = math.floor((consumedLiquid + world.destroyLiquid(liquid[1])[2]) * 10 + 0.5)/10
+        if consumedLiquid >= 1 then break end
       end
 
       if consumedLiquid > 0 then
@@ -48,10 +48,10 @@ function update(dt)
         self.tickTimer = self.tickTime
 
         local foodAmount = self.settings.drinkableVolume * (self.settings.drinkables.starpoundscaloriumliquid or 0)
-        world.sendEntityMessage(entity.id(), "starPounds.gainWeight", foodAmount * consumedLiquid, true)
 
         promises:add(world.sendEntityMessage(entity.id(), "starPounds.getData"), function(starPounds)
-          increaseWeightProgress(starPounds.weight, self.progressStep * consumedLiquid, disableBlob)
+          increaseWeightProgress(starPounds.weight, self.progressStep * consumedLiquid)
+          world.sendEntityMessage(entity.id(), "starPounds.gainWeight", foodAmount * consumedLiquid, true)
         end)
 
         animator.setSoundPitch("digest", 2/(1 + self.tickTime))
@@ -78,27 +78,4 @@ function shuffle(tbl)
     tbl[i], tbl[j] = tbl[j], tbl[i]
   end
   return tbl
-end
-
-function increaseWeightProgress(weight, step)
-  if weight == self.settings.maxWeight then return end
-  local step = math.max(0, math.min((step or 1), 1))
-  local currentSize, currentSizeIndex = getSize(weight)
-  local nextWeight = self.sizes[currentSizeIndex + 1] and self.sizes[currentSizeIndex + 1].weight or self.settings.maxWeight
-  local currentProgress = (weight - currentSize.weight)/(nextWeight - currentSize.weight)
-  local targetProgress = currentProgress + step
-  local targetWeight = currentSize.weight + (nextWeight - currentSize.weight) * targetProgress
-  world.sendEntityMessage(entity.id(), "starPounds.gainWeight", targetWeight - weight, true)
-end
-
-function getSize(weight)
-	local sizeIndex = 0
-	-- Go through all sizes (smallest to largest) to find which size.
-	for i in ipairs(self.sizes) do
-		if weight >= self.sizes[i].weight then
-			sizeIndex = i
-		end
-	end
-
-	return self.sizes[sizeIndex], sizeIndex
 end

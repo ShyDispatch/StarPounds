@@ -14,8 +14,9 @@ function update()
     local weight = starPounds.getData("weight")
     if canExtract() then
       if extractTimer == 0 then
-        local caloriumCost = 10 + math.min(50, math.floor(0.02 * weight))
-        local converted = math.floor(starPounds.loseWeight(caloriumCost, true)/caloriumCost)
+        local nextWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
+        local caloriumCost = 10 + math.floor(0.02 * (nextWeight - starPounds.currentSize.weight) + 0.5)
+        local converted = math.floor(starPounds.loseWeight(caloriumCost, true)/caloriumCost + 0.5)
         addCalorium(converted)
         world.sendEntityMessage(pane.sourceEntity(), "heartbeat")
         extractTimer = 0.1

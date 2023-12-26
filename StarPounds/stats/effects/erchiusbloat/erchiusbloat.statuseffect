@@ -3,6 +3,7 @@
 
   "effectConfig" : {
     "bloatAmount": 10,
+    "bloatIncrease": 1,
     "tickTime": 1,
     "desaturateAmount" : 0,
     "multiplyColor" : [0, 0, 0]

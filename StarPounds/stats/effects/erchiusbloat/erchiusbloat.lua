@@ -2,7 +2,8 @@ function init()
   script.setUpdateDelta(5)
   self.bloatAmount = effect.getParameter("bloatAmount", 10)
   self.bloatIncrease = effect.getParameter("bloatIncrease", 1)
-  self.soundVolume = effect.getParameter("soundVolume")
+  self.bloatCap = effect.getParameter("bloatCap", 100)
+  self.soundVolume = effect.getParameter("soundVolume", 1)
   self.tickTime = effect.getParameter("tickTime", 1)
   self.tickTimer = 0
 
@@ -20,7 +21,6 @@ function update(dt)
     self.tickTimer = self.tickTimer - dt
     if self.tickTimer <= 0 then
       self.tickTimer = self.tickTime
-      self.bloatAmount = math.min(self.bloatAmount + self.bloatIncrease, 100)
       self.saturation = math.floor(-self.desaturateAmount * self.bloatAmount * 0.01)
 
       local multiply = {255 + self.multiply[1] * self.bloatAmount * 0.01, 255 + self.multiply[2] * self.bloatAmount * 0.01, 255 + self.multiply[3] * self.bloatAmount * 0.01}
@@ -28,8 +28,9 @@ function update(dt)
       world.sendEntityMessage(entity.id(), "starPounds.gainBloat", self.bloatAmount)
       effect.setParentDirectives(string.format("?saturation=%d?multiply=%s", self.saturation, multiplyHex))
       if playedSound then
-        animator.setSoundVolume("geiger", self.soundVolume or (self.bloatAmount * 0.01), self.soundVolume and 1 or nil)
+        animator.setSoundVolume("geiger", self.soundVolume * (self.bloatAmount/self.bloatCap))
       end
+      self.bloatAmount = math.min(self.bloatAmount + self.bloatIncrease, self.bloatCap)
     end
     -- Delaying this by a tick because setting the volume takes one tick, apparently.
     if not playedSound then

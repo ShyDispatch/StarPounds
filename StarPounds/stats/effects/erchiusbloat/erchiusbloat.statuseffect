@@ -12,6 +12,9 @@
 
   "animationConfig" : "erchiusbloat.animation",
 
+  "label" : "Bloating",
+  "icon" : "/interface/statuses/erchiusbloat.png",
+
   "scripts" : [
     "erchiusbloat.lua"
   ]

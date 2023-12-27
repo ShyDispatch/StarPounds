@@ -81,16 +81,18 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	local bloat = storage.starPounds.bloat
 	local absorption = starPounds.getStat("absorption")
 	local foodValue = starPounds.getStat("foodValue")
+	local digestion = starPounds.getStat("digestion")
+	local bloatDigestion = starPounds.getStat("bloatDigestion")
 	-- Skip the rest if there's nothing to digest.
-	if food == 0 and bloat == 0 then return end
+	if (food == 0 or digestion == 0) and (bloat == 0 or bloatDigestion == 0) then return end
 	-- Split between food and bloat.
 	local foodRatio = math.min(math.max(math.round(food/(food + bloat), 2), (food > 0) and 0.05 or 0), (bloat > 0) and 0.95 or 1)
 	-- Amount is 1 + 1% of food value, or the remaining food value.
-	local baseAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * starPounds.getStat("digestion")) * foodRatio
+	local baseAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * digestion) * foodRatio
 	local amount = math.min(math.round(baseAmount * dt, 4), food)
 	storage.starPounds.stomach = math.round(math.max(food - amount, 0), 3)
 	-- Ditto for bloat.
-	local baseBloatAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * starPounds.getStat("bloatDigestion")) * (1 - foodRatio) * bloatMultiplier
+	local baseBloatAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * bloatDigestion) * (1 - foodRatio) * bloatMultiplier
 	local bloatAmount = math.min(math.round(baseBloatAmount * dt, 4), bloat)
 	storage.starPounds.bloat = math.round(math.max(bloat - bloatAmount, 0), 3)
 	-- Don't need to run the rest if there's no actual food.

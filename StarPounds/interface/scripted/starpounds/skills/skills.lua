@@ -275,7 +275,7 @@ function populateTraitTab()
   end
   if speciesTrait.id ~= "none" then
     selectableTraits[#selectableTraits + 1] = sb.jsonMerge(traits.none, {id = "none"})
-    if starPounds.getTrait() == "default" then selectedTraitIndex = #selectableTraits + 1 end
+    if starPounds.getTrait() == "default" then selectedTraitIndex = #selectableTraits end
   end
   selectedTraitIndex = selectedTraitIndex or math.random(1, #selectableTraits)
   selectedTrait = selectableTraits[selectedTraitIndex]

@@ -1,0 +1,17 @@
+{
+  "id" : "starpoundsmamgluttonist",
+  "title" : "Big Model Getting Bigger",
+  "description" : "A magazine column about a rising star in the plus size model world.",
+  "icon" : "starpoundsmammodel.png",
+  "contentPages" : [
+    "A world of prejudices can topple so easily when a rising star comes to challenge the common person's world views. One such model that's been catching the galactic stage has been an unassuming Slime. Who's gelatinous body has been keeping eyes glued all on her.",
+
+"Going by the name of Mam, this slime girl has unknown origins. The likes of which most races wouldn't be aware of. But what we do know is she is large, and in charge. Defying the social norm that skinny is beautiful. Her large body has captivated many with adoration, paving the way for a new movement in body positivity.",
+
+"You may be seeing in increase of people purposefully indulging themselves to get bigger. Wanting to be closer to our slime star. And all Mam has to say is she wants to be even bigger herself, that there's only more of her to love."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

@@ -113,6 +113,10 @@
     {
       "type" : "starpoundscuiavisitor",
       "species" : [ "avian" ]
+    },
+    {
+      "type" : "starpoundsmamvisitor",
+      "species" : [ "novakid" ]
     }
   ]
 }

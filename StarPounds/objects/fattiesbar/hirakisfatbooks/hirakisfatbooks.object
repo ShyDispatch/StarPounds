@@ -42,7 +42,10 @@
       { "item" : "starpoundsuscmremnants-codex" },
       { "item" : "fattemple-codex" },	  
       { "item" : "townhungry-codex" },		  
-      { "item" : "florfeast-codex" }
+      { "item" : "florfeast-codex" },
+      { "item" : "starpoundsmammodel-codex" },	  
+      { "item" : "starpoundsmamfan-codex" },		  
+      { "item" : "starpoundsmamtribe-codex" }
     ]
   },	
 

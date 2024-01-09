@@ -104,7 +104,7 @@
   },
   "storeInventory" : {
     "exclusive" : [
-      "cosmicbanditchest", "cosmicbanditlegs", "cosmicblacksmithchest", "cosmicblacksmithlegs", "meatdresserhead", "starpoundsbunnysuithead", "starpoundsbunnysuitchest", "starpoundsbunnysuitlegs", "starpoundsrubberhead", "starpoundsrubberchest", "starpoundsrubberlegs", "starpoundsimmunesuithead", "starpoundsbarriersuithead",
+      "cosmicbanditchest", "cosmicbanditlegs", "cosmicblacksmithchest", "cosmicblacksmithlegs", "meatdresserhead", "starpoundsbunnysuithead", "starpoundsbunnysuitchest", "starpoundsbunnysuitlegs", "starpoundsrubberhead", "starpoundsrubberchest", "starpoundsrubberlegs", "starpoundsimmunesuithead", "starpoundsbarriersuithead", "starpoundshaldenhead",
 	  "starpoundshaydeehead", "starpoundshaydeechest", "starpoundshaydeelegs", "starpoundsponderoushead", "starpoundsponderouschest", "starpoundsponderouslegs", "starpoundsponderousback", "starpoundsmooshihead", "starpoundsuniformhead", "mootantcostumelegs", "starpoundsgiantlips", "starpoundsartificerhead", "starpoundshuntresshead"
     ],
     "racial" : [

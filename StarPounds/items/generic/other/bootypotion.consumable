@@ -8,6 +8,12 @@
   "shortdescription" : "Booty Potion",
   "maxStack" : 1,
   "foodValue": 30,
+  "effects": [[
+    {
+      "effect" : "starpoundsoption",
+      "duration" : 2
+    }
+  ]],
   "emote" : "",
   "emitters" : [ "drinking" ]
 }

@@ -1,0 +1,19 @@
+{
+  "frameGrid" : {
+    "size" : [48, 48],
+    "dimensions" : [6, 3],
+
+    "names" : [
+      [ null, "fly.1", "fly.2", "fly.3", null, "hurt.1"],
+      [ null, "windup.1", "windup.2", "windup.3", "windup.4", "windup.5"],
+      [ "windup.6", "windup.7", "fire.1", "fire.2", "fire.3", "fire.4" ]
+    ]
+  },
+"aliases" : {
+  "fly.4" : "fly.2",
+  "windup.8" : "windup.6",
+  "windup.9" : "windup.7",
+  "windup.10" : "windup.6",
+  "windup.11" : "windup.7"
+  }  
+}

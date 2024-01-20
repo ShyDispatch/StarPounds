@@ -26,5 +26,19 @@
 	      "tags" : [ "floran", "friendly"]
 	    }
 	  }
-  }  
+  },  
+ {"op" : "add", 
+  "path" : "/starpoundsglitchponderouskeep",
+  "value" : 
+	  {
+	    "entrance" : {
+	      "name" : "entrance to the ponderous keep",
+	      "tags" : [ "floran", "friendly"]
+	    },
+	    "depths" : {
+	      "name" : "depths of the ponderous keep",
+	      "tags" : [ "floran", "friendly"]
+	    }
+	  }
+  }			
 ]

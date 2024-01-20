@@ -1,0 +1,21 @@
+{
+  "kind" : "wispflame",
+  "definition" : {
+    "type" : "animated",
+    "looping" : true,
+    "animation" : "/animations/wisp/wispflame.animation",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [50, 50],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.425,
+    "fade" : 1,
+    "light" : [155, 70, 0],
+    "size" : 1.0,
+    "layer" : "back",
+    "timeToLive" : 0.425,
+    "variance" : {
+      "finalVelocity" : [1.5, 1.5]
+    }
+  }
+}

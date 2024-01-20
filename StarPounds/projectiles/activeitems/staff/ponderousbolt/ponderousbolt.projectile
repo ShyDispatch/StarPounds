@@ -8,6 +8,7 @@
   "frameNumber" : 4,
   "speed" : 0,
   "animationCycle" : 0.2,
+  "emitters" : [ "wispflame" ],
 
   "power" : 30,
   "damageKind" : "caloricspear",
@@ -34,13 +35,13 @@
       "body" : [
         {
           "action" : "particle",
-          "specification" : "sparkle2",
+          "specification" : "wispflame",
           "time" : 0.1,
           "repeat" : true
         },
         {
           "action" : "particle",
-          "specification" : "sparkle4",
+          "specification" : "wispflame",
           "time" : 0.1,
           "repeat" : true
         }

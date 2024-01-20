@@ -1,6 +1,6 @@
 {
   "objectName" : "starpoundsponderousbookshelf",
-  "colonyTags" : ["glitch","starpounds","fatdungeons","ponderous","knowledge","storage"],
+  "colonyTags" : ["glitch","fatdungeons","ponderous","knowledge","storage"],
   "rarity" : "Common",
   "objectType" : "container",
   "tooltipKind" : "container",

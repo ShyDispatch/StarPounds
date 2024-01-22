@@ -508,19 +508,19 @@ starPounds.updateStats = function(force)
 		end
 		local movementModifier = starPounds.movementModifier
 		local weightMultiplier = starPounds.weightMultiplier
-		starPounds.controlModifiers = {
+		starPounds.controlModifiers = weightMultiplier == 1 and {} or {
 			groundMovementModifier = movementModifier,
 			liquidMovementModifier = movementModifier,
 			speedModifier = movementModifier,
 			airJumpModifier = movementModifier,
 			liquidJumpModifier = movementModifier
 		}
-		starPounds.controlParameters = {
+		starPounds.controlParameters = weightMultiplier == 1 and {} or {
 			mass = parameters.mass * weightMultiplier,
 			airForce = parameters.airForce * weightMultiplier,
 			groundForce = parameters.groundForce * weightMultiplier,
 			airFriction = parameters.airFriction * weightMultiplier,
-			liquidBuoyancy = parameters.liquidBuoyancy + math.min(weightMultiplier * 0.01, 0.95),
+			liquidBuoyancy = parameters.liquidBuoyancy + math.min((weightMultiplier - 1) * 0.01, 0.95),
 			liquidForce = parameters.liquidForce * weightMultiplier,
 			liquidFriction = parameters.liquidFriction * weightMultiplier,
 			normalGroundFriction = parameters.normalGroundFriction * weightMultiplier,

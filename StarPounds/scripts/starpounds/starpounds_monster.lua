@@ -85,6 +85,7 @@ function update(dt)
 	-- Stat/status updating stuff.
 	starPounds.parseEffectStats(dt)
 	starPounds.updateStatuses()
+	starPounds.optionChanged = false
 end
 
 function makeOverrideFunction()

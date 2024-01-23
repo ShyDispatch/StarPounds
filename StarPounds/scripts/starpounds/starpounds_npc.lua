@@ -52,6 +52,17 @@ function init()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait", npc.species()))
 	end
+	-- I hate it.
+	local setNpcItemSlot_old = setNpcItemSlot
+	local setNpcItemSlotCC_old = setNpcItemSlotCC or nullFunction
+	setNpcItemSlot = function(slotName, item)
+		setNpcItemSlot_old(slotName, item)
+		starPounds.optionChanged = true
+	end
+	setNpcItemSlotCC = function(slotName, item)
+		setNpcItemSlotCC_old(slotName, item)
+		starPounds.optionChanged = true
+	end
 end
 
 function update(dt)
@@ -111,6 +122,8 @@ function update(dt)
 	if storage.starPounds.enabled then
 		storage.starPounds.stomachLerp = starPounds.stomach.contents
 	end
+
+	starPounds.optionChanged = false
 end
 
 function makeOverrideFunction()

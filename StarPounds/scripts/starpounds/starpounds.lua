@@ -1148,8 +1148,8 @@ starPounds.equipCheck = function(size)
 		size.size == (oldSize and oldSize.size or nil) and
 		starPounds.currentVariant == oldVariant and
 		not leftCappedVehicle and
-		not (starPounds.swapSlotItem ~= nil and starPounds.swapSlotItem.parameters ~= nil and (starPounds.swapSlotItem.parameters.size ~= nil or starPounds.swapSlotItem.parameters.tempSize ~= nil)) and not
-		starPounds.optionChanged
+		not (starPounds.swapSlotItem ~= nil and starPounds.swapSlotItem.parameters ~= nil and (starPounds.swapSlotItem.parameters.size ~= nil or starPounds.swapSlotItem.parameters.tempSize ~= nil)) and
+		not starPounds.optionChanged
 	then return end
 	-- Setup modifiers.
 	if not modifiers.override then

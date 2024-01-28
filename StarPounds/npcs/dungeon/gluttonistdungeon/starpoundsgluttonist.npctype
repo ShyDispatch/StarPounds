@@ -12,6 +12,12 @@
 	 },
 
   "scriptConfig" : {
+	"behaviorConfig" : {
+      "leapWindup" : 0.75,
+      "rangedAimTime" : 0.5,
+      "rangedWindupTime" : 0.01,
+	  "cantReachDialog": false
+    },
     "starPounds_skills": {
       "minimumSize": [2, 5]
     },

@@ -11,6 +11,9 @@
 	 },
 
   "scriptConfig" : {
+    "behaviorConfig" : {
+      "friendlyNpcTypes" : ["crewmembergluttonist"]
+    },
   "starPounds_skills": {
       "minimumSize": [4, 5],
       "digestion": [20, 20],

@@ -1,7 +1,7 @@
 {
   "type" : "starpoundsmagewisp",
   "shortdescription" : "Wisp Mage",
-  "description" : "A.",
+  "description" : "A wisp made of Lipic energy. It bears a scholarly appearence, and is quite passionate about dice games.",
 
   "categories" : [ "starpoundsmagewisp" ],
   "parts" : [ "body" ],
@@ -51,13 +51,13 @@
             "windupTime" : 0.4,
 			"windupState" : "firewindupfast",
 
-            "projectileType" : "iceshot",
-            "projectileParameters" : {
-              "speed" : 40
-            },
+            "projectileType" : "wispflameprojectile",
+            "inaccuracy" : 0.20,			
+            "projectileCount" : 3,
+            "projectileInterval" : 0.0,	
+			
             "fireOffset" : [1.0, 0.0],
             "aimAtTarget" : true,
-            "inaccuracy" : 0.0,
             "fireState" : "fire",
             "fireSound" : "",
 
@@ -77,7 +77,7 @@
             "windupTime" : 0.8,
 			"windupState" : "firewindupslow",
 
-            "projectileType" : "meteor",
+            "projectileType" : "wispbomb",
             "projectileParameters" : {
               "speed" : 40
             },

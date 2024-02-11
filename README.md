@@ -39,6 +39,7 @@ Starpounds-ExtendedRaces.pak
 Starpounds-Throgverse.pak
 ...
 ```
+If you have `/QuickBarMini` or `/Stardust Core` installed either within your mods folder or on the steam workshop. Remove them so they do not conflict with `/StardustLite` which is essential.
 
 ## FAQ
 
@@ -90,4 +91,8 @@ Currently, the following species are supported:
 - [Goblin](https://steamcommunity.com/sharedfiles/filedetails/?id=2925162796)
 - [Oni](https://steamcommunity.com/sharedfiles/filedetails/?id=2978143703)
 - [Glaceon](https://steamcommunity.com/sharedfiles/filedetails/?id=2012704863)
+- [Lucario](https://steamcommunity.com/sharedfiles/filedetails/?id=1356955138)
+- [Zoroark](https://steamcommunity.com/sharedfiles/filedetails/?id=2811625141)
+- [Hisuian Zoroark](https://steamcommunity.com/sharedfiles/filedetails/?id=2813977483)
+- [Felin](https://steamcommunity.com/sharedfiles/filedetails/?id=729429063)
 - [Troll](https://steamcommunity.com/sharedfiles/filedetails/?id=1301907771)

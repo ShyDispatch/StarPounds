@@ -39,7 +39,7 @@ Starpounds-ExtendedRaces.pak
 Starpounds-Throgverse.pak
 ...
 ```
-If you have `/QuickBarMini` or `/Stardust Core` installed either within your mods folder or on the steam workshop. Remove them so they do not conflict with `/StardustLite` which is essential.
+If you have `QuickBarMini` or `Stardust Core` installed either within your mods folder or on the steam workshop. Remove them so they do not conflict with `StardustLite` which is essential.
 
 ## FAQ
 

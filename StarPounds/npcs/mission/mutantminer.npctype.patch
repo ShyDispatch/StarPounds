@@ -1,0 +1,56 @@
+[
+  {
+    "op": "add",
+    "path": "/identity",
+    "value": {
+      "bodyDirectives": "?replace;c7815b=b74046;ffe2c5=fdc3be;ffc181=ff9991;d39c6c=e45960?replace;dc1f00=535353;951500=111111;be1b00=363636",
+      "emoteDirectives": "?replace;c7815b=b74046;ffe2c5=fdc3be;ffc181=ff9991;d39c6c=e45960?replace;dc1f00=535353;951500=111111;be1b00=363636",
+      "hairDirectives": "?replace;735e3a=b74046;a38d59=e45960;d9c189=ff9991;f7e7b2=fdc3be?replace;dc1f00=535353;951500=111111;be1b00=363636"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/1",
+    "value": "mutantminer2head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/2",
+    "value": "mutantminer3head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/3",
+    "value": "mutantminer4head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/4",
+    "value": "mutantminer5head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/5",
+    "value": "mutantminer6head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/6",
+    "value": "mutantminer7head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/7",
+    "value": "mutantminer8head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/8",
+    "value": "mutantminer9head"
+  },
+  {
+    "op": "add",
+    "path": "/items/override/0/1/0/head/9",
+    "value": "mutantminer10head"
+  }
+]

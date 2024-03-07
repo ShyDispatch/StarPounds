@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztmFsOhCAMRVnCbM+VmLj6CR8kxBmx9EFb2pP0E7xHpRBKSSJzBap0\/3X\/bFzpDnc\/HRfFXTs7tz\/UXTuzhH+6y7vPAhnrwV0STfe3PKuw4m4FSXcvRHavRHavpHtM90q623M\/upJ8lqZ7G38MSvK8qOH+5EB9B7OZVp7rIJk9ur89bzZ7ZPe7P6dzY\/V6x\/pz+fZQ3TFg1jy3d4XiToHa6zjAunPw5N6QPt9offfGm7uUd8Wa+6i\/caPR6\/7BvX9BsHJft8q7n3PVHfVsLqo7JJOl+3nJd7ezOyZPuvP1Oql\/ljqe6j6TAwPVHTP3yH0l1DUDnd8aHP3CK1z90hvc+4UHpPZKi2Bdtfzv+\/tudRX42WbHsrC\/J\/p8AUaxMPQ=",
+         "data":"eJztmFsOhCAMRVnCbM+VmLjP2c+EDxLTidAnbYWT9FO9h7eUslmZa6Ha7v\/unxfXdse7n4lL4u6dXdsf6+6d2cJ\/u9u7U8E8m8HdEk\/3UZ5ZRHGPgqV7FlZ2r6zsXtnua7pXtns89+NWlt\/ydG\/PH52yPC96uD85SNuAmmnmuQ6TOaP76HvU7FL3L6hM7tBfs78bs+c711\/L947UHYIZa5w5r+1disxdgnStowL7pBbXXYMn94b1+car3xsjdyvvSjT33vqmjfZax0V7\/8IQ5b5ulvf9nbPuqKm5pO6YTJHu5y3bztt9dO6xarcI7pL8ENiOnu6j\/Bgij3lKDg5Sd867e+6WUMetFOu+46KxXmQFO0d7\/8YZ0d4vMmC1V0aE6+rlD\/f3t9VV8GebN5bH\/r6Jxw+1UUdr",
          "encoding":"base64",
          "height":50,
          "name":"front",
@@ -401,7 +401,7 @@
                  "y":248
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":731,
                  "name":"",
@@ -421,7 +421,7 @@
                  "y":272
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":732,
                  "name":"",
@@ -441,7 +441,7 @@
                  "y":272
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":733,
                  "name":"",
@@ -461,7 +461,7 @@
                  "y":256
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":734,
                  "name":"",
@@ -481,7 +481,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":735,
                  "name":"",
@@ -501,7 +501,7 @@
                  "y":264
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":736,
                  "name":"",
@@ -521,7 +521,7 @@
                  "y":280
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":737,
                  "name":"",
@@ -541,7 +541,7 @@
                  "y":168
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":738,
                  "name":"",
@@ -561,7 +561,7 @@
                  "y":168
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":739,
                  "name":"",
@@ -581,7 +581,7 @@
                  "y":152
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":741,
                  "name":"",
@@ -912,7 +912,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

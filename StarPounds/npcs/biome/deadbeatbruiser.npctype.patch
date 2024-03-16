@@ -1,0 +1,32 @@
+[
+  {
+    "op": "add",
+    "path": "/identity",
+    "value": {
+      "bodyDirectives": "?replace;c7815b=373737;ffe2c5=e6e6e6;ffc181=b6b6b6;d39c6c=7b7b7b?replace;dc1f00=baaa7c;951500=4f432c;be1b00=85734f",
+      "emoteDirectives": "?replace;c7815b=373737;ffe2c5=e6e6e6;ffc181=b6b6b6;d39c6c=7b7b7b?replace;dc1f00=baaa7c;951500=4f432c;be1b00=85734f",
+      "hairGroup": "hair",
+      "hairType": "0",
+      "species": "deadbeat"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/items/override/0/1/0/head",
+    "value": [{
+      "name": "deadbeatmaskhead",
+      "parameters": { "colorIndex" : [0, 1, 2, 5] }
+    },{
+      "name": "deadbeatnerdhead",
+      "parameters": { "colorIndex" : [0, 1, 2, 5] }
+    }]
+  },
+  {
+    "op": "replace",
+    "path": "/items/override/0/1/0/chest",
+    "value": [{
+      "name": "deadbeatleatherchest",
+      "parameters": { "colorIndex" : [0, 2, 5, 11] }
+    }]
+  }
+]

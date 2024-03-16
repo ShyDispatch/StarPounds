@@ -1,9 +1,4 @@
 [
-	{
-		"op": "add",
-		"path": "/scripts/-",
-		"value": "/scripts/starpounds/starpounds_npc.lua"
-	},
   {
     "op": "add",
     "path": "/identity",
@@ -25,10 +20,16 @@
       "name": "deadbeathornmaskhead",
       "parameters": { "colorIndex" : [0, 11] }
     },{
-      "name": "deadbeatbaldinghead",
+      "name": "deadbeabaldinghead",
       "parameters": { "colorIndex" : [0, 11] }
     },{
       "name": "deadbeatbaldingmaskhead",
+      "parameters": { "colorIndex" : [0, 11] }
+    },{
+      "name": "deadbeatmaskhead",
+      "parameters": { "colorIndex" : [0, 11] }
+    },{
+      "name": "deadbeatnerdhead",
       "parameters": { "colorIndex" : [0, 11] }
     }]
   },

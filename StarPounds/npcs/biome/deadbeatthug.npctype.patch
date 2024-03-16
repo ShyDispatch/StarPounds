@@ -1,0 +1,21 @@
+[
+  {
+    "op": "add",
+    "path": "/identity",
+    "value": {
+      "bodyDirectives": "?replace;c7815b=4f432c;ffe2c5=e6d9b1;ffc181=baaa7c;d39c6c=85734f?replace;dc1f00=baaa7c;951500=4f432c;be1b00=85734f",
+      "emoteDirectives": "?replace;c7815b=4f432c;ffe2c5=e6d9b1;ffc181=baaa7c;d39c6c=85734f?replace;dc1f00=baaa7c;951500=4f432c;be1b00=85734f",
+      "hairGroup": "hair",
+      "hairType": "0",
+      "species": "deadbeat"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/items/override/0/1/0/chest",
+    "value": [{
+      "name": "deadbeatspandexchest",
+      "parameters": { "colorIndex" : [0, 1, 5] }
+    }]
+  }
+]

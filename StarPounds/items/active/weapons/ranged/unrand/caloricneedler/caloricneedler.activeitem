@@ -9,7 +9,7 @@
   "category" : "assaultRifle",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","assaultrifle"],
-  "level" : 3,
+  "level" : 1,
 
   "inventoryIcon" : "caloricneedler.png",
 

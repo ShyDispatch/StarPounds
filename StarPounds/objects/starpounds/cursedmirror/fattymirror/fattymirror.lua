@@ -45,15 +45,43 @@ end
 function use(args)
   if storage.active then
     targetId = args.sourceId
-    promises:add(world.sendEntityMessage(targetId, "starPounds.getData", "weight"), function(weight)
-      currentSize, currentSizeIndex = getSize(weight)
-      if currentSizeIndex == #self.sizes then return end
-      local currentProgress = (weight - currentSize.weight)/(self.sizes[currentSizeIndex + 1].weight - currentSize.weight)
-      local amount = math.floor(0.5 + self.sizes[currentSizeIndex + 1].weight - weight + currentProgress * ((self.sizes[currentSizeIndex + 2] and self.sizes[currentSizeIndex + 2].weight or self.settings.maxWeight) - self.sizes[currentSizeIndex + 1].weight))
-      world.sendEntityMessage(targetId, "starPounds.gainWeight", amount)
-      deactivate()
-      animator.playSound("use")
-    end)
+    local optionList = config.getParameter("activateOptions")
+    local option = optionList[math.random(1, #optionList)]
+    local options = {
+      -- Gain a size
+      gainWeight = function()
+        promises:add(world.sendEntityMessage(targetId, "starPounds.getData", "weight"), function(weight)
+          currentSize, currentSizeIndex = getSize(weight)
+          if currentSizeIndex == #self.sizes then return end
+          local currentProgress = (weight - currentSize.weight)/(self.sizes[currentSizeIndex + 1].weight - currentSize.weight)
+          local amount = math.floor(0.5 + self.sizes[currentSizeIndex + 1].weight - weight + currentProgress * ((self.sizes[currentSizeIndex + 2] and self.sizes[currentSizeIndex + 2].weight or self.settings.maxWeight) - self.sizes[currentSizeIndex + 1].weight))
+          world.sendEntityMessage(targetId, "starPounds.gainWeight", amount)
+          deactivate()
+          animator.playSound("use")
+        end)
+      end,
+      -- Gain bloat
+      gainBloat = function()
+        world.sendEntityMessage(targetId, "starPounds.gainBloat", 50 + math.random(0, 150))
+        deactivate()
+        animator.playSound("use")
+      end,
+      -- Activate, but do nothing
+      crack = function()
+        deactivate()
+        animator.playSound("crack")
+      end,
+      -- Smash
+      smash = function()
+        animator.playSound("use")
+        object.smash()
+      end
+    }
+    if options[option] then
+      options[option]()
+    else
+      options[smash]()
+    end
   end
 end
 

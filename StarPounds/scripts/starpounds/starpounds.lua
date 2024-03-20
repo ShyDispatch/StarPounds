@@ -1996,7 +1996,9 @@ starPounds.struggle = function(dt)
 			mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
 		end
 		-- No air.
-		status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
+		if not (starPounds.hasOption("disablePreyDigestion") or starPounds.hasOption("disablePreyBreathLoss")) and (not status.statPositive("breathProtection")) and world.breathable(world.entityMouthPosition(entity.id())) then
+			status.modifyResource("breath", -(status.stat("breathDepletionRate") * starPounds.settings.vorePlayerBreathMultiplier + status.stat("breathRegenerationRate")) * dt)
+		end
 	end
 end
 

@@ -1923,7 +1923,6 @@ starPounds.eaten = function(dt)
 		pcall(animator.setAnimationState, "body", "idle")
 		pcall(animator.setAnimationState, "damage", "none")
 		pcall(animator.setGlobalTag, "hurt", "hurt")
-		local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
 	end
 	-- Struggle mechanics.
 	starPounds.struggle(dt)
@@ -1947,6 +1946,7 @@ starPounds.struggle = function(dt)
 	-- Separate calculation for monsters since their power stat is (basically) pointless.
 	if starPounds.type == "monster" then
 		-- Using the NPC function because the monster one gets stupid high.
+		local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
 		struggleStrength = struggleStrength * weightRatio * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1)
 	end
 	-- Monsters/NPCs just cause energy loss occassionally, and are locked to the pred's position.

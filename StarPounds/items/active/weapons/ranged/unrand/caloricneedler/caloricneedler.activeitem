@@ -9,7 +9,7 @@
   "category" : "assaultRifle",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","assaultrifle"],
-  "level" : 1,
+  "level" : 3,
 
   "inventoryIcon" : "caloricneedler.png",
 
@@ -38,7 +38,7 @@
     "class" : "GunFire",
 
     "fireTime" : 0.12,
-    "baseDps" : 9.5,
+    "baseDps" : 8.5,
     "energyUsage" : 31.5,
     "inaccuracy" : 0.025,
 

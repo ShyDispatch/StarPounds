@@ -2,14 +2,14 @@
   "itemName" : "caloricneedler",
   "price" : 1400,
   "maxStack" : 1,
-  "rarity" : "Uncommon",
+  "rarity" : "Rare",
   "description" : "Caloric Needler",
   "shortdescription" : "Caloric Needler",
   "tooltipKind" : "gun",
   "category" : "assaultRifle",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","assaultrifle"],
-  "level" : 3,
+  "level" : 4,
 
   "inventoryIcon" : "caloricneedler.png",
 

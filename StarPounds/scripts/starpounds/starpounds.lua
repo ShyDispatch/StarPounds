@@ -1914,34 +1914,58 @@ starPounds.eaten = function(dt)
 	end
 	-- Stop lounging.
 	mcontroller.resetAnchorState()
+	if starPounds.type == "npc" then
+		-- Stop NPCs attacking.
+		npc.endPrimaryFire()
+		npc.endAltFire()
+	end
+	if starPounds.type == "monster" then
+		pcall(animator.setAnimationState, "body", "idle")
+		pcall(animator.setAnimationState, "damage", "none")
+		pcall(animator.setGlobalTag, "hurt", "hurt")
+		local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
+	end
+	-- Struggle mechanics.
+	starPounds.struggle(dt)
+	-- Set velocity to zero.
+	mcontroller.setVelocity({0, 0})
+	-- Stop the prey from colliding/moving normally.
+	mcontroller.controlParameters({ airFriction = 0, groundFriction = 0, liquidFriction = 0, collisionEnabled = false, gravityEnabled = false })
+end
+
+starPounds.struggle = function(dt)
+	-- Don't do anything if the mod is disabled.
+	if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	dt = math.max(tonumber(dt) or 0, 0)
+	if dt == 0 then return end
+	-- Don't do anything if we're not eaten.
+	if not storage.starPounds.pred then return end
 	-- Loose calculation for how "powerful" the prey is.
 	local healthMultiplier = 0.5 + status.resourcePercentage("health") * 0.5
 	local struggleStrength = math.max(1, status.stat("powerMultiplier")) * healthMultiplier
+	-- Separate calculation for monsters since their power stat is (basically) pointless.
+	if starPounds.type == "monster" then
+		-- Using the NPC function because the monster one gets stupid high.
+		struggleStrength = struggleStrength * weightRatio * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1)
+	end
+	-- Monsters/NPCs just cause energy loss occassionally, and are locked to the pred's position.
 	if starPounds.type == "npc" or starPounds.type == "monster" then
-		if starPounds.type == "npc" then
-			-- Stop NPCs attacking.
-			npc.endPrimaryFire()
-			npc.endAltFire()
-		else
-			-- Monsters don't (really) use the powerMultiplier stat.
-			pcall(animator.setAnimationState, "body", "idle")
-			pcall(animator.setAnimationState, "damage", "none")
-			pcall(animator.setGlobalTag, "hurt", "hurt")
-			local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
-			-- Using the NPC function because the monster one gets stupid high by comparison.
-			struggleStrength = struggleStrength * weightRatio * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1)
-		end
 		mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
 		starPounds.cycle = starPounds.cycle and starPounds.cycle - (dt * healthMultiplier) or (math.random(10, 15) / 10)
 		if starPounds.cycle <= 0 then
 			world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
 			starPounds.cycle = math.random(10, 15) / 10
 		end
-	elseif starPounds.type == "player" then
+	end
+	-- Player struggles are directional.
+	if starPounds.type == "player" then
+		starPounds.startedStruggling = starPounds.startedStruggling or os.clock()
 		-- Follow the pred's position, struggle if the player is using movement keys.
 		local horizontalDirection = (mcontroller.xVelocity() > 0) and 1 or ((mcontroller.xVelocity() < 0) and -1 or 0)
 		local verticalDirection = (mcontroller.yVelocity() > 0) and 1 or ((mcontroller.yVelocity() < 0) and -1 or 0)
-		starPounds.cycle = 1 + math.sin((os.clock() - (starPounds.startedStruggling or os.clock())) * 2 * math.pi)
+		starPounds.cycle = vec2.lerp(5 * dt, (starPounds.cycle or {0, 0}), vec2.mul({horizontalDirection, verticalDirection}, starPounds.struggled and 0.25 or 1))
+		local struggleMagnitude = vec2.mag(starPounds.cycle)
 		if not (horizontalDirection == 0 and verticalDirection == 0) then
 			-- Kills the player if they're spectating, but move.
 			if storage.starPounds.spectatingPred and verticalDirection > 0 then
@@ -1949,13 +1973,13 @@ starPounds.eaten = function(dt)
 				starPounds.getReleased()
 				return
 			end
-			if starPounds.cycle > 0.7 and not starPounds.struggled then
+			if struggleMagnitude > 0.6 and not starPounds.struggled then
 				starPounds.struggled = true
 				world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyStruggle", entity.id(), struggleStrength, not starPounds.hasOption("disableEscape"))
-			elseif math.round(starPounds.cycle - 1, 1) == 0 then
+			elseif math.round(struggleMagnitude, 1) < 0.2 then
 				starPounds.struggled = false
 			end
-		else
+		elseif math.round(struggleMagnitude, 1) < 0.2 then
 			starPounds.struggled = false
 			starPounds.startedStruggling = os.clock()
 		end
@@ -1965,20 +1989,15 @@ starPounds.eaten = function(dt)
 			local distance = world.distance(predPosition, mcontroller.position())
 			mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
 		else
-			local predPosition = vec2.add(predPosition, {
-				horizontalDirection * starPounds.cycle,
-				verticalDirection * starPounds.cycle + math.sin(os.clock() * 0.5) - 1
-			})
+			local predPosition = vec2.add(predPosition, vec2.mul(starPounds.cycle, 2 + (math.sin((os.clock() - starPounds.startedStruggling) * 2) + 1)/4))
+			-- Slowly drift up/down.
+			predPosition = vec2.add(predPosition, {0, math.sin(os.clock() * 0.5) * 0.25 - 0.25})
 			local distance = world.distance(predPosition, mcontroller.position())
 			mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
 		end
-		-- No air time.
+		-- No air.
 		status.modifyResource("breath", -status.stat("breathDepletionRate") * dt)
 	end
-	-- Set velocity to zero.
-	mcontroller.setVelocity({0, 0})
-	-- Stop the prey from colliding/moving normally.
-	mcontroller.controlParameters({ airFriction = 0, groundFriction = 0, liquidFriction = 0, collisionEnabled = false, gravityEnabled = false })
 end
 
 starPounds.getEaten = function(predId)

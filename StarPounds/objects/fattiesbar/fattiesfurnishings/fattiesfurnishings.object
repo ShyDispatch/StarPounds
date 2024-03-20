@@ -122,7 +122,17 @@
       "fayanebutt", "fayanebelly", "fayanevore", "feyrethfeedeeback", "floranfeedeeback1", "apexfeedeeback1", "blossomvore", "audreyvore", "lapisvore", "rosievore", "mambelly", "mambutt", "mamvore"
     ],		
     "materials" : [
-      "starpoundschocolateblock", "starpoundschocolateplatform", "starpoundswhitechocolateblock", "starpoundswhitechocolateplatform", "starpoundsgingerbreadblock", "starpoundsgingerbreadplatform", "starpoundshive", "throgmetal", "throgpanel", "throgpolygon", "throgtech"
+      {"input": [["money", 10]], "output": "starpoundschocolateblock"},
+	  {"input": [["money", 10]], "output": "starpoundschocolateplatform"},
+	  {"input": [["money", 10]], "output": "starpoundswhitechocolateblock"},
+	  {"input": [["money", 10]], "output": "starpoundswhitechocolateplatform"},
+	  {"input": [["money", 10]], "output": "starpoundsgingerbreadblock"},
+	  {"input": [["money", 10]], "output": "starpoundsgingerbreadplatform"},
+	  {"input": [["money", 10]], "output": "starpoundshive"},
+      {"input": [["money", 10]], "output": "throgmetal"},
+	  {"input": [["money", 10]], "output": "throgpanel"},
+	  {"input": [["money", 10]], "output": "throgpolygon"},
+	  {"input": [["money", 10]], "output": "throgtech"}
     ]
   }
 }

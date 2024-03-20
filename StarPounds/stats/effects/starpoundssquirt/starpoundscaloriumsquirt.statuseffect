@@ -2,7 +2,7 @@
 	"name": "starpoundscaloriumsquirt",
 	"effectConfig": {
 		"statusEffects": [{"effect": "starpoundsfood", "duration": 10}, {"effect": "caloriumsquirt", "duration": 1}],
-		"sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 3}, {"effect": "starpoundsbloat", "duration": 7}, {"effect": "caloriumsquirt", "duration": 0.25}]
+		"sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 4}, {"effect": "starpoundsbloat", "duration": 6}, {"effect": "caloriumsquirt", "duration": 0.25}]
 	},
 	"defaultDuration": 1,
 	"scripts": [

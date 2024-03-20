@@ -1,0 +1,23 @@
+{
+  "kind" : "honeysquirt",
+  "definition" : {
+    "duration" : 0.1,
+    "loops" : true,
+    "start" : {
+      "particles" : [
+        [ "honeysquirt" ]
+      ],
+      "sounds" : [ [ ] ]
+    },
+    "particles" : [
+      [ "honeysquirt" ]
+    ],
+    "sounds" : [ [ ] ],
+    "stop" : {
+      "particles" : [
+        [ ]
+      ],
+      "sounds" : [ [ ] ]
+    }
+  }
+}

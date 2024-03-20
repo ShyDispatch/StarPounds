@@ -6,6 +6,5 @@
   "inventoryIcon" : "onikillersake.png",
   "description" : "A brutally harsh yet irresistable flavor of sake. It contains an incredibly high amount of alcohol.",
   "shortdescription" : "Oni Killer Sake",
-  "itemTags" : [ "reagent" ],
-  "learnBlueprintsOnPickup" : [ "ogresmoonshiner" ]
+  "itemTags" : [ "reagent" ]
 }

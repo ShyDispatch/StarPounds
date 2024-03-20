@@ -6,6 +6,5 @@
   "inventoryIcon" : "rootpopfroth.png",
   "description" : "Froth from a refreshing bottle of rootpop. It strangely never dissipates.",
   "shortdescription" : "Rootpop Froth",
-  "itemTags" : [ "reagent" ],
-  "learnBlueprintsOnPickup" : [ "scatterpopper" ]
+  "itemTags" : [ "reagent" ]
 }

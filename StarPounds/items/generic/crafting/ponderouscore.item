@@ -6,6 +6,5 @@
   "inventoryIcon" : "ponderouscore.png",
   "description" : "Surging with strange power, this artifact of the Ponderous order belonged to a strong lipomancer.",
   "shortdescription" : "Ponderous Core",
-  "itemTags" : [ "reagent" ],
-  "learnBlueprintsOnPickup" : [ "ponderousstaff" ]
+  "itemTags" : [ "reagent" ]
 }

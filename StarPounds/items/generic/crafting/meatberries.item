@@ -6,6 +6,5 @@
   "inventoryIcon" : "meatberries.png",
   "description" : "Strange combination of meat and berry. Can spawn meat for others, but not the user.",
   "shortdescription" : "Meat Berries",
-  "itemTags" : [ "reagent" ],
-  "learnBlueprintsOnPickup" : [ "gluttonistgreatfork" ]
+  "itemTags" : [ "reagent" ]
 }

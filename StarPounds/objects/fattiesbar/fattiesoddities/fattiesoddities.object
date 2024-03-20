@@ -190,7 +190,7 @@
       "humanblubber", "throgblubber", "floranblubber", "mootantblubber", "glitchblubber", "metalblubber", "hylotlblubber", "hylotl2blubber", "apexblubber", "apexfurblubber", "avianblubber", "novakidblubber", "alienblubber"
     ],
     "tabmisc" : [
-      "burptool", "gurgletool", "starpoundsstomachgurgle"
+      "preytool","burptool", "gurgletool", "starpoundsstomachgurgle"
     ]
   }
 }

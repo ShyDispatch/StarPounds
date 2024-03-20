@@ -8,7 +8,7 @@ function onInteraction(args)
   local interactData = config.getParameter("interactData")
   interactData.recipes = {}
 
-  local storeInventory = config.getParameter("storeInventory")  
+  local storeInventory = config.getParameter("storeInventory")
   local tabs = interactData["modTab"]
   local posY = 277
   local categories = {
@@ -16,13 +16,13 @@ function onInteraction(args)
       toggleMode = false,
       buttons = {}
 	}
-  
+
   if #tabs > 0 then
 	  for i,modtab in ipairs(tabs) do
 		local tabIcon = modtab["file"]
 		local tabName = modtab["label"]
 		local tabFilter = modtab["filter"]
-		
+
 		local tabIconLabel = {
 		  type = "image",
 		  file = tabIcon,
@@ -32,7 +32,7 @@ function onInteraction(args)
 		  },
 		  zlevel = 3
 		}
-		
+
 		local tabNameLabel = {
 		  type = "label",
 		  value = tabName,
@@ -42,7 +42,7 @@ function onInteraction(args)
 		  },
 		  zlevel = 3
 		}
-		
+
 		local tabButton = {
 			  selected = true,
 			  position = {
@@ -55,15 +55,15 @@ function onInteraction(args)
 				filter = tabFilter
 			  }
 			}
-		
+
 		interactData.paneLayoutOverride["icon" .. tabName] = tabIconLabel
 		interactData.paneLayoutOverride["lbl" .. tabName] = tabNameLabel
 		table.insert(categories["buttons"], 1, tabButton)
 		posY = posY - 18
-	  end  
+	  end
 	  interactData.paneLayoutOverride["categories"] = categories
   end
-  
+
   for genre,objects in pairs(storeInventory) do addRecipes(interactData, objects, genre) end
 
   return { "OpenCraftingInterface", interactData }
@@ -76,10 +76,11 @@ function addRecipes(interactData, items, category)
 end
 
 function generateRecipe(itemName, category)
+  if type(itemName) == "table" then return sb.jsonMerge(itemName, {groups = { category }, duration = 0}) end
   return {
     input = { {"money", math.floor(self.buyFactor * (root.itemConfig(itemName).config.price or root.assetJson("/merchant.config").defaultItemPrice))} },
     output = itemName,
-	duration = 0,	
+	duration = 0,
     groups = { category }
   }
 end

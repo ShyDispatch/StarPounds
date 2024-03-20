@@ -6,7 +6,7 @@
   "rarity" : "Essential",
   "category" : "Tool",
   "description" : "^#cc164a;[Click]^reset; to be eaten.",
-  "shortdescription" : "^#cc164a;Prey Tool",
+  "shortdescription" : "Prey Tool",
   "twoHanded" : false,
 
   "inventoryIcon" : "preytoolicon.png",

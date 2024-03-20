@@ -104,6 +104,11 @@
       "filter": [ "hugefood" ]
     },
 	{
+      "file": "/interface/fattyshops/tabs/liquids.png",
+	  "label": "Liquids",
+      "filter": [ "liquids" ]
+    },
+	{
       "file": "/interface/fattyshops/tabs/medicine.png",
 	  "label": "Medicine",
       "filter": [ "medicine" ]
@@ -127,6 +132,15 @@
     ],
     "hugefood" : [
       "starpoundshugecherrycake-recipe", "starpoundshugepancakes-recipe", "starpoundshugechunkofmeat-recipe"
+    ],
+    "liquids" : [
+      {"input": [["money", 10]], "output": "liquidmilk"},
+	  {"input": [["money", 20]], "output": "starpoundsliquidchocolate"},
+	  {"input": [["money", 20]], "output": "starpoundsliquidjelly"},
+	  {"input": [["money", 20]], "output": "starpoundsliquidsoda"},
+	  {"input": [["money", 30]], "output": "liquidlard"},
+	  {"input": [["money", 30]], "output": "liquidgrease"},
+	  {"input": [["money", 30]], "output": "starpoundsliquidhoney"}
     ],
     "medicine" : [
       "digestionaid", "digestionaid-recipe", "lactaid", "lactaidoverdrive", "lactaidmilktank"

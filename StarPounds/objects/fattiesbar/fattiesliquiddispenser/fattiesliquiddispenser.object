@@ -5,8 +5,8 @@
   "price" : 50,
   "printable" : false,
 
-  "description" : "A vending machine from the Protectorate Lobby.",
-  "shortdescription" : "Protectorate Vending Machine",
+  "description" : "Used to quench your thirst with whatever you need.",
+  "shortdescription" : "Throg Liquid Dispenser",
   "race" : "throg",
 
   "apexDescription" : "This machine can dispense any liquid in its containers.",
@@ -16,27 +16,6 @@
   "humanDescription" : "This is certainly the collection of liquids of all time.",
   "hylotlDescription" : "I am not sure about how drinkable some of these liquids are.",
   "novakidDescription" : "I wonder which drink will knock me out fastest.",
-
-  "interactAction" : "OpenMerchantInterface",
-  "interactData" : {
-    "config" : "/interface/windowconfig/vendingmachine.config",
-    "paneLayoutOverride" : {
-      "windowtitle" : {
-        "title" : " Liquid Dispenser",
-        "subtitle" : " For Chugging Needs"
-      }
-    },
-    "buyFactor" : 1.0,
-    "items" : [
-  	  { "item" : { "name" : "liquidmilk", "parameters" : { "price" : 10 } } },
-  	  { "item" : { "name" : "starpoundsliquidchocolate", "parameters" : { "price" : 20 } } },
-  	  { "item" : { "name" : "starpoundsliquidjelly", "parameters" : { "price" : 20 } } },
-  	  { "item" : { "name" : "starpoundsliquidsoda", "parameters" : { "price" : 20 } } },
-  	  { "item" : { "name" : "liquidlard", "parameters" : { "price" : 30 } } },
-  	  { "item" : { "name" : "liquidgrease", "parameters" : { "price" : 30 } } },
-  	  { "item" : { "name" : "starpoundsliquidhoney", "parameters" : { "price" : 30 } } }
-    ]
-  },
 
   "inventoryIcon" : "fattiesliquiddispensericon.png",
   "orientations" : [

@@ -190,7 +190,11 @@
       "humanblubber", "throgblubber", "floranblubber", "mootantblubber", "glitchblubber", "metalblubber", "hylotlblubber", "hylotl2blubber", "apexblubber", "apexfurblubber", "avianblubber", "novakidblubber", "alienblubber"
     ],
     "tabmisc" : [
-      "preytool","burptool", "gurgletool", "starpoundsstomachgurgle", "retromilkshakegun"
+      {"input": [["money", 50000]], "output": "calorictrap"},
+      {"input": [["money", 50000]], "output": "ancientcaloriccrystaltrap"},
+      {"input": [["money", 50000]], "output": "ancientcaloricbeamtrap"},
+      {"input": [["money", 1000]], "output": "retromilkshakegun"},
+      "preytool", "burptool", "gurgletool", "starpoundsstomachgurgle", "retromilkshakegun"
     ]
   }
 }

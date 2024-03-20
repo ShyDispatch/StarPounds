@@ -73,7 +73,7 @@
       {"input": [["chocolatemilkshakegun", 1], ["starpoundsliquidhoney", 100], ["starpoundsbottledhoney", 10]], "output": "honeygun"},
       {"input": [["honeygun", 1], ["liquidfuel", 250], ["digestionaid", 5]], "output": "digestiongun"},
       {"input": [["honeygun", 1], ["starpoundsliquidcalorium", 500]], "output": "caloriumgun"},
-      "winch", "calorictrap", "ancientcaloriccrystaltrap", "ancientcaloricbeamtrap", "starpoundsmilkingtool"
+      "winch", "starpoundsmilkingtool"
     ]
   }
 }

@@ -1,12 +1,12 @@
 {
-  "itemName" : "caloriumgun",
+  "itemName" : "starpoundscaloriumsquirtgun",
   "price" : 5000,
-  "inventoryIcon" : "caloriumgunicon.png",
+  "inventoryIcon" : "caloriumsquirtgunicon.png",
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "Squirt gun meets an incredibly fattening idea.\n^gray;Less effective on yourself.",
   "shortdescription" : "Calorium Squirt Gun",
-  "largeImage" : "caloriumgun.png",
+  "largeImage" : "caloriumsquirtgun.png",
   "tooltipKind" : "starpoundstool",
   "level" : 1,
   "category" : "toy",
@@ -16,8 +16,8 @@
 
   "animation" : "/items/active/weapons/ranged/gun.animation",
   "animationParts" : {
-    "butt" : "caloriumgun_fb.png",
-    "middle" : "caloriumgun.png",
+    "butt" : "caloriumsquirtgun_fb.png",
+    "middle" : "caloriumsquirtgun.png",
     "barrel" : "",
     "muzzleFlash" : ""
   },

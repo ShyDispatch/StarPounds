@@ -193,7 +193,7 @@
       {"input": [["money", 50000]], "output": "calorictrap"},
       {"input": [["money", 50000]], "output": "ancientcaloriccrystaltrap"},
       {"input": [["money", 50000]], "output": "ancientcaloricbeamtrap"},
-      {"input": [["money", 1000]], "output": "retromilkshakegun"},
+      {"input": [["money", 1000]], "output": "retromilkshakesquirtgun"},
       "preytool", "burptool", "gurgletool", "starpoundsstomachgurgle"
     ]
   }

@@ -1,12 +1,12 @@
 {
-  "itemName" : "honeygun",
-  "price" : 2500,
-  "inventoryIcon" : "honeygunicon.png",
+  "itemName" : "retromilkshakesquirtgun",
+  "price" : 1000,
+  "inventoryIcon" : "retromilkshakesquirtgunicon.png",
   "maxStack" : 1,
-  "rarity" : "Rare",
-  "description" : "Squirt gun meets stupendous amounts of calories.\n^gray;Less effective on yourself.",
-  "shortdescription" : "Honey Squirt Gun",
-  "largeImage" : "honeygun.png",
+  "rarity" : "Uncommon",
+  "description" : "An older model, but just as fattening.\n^gray;Less effective on yourself.",
+  "shortdescription" : "Retro Squirt Gun",
+  "largeImage" : "retromilkshakesquirtgun.png",
   "tooltipKind" : "starpoundstool",
   "level" : 1,
   "category" : "toy",
@@ -17,7 +17,7 @@
   "animation" : "/items/active/weapons/ranged/gun.animation",
   "animationParts" : {
     "butt" : "",
-    "middle" : "honeygun.png",
+    "middle" : "retromilkshakesquirtgun.png",
     "barrel" : "",
     "muzzleFlash" : ""
   },
@@ -45,13 +45,13 @@
 
     "fireTime" : 0.25,
     "baseDps" : 0,
-    "energyUsage" : 40,
+    "energyUsage" : 20,
     "inaccuracy" : 0.02,
 
     "projectileCount" : 1,
     "fireType" : "auto",
 
-    "projectileType" : "honeysquirt",
+    "projectileType" : "milkshakesquirt",
     "stances" : {
       "idle" : {
         "armRotation" : 0,

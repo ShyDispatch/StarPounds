@@ -1,12 +1,12 @@
 {
-  "itemName" : "milkshakegun",
+  "itemName" : "starpoundsmilkshakesquirtgun",
   "price" : 1000,
-  "inventoryIcon" : "milkshakegunicon.png",
+  "inventoryIcon" : "milkshakesquirtgunicon.png",
   "maxStack" : 1,
   "rarity" : "Uncommon",
   "description" : "Squirt gun meets large amounts of calories.\n^gray;Less effective on yourself.",
   "shortdescription" : "Milkshake Squirt Gun",
-  "largeImage" : "milkshakegun.png",
+  "largeImage" : "milkshakesquirtgun.png",
   "tooltipKind" : "starpoundstool",
   "level" : 1,
   "category" : "toy",
@@ -17,7 +17,7 @@
   "animation" : "/items/active/weapons/ranged/gun.animation",
   "animationParts" : {
     "butt" : "",
-    "middle" : "milkshakegun.png",
+    "middle" : "milkshakesquirtgun.png",
     "barrel" : "",
     "muzzleFlash" : ""
   },

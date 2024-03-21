@@ -1,12 +1,12 @@
 {
-  "itemName" : "digestiongun",
-  "price" : 5000,
-  "inventoryIcon" : "digestiongunicon.png",
+  "itemName" : "starpoundschocolatemilkshakesquirtgun",
+  "price" : 1500,
+  "inventoryIcon" : "chocolatemilkshakesquirtgunicon.png",
   "maxStack" : 1,
-  "rarity" : "Legendary",
-  "description" : "Squirt gun meets dubiously legal digestion tonic.\n^gray;Less effective on yourself.",
-  "shortdescription" : "Digestion Aid Squirt Gun",
-  "largeImage" : "digestiongun.png",
+  "rarity" : "Uncommon",
+  "description" : "Squirt gun meets excessive amounts of calories.\n^gray;Less effective on yourself.",
+  "shortdescription" : "Chocolate Squirt Gun",
+  "largeImage" : "chocolatemilkshakesquirtgun.png",
   "tooltipKind" : "starpoundstool",
   "level" : 1,
   "category" : "toy",
@@ -16,23 +16,12 @@
 
   "animation" : "/items/active/weapons/ranged/gun.animation",
   "animationParts" : {
-    "butt" : "digestiongun_fb.png",
-    "middle" : "digestiongun.png",
+    "butt" : "",
+    "middle" : "chocolatemilkshakesquirtgun.png",
     "barrel" : "",
     "muzzleFlash" : ""
   },
   "animationCustom" : {
-    "animatedParts" : {
-      "parts" : {
-        "butt" : {
-          "properties" : {
-            "fullbright": true,
-            "offset": [0.75, 0.5],
-            "zLevel": 1
-          }
-        }
-      }
-    },
     "sounds" : {
       "fire" : ["/sfx/gun/pumpgun_blast1.ogg", "/sfx/gun/pumpgun_blast2.ogg", "/sfx/gun/pumpgun_blast3.ogg"]
     },
@@ -56,13 +45,13 @@
 
     "fireTime" : 0.25,
     "baseDps" : 0,
-    "energyUsage" : 40,
+    "energyUsage" : 30,
     "inaccuracy" : 0.02,
 
     "projectileCount" : 1,
     "fireType" : "auto",
 
-    "projectileType" : "digestionsquirt",
+    "projectileType" : "chocolatemilkshakesquirt",
     "stances" : {
       "idle" : {
         "armRotation" : 0,

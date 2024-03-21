@@ -72,8 +72,8 @@
     "weapons" : [
       {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "apexdartgun"},
 	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "aviandartgun"},
-	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "cultistdartgun"}, 
-	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "caloriccrossbow"}, 
+	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "cultistdartgun"},
+	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "caloriccrossbow"},
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["starpoundsliquidcalorium", 50]], "output": "caloricneedler"},
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["adipobeamcomponent", 1]], "output": "adipobeam"},
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["depletedgaincrystal", 1]], "output": "gaincrystal"},
@@ -84,11 +84,11 @@
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["rootpopfroth", 1]], "output": "scatterpopper"}
     ],
     "utilities" : [
-      {"input": [["money", 500], ["liquidmilk", 100], ["sugar", 3]], "output": "milkshakegun"},
-      {"input": [["milkshakegun", 1], ["starpoundsliquidchocolate", 100], ["chocolate", 5]], "output": "chocolatemilkshakegun"},
-      {"input": [["chocolatemilkshakegun", 1], ["starpoundsliquidhoney", 100], ["starpoundsbottledhoney", 10]], "output": "honeygun"},
-      {"input": [["honeygun", 1], ["liquidfuel", 250], ["digestionaid", 5]], "output": "digestiongun"},
-      {"input": [["honeygun", 1], ["starpoundsliquidcalorium", 500]], "output": "caloriumgun"},
+      {"input": [["money", 500], ["liquidmilk", 100], ["sugar", 3]], "output": "starpoundsmilkshakesquirtgun"},
+      {"input": [["starpoundsmilkshakesquirtgun", 1], ["starpoundsliquidchocolate", 100], ["chocolate", 5]], "output": "starpoundschocolatemilkshakesquirtgun"},
+      {"input": [["starpoundschocolatemilkshakesquirtgun", 1], ["starpoundsliquidhoney", 100], ["starpoundsbottledhoney", 10]], "output": "starpoundshoneysquirtgun"},
+      {"input": [["starpoundshoneysquirtgun", 1], ["liquidfuel", 250], ["digestionaid", 5]], "output": "starpoundsdigestionsquirtgun"},
+      {"input": [["starpoundshoneysquirtgun", 1], ["starpoundsliquidcalorium", 500]], "output": "starpoundscaloriumsquirtgun"},
       "winch", "starpoundsmilkingtool"
     ],
     "crafting" : [

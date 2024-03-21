@@ -15,7 +15,7 @@
     "projectileType" : "starpoundssodanade",
     "projectileParameters" : { },
 
-    "baseDamage" : 180,
+    "baseDamage" : 9,
     "energyUsage" : 25,
 
     "fireTime" : 2.0,

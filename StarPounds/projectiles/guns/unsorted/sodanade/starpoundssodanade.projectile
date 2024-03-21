@@ -14,6 +14,11 @@
     },
     {
       "action" : "projectile",
+      "inheritDamageFactor" : 1,
+      "type" : "sodaexplosionknockback"
+    },
+    {
+      "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "starpoundssodacloud",
       "fuzzAngle" : 30,

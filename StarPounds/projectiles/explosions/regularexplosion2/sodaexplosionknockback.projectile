@@ -5,16 +5,17 @@
   "frameNumber" : 6,
   "speed" : 0,
   "pointLight" : true,
-  "damagePoly" : [ [-37, 0], [-28, -28], [0, -37], [28, -28], [37, 0], [28, 28], [0, 37], [-28, 28] ],
+  "damagePoly" : [ [-27, 0], [-21, -21], [0, -27], [21, -21], [27, 0], [21, 21], [0, 27], [-21, 21] ],
   "animationLoops" : false,
   "piercing" : true,
   "bounces" : -1,
   "flippable" : true,
   "damageKind" : "caloricplasma",
-  "knockback" : 30,
+  "knockback" : 10,
   "statusEffects" : [
-    {"effect": "starpoundsfood", "duration": 30},
-    {"effect": "starpoundsratebloat", "duration": 15},
+    {"effect": "starpoundsfood", "duration": 25},
+    {"effect": "starpoundsbloat", "duration": 25},
+    {"effect": "starpoundsratebloat", "duration": 5},
     {"effect": "starpoundsrategain", "duration": 5}
   ]
 }

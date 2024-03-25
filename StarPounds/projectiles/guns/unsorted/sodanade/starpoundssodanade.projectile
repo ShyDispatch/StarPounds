@@ -1,12 +1,43 @@
 {
   "projectileName" : "starpoundssodanade",
   "physics" : "grenade",
-  "bounces" : 0,
+  "bounces" : 2,
   "timeToLive" : 3,
   "damageKindImage" : "icon.png",
   "image" : "starpoundssodanade.png",
   "animationCycle" : 0.5,
   "frameNumber" : 4,
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/acid_hit.ogg" ]
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/magnorb_impact1.ogg", "/sfx/projectiles/magnorb_impact2.ogg", "/sfx/projectiles/magnorb_impact3.ogg" ]
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.025,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.025,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    },
+    {
+      "action" : "projectile",
+      "inheritDamageFactor" : 0.025,
+      "type" : "starpoundssodacloud",
+      "fuzzAngle" : 360,
+      "angleAdjust" : 0
+    }
+  ],
   "actionOnReap" : [
     {
       "action" : "sound",
@@ -21,28 +52,28 @@
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "starpoundssodacloud",
-      "fuzzAngle" : 30,
+      "fuzzAngle" : 15,
       "angleAdjust" : 0
     },
     {
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "starpoundssodacloud",
-      "fuzzAngle" : 30,
+      "fuzzAngle" : 15,
       "angleAdjust" : 90
     },
     {
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "starpoundssodacloud",
-      "fuzzAngle" : 30,
+      "fuzzAngle" : 15,
       "angleAdjust" : 180
     },
     {
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "starpoundssodacloud",
-      "fuzzAngle" : 30,
+      "fuzzAngle" : 15,
       "angleAdjust" : 270
     }
   ],

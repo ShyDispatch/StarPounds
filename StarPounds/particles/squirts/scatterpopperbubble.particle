@@ -1,0 +1,22 @@
+{
+  "kind" : "scatterpopperbubble",
+  "definition" : {
+    "type" : "textured",
+    "image" : "/projectiles/guns/unsorted/scatterpopbubbles/starpoundsscatterpopbubbles.png:0",
+    "size" : 0.5,
+    "fade" : 0.9,
+    "position" : [0.0, 0.0],
+    "offsetRegion" : [0, 0, 0, 0],
+    "initialVelocity" : [1.25, 0],
+    "finalVelocity" : [0, 2],
+    "approach" : [0.25, 1],
+    "destructionAction" : "fade",
+    "destructionTime" : 0.25,
+    "layer" : "back",
+    "timeToLive" : 0.45,
+    "variance" : {
+      "size" : 0.2,
+      "initialVelocity" : [0.5, 0.5]
+    }
+  }
+}

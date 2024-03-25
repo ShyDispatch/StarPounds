@@ -11,5 +11,10 @@
   "bounces" : -1,
   "flippable" : true,
   "damageKind" : "caloricplasma",
-  "knockback" : 30
+  "knockback" : 30,
+  "statusEffects" : [
+    {"effect": "starpoundsfood", "duration": 30},
+    {"effect": "starpoundsratebloat", "duration": 15},
+    {"effect": "starpoundsrategain", "duration": 5}
+  ]
 }

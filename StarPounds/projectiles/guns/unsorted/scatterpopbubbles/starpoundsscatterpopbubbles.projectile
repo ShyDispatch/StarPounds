@@ -1,9 +1,10 @@
 {
   "projectileName" : "starpoundsscatterpopbubbles",
   "image" : "starpoundsscatterpopbubbles.png",
-  "physics" : "flame",
+  "physics" : "bigbubble",
   "animationCycle" : 1,
   "frameNumber" : 16,
+  "animationLoops" : false,
   "pointLight" : false,
   "flippable" : true,
   "actionOnReap" : [
@@ -12,11 +13,16 @@
       "options" : [ "/sfx/projectiles/bubble_pop.ogg" ]
     }
   ],
-  "statusEffects" : [{"effect": "starpoundsratebloat", "duration": 1}, {"effect": "starpoundsfood", "duration": 10}],
+  "statusEffects" : [
+    {"effect": "starpoundsbloat", "duration": 2.5},
+    {"effect": "starpoundsfood", "duration": 2.5},
+    {"effect": "starpoundsratebloat", "duration": 1}
+  ],
   "power" : 1,
-  "speed" : 25,
-  "timeToLive" : 0.95,
-  "bounces" : 4,
+  "speed" : 20,
+  "timeToLive" : 1,
+  "bounces" : -1,
   "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ],
-  "damageKind" : "caloric"
+  "damageKind" : "caloric",
+  "scripts" : ["scatterpopbubbles.lua"]
   }

@@ -69,9 +69,9 @@
     "scripts" : ["/items/active/weapons/melee/abilities/spear/rocketspear/rocketspear.lua"],
     "class" : "RocketSpear",
 
-    "baseDps" : 16,
-    "cooldownTime" : 1.0,
-    "energyUsage" : 20,
+    "baseDps" : 9,
+    "cooldownTime" : 0.5,
+    "energyUsage" : 40,
     "fireTime" : 0.085,
     "inaccuracy" : 0.30,
 

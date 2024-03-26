@@ -1,6 +1,6 @@
 {
   "type" : "starpoundspenguinvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Penguin Visitor",
   
 	"identity" : {

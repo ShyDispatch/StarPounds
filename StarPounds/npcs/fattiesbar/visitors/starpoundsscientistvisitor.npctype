@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsscientistvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Scientist Visitor",
 
   "scriptConfig" : {

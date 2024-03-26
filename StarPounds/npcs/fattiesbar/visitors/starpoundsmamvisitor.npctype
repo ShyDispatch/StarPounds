@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsmamvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Lovable Slime Gal",
 
   "scriptConfig" : {

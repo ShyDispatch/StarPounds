@@ -1,6 +1,6 @@
 {
   "type" : "starpoundscuiavisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Ravenous Avian",
 
   "scriptConfig" : {

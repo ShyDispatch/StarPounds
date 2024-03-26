@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsumiyonivisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Umiyoni Visitor",
   
 	"identity" : {

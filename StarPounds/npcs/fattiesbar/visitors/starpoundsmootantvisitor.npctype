@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsmootantvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Mootant Visitor",
   
   "identity" : {

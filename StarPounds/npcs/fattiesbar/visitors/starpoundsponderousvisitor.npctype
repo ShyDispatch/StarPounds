@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsponderousvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Ponderous Order Visitor",
   
 	"identity" : {

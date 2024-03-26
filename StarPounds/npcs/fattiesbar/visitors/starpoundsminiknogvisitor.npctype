@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsminiknogvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Miniknog Visitor",
   
 	"identity" : {

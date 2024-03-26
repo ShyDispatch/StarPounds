@@ -1,6 +1,6 @@
 {
   "type" : "starpoundstonauacvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   
   "npcname" : "Tonauac",
   "identity" : {

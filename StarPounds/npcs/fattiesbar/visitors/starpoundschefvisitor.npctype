@@ -1,6 +1,6 @@
 {
   "type" : "starpoundschefvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Chef Visitor",
 
   "scriptConfig" : {

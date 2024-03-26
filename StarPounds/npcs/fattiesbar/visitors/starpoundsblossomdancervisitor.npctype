@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsblossomdancervisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Starpounds Dungeon Master",
 
   "scriptConfig" : {

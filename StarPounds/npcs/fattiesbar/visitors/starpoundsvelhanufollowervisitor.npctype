@@ -1,8 +1,8 @@
 {
   "type" : "starpoundsvelhanufollowervisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Velhanu Priestess Visitor",
-  
+
 	"identity" : {
      "gender": "female",
      "species" : "avian"

@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsshydispatchvisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Starpounds Creator",
 
   "scriptConfig" : {

@@ -1,0 +1,12 @@
+{
+	"name": "starpoundsvoretargetweapon",
+	"effectConfig": {
+		"options" : {
+			"noEnergyCost" : true
+		}
+	},
+	"defaultDuration": 1,
+	"scripts": [
+		"starpoundsvoretarget.lua"
+	]
+}

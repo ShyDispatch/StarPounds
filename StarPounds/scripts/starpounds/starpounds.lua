@@ -1459,11 +1459,12 @@ starPounds.voreDigest = function(dt)
 	end
 end
 
-starPounds.eatNearbyEntity = function(position, range, querySize, force, check)
+starPounds.eatNearbyEntity = function(position, range, querySize, options, check)
 	-- Argument sanitisation.
 	position = (type(position) == "table" and type(position[1]) == "number" and type(position[2]) == "number") and position or mcontroller.position()
 	range = math.max(tonumber(range) or 0, 0)
 	querySize = math.max(tonumber(querySize) or 0, 0)
+	options = type(options) == "table" and options or {}
 
 	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
@@ -1481,23 +1482,24 @@ starPounds.eatNearbyEntity = function(position, range, querySize, force, check)
 
 	for _, target in ipairs(preferredEntities) do
 		if isTargetValid(target) then
-			return {starPounds.eatEntity(target, force, check), true}
+			return {starPounds.eatEntity(target, options, check), true}
 		end
 	end
 
 	for _, target in ipairs(nearbyEntities) do
 		if isTargetValid(target) then
-			return {starPounds.eatEntity(target, force, check), false}
+			return {starPounds.eatEntity(target, options, check), false}
 		end
 	end
 end
 
-starPounds.eatEntity = function(preyId, force, check)
+starPounds.eatEntity = function(preyId, options, check)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return false end
 	-- Argument sanitisation.
 	preyId = tonumber(preyId)
 	if not preyId then return false end
+	options = type(options) == "table" and options or {}
 	-- Check if they exist.
 	if not world.entityExists(preyId) then return false end
 	-- Counting this as 'combat', so no eating stuff on protected worlds. (e.g. the outpost)
@@ -1508,13 +1510,13 @@ starPounds.eatEntity = function(preyId, force, check)
 	local canVoreCritter = starPounds.hasSkill("voreCritter")
 	local canVoreMonster = starPounds.hasSkill("voreMonster")
 	local canVoreHumanoid = starPounds.hasSkill("voreHumanoid")
-	local canVoreFriendly = force or starPounds.hasSkill("voreFriendly")
+	local canVoreFriendly = options.ignoreSkills or starPounds.hasSkill("voreFriendly")
 	-- Skip if we can't eat anything at all.
 	if not (
 		canVoreCritter or
 		canVoreMonster or
 		canVoreHumanoid or
-		force
+		options.ignoreSkills
 	) then return false end
 	-- Store so we don't have to grab multiple times.
 	local preyType = world.entityTypeName(preyId)
@@ -1523,9 +1525,9 @@ starPounds.eatEntity = function(preyId, force, check)
 	-- Don't do anything if eaten.
 	if storage.starPounds.pred then return false end
 	-- Can only eat if you're below capacity.
-	if starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") and not force then
+	if starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") and not options.ignoreCapacity then
 		return false
-	elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 and not force then
+	elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 and not options.ignoreCapacity then
 		return false
 	end
 	-- Don't do anything if they're already eaten.
@@ -1540,9 +1542,9 @@ starPounds.eatEntity = function(preyId, force, check)
 		table.insert(compatibleEntities, "player")
 	end
 	local preyType = world.entityTypeName(preyId)
-	if not force then
+	if not options.noEnergyCost and status.isResource("energy") and status.resourceLocked("energy") then return false end
+	if not options.ignoreSkills then
 		if not contains(compatibleEntities, world.entityType(preyId)) then return false end
-		if status.isResource("energy") and status.resourceLocked("energy") then return false end
 		-- Need the upgrades for the specific entity type
 		if world.entityType(preyId) == "monster" then
 			local scriptCheck = contains(root.monsterParameters(preyType).scripts or jarray(), "/scripts/starpounds/starpounds_monster.lua")
@@ -1586,7 +1588,7 @@ starPounds.eatEntity = function(preyId, force, check)
 			world = (starPounds.type == "player") and player.worldId() or nil,
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"})
 		})
-		if not force then
+		if not options.noEnergyCost then
 			local preyHealth = world.entityHealth(preyId)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local preySizeMult = (1 + (((prey.weight or 0) + (prey.bloat or 0))/starPounds.species.default.weight)) * 0.5

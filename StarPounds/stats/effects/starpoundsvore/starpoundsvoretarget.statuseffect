@@ -1,0 +1,10 @@
+{
+	"name": "starpoundsvoretarget",
+	"effectConfig": {
+		"options" : {}
+	},
+	"defaultDuration": 1,
+	"scripts": [
+		"starpoundsvoretarget.lua"
+	]
+}

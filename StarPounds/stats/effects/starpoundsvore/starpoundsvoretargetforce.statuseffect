@@ -1,0 +1,14 @@
+{
+	"name": "starpoundsvoretargetforce",
+	"effectConfig": {
+		"options" : {
+			"ignoreSkills" : true,
+			"ignoreCapacity" : true,
+			"noEnergyCost" : true
+		}
+	},
+	"defaultDuration": 1,
+	"scripts": [
+		"starpoundsvoretarget.lua"
+	]
+}

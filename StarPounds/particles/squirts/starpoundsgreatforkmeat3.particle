@@ -9,7 +9,7 @@
     "approach" : [0, 50],
     "collidesForeground" : true,
     "timeToLive" : 1,
-    "destructionAction" : "fade",
+    "destructionAction" : "shrink",
     "destructionTime" : 0.2,
     "size" : 1.5,
     "layer" : "back",

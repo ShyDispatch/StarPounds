@@ -38,7 +38,7 @@
       "collisionSpaces" : [ [-1, 0], [-0, 0], [1, 0] ]
     }
   ],
-  
+
   "teleporterFootPosition" : [0, 1],
 
   "scripts" : [ "2stoptele.lua" ],
@@ -105,7 +105,7 @@
       "type" : "alpacavisitor",
       "species" : [ "human" ]
     },
-	
+
     {
       "type" : "starpoundstonauacvisitor",
       "species" : [ "avian" ]
@@ -116,6 +116,10 @@
     },
     {
       "type" : "starpoundsmamvisitor",
+      "species" : [ "human" ]
+    },
+    {
+      "type" : "starpoundsminivisitor",
       "species" : [ "human" ]
     }
   ]

@@ -6,7 +6,7 @@
   "description" : "Weaponized Root Pop... What else will the Novakid think of?",
   "shortdescription" : "Nova Scatterpopper",
   "tooltipKind" : "starpoundsgun",
-  "category" : "shotgun",
+  "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","shotgun","upgradeableWeapon"],
   "level" : 4,

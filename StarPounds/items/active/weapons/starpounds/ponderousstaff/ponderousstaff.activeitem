@@ -8,7 +8,7 @@
   "shortdescription" : "Staff of the Ponderous",
   "tooltipKind" : "starpoundsstaff",
   "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
-  "category" : "staff",
+  "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon","staff","upgradeableWeapon"],
 
@@ -85,8 +85,8 @@
 
   "primaryAbilityType" : "plasmabladebarrage",
   "primaryAbility" : {
-    "projectileType" : "ponderousbolt",  
-    "projectileCount" : 6,	
+    "projectileType" : "ponderousbolt",
+    "projectileCount" : 6,
     "maxCastRange" : 30,
 
     "projectileParameters" : {
@@ -116,7 +116,7 @@
   "altAbility" : {},
 
   "builder" : "/items/buildscripts/buildstarpoundsunrandweapon.lua",
-  
+
   "upgradeParameters" : {
     "inventoryIcon" : "ponderousstaff_l6.png",
     "animationParts" : {

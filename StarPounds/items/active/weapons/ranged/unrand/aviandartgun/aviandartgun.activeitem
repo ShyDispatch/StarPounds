@@ -1,6 +1,6 @@
 {
   "itemName" : "aviandartgun",
-  "price" : 1125,
+  "price" : 1000,
   "maxStack" : 1,
   "rarity" : "Uncommon",
   "description" : "A dart gun with mysterious poisoned tips",
@@ -37,9 +37,9 @@
     "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
     "class" : "GunFire",
 
-    "fireTime" : 1.0,
+    "fireTime" : 0.6667,
     "baseDps" : 5,
-    "energyUsage" : 25,
+    "energyUsage" : 15,
     "inaccuracy" : 0.025,
 
     "projectileCount" : 1,

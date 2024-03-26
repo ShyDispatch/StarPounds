@@ -10,13 +10,13 @@
     }
   ],
   "statusEffects" : [
-    {"effect": "starpoundsrategainslow", "duration": 10},
-    {"effect": "starpoundsratebloat", "duration": 10}
+    {"effect": "starpoundsrategain", "duration": 5},
+    {"effect": "starpoundsratebloat", "duration": 5}
   ],
   "image" : "apexcaloricdart.png",
   "animationCycle" : 0.25,
   "frameNumber" : 1,
-  "damageKind" : "bow",
+  "damageKind" : "caloricbow",
   "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
   "timeToLive" : 10,
   "pointLight" : false,

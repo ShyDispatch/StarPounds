@@ -11,6 +11,32 @@
     {
       "action" : "sound",
       "options" : [ "/sfx/projectiles/bubble_pop.ogg" ]
+    },
+    {
+      "action" : "loop",
+      "count" : 2,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "textured",
+            "image" : "/projectiles/guns/unsorted/scatterpopbubbles/starpoundsscatterpopbubbles.png:0",
+            "size" : 0.5,
+            "fade" : 0.9,
+            "initialVelocity" : [0, 1],
+            "finalVelocity" : [0, 2],
+            "approach" : [0.25, 1],
+            "destructionAction" : "fade",
+            "destructionTime" : 0.2,
+            "layer" : "back",
+            "timeToLive" : 0.2,
+            "variance" : {
+              "size" : 0.25,
+              "initialVelocity" : [3, 2]
+            }
+          }
+        }
+      ]
     }
   ],
   "statusEffects" : [

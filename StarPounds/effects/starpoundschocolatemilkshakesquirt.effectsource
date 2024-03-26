@@ -1,16 +1,16 @@
 {
-  "kind" : "milkshakesquirt",
+  "kind" : "starpoundschocolatemilkshakesquirt",
   "definition" : {
     "duration" : 0.1,
     "loops" : true,
     "start" : {
       "particles" : [
-        [ "milkshakesquirt" ]
+        [ "starpoundschocolatemilkshakesquirt" ]
       ],
       "sounds" : [ [ ] ]
     },
     "particles" : [
-      [ "milkshakesquirt" ]
+      [ "starpoundschocolatemilkshakesquirt" ]
     ],
     "sounds" : [ [ ] ],
     "stop" : {

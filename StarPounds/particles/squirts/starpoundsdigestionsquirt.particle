@@ -1,20 +1,22 @@
 {
-  "kind" : "chocolatemilkshakesquirt",
+  "kind" : "starpoundsdigestionsquirt",
   "definition" : {
     "type" : "ember",
-    "color" : [117, 70, 26],
+    "color" : [229, 255, 43],
     "position" : [0, 0],
     "initialVelocity" : [-3, 3],
     "finalVelocity" : [0, -30],
     "approach" : [0, 20],
     "collidesForeground" : true,
     "collidesLiquid" : true,
+    "fullbright" : true,
     "timeToLive" : 1,
     "size" : 0.75,
     "layer" : "back",
     "variance" : {
       "size" : 0.5,
       "initialVelocity" : [3, 3]
-    }
+    },
+    "light" : [39, 49, 2]
   }
 }

@@ -1,8 +1,8 @@
 {
-  "kind" : "digestionsquirt",
+  "kind" : "starpoundscaloriumsquirt",
   "definition" : {
     "type" : "ember",
-    "color" : [229, 255, 43],
+    "color" : [254, 161, 243],
     "position" : [0, 0],
     "initialVelocity" : [-3, 3],
     "finalVelocity" : [0, -30],
@@ -17,6 +17,6 @@
       "size" : 0.5,
       "initialVelocity" : [3, 3]
     },
-    "light" : [39, 49, 2]
+    "light" : [48, 2, 41]
   }
 }

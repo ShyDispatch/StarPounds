@@ -1,5 +1,5 @@
 {
-  "kind" : "milkshakesquirt",
+  "kind" : "starpoundsmilkshakesquirt",
   "definition" : {
     "type" : "ember",
     "color" : [255, 255, 255],

@@ -1,8 +1,8 @@
 {
-  "kind" : "honeysquirt",
+  "kind" : "starpoundschocolatemilkshakesquirt",
   "definition" : {
     "type" : "ember",
-    "color" : [246, 189, 32],
+    "color" : [117, 70, 26],
     "position" : [0, 0],
     "initialVelocity" : [-3, 3],
     "finalVelocity" : [0, -30],

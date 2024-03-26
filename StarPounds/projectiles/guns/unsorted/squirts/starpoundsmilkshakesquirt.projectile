@@ -1,6 +1,6 @@
 {
-  "projectileName" : "chocolatemilkshakesquirt",
-  "image" : "chocolatemilkshakesquirt.png",
+  "projectileName" : "starpoundsmilkshakesquirt",
+  "image" : "starpoundsmilkshakesquirt.png",
   "physics" : "squirt",
   "animationCycle" : 1,
   "frameNumber" : 2,
@@ -11,7 +11,7 @@
       "body" : [
         {
           "action" : "particle",
-          "specification" : "chocolatemilkshakesquirt"
+          "specification" : "starpoundsmilkshakesquirt"
         }
       ]
     },
@@ -27,7 +27,7 @@
   "damagePoly" : [ [-4, 0], [0, 4], [4, 0], [0, -4] ],
   "damageKind" : "bugnet",
   "damageTeam" : { "type" : "indiscriminate" },
-  "statusEffects" : ["starpoundschocolatemilkshakesquirt"],
-  "emitters" : ["chocolatemilkshakesquirt"],
+  "statusEffects" : ["starpoundsmilkshakesquirt"],
+  "emitters" : ["starpoundsmilkshakesquirt"],
   "hydrophobic" : true
 }

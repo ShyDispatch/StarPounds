@@ -62,7 +62,7 @@
     "projectileCount" : 1,
     "fireType" : "auto",
 
-    "projectileType" : "caloriumsquirt",
+    "projectileType" : "starpoundscaloriumsquirt",
     "stances" : {
       "idle" : {
         "armRotation" : 0,

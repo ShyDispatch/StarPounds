@@ -1,16 +1,16 @@
 {
-  "kind" : "caloriumsquirt",
+  "kind" : "starpoundscaloriumsquirt",
   "definition" : {
     "duration" : 0.1,
     "loops" : true,
     "start" : {
       "particles" : [
-        [ "caloriumsquirt" ]
+        [ "starpoundscaloriumsquirt" ]
       ],
       "sounds" : [ [ ] ]
     },
     "particles" : [
-      [ "caloriumsquirt" ]
+      [ "starpoundscaloriumsquirt" ]
     ],
     "sounds" : [ [ ] ],
     "stop" : {

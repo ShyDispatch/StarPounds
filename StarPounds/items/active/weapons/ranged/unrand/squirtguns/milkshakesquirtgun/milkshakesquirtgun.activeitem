@@ -51,7 +51,7 @@
     "projectileCount" : 1,
     "fireType" : "auto",
 
-    "projectileType" : "milkshakesquirt",
+    "projectileType" : "starpoundsmilkshakesquirt",
     "stances" : {
       "idle" : {
         "armRotation" : 0,

@@ -1,6 +1,6 @@
 {
-  "projectileName" : "caloriumsquirt",
-  "image" : "caloriumsquirt.png",
+  "projectileName" : "starpoundscaloriumsquirt",
+  "image" : "starpoundscaloriumsquirt.png",
   "fullbright" : true,
   "physics" : "squirt",
   "animationCycle" : 1,
@@ -12,7 +12,7 @@
       "body" : [
         {
           "action" : "particle",
-          "specification" : "caloriumsquirt"
+          "specification" : "starpoundscaloriumsquirt"
         }
       ]
     },
@@ -33,7 +33,7 @@
   "damageKind" : "bugnet",
   "damageTeam" : { "type" : "indiscriminate" },
   "statusEffects" : ["starpoundscaloriumsquirt"],
-  "emitters" : ["caloriumsquirt"],
+  "emitters" : ["starpoundscaloriumsquirt"],
   "lightColor" : [69, 2, 58],
   "hydrophobic" : true
 }

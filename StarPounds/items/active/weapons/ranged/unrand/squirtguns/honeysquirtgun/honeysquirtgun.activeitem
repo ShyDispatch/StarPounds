@@ -51,7 +51,7 @@
     "projectileCount" : 1,
     "fireType" : "auto",
 
-    "projectileType" : "honeysquirt",
+    "projectileType" : "starpoundshoneysquirt",
     "stances" : {
       "idle" : {
         "armRotation" : 0,

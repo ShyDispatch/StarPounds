@@ -540,6 +540,8 @@ end
 starPounds.createStatuses = function()
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
+	-- Don't recreate if we can't add statuses anyway.
+	if status.statPositive("statusImmunity") then return end
 	-- Remove all old statuses.
 	world.sendEntityMessage(entity.id(), "starPounds.expire")
 	status.addEphemeralEffect("starpoundssoundhandler")

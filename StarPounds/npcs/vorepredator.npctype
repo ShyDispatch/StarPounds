@@ -48,6 +48,9 @@
       "maxHealth" : {
         "baseValue" : 100.0
       },
+      "maxEnergy" : {
+        "baseValue" : 100.0
+      },
       "knockbackStunTime" : {
         "baseValue" : 0.1
       }

@@ -1,9 +1,9 @@
-[  
-  {  
+[
+  {
     "op":"add",
     "path":"/merchantStart/throg",
-    "value":{  
-      "default":[  
+    "value":{
+      "default":[
         "Need food? I got food.",
         "Come, come! See what I have in store!",
         "Oi! I got goods for sale!",
@@ -17,11 +17,11 @@
       ]
   }
  },
-  {  
+  {
     "op":"add",
     "path":"/merchantEnd/throg",
-    "value":{  
-      "default":[  
+    "value":{
+      "default":[
         "Come back with more pixels.",
         "You're always welcome back.",
         "Come again.",
@@ -33,34 +33,34 @@
       ]
   }
  },
-  {  
+  {
     "op":"add",
     "path":"/welcome/throg",
-    "value":{  
-      "default":[  
+    "value":{
+      "default":[
         "Welcome!",
         "Got some rare things for sale.",
         "Now, what can I get you.",
         "So long as you have the pixels, what I have is yours.",
         "Now we can get down to business.",
         "So, how hungry are ya?",
-        "Got the stomach and pixels for whwat I have?",
+        "Got the stomach and pixels for what I have?",
         "Reminder, this is a clean shop. No illegal goods for sale."
       ]
   }
  },
-  {  
+  {
     "op":"add",
     "path":"/tout/throg",
-    "value":{  
-      "default":[  
+    "value":{
+      "default":[
         "Welcome!",
         "Got some rare things for sale!",
         "Food! Other goods! All here!",
         "I got the meals for an empty stomach.",
         "Don't be a fool, browse my wares!",
         "You'll be hungering for more once you had my food.",
-        "Got the stomach and pixels for whwat I have?",
+        "Got the stomach and pixels for what I have?",
         "Reminder, this is a clean shop. No illegal goods for sale."
       ]
   }

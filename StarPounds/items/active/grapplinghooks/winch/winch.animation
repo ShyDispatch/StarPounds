@@ -28,7 +28,7 @@
           "starpounds_hook" : {
             "on" : {
               "properties" : {
-                "image" : "/projectiles/activeitems/grapplehook/grapplehook.png"
+                "image" : "/projectiles/activeitems/grapplehook/winchhook.png"
               }
             },
             "off" : {

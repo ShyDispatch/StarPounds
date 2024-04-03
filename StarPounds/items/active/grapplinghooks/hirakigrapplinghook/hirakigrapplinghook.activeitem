@@ -12,7 +12,7 @@
   "fireTime" : 0,
   "twoHanded" : false,
 
-  "scripts" : ["/items/active/grapplinghooks/grapplinghook.lua"],
+  "scripts" : ["/items/active/grapplinghooks/grapplinghook.lua", "/items/active/grapplinghooks/starpounds_grapplinghook.lua"],
   "animationScripts" : ["/items/active/effects/renderrope.lua"],
 
   "animation" : "hirakigrapplinghook.animation",

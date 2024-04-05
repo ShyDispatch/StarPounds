@@ -13,67 +13,64 @@
     "starPounds_skills": {
       "minimumSize": [3, 3]
     },
+  "behavior" : "outpostvisitor",
+	
+  "chatPortrait" : "/interface/chatbubbles/starpoundsmam.png:<frame>",
 		"dialogMode": "tutorial",
 		"dialog": {
 			"converse": {
 				"default": {
 					"default": [
+						"Hello there, my name's Mam!"
+					],
+					"generic": [
 						"Gosh I'm soooo hungry~",
 						"Figure you could spot me dinner?",
 						"It's always nice to meet my fans."
 					],
 					"avian": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"Is it true the Ascension ritual includes nine days of feasting?",
+						"Avians sure do have some of the best baked goods!",
 						"Velhanu's a pretty cool Goddess."
 					],
 					"apex": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"Oh do you recognize me? I showed up in some fast food ads.",
+						"I don't know, the fast food the Miniknog has is pretty tasty~",
 						"I wouldn't mind a couple dozen bananas."
 					],
 					"floran": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"Hunt any delicious meals lately?",
+						"Florans have such cute appetites~",
 						"Are you one of those cute Gluttonists?"
 					],
 					"glitch": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"Your kings and queens need bigger thrones.",
+						"Robots getting fat is quite nice~",
 						"I was a queen once, you know."
 					],
 					"human": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"Oh you've seen me before, huh?~",
+						"Brainrot? Yeah I do give people quite a bit of that.",
 						"Been on the internet much?"
 					],
 					"hylotl": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
-						"I cameod in Whale Princess once."
+						"Visiting various ocean planets provides new kinds of sushi~",
+						"I loooove hylotl sumo~",
+						"I made a cameo in Whale Princess once."
 					],
 					"novakid": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"Could go for a big barbecue right now.",
+						"Got some good wild west soda on you?",
 						"Well howdy!"
 					],
 					"throg": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"I'm surprised you even bother with food.",
+						"You Throgs are so fat~",
 						"So do Throgs find me eating hot?"
 					],
 					"mootant": [
-						"Gosh I'm soooo hungry~",
-						"Figure you could spot me dinner?",
-						"It's always nice to meet my fans.",
+						"I sure could go for some milk right now.",
+						"Are you leaking? Can I have a sip?",
 						"Is it true your boobs get really big with milk?"
 					]
 				}

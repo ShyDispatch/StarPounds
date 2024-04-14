@@ -121,6 +121,10 @@
     {
       "type" : "starpoundsminivisitor",
       "species" : [ "human" ]
+    },
+    {
+      "type" : "spacethumperpilotvisitor",
+      "species" : [ "human" ]
     }
   ]
 }

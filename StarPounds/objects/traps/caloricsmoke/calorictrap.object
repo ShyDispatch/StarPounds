@@ -16,7 +16,7 @@
   "novakidDescription" : "Smells like a fat Novakid would.",
 
   "category" : "trap",
-  "price" : 5000,
+  "price" : 50000,
 
   "inventoryIcon" : "calorictrapicon.png",
   "orientations" : [

@@ -1,6 +1,6 @@
 {
   "type" : "fattiesbarguard",
-  "baseType" : "villager",
+  "baseType" : "guard",
 
  "scriptConfig" : {
     "starPounds_skills": {
@@ -10,8 +10,12 @@
     "turnInQuests" : [ ],
     "behaviorConfig" : {
       "greetingChance" : 0
+    },
+    "dialog" : {
+      "converse" : "/dialog/throg.config:converse"
     }
   },
+  "displayTitle" : "Hog Diner Guard",
 
   "items" : {
     "override" : [
@@ -19,7 +23,13 @@
           {
             "headCosmetic": [ { "name": "throgtier6shead", "parameters" : { "colorIndex" : 9 } } ],
             "chestCosmetic": [ { "name" : "throgneochest", "parameters" : { "colorIndex" : 9 } } ],
-            "legsCosmetic": [ { "name" : "throgneolegs", "parameters" : { "colorIndex" : 9 } } ]
+            "legsCosmetic": [ { "name" : "throgneolegs", "parameters" : { "colorIndex" : 9 } } ],
+            "primary" : [
+              "npcthroggreatfork"
+            ],
+            "alt" : [
+              "throgdinnerplate"
+            ]
           }
         ] ]
     ]

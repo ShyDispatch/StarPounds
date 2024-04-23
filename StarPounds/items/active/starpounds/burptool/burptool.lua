@@ -2,6 +2,9 @@ function init()
 	activeItem.setHoldingItem(false)
 end
 
-function activate(fireMode, shiftHeld)
-	world.sendEntityMessage(activeItem.ownerEntityId(), "starPounds.belch", 0.75, math.random(10,13)/10, nil, true)	
+function activate(fireMode, shiftHeld)  local starPounds = getmetatable ''.starPounds
+	local starPounds = getmetatable ''.starPounds
+  if starPounds then
+		starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier), nil, false)
+	end
 end

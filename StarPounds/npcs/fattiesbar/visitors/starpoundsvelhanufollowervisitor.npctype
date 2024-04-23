@@ -1,0 +1,45 @@
+{
+  "type" : "starpoundsvelhanufollowervisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Velhanu Priestess Visitor",
+
+	"identity" : {
+     "gender": "female",
+     "species" : "avian"
+	 },
+
+  "scriptConfig" : {
+  "starPounds_skills": {
+      "minimumSize": [2, 4]
+    },
+  "starPounds_options": {
+      "disableGain": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"Such a place of feasting!",
+						"Oh Velhanu's blessing upon this place of fat and food.",
+						"The Throgs way of gorging is very much in the spirit of Velhanu.",
+						"Let the bounty of Velhanu keep you happy and fat.",
+						"May your waistline be vast, and your appetite unending.",
+						"Kluex? No we do not worship that false god. Only the embrace of the bountiful Velhanu.",
+						"May the blessings of Velhanu be upon you."
+					]
+				}
+			}
+		}
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ]
+          }
+        ] ]
+    ]
+  }
+}

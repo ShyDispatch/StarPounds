@@ -1,0 +1,45 @@
+{
+  "objectName" : "starpoundsponderousbookshelf",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","knowledge","storage"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "description" : "The Ponderous Order's wisdom is stored on these. They're mostly about sweets.",
+  "shortdescription" : "Ponderous Bookcase",
+  "race" : "glitch",
+  "category" : "storage",
+  "price" : 110,
+  "health" : 1.5,
+
+  "apexDescription" : "An ornate bookcase. I am not familliar with any of these texts.",
+  "avianDescription" : "These old weathered books seem to have been well cared for.",
+  "floranDescription" : "Metal man bookshelf look heavy.",
+  "glitchDescription" : "Curious. Many of these dusty tomes are either magic spellbooks or diet guides.",
+  "humanDescription" : "Feels like if I take one of these and read a page out loud I'll make myself fat.",
+  "hylotlDescription" : "Don't think I see a single book in here about losing weight.",
+  "novakidDescription" : "Buncha old books. Don't look too interestin' to me.",
+
+  "inventoryIcon" : "starpoundsponderousbookshelficon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsponderousbookshelf.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/bookcase_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/bookcase_close.ogg" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+
+}

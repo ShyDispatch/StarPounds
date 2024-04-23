@@ -1,0 +1,21 @@
+{
+  "projectileName" : "wispbombcloud",
+  "image" : "wispbombcloud.png",
+  "physics" : "gas",
+  "animationCycle" : 1.05,
+  "animationLoops" : false,
+  "frameNumber" : 8,
+  "power" : -1,
+  "speed" : 10,
+  "timeToLive" : 0.9,
+  "bounces" : 1,
+  "damagePoly" : [ [-1, 0], [-2, -2], [0, -1], [2, -2], [1, 0], [2, 2], [0, 1], [-2, 2] ],
+  "piercing" : true,
+  "emitters" : [ "wispflame"  ],  
+  "statusEffects" : [
+    {"effect": "starpoundsratebloatslow", "duration": 8},
+    {"effect": "starpoundsrategainrapid", "duration": 8}
+  ],
+  "damageType" : "ignoresdef",
+  "damageKind" : "caloric"
+}

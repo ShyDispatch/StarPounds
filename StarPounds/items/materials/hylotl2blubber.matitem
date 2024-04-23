@@ -1,0 +1,11 @@
+{
+  "itemName" : "hylotl2blubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "hylotl2blubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Hylotl Flab",
+
+  "materialId" : 51434
+}

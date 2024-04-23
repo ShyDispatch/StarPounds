@@ -15,14 +15,14 @@
   ],
 
   "maleFrames" : {
-    "body" : "fatty_chestm.png",
+    "body" : "chestm.png",
     "backSleeve" : "bsleeve.png",
     "frontSleeve" : "fsleeve.png"
   },
 
   "femaleFrames" : {
-    "body" : "fatty_chestf.png",
+    "body" : "chestf.png",
     "backSleeve" : "bsleeve.png",
-    "frontSleeve" : "fsleeve.png"
+    "frontSleeve" : "fsleevef.png"
   }
 }

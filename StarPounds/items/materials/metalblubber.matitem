@@ -1,0 +1,11 @@
+{
+  "itemName" : "metalblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "metalblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Metal Flab",
+
+  "materialId" : 51432
+}

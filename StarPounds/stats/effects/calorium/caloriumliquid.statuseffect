@@ -12,6 +12,7 @@
   "animationConfig" : "/stats/effects/starpoundssoundhandler/starpoundssoundhandler.animation",
 
   "scripts" : [
-    "caloriumliquid.lua"
+    "caloriumliquid.lua",
+    "caloriumcalculation.lua"
   ]
 }

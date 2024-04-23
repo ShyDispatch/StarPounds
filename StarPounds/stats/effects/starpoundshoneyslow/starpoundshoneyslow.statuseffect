@@ -1,7 +1,9 @@
 {
   "name" : "starpoundshoneyslow",
   "blockingStat" : "wetImmunity",
-  "effectConfig" : {},
+  "effectConfig" : {
+    "color": "fdc93a"
+  },
   "defaultDuration" : 1,
 
   "scripts" : [

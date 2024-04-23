@@ -1,7 +1,7 @@
 {
 	"name": "starpoundsmilkshakesquirt",
 	"effectConfig": {
-		"statusEffects": [{"effect": "starpoundsfood", "duration": 5}, {"effect": "starpoundsbloat", "duration": 5}],
+		"statusEffects": [{"effect": "starpoundsfood", "duration": 2.5}, {"effect": "starpoundsbloat", "duration": 7.5}],
 		"sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 1}, {"effect": "starpoundsbloat", "duration": 9}]
 	},
 	"defaultDuration": 1,

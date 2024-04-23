@@ -1,6 +1,7 @@
 {
   "type" : "fattiesbarthrog",
   "baseType" : "villager",
+  "displayTitle" : "Hog Diner Resident",
 
  "scriptConfig" : {
     "starPounds_skills": {
@@ -11,17 +12,5 @@
     "behaviorConfig" : {
       "greetingChance" : 0
     }
-  },
-
-  "items" : {
-    "override" : [
-      [0, [
-          {
-            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
-            "chestCosmetic": [ { "name": "throgneochest" } ],
-            "legsCosmetic": [ { "name": "throgneolegs" } ]
-          }
-        ] ]
-    ]
   }
 }

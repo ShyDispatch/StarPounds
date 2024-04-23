@@ -29,8 +29,9 @@ function init()
 	starPounds.messageHandlers()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
+	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	starPounds.parseSkills()
-	starPounds.accessoryModifiers = starPounds.getAccessoryModfiers()
+	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.parseEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
@@ -42,7 +43,7 @@ function init()
 			if notification.sourceEntityId == entity.id() and notification.targetEntityId == entity.id() then
 				if notification.damageSourceKind == "falling" and starPounds.currentSizeIndex > 1 then
 					-- "explosive" damage (ignores tilemods) to blocks is reduced by 80%, for a total of 5% damage applied to blocks. (Isn't reduced by the fall damage skill)
-					local baseDamage = (notification.damageDealt)/(1 + starPounds.currentSize.healthBonus * (1 - starPounds.getStat("fallDamageReduction")))
+					local baseDamage = (notification.damageDealt)/(1 + starPounds.currentSize.healthBonus * (1 - starPounds.getStat("fallDamageResistance")))
 					local	tileDamage = baseDamage * (1 + starPounds.currentSize.healthBonus) * 0.25
 					starPounds.damageHitboxTiles(tileDamage)
 					break
@@ -69,7 +70,11 @@ function update(dt)
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
-	starPounds.statCache = {}
+	starPounds.statCacheTimer = math.max(starPounds.statCacheTimer - dt, 0)
+	if starPounds.statCacheTimer == 0 then
+		starPounds.statCache = {}
+		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
+	end
 	-- Update fall damage listener.
 	starPounds.damageListener:update()
 	-- Check if the entity has gone up a size.
@@ -126,7 +131,7 @@ function update(dt)
 		-- Force stat update.
 		starPounds.updateStats(true)
 		-- Update status effect trackers.
-		starPounds.createStatuses("starpoundsstomach")
+		starPounds.createStatuses()
 		-- Don't play the sound on the first load.
 		if oldSize then
 			-- Play sound to indicate size change.
@@ -135,11 +140,7 @@ function update(dt)
 	end
 	-- Checks
 	starPounds.voreCheck()
-	starPounds.equipCheck(starPounds.currentSize, {
-		chestVariant = starPounds.currentVariant,
-		chestSize = storage.starPounds.enabled and (starPounds.hasOption("extraTopHeavy") and 2 or (starPounds.hasOption("topHeavy") and 1 or nil) or nil),
-		legsSize = storage.starPounds.enabled and (starPounds.hasOption("extraBottomHeavy") and 2 or (starPounds.hasOption("bottomHeavy") and 1 or nil) or nil)
-	})
+	starPounds.equipCheck(starPounds.currentSize)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
@@ -167,16 +168,26 @@ function update(dt)
 			storage.starPounds.stomachLerp = starPounds.stomach.contents
 		end
 	end
-
 	starPounds.optionChanged = false
+	-- StarExtensions/OpenStarbound integrations.
+	if input then
+		checkBindings(dt)
+	end
+	-- Debug stuff.
 	if starPounds.hasOption("showDebug") then
-		starPounds.debug("accessories", storage.starPounds.enabled and string.format("^#665599,set;Pendant: ^gray;%s ^reset;Ring: ^gray;%s ^reset;Trinket: ^gray;%s", storage.starPounds.accessories.pendant and storage.starPounds.accessories.pendant.name or "None", storage.starPounds.accessories.ring and storage.starPounds.accessories.ring.name or "None", storage.starPounds.accessories.trinket and storage.starPounds.accessories.trinket.name or "None") or "^gray;Mod disabled")
-		starPounds.debug("experience", storage.starPounds.enabled and string.format("^#665599,set;Level: ^gray;%s ^reset;Experience: ^gray;%.0f/%.0f ^reset;Multiplier: ^gray;%s", storage.starPounds.level, storage.starPounds.experience, starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement), starPounds.getStat("experienceMultiplier")) or "^gray;Mod disabled")
-		starPounds.debug("stomach", storage.starPounds.enabled and string.format("^#665599,set;Fullness: ^gray;%.0f%%%% ^reset;Capacity: ^gray;%.1f/%.1f", starPounds.stomach.interpolatedFullness * 100, starPounds.stomach.contents, starPounds.stomach.capacity) or "^gray;Mod disabled")
-		starPounds.debug("stomachContents", storage.starPounds.enabled and string.format("^#665599,set;Food: ^gray;%.1f ^reset;Bloat: ^gray;%.1f ^reset;Entity: ^gray;%.1f (%d)", starPounds.stomach.food, starPounds.stomach.bloat, starPounds.stomach.contents - (starPounds.stomach.food + starPounds.stomach.bloat), #storage.starPounds.entityStomach) or "^gray;Mod disabled")
-		starPounds.debug("breasts", storage.starPounds.enabled and string.format("^#665599,set;Type: ^gray;%s ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Contents: ^gray;%.1f", starPounds.breasts.type, starPounds.breasts.contents, starPounds.breasts.capacity, storage.starPounds.breasts) or "^gray;Mod disabled")
-		starPounds.debug("size", storage.starPounds.enabled and string.format("^#665599,set;Size: ^gray;%s ^reset;Weight: ^gray;%.2flb ^reset;Multiplier: ^gray;%.1fx", (starPounds.currentSize.size == "" and "none" or starPounds.currentSize.size)..(starPounds.currentVariant and ": "..starPounds.currentVariant or ""), storage.starPounds.weight, starPounds.weightMultiplier) or "^gray;Mod disabled")
-		starPounds.debug("timers", storage.starPounds.enabled and string.format("^#665599,set;Gurgle: ^gray;%.1f ^reset;Rumble: ^gray;%.1f ^reset;Effect Update: ^gray;%.1f", starPounds.gurgleTimer or 0, starPounds.rumbleTimer or 0, starPounds.statusEffectModifierTimer or 0) or "^gray;Mod disabled")
+		local data = storage.starPounds
+		local stomach = starPounds.stomach
+		local breasts = starPounds.breasts
+		local accessories = data.accessories
+		local enabled = data.enabled
+		starPounds.debug("accessories", enabled and string.format("^#665599,set;Pendant: ^gray;%s ^reset;Ring: ^gray;%s ^reset;Trinket: ^gray;%s", accessories.pendant and accessories.pendant.name or "None", accessories.ring and accessories.ring.name or "None", accessories.trinket and accessories.trinket.name or "None") or "^gray;Mod disabled")
+		starPounds.debug("experience", enabled and string.format("^#665599,set;Level: ^gray;%s ^reset;Experience: ^gray;%.0f/%.0f ^reset;Multiplier: ^gray;%s", data.level, data.experience, starPounds.settings.experienceAmount * (1 + data.level * starPounds.settings.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0)) or "^gray;Mod disabled")
+		starPounds.debug("stomach", enabled and string.format("^#665599,set;Fullness: ^gray;%.0f%%%% ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Hunger: ^gray;%.1f/%.0f", stomach.interpolatedFullness * 100, stomach.contents, stomach.capacity, status.resource("food"), status.resourceMax("food")) or "^gray;Mod disabled")
+		starPounds.debug("stomachContents", enabled and string.format("^#665599,set;Food: ^gray;%.1f ^reset;Bloat: ^gray;%.1f ^reset;Entity: ^gray;%.1f (%d)", stomach.food, stomach.bloat, stomach.contents - (stomach.food + stomach.bloat), #data.stomachEntities) or "^gray;Mod disabled")
+		starPounds.debug("breasts", enabled and string.format("^#665599,set;Type: ^gray;%s ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Contents: ^gray;%.1f", breasts.type, breasts.contents, breasts.capacity, data.breasts) or "^gray;Mod disabled")
+		starPounds.debug("size", enabled and string.format("^#665599,set;Size: ^gray;%s ^reset;Weight: ^gray;%.2flb ^reset;Multiplier: ^gray;%.1fx", (starPounds.currentSize.size == "" and "none" or starPounds.currentSize.size)..(starPounds.currentVariant and ": "..starPounds.currentVariant or ""), data.weight, starPounds.weightMultiplier) or "^gray;Mod disabled")
+		starPounds.debug("timers", enabled and string.format("^#665599,set;Gurgle: ^gray;%.1f ^reset;Rumble: ^gray;%.1f", starPounds.gurgleTimer or 0, starPounds.rumbleTimer or 0) or "^gray;Mod disabled")
+		starPounds.debug("trait", enabled and string.format("^#665599,set;Trait: ^gray;%s", storage.starPounds.trait or "None") or "^gray;Mod disabled")
 	end
 end
 
@@ -192,6 +203,7 @@ function uninit()
 		starPounds.loseWeight(weightCost)
 		-- Reset stomach.
 		starPounds.resetStomach()
+		starPounds.resetBreasts()
 	end
 	starPounds.releaseEntity(nil, true)
 	starPounds.backup()
@@ -247,16 +259,12 @@ function makeOverrideFunction()
 			local speciesData = starPounds.getSpeciesData(player.species())
       entity = {
         id = player.id,
-        setDropPool = nullFunction,
-        setDeathParticleBurst = nullFunction,
-        setDeathSound = nullFunction,
-        setDamageOnTouch = nullFunction,
-				setDamageSources = nullFunction,
-        setDamageTeam = nullFunction,
-	      weight = math.round(speciesData.weight * speciesData.nutritionRatio),
-	      bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio)),
+	      weight = math.round(speciesData.weight * speciesData.foodRatio),
+	      bloat = math.round(speciesData.weight * (1 - speciesData.foodRatio)),
 	      experience = speciesData.experience
       }
+			local mt = {__index = function () return nullFunction end}
+			setmetatable(entity, mt)
     	if not speciesData.weightGain then
     		message.setHandler("starPounds.feed", simpleHandler(function(amount) status.giveResource("food", amount) end))
     		starPounds.getChestVariant = function() return "" end
@@ -314,4 +322,48 @@ function useDoors()
 
   queryDoors(openBounds, nil, "openDoor")
   queryDoors(closeBounds, 1, "closeDoor")
+end
+
+function checkBindings(dt)
+	-- Menu time.
+	for _, menu in ipairs({"menu", "skills", "accessories", "options"}) do
+		if input.bindDown("starpounds", menu.."Menu") then
+			player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:"..menu})
+		end
+	end
+	-- Toggle the mod.
+	if input.bindDown("starpounds", "toggle") then
+		starPounds.toggleEnable()
+	end
+	-- Burpy.
+	if input.bindDown("starpounds", "belch") then
+		starPounds.belch(0.75, starPounds.belchPitch(), nil, false)
+	end
+	-- Eat entity.
+	if input.bindDown("starpounds", "voreEat") then
+		local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
+		local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+		local aimPosition = player.aimPosition()
+		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), 2)
+		local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
+		starPounds.eatNearbyEntity(targetPosition, 3, 1)
+	end
+	-- Regurgitate last entity.
+	if input.bindDown("starpounds", "voreRegurgitate") then
+		starPounds.releaseEntity()
+	end
+	-- Lactate.
+	if input.bind("starpounds", "lactate") then
+		if input.bindDown("starpounds", "lactate") then
+			starPounds.lactate(math.random(5, 10)/10)
+		end
+		-- Lactate constantly after holding for 1 second.
+		starPounds.lactateBindTimer = math.max((starPounds.lactateBindTimer or 1) - dt, 0)
+		if starPounds.lactateBindTimer == 0 then
+			starPounds.lactate(math.random(5, 10)/10)
+			starPounds.lactateBindTimer = 0.1
+		end
+	else
+		starPounds.lactateBindTimer = nil
+	end
 end

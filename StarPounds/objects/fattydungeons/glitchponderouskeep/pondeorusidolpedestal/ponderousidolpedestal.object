@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderousidolpedestal",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+  "description" : "A display for all your fatty treasures.",
+  "shortdescription" : "Ponderous Pedestal",
+  "race" : "glitch",
+
+  "apexDescription" : "A fancy... Bowl for displaying something of importance.",
+  "avianDescription" : "It looks a little like an altar.",
+  "floranDescription" : "Heavy metal dish on ssstone stand. Looksss important!",
+  "glitchDescription" : "Allured. An ornate stand, for very important treasures.",
+  "humanDescription" : "I think it needs four special souls... Or it's just to display stuff.",
+  "hylotlDescription" : "A large ornamental stand for some special artifact.",
+  "novakidDescription" : "A big heavy 'ol stand for special stuff.",
+
+  "inventoryIcon" : "ponderousidolpedestalicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousidolpedestal.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "objectName" : "wisplighttall",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 120,
+
+  "description" : "A bottle containing a pair of Lipic Wisps.",
+  "shortdescription" : "Tall Wisplight",
+  "race" : "glitch",
+
+  "apexDescription" : "I can only wonder how those lights are moving.",
+  "avianDescription" : "These motes of light seem almost alive...",
+  "floranDescription" : "Flame is flying!",
+  "glitchDescription" : "Entranced. The wisps in this bottle are almost hypnotic.",
+  "humanDescription" : "Magical...",
+  "hylotlDescription" : "How ethereal...",
+  "novakidDescription" : "It's like lil pieces of me in there...",
+
+  "statusEffects" : [ ],
+    
+  "lightColor" : [107, 68, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "wisplighttallicon.png",
+  "orientations" : [
+    {
+      "image" : "wisplighttall.png:<color>.<frame>",
+      "imagePosition" : [0, -24],
+      "animationPosition" : [0, -24],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "lightPosition" : [0.5, -2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
+    {
+      "image" : "wisplighttall.png:<color>.<frame>",
+      "imagePosition" : [0, -24],
+      "animationPosition" : [0, -24],
+
+      "direction" : "right",
+
+      "lightPosition" : [0.5, -2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    }
+  ],
+  
+  "animation" : "wisplighttall.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "bg" : "wisplighttall.png",
+    "fg" : "wisplighttalllit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+  
+  "inputNodes" : [ [0, 1] ]
+}

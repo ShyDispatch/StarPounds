@@ -12,7 +12,12 @@
   {
 	"op": "add",
 	"path": "/arcanian",
-	"value": { "weightGain": true, "override": "fenerox", "prependDirectives": "?replace;f0e1bb=ffe2c5;cfbc88=ffc181;9e8555=d39c6c;6b583d=c7815b;e6e6e6=ffe2c5;b6b6b6=d39c6c;7b7b7b=c7815b;" }
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/gelsemis",
+	"value": { "weightGain": true, "override": "human" }
   },
   {
 	"op": "add",
@@ -28,6 +33,11 @@
 	"op": "add",
 	"path": "/saturnmothman",
 	"value": { "weightGain": true, "override": "saturn" }
+  },
+  {
+	"op": "add",
+	"path": "/nostos",
+	"value": { "weightGain": true }
   },
   {
 	"op": "add",
@@ -48,6 +58,21 @@
 	"op": "add",
 	"path": "/shoggoth",
 	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/mindflayer",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/nightgaunt",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/epshadow",
+	"value": { "weightGain": true, "fullbright": true }
   },
   {
 	"op": "add",
@@ -81,6 +106,11 @@
   },
   {
 	"op": "add",
+	"path": "/felin",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/troll",
 	"value": { "weightGain": true, "override": "human", "prependDirectives": "?replace;ffe2c5=e2e2e2;ffc181=c0c0c0;d39c6c=a0a0a0;c7815b=919191;" }
   },
@@ -97,6 +127,21 @@
   {
 	"op": "add",
 	"path": "/glaceonfox",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/zoroark",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/hisuzor",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/lucario",
 	"value": { "weightGain": true }
   }
 ]

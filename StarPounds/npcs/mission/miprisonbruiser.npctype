@@ -1,6 +1,7 @@
 {
   "type" : "miprisonbruiser",
   "baseType" : "hostile",
+  "displayTitle" : "Prisoner Bruiser",
 
   "dropPools" : [ "empty" ],
   

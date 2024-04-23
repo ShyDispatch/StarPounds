@@ -1,0 +1,11 @@
+{
+  "itemName" : "novakidblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "novakidblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Novakid Flab",
+
+  "materialId" : 51438
+}

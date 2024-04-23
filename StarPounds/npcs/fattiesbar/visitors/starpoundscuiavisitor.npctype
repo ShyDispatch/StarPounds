@@ -1,0 +1,121 @@
+{
+  "type" : "starpoundscuiavisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Ravenous Avian",
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_skills": {
+      "minimumSize": [4, 4]
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!"
+					],
+					"avian": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"You know... if you like hanging around here a lot, I think you might be interested in Velhanu. I know a good temple or two dedicated to her.",
+						"Damn your feathers are ON POINT today! Meeting with someone special~?",
+						"Just between you and me... I think some of the Throg around have gotten a taste for birds. You watch yourself."
+					],
+					"apex": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"Hey, you wouldn't happen to have a secret lab, would you? Settling a bet with a friend."
+					],
+					"floran": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"Man, I could kill for some good ribs right now. You know a good place?"
+					],
+					"glitch": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"I ordered a pizzap from the diner on accident one time... I don't know how you can just eat that stuff."
+					],
+					"human": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"One of the best chefs I've ever met was a human. You ever see one of her restaurants, you've GOTTA give it a try!"
+					],
+					"hylotl": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"Y'know, I wonder if this place reminds you of home... but instead of being underwater, it's tucked away in a sloshing mass of fat."
+					],
+					"novakid": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"Man, I could kill for some good ribs right now. You know a good place?"
+					],
+					"throg": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"So do you know if uh... y'know the meat they use in the--... the food, is it made with--... don't answer that actually..."
+					],
+					"mootant": [
+						"Hey, you know what happened to all the peanut butter? I swear, someone's been buying it all up...",
+						"For the last time, NO! It's not weird for Avians to eat chicken!",
+						"All this new Throg tech's pretty cool, huh? It used to take forever to get around at my size!",
+						"So you just like... produce milk like a cow? Asking for a friend..."
+					]
+				}
+			}
+		}
+  },
+
+  "identity":  {
+      "bodyDirectives": "?replace;735e3a=978841;dc1f00=d7e8e8;6f2919=89561f;ffca8a=f3c873;be1b00=8fa7a3;951500=5d6d69;a38d59=c1b54e;e0975c=db9c38;d9c189=eae660;a85636=b17628;f32200=f6fbfb",
+      "emoteDirectives": "?replace;735e3a=978841;dc1f00=d7e8e8;6f2919=89561f;ffca8a=f3c873;be1b00=8fa7a3;951500=5d6d69;a38d59=c1b54e;e0975c=db9c38;d9c189=eae660;a85636=b17628;f32200=f6fbfb",
+      "facialHairDirectives": "?replace;735e3a=978841;dc1f00=d7e8e8;6f2919=89561f;ffca8a=f3c873;be1b00=8fa7a3;951500=5d6d69;a38d59=c1b54e;e0975c=db9c38;d9c189=eae660;a85636=b17628;f32200=f6fbfb",
+      "facialHairGroup": "fluff",
+      "facialHairType": "10",
+      "facialMaskDirectives": "?replace;735e3a=978841;dc1f00=d7e8e8;6f2919=89561f;ffca8a=f3c873;be1b00=8fa7a3;951500=5d6d69;a38d59=c1b54e;e0975c=db9c38;d9c189=eae660;a85636=b17628;f32200=f6fbfb",
+      "facialMaskGroup": "beaks",
+      "facialMaskType": "",
+      "gender": "female",
+      "imagePath": "starpoundscuia",
+      "hairDirectives": "?replace;735e3a=978841;dc1f00=d7e8e8;6f2919=89561f;ffca8a=f3c873;be1b00=8fa7a3;951500=5d6d69;a38d59=c1b54e;e0975c=db9c38;d9c189=eae660;a85636=b17628;f32200=f6fbfb",
+      "hairGroup": "hair",
+      "hairType": "10",
+      "name": "Cuia",
+      "personalityArmIdle": "idle.5",
+      "personalityArmOffset": [
+          0.0,
+          0.0
+      ],
+      "personalityHeadOffset": [
+          -1.0,
+          0.0
+      ],
+      "personalityIdle": "idle.2",
+      "species": "avian"
+  },
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "" } ],
+            "chestCosmetic": [ { "name": "starpoundscuiachest" } ],
+            "legsCosmetic": [ { "name": "protectoratepants", "parameters" : { "colorIndex" : [1] } } ]
+          }
+        ] ]
+    ]
+  }
+}

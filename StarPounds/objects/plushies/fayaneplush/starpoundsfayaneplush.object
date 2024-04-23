@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsfayaneplush",
+  "colonyTags" : ["fayane","gluttonist","pretty","starpounds"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 250,
+
+  "description" : "A soft ^#aa99dd;Fayane^reset; plush toy.",
+  "shortdescription" : "Fayane Plushie",
+  "race" : "generic",
+
+  "apexDescription" : "It's a plush of ^#aa99dd;Fayane^reset;.",
+  "avianDescription" : "An incredibly soft plush of ^#aa99dd;Fayane^reset;.",
+  "floranDescription" : "^#aa99dd;Fayane^reset; plush as ssoft as the real thing!",
+  "glitchDescription" : "Appreciative. A cuddly ^#aa99dd;Fayane^reset; plush.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsfayaneplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsfayaneplush.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

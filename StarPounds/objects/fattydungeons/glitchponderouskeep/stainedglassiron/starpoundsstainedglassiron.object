@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsstainedglassiron",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty"],
+  "rarity" : "Uncommon",
+  "description" : "A pretty stained glass mural of a legendary Glitch knightess.",
+  "shortdescription" : "Knightess Frame",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 200,
+
+  "apexDescription" : "A portly knightess, though she still keeps a noble appearance.",
+  "avianDescription" : "She seems regal, yet ready to get into a fight!",
+  "floranDescription" : "Metal lady has big hammer. Floran likesss this one.",
+  "glitchDescription" : "Awed. All I've ever seen of her was the armor itself...",
+  "humanDescription" : "I can only wonder who's her prince... or princess.",
+  "hylotlDescription" : "In spite of the fat on her frame, she seems elegant yet threatening.",
+  "novakidDescription" : "She looks like she could lasso an entire mooshi herd!",
+
+  "inventoryIcon" : "starpoundsstainedglassironicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsstainedglassiron.png:<color>",
+
+      "imagePosition" : [-16, -32],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

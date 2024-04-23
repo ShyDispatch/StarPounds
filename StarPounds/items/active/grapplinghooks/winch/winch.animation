@@ -1,11 +1,42 @@
 {
   "animatedParts" : {
+    "stateTypes" : {
+      "starpounds_hook" : {
+        "default" : "on",
+        "states": {
+          "on" : {},
+          "off" : {}
+        }
+      }
+    },
     "parts" : {
       "rope" : {
         "properties" : {
           "centered" : false,
           "image" : "winch.png",
           "offset" : [-0.6, -0.5]
+        }
+      },
+      "starpounds_hook" : {
+        "properties" : {
+          "zLevel": -1,
+          "centered" : false,
+          "offset" : [-0.6, -0.25]
+        },
+
+        "partStates" : {
+          "starpounds_hook" : {
+            "on" : {
+              "properties" : {
+                "image" : "/projectiles/activeitems/grapplehook/winchhook.png"
+              }
+            },
+            "off" : {
+              "properties" : {
+                "image" : ""
+              }
+            }
+          }
         }
       }
     }

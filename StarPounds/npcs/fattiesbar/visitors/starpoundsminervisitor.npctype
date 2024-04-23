@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsminervisitor",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Miner Visitor",
   
 	"identity" : {
      "species" : "human"
@@ -35,7 +36,7 @@
     "override" : [
       [0, [
           {
-            "headCosmetic": [ { "name": "starpoundsinvisiblehead" }, { "name": "starpoundsinvisiblehead" } ],
+            "headCosmetic": [ { "name": "minerhead" }, { "name": "starpoundsinvisiblehead" } ],
             "chestCosmetic" : [ { "name" : "minerchest" } ],
             "legsCosmetic" : [ { "name" : "humantier2pants" } ]
           }

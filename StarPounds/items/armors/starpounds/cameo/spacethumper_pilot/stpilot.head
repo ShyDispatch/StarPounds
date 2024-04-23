@@ -1,0 +1,16 @@
+{
+  "itemName" : "stpilot",
+  "price" : 2500,
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "headwear",
+  "description" : "A mask suitable for impersonating the original Spacethumper",
+  "shortdescription" : "Pilot Hood Costume",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png"
+  
+}

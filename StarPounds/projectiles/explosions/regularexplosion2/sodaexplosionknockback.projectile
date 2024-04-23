@@ -1,0 +1,21 @@
+{
+  "projectileName" : "sodaexplosionknockback",
+  "image" : "sodaexplosion.png",
+  "animationCycle" : 0.2,
+  "frameNumber" : 6,
+  "speed" : 0,
+  "pointLight" : true,
+  "damagePoly" : [ [-27, 0], [-21, -21], [0, -27], [21, -21], [27, 0], [21, 21], [0, 27], [-21, 21] ],
+  "animationLoops" : false,
+  "piercing" : true,
+  "bounces" : -1,
+  "flippable" : true,
+  "damageKind" : "caloricplasma",
+  "knockback" : 10,
+  "statusEffects" : [
+    {"effect": "starpoundsfood", "duration": 25},
+    {"effect": "starpoundsbloat", "duration": 25},
+    {"effect": "starpoundsratebloat", "duration": 5},
+    {"effect": "starpoundsrategain", "duration": 5}
+  ]
+}

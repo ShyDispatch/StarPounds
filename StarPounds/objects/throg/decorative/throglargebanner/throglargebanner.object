@@ -5,17 +5,18 @@
   "price" : 50,
   "printable" : false,
 
-  "description" : "A Protectorate wallbanner from the Protectorate academy.",
+  "description" : "The Banner of the Throg Empire",
   "shortdescription" : "Throg Wall Banner",
   "race" : "throg",
 
-  "apexDescription" : "A yellow protectorate banner. Wonderful.",
-  "avianDescription" : "Bright like the beaming sun. This colour represents the protectorate well.",
-  "floranDescription" : "Yellow Protectorate banner makesss Floran feel happy.",
-  "glitchDescription" : "Proud. The iconic Protectorate banner. I'm glad to be a part of this.",
-  "humanDescription" : "A big bright Protectorate banner! I wish I could fit one in my dorm.",
-  "hylotlDescription" : "The Protectorate banner represents so much. It means a lot to us all.",
-  "novakidDescription" : "I love the bright colour of the protectorate banner.",
+  "apexDescription" : "A symbol combining the traits of a face and a snout into one.",
+  "avianDescription" : "It looks like a banner featuring a snout with wings.",
+  "floranDescription" : "Funny banner hasss glowing partsss.",
+  "glitchDescription" : "Curious. A pig snout with wings is depicted on this banner.",
+  "humanDescription" : "So is that supposed to be an emote face or a snout with ears?",
+  "hylotlDescription" : "Such a simple banner for a ravenous Empire.",
+  "novakidDescription" : "A banner of conquerers.",
+  "throgDescription" : "We take pride in our Empire. Combining our faces and snouts into one singular shape.",
 
 
   "inventoryIcon" : "throglargebannericon.png",

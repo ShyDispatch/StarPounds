@@ -1,0 +1,86 @@
+{
+  "type" : "crewmembergluttonist",
+  "baseType" : "crewmember",
+
+  "scriptConfig" : {
+    "behaviorConfig" : {
+      "emptyHands" : false
+    },
+
+    "crew" : {
+      "role" : {
+        "type" : "gluttonist",
+        "name" : "Gluttonist",
+        "field" : "Hunter",
+        "uniformColorIndex" : 10
+      },
+      "ranks" : [
+        "<role> <field>",
+        "<role> Veteran",
+        "Fat <field>",
+        "Fat <role>"
+      ],
+      "uniformSlots" : []
+    },
+
+    "dialog" : {
+      "crewmember" : {
+        "offer" : {
+          "default" : {
+            "default" : [
+              "I need to lay low! Please don't turn me in, can I join your crew instead?",
+              "I'm a good person, really! Please, let me stow away on your ship!",
+              "There are people... Looking for me... I'll work for you if you let me hide away on your ship!",
+              "I don't want to hurt you, I just need to lay low! Can I stow away with you?",
+              "I need to lay low. I'll fight for you if you let me stay on your ship!",
+              "I have an offer for you - let me hide on your ship, and I'll fight for you! There are people I need to avoid...",
+              "I really need to stay somewhere to hide. Say, do you have a ship? I have an offer for you..."
+            ]
+          },
+          "floran" : {
+            "default" : [
+              "Floran knowsss good hunter when Floran ssseess it. Can Floran join you?",
+              "Floran more ussseful to good hunter then dying. Let Floran join!",
+              "Floran isssn't welcome back to tribe, can Floran join your tribe?",
+              "Floran could help strong hunter like you. Join sssship asss another ssstrong hunter!",
+              "Wait! Floran give up, willing to join ssstrong hunter assss crew!",
+              "Floran can ssee when fight isssn't in Floranss favor. Do you have a ship? Floran has an offer for you...",
+              "Floran givesss up! Please don't turn Floran in... Floran will work for you."
+            ]
+          }
+        },
+        "roleDescription" : {
+          "default" : {
+            "default" : [
+              "Thanks for giving me a place to hide away! If you need a little extra muscle in your travels, I'll be here!",
+              "I can definitely lie low here. Thanks a bunch - if you ever want some backup I'll be here to help!",
+              "I swear I'm not so bad really... This ship is a perfect place to lie low. If you need an extra helping hand in your travels, come get me!",
+              "I can hide out here until the heat dies down! I owe you everything - if you ever need a helping hand, or sword, just come say hi!"
+            ]
+          },
+          "floran" : {
+            "default" : [
+              "Thisss sship is great! Floran will be here to help you any time!",
+              "Floran appreciatess your help. Floran will you fight your enemies for you anytime!",
+              "Floran not sso bad really, honest... Will help in your battless. Come get Floran whenever you need help fighting!",
+              "Floran will enjoy loadss of mealsss working for you. Floran thanksss for opportunity."
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "default" : [
+      [0, [
+          {
+            "chestCosmetic" : [ { "name" : "predatorychest", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "legsCosmetic" : [ { "name" : "predatorypants", "parameters" : { "directives" : "?replace;ffca8a=eab3db;e0975c=d35eae;a85636=97276d;6f2919=59163f;d93a3a=d35eae;932625=97276d;601119=59163f;" } } ],
+            "primary" : [ "npcgluttonistgreatfork" ],
+            "sheathedprimary" : [ "npcmeatfork" ]
+          }
+        ] ]
+    ]
+  }
+}

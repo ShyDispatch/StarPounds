@@ -1,0 +1,63 @@
+{
+  "type" : "starpoundsminivisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Hefty Deer",
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_skills": {
+      "minimumSize": [2, 4]
+    },
+    "starPounds_options": {
+      "disablePrey": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+            "This place is dangerous - the food is way too tempting!",
+            "This place makes my ship feel archaic.",
+            "Nice to see people who know how to eat."
+					]
+				}
+			}
+		}
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "starpoundsmini",
+    "name": "Durr",
+    "personalityArmIdle": "idle.5",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "bodyDirectives" : "?replace;c7815b=a35749;ffe2c5=ecc796;ffc181=d9a172;d39c6c=c4855d?replace;dc1f00=d9a172;951500=a35749;be1b00=c4855d",
+    "emoteDirectives" : "?replace;c7815b=a35749;ffe2c5=ecc796;ffc181=d9a172;d39c6c=c4855d?replace;dc1f00=d9a172;951500=a35749;be1b00=c4855d",
+    "hairDirectives" : "?replace;735e3a=555555;a38d59=828282;d9c189=b8b8b8?replace;dc1f00=d9a172;951500=a35749;be1b00=c4855d"
+  },
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "headCosmetic": [ { "name": "" } ],
+          "chestCosmetic": [ { "name": "jumpsuitchest", "parameters" : { "directives" : "?replace;ffca8a=d5ffff;6f2919=556e77;e0975c=abdcee;a85636=80a5b2" } } ],
+          "legsCosmetic": [ { "name": "jumpsuitlegs", "parameters" : { "directives" : "?replace;ffca8a=d5ffff;6f2919=556e77;e0975c=abdcee;a85636=80a5b2" } } ],
+          "primary" : [
+            "npcwrench"
+          ]
+        }
+      ]]
+    ]
+  }
+}

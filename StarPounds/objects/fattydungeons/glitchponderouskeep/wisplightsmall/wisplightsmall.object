@@ -1,0 +1,77 @@
+{
+  "objectName" : "wisplightsmall",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","light"],
+  "rarity" : "Common",
+  "category" : "light",
+  "price" : 90,
+
+  "description" : "A bottle containing a small Lipic Wisp.",
+  "shortdescription" : "Small Wisplight",
+  "race" : "glitch",
+
+  "apexDescription" : "I can only wonder how this light is moving.",
+  "avianDescription" : "This mote of light seems almost alive...",
+  "floranDescription" : "Flame is flying!",
+  "glitchDescription" : "Entranced. The wisp in this bottle is almost hypnotic.",
+  "humanDescription" : "Magical...",
+  "hylotlDescription" : "How ethereal...",
+  "novakidDescription" : "It's like a lil piece of me in there...",
+
+  "statusEffects" : [ ],
+    
+  "lightColor" : [77, 49, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "wisplightsmallicon.png",
+  "orientations" : [
+    {
+      "image" : "wisplightsmall.png:<color>.<frame>",
+      "imagePosition" : [0, -16],
+      "animationPosition" : [0, -16],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "lightPosition" : [0.5, -2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
+    {
+      "image" : "wisplightsmall.png:<color>.<frame>",
+      "imagePosition" : [0, -16],
+      "animationPosition" : [0, -16],
+
+      "direction" : "right",
+
+      "lightPosition" : [0.5, -2],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    }
+  ],
+  
+  "animation" : "wisplightsmall.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "bg" : "wisplightsmall.png",
+    "fg" : "wisplightsmalllit.png"
+  },
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+  
+  "interactive" : false,
+  
+  "inputNodes" : [ [0, 1] ]
+}

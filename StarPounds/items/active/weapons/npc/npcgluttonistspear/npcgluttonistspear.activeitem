@@ -20,7 +20,11 @@
   "animationCustom" : {
     "animatedParts" : { "parts" : { "swoosh" : { "properties" : {
       "offset" : [2.0, 0.0]
-    }}}}
+    }}}},
+    "sounds" : {
+      "physicalTravelSlash" : ["/sfx/melee/ixodoomclaw_web2.ogg"],
+      "fire" : [ "/sfx/melee/swing_spear.ogg" ]
+    }
   },
 
   "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],

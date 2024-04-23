@@ -1,9 +1,11 @@
 {
   "type" : "starpoundsmootantfarmer",
   "baseType" : "guard",
+  "displayTitle" : "Mootant Farmer",
   
   "identity" : {
-    "gender" : "female"
+    "gender" : "female",
+    "hairGroup" : "hair"
   },
 
   "scriptConfig" : {

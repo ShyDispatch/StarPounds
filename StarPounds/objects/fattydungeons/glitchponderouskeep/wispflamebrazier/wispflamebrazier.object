@@ -1,0 +1,74 @@
+{
+  "objectName" : "wispflamebrazier",
+  "colonyTags" : ["glitch","starpounds","fatdungeons","ponderous","light"],
+  "rarity" : "Common",
+  "description" : "A heavy torch, perfect to illuminate your change in frame.",
+  "shortdescription" : "Wispflame Brazier",
+  "race" : "glitch",
+
+  "apexDescription" : "It produces a gentle warmth and produces so much light... Fascinating.",
+  "avianDescription" : "This bowl has a pleasing warmth.",
+  "floranDescription" : "Floran can ssstare at flowy goop for hoursss...",
+  "glitchDescription" : "Hypnotized. I could stare into this fluid for hours...",
+  "humanDescription" : "This stuff feels pleasantly warm to the touch.",
+  "hylotlDescription" : "It's almost hypnotic. Almost...",
+  "novakidDescription" : "A big, fancy bowl for this... goop?",
+
+  "category" : "light",
+  "price" : 85,
+
+  "lightColor" : [209, 105, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+
+  "statusEffects" : [ ],
+
+  "inventoryIcon" : "wispflamebraziericon.png",
+  "orientations" : [
+    {
+      "image" : "wispflamebrazier.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaces" : [ [-1, 0], [0, 0], [-1, 1], [0, 1], [-1, 2], [0, 2] ],
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "wispflamebrazier.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      
+      "direction" : "right",
+
+      "spaces" : [ [-1, 0], [0, 0], [-1, 1], [0, 1], [-1, 2], [0, 2] ],
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+
+  "animation" : "wispflamebrazier.animation",
+  "animationParts" : {
+    "bg" : "wispflamebrazier.png",
+    "fg" : "wispflamebrazierlit.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+  "animationPosition" : [-8, 0],
+
+  "scripts" : [ "/objects/wired/light/light.lua" ],
+  "scriptDelta" : 60,
+
+  "inputNodes" : [ [0, 1] ],
+  
+  "interactive" : true
+}

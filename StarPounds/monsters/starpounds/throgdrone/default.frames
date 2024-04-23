@@ -1,0 +1,22 @@
+{
+  "frameGrid" : {
+    "size" : [32, 32],
+    "dimensions" : [4, 4],
+
+    "names" : [
+      ["idle.1", null, "blink.1" ],
+      [ "fly.1", "fly.2", "fly.3", "fly.4" ]
+    ]
+  },
+  "aliases" : {
+    "hurt.1" : "fly.2",
+	"charge.1" : "fly.2",
+	"charge.2" : "fly.2",
+	"charge.3" : "fly.2",
+	"charge.4" : "fly.2",
+	"fire.1" : "fly.2",
+	"fire.2" : "fly.2",
+	"fire.3" : "fly.2",
+	"fire.4" : "fly.2"
+  }
+}

@@ -3,7 +3,7 @@ require "/scripts/vec2.lua"
 
 function init()
   entityType = world.entityType(entity.id())
-  baseDuration = effect.duration()
+  baseDuration = effect.duration() or 0
   bounds = mcontroller.boundBox()
   -- No ragdoll for monsters, or if the model is wider than it is tall (since we rotate to be facing down/on the side).
   doRagdoll = entityType ~= "monster"
@@ -14,7 +14,8 @@ end
 
 function update(dt)
   -- Set again if a longer status gets applied.
-  if effect.duration() > baseDuration then init() end
+  local duration = effect.duration() or 0
+  if duration > baseDuration then init() end
   -- Only do this for Players/NPCs.
   if doRagdoll then
     local currentRotation = mcontroller.rotation()
@@ -39,7 +40,7 @@ function update(dt)
       mcontroller.setRotation(currentRotation + dt * -math.pi * mcontroller.xVelocity()/8)
       -- If they get knocked in the air again, restart. Skip if they have no gravity.
       if not mcontroller.zeroG() and not mcontroller.liquidMovement() then
-        effect.modifyDuration(baseDuration - effect.duration())
+        effect.modifyDuration(baseDuration - duration)
       end
       onGround = false
     end
@@ -51,7 +52,7 @@ function update(dt)
   -- Stun ooga booga.
   if status.isResource("stunned") then
     if status.resource("health") > 0 then
-      status.setResource("stunned", math.max(status.resource("stunned"), effect.duration()))
+      status.setResource("stunned", math.max(status.resource("stunned"), duration))
     else
       status.setResource("stunned", 0)
     end
@@ -62,7 +63,6 @@ function update(dt)
     facingSuppressed = true,
     movementSuppressed = true
   })
-
 end
 
 function uninit()

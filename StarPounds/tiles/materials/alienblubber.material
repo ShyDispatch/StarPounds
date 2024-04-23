@@ -1,0 +1,22 @@
+{
+  "materialId" : 51439,
+  "materialName" : "alienblubber",
+  "particleColor" : [168, 150, 196, 255],
+  "itemDrop" : "alienblubber",
+  "description" : "Squishy, jiggly matter.. I wonder what it is.",
+  "shortdescription" : "Alien Flab",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "alienblubber.png",
+    "variants" : 6,
+    "lightTransparent" : false,
+    "multiColored" : true,
+    "occludesBelow" : true,
+    "zLevel" : 99999,
+    "radiantLight" : [15, 12, 18]
+  }
+}

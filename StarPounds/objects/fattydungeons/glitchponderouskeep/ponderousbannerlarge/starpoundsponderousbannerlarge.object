@@ -1,0 +1,36 @@
+{
+  "objectName" : "starpoundsponderousbannerlarge",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty"],
+  "rarity" : "Common",
+  "description" : "An ornate banner for a bygone Glitch faction.",
+  "shortdescription" : "Ponderous Order Banner",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 80,
+
+  "apexDescription" : "Seems whichever Glitch faction used this emblem had a heavier preference.",
+  "avianDescription" : "Seems the Glitch too have their fat worshippers.",
+  "floranDescription" : "Fat metalman banner.",
+  "glitchDescription" : "Knowledgable. The Ponderous Order were said to herald feasts and merriment.",
+  "humanDescription" : "That emblem looks adorably chubby.",
+  "hylotlDescription" : "A proud and regal banner, despite its portliness.",
+  "novakidDescription" : "What's this for, a knightly order of fat?",
+
+  "inventoryIcon" : "starpoundsponderousbannerlargeicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsponderousbannerlarge.png:<color>",
+      "imagePosition" : [-8, -32],
+
+      "spaceScan" : 0.1,
+      "bgAnchors" : [ [-1, 0], [0, 0], [1, 0] ]
+    },
+    {
+      "dualImage" : "starpoundsponderousbannerlarge.png:<color>",
+      "imagePosition" : [-8, -32],
+
+      "spaceScan" : 0.1,
+      "fgAnchors" : [ [-1, 1], [0, 1], [1, 1] ]
+    }
+  ]
+}

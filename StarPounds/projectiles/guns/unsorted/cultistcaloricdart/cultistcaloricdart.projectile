@@ -10,8 +10,8 @@
     }
   ],
   "statusEffects" : [
-    {"effect": "starpoundsrategainslow", "duration": 10},
-    {"effect": "starpoundsratebloat", "duration": 10}
+    {"effect": "starpoundsrategain", "duration": 5},
+    {"effect": "starpoundsratebloat", "duration": 5}
   ],
   "image" : "cultistcaloricdart.png",
   "animationCycle" : 0.25,

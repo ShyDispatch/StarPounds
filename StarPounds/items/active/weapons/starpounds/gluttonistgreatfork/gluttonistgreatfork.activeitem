@@ -8,7 +8,7 @@
   "shortdescription" : "Gluttonist's Greatfork",
   "tooltipKind" : "starpoundssword",
   "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
-  "category" : "spear",
+  "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon","melee","spear","upgradeableWeapon"],
 
@@ -35,7 +35,7 @@
   "primaryAbilityType" : "spearstab",
   "primaryAbility" : {
     "fireTime" : 0.95,
-    "baseDps" : 12.5
+    "baseDps" : 11
   },
 
   "altAbilityType" : "starpoundsmeatshot",

@@ -1,7 +1,0 @@
-{
-	"name": "starpoundsvoresource",
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundsvoresource.lua"
-	]
-}

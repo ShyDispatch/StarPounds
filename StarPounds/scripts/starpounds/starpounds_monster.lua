@@ -18,6 +18,7 @@ function starPoundsInit()
 	starPounds.messageHandlers()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
+	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	storage.starPounds.options = sb.jsonMerge(storage.starPounds.options, config.getParameter("starPounds_options", {}))
 	if not storage.starPounds.parsedInitialSkills then
 		local skills = config.getParameter("starPounds_skills", {})
@@ -41,12 +42,17 @@ function starPoundsInit()
 	end
 
 	starPounds.parseSkills()
-	storage.starPounds.stats = sb.jsonMerge(storage.starPounds.stats, config.getParameter("starPounds_stats", {}))
-	starPounds.accessoryModifiers = starPounds.getAccessoryModfiers()
+	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.parseEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant()
+	starPounds.level = storage.starPounds.level
+	starPounds.experience = storage.starPounds.experience
+	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)
+	if not starPounds.getTrait() then
+		starPounds.setTrait(config.getParameter("starPounds_trait"))
+	end
 end
 
 function init()
@@ -65,10 +71,12 @@ function update(dt)
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
-	starPounds.statCache = {}
-	starPounds.level = storage.starPounds.level
-	starPounds.experience = storage.starPounds.experience
-	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)
+	starPounds.statCacheTimer = math.max(starPounds.statCacheTimer - dt, 0)
+	if starPounds.statCacheTimer == 0 then
+		starPounds.statCache = {}
+		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
+	end
+	starPounds.stomach = starPounds.getStomach()
 	-- Checks
 	starPounds.voreCheck()
 	-- Actions.
@@ -77,32 +85,18 @@ function update(dt)
 	-- Stat/status updating stuff.
 	starPounds.parseEffectStats(dt)
 	starPounds.updateStatuses()
+	starPounds.optionChanged = false
 end
 
 function makeOverrideFunction()
   function starPounds.overrides()
     if not starPounds.didOverrides then
-			-- Monsters start with the mod enabled.
-			storage.starPounds.enabled = true
 			-- No debug stuffs for monsters
 			starPounds.debug = nullFunction
 			-- Shortcuts to make functions work for monsters.
-			player = {
-				equippedItem = nullFunction,
-				setEquippedItem = nullFunction,
-				isLounging = nullFunction,
-				loungingIn = nullFunction,
-				equippedTech = nullFunction,
-				enableTech = nullFunction,
-				makeTechAvailable = nullFunction,
-				makeTechUnavailable = nullFunction,
-				equipTech = nullFunction,
-				unequipTech = nullFunction,
-				swapSlotItem = nullFunction,
-				setSwapSlotItem = nullFunction,
-				giveItem = nullFunction,
-				consumeItemWithParameter = nullFunction
-			}
+			player = {}
+			local mt = {__index = function () return nullFunction end}
+			setmetatable(player, mt)
 			entity.setDropPool = monster.setDropPool
 			entity.setDeathParticleBurst = monster.setDeathParticleBurst
 			entity.setDeathSound = monster.setDeathSound
@@ -176,7 +170,7 @@ function makeOverrideFunction()
 			entity.isValidTarget = function(entityId)
 				local eatenEntity = nil
 				if not world.entityExists(entityId) then return false end
-				for preyIndex, prey in ipairs(storage.starPounds.entityStomach) do
+				for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
 					if prey.id == entityId then
 						eatenEntity = prey
 					end

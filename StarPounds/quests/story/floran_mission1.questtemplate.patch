@@ -1,0 +1,41 @@
+[
+  {
+    "op": "add",
+    "path": "/scriptConfig/objectValues/starpoundsgluttonistfeastpainting2",
+    "value": 5
+  },
+  {
+    "op": "add",
+    "path": "/scriptConfig/objectValues/starpoundsixolingroast",
+    "value": 20
+  },
+  {
+    "op": "add",
+    "path": "/scriptConfig/objectValues/starpoundsmeatberryplant",
+    "value": 20
+  },
+  {
+    "op": "add",
+    "path": "/scriptConfig/radioMessages/uniqueProgress/starpoundsixolingroast",
+    "value": {
+      "messageId": "starpounds_floran_mission1_up1",
+      "type": "quest",
+      "unique": false,
+      "senderName": "Esther",
+      "text": "I've never seen this kind of animal before. Must be a delicacy for Florans, meaning it's only found in certain locations...",
+      "portraitImage": "/interface/chatbubbles/esthertalk.png:<frame>"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/scriptConfig/radioMessages/uniqueProgress/starpoundsmeatberryplant",
+    "value": {
+      "messageId": "starpounds_floran_mission1_up2",
+      "type": "quest",
+      "unique": false,
+      "senderName": "Esther",
+      "text": "A plant that can produce an infinite amount of meat? This is no small discovery. I wonder what causes them to grow? And where?",
+      "portraitImage": "/interface/chatbubbles/esthertalk.png:<frame>"
+    }
+  }
+]

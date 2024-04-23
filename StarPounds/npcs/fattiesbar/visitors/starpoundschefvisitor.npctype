@@ -1,0 +1,130 @@
+{
+  "type" : "starpoundschefvisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Chef Visitor",
+
+  "scriptConfig" : {
+  "starPounds_skills": {
+      "minimumSize": [0, 4]
+    },
+  "starPounds_options": {
+      "disableGain": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"I'm here for some fresh ingredients.",
+						"I hear the food here can't be beat. I hope to change that.",
+						"Willing to be a taste tester?",
+						"It's hard to gauge the quality of my work when Throgs just say good to everything you put in front of them.",
+						"My dream of being a universe star of a chef is certainly looking like a tall order to achieve.",
+						"Just how much grease do they pack into the food here?",
+						"They must put something in the food here."
+					]
+				},
+				"apex": {
+					"default": [
+						"I'm here for some fresh ingredients.",
+						"I hear the food here can't be beat. I hope to change that.",
+						"Willing to be a taste tester?",
+						"It's hard to gauge the quality of my work when Throgs just say good to everything you put in front of them.",
+						"My dream of being a universe star of a chef is certainly looking like a tall order to achieve.",
+						"Just how much grease do they pack into the food here?",
+						"They must put something in the food here."
+					]
+				},
+				"avian": {
+					"default": [
+						"I'm here for some fresh ingredients.",
+						"I hear the food here can't be beat. I hope to change that.",
+						"Willing to be a taste tester?",
+						"It's hard to gauge the quality of my work when Throgs just say good to everything you put in front of them.",
+						"My dream of being a universe star of a chef is certainly looking like a tall order to achieve.",
+						"Just how much grease do they pack into the food here?",
+						"They must put something in the food here."
+					]
+				},
+				"floran": {
+					"default": [
+						"Floran wantsss good ingredientsss.",
+						"Food here sssuppossed to be very good. Floran wantss to make better food.",
+						"Want to eat Floransss cooking?",
+						"Throgsss ssay everything Floran makesss isss good. But Floran thinksss Throgsss can't tassste anything.",
+						"Floran wantsss to be bessst food maker ever!",
+						"Food here ssso greassy. How do they do it?",
+						"Food isss ssso fattening here. Floran wantsss to know what sssecret ingredient they use."
+					]
+				},
+				"glitch": {
+					"default": [
+						"Statement: I'm here for some fresh ingredients.",
+						"Statement: I hear the food here can't be beat. I hope to change that.",
+						"Query: Willing to be a taste tester?",
+						"Annoyed: It's hard to gauge the quality of my work when Throgs just say good to everything you put in front of them.",
+						"Ambitious: My dream of being a universe star of a chef is certainly looking like a tall order to achieve.",
+						"Curious: Just how much grease do they pack into the food here?",
+						"Certain: They must put something in the food here."
+					]
+				},
+				"human": {
+					"default": [
+						"I'm here for some fresh ingredients.",
+						"I hear the food here can't be beat. I hope to change that.",
+						"Willing to be a taste tester?",
+						"It's hard to gauge the quality of my work when Throgs just say good to everything you put in front of them.",
+						"My dream of being a universe star of a chef is certainly looking like a tall order to achieve.",
+						"Just how much grease do they pack into the food here?",
+						"They must put something in the food here."
+					]
+				},
+				"hylotl": {
+					"default": [
+						"I'm hoping to try out new ingredients from this place, though I'm beginning to regret that.",
+						"I don't know what's so popular about the food here, my food is far healthier and better.",
+						"I'll give you a discount if you taste test my food.",
+						"I don't know why I bother giving my food to the Throgs. They'll eat up trash if you put it in front of them.",
+						"I'm certain I'll be the best chef in the entire galaxy.",
+						"The amount of grease in the food here is revolting.",
+						"I wouldn't be surprised if there's something in the food to make it fattening."
+					]
+				},
+				"novakid": {
+					"default": [
+						"I'm here for the freshest of ingredients.",
+						"I hear the food here can't be beat. Hopin' to change dat.",
+						"Willin' to be a taste tester?",
+						"Hard to tell if my cookin's good or Throgs just about accept anythin'.",
+						"I have a hard time rememberin' my recipes, but my cookin' will know your socks off!",
+						"Gosh the food here is loaded with grease. How am I supposed to compete with dat?",
+						"I know they have a secret ingredient. Every good chef has a secret ingredient."
+					]
+				},
+				"throg": {
+					"default": [
+						"I'm here for some fresh ingredients.",
+						"The food actually is so good just by accident because of how fattening it is.",
+						"Can you test my cooking? It's hard to tell if it's good or not, not much of a sense of taste you see.",
+						"Throgs aren't picky eaters by any standard. They'll eat anything, likely on account of lack of taste buds.",
+						"I want to cook so good, every other race will eat like a Throg.",
+						"Throgs love their food drenched in grease. It's what makes it more than passable for other races.",
+						"It's important our food is so fattening. Throgs actually lose weight quickly."
+					]
+				}
+			}
+		}
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "chefhead" }, { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic" : [ { "name" : "chefchest" } ],
+            "legsCosmetic" : [ { "name" : "cheflegs" } ]
+          }
+        ] ]
+    ]
+  }
+}

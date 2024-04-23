@@ -1,0 +1,23 @@
+{
+  "itemName" : "plumpstarpoundscuiachest",
+  "price" : 5000,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "category" : "chestwear",
+  "description" : "A bit of gut is peaking out from this simple shirt.",
+  "shortdescription" : "Cuia XXL Top",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  }
+}

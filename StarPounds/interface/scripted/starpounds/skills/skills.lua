@@ -7,6 +7,7 @@ function init()
   local buttonIcon = string.format("%s.png", starPounds.enabled and "enabled" or "disabled")
   enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
 	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills")
+	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits")
   tabs = root.assetJson("/scripts/starpounds/starpounds_skills.config:tabs")
   tabNames = {}
 
@@ -32,7 +33,7 @@ function init()
 
   descriptionFunctions = {}
 
-  isAdmin = player.isAdmin()
+  isAdmin = admin()
 
   weightDecrease:setVisible(isAdmin)
   weightIncrease:setVisible(isAdmin)
@@ -40,7 +41,14 @@ function init()
   enableUpgrades = metagui.inputData.isObject or isAdmin
   selectedSkill = nil
   setProgress(starPounds.experience, starPounds.level)
-  populateSkillTree()
+  -- Make the trait tab show first if we don't have one.
+  if not (starPounds.getTrait() or starPounds.hasOption("lowerTraitTab")) then
+    populateTraitTab()
+    populateSkillTree()
+  else
+    populateSkillTree()
+    populateTraitTab()
+  end
   resetInfoPanel()
   checkSkills()
 end
@@ -58,11 +66,15 @@ function update()
       metagui.setIcon(string.format("icon%s.png", metagui.inputData.iconSuffix or ""))
       metagui.queueFrameRedraw()
     end
-    _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    if currentTab.id ~= "selectTrait" then
+      _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    end
+    -- Can't do this in init for some reason.
+    traitBuffers(starPounds.getTrait() ~= nil)
   end
 
-  if player.isAdmin() ~= isAdmin then
-    isAdmin = player.isAdmin()
+  if isAdmin ~= admin() then
+    isAdmin = admin()
     enableUpgrades = metagui.inputData.isObject or isAdmin
     checkSkills()
     if selectedSkill then
@@ -113,6 +125,10 @@ function reset:onClick()
       promises:add(world.sendEntityMessage(player.id(), "starPounds.reset"), function()
         checkSkills()
         resetInfoPanel()
+        traitButtons(true)
+        traitBuffers(false)
+        speciesTraitPanel:setVisible(true)
+        selectableTraitPanel:setVisible(true)
         local buttonIcon = "disabled.png"
         enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
       end)
@@ -124,7 +140,7 @@ function populateSkillTree()
   for _, tab in ipairs(tabs) do
     tab.title = " "
     tab.icon = string.format("icons/tabs/%s.png", tab.id)
-    tab.contents = copy(tabField.data)
+    tab.contents = copy(tabField.data.tabTemplate)
     tab.contents[1].children[1].id = tab.id.."_skillTree"
     tab.contents[1].children[1].children[3].id = tab.id.."_skillCanvas"
     tab.contents[1].children[1].children[4].id = tab.id.."_skillWidgets"
@@ -160,6 +176,7 @@ function populateSkillTree()
       skill.name = skillName
       skill.levels = skill.levels or 1
       skill.cost.increase = skill.cost.increase or 0
+      skill.cost.max = skill.cost.max or math.huge
     end
   end
 
@@ -186,6 +203,97 @@ function populateSkillTree()
   end
 end
 
+function buildTraitTab()
+  selectTrait = tabField:newTab(tabField.data.traitTab)
+  selectTrait.pretty = "Traits"
+  selectTrait.description = "This menu allows you to select a starting trait!\n\nTraits grant you skills, weight, and ^#b8eb00;XP^reset;! \n\nOnce selected, traits cannot be changed unless you reset. Choose wisely!"
+
+  if not currentTab then
+    currentTab = selectTrait
+  end
+
+  speciesTraitSelect.onClick = (function() setTrait(speciesTrait.id, true) end)
+  selectableTraitSelect.onClick = (function() setTrait(selectedTrait.id, false) end)
+  traitCycleLeft.onClick = traitCycleDecrease
+  traitCycleRight.onClick = traitCycleIncrease
+end
+
+function buildTraitPreview(traitType, trait)
+  _ENV[traitType.."TraitLabel"]:setText(trait.description)
+  if traitType == "species" then
+    _ENV[traitType.."TraitIcon"]:setFile(string.format("icons/traits/species/%s.png", trait.id))
+  else
+    _ENV[traitType.."TraitIcon"]:setFile(string.format("icons/traits/%s.png", trait.id))
+  end
+  -- Skill display stuff.
+  local slotCount = 0
+  local slotPosition = 1
+  for _, skill in ipairs(trait.skills or jarray()) do
+    slotCount = slotCount + 1
+  end
+  slotCount = math.min(slotCount, 5)
+  _ENV[traitType.."TraitSkills"].columns = slotCount
+  _ENV[traitType.."TraitSkills"]:setNumSlots(slotCount)
+  for _, skill in ipairs(trait.skills or jarray()) do
+    _ENV[traitType.."TraitSkills"]:setItem(slotPosition, {name = "starpoundsskill", count = 1, parameters = {skill = skill[1], level = skill[2]}})
+    _ENV[traitType.."TraitSkills"].children[slotPosition].hideRarity = true
+    slotPosition = slotPosition + 1
+  end
+  _ENV[traitType.."TraitSkills"]:setVisible(slotCount > 0)
+  _ENV[traitType.."TraitSkillsLabel"]:setVisible(slotCount == 0)
+  -- Default values for attributes. (Starting weight/milk/XP)
+  local attributes = jarray()
+  local attributeString = ""
+  if trait.weight then
+    attributes[#attributes + 1] = string.format("^#%s;Starting Weight:^reset; %slb", starPounds.stats.absorption.colour, trait.weight)
+  end
+  if trait.breasts then
+    attributes[#attributes + 1] = string.format("^#%s;Starting Milk:^reset; %s", starPounds.stats.breastProduction.colour, trait.breasts)
+  end
+  if trait.experience then
+    attributes[#attributes + 1] = string.format("^#%s;Starting XP:^reset; %s", starPounds.stats.experienceMultiplier.colour, trait.experience)
+  end
+  for i, attribute in ipairs(attributes) do
+    if i > 1 then attributeString = attributeString.."\n" end
+    attributeString = attributeString..attribute
+  end
+  if attributeString == "" then attributeString = "^red;None" end
+  _ENV[traitType.."TraitAttributes"]:setText(attributeString)
+end
+
+function populateTraitTab()
+  buildTraitTab()
+  local species = player.species()
+  speciesTrait = traits[species] or traits.none
+  speciesTrait.id = traits[species] and species or "none"
+  selectableTraits = jarray()
+  -- Add the 'No trait' option if it's not being used to replace the species.
+  -- Uses default as the id so that default and the bonus XP show up as the same trait with fetching functions.
+  for i, trait in ipairs(root.assetJson("/scripts/starpounds/starpounds_traits.config:selectableTraits")) do
+    if starPounds.getTrait() == trait then selectedTraitIndex = i end
+    table.insert(selectableTraits, sb.jsonMerge(traits[trait], {id = trait}))
+  end
+  if speciesTrait.id ~= "none" then
+    selectableTraits[#selectableTraits + 1] = sb.jsonMerge(traits.none, {id = "none"})
+    if starPounds.getTrait() == "default" then selectedTraitIndex = #selectableTraits end
+  end
+  selectedTraitIndex = selectedTraitIndex or math.random(1, #selectableTraits)
+  selectedTrait = selectableTraits[selectedTraitIndex]
+
+  local hasTrait = starPounds.getTrait()
+  traitButtons(not hasTrait)
+  if (hasTrait == species) or (hasTrait == "default" and speciesTrait.id == "none") then
+    speciesTraitPanel:setVisible(true)
+    selectableTraitPanel:setVisible(false)
+  elseif hasTrait then
+    selectableTraitPanel:setVisible(true)
+    speciesTraitPanel:setVisible(false)
+  end
+
+  buildTraitPreview("selectable", selectedTrait)
+  buildTraitPreview("species", speciesTrait)
+end
+
 function makeSkillWidget(skill)
   local toolTip = string.format("%s%s", skill.pretty:gsub("%^.-;", ""), skill.shortDescription and "\n^gray;"..skill.shortDescription or "")
   local skillWidget = {
@@ -210,7 +318,15 @@ function makeSkillWidget(skill)
   if skill.hidden then
     skillWidget.children[2] = {id = string.format("%sSkill", skill.name), position = {16, 12}, type = "iconButton", image = string.format("icons/skills/%s.png", skill.hiddenIcon), hoverImage = string.format("icons/skills/%s.png", skill.hiddenIcon), pressImage = string.format("icons/skills/%s.png", skill.hiddenIcon).."?border=1;00000000;00000000?crop=1;2;17;18"}
     skillWidget.children[4].file = "check.png?multiply=00000000"
+  elseif isAdmin and starPounds.hasOption("showDebug") then
+    local totalSkillCost = 0
+    for skillLevel = 1, skill.levels do
+      totalSkillCost = totalSkillCost + math.min((skill.cost.base + skill.cost.increase * (skillLevel - 1)), skill.cost.max)
+    end
+    skillWidget.children[2].toolTip = skillWidget.children[2].toolTip..string.format("\n\n^#665599;Skill Id: ^gray;%s\n^#665599;Base Cost: ^gray;%s XP\n^#665599;Increase: ^gray;%s XP\n^#665599;Total Cost: ^gray;%s XP", skill.name, skill.cost.base, skill.cost.increase, totalSkillCost)
+    skillWidget.children[4].toolTip = skillWidget.children[2].toolTip
   end
+
   return skillWidget
 end
 
@@ -241,7 +357,7 @@ function selectSkill(skill)
     end
   end
   if skill then
-    _ENV[string.format("%sSkill_back", skill.name)]:setFile(string.format("back.png?multiply=%s?brightness=30?saturation=-30", skill.colour))
+    _ENV[string.format("%sSkill_back", skill.name)]:setFile(string.format("back.png?multiply=%s?brightness=50?saturation=-15", skill.colour))
     _ENV[string.format("%sSkill_back", skill.name)]:queueRedraw()
     _ENV[string.format("%sSkill", skill.name)]:setImage(
       string.format("icons/skills/%s.png?border=1;ffffffaa;00000000", skill.icon or skill.name),
@@ -252,7 +368,26 @@ function selectSkill(skill)
     descriptionTitle:setText("^shadow;"..skill.pretty)
     descriptionIcon:setFile(string.format("icons/skills/%s.png", skill.icon or skill.name))
     descriptionIcon:queueRedraw()
-    descriptionText:setText(skill.description)
+    descriptionText:setText(skill.description:gsub("<activationSize>", starPounds.sizes[starPounds.settings.activationSize].size:gsub("^%l", string.upper)))
+
+    local currentLevel = starPounds.getSkillLevel(skill.name)
+    local unlockedLevel = starPounds.getSkillUnlockedLevel(skill.name)
+    local nextLevel = math.min(unlockedLevel + 1, skill.levels)
+    local skillItems = getSkillItems(skill)
+    local hasItems = hasSkillItems(skill)
+    -- Clear the slots.
+    local slotCount = math.min(#skillItems, 5)
+    unlockItems.columns = slotCount
+    unlockItems:setNumSlots(slotCount)
+    -- Set the slots, and check player items.
+    for i, item in ipairs(skillItems) do
+      unlockItems.children[i].hideRarity = true
+      if i <= slotCount then
+        unlockItems:setItem(i, {name = item[1], count = item[2], parameters = {}})
+      end
+    end
+
+    itemPanel:setVisible(slotCount > 0)
 
     if skill.type == "addStat" or skill.type == "subtractStat" then
       infoPanel:setVisible(true)
@@ -260,14 +395,27 @@ function selectSkill(skill)
       local textColour = starPounds.stats[skill.stat].colour or skill.colour
 
       local nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
-      local nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 10)/10
+      local nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)) * 10)/10
       local nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
-      local nextString = starPounds.getSkillLevel(skill.name) == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+      local nextString = currentLevel == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
 
-      local totalAmount = starPounds.getStatBonus(skill.stat)
-      local totalIncrease = math.floor(0.5 + (100 * (totalAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 10)/10
-      local amount = totalIncrease ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (totalIncrease * -1) or totalIncrease) or 0
-      local amountString = string.format("%s%.1f", amount > 0 and "+" or "", amount):gsub("%.?0+$", "").."%"
+      local bonus = starPounds.getSkillBonus(skill.stat)
+      local totalAmount = (bonus ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (bonus * -1) or bonus) or 0) + starPounds.stats[skill.stat].base
+      local totalIncrease = math.floor(0.5 + (100 * totalAmount) * 10)/10
+      local amount = totalIncrease
+      local amountString = string.format("%.1f", amount):gsub("%.?0+$", "").."%"
+
+      if starPounds.stats[skill.stat].normalizeBase then
+        nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
+        nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 10)/10
+        nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
+        nextString = currentLevel == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+
+
+        totalIncrease = math.floor(0.5 + (100 * totalAmount/(baseAmount > 0 and baseAmount or 1)) * 10)/10
+        amount = totalIncrease ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (totalIncrease * -1) or totalIncrease) or 0
+        amountString = string.format("%.1f", amount):gsub("%.?0+$", "").."%"
+      end
 
       local function tchelper(first, rest)
          return first:upper()..rest:lower()
@@ -277,17 +425,18 @@ function selectSkill(skill)
         string.format("^#%s;%s^reset; \n^clear;%s^reset; %s ^gray;%s", textColour, starPounds.stats[skill.stat].pretty:gsub("(%a)([%w_']*)", tchelper), nextString, amountString, nextString)
       )
       statInfo.toolTip = starPounds.stats[skill.stat].description
-
+      if starPounds.stats[skill.stat].scaling then
+        statInfo.toolTip = statInfo.toolTip.."\n^gray,set;This stat scales until ^#00ebce;"..starPounds.sizes[starPounds.settings.scalingSize].size:gsub("^%l", string.upper).."^reset;."
+      end
     end
 
-    local experienceLevel = math.min(starPounds.getSkillUnlockedLevel(skill.name) + 1, skill.levels) - 1
-    experienceCost = isAdmin and 0 or (skill.cost.base + skill.cost.increase * experienceLevel)
-    canDecrease = starPounds.getSkillLevel(skill.name) > 0
-    canIncrease = starPounds.getSkillLevel(skill.name) < starPounds.getSkillUnlockedLevel(skill.name)
+    experienceCost = isAdmin and 0 or math.min(skill.cost.base + skill.cost.increase * (nextLevel - 1), skill.cost.max)
+    canDecrease = currentLevel > 0
+    canIncrease = currentLevel < unlockedLevel
     useToggle = skill.levels == 1
-    skillMaxed = starPounds.getSkillUnlockedLevel(skill.name) == skill.levels
-    canUpgrade = (starPounds.level >= experienceCost) and not skillMaxed
-    unlockText:setText(useToggle and (starPounds.getSkillLevel(skill.name) > 0 and "On" or "Off") or string.format("%s/%s", starPounds.getSkillLevel(skill.name), starPounds.getSkillUnlockedLevel(skill.name)))
+    skillMaxed = unlockedLevel == skill.levels
+    canUpgrade = (isAdmin or ((starPounds.level >= experienceCost) and hasItems)) and not skillMaxed
+    unlockText:setText(useToggle and (currentLevel > 0 and "On" or "Off") or string.format("%s/%s", currentLevel, unlockedLevel))
 
     unlockExperience:setText(string.format("^%s;%s XP", skillMaxed and "darkgray" or ((enableUpgrades and canUpgrade) and "green" or "red"), (skillMaxed or not enableUpgrades) and "-" or experienceCost))
 
@@ -318,7 +467,18 @@ function selectSkill(skill)
         unlockButton.toolTip = string.format(unlockButton.toolTip.."\n^gray;Requires %s %s^reset;", useAn and "an" or "a", objectName)
       end
     elseif not canUpgrade then
-      unlockButton.toolTip = string.format(unlockButton.toolTip.."\n^gray;Requires ^#b8eb00;%s XP^reset;", experienceCost)
+      unlockButton.toolTip = unlockButton.toolTip.."\n^gray;Requires"
+      if starPounds.level < experienceCost then
+        unlockButton.toolTip = string.format(unlockButton.toolTip.." ^#b8eb00;%s XP^reset;", experienceCost)
+      end
+      if not hasItems then
+        for _, item in ipairs(skillItems) do
+          local itemCount = player.hasCountOfItem(item[1])
+          local itemName = root.itemConfig(item[1]).config.shortdescription
+          local hasItem = itemCount >= item[2]
+          unlockButton.toolTip = unlockButton.toolTip..string.format("\n^gray;%s ^%s;%s/%s", itemName, hasItem and "green" or "red", itemCount, item[2])
+        end
+      end
     end
 
     unlockToggle:setImage(
@@ -341,7 +501,7 @@ function selectSkill(skill)
       string.format("unlockDecrease%s.png", canDecrease and "" or "Disabled"),
       string.format("unlockDecrease%s.png?border=1;00000000;00000000?crop=1;2;13;15", canDecrease and "" or "Disabled")
     )
-    if skill.widget and (skill.forceWidget or starPounds.getSkillUnlockedLevel(skill.name) > 0) then
+    if skill.widget and (skill.forceWidget or unlockedLevel > 0) then
       require(string.format("/interface/scripted/starpounds/skills/descriptionWidgets/%s.lua", skill.widget.id))
       descriptionWidget:addChild(skill.widget).onClick = descriptionFunctions[skill.widget.id]
     end
@@ -427,7 +587,9 @@ function tabField:onTabChanged(tab, previous)
   if currentTab then
     currentTab = tab
     resetInfoPanel()
-    _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    if currentTab.id ~= "selectTrait" then
+      _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
+    end
   end
 end
 
@@ -444,11 +606,17 @@ end
 
 function unlockButton:onClick()
   local experienceLevel = math.min((starPounds.getSkillUnlockedLevel(selectedSkill.name)) + 1, selectedSkill.levels) - 1
-  local experienceCost = selectedSkill.cost.base + selectedSkill.cost.increase * experienceLevel
-  local canUpgrade = isAdmin or starPounds.level >= experienceCost
+  local experienceCost = math.min(selectedSkill.cost.base + selectedSkill.cost.increase * experienceLevel, selectedSkill.cost.max)
+  local canUpgrade = isAdmin or (hasSkillItems(selectedSkill) and starPounds.level >= experienceCost)
+  selectSkill(selectedSkill)
   if starPounds.getSkillUnlockedLevel(selectedSkill.name) == selectedSkill.levels or not canUpgrade or not enableUpgrades then
     widget.playSound("/sfx/interface/clickon_error.ogg")
     return
+  end
+  if not isAdmin then
+    for _, item in ipairs(getSkillItems(selectedSkill)) do
+      player.consumeItem({name = item[1], count = item[2]})
+    end
   end
   starPounds.upgradeSkill(selectedSkill.name, isAdmin and 0 or experienceCost)
   local level = starPounds.getSkillUnlockedLevel(selectedSkill.name)
@@ -462,6 +630,33 @@ function unlockButton:onClick()
   checkSkills()
   selectSkill(selectedSkill)
   widget.playSound("/sfx/interface/crafting_medical.ogg")
+end
+
+function getSkillItems(skill)
+  local unlockedLevel = starPounds.getSkillUnlockedLevel(skill.name)
+  local nextLevel = math.min(unlockedLevel + 1, skill.levels)
+  local skillItems = jarray()
+
+  for _, requiredItems in ipairs(skill.upgradeItems or jarray()) do
+    if nextLevel >= requiredItems[1] then
+      skillItems = requiredItems[2]
+    else
+      break
+    end
+  end
+  return skillItems
+end
+
+function hasSkillItems(skill)
+  local skillItems = getSkillItems(skill)
+  local hasItems = true
+  -- Clear the slots.
+  for i, item in ipairs(skillItems) do
+    if player.hasCountOfItem(item[1]) < item[2] then
+      hasItems = false
+    end
+  end
+  return hasItems
 end
 
 function unlockIncrease:onClick()
@@ -492,6 +687,69 @@ function unlockToggle:onClick()
     starPounds.setSkill(selectedSkill.name, (starPounds.getSkillLevel(selectedSkill.name) == 0) and 1 or 0)
     selectSkill(selectedSkill)
   end
+end
+
+function setTrait(trait, isSpecies)
+  if starPounds.setTrait(trait) then
+    traitButtons(false)
+    traitBuffers(true)
+    if isSpecies then
+      speciesTraitPanel:setVisible(true)
+      selectableTraitPanel:setVisible(false)
+    else
+      selectableTraitPanel:setVisible(true)
+      speciesTraitPanel:setVisible(false)
+    end
+    checkSkills()
+    widget.playSound("/sfx/interface/crafting_medical.ogg")
+  end
+end
+
+function traitCycleDecrease()
+  local hasTrait = starPounds.getTrait()
+  if not hasTrait then
+    selectedTraitIndex = (selectedTraitIndex - 2 + #selectableTraits) % #selectableTraits + 1
+    selectedTrait = selectableTraits[selectedTraitIndex]
+    buildTraitPreview("selectable", selectedTrait)
+  end
+end
+
+function traitCycleIncrease()
+  local hasTrait = starPounds.getTrait()
+  if not hasTrait then
+    selectedTraitIndex = (selectedTraitIndex % #selectableTraits) + 1
+    selectedTrait = selectableTraits[selectedTraitIndex]
+    buildTraitPreview("selectable", selectedTrait)
+  end
+end
+
+function traitButtons(enable)
+  speciesTraitSelect:setImage(
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png?border=1;00000000;00000000?crop=1;2;33;18", enable and "" or "Disabled")
+  )
+  selectableTraitSelect:setImage(
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png", enable and "" or "Disabled"),
+    string.format("traitSelect%s.png?border=1;00000000;00000000?crop=1;2;33;18", enable and "" or "Disabled")
+  )
+  traitCycleLeft:setImage(
+    string.format("traitCycleLeft%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleLeft%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleLeft%s.png?border=1;00000000;00000000?crop=1;2;12;15", enable and "" or "Disabled")
+  )
+  traitCycleRight:setImage(
+    string.format("traitCycleRight%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleRight%s.png", enable and "" or "Disabled"),
+    string.format("traitCycleRight%s.png?border=1;00000000;00000000?crop=1;2;12;15", enable and "" or "Disabled")
+  )
+end
+
+
+function traitBuffers(enable)
+  startBuffer:setVisible(enable)
+  endBuffer:setVisible(enable)
 end
 
 function statInfo:onClick()
@@ -525,4 +783,8 @@ function weightIncrease:onClick()
   local targetWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
   local targetWeight2 = starPounds.sizes[starPounds.currentSizeIndex + 2] and starPounds.sizes[starPounds.currentSizeIndex + 2].weight or starPounds.settings.maxWeight
   starPounds.setWeight(metagui.checkShift() and starPounds.settings.maxWeight or (targetWeight + (targetWeight2 - targetWeight) * progress))
+end
+
+function admin()
+  return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

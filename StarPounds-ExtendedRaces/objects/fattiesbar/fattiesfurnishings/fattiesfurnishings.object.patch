@@ -93,5 +93,86 @@
 	  "path": "/storeInventory/feedingtube/-",
 	  "value": "angelfeedingtube" 
 	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "arcanianweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsarcaniantreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "arcanianfeedingtube" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "nostosweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "nostosfeedingtube" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "silphweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundssilphtreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "silphfeedingtube" 
+	  } 
+	],
+	
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/scales/-",
+	  "value": "auraciteweightscale" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/treadmill/-",
+	  "value": "starpoundsauracitetreadmill" 
+	  } 
+	],
+	[
+	  {
+	  "op": "add",
+	  "path": "/storeInventory/feedingtube/-",
+	  "value": "auracitefeedingtube" 
+	  } 
 	]
 ]

@@ -15,6 +15,33 @@
   "statusEffects" : [
     {"effect": "starpoundsbloat", "duration": 4},
     {"effect": "starpoundsfood", "duration" : 2},
-    {"effect": "starpoundsrategainrapid", "duration" : 3}
+    {"effect": "starpoundsrategainrapid", "duration" : 1}
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/gnome_impact1.ogg", "/sfx/projectiles/gnome_impact2.ogg", "/sfx/projectiles/gnome_impact3.ogg", "/sfx/projectiles/gnome_impact4.ogg", "/sfx/projectiles/gnome_impact5.ogg" ]
+    },
+    {
+      "action" : "loop",
+      "count" : 2,
+      "body" : [{
+        "action": "option",
+        "options": [
+          {
+            "action" : "particle",
+            "specification" : "starpoundsgreatforkmeat1"
+          },
+          {
+            "action" : "particle",
+            "specification" : "starpoundsgreatforkmeat2"
+          },
+          {
+            "action" : "particle",
+            "specification" : "starpoundsgreatforkmeat3"
+          }
+        ]
+      }]
+    }
   ]
 }

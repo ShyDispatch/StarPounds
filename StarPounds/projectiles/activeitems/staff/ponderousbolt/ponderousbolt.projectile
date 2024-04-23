@@ -8,6 +8,7 @@
   "frameNumber" : 4,
   "speed" : 0,
   "animationCycle" : 0.2,
+  "emitters" : [ "wispflame" ],
 
   "power" : 30,
   "damageKind" : "caloricspear",
@@ -16,7 +17,7 @@
   "statusEffects" : [
     {"effect": "starpoundsbloat", "duration": 30},
     {"effect": "starpoundsfood", "duration": 10},
-    {"effect": "starpoundsrategainrapid", "duration": 5}
+    {"effect": "starpoundsrategainrapid", "duration": 3}
   ],
 
   "fullbright" : true,
@@ -34,13 +35,13 @@
       "body" : [
         {
           "action" : "particle",
-          "specification" : "sparkle2",
+          "specification" : "wispflame",
           "time" : 0.1,
           "repeat" : true
         },
         {
           "action" : "particle",
-          "specification" : "sparkle4",
+          "specification" : "wispflame",
           "time" : 0.1,
           "repeat" : true
         }

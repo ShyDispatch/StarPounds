@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsgluttonist",
   "baseType" : "hostile",
+  "displayTitle" : "Gluttonist",
 
   "dropPools" : [ "gluttonisthuntertreasure" ],
 
@@ -11,22 +12,16 @@
 	 },
 
   "scriptConfig" : {
-    "starPounds_skills": {
-      "minimumSize": [2, 5],
-      "digestion": [5, 20],
-      "health": [10, 20],
-      "capacity": [5, 20],
-      "gurgleRate": [1, 5],
-      "gurgleAmount": [1, 3],
-      "bloatDigestion": [1, 5],
-      "bloatAmount": [1, 3],
-      "knockbackResistance": [1, 5],
-      "movement": [5, 20],
-      "absorption": [5, 20],
-      "voreCritter": [1, 1],
-      "voreMonster": [1, 1],
-      "voreDamage": [3, 5]
+	"behaviorConfig" : {
+      "leapWindup" : 0.75,
+      "rangedAimTime" : 0.5,
+      "rangedWindupTime" : 0.01,
+	  "cantReachDialog": false
     },
+    "starPounds_skills": {
+      "minimumSize": [2, 5]
+    },
+    "starPounds_trait": "npc_gluttonist",
 
     "dialog" : {
       "attack" : {

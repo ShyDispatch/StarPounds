@@ -1,0 +1,22 @@
+{
+  "materialId" : 51437,
+  "materialName" : "avianblubber",
+  "particleColor" : [168, 150, 196, 255],
+  "itemDrop" : "avianblubber",
+  "description" : "Squishy, jiggly matter.. I wonder what it is.",
+  "shortdescription" : "Avian Flab",
+  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "avianblubber.png",
+    "variants" : 6,
+    "lightTransparent" : false,
+    "multiColored" : true,
+    "occludesBelow" : true,
+    "zLevel" : 99999,
+    "radiantLight" : [15, 12, 18]
+  }
+}

@@ -241,5 +241,26 @@
 				"aggressive": true
 			}
 		}
+	},
+	{
+		"op": "add",
+		"path": "/-",
+		"value":
+		{
+			"name": "starpoundsgnomecritter",
+			"spawnParameters":
+			{
+				"area": "surface",
+				"region": "all",
+				"time": "all"
+			},
+
+			"spawnChance": 0.85,
+			"monsterType" : "starpoundsgnomecritter",
+			"monsterParameters":
+			{
+				"aggressive": false
+			}
+		}
 	}
 ]

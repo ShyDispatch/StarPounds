@@ -1,0 +1,11 @@
+{
+  "itemName" : "alienblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "alienblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Alien Flab",
+
+  "materialId" : 51439
+}

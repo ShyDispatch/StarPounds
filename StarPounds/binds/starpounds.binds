@@ -1,0 +1,70 @@
+{
+  "starpounds": {
+    "groups": {
+      // Categories are ordered alphabetically, so sticking in invisible
+      // characters here to enforce an order because I'm silly like that.
+      "starpounds": { "name": "^clear;A^reset; Features ^clear;A" },
+      "starpoundsvore": { "name": "^clear;B^reset; Vore ^clear;B" },
+      "starpoundsmilk": { "name": "^clear;C^reset; Lactation ^clear;C" },
+      "starpoundsmenus": { "name": "^clear;D^reset; Menus ^clear;D" }
+    },
+    "name": "^#ccbbff;StarPounds",
+    "binds": {
+      "toggle": {
+        "default": [],
+        "group": "starpounds",
+        "name": "Toggle StarPounds"
+      },
+      "belch": {
+        "default": [{
+          "type": "key",
+          "value": "b"
+        }],
+        "group": "starpounds",
+        "name": "Belch"
+      },
+      "voreEat": {
+        "default": [{
+          "type": "key",
+          "value": "v"
+        }],
+        "group": "starpoundsvore",
+        "name": "Eat Entity"
+      },
+      "voreRegurgitate": {
+        "default": [{
+          "type": "key",
+          "value": "v",
+          "mods" : ["LAlt"]
+        }],
+        "group": "starpoundsvore",
+        "name": "Regurgitate Entity"
+      },
+      "lactate": {
+        "default": [],
+        "group": "starpoundsmilk",
+        "name": "Lactate"
+      },
+      "menuMenu": {
+        "default": [],
+        "group": "starpoundsmenus",
+        "name": "Open Quick Menu"
+      },
+      "skillsMenu": {
+        "default": [],
+        "group": "starpoundsmenus",
+        "name": "Open Skills"
+      },
+      "accessoriesMenu": {
+        "default": [],
+        "group": "starpoundsmenus",
+        "name": "Open Accessories"
+      },
+      "optionsMenu": {
+        "default": [],
+        "group": "starpoundsmenus",
+        "name": "Open Options"
+      }
+    }
+  }
+}

@@ -13,8 +13,8 @@
   "accessoryType" : "ring",
 
   "stats": [
-    {"name": "absorption", "modifier": -0.25},
-    {"name": "digestion", "modifier": 0.5}
+    {"name": "digestion", "modifier": 0.5},
+    {"name": "absorption", "modifier": -0.25}
   ],
 
   "builder" : "/items/buildscripts/buildaccessory.lua",

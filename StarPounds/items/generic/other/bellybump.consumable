@@ -10,9 +10,13 @@
   "effects": [[
     {
       "effect" : "starpoundsbloat",
-      "duration" : 40
+      "duration" : 10
+    },
+    {
+      "effect" : "starpoundsoption",
+      "duration" : 3
     }
-  ]],  
+  ]],
   "emote" : "",
   "emitters" : [ "drinking" ]
 }

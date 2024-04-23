@@ -1,0 +1,22 @@
+{
+  "materialId" : 51432,
+  "materialName" : "metalblubber",
+  "particleColor" : [168, 150, 196, 255],
+  "itemDrop" : "metalblubber",
+  "description" : "Squishy, jiggly matter.. I wonder what it is.",
+  "shortdescription" : "Metal Flab",
+  "footstepSound" : "/sfx/blocks/footstep_composite.ogg",
+  "health" : 8,
+  "category" : "materials",
+
+  "renderTemplate" : "/tiles/classicmaterialtemplate.config",
+  "renderParameters" : {
+    "texture" : "metalblubber.png",
+    "variants" : 6,
+    "lightTransparent" : false,
+    "multiColored" : true,
+    "occludesBelow" : true,
+    "zLevel" : 99999,
+    "radiantLight" : [15, 12, 18]
+  }
+}

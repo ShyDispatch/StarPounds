@@ -16,7 +16,7 @@
   "novakidDescription" : "This erchius blaster could blow me up like a balloon in seconds.",
 
   "category" : "trap",
-  "price" : 5000,
+  "price" : 50000,
 
   "inventoryIcon" : "ancientcaloricbeamtrapicon.png",
   "orientations" : [

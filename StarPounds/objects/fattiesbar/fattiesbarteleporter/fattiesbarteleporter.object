@@ -38,13 +38,13 @@
       "collisionSpaces" : [ [-1, 0], [-0, 0], [1, 0] ]
     }
   ],
-  
+
   "teleporterFootPosition" : [0, 1],
 
   "scripts" : [ "2stoptele.lua" ],
   "scriptDelta" : 60,
 
-  "spawnInterval" : [80, 180],
+  "spawnInterval" : [60, 180],
   "spawnOffset" : [-1, 3.5],
 
   "npctypes" : [
@@ -68,6 +68,63 @@
     {
       "type" : "starpoundsponderousvisitor",
       "species" : [ "glitch" ]
+    },
+    {
+      "type" : "starpoundsvelhanufollowervisitor",
+      "species" : [ "avian" ]
+    },
+    {
+      "type" : "starpoundsminiknogvisitor",
+      "species" : [ "apex" ]
+    },
+    {
+      "type" : "starpoundsmootantvisitor",
+      "species" : [ "mootant" ]
+    },
+    {
+      "type" : "starpoundsscientistvisitor",
+      "species" : [ "human", "avian", "apex", "floran", "glitch", "hylotl" ]
+    },
+    {
+      "type" : "starpoundschefvisitor",
+      "species" : [ "human", "avian", "apex", "floran", "glitch", "hylotl" ]
+    },
+    {
+      "type" : "starpoundspenguinvisitor",
+      "species" : [ "penguin" ]
+    },
+    {
+      "type" : "feneroxvisitor",
+      "species" : [ "fenerox" ]
+    },
+    {
+      "type" : "froggvisitor",
+      "species" : [ "hylotl" ]
+    },
+    {
+      "type" : "alpacavisitor",
+      "species" : [ "human" ]
+    },
+
+    {
+      "type" : "starpoundstonauacvisitor",
+      "species" : [ "avian" ]
+    },
+    {
+      "type" : "starpoundscuiavisitor",
+      "species" : [ "avian" ]
+    },
+    {
+      "type" : "starpoundsmamvisitor",
+      "species" : [ "human" ]
+    },
+    {
+      "type" : "starpoundsminivisitor",
+      "species" : [ "human" ]
+    },
+    {
+      "type" : "spacethumperpilotvisitor",
+      "species" : [ "human" ]
     }
   ]
 }

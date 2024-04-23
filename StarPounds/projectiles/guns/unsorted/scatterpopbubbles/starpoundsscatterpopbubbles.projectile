@@ -1,22 +1,54 @@
 {
   "projectileName" : "starpoundsscatterpopbubbles",
   "image" : "starpoundsscatterpopbubbles.png",
-  "physics" : "flame",
+  "physics" : "bigbubble",
   "animationCycle" : 1,
   "frameNumber" : 16,
+  "animationLoops" : false,
   "pointLight" : false,
   "flippable" : true,
   "actionOnReap" : [
     {
       "action" : "sound",
       "options" : [ "/sfx/projectiles/bubble_pop.ogg" ]
+    },
+    {
+      "action" : "loop",
+      "count" : 2,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "textured",
+            "image" : "/projectiles/guns/unsorted/scatterpopbubbles/starpoundsscatterpopbubbles.png:0",
+            "size" : 0.5,
+            "fade" : 0.9,
+            "initialVelocity" : [0, 1],
+            "finalVelocity" : [0, 2],
+            "approach" : [0.25, 1],
+            "destructionAction" : "fade",
+            "destructionTime" : 0.2,
+            "layer" : "back",
+            "timeToLive" : 0.2,
+            "variance" : {
+              "size" : 0.25,
+              "initialVelocity" : [3, 2]
+            }
+          }
+        }
+      ]
     }
   ],
-  "statusEffects" : [{"effect": "starpoundsratebloat", "duration": 1}, {"effect": "starpoundsfood", "duration": 10}],
+  "statusEffects" : [
+    {"effect": "starpoundsbloat", "duration": 2.5},
+    {"effect": "starpoundsfood", "duration": 2.5},
+    {"effect": "starpoundsratebloat", "duration": 1}
+  ],
   "power" : 1,
-  "speed" : 25,
-  "timeToLive" : 0.95,
-  "bounces" : 4,
+  "speed" : 20,
+  "timeToLive" : 1,
+  "bounces" : -1,
   "damagePoly" : [ [-4.5, 0], [-3, -3], [0, -4.5], [3, -3], [4.5, 0], [3, 3], [0, 4.5], [-3, 3] ],
-  "damageKind" : "caloric"
+  "damageKind" : "caloric",
+  "scripts" : ["scatterpopbubbles.lua"]
   }

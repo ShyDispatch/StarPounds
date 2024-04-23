@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsmootant",
   "baseType" : "villager",
+  "displayTitle" : "Mootant",
 
   "scriptConfig" : {
     "starPounds_skills": {

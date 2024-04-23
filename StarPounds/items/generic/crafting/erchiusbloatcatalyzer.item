@@ -6,6 +6,5 @@
   "inventoryIcon" : "erchiusbloatcatalyzer.png",
   "description" : "A uniquely charged Erchius Crystal. It radiates a pink glow.",
   "shortdescription" : "Erchius Catalyzer",
-  "itemTags" : [ "reagent" ],
-  "learnBlueprintsOnPickup" : [ "erchipudgesprayer" ]
+  "itemTags" : [ "reagent" ]
 }

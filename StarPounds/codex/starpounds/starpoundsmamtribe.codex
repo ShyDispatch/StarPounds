@@ -1,0 +1,18 @@
+{
+  "id" : "starpoundsmamtribe",
+  "species" : "floran",
+  "title" : "The Gluttonous Slime",
+  "description" : "A Floran book about a Gluttonist Tribe meeting a voracious slime.",
+  "icon" : "starpoundsmamtribe.png",
+  "contentPages" : [
+    "Day went by ssso fasst for Floran. Lotsss to think about. Hunting party came back with a Ssslime. The fattesst slime the tribe hass ever ssseen. Hunting party tried eating her, but ssshe easssily ate them back. Remaining hunterss then brought her here.",
+
+"They tell usss about how gluttonousss ssslime iss. That ssshe can eat ass much ass champion! Our meatdressserss got as much Ixoling roasst and honey ass they could make in ssuch ssshort time. Ssslime sstarted eating everything without even chewing! Whole feasst eaten sso quickly, belching out and patting her belly like it wasss normal.",
+
+"Tribe unanimoussly liked her. They got sso closse. Sso handssy for a ssoft ssslime. Floran couldn't help either, ssslime wass everything usss gluttonissstss asspire to be. Even now Floran wantss to get closse to her again. Greenfinger made her our new champion, and tribe cheered and eagerly went to get her more food. Floran needss to get her food as well."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

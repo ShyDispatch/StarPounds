@@ -53,6 +53,11 @@
       "/sfx/objects/ancient_pot_break_small7.ogg",
       "/sfx/objects/ancient_pot_break_small8.ogg",
       "/sfx/objects/ancient_pot_break_small9.ogg"
+    ],
+    "crack": [
+      "/sfx/objects/vase_break_medium1.ogg",
+      "/sfx/objects/vase_break_medium2.ogg",
+      "/sfx/objects/vase_break_medium3.ogg"
     ]
   }
 }

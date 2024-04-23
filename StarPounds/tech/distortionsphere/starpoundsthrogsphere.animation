@@ -1,8 +1,8 @@
 {
   "globalTagDefaults" : {
     "rotationFrame" : "0",
-    "ballDirectives" : "",
-    "ballScaleDirectives" : ""
+    "shrunkDirectives" : "",
+    "ballDirectives" : ""
   },
 
   "animatedParts" : {
@@ -40,7 +40,7 @@
               "properties" : {
                 "zLevel" : 1,
                 "fullbright" : true,
-                "image" : "<partImage>:<rotationFrame><ballDirectives><ballScaleDirectives>"
+                "image" : "<partImage>:<rotationFrame><shrunkDirectives><ballDirectives>"
               }
             }
           }
@@ -69,7 +69,7 @@
             },
             "on" : {
               "properties" : {
-                "image" : "<partImage>:<rotationFrame><ballDirectives><ballScaleDirectives>"
+                "image" : "<partImage>:<rotationFrame><shrunkDirectives><ballDirectives>"
               }
             }
           }

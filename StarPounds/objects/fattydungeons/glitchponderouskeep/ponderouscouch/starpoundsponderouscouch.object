@@ -1,0 +1,56 @@
+{
+  "objectName" : "starpoundsponderouscouch",
+  "colonyTags" : ["glitch","fatdungeons","ponderous"],
+  "rarity" : "Common",
+  "description" : "A sturdy couch designed to support two people, or one very big person.",
+  "shortdescription" : "Ponderous Couch",
+  "race" : "generic",
+  "category" : "furniture",
+  "price" : 125,
+
+  "apexDescription" : "A reinforced couch. Seems like it was meant to accomodate larger sizes.",
+  "avianDescription" : "A durable yet cozy looking couch.",
+  "floranDescription" : "Why isss chair so short? Do metal-men need extra buttssspace?",
+  "glitchDescription" : "Impressed. This chair is built to withstand tremendous weights!",
+  "humanDescription" : "Not much room for the back... Or is that meant for the keister?",
+  "hylotlDescription" : "For a Glitch couch, this looks comfortable.",
+  "novakidDescription" : "I can sit down in this and never get back up.",
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+
+  "inventoryIcon" : "starpoundsponderouscouchicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsponderouscouch.png:<color>",
+      "sitCoverImage" : "/objects/generic/starpoundsponderouscouch/starpoundsponderouscouchcover.png",
+      "imagePosition" : [-16, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [-7, 21], // Right
+        [6, 21] // Left
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "starpoundsponderouscouch.png:<color>",
+      "sitCoverImage" : "/objects/fattydungeons/glitchponderouskeep/ponderouscouch/starpoundsponderouscouchcover.png",
+      "imagePosition" : [-16, 0],
+      "direction" : "right",
+
+      "sitPositions" : [
+        // Positions from front to back.
+        [-6, 21], // Left
+        [7, 21] // Right
+      ],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

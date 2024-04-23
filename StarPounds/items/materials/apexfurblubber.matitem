@@ -1,0 +1,11 @@
+{
+  "itemName" : "apexfurblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "apexfurblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Apex Furry Flab",
+
+  "materialId" : 51436
+}

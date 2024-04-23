@@ -4,11 +4,11 @@
   "level" : 4,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "^gray;Some say this was the club of a legendary party demon...",
+  "description" : "^gray;Some say this kanabō once belonged to a legendary party demon...",
   "shortdescription" : "Ogre's Moonshiner",
   "tooltipKind" : "starpoundssword",
-  "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},  
-  "category" : "hammer",
+  "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
+  "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon","melee","hammer","upgradeableWeapon"],
 
@@ -20,6 +20,11 @@
     "blade" : "ogresmoonshiner.png"
   },
   "animationCustom" : {
+    "animatedParts": { "parts": { "swoosh" : {
+      "properties" : {
+        "offset" : [-1.5, 2.375]
+      }
+    }}},
     "sounds" : {
       "fire" : [ "/sfx/melee/swing_hammer.ogg" ]
     }
@@ -29,7 +34,7 @@
 
   "elementalType" : "physical",
 
-  "primaryAbilityType" : "axecleave",
+  "primaryAbilityType" : "hammersmash",
   "primaryAbility" : {
     "fireTime" : 1.1,
     "baseDps" : 12,
@@ -49,10 +54,9 @@
         "twoHanded" : true,
         "allowRotate" : false,
         "armRotation" : -35,
-        "weaponRotation" : -75,
-        "weaponOffset" : [-0.125, 2.5]
+        "weaponRotation" : -70
       }
-	  }
+    }
   },
 
   "palette" : "/items/active/weapons/colors/tier1melee.weaponcolors",

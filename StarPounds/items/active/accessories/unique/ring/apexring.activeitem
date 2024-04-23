@@ -1,0 +1,22 @@
+{
+  "itemName" : "apexring",
+  "price" : 2500,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "An ring manufactured by the Miniknog, intended to enhance the carrying capacity of soldiers.",
+  "shortdescription" : "Miniknog Combatant Ring",
+  "inventoryIcon" : "apexring.png",
+  "category" : "starpoundsuniqueaccessory",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "ring",
+
+  "stats": [
+    {"name": "movement", "modifier": 0.15},
+    {"name": "capacity", "modifier": -0.25}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

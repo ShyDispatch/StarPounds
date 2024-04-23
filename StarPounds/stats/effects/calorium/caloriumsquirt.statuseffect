@@ -9,6 +9,7 @@
   "animationConfig" : "/stats/effects/starpoundssoundhandler/starpoundssoundhandler.animation",
 
   "scripts" : [
-    "caloriumsquirt.lua"
+    "caloriumsquirt.lua",
+    "caloriumcalculation.lua"
   ]
 }

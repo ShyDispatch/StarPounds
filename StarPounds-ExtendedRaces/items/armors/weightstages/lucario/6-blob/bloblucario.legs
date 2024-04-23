@@ -1,0 +1,18 @@
+{
+  "itemName" : "bloblucariolegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Woe be upon any who cross your path, for your aura is mountainous and great... and your appetite inconceivably vast.",
+  "shortdescription" : "Blobby Body",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsblob"
+  ],
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

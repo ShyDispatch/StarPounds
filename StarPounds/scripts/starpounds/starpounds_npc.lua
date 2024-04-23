@@ -20,8 +20,8 @@ function init()
 	starPounds.messageHandlers()
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
+	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	storage.starPounds.options = sb.jsonMerge(storage.starPounds.options, config.getParameter("starPounds_options", {}))
-
 	if not storage.starPounds.parsedInitialSkills then
 		local skills = config.getParameter("starPounds_skills", {})
 		for k, v in pairs(skills) do
@@ -44,12 +44,25 @@ function init()
 	end
 
 	starPounds.parseSkills()
-	storage.starPounds.stats = sb.jsonMerge(storage.starPounds.stats, config.getParameter("starPounds_stats", {}))
-	starPounds.accessoryModifiers = starPounds.getAccessoryModfiers()
+	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.parseEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
+	if not starPounds.getTrait() then
+		starPounds.setTrait(config.getParameter("starPounds_trait", npc.species()))
+	end
+	-- I hate it.
+	local setNpcItemSlot_old = setNpcItemSlot
+	local setNpcItemSlotCC_old = setNpcItemSlotCC or nullFunction
+	setNpcItemSlot = function(slotName, item)
+		setNpcItemSlot_old(slotName, item)
+		starPounds.optionChanged = true
+	end
+	setNpcItemSlotCC = function(slotName, item)
+		setNpcItemSlotCC_old(slotName, item)
+		starPounds.optionChanged = true
+	end
 end
 
 function update(dt)
@@ -58,7 +71,11 @@ function update(dt)
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
-	starPounds.statCache = {}
+	starPounds.statCacheTimer = math.max(starPounds.statCacheTimer - dt, 0)
+	if starPounds.statCacheTimer == 0 then
+		starPounds.statCache = {}
+		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
+	end
 	-- Check if the entity has gone up a size.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
 	starPounds.stomach = starPounds.getStomach()
@@ -87,11 +104,7 @@ function update(dt)
 	end
 	-- Checks
 	starPounds.voreCheck()
-	starPounds.equipCheck(starPounds.currentSize, {
-		chestVariant = starPounds.currentVariant,
-		chestSize = storage.starPounds.enabled and (starPounds.hasOption("extraTopHeavy") and 2 or (starPounds.hasOption("topHeavy") and 1 or nil) or nil),
-		legsSize = storage.starPounds.enabled and (starPounds.hasOption("extraBottomHeavy") and 2 or (starPounds.hasOption("bottomHeavy") and 1 or nil) or nil)
-	})
+	starPounds.equipCheck(starPounds.currentSize)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
@@ -109,15 +122,15 @@ function update(dt)
 	if storage.starPounds.enabled then
 		storage.starPounds.stomachLerp = starPounds.stomach.contents
 	end
+
+	starPounds.optionChanged = false
 end
 
 function makeOverrideFunction()
   function starPounds.overrides()
     if not starPounds.didOverrides then
 			local speciesData = starPounds.getSpeciesData(npc.species())
-      -- NPCs start with the mod enabled (and stuff for stats/options)
-      storage.starPounds.enabled = true
-      starPounds.parseSkillStats()
+      starPounds.parseSkills()
       -- No debug stuffs for NPCs
       starPounds.debug = nullFunction
       -- Shortcuts to make functions work for NPCs.
@@ -126,15 +139,6 @@ function makeOverrideFunction()
         setEquippedItem = npc.setItemSlot,
         isLounging = npc.isLounging,
         loungingIn = npc.loungingIn,
-        equippedTech = nullFunction,
-        enableTech = nullFunction,
-        makeTechAvailable = nullFunction,
-        makeTechUnavailable = nullFunction,
-        equipTech = nullFunction,
-        unequipTech = nullFunction,
-        swapSlotItem = nullFunction,
-        setSwapSlotItem = nullFunction,
-        giveItem = nullFunction,
         consumeItemWithParameter = function(parameter, value)
           for _, v in pairs({"chest", "legs", "chestCosmetic", "legsCosmetic"}) do
             local item = npc.getItemSlot(v)
@@ -144,14 +148,16 @@ function makeOverrideFunction()
           end
         end
       }
+			local mt = {__index = function () return nullFunction end}
+			setmetatable(player, mt)
       entity.setDropPool = function(...) return npc.setDropPools({...}) end
       entity.setDeathParticleBurst = npc.setDeathParticleBurst
       entity.setDeathSound = nullFunction
       entity.setDamageOnTouch = npc.setDamageOnTouch
 			entity.setDamageSources = nullFunction
       entity.setDamageTeam = npc.setDamageTeam
-      entity.weight = math.round(speciesData.weight * speciesData.nutritionRatio)
-      entity.bloat = math.round(speciesData.weight * (1 - speciesData.nutritionRatio))
+      entity.weight = math.round(speciesData.weight * speciesData.foodRatio)
+      entity.bloat = math.round(speciesData.weight * (1 - speciesData.foodRatio))
       entity.experience = speciesData.experience
       -- NPCs don't have a food stat, and trying to adjust it crashes the script.
       starPounds.feed = starPounds.eat

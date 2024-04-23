@@ -116,6 +116,11 @@
       "filter": [ "tabfatty" ]
     },
 	{
+      "file": "/interface/fattyshops/tabs/materials.png",
+	  "label": "Blubber",
+      "filter": [ "materials" ]
+    },
+	{
       "file": "/interface/fattyshops/tabs/tabmisc.png",
 	  "label": "Misc",
       "filter": [ "tabmisc" ]
@@ -181,8 +186,15 @@
 	  "fattybettychest", "fattybettylegs", "fattychefchest", "fattycheflegs", "fattycowboychest", "fattycowboylegs", "fattyjumpsuitchest", "fattyjumpsuitlegs", "fattymoneybagschest", "fattymoneybagspants", "fattymrclauschest", "fattymrclauspants", "fattypilotchest", "fattypilotlegs", "fattypiratechest", "fattypiratelegs", "fattyscientistchest", "fattyscientistlegs",
 	  "fattyshirtchest", "fattysmartchest", "fattysmartpants", "fattystartrackchest", "fattystartracklegs", "fattyexplorerchest", "fattyexplorerlegs", "fattyhazmatchest", "fattyhazmatlegs", "fattyneochest", "fattyneolegs", "fattypeacekeeperchest", "fattypeacekeeperpants", "fattysnowinfantrychest", "fattysnowinfantrypants"
     ],
+    "materials" : [
+      "humanblubber", "throgblubber", "floranblubber", "mootantblubber", "glitchblubber", "metalblubber", "hylotlblubber", "hylotl2blubber", "apexblubber", "apexfurblubber", "avianblubber", "novakidblubber", "alienblubber"
+    ],
     "tabmisc" : [
-      "burptool", "gurgletool", "starpoundsstomachgurgle"
+      {"input": [["money", 50000]], "output": "calorictrap"},
+      {"input": [["money", 50000]], "output": "ancientcaloriccrystaltrap"},
+      {"input": [["money", 50000]], "output": "ancientcaloricbeamtrap"},
+      {"input": [["money", 1000]], "output": "retromilkshakesquirtgun"},
+      "preytool", "burptool", "gurgletool", "starpoundsstomachgurgle"
     ]
   }
 }

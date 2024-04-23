@@ -1,0 +1,11 @@
+{
+  "itemName" : "floranblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "floranblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Plant Flab",
+
+  "materialId" : 51429
+}

@@ -15,8 +15,8 @@
 
   "animation" : "/items/active/weapons/uscm/uscmhammer/uscmhammer.animation",
   "animationParts" : {
-    "hammer" : "uscmhammer.png",
-    "hammerfullbright" : "uscmhammerfullbright.png"
+    "blade" : "uscmhammer.png",
+    "bladefullbright" : "uscmhammerfullbright.png"
   },
   "animationCustom" : { },
 
@@ -26,7 +26,7 @@
 
   "primaryAbilityType" : "hammersmash",
   "primaryAbility" : {
-    "fireTime" : 1,
+    "fireTime" : 1.125,
     "baseDps" : 12,
 
     "animKeyPrefix" : "inactive"

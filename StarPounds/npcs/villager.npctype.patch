@@ -1,0 +1,15 @@
+[
+  {
+  "op" : "add",
+    "path" : "/items/throg",
+    "value" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "starpoundsinvisiblehead" } ],
+            "chestCosmetic": [ { "name": "throgneochest", "parameters" : { "colorIndex" : [0, 3, 4, 5, 6, 7, 8, 9, 10] } } ],
+            "legsCosmetic": [ { "name": "throgneolegs", "parameters" : { "colorIndex" : [0, 3, 4, 5, 6, 7, 8, 9, 10] } } ]
+          }
+        ] ]
+    ]
+  }
+]

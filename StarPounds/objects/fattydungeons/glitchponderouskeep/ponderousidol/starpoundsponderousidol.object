@@ -1,0 +1,40 @@
+{
+  "objectName" : "starpoundsponderousidol",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 150,
+  "lightColor" : [232, 123, 7],
+  "printable" : false,
+
+  "description" : "A glowing idol emanating Lipic Energy.",
+  "shortdescription" : "Ponderous Idol",
+  "race" : "glitch",
+
+  "apexDescription" : "Fascinating...",
+  "avianDescription" : "How... mystical...",
+  "floranDescription" : "Floran feelss warmth from sssmall ssstatue.",
+  "glitchDescription" : "Awed. It glows with a strange energy... Was this the culmination of the Ponderous' research?",
+  "humanDescription" : "Is this magic?",
+  "hylotlDescription" : "It has a warm glow...",
+  "novakidDescription" : "This lil statue is glowin like me!",
+
+  "inventoryIcon" : "starpoundsponderousidolicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsponderousidol.png:<color>.<frame>", "fullbright" : true,
+      "imagePosition" : [-8, 0],
+      "frames" : 6,
+      "animationCycle" : 0.7,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+  
+
+  "scripts" : ["/objects/fattydungeons/dungeonartifactshield.lua"],
+  "scriptDelta" : 0,
+  "breakDropPool" : "starpoundsmeatberrypool"  
+}

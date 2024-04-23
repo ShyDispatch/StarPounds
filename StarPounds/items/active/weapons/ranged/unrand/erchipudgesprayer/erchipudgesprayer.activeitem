@@ -3,7 +3,7 @@
   "price" : 2500,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "It uses a potent Erchius solution made for optimum fattening.",
+  "description" : "Filled with a modified erchius solution for rapid bloating.",
   "shortdescription" : "Erchipudge Sprayer",
   "tooltipKind" : "starpoundsgun",
   "category" : "uniqueWeapon",
@@ -23,8 +23,7 @@
   },
   "animationCustom" : {
     "sounds" : {
-      "fire" : ["/sfx/projectiles/bloodvomit1.ogg", "/sfx/projectiles/bloodvomit2.ogg", "/sfx/projectiles/bloodvomit3.ogg", "/sfx/projectiles/bloodvomit4.ogg", "/sfx/projectiles/bloodvomit5.ogg", "/sfx/projectiles/bloodvomit6.ogg", "/sfx/projectiles/bloodvomit7.ogg" ],
-      "physicalEnd" : [ "/sfx/projectiles/bloodvomit1.ogg", "/sfx/projectiles/bloodvomit2.ogg", "/sfx/projectiles/bloodvomit3.ogg", "/sfx/projectiles/bloodvomit4.ogg", "/sfx/projectiles/bloodvomit5.ogg", "/sfx/projectiles/bloodvomit6.ogg", "/sfx/projectiles/bloodvomit7.ogg"],
+      "fire" : ["/sfx/gun/wormgun1.ogg", "/sfx/gun/wormgun2.ogg", "/sfx/gun/wormgun3.ogg", "/sfx/gun/wormgun4.ogg", "/sfx/gun/wormgun5.ogg", "/sfx/gun/wormgun6.ogg" ],
       "altFire" : [ "/sfx/gun/plasma_shotgun1.ogg" ]
     },
     "lights" : {
@@ -45,7 +44,7 @@
     "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
     "class" : "GunFire",
 
-    "fireTime" : 0.15,
+    "fireTime" : 0.2,
     "baseDps" : 10,
     "energyUsage" : 32,
     "projectileCount" : 1,
@@ -53,8 +52,6 @@
     "fireType" : "auto",
 
     "projectileType" : "starpoundserchisludge",
-    "projectileParameters" : {
-    },
     "muzzleFlashVariants" : 1,
 
     "stances" : {
@@ -88,7 +85,7 @@
   },
 
   "altAbility" : {
-    "name" : "Erchi Shot",
+    "name" : "Erchi-Shot",
     "scripts" : ["/items/active/weapons/ranged/abilities/altfire.lua"],
     "class" : "AltFireAttack",
 

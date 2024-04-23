@@ -8,14 +8,19 @@ function init()
   options = root.assetJson("/scripts/starpounds/starpounds_options.config:options")
   stats = root.assetJson("/scripts/starpounds/starpounds_stats.config")
   tabs = root.assetJson("/scripts/starpounds/starpounds_options.config:tabs")
+  tabs[#tabs + 1] = {
+    id = "miscellaneous",
+    description = "Miscellaneous Options",
+    icon = "miscellaneous.png"
+  }
   if starPounds then
     populateOptions()
   end
 end
 
 function update()
-  if isAdmin ~= player.isAdmin() then
-    isAdmin = player.isAdmin()
+  if isAdmin ~= admin() then
+    isAdmin = admin()
     weightDecrease:setVisible(isAdmin)
     weightIncrease:setVisible(isAdmin)
     barPadding:setVisible(not isAdmin)
@@ -66,19 +71,15 @@ function populateOptions()
 end
 
 function toggleOption(option)
-  local toggled = starPounds.toggleOption(option.name)
+  local enabled = starPounds.setOption(option.name, not starPounds.hasOption(option.name))
   if option.group then
     for _, disableOption in ipairs(options) do
-      if disableOption.name ~= option.name then
-        if disableOption.group == option.group then
-          if starPounds.hasOption(disableOption.name) then
-            _ENV[string.format("%sOption", disableOption.name)]:setChecked(starPounds.toggleOption(disableOption.name))
-          end
-        end
+      if (disableOption.name ~= option.name) and (disableOption.group == option.group) then
+        _ENV[string.format("%sOption", disableOption.name)]:setChecked(starPounds.setOption(disableOption.name, false))
       end
     end
   end
-  _ENV[string.format("%sOption", option.name)]:setChecked(toggled)
+  _ENV[string.format("%sOption", option.name)]:setChecked(enabled)
   starPounds.setOptionsMultipliers(options)
 end
 
@@ -117,4 +118,8 @@ function reset:onClick()
       end)
     end
   end)
+end
+
+function admin()
+  return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

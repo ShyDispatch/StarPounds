@@ -1,0 +1,23 @@
+{
+  "itemName" : "minitrinket",
+  "price" : 10000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "An ancient relic, once owned by a ravenous ungulate. You can feel it tempting you into the same doughy form of its previous owner.",
+  "shortdescription" : "Doughy Doe Amulet",
+  "inventoryIcon" : "minitrinket.png",
+  "category" : "starpoundsuniqueaccessory",
+
+  "tooltipKind": "accessory",
+
+  "accessoryType" : "trinket",
+
+  "stats": [
+    {"name": "hunger", "modifier": 1},
+    {"name": "foodValue", "modifier": -0.8},
+    {"name": "weightGain", "modifier": 1}
+  ],
+
+  "builder" : "/items/buildscripts/buildaccessory.lua",
+  "builderConfig" : {"fullbright": true}
+}

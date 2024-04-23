@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsponderoustapestry",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 80,
+
+  "description" : "A medieval tapestry full of merriment.",
+  "shortdescription" : "Feast Tapestry",
+  "race" : "glitch",
+  
+  "apexDescription" : "The glitch in this tapestry look quite happy.",
+  "avianDescription" : "They look like they're having fun.",
+  "floranDescription" : "Floran wantsss to join in on feassst with metal men.",
+  "glitchDescription" : "Remembering. Looking at this tapestry reminds me of the feasts I've joined.",
+  "humanDescription" : "Those Glitch are looking a bit portly. Maybe that's why they're having fun!",
+  "hylotlDescription" : "A celebration of gluttony and excess.",
+  "novakidDescription" : "Now that's my kinda party!",
+
+  "inventoryIcon" : "starpoundsponderoustapestryicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsponderoustapestry.png:<color>",
+      "imagePosition" : [-16, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

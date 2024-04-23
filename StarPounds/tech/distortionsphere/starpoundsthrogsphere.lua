@@ -6,7 +6,6 @@ function init()
   self.baseParameters = sb.jsonMerge(mcontroller.baseParameters(), config.getParameter("transformedMovementParameters"))
   self.baseCollisionPoly = self.baseParameters.collisionPoly
   self.baseBallRadius = self.ballRadius
-  self.weightMultiplier = 1
   self.scale = 1
   self.sizeCap = world.type() == "unknown" and 2.5 or 4
   self.projectiles = jarray()
@@ -23,12 +22,17 @@ end
 
 function update(args)
   starPounds = getmetatable ''.starPounds
-  self.weightMultiplier = 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
-  self.scale = math.min(math.floor(0.5 + 10 * self.weightMultiplier ^ (1/3))/10, self.sizeCap)
-  if self.force ~= (starPounds and starPounds.getStat("throgSphereForce") or 0) then
-    self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
-    self.lastScale = nil
+  local weightMultiplier = self.shrunk and 1 or 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
+  self.scale = self.shrunk and 1 or math.min(math.floor(0.5 + 10 * weightMultiplier ^ (1/3)) * 0.1, self.sizeCap)
+
+  if not self.active and not args.moves["run"] and starPounds.hasSkill("throgSphereShrink") then
+    self.shrunk = true
+  elseif not self.active then
+    self.shrunk = false
   end
+
+  animator.setGlobalTag("shrunkDirectives", self.shrunk and "?hueshift=100" or "")
+
   local skipScaling = animator.animationState("ballState") == "activate" or animator.animationState("ballState") == "deactivate"
   if self.scale ~= self.lastScale and not skipScaling then
     self.basePoly = starPounds.currentSize and (starPounds.currentSize.controlParameters[starPounds.getVisualSpecies()] or starPounds.currentSize.controlParameters.default).standingPoly or self.baseParameters.standingPoly
@@ -36,40 +40,50 @@ function update(args)
     for i, v in ipairs(self.baseCollisionPoly) do
       self.transformedMovementParameters.collisionPoly[i] = vec2.mul(v, self.scale)
     end
-    self.transformedMovementParameters.mass = self.baseParameters.mass * self.weightMultiplier
-    self.transformedMovementParameters.groundForce = self.baseParameters.groundForce * (1 + (self.weightMultiplier - 1) * starPounds.getStat("throgSphereForce") * 0.06)
+    self.transformedMovementParameters.mass = self.baseParameters.mass * weightMultiplier
+    self.transformedMovementParameters.groundForce = self.baseParameters.groundForce * (self.shrunk and weightMultiplier or (1 + (weightMultiplier - 1) * starPounds.getStat("throgSphereForce") * 0.06))
     self.transformedMovementParameters.slopeSlidingFactor = self.baseParameters.slopeSlidingFactor/self.scale
-    self.transformedMovementParameters.normalGroundFriction = self.baseParameters.normalGroundFriction * self.weightMultiplier
-    self.transformedMovementParameters.airJumpProfile.jumpControlForce = self.baseParameters.airJumpProfile.jumpControlForce * self.weightMultiplier
-    self.transformedMovementParameters.liquidJumpProfile.jumpControlForce = self.baseParameters.liquidJumpProfile.jumpControlForce * self.weightMultiplier
+    self.transformedMovementParameters.normalGroundFriction = self.baseParameters.normalGroundFriction * weightMultiplier
+    self.transformedMovementParameters.airJumpProfile.jumpControlForce = self.baseParameters.airJumpProfile.jumpControlForce * weightMultiplier
+    self.transformedMovementParameters.liquidJumpProfile.jumpControlForce = self.baseParameters.liquidJumpProfile.jumpControlForce * weightMultiplier
     self.ballRadius = self.baseBallRadius * self.scale
     self.lastScale = self.scale
     animator.resetTransformationGroup("ballScale")
     animator.scaleTransformationGroup("ballScale", self.scale)
 
     if self.active then
-      status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor"))}})
+  		local scalingSize = starPounds.settings.scalingSize - 1
+      local sizeIndex = starPounds.currentSizeIndex - 1
+      local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/scalingSize), starPounds.getStat("throgSphereArmor"))
+      status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
     end
 
     self.projectilePositions = jarray()
-    local radius = 0.85 * self.scale
-    for height = -math.floor(radius), math.floor(radius), 2 do
-      for width = -math.floor(radius), math.floor(radius), 2 do
-        local height = math.min(math.max(-radius + 0.5, height), radius - 0.5)
-        local width = math.min(math.max(-radius + 0.5, width), radius - 0.5)
-        self.projectilePositions[#self.projectilePositions + 1] = {width, height}
+    if not self.shrunk then
+      local radius = 0.85 * self.scale
+      for height = -math.floor(radius), math.floor(radius), 2 do
+        for width = -math.floor(radius), math.floor(radius), 2 do
+          local height = math.min(math.max(-radius + 0.5, height), radius - 0.5)
+          local width = math.min(math.max(-radius + 0.5, width), radius - 0.5)
+          self.projectilePositions[#self.projectilePositions + 1] = {width, height}
+        end
       end
     end
   end
 
   if starPounds.optionChanged and self.active then
-    status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = math.min(starPounds.getStat("throgSphereArmor") * (starPounds.currentSizeIndex - 1)/3, starPounds.getStat("throgSphereArmor"))}})
+    self.lastScale = nil
+    self.force = (starPounds and starPounds.getStat("throgSphereForce") or 0)
+  	local scalingSize = starPounds.settings.scalingSize - 1
+    local sizeIndex = starPounds.currentSizeIndex - 1
+    local protection = self.shrunk and 0 or math.min(starPounds.getStat("throgSphereArmor") * (sizeIndex/scalingSize), starPounds.getStat("throgSphereArmor"))
+    status.setPersistentEffects("starpoundsthrogsphere", {{stat = "grit", amount = 1}, {stat = "physicalResistance", amount = protection}})
   end
 
-  if self.active and mcontroller.groundMovement() then
+  if self.active and (not self.shrunk) and mcontroller.groundMovement() then
     self.movementMagnitude = math.min(vec2.mag(mcontroller.velocity())/10, 1) * (0.5 + ((self.scale - 1)/6))
     animator.setSoundVolume("loop", self.movementMagnitude, 0.25)
-    animator.setParticleEmitterActive("movementParticles", self.projectile and world.entityExists(self.projectile) and not (mcontroller.liquidPercentage() > 0))
+    animator.setParticleEmitterActive("movementParticles", (#self.projectiles > 0) and not (mcontroller.liquidPercentage() > 0))
     animator.setParticleEmitterEmissionRate("movementParticles", 20 * self.movementMagnitude^2)
   elseif self.active then
     self.movementMagnitude = 0

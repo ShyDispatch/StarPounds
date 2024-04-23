@@ -1,0 +1,21 @@
+{
+  "kind" : "starpoundsgreatforkmeat1",
+  "definition" : {
+    "type" : "ember",
+    "color" : [194, 136, 56],
+    "position" : [0, 0],
+    "initialVelocity" : [0, 10],
+    "finalVelocity" : [0, -30],
+    "approach" : [0, 50],
+    "collidesForeground" : true,
+    "timeToLive" : 1,
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.2,
+    "size" : 1.5,
+    "layer" : "back",
+    "variance" : {
+      "size" : 0.5,
+      "initialVelocity" : [10, 5]
+    }
+  }
+}

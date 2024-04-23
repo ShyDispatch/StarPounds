@@ -1,0 +1,46 @@
+[
+  {
+    "op": "add",
+    "path": "/identity",
+    "value": {
+      "bodyDirectives": "?replace;c7815b=24424b;ffe2c5=61e6db;ffc181=4facb2;d39c6c=39727d?replace;dc1f00=baaa7c;951500=4f432c;be1b00=85734f",
+      "emoteDirectives": "?replace;c7815b=24424b;ffe2c5=61e6db;ffc181=4facb2;d39c6c=39727d?replace;dc1f00=baaa7c;951500=4f432c;be1b00=85734f",
+      "hairGroup": "hair",
+      "hairType": "0",
+      "species": "deadbeat"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/items/override/0/1/0/head",
+    "value": [{
+      "name": "deadbeathornshead",
+      "parameters": { "colorIndex" : [0, 11] }
+    },{
+      "name": "deadbeathornmaskhead",
+      "parameters": { "colorIndex" : [0, 11] }
+    },{
+      "name": "deadbeatbaldinghead",
+      "parameters": { "colorIndex" : [0, 11] }
+    },{
+      "name": "deadbeatbaldingmaskhead",
+      "parameters": { "colorIndex" : [0, 11] }
+    }]
+  },
+  {
+    "op": "replace",
+    "path": "/items/override/0/1/0/chest",
+    "value": [{
+      "name": "deadbeatstrapschest",
+      "parameters": { "colorIndex" : [0, 1, 2, 11] }
+    }]
+  },
+  {
+    "op": "replace",
+    "path": "/items/override/0/1/0/legs",
+    "value": [{
+      "name": "deadbeatstrapslegs",
+      "parameters": { "colorIndex" : [0, 1, 2, 11] }
+    }]
+  }
+]

@@ -1,6 +1,7 @@
 {
   "type" : "starpoundsuscmfarmer",
   "baseType" : "hostile",
+  "displayTitle" : "USCM Farmer",
 
   "scriptConfig" : {
     "dialog" : {

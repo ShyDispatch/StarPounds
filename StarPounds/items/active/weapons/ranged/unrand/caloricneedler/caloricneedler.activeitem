@@ -2,14 +2,14 @@
   "itemName" : "caloricneedler",
   "price" : 1400,
   "maxStack" : 1,
-  "rarity" : "Uncommon",
+  "rarity" : "Rare",
   "description" : "Caloric Needler",
   "shortdescription" : "Caloric Needler",
   "tooltipKind" : "gun",
   "category" : "assaultRifle",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","assaultrifle"],
-  "level" : 3,
+  "level" : 4,
 
   "inventoryIcon" : "caloricneedler.png",
 
@@ -27,7 +27,7 @@
   },
 
   "baseOffset" : [0.1, 0.3],
-  "muzzleOffset" : [1.8, -0.1],
+  "muzzleOffset" : [1.8, -0.125],
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
@@ -38,7 +38,7 @@
     "class" : "GunFire",
 
     "fireTime" : 0.12,
-    "baseDps" : 9.5,
+    "baseDps" : 8.5,
     "energyUsage" : 31.5,
     "inaccuracy" : 0.025,
 

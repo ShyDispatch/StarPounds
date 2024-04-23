@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/moon/-",
+    "value": [
+      0.1,
+      "starpoundserchiusrain"
+    ]
+  }
+]

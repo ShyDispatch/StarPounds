@@ -5,6 +5,7 @@
   "inventoryIcon" : "starpoundsliquidchocolateicon.png",
   "shortdescription" : "Chocolate",
   "description" : "A chocolate so delicious it'll go straight to your waistline.",
+  "learnBlueprintsOnPickup": ["chocolate"],
 
   "liquid" : "starpoundschocolateliquid",
   "price" : 0

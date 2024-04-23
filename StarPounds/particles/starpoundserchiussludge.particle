@@ -8,6 +8,8 @@
     "initialVelocity" : [13, 8.0],
     "finalVelocity" : [16, -19.0],
     "approach" : [20, 30],
+    "collidesForeground" : true,
+    "collidesLiquid" : true,
     "timeToLive" : 0.9,
     "layer" : "front",
     "variance" : {

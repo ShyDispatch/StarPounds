@@ -1,0 +1,66 @@
+{
+  "objectName" : "starpoundscaloriumextractor",
+  "colonyTags" : ["starpounds", "throg"],
+  "rarity" : "Legendary",
+  "category" : "crafting",
+  "description" : "A machine made to convert excess body mass into pure Calorium liquid.",
+  "shortdescription" : "Calorium Extractor",
+  "race" : "throg",
+  "printable" : false,
+
+  "apexDescription" : "This machine can turn raw fat into a variant of Erchius known as Calorium.",
+  "avianDescription" : "I can shed my extra weight and turn it into Calorium with this machine.",
+  "floranDescription" : "Floran can be ssskinny again with machine. Get deliciousss Calorium too.",
+  "glitchDescription" : "Statement: This machine turns adipose into Calorium. Somehow even for Glitch.",
+  "humanDescription" : "If only Ancient America had this device to lose weight and get some of that rare Calorium.",
+  "hylotlDescription" : "It's no replacement for proper exercise, but I can lose weight for Calorium with this.",
+  "novakidDescription" : "This here machine can help with any excess weight I may gain and turn it into Calorium.",
+  "throgDescription" : "Normally this is considered torture for Throgs. Now we can get Calorium from other races instead.",
+  "mootantDescription" : "It doesn't help with milk. But my excess body fat can be trimmed down for Calorium.",
+  "harpyDescription" : "This machine can turn raw fat into a variant of Erchius known as Calorium.",
+
+  "avaliDescription" : "This actually is a great help in maintaining proper weight. And I get Calorium from it too.",
+
+  "inventoryIcon" : "caloriumextractoricon.png",
+  "orientations" : [
+    {
+      "image" : "caloriumextractorpreview.png",
+      "imagePosition" : [-24, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+      "animationPosition" : [-24, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "caloriumextractorpreview.png",
+      "imagePosition" : [-24, 0],
+
+      "direction" : "right",
+      "animationPosition" : [-24, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "animation" : "caloriumextractor.animation",
+  "animationParts" : {
+    "bg" : "bg.png",
+    "pump" : "pump.png",
+    "fg" : "caloriumextractor.png",
+    "fg_fullbright" : "caloriumextractor_fullbright.png",
+    "panel" : "panel.png",
+    "liquidBack" : "/objects/fattiesbar/caloriumextractor/liquidmask.png",
+    "liquid" : "/objects/fattiesbar/caloriumextractor/liquidmask.png"
+  },
+
+  "interactAction" : "ScriptPane",
+  "interactData" : {"gui" : { }, "scripts" : ["/metagui.lua"], "ui" : "starpounds:caloriumextractor"},
+  "interactive" : false,
+
+  "scripts" : [ "caloriumextractor.lua" ],
+  "scriptDelta" : 1
+}

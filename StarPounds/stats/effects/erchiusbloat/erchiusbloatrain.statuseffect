@@ -1,0 +1,24 @@
+{
+  "name" : "erchiusbloatrain",
+
+  "effectConfig" : {
+    "bloatAmount": 0,
+    "bloatIncrease": 0.05,
+    "bloatCap": 2,
+    "tickTime": 0.2,
+    "desaturateAmount" : 0,
+    "multiplyColor" : [0, 0, 0],
+    "soundVolume": 0.4
+  },
+  "defaultDuration" : 2,
+
+  "animationConfig" : "erchiusbloatrain.animation",
+
+  "label" : "Bloating",
+  "icon" : "/interface/statuses/erchiusbloat.png",
+
+  "scripts" : [
+    "erchiusbloat.lua",
+    "erchiusbloatrain.lua"
+  ]
+}

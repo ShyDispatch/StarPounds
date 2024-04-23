@@ -76,6 +76,7 @@ function addRecipes(interactData, items, category)
 end
 
 function generateRecipe(itemName, category)
+  if type(itemName) == "table" then return sb.jsonMerge(itemName, {groups = { category }, duration = 0}) end
   return {
     input = { {"money", math.floor(self.buyFactor * (root.itemConfig(itemName).config.price or root.assetJson("/merchant.config").defaultItemPrice))} },
     output = itemName,

@@ -1,0 +1,10 @@
+{
+	"name": "starpoundsvoresource",
+	"effectConfig": {
+		"options" : {}
+	},
+	"defaultDuration": 1,
+	"scripts": [
+		"starpoundsvoresource.lua"
+	]
+}

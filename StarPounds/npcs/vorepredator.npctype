@@ -14,11 +14,9 @@
     },
 
     "starPounds_skills": {
-      "voreCritter": [1, 1],
-      "voreMonster": [1, 1],
-      "voreHumanoid": [1, 1],
       "minimumSize": [2, 2]
     },
+    "starPounds_trait": "npc_predator",
 
     "aggressive" : true,
 
@@ -48,6 +46,9 @@
   "statusControllerSettings" : {
     "stats" : {
       "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "maxEnergy" : {
         "baseValue" : 100.0
       },
       "knockbackStunTime" : {

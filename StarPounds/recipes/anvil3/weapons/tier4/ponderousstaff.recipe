@@ -1,9 +1,0 @@
-{
-  "input" : [
-    { "item" : "durasteelbar", "count" : 6 },
-    { "item" : "copperbar", "count" : 6 },
-    { "item" : "ponderouscore", "count" : 1 }
-  ],
-  "output" : { "item" : "ponderousstaff", "count" : 1 },
-  "groups" : [ "craftinganvil3", "weapons", "all" ]
-}

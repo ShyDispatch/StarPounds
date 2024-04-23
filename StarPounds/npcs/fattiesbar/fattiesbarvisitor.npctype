@@ -1,0 +1,32 @@
+{
+  "type" : "fattiesbarvisitor",
+  "baseType" : "base",
+
+  "damageTeamType" : "friendly",
+  
+  "scriptConfig" : {
+    "behavior" : "outpostvisitor",
+
+
+    "behaviorConfig" : {
+      "stayTime" : [60, 180]
+    },
+
+    "reactions" : {
+      "spontaneous" : [
+        [1.0, "sit", { "timeRange" : [0.6,0.2]}],
+        [1.0, "wander"]
+      ]
+    },
+
+    "dialog" : {
+      "converse" : "/dialog/outpost.config:converse",
+      "flee" : {
+        "helpme" : "/dialog/outpost.config:flee.helpme",
+        "helpthem" : "/dialog/outpost.config:flee.helpthem",
+        "encourage" : "/dialog/outpost.config:flee.encourage",
+        "safe" : "/dialog/outpost.config:flee.safe"
+      }
+    }
+  }
+}

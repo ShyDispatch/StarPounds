@@ -1,0 +1,10 @@
+{
+  "name" : "starpoundsmagewisp",
+  "category" : "starpoundsmagewisp",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "starpoundsmagewisp.png",
+    "bodylit" : "starpoundsmagewisplit.png"
+  }
+}

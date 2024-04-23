@@ -16,11 +16,11 @@
   "humanDescription" : "Oh boy a mirror. In the middle of nowhere. How... convenient?",
   "hylotlDescription" : "There's something about this mirror that gives me chills.",
   "novakidDescription" : "This here mirror is perfect for checking my good looks.",
-  "throgDescription" : "I don't take kindly to inanimate objects speaking to me.",  
-  "mootantDescription" : "It's so hard to look at myself, yet I should try.",  
+  "throgDescription" : "I don't take kindly to inanimate objects speaking to me.",
+  "mootantDescription" : "It's so hard to look at myself, yet I should try.",
   "harpyDescription" : "This voice. It's quite tempting to obey.",
-  
-  "avaliDescription" : "Either I'm going crazy or this mirror is talking to me.",    
+
+  "avaliDescription" : "Either I'm going crazy or this mirror is talking to me.",
 
   "inventoryIcon" : "fattymirroricon.png",
   "orientations" : [
@@ -35,7 +35,7 @@
 
   "scripts" : [ "fattymirror.lua"  ],
   "scriptDelta" : 10,
-  "activationTime" : 5,  
+  "activationTime" : 5,
 
   "chatRadius" : 15,
   "chatCooldown" : 15,
@@ -43,14 +43,27 @@
     "Do you see it? In this reflection there's a pig in view.",
     "Over here dear, come closer. It's important to look out for your body.",
     "Look! In my reflection. A turkey all stuffed and fattened up.",
-    "I can see a Mooshi grazing. Can you see it too?",	
+    "I can see a Mooshi grazing. Can you see it too?",
     "Darling, please take a look. There's dirt on your face.",
     "Closer. Closer! Oh you look wonderful dear.",
     "Is that a wobble on your waistline I spy? Wanna confirm that?",
-    "Someone seems to have quite the bubble butt. Why not check?",	
+    "Someone seems to have quite the bubble butt. Why not check?",
     "Oh darling, you must watch what you eat.",
-    "Come here, come here! Take a good look dear!",	
+    "Come here, come here! Take a good look dear!",
     "Oh no darling, come here. Look at how much weight you've put on."
+  ],
+
+  "activateOptions": [
+    "gainWeight",
+    "gainWeight",
+    "gainWeight",
+    "gainWeight",
+    "gainWeight",
+    "gainBloat",
+    "gainBloat",
+    "gainBloat",
+    "crack",
+    "smash"
   ],
 
   "animation" : "fattymirror.animation",
@@ -63,15 +76,8 @@
   "outputNodes" : [ ],
 
   "smashOnBreak" : true,
+  "smashParticles" : [{ "count" : 10, "particle" : "crystalshard" }],
+  "smashSounds": [ "/sfx/objects/vase_break_large1.ogg", "/sfx/objects/vase_break_large2.ogg"],
 
-  "projectileOptions" : [
-    {
-      "projectileType" : "fattyeffectprojectile",
-      "projectileParams" : { }
-    },
-    {
-      "projectileType" : "fattyeffectprojectile",
-      "projectileParams" : { }
-    }
-  ]
+  "health" : 10
 }

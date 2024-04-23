@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsponderoustable",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","commerce"],
+  "rarity" : "Common",
+  "category" : "furniture",
+  "price" : 180,
+  "description" : "A fine yet elegant table, befitting the Ponderous Order.",
+  "shortdescription" : "Ponderous Table",
+  "race" : "glitch",
+
+  "apexDescription" : "A decorated medieval table. It's in good condition for its age.",
+  "avianDescription" : "This big table seems pretty pristine for how old it is.",
+  "floranDescription" : "Feast table has nice decorations.",
+  "glitchDescription" : "Wistful. This old table must've held many banquets.",
+  "humanDescription" : "This big boy looks perfect for partying!",
+  "hylotlDescription" : "This table seems humble, for all its decor.",
+  "novakidDescription" : "I can see myself in the corner things.",
+
+  "inventoryIcon" : "starpoundsponderoustableicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsponderoustable.png:<color>",
+      "imagePosition" : [-40, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ]
+}

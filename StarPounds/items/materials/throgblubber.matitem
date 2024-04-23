@@ -1,0 +1,11 @@
+{
+  "itemName" : "throgblubber",
+  "price" : 0,
+  "category" : "block",
+  "rarity" : "legendary",
+  "inventoryIcon" : "throgblubber.png",
+  "description" : "Is this all one person?",
+  "shortdescription" : "Throg Flab",
+
+  "materialId" : 51428
+}

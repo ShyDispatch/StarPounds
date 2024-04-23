@@ -61,14 +61,38 @@
       "file": "/interface/fattyshops/tabs/utilities.png",
 	  "label": "Utilities",
       "filter": [ "utilities" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/crafting.png",
+	  "label": "Crafting",
+      "filter": [ "crafting" ]
     }]
   },
   "storeInventory" : {
     "weapons" : [
-      "apexdartgun", "aviandartgun", "cultistdartgun", "caloriccrossbow", "caloricneedler", "adipobeamcomponent", "depletedgaincrystal", "erchiusbloatcatalyzer", "meatberries", "onikillersake", "ponderouscore", "rootpopfroth"
+    {"input": [["tungstenbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "caloriccrossbow"},
+    {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "aviandartgun"},
+	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "cultistdartgun"},
+    {"input": [["durasteelbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "apexdartgun"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["starpoundsliquidcalorium", 50]], "output": "caloricneedler"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["adipobeamcomponent", 1]], "output": "adipobeam"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["depletedgaincrystal", 1]], "output": "gaincrystal"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["erchiusbloatcatalyzer", 1]], "output": "erchipudgesprayer"},
+	  {"input": [["durasteelbar", 6], ["climbingrope", 4], ["meatberries", 1]], "output": "gluttonistgreatfork"},
+	  {"input": [["durasteelbar", 6], ["climbingrope", 4], ["onikillersake", 1]], "output": "ogresmoonshiner"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["ponderouscore", 1]], "output": "ponderousstaff"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["rootpopfroth", 1]], "output": "scatterpopper"}
     ],
     "utilities" : [
-      "winch", "milkshakegun", "chocolatemilkshakegun", "digestiongun", "caloriumgun", "calorictrap", "ancientcaloriccrystaltrap", "ancientcaloricbeamtrap", "starpoundsmilkingtool"
+      {"input": [["money", 500], ["liquidmilk", 100], ["sugar", 3]], "output": "starpoundsmilkshakesquirtgun"},
+      {"input": [["starpoundsmilkshakesquirtgun", 1], ["starpoundsliquidchocolate", 100], ["chocolate", 5]], "output": "starpoundschocolatemilkshakesquirtgun"},
+      {"input": [["starpoundschocolatemilkshakesquirtgun", 1], ["starpoundsliquidhoney", 100], ["starpoundsbottledhoney", 10]], "output": "starpoundshoneysquirtgun"},
+      {"input": [["starpoundshoneysquirtgun", 1], ["liquidfuel", 250], ["digestionaid", 5]], "output": "starpoundsdigestionsquirtgun"},
+      {"input": [["starpoundshoneysquirtgun", 1], ["starpoundsliquidcalorium", 500]], "output": "starpoundscaloriumsquirtgun"},
+      "winch", "starpoundsmilkingtool"
+    ],
+    "crafting" : [
+      "adiposeportion", "adipobeamcomponent", "depletedgaincrystal", "erchiusbloatcatalyzer", "meatberries", "onikillersake", "ponderouscore", "rootpopfroth"
     ]
   }
 }

@@ -1,0 +1,42 @@
+{
+  "objectName" : "throgoinkicerplush",
+  "colonyTags" : ["throg"],
+  "rarity" : "Rare",
+  "printable" : false,
+  "category" : "decorative",
+  "price" : 250,
+  "description" : "An adorable plushie of a dangerous Throg. 100% gauranteed not to eat you and with extra stuffing.",
+  "shortdescription" : "Throg Oinkicer Plushie",
+  "race" : "throg",
+
+  "apexDescription" : "It's scary to think of how technologically advanced Throgs are.",
+  "avianDescription" : "A Throg is such an unsightly creature, I don't feel comfortable even with a plush.",
+  "floranDescription" : "Floran wonderss if Throg can eat more than Floran.",
+  "glitchDescription" : "Alarmed. Throgs can eat anything, even metal.",
+  "humanDescription" : "Heh, get it? Tron? Hog? Tron Hog? Eh?",
+  "hylotlDescription" : "Throgs are such disgusting creatures, I wouldn't want em even in plush form.",
+  "novakidDescription" : "I'll bet a Throg has never been in a novakid eating contest before.",
+
+  "inventoryIcon" : "plushicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "plush.png:<color>.<frame>" }, { "image" : "plushlit.png:<color>.<frame>", "fullbright" : true } ],
+      "flipImages" : true,
+      "direction" : "left",
+      "imagePosition" : [-8, -0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "imageLayers" : [ { "image" : "plush.png:<color>.<frame>" }, { "image" : "plushlit.png:<color>.<frame>", "fullbright" : true } ],
+      "direction" : "right",
+      "imagePosition" : [-8, -0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "type" : "starpoundsbliko",
-  "baseType" : "outpostvisitor",
+  "baseType" : "fattiesbarvisitor",
 
   "scriptConfig" : {
     "initialStorage": {

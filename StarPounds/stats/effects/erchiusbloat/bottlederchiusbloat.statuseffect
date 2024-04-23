@@ -3,6 +3,7 @@
 
   "effectConfig" : {
     "bloatAmount": 1,
+    "bloatIncrease": 1,
     "tickTime": 1,
     "desaturateAmount" : 100,
     "multiplyColor" : [0, -150, 0]
@@ -10,6 +11,9 @@
   "defaultDuration" : 30,
 
   "animationConfig" : "erchiusbloat.animation",
+
+  "label" : "Bloating",
+  "icon" : "/interface/statuses/erchiusbloat.png",
 
   "scripts" : [
     "erchiusbloat.lua"

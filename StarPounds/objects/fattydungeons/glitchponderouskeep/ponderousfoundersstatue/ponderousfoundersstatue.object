@@ -1,0 +1,32 @@
+{
+  "objectName" : "ponderousfoundersstatue",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty","valuable"],
+  "rarity" : "Rare",
+  "category" : "decorative",
+  "price" : 1000,
+  "description" : "A statue dedicated to the Ponderous Order's leaders and founders, Bronzefinger and Ironlace.",
+  "shortdescription" : "Ponderous Founder's Statues",
+  "race" : "Glitch",
+
+  "apexDescription" : "A finely made bronze statue. Seems that these two are dear friends.",
+  "avianDescription" : "These two Glitch look very close...",
+  "floranDescription" : "Metalwomen holding handsss?",
+  "glitchDescription" : "Respectful. This must be Ironlace and Bronzefinger together. Never thought they were that close...",
+  "humanDescription" : "Oh my god... They were roommates!",
+  "hylotlDescription" : "Appears that these two were quite close as leaders.",
+  "novakidDescription" : "A pair of big ladies... Are they holdin' hands?.",
+
+  "inventoryIcon" : "ponderousfoundersstatueicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousfoundersstatue.png:<color>",
+      "imagePosition" : [-32, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

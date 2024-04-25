@@ -2118,7 +2118,8 @@ starPounds.getDigested = function(digestionRate, protectionMultiplier)
 					item.parameters.tempSize = nil
 					item.parameters.baseName = nil
 				end
-				if not (item.parameters and item.parameters.size) and not configParameter(item, "hideBody") then
+				item.name = configParameter(item, "regurgitateItem", item.name)
+				if not (item.parameters and item.parameters.size) and not configParameter(item, "hideBody") and not configParameter(item, "disableRegurgitation") then
 					table.insert(items, item)
 				end
 			end

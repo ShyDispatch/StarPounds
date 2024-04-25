@@ -35,7 +35,11 @@ function update(args)
 
   if self.slamTimer > 0 then
     mcontroller.setYVelocity(-75)
+    tech.setParentState("sit")
+    tech.setParentOffset({0, -0.5})
     if mcontroller.onGround() then
+      tech.setParentState()
+      tech.setParentOffset({0, 0})
       local slammed = shockwave.fireShockwave()
       self.slamTimer = 0
       self.slamCooldown = 0.5
@@ -46,7 +50,10 @@ function update(args)
     end
   else
     if self.slammed then
+      self.slammed = false
       self.slamCooldown = math.max(args.dt * 2, self.slamCooldown)
+      tech.setParentState()
+      tech.setParentOffset({0, 0})
     end
     status.clearPersistentEffects("starpoundsslam")
   end

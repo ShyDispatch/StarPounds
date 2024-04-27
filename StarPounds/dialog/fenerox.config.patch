@@ -1,0 +1,30 @@
+[
+  {
+    "op": "add",
+    "path": "/converse/default/throg",
+    "value": [
+        "New person. Smells strange. Quite exciting!",
+        "Odd person. Hopefully nice. Feeling cautious!",
+        "Weird person. Not Fenerox. Being polite!",
+        "Meeting stranger. Being friendly. New experience!",
+        "Odd person. Saying hello. Not Fenerox?",
+        "Friendly stranger. Feeling awkward. Cautiously optimistic!",
+        "New stranger. Not confident. Saying hello!",
+        "Unknown person. Fat body. Hungry predator."
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/converse/default/mootant",
+    "value": [
+        "New person. Smells strange. Quite exciting!",
+        "Odd person. Hopefully nice. Feeling cautious!",
+        "Weird person. Not Fenerox. Being polite!",
+        "Meeting stranger. Being friendly. New experience!",
+        "Odd person. Saying hello. Not Fenerox?",
+        "Friendly stranger. Feeling awkward. Cautiously optimistic!",
+        "New stranger. Not confident. Saying hello!",
+        "Unknown person. Soft fur. Smells milky!"
+    ]
+  }
+]

@@ -13,6 +13,49 @@
         "Food rations accounted for.",
         "Ready to head out for fresh meat.",
         "I'm good for a mission. I'm also good with just sitting on the ship."
+      ],
+      "throg": [
+        "Feels good to be a part of an important mission.",
+        "Let's do the Blubberbutt proud!",
+        "Getting hungry, captain.",
+        "Hey captain. Let's have an eating contest sometime.",
+        "So when's dinner? And dessert?.",		
+        "My belly aches for adventure.",			
+        "You have other staches of food, right?",				
+        "Weapons and armor are clean, captain.",					
+        "Food rations accounted for.",
+        "Ready to head out for fresh meat.",
+        "I'm good for a mission. I'm also good with just sitting on the ship."
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/converse/mootant",
+    "value": {
+      "default": [
+        "Sorry, a little swollen at the moment.",
+        "I'm eager to get some fresh air.",
+        "Anything exciting to do?",		
+        "I think I gained some weight.",			
+        "May have eaten a bit more then intended.",				
+        "Having a strong craving for ice cream right now.",					
+        "So... Swollen...",
+        "Might need a moment to get the tanks dried up.",
+        "What's next for us to do?"
+      ],
+      "mootant": [
+        "You and me, we may be Mooshi's now but it does not define us.",
+        "If you can move on despite what happened, so can I!",
+        "Sorry, a little swollen at the moment.",
+        "I'm eager to get some fresh air.",
+        "Anything exciting to do?",		
+        "I think I gained some weight.",			
+        "May have eaten a bit more then intended.",				
+        "Having a strong craving for ice cream right now.",					
+        "So... Swollen...",
+        "Might need a moment to get the tanks dried up.",
+        "What's next for us to do?"
       ]
     }
   }

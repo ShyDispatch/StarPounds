@@ -7,7 +7,7 @@
         "I need help!",
         "I can't run very far!",
         "My Bacon!",		
-        "*Squel*!",				
+        "*Squeal*!",				
         "I am under attack!",
         "Sound the alarm! Sound all of the alarms!",
         "Somebody help me!",
@@ -26,6 +26,36 @@
         "Good riddance.",
         "I need to make up all those lost calories.",
         "Next time I'll have my fork with me."
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/helpme/mootant",
+    "value": {
+      "default": [
+        "I need help!",
+        "I can't run very far!",
+        "Get away from me!",		
+        "Why is this happening to me!?",				
+        "I am under attack!",
+        "Haven't I been through enough?!",
+        "Somebody help me!",
+        "I'm being attacked!"
+      ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/safe/mootant",
+    "value": {
+      "default": [
+        "Ugh, I'm sweating.",
+        "I'm tired..",
+        "I think some milk leaked.",		
+        "Is it too much to have a peaceful life?",
+        "It's over.",
+        "Can't take this anymore."
       ]
     }
   }

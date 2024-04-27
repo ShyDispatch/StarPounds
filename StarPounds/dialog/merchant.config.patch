@@ -1,13 +1,13 @@
-[
-  {
+[  
+  {  
     "op":"add",
     "path":"/merchantStart/throg",
-    "value":{
-      "default":[
+    "value":{  
+      "default":[  
         "Need food? I got food.",
         "Come, come! See what I have in store!",
         "Oi! I got goods for sale!",
-        "You won't find better products than",
+        "You won't find better products than this!",
         "I run a clean shop, no illegal goods.",
         "Many things for sale!",
         "You look hungry, how about a snack for purchase?",
@@ -15,13 +15,13 @@
         "Got some rare deals for you, nothing illegal though.",
         "We don't sell identity discs, but still good things for sale."
       ]
-  }
- },
-  {
+    }
+  },
+  {  
     "op":"add",
     "path":"/merchantEnd/throg",
-    "value":{
-      "default":[
+    "value":{  
+      "default":[  
         "Come back with more pixels.",
         "You're always welcome back.",
         "Come again.",
@@ -31,13 +31,159 @@
         "Pleasure doing business with you.",
         "Time for lunch!"
       ]
-  }
- },
-  {
+    }
+  },
+  {  
     "op":"add",
     "path":"/welcome/throg",
-    "value":{
-      "default":[
+    "value":{  
+      "default":[  
+        "Welcome!",
+        "Got some rare things for sale.",
+        "Now, what can I get you.",
+        "So long as you have the pixels, what I have is yours.",
+        "Now we can get down to business.",
+        "So, how hungry are ya?",
+        "Got the stomach and pixels for what I have?",
+        "Reminder, this is a clean shop. No illegal goods for sale."
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/tout/throg",
+    "value":{  
+      "default":[  
+        "Welcome!",
+        "Got some rare things for sale!",
+        "Food! Other goods! All here!",
+        "I got the meals for an empty stomach.",
+        "Don't be a fool, browse my wares!",
+        "You'll be hungering for more once you had my food.",
+        "Got the stomach and pixels for what I have?"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/tagCriteria/throg",
+    "value" : {  
+      "default" : [  
+        "You better be giving me a replacement.",
+        "Hey. I need my stuff. Put it back!",
+        "When you make things mine. They're mine. Put them back."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/enclosedArea/throg",
+    "value" : {  
+      "default" : [  
+        "It's drafty. Might have something to do with that hole.",
+        "Hey pal, are your eyes worse than mine because you're ignoring that hole.",
+        "I sure do love my landlord not doing a thing about the lack of a wall in my shop."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/otherDeed/throg",
+    "value" : {  
+      "default" : [  
+        "It's tight enough with just me in here. I'm not sharing it with someone else.",
+        "We had a deal! My shop alone!",
+        "I never agreed to sharring this shop with another."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/severe/throg",
+    "value" : {  
+      "default" : [  
+        "Typical landlord, ignoring complaints.",
+        "Hey, you suck at your job. You better start doing something about this mess.",
+        "I'm supposed to pay for this? Well I ain't if you don't fix this. Now."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/final/throg",
+    "value" : {  
+      "default" : [  
+        "And others look down on Throgs for their actions. I'm leaving.",
+        "I deserve better working conditions than this!",
+        "That's it. I'm leaving. You're horrible at your job."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/beacon/throg",
+    "value" : {  
+      "default" : [  
+        "I guess you wanna buy?",
+        "You need me for something?",
+        "You needed me, so what is it?",
+        "Hope you have the money for this stuff.",
+        "You wanted to browse my wares?"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/rent/throg",
+    "value" : {  
+      "default" : [  
+        "If there's one thing we Throgs are good for. It's paying on time.",
+        "Yeah, yeah. Here's the rent.",
+        "It's been good working here. For you, the rent.",
+        "I've been enjoying selling my wares. Here's the rent.",
+        "My rent, so I can continue to sell my wares."
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/merchantStart/mootant",
+    "value":{  
+      "default":[  
+        "Welcome to my shop!",
+        "See anything you like?",
+        "What can I help you with?",
+        "You won't find better products than this!",
+        "I run a clean shop, no illegal goods.",
+        "Many things for sale!",
+        "You look hungry, how about a snack for purchase?",
+        "Food for sale, and other things as well.",
+        "Got some rare deals for you, nothing illegal though.",
+        "Breast Milk? Well..."
+      ]
+    }
+  },
+  {  
+    "op":"add",
+    "path":"/merchantEnd/mootant",
+    "value":{  
+      "default":[  
+        "See you next time!",
+        "Come again.",
+        "Your pixels are always good here.",
+        "Pleasure doing business with you!",
+        "Thanks for visiting.",
+        "Great to see you!",
+        "Let's do business again.",
+        "Time for my uh... break."
+      ]
+  }
+ },
+  {  
+    "op":"add",
+    "path":"/welcome/mootant",
+    "value":{  
+      "default":[  
         "Welcome!",
         "Got some rare things for sale.",
         "Now, what can I get you.",
@@ -49,20 +195,100 @@
       ]
   }
  },
-  {
+  {  
     "op":"add",
-    "path":"/tout/throg",
-    "value":{
-      "default":[
+    "path":"/tout/mootant",
+    "value":{  
+      "default":[  
         "Welcome!",
         "Got some rare things for sale!",
         "Food! Other goods! All here!",
         "I got the meals for an empty stomach.",
-        "Don't be a fool, browse my wares!",
+        "Hey you, come check out my amazing wares!",
         "You'll be hungering for more once you had my food.",
-        "Got the stomach and pixels for what I have?",
-        "Reminder, this is a clean shop. No illegal goods for sale."
+        "Got the stomach and pixels for whwat I have?"
       ]
   }
- }
+ },
+   {  
+    "op" : "add",
+    "path" : "/tagCriteria/mootant",
+    "value" : {  
+      "default" : [  
+        "Hey give that back!",
+        "Wha- hey that's mine!",
+        "Being my landlord gives no right to taking my things!"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/enclosedArea/mootant",
+    "value" : {  
+      "default" : [  
+        "There's a hole in the wall, it's not ideal.",
+        "So when are you gonna be fixing the hole in the wall?",
+        "If you didn't know, there's a hole in the wall of my shop."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/otherDeed/mootant",
+    "value" : {  
+      "default" : [  
+        "I didn't sign up to share my shop, can you kick them out?",
+        "I'd much rather have this shop to myself, thank you.",
+        "Why is there another person here? This is supposed to be my shop."
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/severe/mootant",
+    "value" : {  
+      "default" : [  
+        "I've been leniant but you haven't been doing anything about this...",
+        "I shouldn't have to put up with this, place do something about it.",
+        "What am I paying you for exactly?"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/final/mootant",
+    "value" : {  
+      "default" : [  
+        "Landlords never change, I'm getting out of here.",
+        "A barn is looking more preferable to this place, goodbye.",
+        "You've had your chances, I'm leaving!"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/beacon/mootant",
+    "value" : {  
+      "default" : [  
+        "You called?",
+        "Is there something you need to buy?",
+        "Hi! Do you want to buy something?",
+        "Hope you have the money for this stuff.",
+        "You wanted to browse my wares?"
+      ]
+    }
+  },
+  {  
+    "op" : "add",
+    "path" : "/rent/mootant",
+    "value" : {  
+      "default" : [  
+        "I thought you might like this.",
+        "Here's a gift for all your help with my shop!",
+        "I really appreciate everything you've done, here have a gift.",
+        "I've been enjoying selling my wares. Here's the rent.",
+        "My rent, so I can continue to sell my wares."
+      ]
+    }
+  }
 ]

@@ -1,0 +1,287 @@
+[
+  {
+	"op": "add",
+	"path": "/flee/throg",
+	"value": {
+	  "default" : [
+		"You're never gonna catch me!",
+		"There's not enough food to deal with this!",
+		"I'm not getting enough money for this!",
+		"I gotta go!",
+		"The Peacekeepers are here! Time to escape!",
+		"See ya later sucker!",
+		"Uh-oh!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/caughtFleeing/throg",
+	"value": { 
+	  "default" : [
+		"Curse my stubby legs!",
+		"I don't know why I even bothered.",
+		"In hindsight, not my brightest moment.",
+		"Never been much of a runner anyways.",
+		"This would've been a different story if I had my Throg Pot."
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/crazy/throg",
+	"value": { 
+	  "default" : [
+		"Have you seen the anatomy of a Throg!? We make no sense!!!",
+		"How did we ever build an empire when we can't see shit!? How could I ever even see you!?",
+		"The eggs, the chicks, the chickens. Roly-Poly. DON'T SAY ITS NAME!!!",
+		"I eat my clothing when I'm nervous, so what!?",
+		"That's not my Blubberbutt! It's an imposter I tell ya!",
+		"The lies of the Blubberbutt is not to be trusted! Reshaping the universe in our image won't happen!",
+		"ONLY I CAN BE THE TRUE BLUBBERBUTT! I'LL BE THE ONE PAMPERED AND FED AND LEAD THROGS TO GLORY!",
+		"Look what you've made me do!",
+		"It was all a lie! Eating the universe to reshape it? NONSENSE!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/deceptive/throg",
+	"value": { 
+	  "default" : [
+		"Nice to meet you Peacekeeper. It's a perfectly normal day here in this normal world.",
+		"Hello there, officer. Pleasant day for a stroll I take it?",
+		"Don't mind me, officer. I'm just a random Throg, nothing weird about that.",
+		"Looking for a criminal? I think they're somewhere in... that direction, yeah.",
+		"Nah, haven't seen anything weird all day. I'll let you know if I do.",
+		"Now don't assume I'm suspicious just because you don't see Throg out in these parts.",
+		"I'm not a criminal - I'm just... A Throg Empire scout! Wait... no just a chef. Yeah a chef."
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/deceptiveEnd/throg",
+	"value": { 
+	  "default" : [
+		"Why did I even bother?",
+		"Honestly that lasted longer then I was expecting.",
+		"You didn't buy that for a second, did you?",
+		"Yeah not my brightest plan.",
+		"Look I had to improvise!",
+		"Why didn't I just run!?"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/tricked/throg",
+	"value": { 
+	  "default" : [
+		"Wow you're really stupid!",
+		"...You seriously thought me putting on random handcuffs was legit?",
+		"You've been bamboozled! Those were fake handcuffs! Ha ha!",
+		"You fell for the old, criminal puts on their own handcuffs trick!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeWait/throg",
+	"value": { 
+	  "default" : [
+		"Wait, wait! I have an offer for you!",
+		"Before you arrest me, I want to offer you a deal!",
+		"Don't arrest me! I have a proposition for you!",
+		"Just hold on a minute! I have a most intriguing offer for you..."
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeMysteryItem/throg",
+	"value": {
+	  "default" : [
+		"Stop! If you let me go, I'll give you this ^orange;valuable item^reset;! What do you think?",
+		"If you stop trying to arrest me, you can have my ^orange;precious family heirloom^reset;! Trust me!",
+		"If you stop arresting me and let me go, you can have this ^orange;rare item^reset; as compensation!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeHat/throg",
+	"value": { 
+	  "default" : [
+		"If you stop trying to arrest me, you can have ^orange;my hat^reset;! What do you think?",
+		"If you let me go, you can have, uh, ^orange;my hat^reset; instead! I know you want it!",
+		"If you stop arresting me and let me go, you can have ^orange;my hat^reset; as compensation! What do you think?"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeDeclined/throg",
+	"value": { 
+	  "default" : [
+		"Hmph! You'll regret this!",
+		"You should have taken the offer!",
+		"Guess I'll just have to settle with eating ya!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeAccepted/throg",
+	"value": { 
+	  "default" : [
+		"Good choice. I knew you looked like the type who would accept a bribe!",
+		"I knew I could buy you out! Thanks for helping me get away, pal!",
+		"There you go! I knew I could bribe my way out of this situation. See you around!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/flee/mootant",
+	"value": {
+	  "default" : [
+		"You're never gonna catch me!",
+		"It's time for me to split!",
+		"And that's my cue to leave!",
+		"I gotta go!",
+		"The Peacekeepers are here! Time to escape!",
+		"Time to run!",
+		"Uh-oh!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/caughtFleeing/mootant",
+	"value": { 
+	  "default" : [
+		"I can't get away from you, can I?",
+		"I guess I'm not fast enough. Does that mean we have to fight, instead?",
+		"Don't get mad! I just thought I could outrun you!",
+		"I guess running away didn't work... It normally does!",
+		"NO RETREAT, NO SURRENDER!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/crazy/mootant",
+	"value": { 
+	  "default" : [
+		"Mooooo!",
+		"I used to be human! I'm not a mooshi!",
+		"The eggs, the chicks, the chickens. Roly-Poly. DON'T SAY ITS NAME!!!",
+		"I'm... I'm so hungry... all that slop they fed me... I need MORE!!!",
+		"I can't stand how tight these clothes are! I'm unable to go shopping for bigger sizes as a criminal!",
+		"So full... These breasts... I can't stand it!",
+		"My IQ was never the same, they did things to me! How am I supposed to go back to it all!?",
+		"Why must it feel so unnatural to be clothed!?",
+		"I can't breath in these clothes, they're too tight!",
+		"I AM A MILK GOD! BE WASHED AWAY BY MY LACTATION!",
+		"THEY TOOK EVERYTHING FROM ME! EVEN MY HUMANITY!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/deceptive/mootant",
+	"value": { 
+	  "default" : [
+		"I see no criminals around here. No siree, not a bounty in sight.",
+		"Hello there, friendo! My name is ^orange;Guy Person^white;, what can I assist you with?",
+		"DON'T MIND ME, I'M JUST ANOTHER FACE IN THE CROWD. JUST LIVING MY LIFE.",
+		"The criminal just passed by! They went that way - you should chase them before it's too late!",
+		"What's that? You're looking for... A criminal? I'll let you know if I see one.",
+		"There's nothing suspicious around here, officer!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/deceptiveEnd/mootant",
+	"value": { 
+	  "default" : [
+		"Dang, you saw through my clever ruse.",
+		"Uh-oh, I've been foiled!",
+		"You saw through my disguise! How could this be?!",
+		"No, my perfect disguise! I've been rumbled!",
+		"You saw through my disguise! It was I, <selfname>, all along!",
+		"It was a trick! I decieved you!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/tricked/mootant",
+	"value": { 
+	  "default" : [
+		"Haha, you haven't actually caught me. Those were fake handcuffs I put on myself!",
+		"Ha! I tricked you with those fake handcuffs! You haven't caught me just yet!",
+		"You've been bamboozled! Those were fake handcuffs! Ha ha!",
+		"You've been decieved by my fake handcuffs! I'm still as free as a bird!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeWait/mootant",
+	"value": { 
+	  "default" : [
+		"Wait, wait! I have an offer for you!",
+		"Before you arrest me, I want to offer you a deal!",
+		"Don't arrest me! I have a proposition for you!",
+		"Just hold on a minute! I have a most intriguing offer for you..."
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeMysteryItem/mootant",
+	"value": {
+	  "default" : [
+		"Stop! If you let me go, I'll give you this ^orange;valuable item^reset;! What do you think?",
+		"If you stop trying to arrest me, you can have my ^orange;precious family heirloom^reset;! Trust me!",
+		"If you stop arresting me and let me go, you can have this ^orange;rare item^reset; as compensation!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeHat/mootant",
+	"value": { 
+	  "default" : [
+		"If you stop trying to arrest me, you can have ^orange;my hat^reset;! What do you think?",
+		"If you let me go, you can have, uh, ^orange;my hat^reset; instead! I know you want it!",
+		"If you stop arresting me and let me go, you can have ^orange;my hat^reset; as compensation! What do you think?"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeDeclined/mootant",
+	"value": { 
+	  "default" : [
+		"Hmph! You'll regret this!",
+		"You should have taken the offer!",
+		""Oh well, too bad! You're missing out!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/bribeAccepted/mootant",
+	"value": { 
+	  "default" : [
+		"Good choice. I knew you looked like the type who would accept a bribe!",
+		"I knew I could buy you out! Thanks for helping me get away, pal!",
+		"There you go! I knew I could bribe my way out of this situation. See you around!"
+	  ]
+	}
+  }
+]

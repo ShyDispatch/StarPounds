@@ -1,0 +1,20 @@
+[
+	{ "op" : "add",
+	  "path" : "/outOfRangeText/throg",
+	  "value" : [
+		"Out of this scanner's range.",
+		"Scanner isn't capable of reading that far.",
+		"Whatever this is, it's too far for the scanner to pick up.",
+		"Gonna need to get closer for the scanner to get a read."
+	  ]
+	},
+	{ "op" : "add",
+	  "path" : "/nothingThereText/throg",
+	  "value" : [
+		"It's nothing.",
+		"Worse than useless.",
+		"Can't speak about nothing.",
+		"There's nothing here."
+	  ]
+	}
+]

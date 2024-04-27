@@ -1,0 +1,48 @@
+[
+  {
+    "op": "add",
+    "path": "/converse/throg",
+    "value": {
+    "default": [
+        "Greetings, Officer <entityname>!",
+        "Officer <selfname>, at your service! Well, not right now. I'm pretty busy.",
+        "You know it feels like Captain Noble is making you do all the work around here.",
+        "I'm glad being a Throg means I'm suspended from the Throg Colonization case out of fear of bias. That's gonna be a mess.",
+        "I sure would like to get my OWN desk one day.",
+        "Don't let all the travelling get to your weight.",
+        "I bring a bad cop vibe to investigations that gives me an edge over the other officers.",
+        "Hate having to do investigation cases rather than getting out onto the field like you.",
+        "Wonder if they've restocked the donut machine.",
+        "Horse masks? Mugs of beer? What is with these weird cosmetics these gangs are using!?",
+        "Not really sure why monsters are part of our job, but hey free snacks.",
+        "You're Officer <entityname>?! Thought you'd be fatter.",
+        "So are other governments funding all this? Paying to house the criminals we lock up? Not sure how else we're getting funding.",
+        "All these gangs are somehow organized and not organized at the same time. It's kind of boring.",
+        "No, I'm not associated with the Throg empire. You can stop asking."
+    ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/converse/mootant",
+    "value": {
+    "default": [
+        "Officer <selfname>, reporting for... Paperwork.",
+        "Officer <selfname>, here to help! The Captain has me researching cases for you to take on!",
+        "Captain Noble told me all about the good that the Peacekeepers are doing. I think most of that is down to you!",
+        "I'm investigating USCM remnants. Somewhere out there Director Palmer is still scheming.",
+        "I sure would like to get my OWN desk one day.",
+        "Keep your chin up, Officer -  It's a tough job but I believe in you!",
+        "Despite my past, never thought I'd become a cop.",
+        "Captain Noble has me working on finding some new cases for you, Officer <entityname>!",
+        "I'm glad Captain Noble gave me the chance to reform. After what happened to me, I feel like I'm in a better place now.",
+        "The Captain has me investigating local criminal activity. These gangs sure do pick the weirdest gang names, huh?",
+        "Wish the Captain would let me get in some field work given my experience with organized crimes.",
+        "You're Officer <entityname>?! I've heard so much about you from the Captain! You look different to how I imagined...",
+        "Officer <entityname>? The Captain says you're the one we have to thank for for making all this happen!",
+        "Is it just me, or does the Peacekeeper emblem look like a big smiling face? I can't unsee it!",
+        "First the USCM, now the Protectorate. What do we even have left?"
+    ]
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "animatedParts" : {
+    "parts" : {
+      "pda" : {
+        "properties" : {
+          "transformationGroups" : [ "pda" ],
+          "centered" : true,
+          "image" : "pizzapda.png",
+          "offset" : [0.25, 0.375]
+        }
+      },
+      "pda_fb" : {
+        "properties" : {
+          "transformationGroups" : [ "pda" ],
+          "zLevel": 1,
+          "centered" : true,
+          "fullbright": true,
+          "image" : "pizzapda_fb.png",
+          "offset" : [0.25, 0.375]
+        }
+      }
+    }
+  },
+
+  "transformationGroups" : {
+    "pda" : { "interpolated" : true }
+  },
+
+  "sounds" : {
+    "use" : [ "/sfx/interface/keypad_press.ogg" ]
+  }
+}

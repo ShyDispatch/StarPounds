@@ -53,6 +53,10 @@
       "species" : [ "human" ]
     },
     {
+      "type" : "starpoundsapplevisitor",
+      "species" : [ "human" ]
+    },
+    {
       "type" : "starpoundsblossomdancervisitor",
       "species" : [ "floran" ]
     },

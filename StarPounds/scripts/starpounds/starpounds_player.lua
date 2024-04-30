@@ -278,6 +278,16 @@ function makeOverrideFunction()
     		starPounds.setWeight = nullFunction
     		starPounds.getSize = function() return starPounds.sizes[1], 1 end
     	end
+
+			-- Pizza stuff.
+			starPounds.digestedPizzaEmployee = function()
+				storage.starPounds.pizzaEmployeesEaten = (storage.starPounds.pizzaEmployeesEaten or 0) + 1
+			end
+
+			starPounds.boughtPizza = function()
+				storage.starPounds.pizzaEmployeesEaten = nil
+			end
+			
       -- Only ever run this once per load.
       starPounds.didOverrides = true
     end

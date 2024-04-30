@@ -89,7 +89,7 @@
       {"input": [["starpoundschocolatemilkshakesquirtgun", 1], ["starpoundsliquidhoney", 100], ["starpoundsbottledhoney", 10]], "output": "starpoundshoneysquirtgun"},
       {"input": [["starpoundshoneysquirtgun", 1], ["liquidfuel", 250], ["digestionaid", 5]], "output": "starpoundsdigestionsquirtgun"},
       {"input": [["starpoundshoneysquirtgun", 1], ["starpoundsliquidcalorium", 500]], "output": "starpoundscaloriumsquirtgun"},
-      "winch", "starpoundsmilkingtool"
+      "winch", "starpoundsmilkingtool", "starpoundspizzapda"
     ],
     "crafting" : [
       "adiposeportion", "adipobeamcomponent", "depletedgaincrystal", "erchiusbloatcatalyzer", "meatberries", "onikillersake", "ponderouscore", "rootpopfroth"

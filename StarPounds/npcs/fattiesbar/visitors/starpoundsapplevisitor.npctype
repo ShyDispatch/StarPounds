@@ -1,0 +1,119 @@
+{
+  "type" : "starpoundsapplevisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "StarPounds Co-creator",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/scripts/starpounds_statusText.lua"
+  ],
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_skills": {},
+    "starPounds_options": {
+      "disableBlob" : true,
+      "disableBreastGrowth" : true,
+      "disableGain" : true,
+      "disableGurgles" : true,
+      "disableHitbox" : true,
+      "disableLeaking" : true,
+      "disableLoss" : true,
+      "disableMilkGain" : true,
+      "disablePred" : true,
+      "disableSound" : true,
+      "disableStomachGrowth" : true
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "flirty", "reactions" : {} }]
+    ],
+
+    "statuses" : [
+      "Feeling unhinged",
+      "Has a song stuck in their head",
+      "Feels like they're stuck in a video game",
+      "Can't believe it's true",
+      "Tired after a long day of doing nothing",
+      "Hiding something",
+      "Feeling nostalgic",
+      "Staring into the abyss",
+      "Considering living underground",
+      "Has no idea what they're doing and hopes no-one notices",
+      "Wondering if brushing your teeth is cleaning your skeleton",
+      "Feeling groovy, baby",
+      "Ashamed of their thoughts",
+      "Wishes flirting was as easy as fighting monsters",
+      "Loves the way you handle that matter manipulator",
+      "Wondering just how fast they can run",
+      "Creating awkward silences",
+      "Speaking before they think",
+      "Nervously giggling",
+      "Considering therapy",
+      "Feeling watched",
+      "Feeling acutely aware of strange noises",
+      "Just heard something... Probably",
+      "Breaking everything they touch",
+      "Wondering when the next full moon is",
+      "Unhappy with the physics",
+      "Hyperventilating",
+      "Missing social cues",
+      "Isn't sure what's going on",
+      "Blissfully unaware",
+      "Forgetting things",
+      "Unable to sleep",
+      "Slipping into insanity",
+      "Desperate for coffee",
+      "Humming a lullaby",
+      "Disregarding sleep",
+      "Flashing their smile"
+    ],
+
+    "dialogMode" : "",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+            "The locals here seem to like really like eating, huh?",
+            "I'm going to be honest, I have no idea how I got here.",
+            "Fun fact! Did you know that apples can be blue?",
+            "No, I don't use dye. Yes, it grows this colour.",
+            "Next person to say \"I could just eat you up\" is losing fingers."
+					]
+				}
+			}
+		}
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpoundsapple",
+    "name": "^#2862e9;Grace^reset;",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.5",
+    "personalityArmOffset" : [0, 0],
+    "personalityHeadOffset" : [-1, 0],
+    "color" : [51, 117, 237],
+    "bodyDirectives" : "?replace;000=000;",
+    "emoteDirectives" : "?replace;000=000;",
+    "hairDirectives" : "?replace;000=000;"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "headCosmetic": [ { "name": "starpoundsapplehead" } ],
+          "chestCosmetic": [ { "name": "conceptchest", "parameters" : { "rarity" : "rare", "statusEffects" : [], "shortdescription" : "Grace's Jacket", "leveledStatusEffects" : [], "directives" : "?replace;e0975c=292d32;ffca8a=555555;a85636=16191e;6f2919=0e0f13", "price" : 2500 } } ],
+          "legsCosmetic": [ { "name": "jeans2legs", "parameters" : {  "rarity" : "rare",  "statusEffects" : [],  "shortdescription" : "Grace's Jeans",  "leveledStatusEffects" : [],  "directives" : "?replace;6f2919=111425;a85636=131a28;e0975c=1a2838;151515=0e0f13;383838=16191e;555555=292d32;b6b6b6=808080;e6e6e6=b5b5b5;9e9e9e=808080;cccccc=b5b5b5;", "price" : 2500 } } ]
+        }
+      ]]
+    ]
+  }
+}

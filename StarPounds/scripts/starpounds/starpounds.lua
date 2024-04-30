@@ -2118,7 +2118,8 @@ starPounds.getDigested = function(digestionRate, protectionMultiplier)
 					item.parameters.tempSize = nil
 					item.parameters.baseName = nil
 				end
-				if not (item.parameters and item.parameters.size) and not configParameter(item, "hideBody") then
+				item.name = configParameter(item, "regurgitateItem", item.name)
+				if not (item.parameters and item.parameters.size) and not configParameter(item, "hideBody") and not configParameter(item, "disableRegurgitation") then
 					table.insert(items, item)
 				end
 			end
@@ -2154,6 +2155,12 @@ starPounds.getDigested = function(digestionRate, protectionMultiplier)
 			end
 		end
 		world.sendEntityMessage(storage.starPounds.pred, "starPounds.digestEntity", entity.id(), items, storage.starPounds.stomachEntities)
+
+		if starPounds.type == "npc" then
+			if world.entityUniqueId(storage.starPounds.pred) and world.entityUniqueId(storage.starPounds.pred) == self.deliveryTarget then
+				world.sendEntityMessage(storage.starPounds.pred, "starPounds.digestedPizzaEmployee")
+			end
+		end
 
 		-- Are they a crewmate?
 		if recruitable then
@@ -2279,6 +2286,7 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.predEaten", simpleHandler(starPounds.predEaten))
 	message.setHandler("starPounds.getDigested", simpleHandler(starPounds.getDigested))
 	message.setHandler("starPounds.getReleased", simpleHandler(starPounds.getReleased))
+	message.setHandler("starPounds.digestedPizzaEmployee", simpleHandler(starPounds.digestedPizzaEmployee))
 	-- Interface/debug stuff.
 	message.setHandler("starPounds.reset", localHandler(starPounds.reset))
 	message.setHandler("starPounds.resetConfirm", localHandler(starPounds.reset))

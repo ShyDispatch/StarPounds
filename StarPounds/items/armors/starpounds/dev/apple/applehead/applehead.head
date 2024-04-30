@@ -1,0 +1,16 @@
+{
+  "itemName" : "starpoundsapplehead",
+  "price" : 2500,
+  "inventoryIcon" : "head.png",
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "headwear",
+  "description" : "This headband and fancy glowing scarf belongs to Grace, how did you get them?",
+  "shortdescription" : "^#3161c9;Grace's Headband & Scarf",
+  "tooltipKind" : "armor",
+  "disableRegurgitation" : "true",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png"
+}

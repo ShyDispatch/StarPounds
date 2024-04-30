@@ -6,6 +6,8 @@
     "accessories" : "/interface/scripted/starpounds/accessories/accessories.ui",
     "options" : "/interface/scripted/starpounds/options/options.ui",
     // Objects
-    "caloriumextractor" : "/interface/scripted/starpounds/caloriumextractor/caloriumextractor.ui"
+    "caloriumextractor" : "/interface/scripted/starpounds/caloriumextractor/caloriumextractor.ui",
+    // Other
+    "pizzamenu" : "/interface/scripted/starpounds/pizzamenu/pizzamenu.ui"
   } }
 ]

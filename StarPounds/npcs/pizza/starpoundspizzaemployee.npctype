@@ -1,0 +1,91 @@
+{
+  "type" : "starpoundspizzaemployee",
+  "baseType" : "outpostcivilian",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/npcs/pizza/starpoundspizzaemployee.lua"
+  ],
+
+  "damageTeamType" : "assistant",
+  "damageTeam" : 1,
+
+  "scriptConfig" : {
+    "offeredQuests" : [ ],
+    "turnInQuests" : [ ],
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+
+    "behaviorConfig" : {
+      "greetingChance" : 0,
+      "play" : false,
+      "chat" : false
+    },
+
+    "dialogMode" : "",
+    "dialog" : {
+      "collect" : {
+        "default" : {
+          "default" : [
+            "Enjoy your meal, <entityname>!",
+            "Here's your order, <entityname>. Enjoy!",
+            "Thank you for choosing Cosmic Crust, <entityname>!"
+          ]
+        }
+      },
+      "collected" : {
+        "default" : {
+          "default" : [
+            "I'm on the clock, sorry. I better get going.",
+            "Sorry, I can't stay to chat. I hope you enjoy your meal!",
+            "Wish I could stick around, but I have more deliveries waiting. Enjoy!",
+            "Sorry, I'm on a tight schedule. Enjoy your order!"
+          ]
+        }
+      },
+      "converse" : {
+        "default" : {
+          "default" : [
+            "Sorry, can't chat! Waiting on a customer!",
+            "Sorry, this isn't your delivery! But if you're ever hungry, feel free to order from us!",
+            "This one's not for you, but hey, why not order from us next time?",
+            "Sorry, just waiting on someone else's order!",
+            "I'd love to chat, but duty calls!"
+          ]
+        }
+      }
+    },
+
+    "waitTime" : 120,
+    "lingerTime" : 10
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "primary": [
+              "starpoundspizzadelivery"
+            ],
+            "head" : [
+              { "name" : "starpoundspizzahead", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "chest" : [
+              { "name" : "starpoundspizzachest", "parameters" : { "colorIndex" : 0 } },
+              { "name" : "starpoundspizzajacketchest", "parameters" : { "colorIndex" : 0 } }
+            ],
+            "legs" : [
+              { "name" : "starpoundspizzalegs", "parameters" : { "colorIndex" : 0 } }
+            ]
+          }
+      ] ]
+    ]
+  }
+}

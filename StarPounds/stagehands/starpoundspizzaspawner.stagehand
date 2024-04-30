@@ -1,0 +1,14 @@
+{
+  "type" : "starpoundspizzaspawner",
+
+  "scripts" : ["/stagehands/starpoundspizzaspawner.lua"],
+  "scriptDelta" : 10,
+
+  "boundBox" : [-10, -10, 10, 10],
+  "target" : "",
+  "order": {},
+  "npcType" : "starpoundspizzaemployee",
+  "overrideItems" : {},
+  "beaconColours": {},
+  "delay": 10
+}

@@ -1,0 +1,68 @@
+{
+  "style" : "window",
+  "title" : "^clear;Pizza Delivery",
+  "icon" : "pizzas.png?multiply=00000000",
+  "size" : [240, 320],
+  "accentColor" : "ffaa00",
+  "uniqueBy" : "path",
+  "uniqueMode" : "toggle",
+  "scripts" : [ "pizzamenu.lua" ],
+  "children" : [
+    {"type": "panel", "style": "convex", "expandMode": [1, 0], "children": [
+      1,
+      [
+        10,
+        {"type": "image", "scale": 2, "file": "pizzas.png"},
+        "spacer",
+        {"type": "label", "align": "center", "fontSize": 20, "text": "^shadow;^red;Cosmic ^orange;Crust"},
+        "spacer",
+        {"type": "image", "scale": 2, "file": "pizzas.png"},
+        10
+      ],
+      1
+    ]},
+    {"type": "panel", "style": "convex", "children": [
+      1, {"type": "label", "align": "center", "fontSize": 12, "text": "^shadow;^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;    Menu    ^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-"}, 1,
+      [
+        {"expandMode": [1, 1]},
+        {"type": "panel", "style": "convex", "expandMode": [1, 1], "children": [1,
+          {"type": "label", "align": "center", "text": "Pizzas"},
+          {"type": "panel", "style": "convex", "children": [{"type": "scrollArea", "id": "pizzasMenu", "expandMode": [1, 1]}]}
+        ]},
+        {"type": "panel", "style": "convex", "expandMode": [1, 1], "children": [1,
+          {"type": "label", "align": "center", "text": "Sides"},
+          {"type": "panel", "style": "convex", "children": [{"type": "scrollArea", "id": "sidesMenu", "expandMode": [1, 1]}]}
+        ]},
+        {"type": "panel", "style": "convex", "expandMode": [1, 1], "children": [1,
+          {"type": "label", "align": "center", "text": "Drinks"},
+          {"type": "panel", "style": "convex", "children": [{"type": "scrollArea", "id": "drinksMenu", "expandMode": [1, 1]}]}
+        ]}
+      ]
+    ]},
+    {"type": "panel", "expandMode": [0, 0], "size": [240, 152], "style": "convex", "children": [
+      1, {"type": "label", "align": "center", "fontSize": 12, "text": "^shadow;^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;    Order    ^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-^orange;=^red;-"}, 1,
+      [
+        {"expandMode": [1, 1]},
+        {"type": "panel", "style": "convex", "expandMode": [0, 1], "size": 100, "children": [{"type": "scrollArea", "id": "orderList", "expandMode": [1, 1]}]},
+        {"type": "panel", "style": "convex", "children": [
+          {"type": "panel", "style": "concave", "expandMode": [1, 1], "mode": "manual", "children": [
+            2,
+            [
+              {"mode": "manual"},
+              {"type": "label", "id": "subtotalLeft", "size": [120, 10], "position": [4, 0], "align": "left", "text": ""},
+              {"type": "label", "id": "subtotalRight", "size": [120, 10], "position": [4, 0], "align": "right", "text": ""}
+            ],
+            [
+              {"mode": "manual"},
+              {"type": "label", "id": "feeListLeft", "size": [120, 76], "position": [4, 0], "fontSize": 7, "align": "left", "text": ""},
+              {"type": "label", "id": "feeListRight", "size": [120, 76], "position": [4, 0], "fontSize": 7, "align": "right", "text": ""}
+            ],
+            "spacer",
+            ["spacer", {"type": "label", "align": "center", "text": "TOTAL COST"}, {"type": "image", "file": "pixels.png", "position": [70, 10]}, {"type": "label", "id": "orderTotal", "align": "left", "text": "0"}, "spacer"],
+            ["spacer", "spacer", [{"mode": "manual"}, {"type": "button", "id": "order", "size": [64, 16], "caption": "Order"}, {"type": "image", "id": "buyOverlay", "file": "buttonoverlay.png"}], "spacer", "spacer"]
+          ]}
+        ]}
+      ]
+    ]}
+  ]
+}

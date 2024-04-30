@@ -1,0 +1,17 @@
+{
+  "animatedParts" : {
+    "parts" : {
+      "box" : {
+        "properties" : {
+          "transformationGroups" : [ "box" ],
+          "centered" : true,
+          "image" : "pizzadelivery.png",
+          "offset" : [0.5, 0.625]
+        }
+      }
+    }
+  },
+  "transformationGroups" : {
+    "box" : { "interpolated" : true }
+  }
+}

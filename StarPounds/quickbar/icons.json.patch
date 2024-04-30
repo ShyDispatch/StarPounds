@@ -8,16 +8,5 @@
 			"weight" : -500,
 			"action": ["ui", "starpounds:menu"]
 		}
-	},
-	{
-		"op": "add",
-		"path": "/items/starpounds:pizzamenu",
-		"value": {
-			"label": "^#ccbbff;Pizza Menu (WIP)",
-			"icon": "/quickbar/starpoundsmenu.png",
-			"weight" : -499,
-			"action": ["ui", "starpounds:pizzamenu"],
-			"condition" : [ "admin" ]
-		}
 	}
 ]

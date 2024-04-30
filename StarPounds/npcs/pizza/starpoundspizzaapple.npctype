@@ -1,0 +1,39 @@
+{
+  "type" : "starpoundspizzaapple",
+  "baseType" : "starpoundspizzaemployee",
+
+  "damageTeamType" : "assistant",
+  "damageTeam" : 1,
+  
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpoundsapple",
+    "name": "^#2862e9;Grace^reset;",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.5",
+    "personalityArmOffset" : [0, 0],
+    "personalityHeadOffset" : [-1, 0],
+    "color" : [51, 117, 237],
+    "bodyDirectives" : "?replace;000=000;",
+    "emoteDirectives" : "?replace;000=000;",
+    "hairDirectives" : "?replace;000=000;"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "primary": [
+            "starpoundspizzadelivery"
+          ],
+          "head": [ { "name" : "starpoundsapplepizzahead", "parameters" : { "colorIndex" : 0 } } ],
+          "chest": [ { "name": "starpoundspizzajacketchest", "parameters" : { "colorIndex" : 0 } } ],
+          "legs": [ { "name": "jeans2legs", "parameters" : {  "rarity" : "rare",  "statusEffects" : [],  "shortdescription" : "Grace's Jeans",  "leveledStatusEffects" : [],  "directives" : "?replace;6f2919=111425;a85636=131a28;e0975c=1a2838;151515=0e0f13;383838=16191e;555555=292d32;b6b6b6=808080;e6e6e6=b5b5b5;9e9e9e=808080;cccccc=b5b5b5;", "price" : 2500 } } ]
+        }
+      ]]
+    ]
+  }
+}

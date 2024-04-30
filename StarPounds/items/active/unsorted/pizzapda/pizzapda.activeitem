@@ -1,0 +1,20 @@
+{
+  "itemName" : "starpoundspizzapda",
+  "price" : 5000,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "category" : "tool",
+  "description" : "A PDA for ordering on the go! Don't get too lazy, fast food is highly fattening.",
+  "shortdescription" : "Cosmic Crust PDA",
+  "twoHanded" : false,
+
+  "animation" : "pizzapda.animation",
+  "scale": 1,
+  "armAngle": -15,
+
+  "inventoryIcon" : "pizzapda.png",
+  "scripts" : ["pizzapda.lua"],
+
+  "order": {}
+}

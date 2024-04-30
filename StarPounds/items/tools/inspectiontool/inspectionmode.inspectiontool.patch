@@ -1,0 +1,20 @@
+[
+	{ "op" : "add",
+	  "path" : "/outOfRangeText/throg",
+	  "value" : [
+		"My eyes aren't good, need to get closer.",
+		"Can't make out what that is, gotta get closer.",
+		"I don't have good eyes to be looking at something from this far away.",
+		"Uh-uh. Yep, I cannot see what that is."
+	  ]
+	},
+	{ "op" : "add",
+	  "path" : "/nothingThereText/throg",
+	  "value" : [
+		"It's nothing.",
+		"Worse than useless.",
+		"Can't speak about nothing.",
+		"There's nothing here."
+	  ]
+	}
+]

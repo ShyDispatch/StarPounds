@@ -24,5 +24,31 @@
 		"We know your face thief! Guards!"
 	  ]
 	}
+  },
+  {
+	"op": "add",
+	"path": "/accuse/mootant",
+	"value": {
+	  "default" : [
+		"Hey! That stuff doesn't belong to you!",
+		"What're you playing at? You can't go about stealing!",
+		"What!? What are you doing!? That's theft!",
+		"Woa woa woa, who told you you could take that?",
+		"That's not okay! Stop stealing!!"
+	  ]
+	}
+  },
+  {
+	"op": "add",
+	"path": "/alert/mootant",
+	"value": { 
+	  "default" : [
+		"Stop pilfering! Guards, help!",
+		"Guards! Catch this terrible robber!",
+		"Ah! Guards, catch that thief!",
+		"Oh no, oh no! A Robber! Guards!",
+		"Guards, capture this criminal!"
+	  ]
+	}
   }
 ]

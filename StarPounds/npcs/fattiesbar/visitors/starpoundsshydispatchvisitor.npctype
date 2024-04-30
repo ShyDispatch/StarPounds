@@ -1,7 +1,7 @@
 {
   "type" : "starpoundsshydispatchvisitor",
   "baseType" : "fattiesbarvisitor",
-  "displayTitle" : "Starpounds Creator",
+  "displayTitle" : "StarPounds Creator",
 
   "scriptConfig" : {
     "initialStorage": {

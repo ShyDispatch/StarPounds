@@ -1,7 +1,7 @@
 {
   "type" : "starpoundsblossomdancervisitor",
   "baseType" : "fattiesbarvisitor",
-  "displayTitle" : "Starpounds Dungeon Master",
+  "displayTitle" : "StarPounds Dungeon Master",
 
   "scriptConfig" : {
     "initialStorage": {

@@ -1,7 +1,6 @@
 {
-  "type" : "starpoundsapplevisitor",
-  "baseType" : "fattiesbarvisitor",
-  "displayTitle" : "StarPounds Co-creator",
+  "type" : "starpoundsapple",
+  "baseType" : "outpostcivilian",
 
   "scripts" : [
     "/npcs/bmain.lua",
@@ -77,7 +76,6 @@
 			"converse": {
 				"default": {
 					"default": [
-            "The locals here seem to like really like eating, huh?",
             "I'm going to be honest, I have no idea how I got here.",
             "Fun fact! Did you know that apples can be blue?",
             "No, I don't use dye. Yes, it grows this colour.",

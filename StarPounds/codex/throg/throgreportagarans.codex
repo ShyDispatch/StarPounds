@@ -1,0 +1,13 @@
+{
+  "id" : "throgreportagarans",
+  "title" : "Throg Report: Agarans",
+  "description" : "An old Throg Scout Report on Agarans",
+  "icon" : "throgreportagarans.png",
+  "contentPages" : [
+    "^gray;This Log is currently locked and cannot be read at this time.^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

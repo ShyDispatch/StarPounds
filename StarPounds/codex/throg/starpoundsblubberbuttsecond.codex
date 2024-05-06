@@ -1,0 +1,19 @@
+{
+  "id" : "starpoundsblubberbuttsecond",
+  "title" : "Blubberbutt The Second ",
+  "description" : "A log on the Throg Religion surrounding the Second Blubberbutt.",
+  "icon" : "throgcover2.png",
+  "contentPages" : [
+    "The memory of our Almighty Blubberbutt has become fleeting upon the glory of our new Eternal Blubberbutt. Who proudly ate the weak individual, a usurper who'd show us the true meaning of gluttony.
+
+When in disbelief, she said the original was unfitting to wield the title of Blubberbutt. That he in fact had no ass, as she put it, unlike her in which a single cheek outright dwarfs the rest of her fattened figure.",
+
+"She also stated the first Blubberbutt was simply a coward, who secluded himself from the Empire outside of his most devoted. Unlike her, who shall proudly be a beacon for the entire empire to visit.
+
+Many Throgs were captivated, being able to see our source of worship compared to the former Blubberbutt. While there may be some grumblings, especially surrounding certain policies our Eternal Blubberbutt has demanded. Our Empire's future is glorious."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

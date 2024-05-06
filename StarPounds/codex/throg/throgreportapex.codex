@@ -1,0 +1,27 @@
+{
+  "id" : "throgreportapex",
+  "title" : "Throg Report: Apex",
+  "description" : "An old Throg Scout Report on Apex",
+  "icon" : "throgreportapex.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #15]^reset;
+
+During our scouting mission into a new quadrant of the galaxy not under Throg rule, we stumbled upon an interesting planet containing some sort of life form that was not nearly as stupid as the common animals.
+
+Ape like creatures have seemingly setup a facade of civilization. Almost looking civilized as they wore clothes, lived in buildings and even had primitive technology.",
+
+"Judging by the state of their condition, it seems this race has recently had a hostile takeover of their central government. Signs of surviving a deadly plague that nearly wiped them up, the saviors now strong arming them into submission.
+
+Curiously, it seems these people may have a Blubberbutt of their own. As the designated leader that rules over this new government of theirs is referred to as Big Ape. Further research may be necessary if he is this race's equivalent of our almighty Blubberbutt.",
+
+"Science and technology is of great interest to this government, something surprising given their current technological prowess. Likely brought about by their Big Ape giving their worthless lives meaning.
+
+Recommend keeping an eye on this race for further developments of their technology and the growth of their Big Ape and his control of his people.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

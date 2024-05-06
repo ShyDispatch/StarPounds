@@ -1,0 +1,27 @@
+{
+  "id" : "throgreportnovakid",
+  "title" : "Throg Report: Novakid",
+  "description" : "An old Throg Scout Report on Novakid",
+  "icon" : "throgreportnovakid.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #42]^reset;
+
+I'm not sure where to begin with this one. Yet another encounter with a new form of life wandering this quadrant, but unlike anything we've encountered so far.
+
+This alien was like a glowing light, hurting the eyes of every Throg that tried to look at it. The thing played with some primitive blaster and talked in an odd accent. They told us our activities were disturbing the peace.",
+
+"We weren't having any of its nonsense getting in the way of our mission so we opened fire. Only to feel a stinging pain in our hands as they dodged our blasts and shoot our Greatforks out of our hands.
+
+It played with its blaster more, as well as its ridiculous hat. Warning us to get out and leave this part of space while we still had hands to work our ship. So agitated, we prefered to just leave in an instant.",
+
+"Over the course of our travels we learned that was apparently what other locals refer to as a Novakid, rather rare individuals possibly an endangered species.
+
+Little else is known about them, literally nothing else. They're an enigma down to their form to their history. And I'm ticked off enough I don't care to know more.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

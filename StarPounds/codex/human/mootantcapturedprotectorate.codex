@@ -1,7 +1,7 @@
 {
   "id" : "mootantcapturedprotectorate",
   "species" : "human",
-  "title" : "USCM Protectorate Prisoner",
+  "title" : "Protectorate Prisoner",
   "description" : "Details on the imprisonment and torture of a Protectorate by USCM.",
   "icon" : "humancover8.png",
   "contentPages" : [

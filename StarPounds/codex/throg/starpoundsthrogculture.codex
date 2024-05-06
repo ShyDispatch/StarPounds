@@ -1,0 +1,35 @@
+{
+  "id" : "starpoundsthrogculture",
+  "title" : "Throg Culture",
+  "description" : "A book detailing the inner workings of a Throg.",
+  "icon" : "throgcover1.png",
+  "contentPages" : [
+    "^gray;If I cannot eat it, 
+it is not existent to me 
+ ~Throggish Saying^reset;
+
+Throgs are a relatively new addition to the many galactic faces we can stumble upon in our travels. 
+
+Mixed with their aggressive and xenophobic tendencies, you won't find them easy to understand.",
+
+"One aspect of Throgs that isn't immediately obvious is that they are a religious race. Despite their cold and logical view of the universe and science, they do have a god, and it is a god of flesh.
+
+Similar to how Avians are confident in their faith due to worshipping a real life figure, so do Throgs worship a god and their leader known as the Blubberbutt. Who rever as the fattest and most gluttonous of all Throgs.",
+
+"Their entire way of life is dedicated to feeding and fattening their Blubberbutt for the day they believe in which the universe shall be eaten by them. Though the ravenous hunger does not stop at just their leader.
+
+All Throgs are inherently insatiable creatures, a hunger that has shaped their entire ideology, society, and behavior. For if they do not constantly gorge themselves silly, they can suffer from serious health complications.",
+
+"Where most races recognize being overweight is an unhealthy condition, it is the other way around for a Throg. Their unique biology requiring a substantial amount of fat on their body at all times.
+
+Should a Throg not eat enough, or become skinny, they become lethargic and close to death. Most do not ever see death naturally as Throgs, rather than help their kin in need, gobble them up to keep themselves going instead.",
+
+"Such selfishness has plagued Throgs for generations, creating a eat or be eaten world where only the strongest Throgs survive. Where the only thing that Throgs will recognize and respect is how fat a fellow Throg can get.
+
+To them, it becomes a duty to eat lesser Throgs dead or alive. Under this view, all Throgs look towards the future in one direction under one banner. With order kept in line by the struggles to become the fattest and not fall behind."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

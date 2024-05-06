@@ -1,0 +1,29 @@
+{
+  "id" : "throgreportpoptops",
+  "title" : "Throg Report: Poptops",
+  "description" : "An old Throg Scout Report on Poptops",
+  "icon" : "throgreportpoptops.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #43]^reset;
+
+To all Throgs reading this. I must first state a warning about the contents of this report. It may be shocking, revolting, even blasphemous.
+
+While out taking note of various alien creatures and planets suitable for conquest. We came upon a small nugget of a creature the more barely intelligent races have called a Poptop. With such a puny size, we thought it simply another pest to eat.",
+
+"To our surprise, as it approached local prey, we saw it was capable of quite a feat. Its mouth was much larger than anticipated and was able to stretch highly to engulf a creature larger then itself. Truly a sight to make a Throg have hope for the low lives of this galaxy.
+Yet we noticed that it was not swallowing its prey. It simply chewed on the creature, a practice we commonly see in all inferior life forms. But this Poptop was... savoring the taste. We waited in utter disbelief, wondering when it would swallow the beast.",
+
+"Then, horror swept over us when we saw it... SPIT out the creature! It was a revolting sight to see such careless eating! What evolutionary dead end lead to such a wasteful lifestyle in these creatures who have the potential to gobble up everything they see?
+My scouting party would then wage war with these Poptops whenever we could during the remainder of our expedition. We learned that this was simply a child, as Poptops grow up to be much larger. All the more wasteful of their potential!",
+
+"These Poptops even seemed to share in our hatred. Their eyes scowling at how we eat things whole in great quantities so quickly. Clearly a lost cause. And our technology proved superior to the basic claws and teeth of these plant like lifeforms.
+
+When our Empire comes to this quadrant in full force. We must not forget this discovery. These Poptops must be a high priority to eradicate, we cannot allow such a disgusting way of life to continue.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

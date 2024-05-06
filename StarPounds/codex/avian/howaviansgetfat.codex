@@ -1,19 +1,17 @@
 {
   "id" : "howaviansgetfat",
   "species" : "avian",
-  "title" : "Forgotten Goddess or a Fake?",
-  "description" : "A book describing containing heresy of another Avian God.",
-  "icon" : "aviancover7.png",
+  "title" : "How Avians Get Fat",
+  "description" : "A book describing the means of how Avians become overweight.",
+  "icon" : "htgfavian.png",
   "contentPages" : [
-    "Kluex is a name all Avians know. A name so widespread even other races can recognize it. For as long as Avians knew, there was Kluex. Existing from the start with natural wings. Yet old tales speak of Kluex not as a god, but a mortal.",
+    "Avians aren't known for having an obesity problem. But that does not exclude Avians from becoming overweight. Overeating and lack of exercise can still persist even in their perfect society.
 
-"By many factors, Kluex spearheaded Avian society towards the future. Immortalizing himself as a figure to be respected and feared. One day, he vanished, and how the legends spread. Ascending to where the original gods, the Sunborn, resided. Finding the heavens to be empty, Kluex took a throne as the last god.",
+Especially with their love of baked goods and pastries, a market in abundance in Avian society. Mixed with the usual luxury upper class Avians can enjoy, and it's not hard to find plumper birds among the rich.",
 
-"Of course, mere tales of written lore withered away by time is meaningless. But looking in the right corners of the universe might make the idea seem less impossible. With luck aligned, you too might find remnants of worship to an old goddess. The true last Sunborn Velhanu.",
+"While this tidbit is meaningless given the subject matter. Avians chosen as Ascendants enjoy a brief time of luxury before their leap of faith to join Kluex in heaven. Where they can truly feel like a god that they're promised they'll become.
 
-"Few altars of Velhanu depict the goddess as a figure larger than life. A bright glowing red as round as the sun itself. Velhanu represented the riches of success. To indulge in society, specifically in gluttony. To remain planted home, surrounded by family and friends. Truly a beacon of peace for the Avians. Sharing happiness with growing waistlines, never to dwell on soaring wings.",
-
-"The Grounded exist to defy Kluex, but the rare few who find out about Velhanu's existence find it invigorating. A restoration of faith and a confirmation to Kluex's falsehood. Quickly following this life style of gluttony and fattening. Resulting in the uncommon sight of blubbery Avians. Of course, who's to say Velhanu isn't yet another older, false god? "
+One such luxury is the nine days of feasting they gorge themselves on. Such heavy feasting has made a notable statisic that many Ascendants gain noticeable weight for their fated day. With speculation such weight prevents them from spreading their spritual wings."
 
   ],
     "itemConfig" : {

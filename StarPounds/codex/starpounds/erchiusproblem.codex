@@ -4,11 +4,17 @@
   "description" : "A telling on the effects of Erchius after the Ruin's awakening.",
   "icon" : "erchiusproblem.png",
   "contentPages" : [
-    "Humanity has been on the verge of extinction ever since the fateful day their homeworld, Earth, was destroyed by an ancient entity known as the Ruin being awoken and partially dragged into our world. Yet on a more galactic scale, every races' dependancy on Erchius has come with it many new dangers from this awakening.",
+    "Humanity became an endangered species ever since the fateful day their homeworld, Earth, was destroyed by an ancient entity known as the Ruin being awoken and partially dragged into our world. 
 
-"The source of Earths destruction and the Ruin's futile attempt to break into our dimension has been linked to the Occasus Cult. A human supremasict group whos done more damage to their own kind then those they wanted to hurt. Now we face the consequences of their actions. As Erchius itself has become dangerous. Whether it be horrors that turn miners into abominations. Incorporeal ghosts that'll lash out at those who defile the Erchius. Or, grow fat from contact with Erchius.",
+Yet on a more galactic scale, every races' dependancy on Erchius has come with it many new dangers from this awakening. As that same day brought with it other unforseen consequences.",
 
-"These things hardly seem to relate to one another. Could whatever the Occasus Cult done woke up more than just the Ruin? Are there more creatures beyond our comprehension waiting to unravel their untold power on the galaxy? Will we find more horrors as we continue to use Erchius to fuel our ships?"
+"The source of Earths destruction and the Ruin's futile attempt to break into our dimension has been linked to the Occasus Cult. A human supremasict group whose done more damage to their own kind then those they wanted to hurt.
+
+Now we face the consequences of their actions. As Erchius itself has become dangerous. Whether it be horrors that turn miners into abominations. Incorporeal ghosts that'll lash out at those who defile the Erchius. Or, grow fat from contact with Erchius.",
+
+"These things hardly seem to relate to one another. Yet the correlation of strange happenings with our own fuel sources can't be a coincidence. 
+
+Could whatever the Occasus Cult done woke up more than just the Ruin? Are there more creatures beyond our comprehension waiting to unravel their untold power on the galaxy? Will we find more horrors as we continue to use Erchius to fuel our ships?"
   ],
     "itemConfig" : {
     "rarity" : "Common",

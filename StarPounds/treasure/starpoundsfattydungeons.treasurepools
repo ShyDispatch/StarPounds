@@ -77,11 +77,12 @@
   "starpoundsfloranfeasthallLore" : [
     [1, {
       "pool" : [
-        {"weight" : 0.20, "item" : "gluttonistlore1-codex"},
-        {"weight" : 0.20, "item" : "gluttonistlore2-codex"},
-        {"weight" : 0.20, "item" : "howfloransgetfat-codex"},
-        {"weight" : 0.20, "item" : "florfeast-codex"},
-        {"weight" : 0.20, "item" : "chika1feasthall-codex"}		
+        {"weight" : 0.17, "item" : "florantribegluttonists-codex"},
+        {"weight" : 0.17, "item" : "gluttonistlore1-codex"},
+        {"weight" : 0.17, "item" : "gluttonistlore2-codex"},
+        {"weight" : 0.17, "item" : "howfloransgetfat-codex"},
+        {"weight" : 0.16, "item" : "florfeast-codex"},
+        {"weight" : 0.16, "item" : "chika1feasthall-codex"}		
       ],
       "poolRounds" : 1,
       "allowDuplication" : false

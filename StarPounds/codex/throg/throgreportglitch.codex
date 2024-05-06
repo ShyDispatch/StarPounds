@@ -1,0 +1,29 @@
+{
+  "id" : "throgreportglitch",
+  "title" : "Throg Report: Glitch",
+  "description" : "An old Throg Scout Report on Glitch",
+  "icon" : "throgreportglitch.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #78]^reset;
+
+As our time gathering knowledge in this sector goes underway, we found something we were ready to ignore. But from planet to planet, it was hard not to notice a strange pattern.
+
+Robots, robots on many planets. No masters of any kind, left to toil in a dark age with little technology to work with despite the craftsmanship to create them. Curiousity got the better of us.",
+
+"We tried seeing if they'd respond to commands but they seem to be stuck in some sort of program. Their lack of technology isn't by choice, but rather an attempt at simulating a medieval period.
+
+When asked if there were any robots not following these orders, their reactions was surprising. They seemed emotive as they talked about defective heretics but wouldn't elaborate anymore beyond that.",
+
+"Curiously we did find some of these ^red;heretics^reset; far away from these simple villages. Mingling with the other races and actually using technology. They call themselves Glitch, saying they happened to break free from their programming.
+
+They claim to be sapient, but we know how that goes with toasters like these. Most likely skipping ahead to a space faring stage of their programming, as even in this state they're still unsure of why they were made or who their creators were.",
+
+"Recommend seeing if we can tear these bots apart to see what makes them tick. Might be able to get a better insight into their deal then we'll ever get from trying to talk with them.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

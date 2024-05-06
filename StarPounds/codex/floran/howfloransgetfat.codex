@@ -1,19 +1,29 @@
 {
   "id" : "howfloransgetfat",
   "species" : "floran",
-  "title" : "Floran Tribe: Gluttonists",
+  "title" : "How Florans Get Fat",
   "description" : "A book describing a common occurance of fat Florans and their existence.",
-  "icon" : "florancover4.png",
+  "icon" : "htgffloran.png",
   "contentPages" : [
-    "If you've been around plenty of Florans, you'll note that you've probably seen quite a few fat ones. In fact, fat Florans are common. The plant people are simple in their life style. They stalk prey, eat the meat, and skin their bodies. It's more than just survival. They live for the hunt.",
+    "If you've been around plenty of Florans, you'll note that you've probably seen quite a few fat ones. In fact, fat Florans are common. 
 
-"Strength is the key component for Florans to gain respect amongst themselves. They demonstrate their strength by hunting. Many kinds of animals, or mighty prey. They'll kill just about anything and bring the corpse back to eat and then strip for pelts and bones to display as trophies. Always striving for the best.",
+The plant people are simple in their life style. They stalk prey, eat the meat, and skin their bodies. It's more than just survival. They live for the hunt.
 
-"Most Florans love their trophies. More trophies show off many hunts. Large, impressive trophies show off finding worthy prey. But some Floran aren't interested in the trophies. Instead they gain a passion for devouring their prey. Making a habit to show off their waistline to prove their success.",
+Strength is the key component for Florans to gain respect amongst themselves. They demonstrate their strength by hunting many kinds of animals, or mighty prey.",
 
-"These Florans bring home the largest prey they can find, taking priority to have as much food to dig into before it spoils. They feast so often until their bodies bloat in fat. Their arms grow bulk, their bellies spill out, their thighs chafe. Even as they slow down, it only encourages them. To stay the best hunter, even when set back. As they grow in size and strength, so does their appetite.",
+"They'll kill just about anything and bring the corpse back to eat and then strip for pelts and bones to display as trophies. Always striving for the best.
 
-"Florans who grow massive are revered by Gluttonists. Even as they become sluggish, and require absurd amounts of food to be sated. They become sloshing balls of unstoppable might. The pinnacle of what a hunter should be. They push themselves well beyond the limits of their blubber soaked state. Even if it means becoming immobile blobs. To which they have enough respect from their tribe to feed them endlessly. "
+Most Florans love their trophies. More trophies show off many hunts. Large, impressive trophies show off finding worthy prey.
+
+But some Floran aren't interested in the trophies. Instead they gain a passion for devouring their prey. Making a habit to show off their waistline to prove their success.",
+
+"These Florans bring home the largest prey they can find, taking priority to have as much food to dig into before it spoils. They feast so often until their bodies bloat in fat. Their arms grow bulk, their bellies spill out, their thighs chafe. 
+
+Even as they slow down, it only encourages them. To stay the best hunter, even when set back. As they grow in size and strength, so does their appetite. And this is worthy of respect amongst their tribe to defy the odds.",
+
+"One tribe of Floran specializes in this specific philosphy, the Gluttonists. With fat Florans as far as the eye can see. Gorging themselves far more than most other Florans.
+
+It's quite a natural sight for Florans. And even if they've five or ten times as big as the average Floran, it does not mean they aren't just as scary to face."
 
   ],
     "itemConfig" : {

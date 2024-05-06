@@ -1,0 +1,27 @@
+{
+  "id" : "starpoundsthrogempire",
+  "title" : "The Throg Empire",
+  "description" : "A book on the vast Empire of the Throgs.",
+  "icon" : "throgcover3.png",
+  "contentPages" : [
+    "In our history, we know Avians first discovered the stars, and the Glitch that already inhabitated many worlds before them. How their crashing ship gave interstellar travel to the Florans and the consequences of that event.
+
+When the Hylotl started to colonize world after world long before being driven under the ocean. Only to be followed by the cautious Apex and lastly Humanity. Now we see a new face in our corner of the galaxy, the Throgs.",
+
+"But unlike the order listed, Throgs have been exploring space for a long time now. With records dating decades if not hundreds of years ago of Throg activity being sighted. In truth Throgs have existed on the other side of the galaxy.
+
+With nothing to oppose them, they set out conquering world after world. Their goal to harvest planets down to nothing, broken down every bit into food till there was no planet left.",
+
+"Such mad destruction has turned a portion of our galaxy into a deadzone with only space stations or lifeless rocks housing Throgs. As their native resources turn to empty calories, the Throgs expand outward.
+
+Their conquest now causing more frequent appearances here, with only mild pushback from the other races with their behavior. In truth no power truly wishes to start a fight with them, especially with how dangerous their tech is to do such damage to multiple planets.",
+
+"We can only be so thankful their change in leadership seems to have given them pause, their efforts at harvesting slow and avoiding major planets within each respective races territories.
+
+But this could change at any moment, Throgs measuring up every other race while we measure them. And as their vicious expansionist mindset creates an infinite loop of neeidng more and more resources, the kettle will blow."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

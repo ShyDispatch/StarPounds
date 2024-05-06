@@ -1,0 +1,39 @@
+{
+  "id" : "thesunbornlineage",
+  "species" : "avian",
+  "title" : "The Sunborn Lineage",
+  "description" : "A guideline of Avian worship of what they refer to as Sunborn.",
+  "icon" : "aviancover2.png",
+  "contentPages" : [
+    	"To the few who remember their ancestors' stories about the Sunborns, those words are naught but fantasy and folklore. We were once graced with the presence of Sunborns, but today, none from their lineage remain.",
+
+"The original Sunborns, known as the Celestials, were said to be born from the sun itself. They granted us life in our primordial days, and bestowed upon us many gifts; knowledge, a paradise to call home, and the ability to fly. Their generosity was boundless, and we worshiped them for it. 
+
+One day, however, the light of their grace faded from the skies, leaving only stories and memories of their benevolence.",
+
+"After the disappearance of the Celestials, Seven Godly Avians appeared to us. These were the Sunborn Children: Kluex, Harspex, Velhanu, Yemor, Amoxtli, Owdol, and Ihuicatl. 
+
+The most noteworthy amongst them and proclaimed King, Kluex, noted the emptiness of the thrones once occupied by the Celestials. As such, the Sunborn Children took up the mantle of godhood, filling the void in our worship and granting us a guiding light once more.",
+
+"In time, the Seven Ascended Sunborn Children, overseen by Kluex, would lead us to greater prosperity than ever before. 
+
+Under their guidance, our cities would grow at incredible speeds, and our technology would advance more in several years than it had during the entirety of the reign of the Celestials.",
+
+"Many temples were erected to honor the Sunborn Children and their gifts, adorned with luxuries the likes of which were never before thought possible. 
+
+Of all the advancements made during this time, however, the most important was the discovery of Avolite Crystals, which to this day are the primary component of most Avian technologies.",
+
+"Eventually Kluex would renounce his position as King, marking an end to his long reign. He would live the rest of his days as the Arbiter of Justice, seeing himself not as above, but equal to the other Sunborn Children. 
+
+Our worship of them grew year by year, until one day Kluex disappeared from the mortal world. This event would lead to his influence spreading further and further, casting a greater shadow over the other Sunborn Children than ever before.",
+
+"In time, many temples dedicated to the other Sunborn Children were converted into temples of Kluex, with the remainder being abandoned or destroyed. The desire to join Kluex in Ascension dominated our religion, leading to the other Sunborn Children becoming almost entirely forgotten.
+
+We must not forget the other Gods who granted us life, and those who walked alongside Kluex as his equals. So long as we remember, one day we too may join them in godhood."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 75
+  }
+}

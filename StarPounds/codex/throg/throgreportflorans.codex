@@ -1,0 +1,37 @@
+{
+  "id" : "throgreportflorans",
+  "title" : "Throg Report: Florans",
+  "description" : "An old Throg Scout Report on Florans",
+  "icon" : "throgreportflorans.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #54]^reset;
+
+Hohoh, I expect this report to be read by more than just a few of my superior officers. This info will prove quite useful to the future our expansion efforts as we've stumbled across truly a unique alien species of this quadrant.
+
+During our usual eating and cataloging of various creatures we find on unmarked planets. We were caught off guard when we found ourselves surrounded by of all things, sentient plant creatures.",
+
+"Being attacked like this was new, and exciting. And given their technological prowess, we were confident. Their spears either having stone or iron tips, and no armor of any kind.
+
+But to our shock, they were quite fast. Not too much of a surprise, we encounter a lot of creatures faster than us. What was surprising however was that we started to lose troops. These creatures were capable of striking our exposed regions with such strength and swiftness, with simple cavehog weapons!",
+
+"Our own armor didn't prove much of a help either, not fully understanding the true limits of these creatures, they were capable of piercing our thick hogsteel plates. Breaking their spears in the process yes, but it did not hinder their ability to fight at all.
+
+By the grit of our teeth, we somehow survived that encounter with many casualties. Enjoying the spoils of our victory with those plant creatures, and our fallen brothers and sisters. And quickly making an assessment of how to proceed. There had to be more of these primitives.",
+
+"Sharing our knowledge with other scouting parties from our own, we began focusing exclusively on these creatures. Many more encounters following, even discovering some scout parties that were less fortunate than mine, completely wiped out. To our surprise, the plants had eaten them like a Throg would.
+
+In time, we finally ran into a group of the plant primitives that were more open to talking than fighting. An opportunity we did not throw away as we opened a dialogue with them.",
+
+"They call themselves Florans, and are apparently made up of many independant tribes explaining their lack of technological growth. As we got to know about them, we learned the Florans have much more in common with the Throg than we ever imagined.
+
+Sure they aren't anywhere nearly as fat as us, but their desire to eat other life forms is something we thought was only special to us. Taking pride in their hunts to devour everything they can get their hands on.",
+
+"In return, the Florans also have a good deal respect for us. Finding as good hunters just like their people, saying we value the trophies of our hunts on our bodies than as bones or pelts. Perhaps even some Florans can be as fat as a Throg with such wording. A good sign.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

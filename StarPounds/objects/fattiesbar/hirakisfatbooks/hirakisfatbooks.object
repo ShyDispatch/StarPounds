@@ -17,39 +17,6 @@
   "novakidDescription" : "Not too keen on the whole readin' thing.",
   "throgDescription" : "Heh, I'm not one for reading. But I feel like these books might be an exception.",  
 
-  "interactAction" : "OpenMerchantInterface",
-  "interactData" : {
-    "config" : "/interface/windowconfig/vendingmachine.config",
-    "paneLayoutOverride" : {
-      "windowtitle" : {
-        "title" : "Hiraki's Books",
-        "subtitle" : " ^#b9b5b2;Fat Related Books!",
-        "icon" : {
-          "file" : "/interface/fattyshops/icons/starpoundshiraki.png"
-        }
-      }
-    },
-    "buyFactor" : 10.0,
-    "items" : [ 	    	  	   	      	  
-      { "item" : "howapexgetfat-codex" },	  
-      { "item" : "howaviansgetfat-codex" },	
-      { "item" : "howfloransgetfat-codex" },	
-      { "item" : "howglitchgetfat-codex" },	
-      { "item" : "erchiusproblem-codex" },		  
-      { "item" : "fatghost-codex" },		  
-      { "item" : "bananapudding-codex" },		  
-      { "item" : "mootant-codex" },
-      { "item" : "starpoundsuscmremnants-codex" },
-      { "item" : "fattemple-codex" },	  
-      { "item" : "townhungry-codex" },		  
-      { "item" : "florfeast-codex" },
-      { "item" : "starpoundsmammodel-codex" },	  
-      { "item" : "starpoundsmamfan-codex" },		  
-      { "item" : "starpoundsmamtribe-codex" }
-    ]
-  },	
-
-
   "inventoryIcon" : "icon.png",
   "orientations" : [
     {
@@ -71,5 +38,115 @@
       ],
       "anchors" : [ "bottom" ]
     }
-  ]
+  ],
+  
+  "scripts" : [ "hirakisfatbooks.lua" ],
+  "scriptDelta" : 0,
+
+  "interactData" : {
+    "config" : "/interface/fattyshops/fatshops.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "Hiraki's Books",
+        "subtitle" : "^#b9b5b2;Fat Related Books!",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/starpoundshiraki.png"
+        }
+      }
+    },
+    "filter" : [],
+	"modTab" : [{
+      "file": "/interface/fattyshops/tabs/tabhiraki.png",
+	  "label": " Hiraki",
+      "filter": [ "tabhiraki" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabthrog.png",
+	  "label": " Throg",
+      "filter": [ "tabthrog" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabgluttonist.png",
+	  "label": " Floran",
+      "filter": [ "tabgluttonist" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabvelhanu.png",
+	  "label": " Avian",
+      "filter": [ "tabvelhanu" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabponderous.png",
+	  "label": " Glitch",
+      "filter": [ "tabponderous" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabumiyoni.png",
+	  "label": " Hylotl",
+      "filter": [ "tabumiyoni" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabminik.png",
+	  "label": " Apex",
+      "filter": [ "tabminik" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabuscm.png",
+	  "label": " Human",
+      "filter": [ "tabuscm" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabnovakid.png",
+	  "label": " Novakid",
+      "filter": [ "tabnovakid" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/tabmonsters.png",
+	  "label": " Monster",
+      "filter": [ "tabmonsters" ]
+    },
+	{
+      "file": "/interface/fattyshops/tabs/racial.png",
+	  "label": " Misc",
+      "filter": [ "tabmisc" ]
+    }]
+  },
+  "storeInventory" : {
+    "tabhiraki" : [
+      "fattemple-codex", "townhungry-codex", "florfeast-codex"
+    ],
+    "tabthrog" : [
+      "throgreportancients-codex", "throgreportpoptops-codex", "throgreportapex-codex", "throgreportavians-codex", "throgreportflorans-codex","throgreportglitch-codex", "throgreporthumans-codex", "throgreporthylotl-codex", "throgreportnovakid-codex", "throgreportpenguins-codex",
+	  "starpoundsblubberbuttfirst-codex", "starpoundsblubberbuttsecond-codex", "starpoundsthrogculture-codex", "starpoundsthrogempire-codex"
+    ],
+    "tabgluttonist" : [
+      "howfloransgetfat-codex", "florantribegluttonists-codex", "gluttonistlore1-codex", "gluttonistlore2-codex",
+      "chika1feasthall-codex"
+    ],
+    "tabvelhanu" : [
+      "howaviansgetfat-codex", "thesunbornchildren-codex", "thesunbornlineage-codex", "sunbornvelhanu-codex"
+    ],
+    "tabponderous" : [
+      "howglitchgetfat-codex"
+    ],
+    "tabumiyoni" : [
+      "howhylotlgetfat-codex", "fatghost-codex"
+    ],
+    "tabminik" : [
+      "howapexgetfat-codex"
+    ],
+    "tabuscm" : [
+      "mootant-codex", "mootantcapturedprotectorate-codex", "mootantinstructions-codex", "mootantmattermanipulator-codex", "mootantoutbreak-codex",
+	  "mootantprisonreport-codex", "mootantsecret-codex", "mootantunexpected-codex", "starpoundsuscmremnants-codex"
+    ],
+    "tabnovakid" : [
+    ],
+    "tabmonsters" : [
+      "starpoundsvoreguide-codex"
+    ],
+    "tabmisc" : [
+      "erchiusproblem-codex", "starpoundsasranox-codex", "starpoundsstowawayguide-codex",
+      "starpoundsmamfan-codex", "starpoundsmammodel-codex", "starpoundsmamtribe-codex"
+    ]
+  }
 }

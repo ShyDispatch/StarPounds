@@ -1,0 +1,27 @@
+{
+  "id" : "throgreportancients",
+  "title" : "Throg Report: Ancients",
+  "description" : "An old Throg Scout Report on Ancients",
+  "icon" : "throgreportancients.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #112]^reset;
+
+As the vast reach of our scouting party explores this new quadrant for knowledge. There has been an undeniable pattern we've been noticing everywhere we look. Weathered, brown ruins spanning multiple planets. Gateways on these planets, or floating in a solar system.
+
+There is evidence of a vast empire of an unknown alien race all over this quadrant.",
+
+"As we plucked as much info as we could from any creature that could somewhat communicate. They all say the same thing that they are the ruins of a mysterious race they've oh so creatively called, Ancients.
+
+We have no way of knowing what these aliens look like, no corpses to find, no sign of any civilization beyond simple abstract ruins that serve no purpose. It's no skin off our bones, but a mystery like this is bad for my job as a scout.",
+
+"Will note that what technology does exist might be worth investigating if we ever have the time for it once we expand into this quadrant. The various aliens here all agree the Ancients were seemingly incredibly advanced, to a point we can't ignore.
+
+There is portal tech scattered everywhere across the galaxy and seemingly even outside of it. I do not need to tell you why reaching outside this galaxy is pivotal for our ultimate mission.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

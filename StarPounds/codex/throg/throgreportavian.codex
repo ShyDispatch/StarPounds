@@ -1,0 +1,27 @@
+{
+  "id" : "throgreportavians",
+  "title" : "Throg Report: Avians",
+  "description" : "An old Throg Scout Report on Avians",
+  "icon" : "throgreportavian.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #21]^reset;
+
+We've had a brief run in with an alien species during our expedition into a new quadrant not under the rule of the Throg Empire. A race of birds that live in sandstone buildings and have a fascination with red crystals.
+
+These red crystals proved to be a vital source of power to these low lives as they were more technologically developed then we initially thought. Delaying a potential initial assault on our part as we decided to gather knowledge instead.",
+
+"These Avians as they call themselves are simply nuts, but we do seemingly have something in common to them. We both devout our lives to an almighty leader of our people we hold to a higher standard. But these fools... 
+
+Unlike us who know of our glorious Blubberbutt somewhere deep in the heart of our Empire gorging and fattening himself up. The Avians isntead worship a figure who has long since been dead. How they managed to stay alive for this long without proper guidance is truly a miracle.",
+
+"Taking offense to our logical deduction that they are fools for not having an alive god of their own, as well as the statement that our Blubberbutt is the only individual worthy of worship. They instigated a fight.
+
+They certainly lasted longer than we thought they would. Perhaps this is how they manage to stumble across the galaxy with a modicum of grace. A race worth keeping an eye on, especially with how widespread they seem to be here in this quadrant.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id" : "starpoundsblubberbuttfirst",
+  "title" : "Blubberbutt The First ",
+  "description" : "A log on the Throg Religion surrounding the First Blubberbutt.",
+  "icon" : "throgcover6.png",
+  "contentPages" : [
+    "We owe our existence to our great and mighty Blubberbutt. A Throg fatter and more gluttonous than any Throg that came before him. Who ate everything in his wake, even other Throgs to gain ultimate adoration.
+
+Uniting a banner all Throgs would follow under the newly established Throg Empire, he gave us a purpose beyond the need to stuff ourselves to survive. As he would lay out his vision of greatness for us to hear.",
+
+"He was fattened up, larger and larger, swelling over the ridges of our homeworld For he foretold a way to reshape the universe in the image of the Throgs. So we kept fattening him up.
+
+That only when he could grow so large that he could dwarf the universe, could he eat it. And within his rumbling stomach shall digest and recreate all as he sees fit. A paradise for the gluttonous.",
+
+"We shall travel the stars for food. From the chewable to the crunchy, we shall break apart every resource of a planet until it is dust. All to feed to our Omnipotent Emperor, for his vision is clear.
+
+The Blubberbutt's appetite grows with his size. And he shall gorge fatter and fatter. Till he grows larger than the stars in the sky, till he blocks out all vision with his corpulence, till we are all one with the Almighty Blubberbutt."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

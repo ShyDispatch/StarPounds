@@ -1,0 +1,37 @@
+{
+  "id" : "sunbornvelhanu",
+  "species" : "avian",
+  "title" : "Sunborn Child Velhanu",
+  "description" : "A book describing one of the original Avian Sunborn gods, Velhanu.",
+  "icon" : "sunbornvelhanu.png",
+  "contentPages" : [
+    "Kluex, the Almighty Sunborn. The one God who awaits all Avians who ascend to Aether to join him and obtain wings. 
+
+There are mentions of other Sunborns besides Kluex but rarely are they ever named. For Kluex was one of seven Sunborn Children who graced our lives. One of those Sunborn Children was Velhanu.",
+
+"Of any Sunborn that's not Kluex, Velhanu is probably the one who had the second biggest impact on Avian culture when we prospered on Avos. 
+
+Known as a Goddess of Luxury, Beauty, Feasts, and Joy. She was the pinnacle of a cheerful Avian, radiating such positive energy Avians couldn't help but smile in her presence and famous amongst the rich and priesthood.",
+
+"Towns of Velhanu ranged from the biggest farming villages on Avos, to bustling cities known for their food. Temples in her honor were known for their large sizes for Velhanu herself was such a large specimen of Avian. 
+
+So portly she was from constant hedonism and feasts. A blubbery feminine mass coated in jewelry that had to be carried around constantly by her handmaidens.",
+
+"But never was she selfish for there was always enough food for everyone. Comforts of the glory days are attributed to Velhanu, making her almost as famous as Kluex. 
+
+Even with the fading of the other Sunborn from living memory, the echoes of Velhanu still lives on in our own traditions. The luxury Ascendants experience during the Ascension Ceremony, especially the nine days of feasting, is directly a result of Velhanu's way of life.",
+
+"Those that recall Velhanu don't know what to make of her ludicrous form. As her weight would not allow her to fly like the other Sunborn. 
+
+Some interpret it as her way of relating to the flightless. A way to represent enjoying life until we can one day shed such delights to reobtain our wings. Others see it more as a trap, to prevent Avians from flying even if they regain their wings.",
+
+"But it is undeniable Velhanu has a positive influence on those who worship her. Even a few of the heretical Grounded find solace in her and her alone. As misguided as their reasoning is. 
+
+And her power lives on, as those who know of the Pink Avolite Crystals are well aware of Velhanu's blessings upon us."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 75
+  }
+}

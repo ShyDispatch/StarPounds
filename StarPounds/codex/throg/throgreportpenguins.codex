@@ -1,0 +1,27 @@
+{
+  "id" : "throgreportpenguins",
+  "title" : "Throg Report: Penguins",
+  "description" : "An old Throg Scout Report on Penguins",
+  "icon" : "throgreportpenguins.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #49]^reset;
+
+While making our way to the next solar system, we suddenly received a transmission as soon as were arrived. What seemed like a sauce pan for a ship was hailing us, requesting to take a look at their wares.
+
+With no intention on paying for anything, we decided to check it out on the off chance they had good food for us to take. What followed was entering the most cramped ship I've ever had the mispleasure of enduring.",
+
+"The ceiling was just high enough for us to walk through, but our width was brushing up against the walls and objects that litered what I would describe as a junk heap. It was quite obvious why it was designed when we encountered the indivuals that called it home.
+
+Incredibly short and squat bird like creatures that called themselves Penguins. They're energetic and rude creatures with an unsophisticated vocabulary. They tried to sell us their wares, no food in sight, only junk that paled to what we had.",
+
+"We told them they had nothing worth looking at and were about to depart when they tried pulling out primitive weapons on us. The resulting onslaught was over and done before those little nuggets could regret their actions.
+
+Only after digging through their files did we learn they were just one of many little terrors of space pirates in this sector. I'll imagine they'll quickly avoid us with enough encounters.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

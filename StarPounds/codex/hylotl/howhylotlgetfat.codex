@@ -1,19 +1,25 @@
 {
   "id" : "howhylotlgetfat",
   "species" : "hylotl",
-  "title" : "Hylotl Whales",
+  "title" : "How Hylotl Get Fat",
   "description" : "A book describing a common occurance of fat Hylotl and their existence.",
-  "icon" : "hylotlcover4.png",
+  "icon" : "htgfhylotl.png",
   "contentPages" : [
-    "The Hylotl have been a race very in touch with its old ways. Managing to mix tradition with new. One moment you're witnessing the height of Hylotl technology displayed in their city streets, the next their rooms remove it. With paper walls and tables that can't use chairs.",
+    "Despite the way of life and focus on remaining healthy in their lives, Hylotl actually suffer heavily with an average portion of their total population being overweight in some capacity.
 
-"Yet the wave of the future has a way of corrupting. To receive maximum retention and monetization. PLaces that have no room for tradition. Where lights are always flashing. Where games and media are addicting. Where the food is fattening to maximize folks wanting more.",
+There are many factors that contribute to this, and one that won't be shaken off anytime soon given their trends. One of them being their forced evolution.",
 
-"A lot of the current generations of Hylotl are dealing with a wave of aggressive trends that try to sink its claws into the once near endangered species. As new cities hope to indulge its populace to make them lazy and uncaring.",
+"It can be a forgotten fact that Hylotl weren't always as amphibious in appearance as they are today. After being driven underwater during the Floran Wars, their adaptable evolutionary bodies radically changed over the generations.
 
-"...",
+This resulted in them taking on traits to better suit their environment, despite not being able to breath underwater. Forced to swim constantly in cold water forced them to more easily pack on blubber to stay warm and float better.",
+	
+"Hylotl also faced issues growing up in their confined underwater cities, with little room to truly stretch their legs outside of stepping out the airlock to take a swim.
 
-"..."
+Generations of Hylotl were stuck inside, making it much easier to not get proper exercise and indulge in food as they sat around. Not helped by a heavy presence of their modern society.",
+
+"Fast food chains are quite prevelant amongst the growing modern society of the Hylotl. Advertisements lulling them into embracing a lazy life style and enjoying unhealthy foods.
+
+Even old traditional sports of Sumo, which features wrestlers packing on huge weight to compete. As well as local manga and anime trying to normalize the plus sized figures to advertise more fast food. Hylotl have an uphill battle for thin figures."
 
   ],
     "itemConfig" : {

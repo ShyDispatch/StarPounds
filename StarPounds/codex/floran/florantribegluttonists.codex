@@ -1,0 +1,29 @@
+{
+  "id" : "florantribegluttonists",
+  "species" : "floran",
+  "title" : "Floran Tribe: Gluttonists",
+  "description" : "A book describing a tribe of Florans known as the Gluttonists.",
+  "icon" : "florantribegluttonist.png",
+  "contentPages" : [
+    "Florans are a fascinating species for their wide range of diverse tribes. Some aggressive, others friendly, all loving the hunt. Their isolated communities develop independant from one another, radically changing them as they develop.
+
+While many tribes are distinct, today's focus is on one of the strangest. the Gluttonist tribe, a tribe dedicated purely to being fat.",
+
+"Despite their differences, all Florans have an intrinsic desire for the thrill of the hunt. And they love to collect trophies from their sport of survival. From pelts to bones, clever use is made out of their prey's remains.
+
+But for Gluttonists, they see a different kind of trophy. A moment on their lips lasting on their hips, focusing on showing off the success of their hunts via fattening themselves.",
+
+"They gain a passion for devouring their prey, not just to be fat, but also to challenge themselves. As Gluttonists take so much pride in their strength, that they won't be limited by how big they get.
+
+No matter how ludicrously sized they get, they strive to surpass their physical form. Whether it be how slow they become, how much more obvious they are to spot, or even the panting of their breath.",
+
+"Florans who grow massive are revered by Gluttonists. Even as they become sluggish, and require absurd amounts of food to be sated. They become sloshing balls of unstoppable might, the pinnacle of what a hunter should be. 
+
+They push themselves well beyond the limits of their blubber soaked state. Even if it means becoming immobile blobs. To which they have enough respect from their tribe to feed them endlessly."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 25
+  }
+}

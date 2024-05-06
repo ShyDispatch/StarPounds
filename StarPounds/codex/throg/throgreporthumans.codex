@@ -1,0 +1,13 @@
+{
+  "id" : "throgreporthumans",
+  "title" : "Throg Report: Humans",
+  "description" : "An old Throg Scout Report on Humans",
+  "icon" : "throgreporthumans.png",
+  "contentPages" : [
+    "^gray;This Log is currently locked and cannot be read at this time.^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

@@ -1,19 +1,17 @@
 {
   "id" : "howapexgetfat",
   "species" : "apex",
-  "title" : "Tabloid: Bigger Is Better",
-  "description" : "An article talking about the rise in apex weights and how it's a good thing.",
-  "icon" : "apexcover5.png",
+  "title" : "How Apex Get Fat",
+  "description" : "A book describing the means of how Apex become overweight.",
+  "icon" : "htgfapex.png",
   "contentPages" : [
-    "Perhaps you, a citizen of Big Ape, visiting neighboring cities to explore all that Big Ape has to offer, came across a new sight that leaves you confused. Towns with the population evidently packing on pounds. Perhaps too many. But you should know that this is perfectly natural. ",
+    "When the Miniknog introduced the Vestigi-Evo process to cure the widespread deadly waterborne pathogen that almost wiped out their species. The VEP changed Apex forever. Devolving their physical appearance with the tradeoff of massively increasing their mental capabilities.
 
-"The Miniknog are bastions of science always seeking to improve the way of life for Apex kind. One brilliant branch has been looking into expanding the peak of bananas. Improving the taste, size, health value, and benefiting Apex as a whole.",
+As they regressed physically, they took on the traits of their ancestors. Their bodies bulked up with added muscle, their strength more naturally impressive.",
 
-"When regularly eating these super bananas, the Miniknog has found that Apex gain strength without worrying about exercising. Hair becomes silky smooth. And age expectancy increasing by thirty percent. They're so good towns being allowed to have these super bananas just want to eat them all the time.",
+"Yet while their standard of beauty is a common discussed source of negatives with their transformation. Their change in diet is not one usually addressed. To maintain their new stature, Apex now require a substantial amount of food to sustain themselves.
 
-"If you see the wobble of a belly so large it could crush a couch, do not worry. That is merely a citizen so in love with these bananas they purposefully ate so much to get this fat by their own choice. Concerns that the bananas are highly fattening, or increase appetite, or can cause addiction from taste, were all disproven in many tests.",
-
-"It is important to remember this, and to not shame any citizen who is eager to enjoy these superior bananas. Growing fat was their choice. And soon, these super bananas will be coming to every other town, including your own. Try to be patient until these delicious bananas can reach your lips. "
+From a change in their nutrional needs, to even how much more they have to eat, their body is much more high maintenance. Making it much easier for Apex to gain additional weight."
 
   ],
     "itemConfig" : {

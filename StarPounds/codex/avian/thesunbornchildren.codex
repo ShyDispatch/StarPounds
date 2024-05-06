@@ -1,0 +1,41 @@
+{
+  "id" : "thesunbornchildren",
+  "species" : "avian",
+  "title" : "The Sunborn Children",
+  "description" : "A tablet on the gods of the Avians referred to as the Sunborn Children.",
+  "icon" : "thesunbornchildren.png",
+  "contentPages" : [
+    "Kluex
+
+The Almighty, the King God. The Indomitable, the Arbiter of Justice. The one who leads us to our true potential and awaits all those who shall ascend to join the Sunborn.",
+
+"Harspex
+
+Goddess of the Hunt. The Fearsome, Protector of Walls. The one who shall guide us to victory over our foes, and ensure we can meet our needs.",
+
+"Velhanu
+
+Goddess of Bliss. The Gourmet, Enjoyer of Passions. The one who lets us enjoy the spoils of life. Where riches, good food, and luxury are within the tips of our wings in great abundance.",
+
+"Yemor
+
+God of Merchants. The Banker, Overseer of Commerce. The one who shall ensure our society remains civilized. Where fairness triumphs and we may prosper.",
+
+"Amoxtli
+
+Goddess of Knowledge. The wise, Scholar of All Things. The one who shall ensure our minds are ever curious, and divert our eyes to the Stars to learn.",
+
+"Owdol
+
+God of Work. The Architect, the Master Builder. The one who builds our homes and set us on the path of uncovering new technologies. The one who brought use out of the Avolite Crystals.",
+
+"Ihuicatl
+
+God of Art. The Sculptor, Imprint of Aether. The one who shall let our creativity flourish. Through our imagination we shall remember the Heavens in the mortal world and make it beautiful."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "uncommon",
+    "price" : 75
+  }
+}

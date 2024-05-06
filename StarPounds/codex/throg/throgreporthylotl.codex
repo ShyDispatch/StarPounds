@@ -1,0 +1,27 @@
+{
+  "id" : "throgreporthylotl",
+  "title" : "Throg Report: Hylotl",
+  "description" : "An old Throg Scout Report on Hylotl",
+  "icon" : "throgreporthylotl.png",
+  "contentPages" : [
+    "^#8968e2;[SCOUT REPORT #61]^reset;
+
+Once more we've encountered another alien race that we could say barely passes as a sapient creature. Weird three eyed squishies, and not the good kind of squishy.
+
+From what we can gather at a glance they're partially amphibious. Their evolution incomplete and lack important traits for living underwater.",
+
+"Their buildings evokes a primitive species, but their tech is surprisingly more robust despite how they present themselves.
+
+From what we can gather their numbers aren't that numerous, but make up for it by being a dominant force in their quadrant's economy.",
+
+"Gathering more info, they apparently are recovering from a rather poor war with the Florans. A very one sided one that also explains their evolution.
+
+They are a cowardly and unimpressive race, note worth any interest.
+
+^#8968e2;[END REPORT]^reset;"
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

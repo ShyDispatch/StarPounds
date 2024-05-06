@@ -1,17 +1,21 @@
 {
   "id" : "howglitchgetfat",
   "species" : "glitch",
-  "title" : "The Rich Glitch",
+  "title" : "How Glitch Get Fat",
   "description" : "A book describing a common occurance of fat Glitch and their existence.",
-  "icon" : "glitchcover6.png",
+  "icon" : "htgfglitch.png",
   "contentPages" : [
-    "It's easy to assume that the Glitch all come in one shape. Built as if with a shared template in mind for every new born Glitch. They are robots after all. But even you can guess at an exception. Those playing roles as nobles and royalty. Tyrants in costumes who love the theme of gluttony.",
+    "To those unfamiliar with Glitch, and that's incredibly common due to complications in how Glitch are assembled, it's easy to think it's weird that Glitch are capable of packing on weight. They are just robots after all, right?
 
-"Kings and Queens, princes and princesses, pompous dukes and duchesses. Figures with wealth and luxury that seem to match that status in their appearance. And none speaking volumes more than being able to afford feasts every day for the rest of their lives. To be so fat in metal that even their thrones can't even contain them.",
+While true, Glitch are a bit more advanced in their design. With their primary function and directive being to simulate an evolving civilization, they can simulate a living organism in multiple ways. Such as needing air to breath, food and drink to survive, and storing fat.",
 
-"These Glitch are either born into such a role, made in mind to be either pleasantly plump or massively fat. Or finding the taste of food irresistable, gorging endlessly. Their ability to require and process food much like any organic meaning such gluttony can cause their metal frames to grow. As if storing fat of their own.",
+"Why Glitch are designed in such a way goes beyond the simple answer of simulating life but also gives them a means to be self sustainable and last forever. With artificial fat acting as reserve energy for them.
 
-"If a Glitch does not fit into the role of a noble. They will regularly be stuck in their normal frames. If a peasant were to become fat, it's unknown how their programming would react. Would they rise to a better station in life? Or would their society see them as a new outlier to be rid of? "
+Though it does also lean into the roles of their simulation as well. As notable Glitch that would end up gaining weight would be those that are of more noble blood, or noble oil.",
+
+"From Kings and Queens, to princes and princess', to dukes and duchess'. Even the lower end of nobility, all are capable of enjoying luxury those of a lower class aren't able to. They may even unconsciously lean into gaining weight.
+
+As a part of their protocols, Glitch still under control of their protocols do not have free will like those free of their programming. And fat, pompous nobility indulging in their gluttony adds to the role they are forced to play."
 
   ],
     "itemConfig" : {

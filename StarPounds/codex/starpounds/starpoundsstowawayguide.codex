@@ -1,0 +1,18 @@
+{
+  "id" : "starpoundsstowawayguide",
+  "species" : "human",
+  "title" : "Stowaway Galaxy Guide",
+  "description" : "A book detailing all you need to know about being a stowaway in the galaxy.",
+  "icon" : "starpoundsstowawayguide.png",
+  "contentPages" : [
+    "^gray;An excerpt taken from a random page that happens to mention Throgs.^white;
+
+Throg Singing is wildly accepted as the third worst in the universe. The second worst is that of the Sirens of the Helions.
+
+Four of their audience died of internal hemoraging. And the President of the Mid Galactic Arts Nobbling Council survived by gnawing one of his own legs off."
+  ],
+    "itemConfig" : {
+    "rarity" : "Common",
+    "price" : 25
+  }
+}

@@ -1,38 +1,86 @@
 {
   "id" : "starpoundsvoreguide",
   "title" : "Sapient Predator Guide",
-  "description" : "A guide detailing sapient species predators.",
+  "description" : "A guide detailing sapient predators.",
   "icon" : "starpoundsvore.png",
   "contentPages" : [
-    "^yellow;//INTRODUCTION^white;
+    "^gray;//INTRODUCTION^reset;
 
-Many a galactic adventurer might know the dangers of being eaten alive by apex predators such as fully mature Poptop adults, the patient Anglure, or the slobbering Oogler
+Many a galactic adventurer might know the dangers of being eaten alive by terrifying predators such as fully mature Poptop adults, the patient Anglure, or the slobbering Oogler
 
 But the most dangerous predators are the ones we may know quite well, those who walk on two legs are as smart as you or I. You never know when someone would leap at you to swallow you whole, or try to cook you in their stew.",
 
-"^yellow;//THROGS^white;
+"^#8968e2;//THROGS^reset;
 
-Throgs are the most voracious race of them all. Their entire society is built around eating everything in sight. They can't help it with how hungry they always are, leading them to seeing everything as meals on the menu.
+Throgs are the most voracious race of them all, their entire society is built around eating everything in sight. They can't help it with how hungry they always are, leading them to seeing everything as meals on the menu.
 
-And adventurers are especially tasty to them. The fastest record of a Throg eating a person whole is zero point sixty two seconds.",
+And adventurers are especially tasty to them, the fastest record of a Throg eating a person whole is point sixty two seconds.",
 
-"The elasticity of their skin is vast. Capable of swallowing things much larger then themselves, and they can get pretty big already. Naturally fat and yearning to be fatter.
+"^#8968e2;//THROGS^reset;
+
+The elasticity of their skin is vast, capable of swallowing things much larger then themselves, and they can get pretty big already. Naturally fat and yearning to be fatter.
 
 There isn't much that can be done if you meet a Throg. It'd be more surprising to meet a Throg who won't eat you, making them the most likely sapient race to eat you.",
 
-"^yellow;//FLORANS^white;
+"^green;//FLORANS^reset;
 
 Florans are another well known species who are capable of eating people whole and regularly do. They even have a problem of eating each other from time to time, just like Throgs.
 
 Widely considered a savage species, Florans simply partake in their hunter life style to the extreme. Always ready to hunt their next meal at a moments notice.",
 
-"Don't be fooled by a Floran with simply a loincloth and a spear. Just because you have armor and a blaster doesn't make you an equal to the fighting prowess of a basic Floran.
+"^green;//FLORANS^reset;
+
+Don't be fooled by a Floran with simply a loincloth and a spear. Just because you have armor and a blaster doesn't make you equal to the fighting prowess of an average Floran.
 
 Their strength and speed is much higher then other races, and can easily overpower even the most decked out soldier of the future. To give a Floran armor and a blaster...",
 
-"We should all be lucky the tendency to eat others that Throgs and Florans partake in isn't widespead to the other sapient races who roam the galaxy.
+"^gray;//MISC^reset;
 
-But just because it isn't common doesn't mean it's totally impossible. If Throgs and Florans are number one and two, we shall go over the likelihood of being eaten whole by another species."
+We should all be lucky the tendency to eat others that Throgs and Florans partake in isn't widespead to the other sapient races who roam the galaxy.
+
+But just because it isn't common doesn't mean it's totally impossible. If Throgs and Florans are number one and two, we shall go over the likelihood of being eaten whole by another species in no particular order.",
+
+"^red;//AVIANS^reset;
+
+Most assume that with the beaks on Avians prevents them from being able to swallow large foods whole, but this is not the case.
+
+Like many birds, they can open quite wide, used to eating things whole without the ability to chew. Add to their size, and they have no trouble having their throats expand to swallow down other beings around their size.",
+
+"^blue;//HYLOTL^reset;
+
+Despite their relatively peaceful nature and culture, Hylotl's forced evolution after fleeing underwater has given them many aquatic traits.
+
+One of these traits gives them incredibly elastic skin. And a mouth capable of opening wide much like a whales. Giving them incredibly easy means to eat large food whole. Including other sapient beings.",
+
+"^#71f2f6;//APEX^reset;
+
+Apex are no stranger to adversity, mixed with the genetic mutation that's turned them more primal physically, has added benefits to them in many ways.
+
+It's easy to be intimdated by just how much their mouths can open up, and it's not just for show. While it'd be a tight fit, they're capable of swallowing things relatively their size.",
+
+"^orange;//GLITCH^reset;
+
+It's difficult to realize, but Glitch do require food to survive. Using it as a source of fuel of sorts to keep going.
+
+While Glitch can't normally extend their mouth far, they are not bound by normal physical limitations as organic beings do. And can modify themselves in the moment or specifically designed to eat larger foods whole.",
+
+"^yellow;//NOVAKIDS^reset;
+
+Novakids are an enigma, as they don't seem to have a mouth, so how do they eat? They do require eating and drinking just like any other being.
+
+Some assume they can simply absorb food, usually still where the mouth would be as if by instinct. Whether it actually has to be there or not is unclear, but it does mean they don't have a limit.",
+
+"^#d2f473;//FROGGS^reset;
+
+While a rare sight to see due in part to their ramshackle life style. Froggs are a very passive species, they couldn't harm a fly if they wanted to.
+
+Yet their large stature and gigantic mouth makes it easy for them to gobble up anything over twice their size. There's no telling when they'd go from staring blankly at you to gobbling you up in an instant.",
+
+"^#7ce7b3;//AGARANS^reset;
+
+One of the most mysterious races yet are the Agarans, strange fungal folk that sprouted out of nowhere a few years back. Many wonder where they came from and if they have connections to Florans.
+
+Given their large stature, as well as a pretty big mouth to go with their heads, they're not the kind of race you want to stick around to see if they could eat you whole."
   ],
     "itemConfig" : {
     "rarity" : "Common",

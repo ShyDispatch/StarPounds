@@ -1,0 +1,29 @@
+[
+  {
+    "op": "add",
+    "path": "/converse/throg",
+    "value": {
+    "generic": [
+        "Out here on the vast void of space, independant Throgs are hard to find.",
+        "I'm a bit of a resource sink when it comes to food around these parts.",
+        "Throgs aren't usually welcomed in most places due to our high demand of food.",
+        "Sometimes I worry living out here might mean I can't keep my weight up.",
+        "Nah, I'm not a part of the Throg empire. That lifestyle just ain't for me.",
+        "Don't let all the travelling get to your weight."
+    ]
+    }
+  },
+  {
+    "op": "add",
+    "path": "/converse/mootant",
+    "value": {
+    "generic": [
+        "Not much left of the USCM out here.",
+        "I still remember all the fleets, the colonies, all gone now.",
+        "Can't figure out what to do with my life now, hanging out here in space at least gives me time to think.",
+        "All these years out here in space, still not sure what to do with myself.",
+        "I may not be able to be Human again, but I can live with this."
+    ]
+    }
+  }
+]

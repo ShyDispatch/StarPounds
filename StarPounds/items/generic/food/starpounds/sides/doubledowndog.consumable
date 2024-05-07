@@ -1,0 +1,21 @@
+{
+  "itemName" : "starpoundsdoubledowndog",
+  "rarity" : "Rare",
+  "price" : 360,
+  "category" : "preparedFood",
+  "inventoryIcon" : "doubledowndog.png",
+  "description" : "The useless bits of meat made useful and tasty with chicken for buns.",
+  "shortdescription" : "Double Down Dog",
+  "effects" : [ [
+    {
+        "effect" : "maxenergyscalingboostfood",
+        "duration" : 315
+    }
+  ] ],
+  "foodValue": 35,
+  "tooltipKind" : "food",
+  "builder" : "/items/buildscripts/buildfood.lua",
+  "maxStack" : 1,
+  "itemAgingScripts" : ["/scripts/items/rotting.lua"],
+  "rottingMultiplier" : 5.0
+}

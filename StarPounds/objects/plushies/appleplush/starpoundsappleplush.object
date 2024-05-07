@@ -1,0 +1,31 @@
+{
+  "objectName" : "starpoundsappleplush",
+  "colonyTags" : ["human","pretty","starpounds"],
+  "rarity" : "Legendary",
+  "category" : "decorative",
+  "price" : 500,
+
+  "description" : "A cute ^#2862e9;Grace^reset; plush toy.",
+  "shortdescription" : "^#2862e9;Grace^reset; Plushie",
+  "race" : "generic",
+
+  "apexDescription" : "It's a plush of ^#2862e9;Grace^reset;.",
+  "avianDescription" : "An incredibly soft plush of ^#2862e9;Grace^reset;.",
+  "floranDescription" : "^#2862e9;Grace^reset; plush as cute as the real thing!",
+  "glitchDescription" : "Appreciative. A cuddly ^#2862e9;Grace^reset; plush.",
+  "humanDescription" : "Cool, I want one of these!",
+  "hylotlDescription" : "Squee! I need this plushie for my collection!",
+  "novakidDescription" : "Ain't sure what the point of this thing is.",
+
+  "inventoryIcon" : "starpoundsappleplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsappleplush.png:<color>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

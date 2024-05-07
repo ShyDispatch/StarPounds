@@ -20,7 +20,7 @@
   "inventoryIcon" : "starpoundsblossomplushieicon.png",
   "orientations" : [
     {
-      "dualImage" : "starpoundsblossomplushie.png:<color>",
+      "dualImage" : "starpoundsblossomplushie.png:<color>.<frame>",
       "imagePosition" : [-16, 0],
       "frames" : 1,
       "animationCycle" : 0.4,

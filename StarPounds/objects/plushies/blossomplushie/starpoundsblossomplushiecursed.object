@@ -9,14 +9,14 @@
   "description" : "A cute plushie of an orchid mantis boy? Something seems off with this one though",
   "shortdescription" : "Blossom Plushie?",
   "race" : "generic",
-
-  "apexDescription" : "A curious insect. I've heard they can be quite ravenous- though this one's a plush toy at least... I hope.",
-  "avianDescription" : "What a weird hungry looking insect... Still cute though!",
-  "floranDescription" : "Cute pink bug looksss sssurprisingly tasssty... Though Floran worries plush might eat Floran.",
-  "glitchDescription" : "Endeared. Surprisingly cute for a bug, even ignoring the stomach noises its making!",
-  "humanDescription" : "What a cute little pink grasshopper!... Why do I hear stomach noises?",
+  
+  "apexDescription" : "A curious insect. I've heard they can be quite ravenous- though this one's a plush toy at least.",
+  "avianDescription" : "What a weird looking insect... Still cute though!",
+  "floranDescription" : "Cute pink bug looksss sssurprisingly tasssty.",
+  "glitchDescription" : "Endeared. Surprisingly cute for a bug!",
+  "humanDescription" : "What a cute little pink grasshopper!",
   "hylotlDescription" : "For some reason this plushie has a very... voracious aura to it.",
-  "novakidDescription" : "This plush bug is too heckin' cute!... Wait is its belly growling?",
+  "novakidDescription" : "This plush bug is too heckin' cute!",
 
   "inventoryIcon" : "starpoundsblossomplushieicon.png",
   
@@ -49,10 +49,10 @@
   
   "orientations" : [
     {
-      "dualImage" : "starpoundsblossomplushie.png:<color>",
+      "dualImage" : "starpoundsblossomplushie.png:<color>.<frame>",
       "imagePosition" : [-16, 0],
-      "frames" : 1,
-      "animationCycle" : 0.4,
+      "frames" : 8,
+      "animationCycle" : 120.0,
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]

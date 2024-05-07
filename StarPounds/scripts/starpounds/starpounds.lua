@@ -244,6 +244,8 @@ starPounds.slosh = function(dt)
 	if not starPounds.hasSkill("sloshing") then return end
 	-- Skip if nothing in stomach.
 	if starPounds.stomach.contents == 0 then return end
+	-- Only works with energy.
+	if status.isResource("energy") and status.resourceLocked("energy") then return end
 	local crouching = mcontroller.crouching()
 	starPounds.sloshTimer = math.max((starPounds.sloshTimer or 0) - dt, 0)
 	starPounds.sloshDeactivateTimer = math.max((starPounds.sloshDeactivateTimer or 0) - dt, 0)
@@ -258,6 +260,9 @@ starPounds.slosh = function(dt)
 		world.sendEntityMessage(entity.id(), "starPounds.playSound", "slosh", soundMultiplier, pitchMultiplier)
 		if activationMultiplier > 0 then
 			starPounds.digest(starPounds.settings.sloshDigestion * sloshEffectiveness, true)
+			local energyMultiplier = sloshEffectiveness * starPounds.getStat("sloshingEnergy")
+			status.modifyResource("energyRegenBlock", status.stat("energyRegenBlockTime") * starPounds.settings.sloshEnergyLock * sloshEffectiveness)
+			status.modifyResource("energy", -starPounds.settings.sloshEnergy * energyMultiplier)
 			starPounds.gurgleTimer = math.max((starPounds.gurgleTimer or 0) - (starPounds.settings.sloshPercent * starPounds.settings.gurgleTime), 0)
 			starPounds.rumbleTimer = math.max((starPounds.rumbleTimer or 0) - (starPounds.settings.sloshPercent * starPounds.settings.rumbleTime), 0)
 		end

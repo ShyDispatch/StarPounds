@@ -52,13 +52,13 @@
 				},
 				"glitch": {
 					"default": [
-						"Casual: I am here to take in lunch.",
-						"Weary: Throgs don't have good regards for robot life, even with easing up their standards on other races entering their territory.",
-						"Inquisitive: What is it that makes Throgs so spiteful of robotic life?",
-						"Curious: I wonder if I could get my hands on a Throg on top of my examination table?",
-						"Statement: This place has been for lunch while I study the Throgs.",
-						"Statement: Normally it's not much of a concern for Glitch, but the food here is quite fattening.",
-						"Statement: Throgs are unusual, requiring to be fat and constantly eating to be healthy."
+						"Casual. I am here to take in lunch.",
+						"Weary. Throgs don't have good regards for robot life, even with easing up their standards on other races entering their territory.",
+						"Inquisitive. What is it that makes Throgs so spiteful of robotic life?",
+						"Curious. I wonder if I could get my hands on a Throg on top of my examination table?",
+						"Statement. This place has been for lunch while I study the Throgs.",
+						"Statement. Normally it's not much of a concern for Glitch, but the food here is quite fattening.",
+						"Statement. Throgs are unusual, requiring to be fat and constantly eating to be healthy."
 					]
 				},
 				"human": {

@@ -1,9 +1,8 @@
 [  
   {  
     "op" : "add",
-    "path" : "/attack/human",
-    "value" : {  
-      "throg" : [  
+    "path" : "/attack/human/throg",
+    "value" : [  
         "This just isn't your day!",
         "We are the Occasus! You can't stop us, pig!",
         "Go back to your brick house so we can destroy that too!",
@@ -18,8 +17,12 @@
         "You won't leave this place!",
         "We'll rid the galaxy of you Throg fascists!",
         "We're doing the universe a favor getting rid of you Throgs!"
-      ],
-      "mootant" : [  
+      ]
+    },
+  {  
+    "op" : "add",
+    "path" : "/attack/human/mootant",
+    "value" : [  
         "This just isn't your day!",
         "We are the Occasus! You can't stop us, mooshi!",
         "You're no longer even human! Putting you down will be a mercy!",
@@ -36,5 +39,4 @@
         "There's nothing natural about you!"
       ]
     }
-  }
 ]

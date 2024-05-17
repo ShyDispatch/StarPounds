@@ -48,11 +48,20 @@ function populateOptions()
 
   for optionIndex, option in ipairs(options) do
     local statModifierString = ""
-    for _, statModifier in ipairs(option.statModifiers or jarray()) do
-      local modifierColour = (stats[statModifier[1]].negative and statModifier[2] < 0 or statModifier[2] > 0) and "^green;" or "^red;"
-      local amount = (stats[statModifier[1]].invertDescriptor and (statModifier[2] * -1) or statModifier[2]) * 100
-      local statColour = stats[statModifier[1]].colour and ("^#"..stats[statModifier[1]].colour.."aa;") or "^gray;"
-      statModifierString = statModifierString..string.format("\n%s%s^gray; %s by %s%d%%", statColour, stats[statModifier[1]].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+    if not option.hideStats then
+      for _, statModifier in ipairs(option.statModifiers or jarray()) do
+        local modifierColour = (stats[statModifier[1]].negative and statModifier[2] < 0 or statModifier[2] > 0) and "^green;" or "^red;"
+        local amount = (stats[statModifier[1]].invertDescriptor and (statModifier[2] * -1) or statModifier[2]) * 100
+        local statColour = stats[statModifier[1]].colour and ("^#"..stats[statModifier[1]].colour.."aa;") or "^gray;"
+        statModifierString = statModifierString..string.format("\n%s%s^gray; %s by %s%s%%", statColour, stats[statModifier[1]].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+      end
+
+      for _, statOverride in ipairs(option.statOverrides or jarray()) do
+        local overrideColour = (stats[statOverride[1]].negative and statOverride[2] < stats[statOverride[1]].base or statOverride[2] > stats[statOverride[1]].base) and "^green;" or "^red;"
+        local amount = (stats[statOverride[1]].invertDescriptor and (statOverride[2] * -1) or statOverride[2]) * 100
+        local statColour = stats[statOverride[1]].colour and ("^#"..stats[statOverride[1]].colour.."aa;") or "^gray;"
+        statModifierString = statModifierString..string.format("\n%s%s^gray; set to %s%s%%", statColour, stats[statOverride[1]].pretty, overrideColour, math.floor(math.abs(amount) + 0.5))
+      end
     end
     local optionWidget = {
       type = "panel", style = "concave", expandMode = {1, 0}, children = {
@@ -81,6 +90,7 @@ function toggleOption(option)
   end
   _ENV[string.format("%sOption", option.name)]:setChecked(enabled)
   starPounds.setOptionsMultipliers(options)
+  starPounds.setOptionsOverrides(options)
 end
 
 function weightDecrease:onClick()

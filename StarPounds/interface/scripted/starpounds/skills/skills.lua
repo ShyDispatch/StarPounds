@@ -395,26 +395,26 @@ function selectSkill(skill)
       local textColour = starPounds.stats[skill.stat].colour or skill.colour
 
       local nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
-      local nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)) * 10)/10
+      local nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)) * 100)/100
       local nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
-      local nextString = currentLevel == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+      local nextString = currentLevel == skill.levels and "" or string.format("%s%.2f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
 
       local bonus = starPounds.getSkillBonus(skill.stat)
       local totalAmount = (bonus ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (bonus * -1) or bonus) or 0) + starPounds.stats[skill.stat].base
-      local totalIncrease = math.floor(0.5 + (100 * totalAmount) * 10)/10
+      local totalIncrease = math.floor(0.5 + (100 * totalAmount) * 100)/100
       local amount = totalIncrease
-      local amountString = string.format("%.1f", amount):gsub("%.?0+$", "").."%"
+      local amountString = string.format("%.2f", amount):gsub("%.?0+$", "").."%"
 
       if starPounds.stats[skill.stat].normalizeBase then
         nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
-        nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 10)/10
+        nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 100)/100
         nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
-        nextString = currentLevel == skill.levels and "" or string.format("%s%.1f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+        nextString = currentLevel == skill.levels and "" or string.format("%s%.2f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
 
 
-        totalIncrease = math.floor(0.5 + (100 * totalAmount/(baseAmount > 0 and baseAmount or 1)) * 10)/10
+        totalIncrease = math.floor(0.5 + (100 * totalAmount/(baseAmount > 0 and baseAmount or 1)) * 100)/100
         amount = totalIncrease ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (totalIncrease * -1) or totalIncrease) or 0
-        amountString = string.format("%.1f", amount):gsub("%.?0+$", "").."%"
+        amountString = string.format("%.2f", amount):gsub("%.?0+$", "").."%"
       end
 
       local function tchelper(first, rest)

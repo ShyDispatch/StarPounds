@@ -17,7 +17,7 @@ function update(dt)
      effect.modifyDuration(fullness * 87.5 - effect.duration() + 6.25)
   end
 
-  if starPounds and (starPounds.hasOption("disableStomachMeter") or starPounds.stomach.interpolatedFullness < minimum or (maxRangeExpire and starPounds.stomach.interpolatedFullness > maximum)) then
+  if starPounds and (starPounds.hasOption("disableStomachMeter") or starPounds.hasOption("legacyMode") or starPounds.stomach.interpolatedFullness < minimum or (maxRangeExpire and starPounds.stomach.interpolatedFullness > maximum)) then
     effect.expire()
   end
 end

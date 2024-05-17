@@ -430,7 +430,7 @@ starPounds.updateStatuses = function()
 
 	if not (starPounds.type == "player") then return end
 	-- Stomach status.
-	if not starPounds.hasOption("disableStomachMeter") then
+	if not (starPounds.hasOption("disableStomachMeter") or starPounds.hasOption("legacyMode")) then
 		local stomachTracker = "starpoundsstomach"
 		if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach2 then
 			stomachTracker = "starpoundsstomach3"
@@ -571,7 +571,7 @@ starPounds.createStatuses = function()
 		status.addEphemeralEffect(sizeTracker)
 	end
 	status.removeEphemeralEffect(stomachTracker)
-	if not starPounds.hasOption("disableStomachMeter") then
+	if not (starPounds.hasOption("disableStomachMeter") or starPounds.hasOption("legacyMode")) then
 		status.addEphemeralEffect(stomachTracker)
 	end
 	status.removeEphemeralEffect("starpoundsbreast")
@@ -583,6 +583,8 @@ end
 starPounds.gainExperience = function(amount, multiplier, isLevel)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
+	-- Legacy mode gains no experience.
+	if starPounds.hasOption("legacyMode") then return end
 	-- Argument sanitisation.
 	amount = tonumber(amount) or 0
 	local hungerPenalty = starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0
@@ -624,6 +626,23 @@ starPounds.getOptionsMultiplier = function(stat)
 	return storage.starPounds.optionMultipliers[stat] or 1
 end
 
+starPounds.setOptionsOverrides = function(options)
+	storage.starPounds.optionOverrides = {}
+	for _, option in ipairs(options) do
+		if option.statOverrides and starPounds.hasOption(option.name) then
+			for _, statOverride in ipairs(option.statOverrides) do
+				storage.starPounds.optionOverrides[statOverride[1]] = statOverride[2]
+			end
+		end
+	end
+end
+
+starPounds.getOptionsOverride = function(stat)
+	-- Argument sanitisation.
+	stat = tostring(stat)
+	return storage.starPounds.optionOverrides[stat] or nil
+end
+
 starPounds.hasOption = function(option)
 	-- Argument sanitisation.
 	option = tostring(option)
@@ -649,7 +668,8 @@ starPounds.getStat = function(stat)
 		local accessoryBonus = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModifiers(stat)
 		-- Total stat is: options * ((base + skill + accessory) * effect (multiplier) + effect (bonus))
 		local statAmount = starPounds.stats[stat].base + starPounds.getSkillBonus(stat) + accessoryBonus
-		starPounds.statCache[stat] = math.max(math.min((statAmount * starPounds.getEffectMultiplier(stat) + starPounds.getEffectBonus(stat)) * starPounds.getOptionsMultiplier(stat), starPounds.stats[stat].maxValue or math.huge), 0)
+		local override = starPounds.getOptionsOverride(stat)
+		starPounds.statCache[stat] = math.max(math.min(((override or statAmount) * starPounds.getEffectMultiplier(stat) + starPounds.getEffectBonus(stat)) * starPounds.getOptionsMultiplier(stat), starPounds.stats[stat].maxValue or math.huge), 0)
 	end
 	return starPounds.statCache[stat]
 end
@@ -677,7 +697,8 @@ starPounds.hasSkill = function(skill, level)
 	-- Argument sanitisation.
 	skill = tostring(skill)
 	level = tonumber(level) or 1
-	return (starPounds.getSkillLevel(skill) >= level)
+	-- Legacy mode disables skills.
+	return (starPounds.getSkillLevel(skill) >= level) and not starPounds.hasOption("legacyMode")
 end
 
 starPounds.upgradeSkill = function(skill, cost)
@@ -1507,6 +1528,8 @@ starPounds.eatEntity = function(preyId, options, check)
 	preyId = tonumber(preyId)
 	if not preyId then return false end
 	options = type(options) == "table" and options or {}
+	-- Legacy mode doesn't require the skill.
+	options.ignoreSkills = options.ignoreSkills or starPounds.hasOption("legacyMode")
 	-- Check if they exist.
 	if not world.entityExists(preyId) then return false end
 	-- Counting this as 'combat', so no eating stuff on protected worlds. (e.g. the outpost)

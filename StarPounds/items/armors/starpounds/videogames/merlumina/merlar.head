@@ -1,12 +1,12 @@
 {
-  "itemName" : "starpoundsbarriersuithead",
+  "itemName" : "starpoundsmerlarhead",
   "price" : 5000,
   "inventoryIcon" : "icons.png:head",
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headwear",
-  "description" : "The latest in protective fat based armor.",
-  "shortdescription" : "Barrier Suit Helmet",
+  "description" : "You feel like you could ramble on for hours...",
+  "shortdescription" : "Messenger Hood",
   "tooltipKind" : "armor",
 
   "maleFrames" : "head.png",
@@ -14,8 +14,8 @@
   "mask" : "mask.png",
 
   "colorOptions" : [
-    // RED
-    { "ffca8a" : "f4988c", "e0975c" : "d93a3a", "a85636" : "932625", "6f2919" : "601119" },
+    // MERLAR
+    { "ffca8a" : "cdc0ee", "e0975c" : "a59cd6", "a85636" : "5a5a84", "6f2919" : "31395a" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // GREY

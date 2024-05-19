@@ -1,12 +1,12 @@
 {
-  "itemName" : "starpoundsbarriersuithead",
+  "itemName" : "starpoundsmagegeneralhead",
   "price" : 5000,
   "inventoryIcon" : "icons.png:head",
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headwear",
-  "description" : "The latest in protective fat based armor.",
-  "shortdescription" : "Barrier Suit Helmet",
+  "description" : "A hat and veil for worshipping the darkness. Bon Jam.",
+  "shortdescription" : "Mage General Hat",
   "tooltipKind" : "armor",
 
   "maleFrames" : "head.png",
@@ -14,8 +14,8 @@
   "mask" : "mask.png",
 
   "colorOptions" : [
-    // RED
-    { "ffca8a" : "f4988c", "e0975c" : "d93a3a", "a85636" : "932625", "6f2919" : "601119" },
+    // BLACK
+    { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // GREY

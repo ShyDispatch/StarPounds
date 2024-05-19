@@ -104,9 +104,10 @@
   },
   "storeInventory" : {
     "exclusive" : [
-      "cosmicbanditchest", "cosmicbanditlegs", "cosmicblacksmithchest", "cosmicblacksmithlegs", "meatdresserhead", "starpoundsbunnysuithead", "starpoundsbunnysuitchest", "starpoundsbunnysuitlegs", "starpoundsrubberhead", "starpoundsrubberchest", "starpoundsrubberlegs", "starpoundsimmunesuithead", "starpoundsbarriersuithead", "starpoundshaldenhead",
+      "cosmicbanditchest", "cosmicbanditlegs", "cosmicblacksmithchest", "cosmicblacksmithlegs", "meatdresserhead", "starpoundsbunnysuithead", "starpoundsbunnysuitchest", "starpoundsbunnysuitlegs", "starpoundsrubberhead", "starpoundsrubberchest", "starpoundsrubberlegs", "starpoundsimmunesuithead", "starpoundstalihead", "starpoundsbarriersuithead", "starpoundshaldenhead",
 	  "starpoundshaydeehead", "starpoundshaydeechest", "starpoundshaydeelegs", "starpoundsponderoushead", "starpoundsponderouschest", "starpoundsponderouslegs", "starpoundsponderousback", "starpoundsmooshihead", "starpoundsuniformhead", "mootantcostumelegs", "starpoundsgiantlips", "starpoundsartificerhead", "starpoundshuntresshead",
-	  "spacethumperchest", "spacethumperpants", "cotlredcrownhead"
+	  "starpoundsmerleehead", "starpoundsmerleettydhead", "starpoundsmerluvleehead", "starpoundsmerluvleettydhead", "starpoundsmerlarhead", "starpoundsjellyfishsisterhead", "starpoundsmagegeneralhead", "starpoundssusiehaltmannhead", "starpoundsgladoshead", "cotlredcrownhead",
+	  "spacethumperchest", "spacethumperpants"
     ],
     "racial" : [
       "protectoratechest", "protectoratepants", "protectorateshirtchest", "protectoratevestchest", "jeans1legs", "workoutlegs", "tshirtchest", "hoodiechest", "sweatervestchest", "coolchest", "conceptchest", "shirtchest", "noblechest", "noblelegs", "merchantchest", "merchantlegs",

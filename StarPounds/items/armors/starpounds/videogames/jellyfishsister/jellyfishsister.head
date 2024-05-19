@@ -1,12 +1,12 @@
 {
-  "itemName" : "starpoundsbarriersuithead",
+  "itemName" : "starpoundsjellyfishsisterhead",
   "price" : 5000,
   "inventoryIcon" : "icons.png:head",
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headwear",
-  "description" : "The latest in protective fat based armor.",
-  "shortdescription" : "Barrier Suit Helmet",
+  "description" : "You know how to give a shocking touch.",
+  "shortdescription" : "Jellyfish Head",
   "tooltipKind" : "armor",
 
   "maleFrames" : "head.png",
@@ -14,8 +14,8 @@
   "mask" : "mask.png",
 
   "colorOptions" : [
-    // RED
-    { "ffca8a" : "f4988c", "e0975c" : "d93a3a", "a85636" : "932625", "6f2919" : "601119" },
+    // JELLYFISH
+    { "ffca8a" : "f8f030", "e0975c" : "f8d018", "a85636" : "d09010", "6f2919" : "b06008" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // GREY

@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headwear",
-  "description" : "For when you need to keep out every potentially hazardous air..",
+  "description" : "For when you need to keep out every potentially hazardous air.",
   "shortdescription" : "Immunity Suit Helmet",
   "tooltipKind" : "armor",
 
@@ -14,8 +14,8 @@
   "mask" : "mask.png",
 
   "colorOptions" : [
-    // BLACK
-    { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
+    // QUARIAN
+    { "ffca8a" : "7687bc", "e0975c" : "495182", "a85636" : "30325d", "6f2919" : "24233e" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // GREY

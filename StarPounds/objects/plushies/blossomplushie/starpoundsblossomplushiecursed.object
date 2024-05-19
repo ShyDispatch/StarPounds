@@ -6,8 +6,8 @@
   "category" : "decorative",
   "price" : 7500,
 
-  "description" : "A cute plushie of an orchid mantis boy? Something seems off with this one though",
-  "shortdescription" : "Blossom Plushie?",
+  "description" : "A cute plushie of an orchid mantis boy?",
+  "shortdescription" : "^#ff597d;Blossom^reset; Plushie?",
   "race" : "generic",
   
   "apexDescription" : "A curious insect. I've heard they can be quite ravenous- though this one's a plush toy at least.",

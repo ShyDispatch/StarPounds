@@ -213,7 +213,7 @@
                  "y":544
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":699,
                  "name":"",
@@ -233,7 +233,7 @@
                  "y":544
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":700,
                  "name":"",
@@ -253,7 +253,7 @@
                  "y":544
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":701,
                  "name":"",
@@ -273,7 +273,7 @@
                  "y":528
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":702,
                  "name":"",
@@ -960,6 +960,27 @@
                  "width":40,
                  "x":352,
                  "y":544
+                }, 
+                {
+                 "height":320,
+                 "id":782,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"radioMessage\" : \"starpounds_feasthall_approach\" }",
+                     "stagehand":"radiomessage"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string",
+                     "stagehand":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":696,
+                 "x":144,
+                 "y":224
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1093,7 +1114,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":781,
+ "nextobjectid":783,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",
@@ -1204,7 +1225,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7691,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

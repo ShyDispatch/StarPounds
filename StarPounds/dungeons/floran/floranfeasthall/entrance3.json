@@ -405,7 +405,7 @@
                  "y":616
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":744,
                  "name":"",
@@ -425,7 +425,7 @@
                  "y":608
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":745,
                  "name":"",
@@ -445,7 +445,7 @@
                  "y":608
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":746,
                  "name":"",
@@ -465,7 +465,7 @@
                  "y":568
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":747,
                  "name":"",
@@ -485,7 +485,7 @@
                  "y":568
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":748,
                  "name":"",
@@ -505,7 +505,7 @@
                  "y":552
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":749,
                  "name":"",
@@ -537,7 +537,7 @@
                  "y":608
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":752,
                  "name":"",
@@ -557,7 +557,7 @@
                  "y":640
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":753,
                  "name":"",
@@ -577,7 +577,7 @@
                  "y":640
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":754,
                  "name":"",
@@ -895,6 +895,27 @@
                  "width":40,
                  "x":560,
                  "y":608
+                }, 
+                {
+                 "height":440,
+                 "id":805,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"radioMessage\" : \"starpounds_feasthall_approach\" }",
+                     "stagehand":"radiomessage"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string",
+                     "stagehand":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":1200,
+                 "x":392,
+                 "y":216
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1133,7 +1154,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":804,
+ "nextobjectid":806,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",
@@ -1244,7 +1265,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7691,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

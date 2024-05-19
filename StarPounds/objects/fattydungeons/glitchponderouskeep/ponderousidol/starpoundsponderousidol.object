@@ -33,6 +33,8 @@
     }
   ],
   
+  "radioMessage": "starpounds_ponderouskeep_idol",
+
 
   "scripts" : ["/objects/fattydungeons/dungeonartifactshield.lua"],
   "scriptDelta" : 0,

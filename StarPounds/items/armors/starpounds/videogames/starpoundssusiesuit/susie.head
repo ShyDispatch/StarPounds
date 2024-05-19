@@ -1,12 +1,12 @@
 {
-  "itemName" : "starpoundsbarriersuithead",
+  "itemName" : "starpoundssusiehaltmannhead",
   "price" : 5000,
   "inventoryIcon" : "icons.png:head",
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headwear",
-  "description" : "The latest in protective fat based armor.",
-  "shortdescription" : "Barrier Suit Helmet",
+  "description" : "You're all business all the time. And also ice cream obsessed.",
+  "shortdescription" : "Secretary Hood",
   "tooltipKind" : "armor",
 
   "maleFrames" : "head.png",
@@ -14,8 +14,8 @@
   "mask" : "mask.png",
 
   "colorOptions" : [
-    // RED
-    { "ffca8a" : "f4988c", "e0975c" : "d93a3a", "a85636" : "932625", "6f2919" : "601119" },
+    // SUSIE
+    { "ffca8a" : "ff9ee1", "e0975c" : "fa82c9", "a85636" : "eb4f9d", "6f2919" : "d43986" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // GREY

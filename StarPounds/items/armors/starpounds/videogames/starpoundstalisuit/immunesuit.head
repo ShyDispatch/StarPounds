@@ -1,12 +1,12 @@
 {
-  "itemName" : "starpoundsbarriersuithead",
+  "itemName" : "starpoundstalihead",
   "price" : 5000,
   "inventoryIcon" : "icons.png:head",
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headwear",
-  "description" : "The latest in protective fat based armor.",
-  "shortdescription" : "Barrier Suit Helmet",
+  "description" : "For when you need to keep out every potentially hazardous air.",
+  "shortdescription" : "Immunity Suit Helmet",
   "tooltipKind" : "armor",
 
   "maleFrames" : "head.png",
@@ -14,8 +14,8 @@
   "mask" : "mask.png",
 
   "colorOptions" : [
-    // RED
-    { "ffca8a" : "f4988c", "e0975c" : "d93a3a", "a85636" : "932625", "6f2919" : "601119" },
+    // TALI
+    { "ffca8a" : "a299e2", "e0975c" : "7f69b4", "a85636" : "5e4188", "6f2919" : "4c316b" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },
     // GREY

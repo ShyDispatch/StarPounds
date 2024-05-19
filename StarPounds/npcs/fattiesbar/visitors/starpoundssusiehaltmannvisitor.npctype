@@ -1,0 +1,123 @@
+{
+  "type" : "starpoundssusiehaltmannvisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Lovable Slime Gal",
+  "humanoidConfig" : "/npcs/fattiesbar/susieoid.config",
+  
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/scripts/starpounds_statusText.lua"
+  ],
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "personalities" : [
+        [1.0, { "personality" : "intrusive", "reactions" : {} }]
+    ],
+    "starPounds_skills": {
+      "minimumSize": [0, 0]
+    },
+  "behavior" : "outpostvisitor",
+  
+    "statuses" : [
+      "Feeling unhinged",
+      "Wondering what's for breakfast",
+      "Wondering what's for lunch",
+      "Wondering what's for dinner",
+      "Wondering what's for dessert",
+      "Feels like they're stuck in a video game",
+      "Can't believe it's true",
+      "Tired after a long day of doing nothing",
+      "Hiding something",
+      "Feeling nostalgic",
+      "Staring into the abyss",
+      "Secretly knows they should exercise more",
+      "Craving some cold food",
+      "Systematically counting every pixel",
+      "Feeling fancy",
+      "Ashamed of their thoughts",
+      "Dead inside",
+      "Can smell something nice",
+      "Following their dreams",
+      "Creating awkward silences",
+      "Has a tasty bag of treats",
+      "Nervously giggling",
+      "Considering therapy",
+      "Feeling watched",
+      "Feeling acutely aware of strange noises",
+      "Just heard something... Probably",
+      "Thinking about dad",
+      "Thinking about Star Dream",
+      "Unhappy with the physics",
+      "Wants to open another personal ice cream factory",
+      "Thinking about robots",
+      "Considering the next target",
+      "Desires ice cream",
+      "Has completely normal thoughts about ice cream",
+      "Unable to sleep",
+      "Slipping into insanity",
+      "Desperate for ice cream",
+      "Humming a company theme",
+      "Disregarding sleep",
+      "Wants to open a restaurant chain"
+    ],
+
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+						"Hello there, I'm Susie Haltmann."
+					],
+					"generic": [
+						"Pay and ergonomic seating~ Give us favors such as these~",
+						"I wonder how good the ice cream here is.",
+						"So many planets to mechanize, so little time."
+					]
+				}
+			}
+		}
+  },
+
+  "identity":  {
+      "bodyDirectives": "?replace;000=000;",
+      "emoteDirectives": "?replace;000=000;",
+      "facialHairDirectives": "",
+      "facialHairGroup": "",
+      "facialHairType": "",
+      "facialMaskDirectives": "",
+      "facialMaskGroup": "",
+      "facialMaskType": "",
+      "gender": "female",
+      "imagePath": "starpoundssusiehaltmann",
+      "hairDirectives" : "",
+      "hairGroup": "hair",
+      "hairType" : "0",
+      "name": "Susie Haltmann",
+      "personalityArmIdle": "swim.3",
+      "personalityArmOffset": [
+          -7.0,
+          -6.0
+      ],
+      "personalityHeadOffset": [
+          -1.0,
+          0.0
+      ],
+      "personalityIdle": "idle.2",
+      "species": "human"
+  },
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "" } ],
+            "chestCosmetic": [ { "name": "" } ],
+            "legsCosmetic": [ { "name": "" } ]
+          }
+        ] ]
+    ]
+  }
+}

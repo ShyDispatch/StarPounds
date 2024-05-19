@@ -127,6 +127,10 @@
       "species" : [ "human" ]
     },
     {
+      "type" : "starpoundssusiehaltmannvisitor",
+      "species" : [ "human" ]
+    },
+    {
       "type" : "spacethumperpilotvisitor",
       "species" : [ "human" ]
     }

@@ -23,15 +23,54 @@
         ]
       }
       },
+
+    "statuses" : [
+      "Struggling with motivation",
+      "Trying to think of dungeons",
+      "Brainrotting",
+      "Pondering",
+      "No thoughts, head empty",
+      "Zoning out to metal",
+      "Has been listening to the same song on loop all day",
+      "Contemplating how to draw fat asses",
+      "Tuned out",
+      "Vibing",
+      "Feels like he forgot about a project",
+      "Craving grilled cheese",
+      "Trying and failing to act like a normal person",
+      "Muttering about dice and stats under his breath",
+      "Listening about a recipe he'll never cook",
+      "Debating on which hyperfixation to draw now",
+      "Low on caffeine",
+      "Hungrily staring at someone",
+      "Tempted to eat you in front of everyone",
+      "Wondering how stretchy his stomach is",
+      "Grumbling about being low energy",
+      "The big tired",
+      "Debating on laying in bed",
+      "Craving violence",
+      "On his sixth bottle of soda"
+    ],
+	  
+    "chatPortrait" : "/interface/chatbubbles/blossom.png:<frame>",	  
 		"dialogMode": "tutorial",
 		"dialog": {
 			"converse": {
 				"default": {
 					"default": [
-						"Heyas! Just here looking for inspiration for my art!",
-						"Mmmmm... Chocolate sounds really good right now. Like tons of the stuff~",
+						"Oh hi- just here to look for inspiration. For art.",
+						"Mmmmm... Chocolate sounds really good right now...",
 						"Hmmm. Fat Novakid or stuffed Floran, which should I draw next?",
-						"H-hallo!... I'm not used to people approaching me, ha"
+						"Dungeon designing is harder than people think it is.",
+						"Roasted poulty sounds nice right now... What do you mean \"it's pronounced poultry\"?",
+						"Would it be a bit self indulgent of myself to add stuff related to me to my side of a project?",
+						"You ever get those moods where you stare at someone and think \"damn they look tasty\"?",
+						"Oh, uh hi!... I'm not used to people approaching me, ha.",
+						"Sol is kind of a drunk, but she's nice to be around.",						
+						"You would not believe the amount of self restraint it takes to not put \"try jumping\" in front of every lethal drop in my dungeons.",
+						"I'm just passing through. Don't think I can handle this kinda volume for too long.",
+						"Chika's a pretty chill fellow... Just try not to stay around him too long or you're stewing in their gut for a week. /n Personal experience.",
+						"Burn out's a bitch but it's nice to come back after a while~"
 					]
 				}
 			}

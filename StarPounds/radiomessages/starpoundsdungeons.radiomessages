@@ -15,5 +15,12 @@
   "starpounds_ponderouskeep_idol" : {
     "unique": false,
     "text" : "Removing the Idol from the pedestal seems to have dissipated the protective field. ^orange;The keep is now free for you to rebuild^white;. I am detecting a strong anomalous energy emanating from the artifact."
+  },
+  "starpounds_secret_found" : {
+      "senderName" : "Blossom",
+      "portraitImage" : "/interface/chatbubbles/blossom_smug.png:<frame>",
+      "text" : "Oho~ Someone's found one of my secret caches! I got more hidden in all sorts of secluded nooks across the galaxy, in structures like this. Keep your eyes peeled for the hidden treasures~",
+      "unique" : false	  
   }
+  
 }

@@ -1,26 +1,26 @@
 {
   "starpounds_feasthall_approach" : {
-    "unique": false,
+    "unique": true,
     "text" : "There appears to be an energy signature that is ^orange;shielding this Floran lair from any sort of damage^white;. If you interact with whatever could be causing it, ^orange;you may be able to disable it^white;." 
   },
   "starpounds_feasthall_meatberry" : {
-    "unique": false,
+    "unique": true,
     "text" : "Plucking the berries seem to have removed the protective energy field. ^orange;You are now free to modify the site as you please^white;. It is strange that a plant was the source of the energy." 
   },
   
   "starpounds_ponderouskeep_approach" : {
-    "unique": false,
+    "unique": true,
     "text" : "A strange energy is ^orange;protecting this abandoned Glitch keep from any external damage^white;. If you can interact with the object causing it ^orange;you may be able to remove the field^white;."
   },
   "starpounds_ponderouskeep_idol" : {
-    "unique": false,
+    "unique": true,
     "text" : "Removing the Idol from the pedestal seems to have dissipated the protective field. ^orange;The keep is now free for you to rebuild^white;. I am detecting a strong anomalous energy emanating from the artifact."
   },
   "starpounds_secret_found" : {
       "senderName" : "Blossom",
       "portraitImage" : "/interface/chatbubbles/blossom_smug.png:<frame>",
       "text" : "Oho~ Someone's found one of my secret caches! I got more hidden in all sorts of secluded nooks across the galaxy, in structures like this. Keep your eyes peeled for the hidden treasures~",
-      "unique" : false	  
+      "unique" : true	  
   }
   
 }

@@ -17,8 +17,9 @@
   "knockback" : 10,
   "knockbackDirectional" : true,
   "damageKind" : "dagger",
-  "emitters" : [ "daggerblue" ],
+  "emitters" : [ "wispflame" ],
   "timeToLive" : 10,
+    "speed" : 75,
   "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
   "pointLight" : false
 }

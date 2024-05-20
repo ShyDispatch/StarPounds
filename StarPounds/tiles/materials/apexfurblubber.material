@@ -18,7 +18,6 @@
   "drodenDescription" : "Analysis complete. Error. Life form detected.",
   "akkimariDescription" : "Akkimari sees wobbling solid.",
   "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
-  "footstepSound" : "/sfx/blocks/footstep_brains.ogg",
   "health" : 8,
   "category" : "materials",
 

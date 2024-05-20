@@ -17,34 +17,40 @@
           },
 		  
 		  "chargewindup" : {
-            "frames" : 4,
-            "cycle" : 0.3,
+            "frames" : 5,
+            "cycle" : 0.4,
             "properties" : {
             }
           },
           "charge" : {
-            "frames" : 3,
+            "frames" : 1,
             "cycle" : 0.3,
             "properties" : {
-              "immediateSound" : "/sfx/melee/swing_dagger.ogg"
-            			  
-			  
+              "immediateSound" : "/sfx/melee/swing_hammer.ogg"
+            
 			  }
           },
-          "firewindup" : {
-            "frames" : 8,
-            "cycle" : 0.5,
+		  "chargewinddown" : {
+            "frames" : 2,
+            "cycle" : 0.4,
+            "properties" : {
+            }
+          },		  
+		  
+          "shieldwindup" : {
+            "frames" : 2,
+            "cycle" : 0.25,
             "properties" : {
             }
           },
-          "fire" : {
-            "frames" : 2,
-            "cycle" : 0.2,
+          "shield" : {
+            "frames" : 1,
+            "cycle" : 1.0,
             "properties" : {
 			  }
           },
-          "firewinddown" : {
-            "frames" : 6,
+          "shieldwinddown" : {
+            "frames" : 2,
             "cycle" : 0.25,
             "properties" : {
             }
@@ -115,19 +121,25 @@
                 "image" : "<partImage>:charge.<frame>"
               }
             },
-            "firewindup" : {
+            "chargewinddown" : {
               "properties" : {
-                "image" : "<partImage>:firewindup.<frame>"
+                "image" : "<partImage>:chargewinddown.<frame>"
+              }
+            },			
+            "shieldwindup" : {
+              "properties" : {
+                "image" : "<partImage>:shieldwindup.<frame>"
               }
             },
-            "fire" : {
+            "shield" : {
               "properties" : {
-                "image" : "<partImage>:fire.<frame>"
+                "image" : "<partImage>:shield.<frame>"
               }
             },
-            "firewinddown" : {
+
+            "shieldwinddown" : {
               "properties" : {
-                "image" : "<partImage>:firewinddown.<frame>"
+                "image" : "<partImage>:shieldwinddown.<frame>"
               }
             }
           },
@@ -169,19 +181,24 @@
                 "image" : "<partImage>:charge.<frame>"
               }
             },
-            "firewindup" : {
+            "chargewinddown" : {
               "properties" : {
-                "image" : "<partImage>:firewindup.<frame>"
+                "image" : "<partImage>:chargewinddown.<frame>"
+              }
+            },			
+            "shieldwindup" : {
+              "properties" : {
+                "image" : "<partImage>:shieldwindup.<frame>"
               }
             },
-            "fire" : {
+            "shield" : {
               "properties" : {
-                "image" : "<partImage>:fire.<frame>"
+                "image" : "<partImage>:shield.<frame>"
               }
             },
-            "firewinddown" : {
+            "shieldwinddown" : {
               "properties" : {
-                "image" : "<partImage>:firewinddown.<frame>"
+                "image" : "<partImage>:shieldwinddown.<frame>"
               }
             }
           },
@@ -273,7 +290,6 @@
 
   "sounds" : {
     "aggroHop" : [ "/sfx/npc/monsters/monster_surprise.ogg" ],
-    "fire" : [ "/sfx/melee/swing_dagger.ogg" ],
     "deathPuff" : [ "/sfx/npc/enemydeathpuff.ogg" ]
   }
 }

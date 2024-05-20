@@ -1,0 +1,19 @@
+{
+  "frameGrid" : {
+    "size" : [48, 48],
+    "dimensions" : [6, 4],
+
+    "names" : [
+      [ null, "fly.1", "fly.2", "fly.3", null, "hurt.1" ],
+      [ null, "shieldwindup.1", "shieldwindup.2", "shield.1" ],
+      [ null, "chargewindup.1", "chargewindup.2", "chargewindup.3", "chargewindup.4", "chargewindup.5" ],
+	  [ null, "charge.1", "chargewinddown.1", "chargewinddown.2" ]
+    ]
+  },
+"aliases" : {
+  "fly.4" : "fly.2",
+  "shieldwinddown.1" : "shieldwindup.2",
+  "shieldwinddown.2" : "shieldwindup.1"
+  
+  }  
+}

@@ -1,12 +1,12 @@
 {
-  "type" : "starpoundsmagewisp",
-  "shortdescription" : "Wisp Mage",
-  "description" : "A wisp made of Lipic energy. It bears a scholarly appearence, and is quite passionate about dice games.",
+  "type" : "starpoundsknightwisp",
+  "shortdescription" : "Wisp Knight",
+  "description" : "A wisp made of Lipic energy. It seems quite sketchy, so watch your pockets!",
 
-  "categories" : [ "starpoundsmagewisp" ],
+  "categories" : [ "starpoundsknightwisp" ],
   "parts" : [ "body" ],
 
-  "animation" : "starpoundsmagewisp.animation",
+  "animation" : "starpoundsknightwisp.animation",
 
   "dropPools" : [ { "default" : "noMeatMonsterTreasure"} ],
 
@@ -31,69 +31,57 @@
       "hurtTime" : 0.25,
       "hurtWaitForGround" : false,
 
-      "damageTakenActions" : [
-      ],
-
       "foundTargetActions" : [ ],
 
       "fleeActions" : [ ],
 
       "hostileActions" : [
+
         {
-          "name" : "action-fire",
-          "cooldown" : 1.0,
+          "name" : "action-charge",
+          "cooldown" : 2.5,
           "parameters" : {
-            "requireLineOfSight" : true,
             "maximumRange" : 30,
-            "minimumRange" : 1,
-            "onGround" : false,
             "windupStopForce" : 50,
-            "windupTime" : 0.4,
-			"windupState" : "firewindupfast",
+            "windupTime" : 0.3,
 
-            "projectileType" : "wispflameprojectile",
-            "inaccuracy" : 0.20,			
-            "projectileCount" : 3,
-            "projectileInterval" : 0.0,	
-			
-            "fireOffset" : [1.0, 0.0],
+            "onGround" : false,
+            "wallCollide" : false,
             "aimAtTarget" : true,
-            "fireState" : "fire",
-            "fireSound" : "",
+            "chargeTime" : 0.35,
+            "chargeSpeed" : 55,
+            "chargeControlForce" : 180,
 
-            "winddownState" : "",
-            "winddownTime" : 0.1
+            "winddownState" : "chargewinddown"
           }
-        },
+        }
+		
+      ],
+
+
+      "damageTakenActions" : [
         {
-          "name" : "action-fire",
-          "cooldown" : 5.0,
+          "name" : "action-invulnerable",
+          "cooldown" : 5,
           "parameters" : {
-            "requireLineOfSight" : true,
-            "maximumRange" : 40,
-            "minimumRange" : 4,
-            "onGround" : false,
-            "windupStopForce" : 50,
-            "windupTime" : 0.8,
-			"windupState" : "firewindupslow",
+            "windupState" : "shieldwindup",
+            "windupTime" : 0.25,
 
-            "projectileType" : "wispbomb",
-            "projectileParameters" : {
-              "speed" : 40
-            },
-            "fireOffset" : [1.0, 0.0],
-            "aimAtTarget" : true,
-            "inaccuracy" : 0.0,
-            "fireState" : "fire",
-            "fireSound" : "",
+            "invulnerableState" : "shield",
+            "invulnerableEffect" : "highprotection",
+            "invulnerableTime" : 1.5,
 
-            "winddownState" : "",
-            "winddownTime" : 0.1
+            "winddownTime" : 0.25,
+            "winddownState" : "shieldwinddown"
+
           }
         }
       ],
 
-      "periodicActions" : [ ],
+
+      "periodicActions" : [
+
+	  ],
 
       "approachActions" : [
         {
@@ -127,12 +115,14 @@
 
       "concurrentActions" : [ ],
 
-      "concurrentHostileActions" : [ ]
+      "concurrentHostileActions" : [
+
+	  ]
     },
 
     "touchDamage" : {
       "poly" : [ [0.25, 0.75], [0.625, 0.375], [0.625, -0.375], [0.25, -0.75], [-0.25, -0.75], [-0.625, -0.375], [-0.625, 0.375], [-0.25, 0.75] ],
-      "damage" : 9,
+      "damage" : 12,
 
       "teamType" : "enemy",
       "damageSourceKind" : "slash",
@@ -182,16 +172,16 @@
 
       "stats" : {
         "knockbackStunTime" : {
-          "baseValue" : 0.25
+          "baseValue" : 0.20
         },
         "knockbackThreshold" : {
-          "baseValue" : 9
+          "baseValue" : 15
         },
         "maxHealth" : {
-          "baseValue" : 125
+          "baseValue" : 320
         },
         "protection" : {
-          "baseValue" : 0.0
+          "baseValue" : 0.80
         },
         "healthRegen" : {
           "baseValue" : 0.0

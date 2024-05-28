@@ -5,7 +5,9 @@
 				"default": "default",
 				"states": {
 					"default": {
-						"frames": 1
+						"frames": 24,
+						"mode": "loop",
+						"cycle": 6.0
 					},
 					"smack1": {
 						"frames": 12,
@@ -29,7 +31,7 @@
 					"interactState": {
 						"default": {
 							"properties": {
-								"image": "<partImage>:default.default"
+								"image": "<partImage>:default.<frame>"
 							}
 						},
 

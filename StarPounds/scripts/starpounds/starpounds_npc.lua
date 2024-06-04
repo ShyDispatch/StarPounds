@@ -11,6 +11,8 @@ function init()
 	init_old()
 	require "/scripts/starpounds/starpounds.lua"
   storage.starPounds = sb.jsonMerge(starPounds.baseData, storage.starPounds)
+	-- This is stupid, but prevents 'null' data being saved.
+	getmetatable(storage.starPounds).__nils = {}
   -- Used in functions for detection.
   starPounds.type = "npc"
   -- Replace some functions.

@@ -654,6 +654,8 @@ starPounds.setOption = function(option, enable)
 	option = tostring(option)
 	storage.starPounds.options[option] = enable and true or nil
 	starPounds.optionChanged = true
+	-- This is stupid, but prevents 'null' data being saved.
+	getmetatable(storage.starPounds.options).__nils = {}
 	starPounds.backup()
 	return storage.starPounds.options[option]
 end
@@ -783,6 +785,8 @@ starPounds.parseSkills = function()
 			storage.starPounds.skills[skill][1] = math.min(storage.starPounds.skills[skill][1], storage.starPounds.skills[skill][2])
 		end
 	end
+	-- This is stupid, but prevents 'null' data being saved.
+	getmetatable(storage.starPounds.skills).__nils = {}
 	starPounds.parseSkillStats()
 end
 

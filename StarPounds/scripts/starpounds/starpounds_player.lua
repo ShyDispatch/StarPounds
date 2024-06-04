@@ -16,6 +16,8 @@ function init()
 	-- Grab or create the data.
 	local loadBackup = not storage.starPounds
 	storage.starPounds = sb.jsonMerge(starPounds.baseData, storage.starPounds)
+	-- This is stupid, but prevents 'null' data being saved.
+	getmetatable(storage.starPounds).__nils = {}
 	getmetatable ''.starPounds = starPounds
 	starPounds.type = "player"
 
@@ -287,7 +289,7 @@ function makeOverrideFunction()
 			starPounds.boughtPizza = function()
 				storage.starPounds.pizzaEmployeesEaten = nil
 			end
-			
+
       -- Only ever run this once per load.
       starPounds.didOverrides = true
     end

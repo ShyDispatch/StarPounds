@@ -99,7 +99,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	if amount == 0 then return end
 	-- Subtract food used to fill up hunger from weight gain.
 	if status.isResource("food") then
-		-- Food for weight gain reduced by up to half when filling hunger, with hunger restored increased by absorption.
+		-- Food for weight gain reduced by up to half when filling hunger.
 		local foodAmount = math.min(status.resourceMax("food") - status.resource("food"), amount)
 		amount = math.round(amount - (foodAmount/2), 4)
 		status.giveResource("food", foodAmount * foodValue + (not isGurgle and math.abs(math.min(status.stat("foodDelta") * dt, 0)) or 0))

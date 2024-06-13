@@ -107,7 +107,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
 	if amount == 0 then return end
 	local milkCost = 0
-	if (starPounds.getStat("breastProduction") > 0) and not starPounds.hasOption("disableMilkGain") then
+	if (starPounds.getStat("breastProduction") > 0) and (starPounds.getStat("breastEfficiency") > 0) and not starPounds.hasOption("disableMilkGain") then
 		local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type]
 		local milkProduced = 0
 		local milkCurrent = storage.starPounds.breasts
@@ -115,17 +115,17 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
 		if starPounds.breasts.contents < maxCapacity then
 			milkCost = amount * absorption * starPounds.getStat("breastProduction")
-			milkProduced = math.round((milkCost/milkValue) * starPounds.getStat("breastEfficiency"), 4)
+			milkProduced = math.round((milkCost/milkValue) * math.min(1, starPounds.getStat("breastEfficiency")), 4)
 			if (milkCapacity - milkCurrent) < milkProduced then
 				-- Free after you've maxed out capacity, but you only gain a third as much.
 				milkProduced = math.min(math.max((milkCapacity - milkCurrent), milkProduced/3), maxCapacity - milkCurrent)
-				milkCost = math.max(0, milkCapacity - milkCurrent) * milkValue/starPounds.getStat("breastEfficiency")
+				milkCost = math.max(0, milkCapacity - milkCurrent) * milkValue
 			end
 			starPounds.gainMilk(milkProduced)
 		end
 	end
 	-- Gain weight based on amount digested, milk production, and digestion efficiency.
-	starPounds.gainWeight((amount * absorption) - milkCost)
+	starPounds.gainWeight((amount * absorption) - (milkCost/math.max(1, starPounds.getStat("breastEfficiency"))))
 	-- Don't heal if eaten.
 	if not storage.starPounds.pred then
 		-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)

@@ -65,7 +65,7 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		-- Ditto but for rumbles.
 		if not starPounds.hasOption("disableRumbles") then
 			if starPounds.rumbleTimer and starPounds.rumbleTimer > 0 then
-				starPounds.rumbleTimer = math.max(starPounds.rumbleTimer - (dt * starPounds.getStat("gurgleRate")), 0)
+				starPounds.rumbleTimer = math.max(starPounds.rumbleTimer - (dt * math.max(starPounds.getStat("gurgleRate"), starPounds.getStat("rumbleRate"))), 0)
 			else
 				if starPounds.rumbleTimer then starPounds.rumble() end
 				starPounds.rumbleTimer = math.round(util.randomInRange({starPounds.settings.minimumRumbleTime, (starPounds.settings.rumbleTime * 2) - starPounds.settings.minimumRumbleTime}))

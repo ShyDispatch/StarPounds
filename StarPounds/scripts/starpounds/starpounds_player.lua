@@ -22,7 +22,7 @@ function init()
 	starPounds.type = "player"
 
 	if loadBackup then
-		 storage.starPounds = sb.jsonMerge(storage.starPounds, player.getProperty("starPoundsBackup", {}))
+		storage.starPounds = sb.jsonMerge(storage.starPounds, player.getProperty("starPoundsBackup", {}))
 	end
 	-- Override functions for script compatibility on different entities.
 	makeOverrideFunction()

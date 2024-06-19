@@ -12,6 +12,7 @@ starPounds = {
 	stats = root.assetJson("/scripts/starpounds/starpounds_stats.config"),
 	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills"),
 	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits"),
+	selectableTraits = root.assetJson("/scripts/starpounds/starpounds_traits.config:selectableTraits"),
 	species = root.assetJson("/scripts/starpounds/starpounds_species.config"),
 	baseData = root.assetJson("/scripts/starpounds/starpounds.config:baseData")
 }
@@ -668,11 +669,20 @@ starPounds.getStat = function(stat)
 	if not starPounds.statCache[stat] then
 		-- Default amount (or 1, so we can boost stats that start at 0), modified by accessory values.
 		local accessoryBonus = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModifiers(stat)
-		-- Total stat is: options * ((base + skill + accessory) * effect (multiplier) + effect (bonus))
+		-- Base stat + Skill bonuses + Accessory bonuses.
 		local statAmount = starPounds.stats[stat].base + starPounds.getSkillBonus(stat) + accessoryBonus
-		local override = starPounds.getOptionsOverride(stat)
-		starPounds.statCache[stat] = math.max(math.min(((override or statAmount) * starPounds.getEffectMultiplier(stat) + starPounds.getEffectBonus(stat)) * starPounds.getOptionsMultiplier(stat), starPounds.stats[stat].maxValue or math.huge), 0)
+		-- Trait multiplier + Trait bonus
+		statAmount = statAmount * starPounds.getTraitMultiplier(stat) + starPounds.getTraitBonus(stat)
+		-- Override stat. (Used for legacy BF option)
+		statAmount = starPounds.getOptionsOverride(stat) or statAmount
+		-- Status effect multipliers and bonuses.
+		statAmount = statAmount * starPounds.getEffectMultiplier(stat) + starPounds.getEffectBonus(stat)
+		-- Option multipliers.
+		statAmount = statAmount * starPounds.getOptionsMultiplier(stat)
+		-- Cap the stat between 0 and it's maxValue.
+		starPounds.statCache[stat] = math.max(math.min(statAmount, starPounds.stats[stat].maxValue or math.huge), 0)
 	end
+
 	return starPounds.statCache[stat]
 end
 
@@ -758,7 +768,7 @@ starPounds.setSkill = function(skill, level)
 	starPounds.optionChanged = true
 end
 
-starPounds.parseSkillStats = function()
+starPounds.parseStats = function()
 	storage.starPounds.stats = {}
 	for skillName in pairs(storage.starPounds.skills) do
 		local skill = starPounds.skills[skillName]
@@ -768,9 +778,27 @@ starPounds.parseSkillStats = function()
 			storage.starPounds.stats[skill.stat] = (storage.starPounds.stats[skill.stat] or 0) - (skill.amount * starPounds.getSkillLevel(skillName))
 		end
 		if storage.starPounds.stats[skill.stat] == 0 then
-		storage.starPounds.stats[skill.stat] = nil
+			storage.starPounds.stats[skill.stat] = nil
 		end
 	end
+
+	storage.starPounds.traitStats = {}
+	local selectedTrait = starPounds.traits[starPounds.getTrait() or "default"]
+	local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default
+	for _, trait in ipairs({speciesTrait, selectedTrait}) do
+		for _, stat in ipairs(trait.stats) do
+			storage.starPounds.traitStats[stat[1]] = storage.starPounds.traitStats[stat[1]] or {0, 1}
+			if stat[2] == "add" then
+				storage.starPounds.traitStats[stat[1]][1] = storage.starPounds.traitStats[stat[1]][1] + stat[3]
+			elseif stat[2] == "sub" then
+				storage.starPounds.traitStats[stat[1]][1] = storage.starPounds.traitStats[stat[1]][1] - stat[3]
+			elseif stat[2] == "mult" then
+				storage.starPounds.traitStats[stat[1]][2] = storage.starPounds.traitStats[stat[1]][2] * stat[3]
+			end
+		end
+	end
+
+	starPounds.optionChanged = true
 	starPounds.backup()
 end
 
@@ -787,15 +815,23 @@ starPounds.parseSkills = function()
 	end
 	-- This is stupid, but prevents 'null' data being saved.
 	getmetatable(storage.starPounds.skills).__nils = {}
-	starPounds.parseSkillStats()
+	starPounds.parseStats()
 end
 
 starPounds.getTrait = function()
 	-- Reset the trait if it doesn't exist.
 	local trait = storage.starPounds.trait
+	-- Reset non-existent traits
 	if trait and not starPounds.traits[trait] then
 		starPounds.resetTrait()
 		return
+	end
+	-- Remove a player's trait if they shouldn't be able to select it.
+	if trait and starPounds.type == "player" then
+		if not contains(starPounds.selectableTraits, trait) then
+			starPounds.resetTrait()
+			return
+		end
 	end
 	return storage.starPounds.trait
 end
@@ -828,18 +864,34 @@ starPounds.setTrait = function(trait)
 			player.giveItem(item)
 		end
 	end
+	-- Refresh trait stats.
+	starPounds.parseStats()
 	-- Set the trait successfully.
 	return true
 end
 
 starPounds.resetTrait = function()
 	storage.starPounds.trait = nil
+	-- Refresh trait stats.
+	starPounds.parseStats()
 end
 
 starPounds.getSkillBonus = function(stat)
 	-- Argument sanitisation.
 	stat = tostring(stat)
 	return (storage.starPounds.stats[stat] or 0)
+end
+
+starPounds.getTraitMultiplier = function(stat)
+	-- Argument sanitisation.
+	stat = tostring(stat)
+	return (storage.starPounds.traitStats[stat] or {0, 1})[2]
+end
+
+starPounds.getTraitBonus = function(stat)
+	-- Argument sanitisation.
+	stat = tostring(stat)
+	return (storage.starPounds.traitStats[stat] or {0, 1})[1]
 end
 
 starPounds.parseEffectStats = function(dt)
@@ -1066,15 +1118,22 @@ starPounds.getChestVariant = function(size)
 	return variant
 end
 
+-- world.entitySpecies can be unreliable on the first tick.
+starPounds.getSpecies = function()
+	if player and player.species() then return player.species() end
+	if npc and npc.species() then return npc.species() end
+	return world.entitySpecies(entity.id())
+end
+
 starPounds.getVisualSpecies = function(species)
 	-- Get entity species.
-	local species = species and tostring(species) or world.entitySpecies(entity.id())
+	local species = species and tostring(species) or starPounds.getSpecies()
 	return starPounds.species[species] and (starPounds.species[species].override or species) or species
 end
 
 starPounds.getSpeciesData = function(species)
 	-- Get merged species data.
-	local species = species and tostring(species) or world.entitySpecies(entity.id())
+	local species = species and tostring(species) or starPounds.getSpecies()
 	return sb.jsonMerge(starPounds.species.default, starPounds.species[species] or {})
 end
 
@@ -2337,6 +2396,7 @@ starPounds.toggleEnable = function()
 	storage.starPounds.enabled = not storage.starPounds.enabled
 	-- Make sure the movement penalty stuff gets reset as well.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
+	starPounds.parseSkills()
 	starPounds.updateStats(true)
 	starPounds.optionChanged = true
 	if not storage.starPounds.enabled then

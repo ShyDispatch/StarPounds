@@ -69,8 +69,6 @@ function update()
     if currentTab.id ~= "selectTrait" then
       _ENV[currentTab.id.."_skillTree"]:scrollTo(currentTab.offset)
     end
-    -- Can't do this in init for some reason.
-    traitBuffers(starPounds.getTrait() ~= nil)
   end
 
   if isAdmin ~= admin() then
@@ -126,9 +124,6 @@ function reset:onClick()
         checkSkills()
         resetInfoPanel()
         traitButtons(true)
-        traitBuffers(false)
-        speciesTraitPanel:setVisible(true)
-        selectableTraitPanel:setVisible(true)
         local buttonIcon = "disabled.png"
         enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
       end)
@@ -212,7 +207,6 @@ function buildTraitTab()
     currentTab = selectTrait
   end
 
-  speciesTraitSelect.onClick = (function() setTrait(speciesTrait.id, true) end)
   selectableTraitSelect.onClick = (function() setTrait(selectedTrait.id, false) end)
   traitCycleLeft.onClick = traitCycleDecrease
   traitCycleRight.onClick = traitCycleIncrease
@@ -241,24 +235,60 @@ function buildTraitPreview(traitType, trait)
   end
   _ENV[traitType.."TraitSkills"]:setVisible(slotCount > 0)
   _ENV[traitType.."TraitSkillsLabel"]:setVisible(slotCount == 0)
-  -- Default values for attributes. (Starting weight/milk/XP)
-  local attributes = jarray()
-  local attributeString = ""
+  -- Default values for traitStats. (Starting weight/milk/XP)
+  local traitStats = jarray()
+  local traitStatString = ""
+  local traitStatValues = jarray()
+  local traitStatValueString = ""
+
   if trait.weight then
-    attributes[#attributes + 1] = string.format("^#%s;Starting Weight:^reset; %slb", starPounds.stats.absorption.colour, trait.weight)
+    traitStats[#traitStats + 1] = string.format("^#%s;Starting Weight:", starPounds.stats.absorption.colour)
+    traitStatValues[#traitStatValues + 1] = string.format("%slb", trait.weight)
   end
   if trait.breasts then
-    attributes[#attributes + 1] = string.format("^#%s;Starting Milk:^reset; %s", starPounds.stats.breastProduction.colour, trait.breasts)
+    traitStats[#traitStats + 1] = string.format("^#%s;Starting Milk:", starPounds.stats.breastProduction.colour)
+    traitStatValues[#traitStatValues + 1] = tostring(trait.breasts)
   end
   if trait.experience then
-    attributes[#attributes + 1] = string.format("^#%s;Starting XP:^reset; %s", starPounds.stats.experienceMultiplier.colour, trait.experience)
+    traitStats[#traitStats + 1] = string.format("^#%s;Starting XP:", starPounds.stats.experienceMultiplier.colour)
+    traitStatValues[#traitStatValues + 1] = tostring(trait.experience)
   end
-  for i, attribute in ipairs(attributes) do
-    if i > 1 then attributeString = attributeString.."\n" end
-    attributeString = attributeString..attribute
+
+  -- Space out attributes from stats.
+  if #traitStats > 0 then
+    traitStats[#traitStats + 1] = ""
+    traitStatValues[#traitStatValues + 1] = ""
   end
-  if attributeString == "" then attributeString = "^red;None" end
-  _ENV[traitType.."TraitAttributes"]:setText(attributeString)
+
+  if trait.stats then
+    for _, stat in ipairs(trait.stats) do
+      local statString = ""
+      local modStat = starPounds.stats[stat[1]]
+      if stat[2] == "mult" then
+        local negative = (modStat.negative and stat[3] > 1) or (not modStat.negative and stat[3] < 1)
+        statString = string.format("%sx%s", negative and "^red;" or "^green;", string.format("%.2f", (modStat.invertDescriptor and (1/stat[3]) or stat[3])):gsub("%.?0+$", ""))
+      else
+        local negative = (modStat.negative and stat[3] > 0) or (not modStat.negative and stat[3] < 0)
+        if stat[2] == "sub" then negative = not negative end
+        statString = string.format("%s%s%s", negative and "^red;" or "^green;", stat[2] == "add" and "+" or "-", string.format("%.2f", (modStat.invertDescriptor and (stat[3] * -1) or stat[3]) * 100):gsub("%.?0+$", "").."%")
+      end
+      local statColour = modStat.colour and ("^#"..modStat.colour..";") or ""
+      traitStats[#traitStats + 1] = string.format("%s%s:^reset;", statColour, modStat.pretty)
+      traitStatValues[#traitStatValues + 1] = statString
+    end
+  end
+
+  for i in ipairs(traitStats) do
+    if i > 1 then
+      traitStatString = traitStatString.."\n"
+      traitStatValueString = traitStatValueString.."\n"
+    end
+    traitStatString = traitStatString..traitStats[i]
+    traitStatValueString = traitStatValueString..traitStatValues[i]
+  end
+
+  _ENV[traitType.."TraitStats"]:setText(traitStatString)
+  _ENV[traitType.."TraitStatValues"]:setText(traitStatValueString)
 end
 
 function populateTraitTab()
@@ -273,22 +303,12 @@ function populateTraitTab()
     if starPounds.getTrait() == trait then selectedTraitIndex = i end
     table.insert(selectableTraits, sb.jsonMerge(traits[trait], {id = trait}))
   end
-  if speciesTrait.id ~= "none" then
-    selectableTraits[#selectableTraits + 1] = sb.jsonMerge(traits.none, {id = "none"})
-    if starPounds.getTrait() == "default" then selectedTraitIndex = #selectableTraits end
-  end
+  
   selectedTraitIndex = selectedTraitIndex or math.random(1, #selectableTraits)
   selectedTrait = selectableTraits[selectedTraitIndex]
 
   local hasTrait = starPounds.getTrait()
   traitButtons(not hasTrait)
-  if (hasTrait == species) or (hasTrait == "default" and speciesTrait.id == "none") then
-    speciesTraitPanel:setVisible(true)
-    selectableTraitPanel:setVisible(false)
-  elseif hasTrait then
-    selectableTraitPanel:setVisible(true)
-    speciesTraitPanel:setVisible(false)
-  end
 
   buildTraitPreview("selectable", selectedTrait)
   buildTraitPreview("species", speciesTrait)
@@ -692,14 +712,6 @@ end
 function setTrait(trait, isSpecies)
   if starPounds.setTrait(trait) then
     traitButtons(false)
-    traitBuffers(true)
-    if isSpecies then
-      speciesTraitPanel:setVisible(true)
-      selectableTraitPanel:setVisible(false)
-    else
-      selectableTraitPanel:setVisible(true)
-      speciesTraitPanel:setVisible(false)
-    end
     checkSkills()
     widget.playSound("/sfx/interface/crafting_medical.ogg")
   end
@@ -724,11 +736,6 @@ function traitCycleIncrease()
 end
 
 function traitButtons(enable)
-  speciesTraitSelect:setImage(
-    string.format("traitSelect%s.png", enable and "" or "Disabled"),
-    string.format("traitSelect%s.png", enable and "" or "Disabled"),
-    string.format("traitSelect%s.png?border=1;00000000;00000000?crop=1;2;33;18", enable and "" or "Disabled")
-  )
   selectableTraitSelect:setImage(
     string.format("traitSelect%s.png", enable and "" or "Disabled"),
     string.format("traitSelect%s.png", enable and "" or "Disabled"),
@@ -744,12 +751,6 @@ function traitButtons(enable)
     string.format("traitCycleRight%s.png", enable and "" or "Disabled"),
     string.format("traitCycleRight%s.png?border=1;00000000;00000000?crop=1;2;12;15", enable and "" or "Disabled")
   )
-end
-
-
-function traitBuffers(enable)
-  startBuffer:setVisible(enable)
-  endBuffer:setVisible(enable)
 end
 
 function statInfo:onClick()

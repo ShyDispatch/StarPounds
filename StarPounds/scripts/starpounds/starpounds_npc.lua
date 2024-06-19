@@ -52,7 +52,7 @@ function init()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
 	if not starPounds.getTrait() then
-		starPounds.setTrait(config.getParameter("starPounds_trait", npc.species()))
+		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
 	-- I hate it.
 	local setNpcItemSlot_old = setNpcItemSlot

@@ -39,7 +39,7 @@
               "title": " ",
               "id": "selectTrait",
               "icon": "icons/tabs/selectTrait.png",
-              "contents": [{"mode": "horizontal", "spacing": 0}, [{"id": "startBuffer", "size": 63}, {"type": "panel", "style": "convex", "children": [{"type": "panel", "style": "concave"}]}], {"type": "panel", "style": "convex", "children": [{"mode": "horizontal"},
+              "contents": [{"mode": "horizontal", "spacing": 0}, {"type": "panel", "style": "convex", "children": [{"mode": "horizontal"},
                 {"type": "layout", "id": "speciesTraitPanel", "mode": "vertical", "expandMode": [1, 1], "children": [
                   {"type": "panel", "mode": "vertical", "expandMode": [1, 0], "style": "convex", "spacing": 1, "children": [
                     {"type": "image", "id": "speciesTraitIcon", "noAutoCrop": true, "file": "icons/traits/default.png"},
@@ -57,19 +57,16 @@
                     ]},
                     {"type": "panel", "mode": "vertical", "expandMode": [1, 1], "style": "convex", "children": [
                       {"type": "panel", "mode": "vertical", "expandMode": [1, 0], "style": "convex", "children": [
-                        0.5, {"type": "label", "align": "center", "text": "Attributes"}, 0.5
+                        0.5, {"type": "label", "align": "center", "text": "Species Stats"}, 0.5
                       ]},
-                      {"type": "panel", "mode": "vertical", "expandMode": [1, 1], "style": "concave", "children": [
-                        0.5, {"type": "label", "id": "speciesTraitAttributes", "align": "center", "text": ""}, "spacer"
+                      {"type": "panel", "style": "concave", "expandMode": [1, 1], "mode": "manual", "children": [
+                        [
+                          {"mode": "manual"},
+                          {"type": "label", "id": "speciesTraitStats", "size": [105, 100], "position": [4, 2], "fontSize": 7, "align": "left", "text": ""},
+                          {"type": "label", "id": "speciesTraitStatValues", "size": [105, 100], "position": [4, 2], "fontSize": 7, "align": "right", "text": ""}
+                        ]
                       ]}
                     ]}
-                  ]},
-                  {"type": "panel", "expandMode": [1, 0], "style": "concave", "children": [
-                    {"type": "iconButton", "id": "speciesTraitSelect",
-                      "image": "traitSelect.png",
-                      "hoverImage": "traitSelect.png",
-                      "pressImage": "traitSelect.png?border=1;00000000;00000000?crop=1;2;33;18"
-                    }
                   ]}
                 ]},
                 {"type": "layout", "id": "selectableTraitPanel", "mode": "vertical", "expandMode": [1, 1], "children": [
@@ -89,10 +86,14 @@
                     ]},
                     {"type": "panel", "mode": "vertical", "expandMode": [1, 1], "style": "convex", "children": [
                       {"type": "panel", "mode": "vertical", "expandMode": [1, 0], "style": "convex", "children": [
-                        0.5, {"type": "label", "align": "center", "text": "Attributes"}, 0.5
+                        0.5, {"type": "label", "align": "center", "text": "Trait Stats"}, 0.5
                       ]},
-                      {"type": "panel", "mode": "vertical", "expandMode": [1, 1], "style": "concave", "children": [
-                        0.5, {"type": "label", "id": "selectableTraitAttributes", "align": "center", "text": ""}, "spacer"
+                      {"type": "panel", "style": "concave", "expandMode": [1, 1], "mode": "manual", "children": [
+                        [
+                          {"mode": "manual"},
+                          {"type": "label", "id": "selectableTraitStats", "size": [105, 100], "position": [4, 2], "fontSize": 7, "align": "left", "text": ""},
+                          {"type": "label", "id": "selectableTraitStatValues", "size": [105, 100], "position": [4, 2], "fontSize": 7, "align": "right", "text": ""}
+                        ]
                       ]}
                     ]}
                   ]},
@@ -114,7 +115,7 @@
                     },
                   "spacer"]]}
                 ]}
-              ]}, [{"id": "endBuffer", "size": 63}, {"type": "panel", "style": "convex", "children": [{"type": "panel", "style": "concave"}]}]]
+              ]}]
             }
           }
         }

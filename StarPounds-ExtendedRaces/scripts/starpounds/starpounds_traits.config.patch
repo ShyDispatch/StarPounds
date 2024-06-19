@@ -1,142 +1,142 @@
 [
   {
-	"op": "add",
-	"path": "/traits/avali",
-	"value": { "description": "Avali", "skills": [ ["fallDamageResistance", 3], ["iceResistance", 2] ] }
+    "op": "add",
+    "path": "/traits/avali",
+    "value": { "description": "Avali", "stats": [ ["fallDamageResistance", "add", 0.25], ["iceResistance", "add", 0.2] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/aegi",
-	"value": { "description": "Aegi", "experience": 5, "skills": [ ["experienceMultiplier", 2] ] }
+    "op": "add",
+    "path": "/traits/aegi",
+    "value": { "description": "Aegi", "stats": [ ["experienceMultiplier", "mult", 1.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/arcanian",
-	"value": { "description": "Arcanian", "skills": [ ["firePenalty", 3], ["digestionEnergy", 2] ] }
+    "op": "add",
+    "path": "/traits/arcanian",
+    "value": { "description": "Arcanian", "stats": [ ["firePenalty", "mult", 0.75], ["digestionEnergy", "add", 0.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/saturn",
-	"value": { "description": "Saturnian", "skills": [ ["health", 4], ["digestionEnergy", 2] ] }
+    "op": "add",
+    "path": "/traits/saturn",
+    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["digestionEnergy", "add", 0.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/saturn2",
-	"value": { "description": "Saturnian", "skills": [ ["health", 4], ["digestionEnergy", 2] ] }
+    "op": "add",
+    "path": "/traits/saturn2",
+    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["digestionEnergy", "add", 0.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/nostos",
-	"value": { "description": "NostOS", "skills": [ ["health", 5], ["knockbackResistance", 2] ] }
+    "op": "add",
+    "path": "/traits/nostos",
+    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["knockbackResistance", "add", 0.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/harpy",
-	"value": { "description": "Harpy", "skills": [ ["movement", 2], ["fallDamageResistance", 4] ] }
+    "op": "add",
+    "path": "/traits/harpy",
+    "value": { "description": "Saturnian", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/vampire",
-	"value": { "description": "Vampire", "skills": [ ["bloatAmount", 1], ["healing", 3] ] }
+    "op": "add",
+    "path": "/traits/vampire",
+    "value": { "description": "Vampire", "stats": [ ["healing", "mult", 1.25], ["bloatAmount", "mult", 0.75] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/faahri",
-	"value": { "description": "Faahri", "skills": [ ["movement", 4], ["digestion", 4], ["digestionEnergy", 1] ] }
+    "op": "add",
+    "path": "/traits/faahri",
+    "value": { "description": "Faahri", "stats": [ ["digestion", "mult", 1.25], ["movement", "mult", 1.05], ["digestionEnergy", "add", 0.1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/galgob",
-	"value": { "description": "Goblin", "skills": [ ["digestion", 4], ["absorption", 4], ["healing", 1] ] }
+    "op": "add",
+    "path": "/traits/galgob",
+    "value": { "description": "Goblin", "stats": [ ["digestion", "mult", 1.25], ["absorption", "mult", 1.1], ["healing", "mult", 1.1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/onis",
-	"value": { "description": "Oni", "skills": [ ["wellfedProtection", 1], ["smashDamage", 2] ] }
+    "op": "add",
+    "path": "/traits/onis",
+    "value": { "description": "Oni", "stats": [ ["smashDamage", "add", 0.25] ], "skills": [ ["wellfedProtection", 1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/shoggoth",
-	"value": { "description": "Shoggoth", "skills": [ ["voreCritter", 1], ["voreMonster", 1], ["voreHumanoid", 1], ["wellfedProtection", 1] ], "items": ["voretool"] }
+    "op": "add",
+    "path": "/traits/shoggoth",
+    "value": { "description": "Shoggoth", "stats": [ ["digestion", "mult", 1.25], ["voreDamage", "mult", 1.25] ], "skills": [ ["voreCritter", 1], ["voreMonster", 1], ["voreHumanoid", 1], ["wellfedProtection", 1] ], "items": ["voretool"] }
   },
   {
-	"op": "add",
-	"path": "/traits/mindflayer",
-	"value": { "description": "Mindflayer", "skills": [ ["experienceMultiplier", 2], ["voreCritter", 1] ] }
+    "op": "add",
+    "path": "/traits/mindflayer",
+    "value": { "description": "Mindflayer", "stats": [ ["experienceMultiplier", "mult", 1.1] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/nightgaunt",
-	"value": { "description": "Nightgaunt", "skills": [ ["fallDamageResistance", 4], ["voreCritter", 1] ] }
+    "op": "add",
+    "path": "/traits/nightgaunt",
+    "value": { "description": "Nightgaunt", "stats": [ ["fallDamageResistance", "add", 0.25] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/epshadow",
-	"value": { "description": "Shadow", "skills": [ ["preventImmobile", 1] ] }
+    "op": "add",
+    "path": "/traits/epshadow",
+    "value": { "description": "Shadow", "stats": [ ["movement", "mult", 1.2] ], "skills": [ ["preventImmobile", 1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/angel",
-	"value": { "description": "Angel", "skills": [ ["deathPenalty", 3], ["healing", 1] ] }
+    "op": "add",
+    "path": "/traits/angel",
+    "value": { "description": "Angel", "stats": [ ["deathPenalty", "sub", 0.2], ["healing", "mult", 1.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/neki",
-	"value": { "description": "Neki", "skills": [ ["movement", 4], ["fallDamageResistance", 2], ["voreCritter", 1] ] }
+    "op": "add",
+    "path": "/traits/neki",
+    "value": { "description": "Neki", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
-	"op": "add",
-	"path": "/traits/ningen",
-	"value": { "description": "Ningen", "experience": 5, "skills": [ ["experienceMultiplier", 2] ] }
+    "op": "add",
+    "path": "/traits/ningen",
+    "value": { "description": "Ningen", "stats": [ ["experienceMultiplier", "mult", 1.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/kitsune",
-	"value": { "description": "Kitsune", "skills": [ ["movement", 4], ["digestionEnergy", 3] ] }
+    "op": "add",
+    "path": "/traits/kitsune",
+    "value": { "description": "Kitsune", "stats": [ ["movement", "mult", 1.1], ["digestionEnergy", "mult", 1.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/halfsea",
-	"value": { "description": "Halfsea", "skills": [ ["absorption", 4], ["health", 4], ["healing", 1] ] }
+    "op": "add",
+    "path": "/traits/halfsea",
+    "value": { "description": "Halfsea", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.25] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/felin",
-	"value": { "description": "Felin", "skills": [ ["movement", 5], ["fallDamageResistance", 2] ] }
+    "op": "add",
+    "path": "/traits/felin",
+    "value": { "description": "Felin", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
-	"op": "add",
-	"path": "/traits/troll",
-	"value": { "description": "Troll", "skills": [ ["capacity", 5], ["digestion", 3], ["voreCritter", 1] ] }
+    "op": "add",
+    "path": "/traits/troll",
+    "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
-	"op": "add",
-	"path": "/traits/tirastrolls",
-	"value": { "description": "Troll", "skills": [ ["capacity", 5], ["digestion", 3], ["voreCritter", 1] ] }
+    "op": "add",
+    "path": "/traits/tirastrolls",
+    "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
-	"op": "add",
-	"path": "/traits/argonian",
-	"value": { "description": "Argonian", "skills": [ ["poisonResistance", 3], ["poisonImmunity", 1] ] }
+    "op": "add",
+    "path": "/traits/argonian",
+    "value": { "description": "Argonian", "stats": [ ["poisonResistance", "add", 0.2] ], "skills": [ ["poisonImmunity", 1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/glaceonfox",
-	"value": { "description": "Glaceon", "skills": [ ["iceResistance", 3], ["iceImmunity", 1] ] }
+    "op": "add",
+    "path": "/traits/glaceonfox",
+    "value": { "description": "Glaceon", "stats": [ ["iceResistance", "add", 0.2] ], "skills": [ ["iceImmunity", 1] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/zoroark",
-	"value": { "description": "Zoroark", "skills": [ ["movement", 4], ["strainedPenalty", 2] ] }
+    "op": "add",
+    "path": "/traits/zoroark",
+    "value": { "description": "Zoroark", "stats": [ ["movement", "mult", 1.1], ["strainedPenalty", "mult", 0.75] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/hisuzor",
-	"value": { "description": "Zoroark", "skills": [ ["movement", 4], ["poisonResistance", 2] ] }
+    "op": "add",
+    "path": "/traits/hisuzor",
+    "value": { "description": "Zoroark", "stats": [ ["movement", "mult", 1.1], ["strainedPenalty", "mult", 0.75] ] }
   },
   {
-	"op": "add",
-	"path": "/traits/lucario",
-	"value": { "description": "Lucario", "skills": [ ["poisonResistance", 3], ["poisonImmunity", 1] ] }
+    "op": "add",
+    "path": "/traits/lucario",
+    "value": { "description": "Lucario", "stats": [ ["poisonResistance", "add", 0.2] ], "skills": [ ["poisonImmunity", 1] ] }
   }
 ]

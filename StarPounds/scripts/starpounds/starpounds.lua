@@ -483,7 +483,7 @@ starPounds.updateStats = function(force, dt)
 		local gritReduction = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0
 		local persistentEffects = {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
-			{stat = "foodDelta", effectiveMultiplier = starPounds.hasOption("disableHunger") and 0 or math.round(starPounds.getStat("hunger"), 2)},
+			{stat = "foodDelta", effectiveMultiplier = ((storage.starPounds.stomach > 0) or starPounds.hasOption("disableHunger")) and 0 or math.round(starPounds.getStat("hunger"), 2)},
 			{stat = "grit", amount = gritReduction},
 			{stat = "shieldHealth", effectiveMultiplier = 1 + starPounds.getStat("shieldHealth") * bonusEffectiveness},
 			{stat = "knockbackThreshold", effectiveMultiplier = 1 - gritReduction},

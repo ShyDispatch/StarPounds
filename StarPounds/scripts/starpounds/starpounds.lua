@@ -468,12 +468,13 @@ starPounds.updateStatuses = function()
 	end
 end
 
-starPounds.updateStats = function(force)
+starPounds.updateStats = function(force, dt)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Give the entity hitbox, bonus stats, and effects based on fatness.
 	local size = starPounds.currentSize
-	if oldWeightMultiplier ~= starPounds.weightMultiplier or force then
+	starPounds.statRefreshTimer = math.max((starPounds.statRefreshTimer or 0) - (dt or 0), 0)
+	if starPounds.statRefreshTimer == 0 or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
 		-- Shouldn't activate at base size, so both indexes are reduced by one.
 		local sizeIndex = starPounds.currentSizeIndex - 1
 		local scalingSize = starPounds.settings.scalingSize - 1
@@ -503,6 +504,7 @@ starPounds.updateStats = function(force)
 			if not skip then filteredPersistentEffects[#filteredPersistentEffects + 1] = effect end
 		end
 		status.setPersistentEffects("starpounds", filteredPersistentEffects)
+		starPounds.statRefreshTimer = starPounds.settings.statRefreshTimer
 	end
 	-- Check if the entity is using a morphball (Tech patch bumps this number for the morphball).
 	if status.stat("activeMovementAbilities") > 1 then return end

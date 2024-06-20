@@ -154,7 +154,7 @@ function update(dt)
 	starPounds.hunger(dt)
 	starPounds.parseEffectStats(dt)
 	starPounds.updateStatuses()
-	starPounds.updateStats(starPounds.optionChanged)
+	starPounds.updateStats(starPounds.optionChanged, dt)
 	-- Save for comparison later.
 	oldSize = starPounds.currentSize
 	oldVariant = starPounds.currentVariant

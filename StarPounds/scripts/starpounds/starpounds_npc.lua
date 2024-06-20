@@ -115,7 +115,7 @@ function update(dt)
 	-- Stat/status updating stuff.
 	starPounds.parseEffectStats(dt)
 	starPounds.updateStatuses()
-	starPounds.updateStats()
+	starPounds.updateStats(nil, dt)
 	-- Save for comparison later.
 	oldSize = starPounds.currentSize
 	oldVariant = starPounds.currentVariant

@@ -34,10 +34,28 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	dt = math.max(tonumber(dt) or 0, 0)
 	if dt == 0 then return end
 	bloatMultiplier = tonumber(bloatMultiplier) or 1
+
+	-- Rumbles. (Outside of the other block, because we still want them to happen without food if the rumble rate is above 0)
+	if not starPounds.hasOption("disableRumbles") then
+		if (starPounds.stomach.contents + starPounds.getStat("baseRumbleRate")) > 0 then
+			if starPounds.rumbleTimer and starPounds.rumbleTimer > 0 then
+				-- If the gurgle rate is greater than the rumble rate (and we have food), use that.
+				local gurgleRate = starPounds.stomach.contents > 0 and starPounds.getStat("gurgleRate") or 0
+				local rumbleRate = starPounds.stomach.contents > 0 and starPounds.getStat("rumbleRate") or 0
+				rumbleRate = math.max(starPounds.getStat("baseRumbleRate"), rumbleRate, gurgleRate)
+				starPounds.rumbleTimer = math.max(starPounds.rumbleTimer - (dt * rumbleRate), 0)
+			else
+				if starPounds.rumbleTimer then starPounds.rumble() end
+				starPounds.rumbleTimer = math.round(util.randomInRange({starPounds.settings.minimumRumbleTime, (starPounds.settings.rumbleTime * 2) - starPounds.settings.minimumRumbleTime}))
+			end
+		end
+	end
+
 	-- Don't do anything if stomach is empty.
 	if starPounds.stomach.contents == 0 then
-		starPounds.gurgleTimer, starPounds.rumbleTimer = nil
 		starPounds.voreDigestTimer = 0
+		starPounds.gurgleTimer = nil
+		if starPounds.getStat("baseRumbleRate") == 0 then starPounds.rumbleTimer = nil end
 		return
 	end
 
@@ -60,15 +78,6 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 				-- gurgleTime (default 30) is the average, minimumGurgleTime (default 5) is the minimum, so (5 + (60 - 5))/2 = 30
 				if starPounds.gurgleTimer then starPounds.gurgle() end
 				starPounds.gurgleTimer = math.round(util.randomInRange({starPounds.settings.minimumGurgleTime, (starPounds.settings.gurgleTime * 2) - starPounds.settings.minimumGurgleTime}))
-			end
-		end
-		-- Ditto but for rumbles.
-		if not starPounds.hasOption("disableRumbles") then
-			if starPounds.rumbleTimer and starPounds.rumbleTimer > 0 then
-				starPounds.rumbleTimer = math.max(starPounds.rumbleTimer - (dt * math.max(starPounds.getStat("gurgleRate"), starPounds.getStat("rumbleRate"))), 0)
-			else
-				if starPounds.rumbleTimer then starPounds.rumble() end
-				starPounds.rumbleTimer = math.round(util.randomInRange({starPounds.settings.minimumRumbleTime, (starPounds.settings.rumbleTime * 2) - starPounds.settings.minimumRumbleTime}))
 			end
 		end
 	else
@@ -1015,10 +1024,6 @@ starPounds.hunger = function(dt)
 		local threshold = math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt
 		-- Check if the player is about to starve.
 		local isStarving = status.resource("food") < (math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt)
-		-- Rumble sound every 5 seconds when hungry.
-		if (isStarving or status.uniqueStatusEffectActive("hungry")) and not starPounds.hasOption("disableRumbles") and math.random(1, math.round(5/dt)) == 1 then
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", 0.75, (math.random(90,110)/100))
-		end
 		if isStarving then
 			local minimumOffset = starPounds.getSkillLevel("minimumSize")
 			local foodAmount = math.min((minimumOffset > 0 and (storage.starPounds.weight - starPounds.sizes[minimumOffset + 1].weight) or storage.starPounds.weight) * 0.1, threshold - status.resource("food"))

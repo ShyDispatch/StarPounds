@@ -1030,7 +1030,9 @@ starPounds.hunger = function(dt)
 			local minimumOffset = starPounds.getSkillLevel("minimumSize")
 			local foodAmount = math.min((minimumOffset > 0 and (storage.starPounds.weight - starPounds.sizes[minimumOffset + 1].weight) or storage.starPounds.weight) * 0.1, threshold - status.resource("food"))
 			status.giveResource("food", foodAmount)
-			starPounds.loseWeight(2 * foodAmount/math.max(0.01, starPounds.getStat("absorption")))
+			local lossMultiplier = math.max(1, 1/math.max(0.01, (starPounds.getStat("foodValue") * starPounds.getStat("absorption"))))
+			-- Converting fat, so ignore weight loss modifiers.
+			starPounds.loseWeight(foodAmount * lossMultiplier, true)
 		end
 	end
 	-- Set the statuses.

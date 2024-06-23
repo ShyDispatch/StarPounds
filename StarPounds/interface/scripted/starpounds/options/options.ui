@@ -17,20 +17,17 @@
         "layout": "vertical",
         "tabWidth": 18,
         "tabs": [],
-        "data": [{
-          "type": "panel", "style": "convex", "children": [
-            {"type": "panel", "style": "convex", "expandMode": [1, 0], "children": [
-              {"type": "layout", "mode": "manual", "size": [120, 20], "children": [
-                {"type": "label", "position": [0, 6], "size": [120, 9], "align": "center", "text": "<title>"}
-              ]}
-            ]},
+        "data": [
+          {"type": "panel", "style": "convex", "children": [
+            1,
+            {"type": "label", "align": "center", "text": "<title>"},
             {
               "type": "scrollArea",
-              "id": "panel_<tab>",
+              "id": "<panel>",
               "children": []
             }
-          ]
-        }]
+          ]}
+        ]
       }
     ],
     [

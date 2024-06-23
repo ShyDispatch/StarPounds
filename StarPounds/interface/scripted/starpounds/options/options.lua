@@ -36,8 +36,8 @@ function populateOptions()
     tab.title = " "
     tab.icon = tab.id..".png"
     tab.contents = copy(tabField.data)
-    tab.contents[1].children[1].children[1].children[1].text = tab.description
-    tab.contents[1].children[2].id = "panel_"..tab.id
+    replaceInData(tab.contents, "id", "<panel>", "panel_"..tab.id)
+    replaceInData(tab.contents, "text", "<title>", tab.description)
     local newTab = tabField:newTab(tab)
 
     if not firstTab then
@@ -132,4 +132,17 @@ end
 
 function admin()
   return (player.isAdmin() or starPounds.hasOption("admin")) or false
+end
+
+function replaceInData(data, keyname, value, replacevalue)
+  if type(data) == "table" then
+    for k, v in pairs(data) do
+      if (k == keyname or keyname == nil) and (v == value or value == nil) then
+        -- sb.logInfo("Replacing value %s of key %s with value %s", v, k, replacevalue)
+        data[k] = replacevalue
+      else
+        replaceInData(v, keyname, value, replacevalue)
+      end
+    end
+  end
 end

@@ -797,7 +797,7 @@ starPounds.parseStats = function()
 	local selectedTrait = starPounds.traits[starPounds.getTrait() or "default"]
 	local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default
 	for _, trait in ipairs({speciesTrait, selectedTrait}) do
-		for _, stat in ipairs(trait.stats) do
+		for _, stat in ipairs(trait.stats or jarray()) do
 			storage.starPounds.traitStats[stat[1]] = storage.starPounds.traitStats[stat[1]] or {0, 1}
 			if stat[2] == "add" then
 				storage.starPounds.traitStats[stat[1]][1] = storage.starPounds.traitStats[stat[1]][1] + stat[3]

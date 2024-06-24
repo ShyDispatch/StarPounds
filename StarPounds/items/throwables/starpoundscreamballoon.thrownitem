@@ -1,12 +1,12 @@
 {
-  "itemName" : "lardballoon",
+  "itemName" : "starpoundscreamballoon",
   "rarity" : "Common",
   "category" : "throwableItem",
-  "price" : 10,    
-  "inventoryIcon" : "lardballoonicon.png",
-  "image" : "lardballoon.png",
-  "shortdescription" : "Lard Balloon",
-  "description" : "A balloon filled up with lard.",
+  "price" : 10,
+  "inventoryIcon" : "starpoundscreamballoonicon.png",
+  "image" : "starpoundscreamballoon.png",
+  "shortdescription" : "Cream Balloon",
+  "description" : "A balloon filled up with cream.",
 
   "ammoUsage" : 1,
 
@@ -14,7 +14,7 @@
   "windupTime" : 0.0,
   "cooldown" : 0.4,
 
-  "projectileType" : "lardballoon",
+  "projectileType" : "starpoundscreamballoon",
   "projectileConfig" : {
     "speed" : 40,
     "power" : 0,

@@ -138,7 +138,7 @@
 	  {"input": [["money", 20]], "output": "starpoundsliquidchocolate"},
 	  {"input": [["money", 20]], "output": "starpoundsliquidjelly"},
 	  {"input": [["money", 20]], "output": "starpoundsliquidsoda"},
-	  {"input": [["money", 30]], "output": "liquidlard"},
+	  {"input": [["money", 20]], "output": "starpoundsliquidcream"},
 	  {"input": [["money", 30]], "output": "liquidgrease"},
 	  {"input": [["money", 30]], "output": "starpoundsliquidhoney"}
     ],

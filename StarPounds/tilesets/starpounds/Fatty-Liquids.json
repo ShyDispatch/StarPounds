@@ -8,8 +8,8 @@
   "tileheight" : 8,
   "tileproperties" : {
     "0" : {
-      "//name" : "lardliquid",
-      "liquid" : "lardliquid"
+      "//name" : "starpoundscreamliquid",
+      "liquid" : "starpoundscreamliquid"
     },
     "1" : {
       "//name" : "moontantsludgeliquid",
@@ -32,9 +32,9 @@
       "liquid" : "greaseliquid"
     },
     "6" : {
-      "//name" : "lardliquid_source",
-      "//shortdescription" : "Endless lard",
-      "liquid" : "lardliquid",
+      "//name" : "starpoundscreamliquid_source",
+      "//shortdescription" : "Endless cream",
+      "liquid" : "starpoundscreamliquid",
       "source" : "true"
     },
     "7" : {
@@ -70,7 +70,7 @@
   },
   "tiles" : {
     "0" : {
-      "image" : "./../../../../tiled/starpounds/liquids/lard.png"
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundscream.png"
     },
     "1" : {
       "image" : "./../../../../tiled/starpounds/liquids/moontantsludge.png"
@@ -88,7 +88,7 @@
       "image" : "./../../../../tiled/starpounds/liquids/grease.png"
     },
     "6" : {
-      "image" : "./../../../../tiled/starpounds/liquids/lard_source.png"
+      "image" : "./../../../../tiled/starpounds/liquids/starpoundscream_source.png"
     },
     "7" : {
       "image" : "./../../../../tiled/starpounds/liquids/moontantsludge_source.png"

@@ -377,7 +377,7 @@ starPounds.drink = function(dt)
 	drinkCounter = drinkCounter or 0
 	-- Check if drinking isn't on cooldown.
 	if not (drinkTimer == 0) then return end
-	-- Check if there is liquid in front of the entities's mouth, and if it is milk/jelly/lard/chocolate.
+	-- Check if there is liquid in front of the entities's mouth, and if it is drinkable.
 	if mouthLiquid and (starPounds.settings.drinkables[root.liquidName(mouthLiquid[1])] or starPounds.hasOption("universalDrinking")) then
 		-- Remove liquid at the entities's mouth, and store how much liquid was removed.
 		local consumedLiquid = world.destroyLiquid(mouthPosition) or world.destroyLiquid(vec2.add(mouthPosition, {0, 0.25}))

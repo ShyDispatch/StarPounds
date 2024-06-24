@@ -1,16 +1,16 @@
 {
-  "projectileName" : "lardballoon",
+  "projectileName" : "starpoundscreamballoon",
   "physics" : "grenade",
-  "image" : "lardballoon.png",
+  "image" : "starpoundscreamballoon.png",
   "animationCycle" : 0.5,
   "frameNumber" : 2,
   "windupFrames" : 1,
   "intangibleWindup" : true,
 
-  "actionOnReap" : [ 
-    { 
-      "action" : "liquid", 
-      "liquid" : "lardliquid", "quantity" : 3 
+  "actionOnReap" : [
+    {
+      "action" : "liquid",
+      "liquid" : "starpoundscreamliquid", "quantity" : 3
     },
     {
       "action" : "sound",

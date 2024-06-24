@@ -1,0 +1,11 @@
+{
+  "itemName" : "starpoundsliquidcream",
+  "rarity" : "Common",
+  "category" : "liquid",
+  "inventoryIcon" : "starpoundscreamicon.png",
+  "shortdescription" : "Cream",
+  "description" : "This milk fat tends to be quite... fattening.",
+
+  "liquid" : "starpoundscreamliquid",
+  "price" : 0
+}

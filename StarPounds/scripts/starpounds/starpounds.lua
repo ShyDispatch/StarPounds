@@ -858,7 +858,7 @@ starPounds.setTrait = function(trait)
 	local mt = {__index = function (table, key) return starPounds.traits.default[key] end}
 	setmetatable(selectedTrait, mt)
 	-- Unlock trait skills.
-	for _, skill in ipairs(selectedTrait.skills) do
+	for _, skill in ipairs(selectedTrait.skills or jarray()) do
 		starPounds.forceUnlockSkill(skill[1], skill[2])
 	end
 	-- Set trait starting values. Done a bit weirdly so it still applies when the mod is off.

@@ -12,17 +12,17 @@
   {
     "op": "add",
     "path": "/traits/arcanian",
-    "value": { "description": "Arcanian", "stats": [ ["firePenalty", "mult", 0.8], ["digestionEnergy", "add", 0.25], ["metabolism", "mult", 1.25] ] }
+    "value": { "description": "Arcanian", "stats": [ ["firePenalty", "mult", 0.8], ["digestionEnergy", "add", 0.5], ["metabolism", "mult", 1.25] ] }
   },
   {
     "op": "add",
     "path": "/traits/saturn",
-    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["digestionEnergy", "add", 0.25], ["bloatDigestion", "mult", 0.8] ] }
+    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["digestionEnergy", "add", 0.5], ["bloatDigestion", "mult", 0.8] ] }
   },
   {
     "op": "add",
     "path": "/traits/saturn2",
-    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["digestionEnergy", "add", 0.25], ["bloatDigestion", "mult", 0.8] ] }
+    "value": { "description": "Saturnian", "stats": [ ["health", "mult", 1.25], ["digestionEnergy", "add", 0.5], ["bloatDigestion", "mult", 0.8] ] }
   },
   {
     "op": "add",
@@ -37,17 +37,17 @@
   {
     "op": "add",
     "path": "/traits/vampire",
-    "value": { "description": "Vampire", "stats": [ ["healing", "mult", 1.25], ["bloatDigestion", "mult", 1.25], ["foodValue", "mult", 0.8] ] }
+    "value": { "description": "Vampire", "stats": [ ["healing", "mult", 1.25], ["bloatDigestion", "mult", 1.25], ["foodValue", "sub", 0.2] ] }
   },
   {
     "op": "add",
     "path": "/traits/faahri",
-    "value": { "description": "Faahri", "stats": [ ["digestion", "mult", 1.25], ["movement", "mult", 1.05], ["digestionEnergy", "add", 0.1], ["metabolism", "mult", 1.25] ] }
+    "value": { "description": "Faahri", "stats": [ ["digestion", "mult", 1.25], ["movement", "mult", 1.05], ["digestionEnergy", "add", 0.25], ["metabolism", "mult", 1.25] ] }
   },
   {
     "op": "add",
     "path": "/traits/galgob",
-    "value": { "description": "Goblin", "stats": [ ["digestion", "mult", 1.25], ["absorption", "mult", 1.1], ["healing", "mult", 1.1], ["health", "mult", 0.8] ] }
+    "value": { "description": "Goblin", "stats": [ ["digestion", "mult", 1.25], ["absorption", "mult", 1.1], ["healing", "mult", 1.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
@@ -67,7 +67,7 @@
   {
     "op": "add",
     "path": "/traits/nightgaunt",
-    "value": { "description": "Nightgaunt", "stats": [ ["fallDamageResistance", "add", 0.25], ["bloatDigestion", "mult", 0.8] ], "skills": [ ["voreCritter", 1] ] }
+    "value": { "description": "Nightgaunt", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["bloatDigestion", "mult", 0.8] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
     "op": "add",
@@ -77,12 +77,12 @@
   {
     "op": "add",
     "path": "/traits/angel",
-    "value": { "description": "Angel", "stats": [ ["deathPenalty", "sub", 0.2], ["healing", "mult", 1.25], ["health", "mult", 0.8] ] }
+    "value": { "description": "Angel", "stats": [ ["deathPenalty", "sub", 0.2], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
     "path": "/traits/neki",
-    "value": { "description": "Neki", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["hunger ", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+    "value": { "description": "Neki", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["hunger", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
     "op": "add",
@@ -97,7 +97,7 @@
   {
     "op": "add",
     "path": "/traits/halfsea",
-    "value": { "description": "Halfsea", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.25], ["digestion", "mult", 0.8] ] }
+    "value": { "description": "Halfsea", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["digestion", "mult", 0.8] ] }
   },
   {
     "op": "add",

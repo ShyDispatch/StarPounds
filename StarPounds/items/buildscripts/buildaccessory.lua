@@ -84,7 +84,7 @@ function build(directory, config, parameters, level, seed)
         name = stat,
         modifier = modifier
       })
-      experienceMultiplier = experienceMultiplier + (modifier * -stats.experienceMultiplier.weight * stats[stat].weight)
+      experienceMultiplier = experienceMultiplier + (modifier * -(1/stats.experienceMultiplier.weight) * stats[stat].weight)
     end
 
     table.sort(parameters.stats, function(a, b) return a.name < b.name end)

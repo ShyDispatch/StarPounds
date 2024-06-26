@@ -4,6 +4,8 @@ require "/scripts/versioningutils.lua"
 require "/scripts/staticrandom.lua"
 
 function build(directory, config, parameters, level, seed)
+  local stats = root.assetJson("/scripts/starpounds/starpounds_stats.config")
+
   local configParameter = function(keyName, defaultValue)
     if parameters[keyName] ~= nil then
       return parameters[keyName]
@@ -67,7 +69,6 @@ function build(directory, config, parameters, level, seed)
   if config.builderConfig.fullbright then
     config.animationParts.accessoryFullbright = config.animationParts.accessory:gsub(".png", "_fullbright.png")
   end
-
   -- build stats
   parameters.stats = parameters.stats or config.stats
   if not parameters.stats then
@@ -78,12 +79,12 @@ function build(directory, config, parameters, level, seed)
     for i=1, statCount do
       local switch = (i > (statCount - (config.statConfig.negativeCount or 0))) and -1 or 1
       local stat = table.remove(statList, randomIntInRange({1, #statList}, seed, "stat"..i))
-      local modifier = math.floor(randomInRange(config.statConfig.amplitude, seed, "stat"..i) * switch * (100/stat.weight) + 0.5)/100
+      local modifier = math.floor(randomInRange(config.statConfig.amplitude, seed, "stat"..i) * switch * (100/stats[stat].weight) + 0.5)/100
       table.insert(parameters.stats, {
-        name = stat.name,
+        name = stat,
         modifier = modifier
       })
-      experienceMultiplier = experienceMultiplier + (modifier * -0.5 * stat.weight)
+      experienceMultiplier = experienceMultiplier + (modifier * -stats.experienceMultiplier.weight * stats[stat].weight)
     end
 
     table.sort(parameters.stats, function(a, b) return a.name < b.name end)
@@ -96,7 +97,6 @@ function build(directory, config, parameters, level, seed)
   -- tooltip fields
   config.tooltipFields = {}
   config.tooltipFields.statusList = jarray()
-  local stats = root.assetJson("/scripts/starpounds/starpounds_stats.config")
   for i, stat in ipairs(parameters.stats) do
     config.tooltipFields["stat"..i.."_Label"] = string.format("%s%s%%", stat.modifier > 0 and "+" or "", math.floor(100 * stat.modifier + 0.5))
     config.tooltipFields["stat"..i.."_Image"] = string.format("/interface/tooltips/accessoryicons/%s.png", stat.name)

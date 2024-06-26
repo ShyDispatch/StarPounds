@@ -15,11 +15,11 @@
     "amplitude" : [0.05, 0.1],
     "count" : 1,
     "list" : [
-      {"name": "absorption", "weight": 1},
-      {"name": "capacity", "weight": 0.8},
-      {"name": "digestion", "weight": 0.8},
-      {"name": "health", "weight": 0.8},
-      {"name": "movement", "weight": 3}
+      "absorption",
+      "capacity",
+      "digestion",
+      "health",
+      "movement"
     ]
   },
   "builder" : "/items/buildscripts/buildaccessory.lua",

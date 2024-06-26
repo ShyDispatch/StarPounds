@@ -276,12 +276,29 @@ function buildTraitPreview(traitType, trait)
       traitStats[#traitStats + 1] = string.format("%s%s:^reset;", statColour, modStat.pretty)
       traitStatValues[#traitStatValues + 1] = statString
     end
+
+    if starPounds.hasOption("showDebug") then
+      traitStats[#traitStats + 1] = ""
+      traitStatValues[#traitStatValues + 1] = ""
+      local weight = 0
+      for _, stat in ipairs(trait.stats) do
+        local modStat = starPounds.stats[stat[1]]
+        local negative = modStat.negative
+        local amount = stat[3]
+        if stat[2] == "sub" then negative = not negative end
+        if stat[2] == "mult" then amount = amount - 1 end
+        amount = amount * modStat.weight
+        weight = weight + amount * (negative and -1 or 1)
+      end
+      traitStats[#traitStats + 1] = "^#665599;Stat Weight:"
+      traitStatValues[#traitStatValues + 1] = string.format("%s%s", weight > 0 and "^green;" or (weight < 0 and "^red;" or ""), weight)
+    end
   end
 
   for i in ipairs(traitStats) do
     if i > 1 then
-      traitStatString = traitStatString.."\n"
-      traitStatValueString = traitStatValueString.."\n"
+      traitStatString = traitStatString.."\n^reset;"
+      traitStatValueString = traitStatValueString.."\n^reset;"
     end
     traitStatString = traitStatString..traitStats[i]
     traitStatValueString = traitStatValueString..traitStatValues[i]
@@ -303,7 +320,7 @@ function populateTraitTab()
     if starPounds.getTrait() == trait then selectedTraitIndex = i end
     table.insert(selectableTraits, sb.jsonMerge(traits[trait], {id = trait}))
   end
-  
+
   selectedTraitIndex = selectedTraitIndex or math.random(1, #selectableTraits)
   selectedTrait = selectableTraits[selectedTraitIndex]
 

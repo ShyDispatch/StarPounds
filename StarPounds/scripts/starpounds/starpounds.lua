@@ -215,6 +215,8 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 	if starPounds.hasOption("disableBelchParticles") then return end
 	-- More accurately calculate where the enities's mouth is.
 	local mouthOffset = {0.375 * facingDirection * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
+	-- Silly, but when the uninitialising (e.g. player releases stored entities when teleporting, causing a belch), mouth position returns nil.
+	if world.entityMouthPosition(entity.id()) == nil then return end
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
 	local gravity = world.gravity(mouthPosition)
 	local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)

@@ -212,8 +212,8 @@ end
 
 -- Default override functions
 ----------------------------------------------------------------------------------
-die_old = die or nullFunction
-setDying = setDying or nullFunction
+local die_old = die or nullFunction
+local setDying = setDying or nullFunction
 function die()
 	if storage.starPounds.pred then
 		storage.starPounds.pred = nil

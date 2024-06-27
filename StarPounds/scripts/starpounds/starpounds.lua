@@ -320,19 +320,22 @@ starPounds.exercise = function(dt)
 	local speedModifier = 1
 	local runningSuppressed = false
 	-- Consume energy based on how far over capacity they are.
+	local strainedPenalty = starPounds.getStat("strainedPenalty")
 	if starPounds.stomach.fullness > thresholds.starpoundsstomach then
-		local strainedPenalty = starPounds.getStat("strainedPenalty")
-		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - thresholds.starpoundsstomach, 2)/4) * strainedPenalty))
+		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - thresholds.starpoundsstomach, 2)/4) * strainedPenalty * (1 - (status.resourcePercentage("energy")))))
 		runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy"))
-		-- consume and lock energy when running.
+		-- Consume and lock energy when running.
 		if status.isResource("energy") and not status.resourceLocked("energy") and consumeEnergy then
-			local energyCost = status.resourceMax("energy") * strainedPenalty * effort * 0.25 * dt
+			local energyCost = status.resourceMax("energy") * strainedPenalty * status.resourcePercentage("energyRegenBlock") * effort * 0.25 * dt
 			-- Double energy cost from super tummy-too-big-itus
 			if starPounds.stomach.fullness >= thresholds.starpoundsstomach2 then
 				energyCost = energyCost * 2
 			end
 			status.modifyResource("energy", -energyCost)
-			status.setResourcePercentage("energyRegenBlock", math.max(strainedPenalty, status.resourcePercentage("energyRegenBlock")))
+			if status.isResource("energyRegenBlock") then
+				starPounds.energyRegenBlockDelta = starPounds.energyRegenBlockDelta or root.assetJson("/player.config:statusControllerSettings.resources.energyRegenBlock.deltaValue")
+				status.modifyResource("energyRegenBlock", ((1 + effort) * strainedPenalty - starPounds.energyRegenBlockDelta) * dt)
+			end
 		end
 	end
 	-- Sweat if we can't run and moving.
@@ -342,7 +345,7 @@ starPounds.exercise = function(dt)
 	-- Move speed stuffs.
 	mcontroller.controlModifiers({
 		runningSuppressed = runningSuppressed,
-		airJumpModifier = runningSuppressed and 0.5 or nil,
+		airJumpModifier = runningSuppressed and (1 - (0.5 * strainedPenalty)) or nil,
 		speedModifier = speedModifier
 	})
 	-- Lose weight based on weight, effort, and the multiplier.

@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "solariumstar", "count" : 20 },
+    { "item" : "starpoundsinvisibletier5achest", "count" : 1 }
+  ],
+  "duration" : 5,
+  "output" : { "item" : "starpoundsinvisibletier6achest", "count" : 1 },
+  "groups" : [ "craftingaccelerator", "armours", "all" ]
+}

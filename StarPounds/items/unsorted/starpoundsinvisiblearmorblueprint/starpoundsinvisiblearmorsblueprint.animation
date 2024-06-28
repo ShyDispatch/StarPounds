@@ -1,0 +1,17 @@
+{
+  "animatedParts" : {
+    "parts" : {
+      "blueprint" : {
+        "properties" : {
+          "centered" : true,
+          "offset" : [0, 0],
+          "image" : "starpoundsinvisiblearmorsblueprint.png"
+        }
+      }
+    }
+  },
+
+  "sounds" : {
+    "learnBlueprint" : ["/sfx/interface/item_holster.ogg"]
+  }
+}

@@ -119,7 +119,7 @@
 	  "prismchest", "prismlegs", "neckruffle", "snowinfantrychest", "snowinfantrypants", "explorerchest", "explorerlegs", "tarchest", "tarlegs", "icearmorchest", "icearmorlegs"
     ],	
     "invisible" : [
-      "starpoundsinvisiblehead", "starpoundsinvisiblechest", "starpoundsinvisiblelegs", "starpoundsinvisibleback"
+      "starpoundsinvisiblehead", "starpoundsinvisiblechest", "starpoundsinvisiblelegs", "starpoundsinvisibleback", "starpoundsinvisiblearmorsblueprint"
     ]
   }
 }

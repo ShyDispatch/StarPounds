@@ -1,0 +1,14 @@
+{
+  "itemName" : "starpoundsinvisiblearmorsblueprint",
+  "rarity" : "Legendary",
+  "price" : 0,
+  "description" : "Blueprints for specialized invisible armor.",
+  "shortdescription" : "Invisible Armor Blueprints",
+  "category" : "Blueprint",
+  "twoHanded" : false,
+  "inventoryIcon" : "starpoundsinvisiblearmorsblueprint.png",
+  "recipes" : ["starpoundsinvisibletier1head", "starpoundsinvisibletier1chest", "starpoundsinvisibletier1pants", "starpoundsinvisibletier2head", "starpoundsinvisibletier2chest", "starpoundsinvisibletier2pants", "starpoundsinvisibletier3head", "starpoundsinvisibletier3chest", "starpoundsinvisibletier3pants", "starpoundsinvisibletier4head", "starpoundsinvisibletier4chest", "starpoundsinvisibletier4pants", "starpoundsinvisibletier5ahead", "starpoundsinvisibletier5achest", "starpoundsinvisibletier5apants", "starpoundsinvisibletier5mhead", "starpoundsinvisibletier5mchest", "starpoundsinvisibletier5mpants", "starpoundsinvisibletier5shead", "starpoundsinvisibletier5schest", "starpoundsinvisibletier5spants", "starpoundsinvisibletier6ahead", "starpoundsinvisibletier6achest", "starpoundsinvisibletier6apants", "starpoundsinvisibletier6mhead", "starpoundsinvisibletier6mchest", "starpoundsinvisibletier6mpants", "starpoundsinvisibletier6shead", "starpoundsinvisibletier6schest", "starpoundsinvisibletier6spants"],
+  "animation" : "starpoundsinvisiblearmorsblueprint.animation",
+  "scripts" : ["starpoundsinvisiblearmorsblueprint.lua"],
+  "swingTime" : 0.15
+}

@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "solariumstar", "count" : 12 },
+    { "item" : "starpoundsinvisibletier5mhead", "count" : 1 }
+  ],
+  "duration" : 5,
+  "output" : { "item" : "starpoundsinvisibletier6mhead", "count" : 1 },
+  "groups" : [ "craftingmanipulator", "armours", "all" ]
+}

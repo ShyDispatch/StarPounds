@@ -91,7 +91,7 @@ function updateJumpModifier()
 
   if self.applyJumpModifier then
     local maxMod = (1/(starPounds.movementModifier or 1)) - 1
-    local modifier = 1 + maxMod * starPounds.getStat("groundSlamHeight")
+    local modifier = 1 + maxMod * starPounds.getStat("jumpPenalty") * starPounds.getStat("groundSlamHeight")
     mcontroller.controlModifiers({airJumpModifier = modifier})
   end
 end

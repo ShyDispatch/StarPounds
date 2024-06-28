@@ -479,7 +479,8 @@ starPounds.updateStats = function(force, dt)
 	-- Give the entity hitbox, bonus stats, and effects based on fatness.
 	local size = starPounds.currentSize
 	starPounds.statRefreshTimer = math.max((starPounds.statRefreshTimer or 0) - (dt or 0), 0)
-	if starPounds.statRefreshTimer == 0 or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
+	local timer = starPounds.statRefreshTimer
+	if timer == 0 or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
 		-- Shouldn't activate at base size, so both indexes are reduced by one.
 		local sizeIndex = starPounds.currentSizeIndex - 1
 		local scalingSize = starPounds.settings.scalingSize - 1
@@ -523,7 +524,7 @@ starPounds.updateStats = function(force, dt)
 	if not baseParameters then baseParameters = mcontroller.baseParameters() end
 	local parameters = baseParameters
 
-	if not (starPounds.controlModifiers and starPounds.controlParameters) or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
+	if timer == 0 or not (starPounds.controlModifiers and starPounds.controlParameters) or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
 		starPounds.movementModifier = math.max(0, 1 - (size.movementPenalty - (size.movementPenalty * (starPounds.getStat("movement") - 1))))
 		if size.movementPenalty >= 1 then
 			starPounds.movementModifier = 0
@@ -534,7 +535,7 @@ starPounds.updateStats = function(force, dt)
 			groundMovementModifier = movementModifier,
 			liquidMovementModifier = movementModifier,
 			speedModifier = movementModifier,
-			airJumpModifier = movementModifier,
+			airJumpModifier = 1 - ((1 - movementModifier) * starPounds.getStat("jumpPenalty")),
 			liquidJumpModifier = movementModifier
 		}
 		starPounds.controlParameters = weightMultiplier == 1 and {} or {

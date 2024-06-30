@@ -1,0 +1,10 @@
+{
+  "name" : "starpoundsmissionmobility",
+
+  "effectConfig" : {},
+  "defaultDuration" : 1,
+
+  "scripts" : []
+  // Dummy status, doesn't do anything on its own.
+  // Triggers bonuses from /scripts/starpounds/starpounds.config:settings.statusEffectModifiers
+}

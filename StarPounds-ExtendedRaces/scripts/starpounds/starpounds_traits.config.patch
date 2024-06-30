@@ -46,12 +46,12 @@
   },
   {
     "op": "add",
-    "path": "/traits/galgob",
+    "path": "/traits/duragoblin",
     "value": { "description": "Goblin", "stats": [ ["digestion", "mult", 1.25], ["absorption", "mult", 1.1], ["healing", "mult", 1.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
-    "path": "/traits/onis",
+    "path": "/traits/duraoni",
     "value": { "description": "Oni", "stats": [ ["smashDamage", "add", 0.25], ["movement", "mult", 0.95] ], "skills": [ ["wellfedProtection", 1] ] }
   },
   {

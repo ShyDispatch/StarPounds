@@ -510,16 +510,17 @@ starPounds.updateStats = function(force, dt)
 			if not skip then filteredPersistentEffects[#filteredPersistentEffects + 1] = effect end
 		end
 		status.setPersistentEffects("starpounds", filteredPersistentEffects)
-		starPounds.statRefreshTimer = starPounds.settings.statRefreshTimer
+		-- Only the timer resets itself.
+		if (timer == 0) and dt then
+			starPounds.statRefreshTimer = starPounds.settings.statRefreshTimer
+		end
 	end
+
 	-- Check if the entity is using a morphball (Tech patch bumps this number for the morphball).
 	if status.stat("activeMovementAbilities") > 1 then return end
-	-- Disable movement penalty on the tech missions so you can actually complete them.
-	if starPounds.type == "player" and world.type():find("techchallenge") then
-		starPounds.movementModifier = 1
-		starPounds.blobDisabled = true
-		return
-	end
+
+	-- Disable blob on the tech missions so you can actually complete them.
+	starPounds.blobDisabled = status.uniqueStatusEffectActive("starpoundstechmissionmobility") or starPounds.hasOption("disableBlob")
 
 	if not baseParameters then baseParameters = mcontroller.baseParameters() end
 	local parameters = baseParameters

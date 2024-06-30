@@ -201,7 +201,7 @@ end
 function buildTraitTab()
   selectTrait = tabField:newTab(tabField.data.traitTab)
   selectTrait.pretty = "Traits"
-  selectTrait.description = "This menu allows you to select a starting trait!\n\nTraits grant you skills, weight, and ^#b8eb00;XP^reset;! \n\nOnce selected, traits cannot be changed unless you reset. Choose wisely!"
+  selectTrait.description = "This menu allows you to select a starting trait!\n\nTraits affect stats, pre-unlocked skills, and more! \n\nOnce selected, traits cannot be changed unless you reset. Choose wisely!"
 
   if not currentTab then
     currentTab = selectTrait

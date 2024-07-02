@@ -119,6 +119,10 @@
       "species" : [ "avian" ]
     },
     {
+      "type" : "starpoundsdustyvisitor",
+      "species" : [ "novakid" ]
+    },
+    {
       "type" : "starpoundsmamvisitor",
       "species" : [ "human" ]
     },

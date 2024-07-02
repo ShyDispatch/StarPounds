@@ -1,0 +1,80 @@
+{
+  "type" : "starpoundsdustyvisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Cowgirl Visitor",
+
+  "scriptConfig" : {
+  "starPounds_skills": {
+      "minimumSize": [0, 0]
+    },
+  "starPounds_options": {
+      "disableGain": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+        "Y'all aren't from around here, are ya?",
+        "You look like the travellin' type - you from over yonder?",
+        "What do you think o' this place. Sorta nice, ain't it?",
+        "Dang, I think I forgot where I left my banjo.",
+        "I'm feelin' as fit as a fiddle. How about you?",
+        "If you've forgotten where you came from, just don't forget where yer goin'!",
+        "I don't remember much, except to keep my wits about me!",
+        "I thought I heard a storm roll in, but it must have just been you!",
+        "There's an ol' saying - always drink upstream from the mooshi herd.",
+        "Gosh darnit, I forgot where I left my toothpick.",
+        "You got a look about you. You had troublin' times lately, partner?",
+        "It ain't where you come from, it's where you're goin' that counts!",
+        "I'm always rootin' for a jamboree!",
+        "You don't wanna listen to my yammerin' all day. Go out and live, partner!",
+        "If trouble comes knockin', you gotta learn to lock the door.",
+        "If it looks like it ain't worth the effort, it probably ain't.",
+        "Little advice for yer - if you wanna get out a hole, you gotta stop diggin'.",
+        "You got a sharp eye. How about a shootin' match between you and I?"
+					]
+				}
+			}
+		}
+  },
+  
+  "identity":  {
+      "bodyDirectives": "?replace;fff8b5=c7feff;fde03f=56ebf8;f6b919=12c2e8;806319=0c2b4b;f32200=c7feff;dc1f00=56ebf8;be1b00=56ebf8;951500=12c2e8",
+      "emoteDirectives": "?replace;fff8b5=c7feff;fde03f=56ebf8;f6b919=12c2e8;806319=0c2b4b",
+      "facialHairDirectives": "?replace;fff8b5=c7feff;fde03f=56ebf8;f6b919=12c2e8;806319=0c2b4b",
+      "facialHairGroup": "brand",
+      "facialHairType": "17",
+      "facialMaskDirectives": "",
+      "facialMaskGroup": "",
+      "facialMaskType": "",
+      "gender": "female",
+      "hairDirectives" : "?replace;fff8b5=c7feff;fde03f=56ebf8;f6b919=12c2e8;806319=0c2b4b;f32200=c7feff;dc1f00=56ebf8;be1b00=56ebf8;951500=12c2e8",
+      "hairGroup": "hair",
+      "hairType" : "fem8",
+      "name": "Dusty",
+      "personalityArmIdle": "idle.2",
+      "personalityArmOffset": [
+          0.0,
+          0.0
+      ],
+      "personalityHeadOffset": [
+          -1.0,
+          0.0
+      ],
+      "personalityIdle": "idle.2",
+      "species": "novakid"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "cowboyhead", "parameters" : { "colorIndex" : 1 } } ],
+            "chestCosmetic" : [ { "name" : "hikerchest", "parameters" : { "colorIndex" : 1 } } ],
+            "legsCosmetic" : [ { "name" : "novatier5mpants", "parameters" : { "colorIndex" : 1 } } ]
+          }
+        ] ]
+    ]
+  }
+}

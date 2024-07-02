@@ -6,7 +6,9 @@
         "default" : "idle",
         "states" : {
           "idle" : {
-            "frames" : 1
+            "frames" : 13,
+            "cycle" : 2,
+            "mode" : "loop"
           },
           "jump" : {
             "frames" : 2,
@@ -18,7 +20,7 @@
           },
           "walk" : {
             "frames" : 8,
-            "cycle" : 1.0,
+            "cycle" : 0.8,
             "mode" : "loop"
           },
           "run" : {
@@ -32,7 +34,7 @@
           },
           "windup" : {
             "frames" : 5,
-            "cycle" : 0.9
+            "cycle" : 0.8
           },
           "fire" : {
             "frames" : 1,
@@ -77,6 +79,7 @@
     "parts" : {
       "body" : {
         "properties" : {
+          "damageArea" : [ [1.75, 2.55], [2.05, 2.05],  [2.25, -2.25], [1.85, -3.45],  [-1.85, -3.45], [-2.25, -2.25],  [-2.05, 2.05], [-1.75, 2.55] ],
           "transformationGroups" : [ "body" ],
           "zLevel" : 2
         },
@@ -95,7 +98,7 @@
             },
             "run" : {
               "properties" : {
-                "image" : "<partImage>:walk.<frame>"
+                "image" : "<partImage>:run.<frame>"
               }
             },
             "jump" : {

@@ -19,7 +19,7 @@
     "behavior" : "monster",
 
     "behaviorConfig" : {
-      "damageOnTouch" : false,
+      "damageOnTouch" : true,
 
       "targetQueryRange" : 30,
       "targetOnDamage" : true,
@@ -32,19 +32,20 @@
       "hostileActions" : [
         {
           "name" : "action-fire",
-          "cooldown" : 3.0,
           "parameters" : {
             "requireLineOfSight" : true,
             "maximumRange" : 15,
-            "minimumRange" : 1,
+            "minimumRange" : 0,
             "windupState" : "windup",
             "windupTime" : 0.9,
 
             "projectileType" : "mootantmilk",
             "aimAtTarget" : true,
             "fireOffset" : [1, -1],
-            "projectileCount" : 4,
-            "projectileInterval" : 0.066,
+            "inaccuracy": 0.2,
+            "holdAim": true,
+            "projectileCount" : 5,
+            "projectileInterval" : 0.02,
             "fireState" : "fire",
             "fireDelay" : 0.0,
             "fireSound" : "fire",
@@ -53,8 +54,8 @@
             "projectileSpeed": 30,
             "gravityMultiplier": 0.6,
 
-            "winddownState" : "fire",
-            "winddownTime" : 0.5
+            "winddownState" : "idle",
+            "winddownTime" : 3
           }
         }
       ],
@@ -70,7 +71,7 @@
             "jumpXVelocity" : 12,
             "jumpYVelocity" : 30,
             "jumpXControlForce" : 15,
-            "minXRange" : 10
+            "minXRange" : 5
           }
         }
       ],
@@ -120,17 +121,21 @@
     "movementSettings" : {
       "collisionPoly" : [ [1.25, 2.25], [1.55, 2.05],  [1.75, -2.25], [1.35, -3.25],  [-1.35, -3.25], [-1.75, -2.25],  [-1.55, 2.05], [-1.25, 2.25] ],
       "mass" : 3.0,
-      "walkSpeed" : 3,
-      "runSpeed" : 26
+      "walkSpeed" : 1.5,
+      "runSpeed" : 26,
+      "normalGroundFriction" : 42.0
     },
     "metaBoundBox" : [-2, -2, 2, 2],
 
     "touchDamage" : {
       "poly" : [ [1.75, 2.55], [2.05, 2.05],  [2.25, -2.25], [1.85, -3.45],  [-1.85, -3.45], [-2.25, -2.25],  [-2.05, 2.05], [-1.75, 2.55] ],
-      "damage" : 20,
+      "damage" : 0,
 
       "teamType" : "enemy",
-      "damageSourceKind" : "slash",
+      "damageType" : "knockback",
+      "damageSourceKind" : "nodamage",
+      "damageRepeatGroup" : "monsterTouchKnockback",
+      "damageRepeatTimeout" : 0.5,
       "knockback" : 20,
       "statusEffects" : [ ]
     },

@@ -1667,11 +1667,15 @@ starPounds.eatEntity = function(preyId, options, check)
 			end
 		end
 	end
+
 	-- Skip the rest if the monster/npc can't be eaten to begin with.
+	local isCritter = false
 	if world.entityType(preyId) == "monster" then
 		local scriptCheck = contains(root.monsterParameters(preyType).scripts or jarray(), "/scripts/starpounds/starpounds_monster.lua")
 		local parameters = root.monsterParameters(preyType)
-		local behaviorCheck = parameters.behavior and (contains(starPounds.settings.critterBehaviors, parameters.behavior) or contains(starPounds.settings.monsterBehaviors, parameters.behavior)) or false
+		isCritter = contains(starPounds.settings.critterBehaviors, parameters.behavior)
+		local isMonster = contains(starPounds.settings.monsterBehaviors, parameters.behavior)
+		local behaviorCheck = parameters.behavior and (isCritter or isMonster) or false
 		if parameters.starPounds_options and parameters.starPounds_options.disablePrey then return false end
 		if not (scriptCheck or behaviorCheck) then
 			return false
@@ -1701,7 +1705,10 @@ starPounds.eatEntity = function(preyId, options, check)
 			local preyHealth = world.entityHealth(preyId)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local preySizeMult = (1 + (((prey.weight or 0) + (prey.bloat or 0))/starPounds.species.default.weight)) * 0.5
-			local energyCost = 5 + 30 * preyHealthPercent * preySizeMult
+			if isCritter then
+				preySizeMult = preySizeMult * starPounds.settings.voreCritterEnergyMultiplier
+			end
+			local energyCost = starPounds.settings.voreEnergyBase + starPounds.settings.voreEnergy * preyHealthPercent * preySizeMult
 			status.overConsumeResource("energy", energyCost)
 		end
 		-- Swallow/stomach rumble
@@ -2056,9 +2063,13 @@ starPounds.struggle = function(dt)
 	local struggleStrength = math.max(1, status.stat("powerMultiplier")) * healthMultiplier
 	-- Separate calculation for monsters since their power stat is (basically) pointless.
 	if starPounds.type == "monster" then
-		-- Using the NPC function because the monster one gets stupid high.
+		-- Using the NPC power function because the monster one gets stupid high.
 		local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
-		struggleStrength = struggleStrength * weightRatio * (root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1)
+		local monsterMultiplier = root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1
+		if starPounds.isCritter then
+			monsterMultiplier = root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreCritterStruggleMultiplier
+		end
+		struggleStrength = struggleStrength * weightRatio * monsterMultiplier
 	end
 	-- Monsters/NPCs just cause energy loss occassionally, and are locked to the pred's position.
 	if starPounds.type == "npc" or starPounds.type == "monster" then

@@ -13,6 +13,7 @@ function starPoundsInit()
 	getmetatable(storage.starPounds).__nils = {}
 	-- Used in functions for detection.
 	starPounds.type = "monster"
+	starPounds.isCritter = contains(starPounds.settings.critterBehaviors, config.getParameter("behavior", "monster")) ~= nil
 	-- Replace some functions.
 	makeOverrideFunction()
 	starPounds.overrides()

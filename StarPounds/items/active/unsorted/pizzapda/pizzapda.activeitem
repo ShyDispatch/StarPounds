@@ -11,9 +11,9 @@
 
   "animation" : "pizzapda.animation",
   "scale": 1,
-  "armAngle": -15,
+  "armAngle": 10,
 
-  "inventoryIcon" : "pizzapda.png",
+  "inventoryIcon" : "pizzapdaicon.png",
   "scripts" : ["pizzapda.lua"],
 
   "order": {}

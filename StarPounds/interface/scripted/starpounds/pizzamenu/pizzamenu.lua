@@ -10,12 +10,14 @@ function init()
   time = world.timeOfDay()
   orderRefreshTimer = 1
 
-local randomFeeNames = {
-  "Cosmic Rush Hour Fee", "Space Whale Season", "Pizza De-boning", "Payment Processing Fee", "Fee Avoidance Fee",
-  "Pepperoni Insurance", "Pirate Insurance", "Premium Cardboard Box", "Fee R&D", "Mantid Evasion Fee",
-  "Mandatory Tip", "Service Fee", "Placeholder Fee", "Pineapple Removal", "Asteroid Avoidance",
-  "Interstellar Toll", "Cheese Recovery", "Free Delivery Fee", "No Coupon Fee", "Blubberbutt Tribute"
-}
+  starPounds.pizzaPdaOpen = true
+
+  local randomFeeNames = {
+    "Cosmic Rush Hour Fee", "Space Whale Season", "Pizza De-boning", "Payment Processing Fee", "Fee Avoidance Fee",
+    "Pepperoni Insurance", "Pirate Insurance", "Premium Cardboard Box", "Fee R&D", "Mantid Evasion Fee",
+    "Mandatory Tip", "Service Fee", "Placeholder Fee", "Pineapple Removal", "Asteroid Avoidance",
+    "Interstellar Toll", "Cheese Recovery", "Free Delivery Fee", "No Coupon Fee", "Blubberbutt Tribute"
+  }
   randomFeeName = randomFeeNames[math.random(1, #randomFeeNames)]
 
   local rareFees = {
@@ -237,4 +239,8 @@ function order:onClick()
     widget.playSound("/sfx/objects/coinstack_medium1.ogg")
     pane.dismiss()
   end
+end
+
+function uninit()
+  starPounds.pizzaPdaOpen = nil
 end

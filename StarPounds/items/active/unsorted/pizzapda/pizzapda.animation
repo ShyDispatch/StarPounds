@@ -5,8 +5,8 @@
         "properties" : {
           "transformationGroups" : [ "pda" ],
           "centered" : true,
-          "image" : "pizzapda.png",
-          "offset" : [0.25, 0.375]
+          "image" : "pizzapda.png:<side>.<state>",
+          "offset" : [0.375, 0]
         }
       },
       "pda_fb" : {
@@ -15,8 +15,8 @@
           "zLevel": 1,
           "centered" : true,
           "fullbright": true,
-          "image" : "pizzapda_fb.png",
-          "offset" : [0.25, 0.375]
+          "image" : "pizzapda_fb.png:<side>.<state>",
+          "offset" : [0.375, 0]
         }
       }
     }
@@ -24,6 +24,19 @@
 
   "transformationGroups" : {
     "pda" : { "interpolated" : true }
+  },
+
+  "lights" : {
+    "glow" : {
+      "position" : [0, 0.5],
+      "color" : [16, 26, 40],
+      "transformationGroups" : [ "pda" ]
+    },
+    "glow_back" : {
+      "position" : [0, 0.5],
+      "color" : [24, 39, 61],
+      "transformationGroups" : [ "pda" ]
+    }
   },
 
   "sounds" : {

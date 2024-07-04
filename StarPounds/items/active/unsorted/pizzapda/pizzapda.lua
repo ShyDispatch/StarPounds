@@ -16,6 +16,13 @@ end
 
 function update(dt, fireMode, shiftHeld)
   updateAim()
+  local frontHand = isFrontHand()
+  local open = getmetatable ''.starPounds.pizzaPdaOpen
+  animator.setGlobalTag("side", frontHand and "back" or "front")
+  animator.setGlobalTag("state", open and "on" or "off")
+  animator.setLightActive("glow", open and not frontHand)
+  animator.setLightActive("glow_back", open and frontHand)
+  animator.setSoundPitch("use", not open and 0.75 or 1)
 end
 
 function updateAim()
@@ -35,4 +42,8 @@ end
 
 function outsideOfHand()
   return false
+end
+
+function isFrontHand()
+  return (activeItem.hand() == "primary") == (self.aimDirection < 0)
 end

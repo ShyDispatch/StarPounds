@@ -1,0 +1,11 @@
+{
+  "frameGrid" : {
+    "size" : [16, 16],
+    "dimensions" : [2, 2],
+
+    "names" : [
+      [ "front.on", "back.on" ],
+      [ "front.off", "back.off" ]
+    ]
+  }
+}

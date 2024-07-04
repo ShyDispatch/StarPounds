@@ -10,7 +10,9 @@ function init()
 end
 
 function activate(fireMode, shiftHeld)
+  local open = getmetatable ''.starPounds.pizzaPdaOpen
   player.interact("ScriptPane", { gui = { }, scripts = {"/metagui.lua"}, ui = "starpounds:pizzamenu" })
+  animator.setSoundPitch("use", open and 0.75 or 1)
   animator.playSound("use")
 end
 
@@ -22,7 +24,6 @@ function update(dt, fireMode, shiftHeld)
   animator.setGlobalTag("state", open and "on" or "off")
   animator.setLightActive("glow", open and not frontHand)
   animator.setLightActive("glow_back", open and frontHand)
-  animator.setSoundPitch("use", not open and 0.75 or 1)
 end
 
 function updateAim()

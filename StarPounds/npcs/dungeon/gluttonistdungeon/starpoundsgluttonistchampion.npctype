@@ -12,17 +12,20 @@
 	 },
 
   "scriptConfig" : {
-	"behaviorConfig" : {
+  	"behaviorConfig" : {
       "leapWindup" : 0.75,
-	  "leapCooldown": 3,
+      "leapCooldown": 3,
       "leapChance" : 0.9,
-	  "forceRunRange": 1,	
+      "forceRunRange": 1,
       "rangedAimTime" : 0.5,
       "rangedWindupTime" : 0.01,
-	  "cantReachDialog": false
+      "cantReachDialog": false
     },
     "starPounds_skills": {
       "minimumSize": [6, 6]
+    },
+    "starPounds_options": {
+      "disablePrey": true
     },
     "starPounds_trait": "npc_gluttonistChampion",
 

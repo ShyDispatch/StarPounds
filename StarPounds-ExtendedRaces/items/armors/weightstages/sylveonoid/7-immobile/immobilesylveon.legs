@@ -1,0 +1,18 @@
+{
+  "itemName" : "immobilesylveonoidlegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Now you can't even move fatty. Your gluttony knows no bounds.",
+  "shortdescription" : "Immobile Body",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsimmobile"
+  ],
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

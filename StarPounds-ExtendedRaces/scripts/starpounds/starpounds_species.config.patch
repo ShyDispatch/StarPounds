@@ -131,6 +131,11 @@
   },
   {
 	"op": "add",
+	"path": "/sylveonoid",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/zoroark",
 	"value": { "weightGain": true }
   },

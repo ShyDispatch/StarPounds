@@ -126,6 +126,11 @@
   },
   {
     "op": "add",
+    "path": "/traits/sylveonoid",
+    "value": { "description": "Sylveon", "stats": [ ["deathPenalty", "sub", 0.2], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+  },
+  {
+    "op": "add",
     "path": "/traits/zoroark",
     "value": { "description": "Zoroark", "stats": [ ["movement", "mult", 1.1], ["strainedPenalty", "mult", 0.8], ["bloatDigestion", "mult", 0.8] ] }
   },

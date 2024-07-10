@@ -61,12 +61,16 @@ function update()
   end
 
   local primaryItem = player.primaryHandItem()
-  if not primaryItem then
+  local altItem = player.altHandItem()
+  local holdingPda = primaryItem and (primaryItem.name == "starpoundspizzapda") or (altItem and (altItem.name == "starpoundspizzapda") or false)
+  
+  if not (primaryItem or altItem) then
     pane.dismiss()
     return
   end
 
-  if not (primaryItem.name == "starpoundspizzapda") and not (primaryItem.name == "geode" and primaryItem.parameters and primaryItem.parameters.scripts and primaryItem.parameters.scripts[1] == "/sys/metagui/helper/shiftstub.lua") then
+
+  if not holdingPda and not (primaryItem.name == "geode" and primaryItem.parameters and primaryItem.parameters.scripts and primaryItem.parameters.scripts[1] == "/sys/metagui/helper/shiftstub.lua") then
     pane.dismiss()
     return
   end

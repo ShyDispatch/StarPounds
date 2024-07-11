@@ -135,9 +135,10 @@
   "uniqueAccessory" : [
     [0, {
       "pool": [
-        {"weight" : 0.5, "pool" : "uniqueUncommonAccessory"},
+        {"weight" : 0.49, "pool" : "uniqueUncommonAccessory"},
         {"weight" : 0.35, "pool" : "uniqueRareAccessory"},
-        {"weight" : 0.15, "pool" : "uniqueLegendaryAccessory"}
+        {"weight" : 0.15, "pool" : "uniqueLegendaryAccessory"},
+        {"weight" : 0.01, "pool" : "uniqueDeveloperAccessory"}
       ]
     }]
   ],
@@ -180,7 +181,6 @@
         {"item": "mooshipendant", "weight": 1},
         {"item": "predatorpendant", "weight": 1},
 
-        {"item": "blossomring", "weight": 1},
         {"item": "lotusring", "weight": 1},
 
         {"item": "angeltrinket", "weight": 1},
@@ -198,12 +198,20 @@
         {"item": "treebuddypendant", "weight": 1},
 
         {"item": "audreyring", "weight": 1},
-        {"item": "blubberbuttring", "weight": 1},
         {"item": "ferrianring", "weight": 1},
         {"item": "feyrethring", "weight": 1},
-        {"item": "gracering", "weight": 1},
 
         {"item": "minitrinket", "weight": 1}
+      ]
+    }]
+  ],
+
+  "uniqueDeveloperAccessory" : [
+    [0, {
+      "pool": [
+        {"item": "applering", "weight": 1},
+        {"item": "blossomring", "weight": 1},
+        {"item": "blubberbuttring", "weight": 1}
       ]
     }]
   ]

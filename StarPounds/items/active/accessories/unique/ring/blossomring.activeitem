@@ -1,8 +1,8 @@
 {
   "itemName" : "blossomring",
-  "price" : 5000,
+  "price" : 25000,
   "maxStack" : 1,
-  "rarity" : "Rare",
+  "rarity" : "Essential",
   "description" : "A flowery ring, named after a bug who loves having a full belly.",
   "shortdescription" : "Blossom's Heart Ring",
   "inventoryIcon" : "blossomring.png",
@@ -13,9 +13,9 @@
   "accessoryType" : "ring",
 
   "stats": [
-    {"name": "capacity", "modifier": 1},
-    {"name": "digestion", "modifier": -0.75},
-    {"name": "healing", "modifier": 0.5}
+    {"name": "capacity", "modifier": 4},
+    {"name": "digestion", "modifier": -0.8},
+    {"name": "healing", "modifier": 1}
   ],
 
   "builder" : "/items/buildscripts/buildaccessory.lua",

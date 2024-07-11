@@ -92,14 +92,19 @@ function accessoryChanged()
           end
       end
     end
+    local weight = 0
     for stat, modifier in pairsByKeys(combinedStats, function(a, b) return stats[a].pretty < stats[b].pretty end) do
       if modifier ~= 0 then
         local negative = (stats[stat].negative and modifier > 0) or (not stats[stat].negative and modifier < 0)
+        weight = weight + (modifier * (stats[stat].negative and -1 or 1) * stats[stat].weight)
         local modifierColour = negative and "^red;" or "^green;"
         local amount = (stats[stat].invertDescriptor and (modifier * -1) or modifier) * 100
         local statColour = stats[stat].colour and ("^#"..stats[stat].colour..";") or ""
         statModifierString = statModifierString..string.format("%s%s%s^reset; %s by %s%d%%", statModifierString ~= "" and "\n" or "", statColour, stats[stat].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
       end
+    end
+    if starPounds.hasOption("showDebug") then
+      statModifierString = statModifierString..string.format("%s\n^#665599;Stat Weight: %s%s", statModifierString ~= "" and "\n" or "", weight > 0 and "^green;" or (weight < 0 and "^red;" or "^reset;"), weight)
     end
   else
     -- Made this a separate block so it won't sort alphabetically with one accessory selected. Stupid code but I'm lazy.

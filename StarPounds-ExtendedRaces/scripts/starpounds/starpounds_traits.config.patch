@@ -27,12 +27,12 @@
   {
     "op": "add",
     "path": "/traits/nostos",
-    "value": { "description": "NostOS", "stats": [ ["health", "mult", 1.25], ["knockbackResistance", "add", 0.25], ["movement", "mult", 0.95] ] }
+    "value": { "description": "NostOS", "stats": [ ["health", "mult", 1.25], ["knockbackResistance", "add", 0.25], ["movement", "sub", 0.05] ] }
   },
   {
     "op": "add",
     "path": "/traits/harpy",
-    "value": { "description": "Harpy", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["health", "mult", 0.8] ] }
+    "value": { "description": "Harpy", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
@@ -42,7 +42,7 @@
   {
     "op": "add",
     "path": "/traits/faahri",
-    "value": { "description": "Faahri", "stats": [ ["digestion", "mult", 1.25], ["movement", "mult", 1.05], ["digestionEnergy", "add", 0.25], ["metabolism", "mult", 1.25] ] }
+    "value": { "description": "Faahri", "stats": [ ["digestion", "mult", 1.25], ["movement", "add", 0.05], ["digestionEnergy", "add", 0.25], ["metabolism", "mult", 1.25] ] }
   },
   {
     "op": "add",
@@ -52,7 +52,7 @@
   {
     "op": "add",
     "path": "/traits/duraoni",
-    "value": { "description": "Oni", "stats": [ ["smashDamage", "add", 0.25], ["movement", "mult", 0.95] ], "skills": [ ["wellfedProtection", 1] ] }
+    "value": { "description": "Oni", "stats": [ ["smashDamage", "add", 0.25], ["movement", "sub", 0.05] ], "skills": [ ["wellfedProtection", 1] ] }
   },
   {
     "op": "add",
@@ -62,17 +62,17 @@
   {
     "op": "add",
     "path": "/traits/mindflayer",
-    "value": { "description": "Mindflayer", "stats": [ ["experienceMultiplier", "add", 0.25], ["movement", "mult", 0.95] ], "skills": [ ["voreCritter", 1] ] }
+    "value": { "description": "Mindflayer", "stats": [ ["experienceMultiplier", "add", 0.25], ["movement", "sub", 0.05] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
     "op": "add",
     "path": "/traits/nightgaunt",
-    "value": { "description": "Nightgaunt", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["bloatDigestion", "mult", 0.8] ], "skills": [ ["voreCritter", 1] ] }
+    "value": { "description": "Nightgaunt", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["bloatDigestion", "mult", 0.8] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
     "op": "add",
     "path": "/traits/epshadow",
-    "value": { "description": "Shadow", "stats": [ ["movement", "mult", 1.2], ["health", "mult", 0.8] ], "skills": [ ["preventImmobile", 1] ] }
+    "value": { "description": "Shadow", "stats": [ ["movement", "add", 0.2], ["health", "mult", 0.8] ], "skills": [ ["preventImmobile", 1] ] }
   },
   {
     "op": "add",
@@ -82,7 +82,7 @@
   {
     "op": "add",
     "path": "/traits/neki",
-    "value": { "description": "Neki", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["hunger", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+    "value": { "description": "Neki", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["hunger", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
     "op": "add",
@@ -92,7 +92,7 @@
   {
     "op": "add",
     "path": "/traits/kitsune",
-    "value": { "description": "Kitsune", "stats": [ ["movement", "mult", 1.1], ["digestionEnergy", "add", 0.25], ["metabolism", "mult", 1.25] ] }
+    "value": { "description": "Kitsune", "stats": [ ["movement", "add", 0.1], ["digestionEnergy", "add", 0.25], ["metabolism", "mult", 1.25] ] }
   },
   {
     "op": "add",
@@ -102,7 +102,7 @@
   {
     "op": "add",
     "path": "/traits/felin",
-    "value": { "description": "Felin", "stats": [ ["movement", "mult", 1.1], ["fallDamageResistance", "add", 0.25], ["metabolism", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+    "value": { "description": "Felin", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["metabolism", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
     "op": "add",
@@ -112,12 +112,12 @@
   {
     "op": "add",
     "path": "/traits/troll",
-    "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25], ["movement", "mult", 0.95] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+    "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25], ["movement", "sub", 0.05] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
     "op": "add",
     "path": "/traits/tirastrolls",
-    "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25], ["movement", "mult", 0.95] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+    "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25], ["movement", "sub", 0.05] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
     "op": "add",
@@ -137,12 +137,12 @@
   {
     "op": "add",
     "path": "/traits/zoroark",
-    "value": { "description": "Zoroark", "stats": [ ["movement", "mult", 1.1], ["strainedPenalty", "mult", 0.8], ["bloatDigestion", "mult", 0.8] ] }
+    "value": { "description": "Zoroark", "stats": [ ["movement", "add", 0.1], ["strainedPenalty", "mult", 0.8], ["bloatDigestion", "mult", 0.8] ] }
   },
   {
     "op": "add",
     "path": "/traits/hisuzor",
-    "value": { "description": "Zoroark", "stats": [ ["movement", "mult", 1.1], ["strainedPenalty", "mult", 0.8], ["bloatDigestion", "mult", 0.8] ] }
+    "value": { "description": "Zoroark", "stats": [ ["movement", "add", 0.1], ["strainedPenalty", "mult", 0.8], ["bloatDigestion", "mult", 0.8] ] }
   },
   {
     "op": "add",

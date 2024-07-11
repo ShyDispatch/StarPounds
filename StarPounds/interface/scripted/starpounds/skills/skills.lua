@@ -270,7 +270,7 @@ function buildTraitPreview(traitType, trait)
       else
         local negative = (modStat.negative and stat[3] > 0) or (not modStat.negative and stat[3] < 0)
         if stat[2] == "sub" then negative = not negative end
-        statString = string.format("%s%s%s", negative and "^red;" or "^green;", stat[2] == "add" and "+" or "-", string.format("%.2f", (modStat.invertDescriptor and (stat[3] * -1) or stat[3]) * 100):gsub("%.?0+$", "").."%")
+        statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and stat[2] == "add") or (modStat.invertDescriptor and stat[2] == "sub")) and "+" or "-", string.format("%.2f", stat[3] * 100):gsub("%.?0+$", "").."%")
       end
       local statColour = modStat.colour and ("^#"..modStat.colour..";") or ""
       traitStats[#traitStats + 1] = string.format("%s%s:^reset;", statColour, modStat.pretty)

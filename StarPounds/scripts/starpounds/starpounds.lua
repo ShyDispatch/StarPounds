@@ -526,7 +526,14 @@ starPounds.updateStats = function(force, dt)
 	local parameters = baseParameters
 
 	if timer == 0 or not (starPounds.controlModifiers and starPounds.controlParameters) or oldWeightMultiplier ~= starPounds.weightMultiplier or force then
-		starPounds.movementModifier = math.max(0, 1 - (size.movementPenalty - (size.movementPenalty * (starPounds.getStat("movement") - 1))))
+		-- Movement stat starts at 0.
+		-- Every +1 halves the penalty, every -1 doubles it (muliplicatively).
+		local movement = starPounds.getStat("movement")
+		if movement <= 0 then
+			starPounds.movementModifier = (1 - size.movementPenalty) ^ (1 - starPounds.getStat("movement"))
+		else
+			starPounds.movementModifier = 1 - (size.movementPenalty / (2 ^ starPounds.getStat("movement")))
+		end
 		if size.movementPenalty >= 1 then
 			starPounds.movementModifier = 0
 		end
@@ -698,7 +705,7 @@ starPounds.getStat = function(stat)
 		-- Option multipliers.
 		statAmount = statAmount * starPounds.getOptionsMultiplier(stat)
 		-- Cap the stat between 0 and it's maxValue.
-		starPounds.statCache[stat] = math.max(math.min(statAmount, starPounds.stats[stat].maxValue or math.huge), 0)
+		starPounds.statCache[stat] = math.max(math.min(statAmount, starPounds.stats[stat].maxValue or math.huge), starPounds.stats[stat].minValue or 0)
 	end
 
 	return starPounds.statCache[stat]
@@ -973,7 +980,7 @@ starPounds.getAccessoryModifiers = function(stat)
 		end
 		return accessoryModifiers
 	else
-		return math.max(-1, starPounds.accessoryModifiers[stat] or 0)
+		return starPounds.accessoryModifiers[stat] or 0
 	end
 end
 

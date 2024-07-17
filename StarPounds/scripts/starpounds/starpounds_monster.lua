@@ -107,11 +107,10 @@ function makeOverrideFunction()
 			entity.setDamageSources = monster.setDamageSources
 			entity.setDamageTeam = monster.setDamageTeam
 			-- Monsters cause a lot of bloat to make the stomach look full, but not be too overpowered for food.
-			-- ~ 15 bloat and 15 food per block the entity's bounding box occupies.
 			local boundBox = mcontroller.boundBox()
 			local monsterArea = math.abs(boundBox[1]) + math.abs(boundBox[3]) * math.abs(boundBox[2]) + math.abs(boundBox[4])
-			entity.bloat = math.round(monsterArea * 20)
-			entity.weight = math.min(math.round(monsterArea * 10), 50)
+			entity.bloat = math.round(monsterArea * starPounds.settings.voreMonsterBloat)
+			entity.weight = math.min(math.round(monsterArea * starPounds.settings.voreMonsterFood), starPounds.settings.voreMonsterFoodCap)
 			local deathActions = config.getParameter("behaviorConfig.deathActions", {})
 			-- Remove base weight if the monster is 'replaced'.
 			for _, action in ipairs(deathActions) do

@@ -150,8 +150,10 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 				if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
 					status.modifyResource("energy", energyAmount)
 				end
-				-- Energy regen block is capped at 2x the speed (decreases by the delta)
-				status.modifyResource("energyRegenBlock", math.max(-amount * absorption * digestionEnergy, -dt))
+				-- Energy regen block is capped at 2x the speed (decreases by the delta). Does not happen while strained.
+				if not starPounds.strained then
+					status.modifyResource("energyRegenBlock", math.max(-amount * absorption * digestionEnergy, -dt))
+				end
 			end
 		end
 	end
@@ -294,6 +296,8 @@ starPounds.exercise = function(dt)
 	-- Argument sanitisation.
 	dt = math.max(tonumber(dt) or 0, 0)
 	if dt == 0 then return end
+	-- Assume we're not strained.
+	starPounds.strained = false
 	-- Skip this if we're in a sphere.
 	if status.stat("activeMovementAbilities") > 1 then return end
 	-- Jumping > Running > Walking
@@ -322,6 +326,7 @@ starPounds.exercise = function(dt)
 	-- Consume energy based on how far over capacity they are.
 	local strainedPenalty = starPounds.getStat("strainedPenalty")
 	if starPounds.stomach.fullness > thresholds.starpoundsstomach then
+		starPounds.strained = true
 		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - thresholds.starpoundsstomach, 2)/4) * strainedPenalty * (1 - (status.resourcePercentage("energy")))))
 		runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy"))
 		-- Consume and lock energy when running.

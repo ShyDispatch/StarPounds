@@ -82,16 +82,17 @@ end
 
 -- after the original ground jump has finished, start applying the new jump modifier
 function updateJumpModifier()
+  self.applyJumpModifier = not status.statPositive("activeMovementAbilities") and self.applyJumpModifier or false
   if not self.applyJumpModifier
       and not mcontroller.jumping()
-      and not mcontroller.groundMovement() then
+      and not mcontroller.groundMovement()
+      and not status.statPositive("activeMovementAbilities") then
 
     self.applyJumpModifier = true
   end
 
   if self.applyJumpModifier then
-    local jumpModifier = math.max(starPounds.settings.minimumJumpMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("jumpPenalty")))
-    local maxMod = (1/jumpModifier) - 1
+    local maxMod = (1/starPounds.jumpModifier) - 1
     local modifier = 1 + maxMod * starPounds.getStat("groundSlamHeight")
     mcontroller.controlModifiers({airJumpModifier = modifier})
   end

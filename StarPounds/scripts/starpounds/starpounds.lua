@@ -544,6 +544,8 @@ starPounds.updateStats = function(force, dt)
 			starPounds.movementModifier = 0
 		end
 
+		starPounds.jumpModifier = math.max(starPounds.settings.minimumJumpMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("jumpPenalty")))
+
 		local movementModifier = starPounds.movementModifier
 		local weightMultiplier = starPounds.weightMultiplier
 
@@ -551,7 +553,7 @@ starPounds.updateStats = function(force, dt)
 			groundMovementModifier = movementModifier,
 			liquidMovementModifier = movementModifier,
 			speedModifier = movementModifier,
-			airJumpModifier = math.max(starPounds.settings.minimumJumpMultiplier, 1 - ((1 - movementModifier) * starPounds.getStat("jumpPenalty"))),
+			airJumpModifier = starPounds.jumpModifier,
 			liquidJumpModifier = movementModifier
 		}
 		starPounds.controlParameters = weightMultiplier == 1 and {} or {

@@ -1,7 +1,7 @@
 {
   "globalTagDefaults" : {
     "rotationFrame" : "0",
-    "shrunkDirectives" : "",
+    "size" : "default",
     "ballDirectives" : ""
   },
 
@@ -40,7 +40,7 @@
               "properties" : {
                 "zLevel" : 1,
                 "fullbright" : true,
-                "image" : "<partImage>:<rotationFrame><shrunkDirectives><ballDirectives>"
+                "image" : "<partImage>:<size>.<rotationFrame><ballDirectives>"
               }
             }
           }
@@ -57,19 +57,19 @@
               "properties" : {
                 "offset" : [0, 0],
                 "fullbright" : true,
-                "image" : "starpoundsthrogspheretransform.png:deactivate.<frame>"
+                "image" : "starpoundsthrogspheretransform.png:<size>.deactivate.<frame>"
               }
             },
             "activate" : {
               "properties" : {
                 "offset" : [0, 1.5],
                 "fullbright" : true,
-                "image" : "starpoundsthrogspheretransform.png:activate.<frame>"
+                "image" : "starpoundsthrogspheretransform.png:<size>.activate.<frame>"
               }
             },
             "on" : {
               "properties" : {
-                "image" : "<partImage>:<rotationFrame><shrunkDirectives><ballDirectives>"
+                "image" : "<partImage>:<size>.<rotationFrame><ballDirectives>"
               }
             }
           }

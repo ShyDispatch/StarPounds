@@ -31,7 +31,7 @@ function update(args)
     self.shrunk = false
   end
 
-  animator.setGlobalTag("shrunkDirectives", self.shrunk and "?hueshift=100" or "")
+  animator.setGlobalTag("size", self.shrunk and "shrunk" or "default")
 
   local skipScaling = animator.animationState("ballState") == "activate" or animator.animationState("ballState") == "deactivate"
   if self.scale ~= self.lastScale and not skipScaling then

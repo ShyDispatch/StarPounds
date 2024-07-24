@@ -1,13 +1,19 @@
 {
   "frameGrid" : {
     "size" : [50, 50],
-    "dimensions" : [3, 1],
-    "names" : [ ["activate.1", "activate.2", "activate.3"] ]
+    "dimensions" : [3, 2],
+    "names" : [
+      ["default.activate.1", "default.activate.2", "default.activate.3"],
+      ["shrunk.activate.1", "shrunk.activate.2", "shrunk.activate.3"]
+    ]
   },
 
   "aliases" : {
-    "deactivate.1" : "activate.3",
-    "deactivate.2" : "activate.2",
-    "deactivate.3" : "activate.1"
+    "default.deactivate.1" : "default.activate.3",
+    "default.deactivate.2" : "default.activate.2",
+    "default.deactivate.3" : "default.activate.1",
+    "shrunk.deactivate.1" : "shrunk.activate.3",
+    "shrunk.deactivate.2" : "shrunk.activate.2",
+    "shrunk.deactivate.3" : "shrunk.activate.1"
   }
 }

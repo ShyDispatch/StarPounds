@@ -7,9 +7,9 @@
         [0.05, 3]
       ],
       "pool" : [
-        {"weight" : 0.5, "item" : ["string", 1, {"shortdescription" : "^#a6ba5d;Tacky String", "price" : 1, "description" : "You never know when a bit of string might come in handy, even if it is a little sticky.", "inventoryIcon" : "string.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.35, "item" : ["fabric", 1, {"shortdescription" : "^#a6ba5d;Soaked Fabric", "price" : 2, "description" : "If you look past all the goop, there's a small square of woven fabric.", "inventoryIcon" : "fabric.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.15, "item" : ["cottonwool", 1, {"shortdescription": "^#a6ba5d;Melted Cotton", "price" : 8, "description" : "A roll of processed cotton. Some might say a little too processed.", "inventoryIcon" : "cottonwool.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.5, "item" : "string"},
+        {"weight" : 0.35, "item" : "fabric"},
+        {"weight" : 0.15, "item" : "cottonwool"}
       ]
     }],
     [0.9, {
@@ -20,8 +20,8 @@
         [0.05, 3]
       ],
       "pool" : [
-        {"weight" : 0.75, "item" : ["string", 1, {"shortdescription" : "^#a6ba5d;Tacky String", "price" : 1, "description" : "You never know when a bit of string might come in handy, even if it is a little sticky.", "inventoryIcon" : "string.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.25, "item" : ["fabric", 1, {"shortdescription" : "^#a6ba5d;Soaked Fabric", "price" : 2, "description" : "If you look past all the goop, there's a small square of woven fabric.", "inventoryIcon" : "fabric.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.75, "item" : "string"},
+        {"weight" : 0.25, "item" : "fabric"}
       ]
     }],
     [1.9, {
@@ -32,8 +32,8 @@
         [0.05, 3]
       ],
       "pool" : [
-        {"weight" : 0.75, "item" : ["cottonwool", 1, {"shortdescription": "^#a6ba5d;Melted Cotton", "price" : 8, "description" : "A roll of processed cotton. Some might say a little too processed.", "inventoryIcon" : "cottonwool.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.25, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.75, "item" : "cottonwool"},
+        {"weight" : 0.25, "item" : "leather"}
       ]
     }],
     [2.9, {
@@ -44,9 +44,9 @@
         [0.05, 3]
       ],
       "pool" : [
-        {"weight" : 0.25, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.25, "item" : ["silk", 1, {"shortdescription": "^#a6ba5d;Sticky Silk", "price" : 20, "description" : "A square of tacky, sticky silk.", "inventoryIcon" : "silk.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.5, "item" : ["canvas", 1, {"shortdescription": "^#a6ba5d;Frayed Canvas", "price" : 30, "description" : "A frayed square of questionable-quality canvas.", "inventoryIcon" : "canvas.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.25, "item" : "leather"},
+        {"weight" : 0.25, "item" : "silk"},
+        {"weight" : 0.5, "item" : "canvas"}
       ]
     }],
     [3.9, {
@@ -57,8 +57,8 @@
         [0.05, 3]
       ],
       "pool" : [
-        {"weight" : 0.75, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.25, "item" : ["silk", 1, {"shortdescription": "^#a6ba5d;Sticky Silk", "price" : 20, "description" : "A square of tacky, sticky silk.", "inventoryIcon" : "silk.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.75, "item" : "leather"},
+        {"weight" : 0.25, "item" : "silk"}
       ]
     }],
     [4.9, {
@@ -73,8 +73,8 @@
     [0, {
       "fill" : [{"pool" : "regurgitatedClothing"}],
       "pool" : [
-        {"weight" : 0.5, "item" : ["leather", 1, {"shortdescription": "^#a6ba5d;Softened Leather", "price" : 10, "description" : "A rough square of leather on the edge of falling apart.", "inventoryIcon" : "leather.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.5, "item" : ["syntheticmaterial", 1, {"shortdescription": "^#a6ba5d;Crude Synthetic Material", "price" : 40, "description" : "A square of synthetic material, worn down on the edges.", "inventoryIcon" : "syntheticmaterial.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.5, "item" : "leather"},
+        {"weight" : 0.5, "item" : "syntheticmaterial"}
       ]
     }]
   ],
@@ -82,8 +82,8 @@
     [0, {
       "fill" : [{"pool" : "regurgitatedClothing"}],
       "pool" : [
-        {"weight" : 0.6, "item" : ["silk", 1, {"shortdescription": "^#a6ba5d;Sticky Silk", "price" : 20, "description" : "A square of tacky, sticky silk.", "inventoryIcon" : "silk.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.4, "item" : ["syntheticmaterial", 1, {"shortdescription": "^#a6ba5d;Crude Synthetic Material", "price" : 40, "description" : "A square of synthetic material, worn down on the edges.", "inventoryIcon" : "syntheticmaterial.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.6, "item" : "silk"},
+        {"weight" : 0.4, "item" : "syntheticmaterial"}
       ]
     }]
   ],
@@ -91,8 +91,8 @@
     [0, {
       "fill" : [{"pool" : "regurgitatedClothing"}],
       "pool" : [
-        {"weight" : 0.6, "item" : ["canvas", 1, {"shortdescription": "^#a6ba5d;Frayed Canvas", "price" : 30, "description" : "A frayed square of questionable-quality canvas.", "inventoryIcon" : "canvas.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]},
-        {"weight" : 0.4, "item" : ["syntheticmaterial", 1, {"shortdescription": "^#a6ba5d;Crude Synthetic Material", "price" : 40, "description" : "A square of synthetic material, worn down on the edges.", "inventoryIcon" : "syntheticmaterial.png?brightness=-20?multiply=e9ffa6?saturation=-20"}]}
+        {"weight" : 0.6, "item" : "canvas"},
+        {"weight" : 0.4, "item" : "syntheticmaterial"}
       ]
     }]
   ],

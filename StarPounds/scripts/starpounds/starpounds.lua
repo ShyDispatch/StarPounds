@@ -1716,7 +1716,8 @@ starPounds.eatEntity = function(preyId, options, check)
 			bloat = prey.bloat or 0,
 			experience = prey.experience or 0,
 			world = (starPounds.type == "player") and player.worldId() or nil,
-			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"})
+			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
+			typeName = world.entityTypeName(preyId)
 		})
 		if not options.noEnergyCost then
 			local preyHealth = world.entityHealth(preyId)
@@ -1893,6 +1894,13 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 		if digestedEntity.type == "humanoid" then
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {96, 184, 235}, fullbright = true, collidesLiquid = false, timeToLive = 0.5}})
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {0, 140, 217}, fullbright = true, collidesLiquid = false, timeToLive = 0.5}})
+		end
+		-- Add monster to collection if we have the skill.
+		if starPounds.hasSkill("voreCollection") and (digestedEntity.type == "creature") and digestedEntity.typeName then
+			local collectables = root.monsterParameters(digestedEntity.typeName).captureCollectables or {}
+			for collection, collectable in pairs(collectables) do
+				world.sendEntityMessage(entity.id(), "addCollectable", collection, collectable)
+			end
 		end
 		-- Vault monsters get glowy purple particles.
 		if hasEssence then
@@ -2274,13 +2282,8 @@ starPounds.getDigested = function(digestionRate, protectionMultiplier)
 				end
 			end
 		end
-		-- Add monster type to collection.
+		-- Give essence if applicable.
 		if starPounds.type == "monster" then
-			local collectables = root.monsterParameters(monster.type()).captureCollectables or {}
-			for collection, collectable in pairs(collectables) do
-				world.sendEntityMessage(storage.starPounds.pred, "addCollectable", collection, collectable)
-			end
-
 			local dropPools = sb.jsonQuery(monster.uniqueParameters(), "dropPools", jarray())
 			if dropPools[1] and dropPools[1].default then
 				local dropItems = root.createTreasure(dropPools[1].default, monster.level())

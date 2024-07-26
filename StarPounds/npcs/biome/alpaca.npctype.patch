@@ -1,0 +1,7 @@
+[
+  {
+    "op": "add",
+    "path": "/scriptConfig/starPounds_options",
+    "value": {"disableGain": true, "disableStomachGrowth": true, "disableBreastGrowth": true}
+  }
+]

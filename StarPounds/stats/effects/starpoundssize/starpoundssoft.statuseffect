@@ -1,5 +1,8 @@
 {
 	"name": "starpoundssoft",
+	"effectConfig" : {
+		"fillRange" : [2, 14]
+	},
 	"scripts": [
 		"starpoundssize.lua"
 	],

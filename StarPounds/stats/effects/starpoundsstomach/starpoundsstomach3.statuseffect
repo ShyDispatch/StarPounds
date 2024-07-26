@@ -2,6 +2,7 @@
 	"name": "starpoundsstomach3",
 	"defaultDuration": 100,
 	"effectConfig": {
+		"fillRange" : [2, 15],
 		"range": [2, 3],
 		"maxRangeExpire": false
 	},

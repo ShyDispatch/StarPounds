@@ -1,5 +1,8 @@
 {
 	"name": "starpoundsblob",
+	"effectConfig" : {
+		"fillRange" : [3, 14]
+	},
 	"scripts": [
 		"starpoundssize.lua"
 	],

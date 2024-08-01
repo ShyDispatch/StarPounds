@@ -1,11 +1,11 @@
 {
-  "itemName" : "applering",
-  "price" : 25000,
+  "itemName" : "gracering",
+  "price" : 10000,
   "maxStack" : 1,
-  "rarity" : "Essential",
+  "rarity" : "Legendary",
   "description" : "Warm to the touch, the crystal on this ring pulses with other-worldly energy.",
   "shortdescription" : "Ring of the Fox",
-  "inventoryIcon" : "applering.png",
+  "inventoryIcon" : "gracering.png",
   "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",
@@ -13,9 +13,9 @@
   "accessoryType" : "ring",
 
   "stats": [
-    {"name": "capacity", "modifier": -0.5},
-    {"name": "movement", "modifier": 1},
-    {"name": "weightGain", "modifier": -0.75}
+    {"name": "absorption", "modifier": -0.8},
+    {"name": "capacity", "modifier": -0.4},
+    {"name": "movement", "modifier": 0.50}
   ],
 
   "builder" : "/items/buildscripts/buildaccessory.lua",

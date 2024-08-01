@@ -166,7 +166,7 @@ function populateSkillTree()
 
   -- First loop just edits all the positions values beforehand, and adds default data
   for skillName, skill in pairs(skills) do
-      if not skill.internal then
+    if not skill.internal then
       skill.position = vec2.add(vec2.add(vec2.mul(skill.position, 24), offset), iconOffset)
       skill.name = skillName
       skill.levels = skill.levels or 1

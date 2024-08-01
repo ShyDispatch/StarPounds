@@ -1729,9 +1729,14 @@ starPounds.eatEntity = function(preyId, options, check)
 			local energyCost = starPounds.settings.voreEnergyBase + starPounds.settings.voreEnergy * preyHealthPercent * preySizeMult
 			status.overConsumeResource("energy", energyCost)
 		end
-		-- Swallow/stomach rumble
-		world.sendEntityMessage(entity.id(), "starPounds.playSound", "swallow", 1 + math.random(0, 10)/100, 1)
-		world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 1, 0.75)
+		-- Swallow sound
+		if not (options.noSound or options.noSwallowSound) then
+			world.sendEntityMessage(entity.id(), "starPounds.playSound", "swallow", 1 + math.random(0, 10)/100, 1)
+		end
+		-- Stomach sound
+		if not (options.noSound or options.noDigestSound) then
+			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 1, 0.75)
+		end
 	end)
 	return true
 end

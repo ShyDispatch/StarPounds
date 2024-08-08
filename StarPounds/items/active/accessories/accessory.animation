@@ -31,7 +31,7 @@
             "type": "ember",
             "size": 1,
             "color": [255, 157, 210],
-            "light": [20, 20, 70],
+    				"light": [82, 20, 53],
             "position": [0, 0],
             "initialVelocity": [0, 1],
             "finalVelocity": [0, 20],

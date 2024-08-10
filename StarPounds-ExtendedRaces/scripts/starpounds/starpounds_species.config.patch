@@ -56,6 +56,16 @@
   },
   {
 	"op": "add",
+	"path": "/duramerling",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/durasharkling",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/shoggoth",
 	"value": { "weightGain": true }
   },
@@ -123,6 +133,11 @@
 	"op": "add",
 	"path": "/tirastrolls",
 	"value": { "weightGain": true, "override": "human", "prependDirectives": "?replace;ffe2c5=e7e7e7;ffc181=cccccc;d39c6c=a6a6a6;c7815b=919191;" }
+  },
+  {
+	"op": "add",
+	"path": "/myfirsttest",
+	"value": { "weightGain": true, "prependDirectives": "?replace;ffca8a=ffe2c5;e0975c=ffc181;a85636=d39c6c;6f2919=c7815b;" }
   },
   {
 	"op": "add",

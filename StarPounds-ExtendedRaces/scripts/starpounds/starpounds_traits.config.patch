@@ -56,6 +56,16 @@
   },
   {
     "op": "add",
+    "path": "/traits/duramerling",
+    "value": { "description": "Merling", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+  },
+  {
+    "op": "add",
+    "path": "/traits/durasharkling",
+    "value": { "description": "Sharkling", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+  },
+  {
+    "op": "add",
     "path": "/traits/shoggoth",
     "value": { "description": "Shoggoth", "stats": [ ["digestion", "mult", 1.25], ["voreDamage", "mult", 1.25], ["firePenalty", "mult", 1.25] ], "skills": [ ["voreCritter", 1], ["voreMonster", 1], ["voreHumanoid", 1], ["wellfedProtection", 1] ], "items": ["voretool"] }
   },
@@ -118,6 +128,11 @@
     "op": "add",
     "path": "/traits/tirastrolls",
     "value": { "description": "Troll", "stats": [ ["digestion", "mult", 1.25], ["capacity", "mult", 1.25], ["movement", "sub", 0.05] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+  },
+  {
+    "op": "add",
+    "path": "/traits/myfirsttest",
+    "value": { "description": "Latex", "stats": [ ["experienceMultiplier", "add", 0.25] ] }
   },
   {
     "op": "add",

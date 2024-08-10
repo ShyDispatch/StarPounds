@@ -56,6 +56,16 @@
   },
   {
 	"op": "add",
+	"path": "/duramerling",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/durasharkling",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/shoggoth",
 	"value": { "weightGain": true }
   },

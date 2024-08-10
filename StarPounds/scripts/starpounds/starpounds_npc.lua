@@ -21,6 +21,7 @@ function init()
 	-- Setup message handlers
 	starPounds.messageHandlers()
 	-- Setup species traits.
+	storage.starPounds.overrideSpecies = config.getParameter("starPounds_overrideSpecies")
 	local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default
 	for _, skill in ipairs(speciesTrait.skills or jarray()) do
 		starPounds.forceUnlockSkill(skill[1], skill[2])

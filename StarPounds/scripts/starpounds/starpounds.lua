@@ -1153,6 +1153,7 @@ end
 
 -- world.entitySpecies can be unreliable on the first tick.
 starPounds.getSpecies = function()
+	if storage.starPounds.overrideSpecies then return storage.starPounds.overrideSpecies end
 	if player and player.species() then return player.species() end
 	if npc and npc.species() then return npc.species() end
 	return world.entitySpecies(entity.id())

@@ -1,0 +1,18 @@
+{
+  "itemName" : "chubstershoggothlegs",
+  "price" : 0,    
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Log sized leg-appendage, door jamming hips, ultra soft rear. You've been snacking heavily.",
+  "shortdescription" : "Chubby Bottom",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundschubster"
+  ],
+
+  "maleFrames" : "pantsM.png",
+  "femaleFrames" : "pantsF.png"
+}

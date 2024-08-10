@@ -1,0 +1,18 @@
+{
+  "itemName" : "blobavalilegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "You're so big, you're good enough to be the large turkey for a parade float.",
+  "shortdescription" : "Blobby Body",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsblob"
+  ],
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

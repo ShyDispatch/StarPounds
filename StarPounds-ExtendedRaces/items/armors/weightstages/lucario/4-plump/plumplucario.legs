@@ -1,0 +1,18 @@
+{
+  "itemName" : "plumplucariolegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "With these legs that brim with power and fill couches, you have learned a new, powerful technique... sitting on opponents.",
+  "shortdescription" : "Plump Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsplump"
+  ],
+
+  "maleFrames" : "pantsm.png",
+  "femaleFrames" : "pantsf.png"
+}

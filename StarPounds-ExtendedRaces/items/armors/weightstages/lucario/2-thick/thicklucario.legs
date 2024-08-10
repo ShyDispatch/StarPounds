@@ -1,0 +1,18 @@
+{
+  "itemName" : "thicklucariolegs",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "While a unique way to grow one's aura, gaining enough to have your thighs touch is a promising sign.",
+  "shortdescription" : "Thick Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick"
+  ],
+
+  "maleFrames" : "pantsm.png",
+  "femaleFrames" : "pantsf.png"
+}

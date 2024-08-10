@@ -1,0 +1,18 @@
+{
+  "itemName" : "immobileshoggothlegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "You're so big you can't even move. Tsathoggua would be proud.",
+  "shortdescription" : "Immobile Body",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsimmobile"
+  ],
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

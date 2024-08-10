@@ -1,0 +1,28 @@
+{
+  "itemName" : "fattygorgedglaceonfoxchest",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:chest",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "chestwear",  
+  "description" : "You're absolutely huge now. Is this really as far as you can get though?",
+  "shortdescription" : "Gorged Fatty Belly",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty",
+    "starpoundsgorged"
+  ],
+
+  "maleFrames" : {
+    "body" : "fatty_chestm.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleeve.png"
+  },
+
+  "femaleFrames" : {
+    "body" : "fatty_chestf.png",
+    "backSleeve" : "bsleeve.png",
+    "frontSleeve" : "fsleevef.png"
+  }
+}

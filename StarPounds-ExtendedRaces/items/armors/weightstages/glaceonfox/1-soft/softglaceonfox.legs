@@ -1,0 +1,18 @@
+{
+  "itemName" : "softglaceonfoxlegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "The start of well-developed thighs. Probably not from any exercise.",
+  "shortdescription" : "Soft Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundssoft"
+  ],
+
+  "maleFrames" : "pants.png",
+  "femaleFrames" : "pants.png"
+}

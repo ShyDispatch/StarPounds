@@ -1,0 +1,18 @@
+{
+  "itemName" : "fattyglaceonfoxlegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Quite possibly the thickest of asses. At least it balances out your hefty front end quite nicely.",
+  "shortdescription" : "Fatty Legs",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsfatty"
+  ],
+
+  "maleFrames" : "pantsM.png",
+  "femaleFrames" : "pantsF.png"
+}

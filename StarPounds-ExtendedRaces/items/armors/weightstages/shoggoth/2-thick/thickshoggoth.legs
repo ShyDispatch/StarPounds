@@ -1,0 +1,18 @@
+{
+  "itemName" : "thickshoggothlegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "Your bottom half is much jigglier than usual. Seems like someone is a bit thicker than most.",
+  "shortdescription" : "Thick Bottom",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsthick"
+  ],
+
+  "maleFrames" : "pants.png",
+  "femaleFrames" : "pants.png"
+}

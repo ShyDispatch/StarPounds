@@ -1,0 +1,18 @@
+{
+  "itemName" : "blobhalfsealegs",
+  "price" : 0,  
+  "inventoryIcon" : "icons.png:pants",
+  "maxStack" : 1,
+  "rarity" : "legendary",
+  "category" : "legwear",  
+  "description" : "It'll be amazing if you can fit into a house since you're now a kitsune whale.",
+  "shortdescription" : "Blobby Body",
+  "tooltipKind" : "starpoundsarmor",
+  
+  "statusEffects": [
+    "starpoundsblob"
+  ],
+
+  "maleFrames" : "blob_pantsM.png",
+  "femaleFrames" : "blob_pantsF.png"
+}

@@ -136,6 +136,11 @@
   },
   {
 	"op": "add",
+	"path": "/myfirsttest",
+	"value": { "weightGain": true, "prependDirectives": "?replace;ffca8a=ffe2c5;e0975c=ffc181;a85636=d39c6c;6f2919=c7815b;" }
+  },
+  {
+	"op": "add",
 	"path": "/argonian",
 	"value": { "weightGain": true }
   },

@@ -131,6 +131,11 @@
   },
   {
     "op": "add",
+    "path": "/traits/myfirsttest",
+    "value": { "description": "Latex", "stats": [ ["experienceMultiplier", "add", 0.25] ] }
+  },
+  {
+    "op": "add",
     "path": "/traits/argonian",
     "value": { "description": "Argonian", "stats": [ ["poisonResistance", "add", 0.2] ], "skills": [ ["poisonImmunity", 1] ] }
   },

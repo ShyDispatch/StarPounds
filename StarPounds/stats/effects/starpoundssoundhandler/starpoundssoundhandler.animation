@@ -69,7 +69,6 @@
 		  "/sfx/starpounds/swallow/swallow12.ogg",
 		  "/sfx/starpounds/swallow/swallow13.ogg"
 		],
-		"secret": ["/sfx/starpounds/secret/secret.ogg"],
 		"belch": [
 			"/sfx/starpounds/belch/belch1.ogg",
 		  "/sfx/starpounds/belch/belch2.ogg",
@@ -79,6 +78,8 @@
 		  "/sfx/starpounds/belch/belch6.ogg",
 		  "/sfx/starpounds/belch/belch7.ogg",
 		  "/sfx/starpounds/belch/belch8.ogg"
-		]
+		],
+		"clothingrip": [ "/sfx/starpounds/clothingrip/clothingrip.ogg" ],
+		"secret": ["/sfx/starpounds/secret/secret.ogg"]
 	}
 }

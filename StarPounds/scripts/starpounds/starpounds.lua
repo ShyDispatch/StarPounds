@@ -1177,6 +1177,7 @@ starPounds.getDirectives = function(target)
 	local directives = ""
 	-- Get entity species.
 	local species = world.entitySpecies(target)
+	local species = (target ~= entity.id()) and world.entitySpecies(target) or starPounds.getSpecies()
 	local speciesData = starPounds.getSpeciesData(species)
 	-- Generate a nude portrait.
 	for _,v in ipairs(world.entityPortrait(target, "fullnude")) do

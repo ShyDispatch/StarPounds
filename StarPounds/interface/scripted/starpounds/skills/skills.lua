@@ -310,7 +310,7 @@ end
 
 function populateTraitTab()
   buildTraitTab()
-  local species = player.species()
+  local species = starPounds.getSpecies()
   speciesTrait = traits[species] or traits.none
   speciesTrait.id = traits[species] and species or "none"
   selectableTraits = jarray()

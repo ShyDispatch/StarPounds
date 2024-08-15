@@ -59,6 +59,15 @@
           "primary" : [
             "npcwrench"
           ]
+        },
+        {
+          "headCosmetic": [ { "name": "minispacesuithead" } ],
+          "chestCosmetic": [ { "name": "minispacesuitchest" } ],
+          "legsCosmetic": [ { "name": "minispacesuittaillegs" } ]
+        },
+        {
+          "chestCosmetic": [ { "name": "minispacesuitchest" } ],
+          "legsCosmetic": [ { "name": "minispacesuittaillegs" } ]
         }
       ]]
     ]

@@ -226,13 +226,7 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 	particle.initialVelocity = vec2.add({7 * facingDirection, 0}, vec2.add(mcontroller.velocity(), {0, gravity/62.5})) -- Weird math but it works I guess.
 	particle.finalVelocity = {0, -gravity}
 	particle.approach = {friction and 5 or 0, gravity}
-	world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
-		damageKind = "hidden",
-		universalDamage = false,
-		onlyHitTerrain = true,
-		timeToLive = 5/60,
-		periodicActions = {{action = "loop", time = 0, ["repeat"] = false, count = particleCount, body = {{action = "particle", specification = particle}}}}
-	})
+	starPounds.spawnMouthProjectile({{action = "particle", specification = particle}}, particleCount)
 end
 
 starPounds.belchPitch = function(multiplier)
@@ -246,6 +240,26 @@ starPounds.belchPitch = function(multiplier)
 	end
 	pitch = math.round(pitch * multiplier, 2)
 	return pitch
+end
+
+starPounds.spawnMouthProjectile = function(actions, count)
+	-- Don't do anything if the mod is disabled.
+	if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	if not actions then return end
+	count = tonumber(count) or 1
+	if world.entityMouthPosition(entity.id()) == nil then return end
+	-- More accurately calculate where the enities's mouth is.
+	local facingDirection = mcontroller.facingDirection()
+	local mouthOffset = {0.375 * facingDirection * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
+	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+	world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
+		damageKind = "hidden",
+		universalDamage = false,
+		onlyHitTerrain = true,
+		timeToLive = 5/60,
+		periodicActions = {{action = "loop", time = 0, ["repeat"] = false, count = count, body = actions}}
+	})
 end
 
 starPounds.slosh = function(dt)
@@ -1915,13 +1929,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 			particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {102, 0, 216}, fullbright = true, collidesLiquid = false, timeToLive = 0.5, light = {134, 71, 179, 255}}})
 		end
 
-		world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
-			damageKind = "hidden",
-			universalDamage = false,
-			onlyHitTerrain = true,
-			timeToLive = 5/60,
-			periodicActions = {{action = "loop", time = 0, ["repeat"] = false, count = 5, body = particles}}
-		})
+		starPounds.spawnMouthProjectile(particles, 5)
 	end
 
 	if not starPounds.hasOption("disableItemRegurgitation") and (#regurgitatedItems > 0) then

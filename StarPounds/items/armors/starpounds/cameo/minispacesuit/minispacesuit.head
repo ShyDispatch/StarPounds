@@ -5,8 +5,8 @@
   "maxStack" : 1,
   "rarity" : "Legendary",
   "category" : "headarmour",
-  "description" : "A helm with an elaborate, bubble-like aesthetic that allows a wide plane of vision.",
-  "shortdescription" : "Euphotic Helm",
+  "description" : "A bubbled helmet, designed to be used with an EVA suit.",
+  "shortdescription" : "EVA Suit Helmet",
   "tooltipKind" : "armor",
 
   "maleFrames" : "head.png",

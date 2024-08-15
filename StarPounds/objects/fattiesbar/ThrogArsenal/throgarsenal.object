@@ -54,17 +54,17 @@
     "filter" : [],
 	"modTab" : [{
       "file": "/interface/fattyshops/tabs/weapons.png",
-	  "label": "Weapons",
+	  "label": " Weapons",
       "filter": [ "weapons" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/utilities.png",
-	  "label": "Utilities",
+	  "label": " Utilities",
       "filter": [ "utilities" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/crafting.png",
-	  "label": "Crafting",
+	  "label": " Crafting",
       "filter": [ "crafting" ]
     }]
   },

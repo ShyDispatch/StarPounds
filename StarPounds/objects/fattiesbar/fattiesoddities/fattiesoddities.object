@@ -77,52 +77,52 @@
     "filter" : [],
 	"modTab" : [{
       "file": "/interface/fattyshops/tabs/tabstages.png",
-	  "label": "Stages",
+      "label": " Stages",
       "filter": [ "tabstages" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabbusty.png",
-	  "label": "Busty",
+      "label": " Busty",
       "filter": [ "tabbusty" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabstuffed.png",
-	  "label": "Stuffed",
+      "label": " Stuffed",
       "filter": [ "tabstuffed" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabsoft.png",
-	  "label": "Size M",
+      "label": " Size M",
       "filter": [ "tabsoft" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabthick.png",
-	  "label": "Size L",
+      "label": " Size L",
       "filter": [ "tabthick" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabchubster.png",
-	  "label": "Size XL",
+      "label": " Size XL",
       "filter": [ "tabchubster" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabplump.png",
-	  "label": "Size XXL",
+      "label": " Size XXL",
       "filter": [ "tabplump" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabfatty.png",
-	  "label": "Size XXXL",
+      "label": " Size XXXL",
       "filter": [ "tabfatty" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/materials.png",
-	  "label": "Blubber",
+      "label": " Blubber",
       "filter": [ "materials" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/tabmisc.png",
-	  "label": "Misc",
+      "label": " Misc",
       "filter": [ "tabmisc" ]
     }]
   },

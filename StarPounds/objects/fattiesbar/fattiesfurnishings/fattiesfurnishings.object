@@ -54,42 +54,42 @@
     "filter" : [],
   	"modTab" : [{
       "file": "/interface/fattyshops/tabs/feedingtube.png",
-  	  "label": "FeedTube",
+  	  "label": " FeedTube",
       "filter": [ "feedingtube" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/scale.png",
-  	  "label": "Scales",
+  	  "label": " Scales",
       "filter": [ "scales" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/treadmill.png",
-  	  "label": "Tread",
+  	  "label": " Tread",
       "filter": [ "treadmill" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/junkfood.png",
-  	  "label": "JunkFood",
+  	  "label": " JunkFood",
       "filter": [ "junkfood" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/decorations.png",
-  	  "label": "Decor",
+  	  "label": " Decor",
       "filter": [ "decor" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/plushes.png",
-  	  "label": "Plushes",
+  	  "label": " Plushes",
       "filter": [ "plushes" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/interactives.png",
-  	  "label": "Interact",
+  	  "label": " Interact",
       "filter": [ "interactables" ]
     },
   	{
       "file": "/interface/fattyshops/tabs/materials.png",
-  	  "label": "Material",
+  	  "label": " Material",
       "filter": [ "materials" ]
     }]
   },

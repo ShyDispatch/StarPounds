@@ -15,7 +15,7 @@
   "humanDescription" : "The Hylotl Adventurer sure has a lot of books.",
   "hylotlDescription" : "These are, not what I was expecting from Hiraki Corale.",
   "novakidDescription" : "Not too keen on the whole readin' thing.",
-  "throgDescription" : "Heh, I'm not one for reading. But I feel like these books might be an exception.",  
+  "throgDescription" : "Heh, I'm not one for reading. But I feel like these books might be an exception.",
 
   "inventoryIcon" : "icon.png",
   "orientations" : [
@@ -39,7 +39,7 @@
       "anchors" : [ "bottom" ]
     }
   ],
-  
+
   "scripts" : [ "hirakisfatbooks.lua" ],
   "scriptDelta" : 0,
 

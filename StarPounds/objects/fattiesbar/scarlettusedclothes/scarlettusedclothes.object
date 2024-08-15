@@ -83,22 +83,22 @@
     "filter" : [],
 	"modTab" : [{
       "file": "/interface/fattyshops/tabs/exclusive.png",
-	  "label": "Exclusive",
+	  "label": " Exclusive",
       "filter": [ "exclusive" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/racial.png",
-	  "label": "Racial",
+	  "label": " Racial",
       "filter": [ "racial" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/costume.png",
-	  "label": "Costume",
+	  "label": " Costume",
       "filter": [ "costume" ]
     },
 	{
       "file": "/interface/fattyshops/tabs/invisible.png",
-	  "label": "Invisible",
+	  "label": " Invisible",
       "filter": [ "invisible" ]
     }]
   },

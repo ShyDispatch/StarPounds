@@ -20,15 +20,19 @@ function init()
   }
   randomFeeName = randomFeeNames[math.random(1, #randomFeeNames)]
 
-  local rareFees = {
+  rareFees = {
     {id = "grace", name = "^#2862e9;« Cute Employee Fee", beaconColours = {splash = {{40, 98, 233, 196}}}, npcType = "starpoundspizzaapple", price = 250},
     {id = "mam", name = "^#a5ee7d;$ Mam Stream Donation", beaconColours = {splash = {{165, 238, 125, 196}}}, extraItems = {starpoundsmammerchbox = 1}, price = 250}
   }
   local randomSeed = math.floor(os.time()/300)
 
-  if sb.staticRandomDouble(randomSeed, string.format("rareFee.%s.%s", player.worldId(), starPounds and starPounds.lastOrdered or "")) < (1/10) then
+  if sb.staticRandomDouble(randomSeed, string.format("rareFee.%s.%s", player.worldId(), starPounds and starPounds.lastOrdered or "")) < (25/100) then
     rareFee = randomFromList(rareFees, randomSeed, "rareFee")
   end
+
+  isAdmin = player.isAdmin()
+  hasRareFee = rareFee ~= nil
+  updateOrderButtons()
 
   for menuType, menuItems in pairs(menu) do
     for i, menuItem in ipairs(menuItems) do
@@ -63,7 +67,7 @@ function update()
   local primaryItem = player.primaryHandItem()
   local altItem = player.altHandItem()
   local holdingPda = primaryItem and (primaryItem.name == "starpoundspizzapda") or (altItem and (altItem.name == "starpoundspizzapda") or false)
-  
+
   if not (primaryItem or altItem) then
     pane.dismiss()
     return
@@ -77,6 +81,12 @@ function update()
 
   if isAdmin ~= player.isAdmin() then
     isAdmin = player.isAdmin()
+    updateOrderButtons()
+  end
+
+  hasRareFee = rareFee ~= nil
+  if hasRareFee ~= (rareFee ~= nil) then
+    updateOrderButtons()
   end
 
   if couldOrder ~= canOrder() then
@@ -85,6 +95,37 @@ function update()
   end
   -- Check promises.
   promises:update()
+end
+
+function cycleFee:onClick()
+  rareFeeIndex = ((rareFeeIndex or 0) % (#rareFees)) + 1
+  rareFee = rareFees[rareFeeIndex]
+  hasRareFee = rareFee ~= nil
+  refreshOrderCost()
+  updateOrderButtons()
+end
+
+function removeFee:onClick()
+  rareFee = nil
+  rareFeeIndex = nil
+  hasRareFee = rareFee ~= nil
+  refreshOrderCost()
+  updateOrderButtons()
+end
+
+
+function updateOrderButtons()
+  local hasOrder = false
+  for _, count in pairs(order) do if count > 0 then hasOrder = true break end end
+
+  local cycleButton = isAdmin
+  local removeButton = hasOrder and hasRareFee
+
+  cycleFee:setVisible(cycleButton)
+  paddingCycle:setVisible(not cycleButton)
+
+  removeFee:setVisible(removeButton)
+  paddingRemove:setVisible(not removeButton)
 end
 
 function changeItemAmount(menuItem, amount)
@@ -186,11 +227,14 @@ function refreshOrderCost()
   end
   feeListLeft:setText(feeStringLeft)
   feeListRight:setText(feeStringRight)
-  orderTotal:setText(orderCost)
+  orderTotal:setText(math.max(orderCost, 0))
+  updateOrderButtons()
 end
 
 function canOrder()
-  if orderCost == 0 then return false end
+  local hasOrder = false
+  for _, count in pairs(order) do if count > 0 then hasOrder = true break end end
+  if not hasOrder then return false end
   if not isAdmin and (orderCost > player.currency("money")) then return false end
   return true
 end
@@ -212,8 +256,10 @@ function order:onClick()
 
     local npcType
     local beaconColours
+    local npcData
     if rareFee then
       npcType = rareFee.npcType
+      npcData = rareFee.npcData or {}
       beaconColours = rareFee.beaconColours
       for itemType, itemCount in pairs(rareFee.extraItems or {}) do
         order[itemType] = (order[itemType] or 0) + itemCount
@@ -229,6 +275,7 @@ function order:onClick()
 
     world.spawnStagehand(locations[math.random(1, #locations)], "starpoundspizzaspawner", {
       npcType = npcType,
+      npcData = npcData,
       overrideItems = overrideItems,
       order = order,
       beaconColours = beaconColours,
@@ -236,7 +283,7 @@ function order:onClick()
     })
 
     if not isAdmin then
-      player.consumeCurrency("money", orderCost)
+      player.consumeCurrency("money", math.max(orderCost, 0))
     end
 
     starPounds.boughtPizza()

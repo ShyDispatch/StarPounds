@@ -59,7 +59,15 @@
             ],
             "spacer",
             ["spacer", {"type": "label", "align": "center", "text": "TOTAL COST"}, {"type": "image", "file": "pixels.png", "position": [70, 10]}, {"type": "label", "id": "orderTotal", "align": "left", "text": "0"}, "spacer"],
-            ["spacer", "spacer", [{"mode": "manual"}, {"type": "button", "id": "order", "size": [64, 16], "caption": "Order"}, {"type": "image", "id": "buyOverlay", "file": "buttonoverlay.png"}], "spacer", "spacer"]
+            ["spacer", "spacer", [
+              {"mode": "manual"},
+              {"type": "iconButton", "id": "cycleFee", "position": [0, 0], "visible": false, "toolTip": "Cycle rare fee.", "image" : "cycle.png", "hoverImage" : "cycle.png", "pressImage" : "cycle.png?border=1;00000000;00000000?crop=1;2;17;19"},
+              {"type": "layout", "id": "paddingCycle", "position": [0, 0], "visible": false, "size": [17, 17], "children": []},
+              {"type": "button", "id": "order", "position": [17, 0], "size": [64, 16], "caption": "Order"},
+              {"type": "image", "id": "buyOverlay", "position": [17, 0], "file": "buttonoverlay.png"},
+              {"type": "iconButton", "id": "removeFee", "position": [82, 0], "visible": false, "toolTip": "Remove rare fee.", "image" : "remove.png", "hoverImage" : "remove.png", "pressImage" : "remove.png?border=1;00000000;00000000?crop=1;2;17;19"},
+              {"type": "layout", "id": "paddingRemove", "position": [81, 0], "visible": false, "size": [17, 17], "children": []}
+            ], "spacer", "spacer"]
           ]}
         ]}
       ]

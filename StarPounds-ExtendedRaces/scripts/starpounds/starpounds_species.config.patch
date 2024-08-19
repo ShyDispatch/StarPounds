@@ -146,6 +146,16 @@
   },
   {
 	"op": "add",
+	"path": "/fennix",
+	"value": { "weightGain": true, "prependDirectives": "?replace;d9c189=a4a0dd;a38d59=7b75c7;ffc181=f6c280;d39c6c=cb9c6c;c7815b=bf805c;" }
+  },
+  {
+	"op": "add",
+	"path": "/eevee",
+	"value": { "weightGain": true, "prependDirectives": "?replace;d9c189=dee6ff;a38d59=bdc5ff;" }
+  },
+  {
+	"op": "add",
 	"path": "/glaceonfox",
 	"value": { "weightGain": true }
   },

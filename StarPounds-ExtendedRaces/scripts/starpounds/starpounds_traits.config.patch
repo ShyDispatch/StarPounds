@@ -141,6 +141,16 @@
   },
   {
     "op": "add",
+    "path": "/traits/eevee",
+    "value": { "description": "Eevee", "stats": [ ["experienceMultiplier", "add", 0.25] ] }
+  },
+  {
+    "op": "add",
+    "path": "/traits/fennix",
+    "value": { "description": "Fennix", "stats": [ ["experienceMultiplier", "add", 0.25] ] }
+  },
+  {
+    "op": "add",
     "path": "/traits/glaceonfox",
     "value": { "description": "Glaceon", "stats": [ ["iceResistance", "add", 0.2], ["firePenalty", "mult", 1.25] ], "skills": [ ["iceImmunity", 1] ] }
   },

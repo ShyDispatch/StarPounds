@@ -136,6 +136,46 @@
   },
   {
 	"op": "add",
+	"path": "/springeontons",
+	"value": { "weightGain": true, "override": "human" }
+  },
+  {
+	"op": "add",
+	"path": "/brokentons",
+	"value": { "weightGain": true, "override": "human" }
+  },
+  {
+	"op": "add",
+	"path": "/voidglitches",
+	"value": { "weightGain": true, "override": "human", "prependDirectives": "?replace;dc1f00=414159;be1b00=333346;951500=1E1E2D;" }
+  },
+  {
+	"op": "add",
+	"path": "/healeons",
+	"value": { "weightGain": true, "override": "human" }
+  },
+  {
+	"op": "add",
+	"path": "/narfins",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/nightmares",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/deerclops",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
+	"path": "/kanashimi",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/myfirsttest",
 	"value": { "weightGain": true, "prependDirectives": "?replace;ffca8a=ffe2c5;e0975c=ffc181;a85636=d39c6c;6f2919=c7815b;" }
   },

@@ -146,6 +146,11 @@
   },
   {
     "op": "add",
+    "path": "/traits/vaporeon",
+    "value": { "description": "Vaporeon", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+  },
+  {
+    "op": "add",
     "path": "/traits/sylveonoid",
     "value": { "description": "Sylveon", "stats": [ ["deathPenalty", "sub", 0.2], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
   },

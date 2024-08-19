@@ -151,6 +151,11 @@
   },
   {
 	"op": "add",
+	"path": "/vaporeon",
+	"value": { "weightGain": true }
+  },
+  {
+	"op": "add",
 	"path": "/sylveonoid",
 	"value": { "weightGain": true }
   },

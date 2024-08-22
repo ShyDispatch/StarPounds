@@ -13,5 +13,8 @@
   },
   "transformationGroups" : {
     "box" : { "interpolated" : true }
+  },
+  "sounds" : {
+    "eat" : [ "/sfx/humanoid/eat3.ogg" ]
   }
 }

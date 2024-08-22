@@ -9,17 +9,12 @@ function init()
 end
 
 function activate(fireMode, shiftHeld)
+  animator.playSound("eat")
+  activeItem.emote("eat")
   item.consume(1)
-  if player then
-      for itemName, itemQuantity in pairs(config.getParameter("order", {})) do
-        local maxStack = root.createItem({name = itemName, count = itemQuantity, parameters = {}}).count
-        local remainingQuantity = itemQuantity
-        while remainingQuantity > 0 do
-          local count = math.min(itemQuantity, maxStack)
-          player.giveItem({name = itemName, count = count, parameters = {}})
-          remainingQuantity = remainingQuantity - count
-        end
-      end
+  if world.entityType(activeItem.ownerEntityId()) == "npc" then
+    world.callScriptedEntity(activeItem.ownerEntityId(), "npc.endPrimaryFire")
+    world.sendEntityMessage(activeItem.ownerEntityId(), "starPounds.deletePizzaItem")
   end
 end
 

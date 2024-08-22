@@ -72,16 +72,16 @@
       [0, [
           {
             "primary": [
-              "starpoundspizzadelivery"
+              "starpoundsnpcpizzadelivery"
             ],
-            "head" : [
+            "headCosmetic" : [
               { "name" : "starpoundspizzahead", "parameters" : { "colorIndex" : 0 } }
             ],
-            "chest" : [
+            "chestCosmetic" : [
               { "name" : "starpoundspizzachest", "parameters" : { "colorIndex" : 0 } },
               { "name" : "starpoundspizzajacketchest", "parameters" : { "colorIndex" : 0 } }
             ],
-            "legs" : [
+            "legsCosmetic" : [
               { "name" : "starpoundspizzalegs", "parameters" : { "colorIndex" : 0 } }
             ]
           }

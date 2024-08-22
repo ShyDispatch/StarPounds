@@ -1,0 +1,32 @@
+{
+  "objectName" : "starpoundsminispaceposter",
+  "colonyTags" : ["starpounds", "space", "pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+  "description" : "A framed poster of a hefty deer mechanic.",
+  "shortdescription" : "Deer Space Poster",
+  "race" : "generic",
+
+  "apexDescription" : "A show of new trends to pull in the young minded.",
+  "avianDescription" : "An ad for body positivity, or a company?",
+  "floranDescription" : "Floran ssseess big deer. Great hunter perhapss.",
+  "glitchDescription" : "Interested. So nice to see those who are different being embraced.",
+  "humanDescription" : "I'm gonna need this poster. For reasons.",
+  "hylotlDescription" : "Some well rounded deer girl on display.",
+  "novakidDescription" : "That there's a big... ship.",
+
+  "inventoryIcon" : "starpoundsminispacepostericon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsminispaceposter.png:<color>",
+      "imagePosition" : [-16, -16],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

@@ -43,11 +43,11 @@
       [0, [
         {
           "primary": [
-            "starpoundspizzadelivery"
+            "starpoundsnpcpizzadelivery"
           ],
-          "head": [ { "name" : "starpoundsapplepizzahead", "parameters" : { "colorIndex" : 0 } } ],
-          "chest": [ { "name": "starpoundspizzajacketchest", "parameters" : { "colorIndex" : 0 } } ],
-          "legs": [ { "name": "jeans2legs", "parameters" : {  "rarity" : "rare",  "statusEffects" : [],  "shortdescription" : "Grace's Jeans",  "leveledStatusEffects" : [],  "directives" : "?replace;6f2919=111425;a85636=131a28;e0975c=1a2838;151515=0e0f13;383838=16191e;555555=292d32;b6b6b6=808080;e6e6e6=b5b5b5;9e9e9e=808080;cccccc=b5b5b5;", "price" : 2500 } } ]
+          "headCosmetic": [ { "name" : "starpoundsapplepizzahead", "parameters" : { "colorIndex" : 0 } } ],
+          "chestCosmetic": [ { "name": "starpoundspizzajacketchest", "parameters" : { "colorIndex" : 0 } } ],
+          "legsCosmetic": [ { "name": "jeans2legs", "parameters" : {  "rarity" : "rare",  "statusEffects" : [],  "shortdescription" : "Grace's Jeans",  "leveledStatusEffects" : [],  "directives" : "?replace;6f2919=111425;a85636=131a28;e0975c=1a2838;151515=0e0f13;383838=16191e;555555=292d32;b6b6b6=808080;e6e6e6=b5b5b5;9e9e9e=808080;cccccc=b5b5b5;", "price" : 2500 } } ]
         }
       ]]
     ]

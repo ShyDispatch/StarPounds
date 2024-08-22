@@ -7,6 +7,7 @@ function init()
   self.target = config.getParameter("target", "")
   self.order = config.getParameter("order", {})
   self.npcType = config.getParameter("npcType", "starpoundspizzaemployee")
+  self.npcData = config.getParameter("npcData", {})
   self.overrideItems = config.getParameter("overrideItems", {})
   self.beaconColours = config.getParameter("beaconColours", {})
   self.delay = config.getParameter("delay", 10)
@@ -109,7 +110,7 @@ end
 function update(dt)
   self.delay = math.max(self.delay - dt, 0)
   if self.delay == 0 then
-    local npcId = world.spawnNpc(self.position, "human", self.npcType, world.threatLevel(), nil, {scriptConfig = {order = self.order, target = self.target, overrideItems = self.overrideItems}})
+    local npcId = world.spawnNpc(self.position, "human", self.npcType, world.threatLevel(), nil, {scriptConfig = {data = self.npcData, order = self.order, target = self.target, overrideItems = self.overrideItems}})
     world.callScriptedEntity(npcId, "status.addEphemeralEffect", "beamin")
     stagehand.die()
   end

@@ -1,0 +1,121 @@
+{
+  "type" : "starpoundspizzamini",
+  "baseType" : "starpoundspizzaemployee",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/npcs/pizza/starpoundspizzaemployee.lua",
+    "/npcs/pizza/starpoundspizzamini.lua"
+  ],
+
+  "damageTeamType" : "assistant",
+  "damageTeam" : 1,
+
+  "scriptConfig" : {
+    "starPounds_overrideSpecies": "mini",
+    "starPounds_skills": {
+      "minimumSize": [2, 4]
+    },
+    "starPounds_options": {
+      "disablePrey": true
+    },
+    
+    "dialog" : {
+      "collect" : { "default" : { "default" : [
+        "Enjoy your meal, <entityname>!",
+        "Here's your order, <entityname>. Enjoy!",
+        "Thank you for choosing Cosmic Crust, <entityname>!"
+      ]}},
+      "collectMissing" : { "default" : { "default" : [
+        "Something's missing? Probably just a glitch in the system! You know how they are.",
+        "Huh? The rest of the food? You don't want me to starve, do you?!",
+        "Oh- uh, I guess I uh, accidentally mixed up your order with mine?... Please don't tell my manager."
+      ]}},
+      "collected" : { "default" : { "default" : [
+        "That order is making me hungry...",
+        "I'm on the clock, sorry. I better get going.",
+        "Sorry, I can't stay to chat. I hope you enjoy your meal!",
+        "Wish I could stick around, but I have more deliveries waiting. Enjoy!",
+        "Sorry, I'm on a tight schedule. Enjoy your order!"
+      ]}},
+      "converse" : { "default" : { "default" : [
+        "Have you tried this stuff? It tastes sooo good!",
+        "Delivery isn't such a bad job! They even let me eat all the reject pizzas!",
+        "Hey if you ever see a Cosmic Crust beacon, keep a safe distance okay?"
+      ]}},
+      "eatOrder" : { "default" : { "default" : [
+        "Well, more for me then!",
+        "Guess there's sense in letting this go to waste.",
+        "I'll take that as a tip for me - thanks!"
+      ]}},
+      "eatOrderVore" : { "default" : { "default" : [
+        "... It's not like you needed the order anymore, right?",
+        "... No sense in letting that go to waste.",
+        "That still counts as delivery, right?..."
+      ]}},
+      "ateOrder" : { "default" : { "default" : [
+        "Oh, uh, you didn't want that right?",
+        "Sorry, I didn't think you were coming!",
+        "Well, it's mostly still there if you want to go get it."
+      ]}},
+      "ateOrderVore" : { "default" : { "default" : [
+        "Oh, uh, you didn't want that right?",
+        "Sorry, I tried to get your order to you!",
+        "Well, it's mostly still there if you want to go get it."
+      ]}},
+      "voreCustomer": { "default" : { "default" : [
+        "Ope, sorry!...",
+        "Not again...",
+        "The employee handbook didn't say what to do for this...",
+        "Oh... just gonna mark down <entityname> as 'No show'..."
+      ]}},
+      "voreCustomerEscaped": { "default" : { "default" : [
+        "Hey uh, you mind not reporting that?",
+        "Oh, there you are!",
+        "Hey, you don't taste too bad!"
+      ]}}
+    },
+
+    "waitTime" : 40,
+    "waitEatTime" : 30,
+    "lingerTime" : 10
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpoundsmini",
+    "name": "^#c4855d;Mini^reset;",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.5",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "bodyDirectives" : "?replace;c7815b=a35749;ffe2c5=ecc796;ffc181=d9a172;d39c6c=c4855d?replace;951500=cb9773;be1b00=d1ad8a;dc1f00=edd4b4;f32200=f7ead3",
+    "emoteDirectives" : "?replace;c7815b=a35749;ffe2c5=ecc796;ffc181=d9a172;d39c6c=c4855d?replace;951500=cb9773;be1b00=d1ad8a;dc1f00=edd4b4;f32200=f7ead3",
+    "hairDirectives" : "?replace;735e3a=555555;a38d59=828282;d9c189=b8b8b8?replace;951500=cb9773;be1b00=d1ad8a;dc1f00=edd4b4;f32200=f7ead3"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "primary": [
+            "starpoundsnpcpizzadelivery"
+          ],
+          "headCosmetic" : [ { "name" : "starpoundspizzahead", "parameters" : { "colorIndex" : 0 } } ],
+          "chestCosmetic": [ { "name": "minispacesuitchest", "parameters" : { "directives" : "?replace;ffca8a=f4988c;e0975c=d93a3a;a85636=932625;6f2919=601119;223154=16191e;35496d=292d32;435d78=404549;384d67=303030;4a5d75=555555;758798=808080;" } } ],
+          "legsCosmetic": [ { "name": "minispacesuittaillegs", "parameters" : { "directives" : "?replace;ffca8a=f4988c;e0975c=d93a3a;a85636=932625;6f2919=601119;223154=16191e;35496d=292d32;435d78=404549;384d67=303030;4a5d75=555555;758798=808080;" } } ]
+        }
+      ]]
+    ]
+  }
+}

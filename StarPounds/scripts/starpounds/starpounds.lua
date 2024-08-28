@@ -213,6 +213,13 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 	if addMomentum and mcontroller.zeroG() then
 		mcontroller.addMomentum({-0.5 * facingDirection * (0.5 + starPounds.weightMultiplier * 0.5) * particleCount, 0})
 	end
+	-- Alert nearby enemies.
+	local targets = world.entityQuery(mcontroller.position(), starPounds.settings.belchAlertRadius * volume, { includedTypes = {"npc", "monster"} })
+	for _, target in pairs(targets) do
+		if world.entityAggressive(target) and world.entityCanDamage(target, entity.id()) then
+			world.sendEntityMessage(target, "starPounds.notifyDamage", {sourceId = entity.id()})
+		end
+	end
 	-- Skip if we're not doing particles.
 	if starPounds.hasOption("disableBelchParticles") then return end
 	-- More accurately calculate where the enities's mouth is.
@@ -1645,7 +1652,7 @@ starPounds.eatEntity = function(preyId, options, check)
 	-- Check if they exist.
 	if not world.entityExists(preyId) then return false end
 	-- Counting this as 'combat', so no eating stuff on protected worlds. (e.g. the outpost)
-	if world.getProperty("nonCombat") then return false end
+	if world.getProperty("nonCombat") and not options.ignoreProtection then return false end
 	-- Don't do anything if pred is disabled.
 	if starPounds.hasOption("disablePred") then return false end
 	-- Need the upgrades for parts of the skill to work.

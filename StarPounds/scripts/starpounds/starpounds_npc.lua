@@ -20,6 +20,7 @@ function init()
   starPounds.overrides()
 	-- Setup message handlers
 	starPounds.messageHandlers()
+	message.setHandler("starPounds.notifyDamage", simpleHandler(damage))
 	-- Setup species traits.
 	storage.starPounds.overrideSpecies = config.getParameter("starPounds_overrideSpecies")
 	local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default

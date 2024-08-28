@@ -19,6 +19,10 @@ function starPoundsInit()
 	starPounds.overrides()
 	-- Setup message handlers
 	starPounds.messageHandlers()
+	message.setHandler("starPounds.notifyDamage", simpleHandler(function(args)
+		self.damaged = true
+		self.board:setEntity("damageSource", args.sourceId)
+	end))
 	-- Reload whenever the entity loads in/beams/etc.
 	starPounds.statCache = {}
 	starPounds.statCacheTimer = starPounds.settings.statCacheTimer

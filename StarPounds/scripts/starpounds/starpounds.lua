@@ -1355,6 +1355,7 @@ starPounds.equipCheck = function(size)
 
 	-- Iterate over worn clothing.
 	local doEquip = false
+	local returnedItems = false
 	for _, itemType in ipairs({"legs", "chest"}) do
 		local currentItem = player.equippedItem(itemType.."Cosmetic")
 		local currentSize = modifiers[itemType.."Size"] or size.size
@@ -1375,6 +1376,11 @@ starPounds.equipCheck = function(size)
 				player.giveItem(currentItem)
 				player.setEquippedItem(itemType.."Cosmetic", nil)
 				currentItem = nil
+
+				if not returnedItems then
+					world.sendEntityMessage(entity.id(), "starPounds.playSound", "clothingrip", 0.75)
+					returnedItems = true
+				end
 			end
 		end
 		-- If the entity isn't wearing an item, or the item they are wearing has the wrong size/variant.

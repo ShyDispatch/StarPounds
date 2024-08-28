@@ -45,7 +45,7 @@
   "scriptDelta" : 60,
 
   "spawnInterval" : [60, 180],
-  "spawnOffset" : [-1, 3.5],
+  "spawnOffset" : [0.5, 3.5],
 
   "npctypes" : [
     {

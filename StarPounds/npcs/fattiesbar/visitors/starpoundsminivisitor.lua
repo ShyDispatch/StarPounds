@@ -9,7 +9,7 @@ function init()
     return world.entityTypeName(entityId) == "starpoundsapplevisitor" or isValidTarget_old(entityId)
   end
 
-  -- Ignore world protection for specific npc type.
+  -- Ignore world protection.
   local eatEntity_old = starPounds.eatEntity
   starPounds.eatEntity = function(preyId, options, check)
     options = type(options) == "table" and options or {}
@@ -29,5 +29,18 @@ function update(dt)
     starPounds.optionChanged = true
     starPounds.equipCheck(starPounds.currentSize)
     world.sendEntityMessage(entity.id(), "starPounds.playSound", "clothingrip", 0.75)
+  end
+
+  teleportVoreDelay = math.max((teleportVoreDelay or 1) - dt, 0)
+  if not starPounds_didQuery and status.uniqueStatusEffectActive("beamin") and teleportVoreDelay == 0 then
+    local entities = world.entityQuery(mcontroller.position(), 1, {order = "nearest", includedTypes = {"player", "npc"}, withoutEntityId = entity.id()}) or jarray()
+    local eatOptions = {ignoreSkills = true, ignoreCapacity = true, noEnergyCost = true, noSwallowSound = true}
+    for _, target in ipairs(entities) do
+      if starPounds.eatEntity(target, eatOptions, true) then
+        starPounds.eatEntity(target, eatOptions)
+        break
+      end
+    end
+    starPounds_didQuery = true
   end
 end

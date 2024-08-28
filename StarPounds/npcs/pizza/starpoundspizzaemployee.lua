@@ -10,7 +10,6 @@ function extraInit()
   for slot, item in pairs(self.overrideItems) do
     npc.setItemSlot(slot, item)
   end
-
 end
 
 local sayToEntity_old = sayToEntity

@@ -3,7 +3,7 @@
   "baseType" : "base",
 
   "damageTeamType" : "friendly",
-  
+
   "scriptConfig" : {
     "behavior" : "outpostvisitor",
 

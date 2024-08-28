@@ -98,7 +98,7 @@
                         "name": "entityInTypes",
                         "parameters": {
                           "entity": {"key": "damageSource"},
-                          "types": {"value": ["npc", "player"]}
+                          "types": {"value": ["npc", "player", "monster"]}
                         }
                       },
                       {
@@ -181,7 +181,7 @@
                           "type": "action",
                           "name": "queryEntity",
                           "parameters": {
-                            "entityTypes": {"value": ["npc", "player"]},
+                            "entityTypes": {"value": ["npc", "player", "monster"]},
                             "orderBy": {"value": "nearest"},
                             "position": {"key": "self"},
                             "range": {"key": "<queryRange>"},

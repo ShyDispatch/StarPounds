@@ -3,11 +3,20 @@
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Hefty Deer",
 
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/npcs/fattiesbar/visitors/starpoundsminivisitor.lua"
+  ],
+
   "scriptConfig" : {
+    "behavior" : "starpoundsminivisitor",
+
     "initialStorage": {
       "homePosition": [0,0]
     },
     "starPounds_overrideSpecies": "mini",
+    "starPounds_trait": "npc_predator",
     "starPounds_skills": {
       "minimumSize": [2, 4]
     },
@@ -16,6 +25,13 @@
     },
 		"dialogMode": "tutorial",
 		"dialog": {
+      "attack" : "/dialog/vore.config:attack",
+      "reattack" : "/dialog/vore.config:reattack",
+      "killedTarget" : "/dialog/vore.config:killedTarget",
+      "lostTarget" : "/dialog/vore.config:lostTarget",
+      "outOfSight" : "/dialog/vore.config:outOfSight",
+      "cheerOn" : "/dialog/vore.config:cheerOn",
+      "cantReach" : "/dialog/vore.config:cantReach",
 			"converse": {
 				"default": {
 					"default": [
@@ -71,5 +87,18 @@
         }
       ]]
     ]
+  },
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "maxEnergy" : {
+        "baseValue" : 100.0
+      },
+      "knockbackStunTime" : {
+        "baseValue" : 0.1
+      }
+    }
   }
 }

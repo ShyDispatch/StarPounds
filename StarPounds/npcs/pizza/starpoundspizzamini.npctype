@@ -20,7 +20,7 @@
     "starPounds_options": {
       "disablePrey": true
     },
-    
+
     "dialog" : {
       "collect" : { "default" : { "default" : [
         "Enjoy your meal, <entityname>!",

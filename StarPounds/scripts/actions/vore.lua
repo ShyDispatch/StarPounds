@@ -6,7 +6,7 @@ end
 
 -- param entity
 function hasEatenEntity(args, board)
-  if args.entity == nil then return false end
+  if args.entity == nil then return #storage.starPounds.stomachEntities ~= 0 end
   local eatenEntity = false
   if storage.starPounds then
   	for _, prey in ipairs(storage.starPounds.stomachEntities) do

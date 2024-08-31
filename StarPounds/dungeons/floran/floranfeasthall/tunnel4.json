@@ -1029,7 +1029,7 @@
                  "y":768
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":769,
                  "name":"",
@@ -1049,7 +1049,7 @@
                  "y":744
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":770,
                  "name":"",
@@ -1069,7 +1069,7 @@
                  "y":744
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":771,
                  "name":"",
@@ -1089,7 +1089,7 @@
                  "y":728
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":772,
                  "name":"",
@@ -1109,7 +1109,7 @@
                  "y":720
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":773,
                  "name":"",
@@ -1129,7 +1129,7 @@
                  "y":720
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":774,
                  "name":"",
@@ -1149,7 +1149,7 @@
                  "y":704
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":775,
                  "name":"",
@@ -1169,7 +1169,7 @@
                  "y":720
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":776,
                  "name":"",
@@ -1189,7 +1189,7 @@
                  "y":704
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":777,
                  "name":"",
@@ -1209,7 +1209,7 @@
                  "y":688
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":778,
                  "name":"",
@@ -1229,7 +1229,7 @@
                  "y":768
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":779,
                  "name":"",
@@ -1423,6 +1423,27 @@
                  "width":8,
                  "x":96,
                  "y":488
+                }, 
+                {
+                 "height":80,
+                 "id":797,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{\"locationType\":\"starpoundsfloranfeasthall.depths\"}",
+                     "stagehand":"questlocation"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string",
+                     "stagehand":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":112,
+                 "x":1472,
+                 "y":544
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1535,7 +1556,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":797,
+ "nextobjectid":798,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",
@@ -1646,7 +1667,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

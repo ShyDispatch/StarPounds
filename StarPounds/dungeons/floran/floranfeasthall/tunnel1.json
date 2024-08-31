@@ -909,7 +909,7 @@
                  "y":1072
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":765,
                  "name":"",
@@ -929,7 +929,7 @@
                  "y":1048
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":766,
                  "name":"",
@@ -949,7 +949,7 @@
                  "y":1048
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":767,
                  "name":"",
@@ -969,7 +969,7 @@
                  "y":1032
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":768,
                  "name":"",
@@ -989,7 +989,7 @@
                  "y":1144
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":769,
                  "name":"",
@@ -1009,7 +1009,7 @@
                  "y":640
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":770,
                  "name":"",
@@ -1029,7 +1029,7 @@
                  "y":640
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":771,
                  "name":"",
@@ -1049,7 +1049,7 @@
                  "y":640
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":772,
                  "name":"",
@@ -1143,6 +1143,27 @@
                  "width":8,
                  "x":1696,
                  "y":1072
+                }, 
+                {
+                 "height":80,
+                 "id":778,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{\"locationType\":\"starpoundsfloranfeasthall.depths\"}",
+                     "stagehand":"questlocation"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string",
+                     "stagehand":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":208,
+                 "x":384,
+                 "y":640
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1213,7 +1234,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":778,
+ "nextobjectid":779,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",
@@ -1324,7 +1345,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

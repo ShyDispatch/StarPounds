@@ -597,7 +597,7 @@
                  "y":896
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":735,
                  "name":"",
@@ -617,7 +617,7 @@
                  "y":848
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":736,
                  "name":"",
@@ -637,7 +637,7 @@
                  "y":848
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":737,
                  "name":"",
@@ -657,7 +657,7 @@
                  "y":832
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":738,
                  "name":"",
@@ -677,7 +677,7 @@
                  "y":552
                 }, 
                 {
-                 "gid":2147491408,
+                 "gid":2147491409,
                  "height":16,
                  "id":739,
                  "name":"",
@@ -697,7 +697,7 @@
                  "y":792
                 }, 
                 {
-                 "gid":7760,
+                 "gid":7761,
                  "height":16,
                  "id":740,
                  "name":"",
@@ -871,6 +871,27 @@
                  "width":40,
                  "x":632,
                  "y":816
+                }, 
+                {
+                 "height":80,
+                 "id":758,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{\"locationType\":\"starpoundsfloranfeasthall.depths\"}",
+                     "stagehand":"questlocation"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string",
+                     "stagehand":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":208,
+                 "x":1040,
+                 "y":816
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -941,7 +962,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":758,
+ "nextobjectid":759,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",
@@ -1052,7 +1073,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7691,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

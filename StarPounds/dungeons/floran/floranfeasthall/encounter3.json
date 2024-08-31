@@ -143,27 +143,6 @@
                  "width":16,
                  "x":136,
                  "y":112
-                }, 
-                {
-                 "height":80,
-                 "id":696,
-                 "name":"",
-                 "properties":
-                    {
-                     "parameters":"{\"locationType\":\"starpoundsfloranfeasthall.depths\"}",
-                     "stagehand":"questlocation"
-                    },
-                 "propertytypes":
-                    {
-                     "parameters":"string",
-                     "stagehand":"string"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":208,
-                 "x":32,
-                 "y":32
                 }],
          "opacity":1,
          "type":"objectgroup",

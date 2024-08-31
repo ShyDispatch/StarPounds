@@ -130,7 +130,7 @@
                 }, 
                 {
                  "height":80,
-                 "id":694,
+                 "id":696,
                  "name":"",
                  "properties":
                     {
@@ -281,7 +281,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":695,
+ "nextobjectid":697,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

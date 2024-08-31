@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztmVEOwiAMQDmF8c9zeJHdwSt4FW+0U+miTUgHtF0pQ+hLGjcgtA9IRmIIzsw8Jwp337vfmcGZU8MDPcN7Kq+0ZgxnHul6apC4c9fhiHsuD66vJjl33CdZA6l7bm9L9Wi4CiPlQLlgUuOxM3cvNGw+yycut+87\/AbUtoS9O5Dz57rn9jp+tnYvRck9hLQ\/xx17a87hEbjuFNhf4g7AXnCiJ3fKC49JnfXUOQQk55CLhTvnbpPrr1kPRe1c7u7ulHuLekpY5HJ3d5f0WdWT4yz3lvWUcpXyQb8UjbtFPVS+OGfcdoSj7lb1UGz3xNcvtHdGjbtFPSWWKA+EZo217rXraUmNff9X3J3fPhLuzm8fCXfnt4+Eu\/PbR6K1+xrN3UtgLNx79G7hjr25\/5FbRgv3Hr1buPd6zq3P\/Irm6jVqs9JDhsS958K952I077O\/Oz1832cIZ27eu5WjdA==",
+         "data":"eJztmdsNwyAMRRmjf5mji2SHrtBVulGmqiKFCjk8rmNMKPhIVhNA2AeQglTnjJl5TxTmfnZ\/goHMKeFFnv17LC+3ZgoyD3c9JXDc0XW44p7KQ+urScqd9nHWgOue2ttcPRIezIg5lFwosfHUGd0LCbvPuv8ux\/sS9AVtqzu7e1L+qHtqr8Nnbfdc5Nydi\/sj7tRbcg6vgLqXoP4cd4\/fCyR6ci950TGxsx47h78+xjlE0XBH7jap\/pr1lKidy9zNveTeop4cGrnM3dw5fVr1pLjLvWU9uVy5fL6fi8Rdo55SvjBn2HaFq+5a9ZTY74mfI6R3Rom7Rj051iCPD8kaS91r19OSGvv+r5g73j4S5o63j4S54+0jYe54+0i0dt+CuXsJioZ7j94t3Kk3+h+5ZrRw79G7hXuv51z7zG9krl6jNlt5yJCY91yY91yM5n33d6eH7\/sMYczNF5hOpNg=",
          "encoding":"base64",
          "height":50,
          "name":"front",
@@ -177,7 +177,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7790,
+                 "gid":7792,
                  "height":16,
                  "id":695,
                  "name":"",
@@ -197,7 +197,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":2147491438,
+                 "gid":2147491440,
                  "height":16,
                  "id":696,
                  "name":"",
@@ -217,7 +217,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7790,
+                 "gid":7792,
                  "height":16,
                  "id":697,
                  "name":"",
@@ -237,7 +237,7 @@
                  "y":352
                 }, 
                 {
-                 "gid":7790,
+                 "gid":7792,
                  "height":16,
                  "id":698,
                  "name":"",
@@ -257,7 +257,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7790,
+                 "gid":7792,
                  "height":16,
                  "id":699,
                  "name":"",
@@ -401,7 +401,7 @@
                  "y":168
                 }, 
                 {
-                 "gid":7790,
+                 "gid":7792,
                  "height":16,
                  "id":710,
                  "name":"",
@@ -421,7 +421,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7790,
+                 "gid":7792,
                  "height":16,
                  "id":711,
                  "name":"",
@@ -735,11 +735,11 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7721,
+         "firstgid":7723,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }, 
         {
-         "firstgid":7955,
+         "firstgid":7957,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/mods\/StarPounds\/tilesets\/starpounds\/Fatty-Liquids.json"
         }],
  "tilewidth":8,

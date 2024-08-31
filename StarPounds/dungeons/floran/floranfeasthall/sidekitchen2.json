@@ -213,7 +213,7 @@
                  "y":352
                 }, 
                 {
-                 "gid":7717,
+                 "gid":7719,
                  "height":36,
                  "id":704,
                  "name":"",
@@ -309,7 +309,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":7839,
+                 "gid":7841,
                  "height":16,
                  "id":716,
                  "name":"",
@@ -329,7 +329,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":7839,
+                 "gid":7841,
                  "height":16,
                  "id":717,
                  "name":"",
@@ -349,7 +349,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":2147491487,
+                 "gid":2147491489,
                  "height":16,
                  "id":718,
                  "name":"",
@@ -369,7 +369,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":7839,
+                 "gid":7841,
                  "height":16,
                  "id":719,
                  "name":"",
@@ -389,7 +389,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":2147491487,
+                 "gid":2147491489,
                  "height":16,
                  "id":720,
                  "name":"",
@@ -409,7 +409,7 @@
                  "y":352
                 }, 
                 {
-                 "gid":7839,
+                 "gid":7841,
                  "height":16,
                  "id":721,
                  "name":"",
@@ -703,11 +703,11 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/crafting.json"
         }, 
         {
-         "firstgid":7770,
+         "firstgid":7772,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

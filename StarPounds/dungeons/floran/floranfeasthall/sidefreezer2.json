@@ -585,7 +585,7 @@
                  "y":280
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":731,
                  "name":"",
@@ -605,7 +605,7 @@
                  "y":248
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":733,
                  "name":"",
@@ -625,7 +625,7 @@
                  "y":296
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":734,
                  "name":"",
@@ -645,7 +645,7 @@
                  "y":296
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":735,
                  "name":"",
@@ -665,7 +665,7 @@
                  "y":360
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":736,
                  "name":"",
@@ -926,7 +926,7 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

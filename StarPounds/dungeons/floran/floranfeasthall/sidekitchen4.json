@@ -493,7 +493,7 @@
                  "y":200
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":721,
                  "name":"",
@@ -513,7 +513,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":722,
                  "name":"",
@@ -533,7 +533,7 @@
                  "y":352
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":723,
                  "name":"",
@@ -553,7 +553,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7951,
+                 "gid":7953,
                  "height":36,
                  "id":724,
                  "name":"",
@@ -649,7 +649,7 @@
                  "y":304
                 }, 
                 {
-                 "gid":2147491407,
+                 "gid":2147491409,
                  "height":16,
                  "id":736,
                  "name":"",
@@ -669,7 +669,7 @@
                  "y":200
                 }, 
                 {
-                 "gid":7759,
+                 "gid":7761,
                  "height":16,
                  "id":738,
                  "name":"",
@@ -910,11 +910,11 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }, 
         {
-         "firstgid":7924,
+         "firstgid":7926,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/crafting.json"
         }],
  "tilewidth":8,

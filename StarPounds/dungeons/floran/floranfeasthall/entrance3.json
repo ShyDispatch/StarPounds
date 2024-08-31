@@ -897,7 +897,7 @@
                  "y":608
                 }, 
                 {
-                 "height":440,
+                 "height":192,
                  "id":805,
                  "name":"",
                  "properties":
@@ -913,9 +913,9 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":1200,
-                 "x":400,
-                 "y":216
+                 "width":208,
+                 "x":888,
+                 "y":464
                 }],
          "opacity":1,
          "type":"objectgroup",

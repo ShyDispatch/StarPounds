@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJztmNFtAyEQRK+B\/OcrfbiR9JAW\/JU+3JGrSogOCWG42xl22Y2OJ40cS\/FlHiYH3LYtrsz9Qlnur+43YSTXLPnaU76vf65fW\/z+ne86N2FG3NHxzLwTQdyl48C4o64t708gZ\/6SsdBwZ3x73m8f52H8e+Mw4s46Z1Dvlj9Dz1\/qPuqdyO6Id+nPuu8+L\/4Sdw3vzIj7KLU\/4q6Bp3sCcdf8zhNR3O+Auxbe7glPd\/Y+r4WXe4JZ3zVB3C2o924tXwvvjKd7SVq3H0VG1nEpUdwfjVgTxd0D5F7H5Gnc\/7mdn2FPYuae+1l57z3N3KXPbVrnvbqntvfe889D+qxG67mNxLvVV8u76Er5W815aW+E3ucj\/b+f9WdzhIW7FdI5YLlWeLijPlb+s91ZDwv\/me5W9zqWWe6WaxzLDHfLvc0I1u7We9oRLN1nnGVGYPY2rX3H0d5hdtB+iHtnDMO4o\/167pJzSnnt6rxAnQPZoP2k7uXv9fbajeu7eEv7oXP+iAhznukncZfg6c72Q0DPl7OJ3m\/x\/4g+p6L3W8TEY232ynJfXJUfCLZ1Qw==",
+         "data":"eJztmNFtAyEQRK+D\/OYrfbiR9JAW\/JU+3JGrSogOCWG42xl22Y2OJ40cS\/FlHiYH3LYtrsz9Qlnur+43YSTXLPnaU76vf65fW\/z+ne86N2FG3NHxzLwTQdyl48C4o64t708gZ\/6SsdBwZ3x73m8f52H8e+Mw4s46Z1Dvlj9Dz1\/qPuqdyO6Id+nPuu8+L\/4Sdw3vzIj7KLU\/4q6Bp3sCcdf8zhNR3O+Auxbe7glPd\/Y+r4WXe4JZ3zVB3C2o924tXwvvjKd7SVq3H0VG1nEpUdwfjVgTxd0D5F7H5Gnc\/7mdn2FPYuae+1l57z3N3KXPbVrnvbqntvfe889D+qxG67mNxLvVV8u76Er5W815aW+E3ucj\/b+f9WdzhIW7FdI5YLlWeLijPlb+s91ZDwv\/me5W9zqWWe6WaxzLDHfLvc0I1u7We9oRLN1nnGVGYPY2rX3H0d5hdtB+iHtnDMO4o\/167pJzSnnt6rxAnQPZoP2k7uXv9fbajeu7eEv7oXP+iAhznukncZfg6c72Q0DPl7OJ3m\/x\/4g+p6L3W8TEY232ynJfXJUf6L92Gw==",
          "encoding":"base64",
          "height":50,
          "name":"front",
@@ -217,7 +217,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7725,
+                 "gid":7727,
                  "height":64,
                  "id":698,
                  "name":"",
@@ -237,7 +237,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":2147491373,
+                 "gid":2147491375,
                  "height":64,
                  "id":699,
                  "name":"",
@@ -257,7 +257,7 @@
                  "y":160
                 }, 
                 {
-                 "gid":7725,
+                 "gid":7727,
                  "height":64,
                  "id":703,
                  "name":"",
@@ -409,7 +409,7 @@
                  "y":272
                 }, 
                 {
-                 "gid":7802,
+                 "gid":7804,
                  "height":16,
                  "id":717,
                  "name":"",
@@ -429,7 +429,7 @@
                  "y":200
                 }, 
                 {
-                 "gid":2147491450,
+                 "gid":2147491452,
                  "height":16,
                  "id":718,
                  "name":"",
@@ -449,7 +449,7 @@
                  "y":200
                 }, 
                 {
-                 "gid":7802,
+                 "gid":7804,
                  "height":16,
                  "id":719,
                  "name":"",
@@ -469,7 +469,7 @@
                  "y":272
                 }, 
                 {
-                 "gid":2147491450,
+                 "gid":2147491452,
                  "height":16,
                  "id":720,
                  "name":"",
@@ -489,7 +489,7 @@
                  "y":256
                 }, 
                 {
-                 "gid":7802,
+                 "gid":7804,
                  "height":16,
                  "id":721,
                  "name":"",
@@ -509,7 +509,7 @@
                  "y":240
                 }, 
                 {
-                 "gid":7802,
+                 "gid":7804,
                  "height":16,
                  "id":722,
                  "name":"",
@@ -529,7 +529,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":2147491450,
+                 "gid":2147491452,
                  "height":16,
                  "id":723,
                  "name":"",
@@ -549,7 +549,7 @@
                  "y":368
                 }, 
                 {
-                 "gid":7802,
+                 "gid":7804,
                  "height":16,
                  "id":724,
                  "name":"",
@@ -569,7 +569,7 @@
                  "y":352
                 }, 
                 {
-                 "gid":7802,
+                 "gid":7804,
                  "height":16,
                  "id":725,
                  "name":"",
@@ -831,15 +831,15 @@
          "source":"..\/..\/..\/tilesets\/Starpounds-Fatty-Dungeons.json"
         }, 
         {
-         "firstgid":7690,
+         "firstgid":7692,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/mods\/StarPounds\/tilesets\/starpounds\/Fatty-Liquids.json"
         }, 
         {
-         "firstgid":7702,
+         "firstgid":7704,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/mods\/StarPounds\/tilesets\/starpounds\/Fatty-Interactives.json"
         }, 
         {
-         "firstgid":7733,
+         "firstgid":7735,
          "source":"..\/..\/..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/assets\/packed\/tilesets\/packed\/objects-by-category\/storage.json"
         }],
  "tilewidth":8,

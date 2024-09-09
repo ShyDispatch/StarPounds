@@ -1,0 +1,17 @@
+[
+  [
+    {
+      "op": "test",
+      "path": "/gui/lexiconModes"
+    },
+    {
+      "op": "add",
+      "path": "/tabs/codex/-",
+      "value": {
+        "name": "Throg",
+        "data": "throg",
+        "icon": "tab_throg.png"
+      }
+    }
+  ]
+]

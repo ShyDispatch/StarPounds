@@ -67,7 +67,20 @@
         "type": "label",
         "position": [
           96,
-          173
+          166
+        ],
+        "hAnchor": "mid",
+        "value": "Non-Protectorate"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/labelSpeciesModded2",
+      "value": {
+        "type": "label",
+        "position": [
+          588,
+          216
         ],
         "hAnchor": "mid",
         "value": "Non-Protectorate"
@@ -403,7 +416,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           -10,
-          -29
+          -30
         ]
       }
     },
@@ -415,7 +428,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           14,
-          -29
+          -30
         ]
       }
     },
@@ -427,7 +440,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           38,
-          -29
+          -30
         ]
       }
     },
@@ -439,7 +452,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           62,
-          -29
+          -30
         ]
       }
     },
@@ -451,7 +464,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           86,
-          -29
+          -30
         ]
       }
     },
@@ -463,7 +476,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           110,
-          -29
+          -30
         ]
       }
     },
@@ -475,7 +488,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           134,
-          -29
+          -30
         ]
       }
     },
@@ -487,7 +500,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           -10,
-          -72
+          -80
         ]
       }
     },
@@ -499,7 +512,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           14,
-          -72
+          -80
         ]
       }
     },
@@ -511,7 +524,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           38,
-          -72
+          -80
         ]
       }
     },
@@ -523,7 +536,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           62,
-          -72
+          -80
         ]
       }
     },
@@ -535,7 +548,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           86,
-          -72
+          -80
         ]
       }
     },
@@ -547,7 +560,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           110,
-          -72
+          -80
         ]
       }
     },
@@ -559,7 +572,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           134,
-          -72
+          -80
         ]
       }
     },
@@ -571,7 +584,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           -10,
-          -98
+          -105
         ]
       }
     },
@@ -583,7 +596,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           14,
-          -98
+          -105
         ]
       }
     },
@@ -595,7 +608,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           38,
-          -98
+          -105
         ]
       }
     },
@@ -607,7 +620,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           62,
-          -98
+          -105
         ]
       }
     },
@@ -619,7 +632,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           86,
-          -98
+          -105
         ]
       }
     },
@@ -631,7 +644,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           110,
-          -98
+          -105
         ]
       }
     },
@@ -643,7 +656,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           134,
-          -98
+          -105
         ]
       }
     },
@@ -655,7 +668,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           -10,
-          -124
+          -130
         ]
       }
     },
@@ -667,7 +680,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           14,
-          -124
+          -130
         ]
       }
     },
@@ -679,7 +692,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           38,
-          -124
+          -130
         ]
       }
     },
@@ -691,7 +704,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           62,
-          -124
+          -130
         ]
       }
     },
@@ -703,7 +716,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           86,
-          -124
+          -130
         ]
       }
     },
@@ -715,7 +728,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           110,
-          -124
+          -130
         ]
       }
     },
@@ -727,7 +740,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           134,
-          -124
+          -130
         ]
       }
     },
@@ -739,7 +752,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           -10,
-          -150
+          -155
         ]
       }
     },
@@ -751,7 +764,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           14,
-          -150
+          -155
         ]
       }
     },
@@ -763,7 +776,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           38,
-          -150
+          -155
         ]
       }
     },
@@ -775,7 +788,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           62,
-          -150
+          -155
         ]
       }
     },
@@ -787,7 +800,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           86,
-          -150
+          -155
         ]
       }
     },
@@ -799,7 +812,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           110,
-          -150
+          -155
         ]
       }
     },
@@ -811,7 +824,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           134,
-          -150
+          -155
         ]
       }
     },
@@ -823,7 +836,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           -10,
-          -176
+          -180
         ]
       }
     },
@@ -835,7 +848,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           14,
-          -176
+          -180
         ]
       }
     },
@@ -847,7 +860,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           38,
-          -176
+          -180
         ]
       }
     },
@@ -859,7 +872,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           62,
-          -176
+          -180
         ]
       }
     },
@@ -871,7 +884,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           86,
-          -176
+          -180
         ]
       }
     },
@@ -883,7 +896,7 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           110,
-          -176
+          -180
         ]
       }
     },
@@ -895,7 +908,595 @@
         "image": "/interface/title/questionmark.png",
         "position": [
           134,
-          -176
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 42,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 43,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 44,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 45,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 46,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 47,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 48,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -30
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 49,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 50,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 51,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 52,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 53,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 54,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 55,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -55
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 56,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 57,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 58,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 59,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 60,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 61,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 62,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -80
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 63,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 64,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 65,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 66,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 67,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 68,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 69,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -105
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 70,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 71,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 72,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 73,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 74,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 75,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 76,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -130
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 77,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 78,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 79,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 80,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 81,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 82,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 83,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -155
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 84,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          482,
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 85,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          506,
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 86,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          530,
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 87,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          554,
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 88,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          578,
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 89,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          602,
+          -180
+        ]
+      }
+    },
+    {
+      "op": "add",
+      "path": "/paneLayout/species/buttons/-",
+      "value": {
+        "id": 90,
+        "image": "/interface/title/questionmark.png",
+        "position": [
+          626,
+          -180
         ]
       }
     },

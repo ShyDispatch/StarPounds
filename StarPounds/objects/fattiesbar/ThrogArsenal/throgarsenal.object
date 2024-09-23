@@ -70,10 +70,10 @@
   },
   "storeInventory" : {
     "weapons" : [
-    {"input": [["tungstenbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "caloriccrossbow"},
-    {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "aviandartgun"},
+	  {"input": [["tungstenbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "caloriccrossbow"},
+	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "aviandartgun"},
 	  {"input": [["titaniumbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "cultistdartgun"},
-    {"input": [["durasteelbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "apexdartgun"},
+	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["adiposeportion", 5]], "output": "apexdartgun"},
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["starpoundsliquidcalorium", 50]], "output": "caloricneedler"},
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["adipobeamcomponent", 1]], "output": "adipobeam"},
 	  {"input": [["durasteelbar", 6], ["copperbar", 4], ["depletedgaincrystal", 1]], "output": "gaincrystal"},
@@ -92,7 +92,14 @@
       "winch", "starpoundsmilkingtool", "starpoundspizzapda"
     ],
     "crafting" : [
-      "adiposeportion", "adipobeamcomponent", "depletedgaincrystal", "erchiusbloatcatalyzer", "meatberries", "onikillersake", "ponderouscore", "rootpopfroth"
+	  {"input": [["essence", 50]], "output": "adiposeportion"},
+	  {"input": [["essence", 500]], "output": "adipobeamcomponent"},
+	  {"input": [["essence", 500]], "output": "depletedgaincrystal"},
+	  {"input": [["essence", 500]], "output": "erchiusbloatcatalyzer"},
+	  {"input": [["essence", 500]], "output": "meatberries"},
+	  {"input": [["essence", 500]], "output": "onikillersake"},
+	  {"input": [["essence", 500]], "output": "ponderouscore"},
+	  {"input": [["essence", 500]], "output": "rootpopfroth"}
     ]
   }
 }

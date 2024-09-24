@@ -1,0 +1,88 @@
+{
+  "type" : "starpoundswubsvisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Big Panda",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/npcs/fattiesbar/visitors/starpoundswubsvisitor.lua"
+  ],
+
+  "scriptConfig" : {
+    "behavior" : "starpoundsapplepredator",
+
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_overrideSpecies": "wubs",
+    "starPounds_trait": "npc_predator",
+    "starPounds_skills": {
+      "minimumSize": [3, 3]
+    },
+    "starPounds_options": {
+      "disablePrey": true
+    },
+    "dialogMode": "tutorial",
+		"dialog": {
+      "attack" : "/dialog/vore.config:attack",
+      "reattack" : "/dialog/vore.config:reattack",
+      "killedTarget" : "/dialog/vore.config:killedTarget",
+      "lostTarget" : "/dialog/vore.config:lostTarget",
+      "outOfSight" : "/dialog/vore.config:outOfSight",
+      "cheerOn" : "/dialog/vore.config:cheerOn",
+      "cantReach" : "/dialog/vore.config:cantReach",
+			"converse": {
+				"default": {
+					"default": [
+            "-Todo-"
+					]
+				}
+			}
+		}
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpoundswubs",
+    "name": "^#884488;Wubs^reset;",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.2",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "bodyDirectives" : "?replace;c7815b=1f1f1f;ffe2c5=484b5c;ffc181=2e2f34;d39c6c=232426?replace;951500=aaafc1;be1b00=cdd3dc;dc1f00=efefef;f32200=ffffff",
+    "emoteDirectives" : "?replace;c7815b=1f1f1f;ffe2c5=484b5c;ffc181=2e2f34;d39c6c=232426?replace;951500=aaafc1;be1b00=cdd3dc;dc1f00=efefef;f32200=ffffff",
+    "hairDirectives" : "?replace;c7815b=1f1f1f;ffe2c5=484b5c;ffc181=2e2f34;d39c6c=232426?replace;951500=aaafc1;be1b00=cdd3dc;dc1f00=efefef;f32200=ffffff?replace;735e3a=26150f;a38d59=36241a;d9c189=4f3c2a;f7e7b2=725e45;"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+        }
+      ]]
+    ]
+  },
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "maxEnergy" : {
+        "baseValue" : 100.0
+      },
+      "knockbackStunTime" : {
+        "baseValue" : 0.1
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "itemName" : "aliposhead",
+  "price" : 0,
+  "inventoryIcon" : "icons.png:head",
+  "maxStack" : 1,
+  "rarity" : "Essential",
+  "category" : "headarmour",
+  "description" : "Derg.",
+  "shortdescription" : "Alipos Head",
+  "tooltipKind" : "armor",
+
+  "maleFrames" : "head.png",
+  "femaleFrames" : "head.png",
+  "mask" : "mask.png"
+}

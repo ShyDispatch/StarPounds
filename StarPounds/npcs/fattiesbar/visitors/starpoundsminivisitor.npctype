@@ -10,7 +10,7 @@
   ],
 
   "scriptConfig" : {
-    "behavior" : "starpoundsminivisitor",
+    "behavior" : "starpoundsapplepredator",
 
     "initialStorage": {
       "homePosition": [0,0]

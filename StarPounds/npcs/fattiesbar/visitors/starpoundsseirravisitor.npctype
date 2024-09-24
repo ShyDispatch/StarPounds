@@ -1,0 +1,64 @@
+{
+  "type" : "starpoundsseirravisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Hefty Wolf",
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_overrideSpecies": "seirra",
+    "starPounds_skills": {
+      "minimumSize": [3, 3]
+    },
+    "starPounds_options": {
+      "disablePrey": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+            "With so much good food here, I can hardly decide on where to start- I don't suppose you'd like to help?",
+            "I'll have my summer bod ready in no time here! And maybe a bit extra for good measure.",
+            "Have you seen the portions you can get here? They really know how to treat a lady!",
+            "Care to help a hungry gal out? I certainly wouldn't mind the help of a snack such as yourself~"
+					]
+				}
+			}
+		}
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpoundsmini/other/seirra",
+    "name": "^#4a6691;Seirra^reset;",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.5",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "bodyDirectives" : "?replace;c7815b=2a3a62;ffe2c5=6580ae;ffc181=4a6691;d39c6c=374e75?replace;951500=8487b0;be1b00=adb0d1;dc1f00=d2d4ef;f32200=e3e7fa",
+    "emoteDirectives" : "?replace;c7815b=2a3a62;ffe2c5=6580ae;ffc181=4a6691;d39c6c=374e75?replace;951500=8487b0;be1b00=adb0d1;dc1f00=d2d4ef;f32200=e3e7fa",
+    "hairDirectives" : "?replace;c7815b=2a3a62;ffe2c5=6580ae;ffc181=4a6691;d39c6c=374e75?replace;951500=8487b0;be1b00=adb0d1;dc1f00=d2d4ef;f32200=e3e7fa"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "chestCosmetic": [ { "name": "chubsterseirrachest", "parameters": {"tempSize": "chubster"} } ],
+          "legsCosmetic": [ { "name": "chubsterseirralegs", "parameters": {"tempSize": "chubster"} } ]
+        }
+      ]]
+    ]
+  }
+}

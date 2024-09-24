@@ -1,0 +1,65 @@
+{
+  "type" : "starpoundsaliposvisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Afthonia Priestess",
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_overrideSpecies": "alipos",
+    "starPounds_skills": {
+      "minimumSize": [4, 4]
+    },
+    "starPounds_options": {
+      "disablePrey": true
+    },
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+            "Afthonia's blessing upon you!",
+            "I must say this is quite different from the temple I'm used to, but the offerings are sufficient to say the least!",
+            "I can hardly move with all the offerings I've received here! Though, should you wish to pay tribute to our Goddess Afthonia, I am certain I could be gorged further with a little... effort.",
+            "It's so nice to see everyone here is well fed. There's little worse than an empty belly!"
+					]
+				}
+			}
+		}
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpoundsmini/other/alipos",
+    "name": "^#6a83b1;Alipos^reset;",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.5",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "bodyDirectives" : "?replace;6f2919=c7815b;a85636=d39c6c;e0975c=ffc181;ffca8a=ffe2c5;?replace;c7815b=354377;ffe2c5=829bc2;ffc181=6a83b1;d39c6c=4f6395?replace;951500=a37277;be1b00=bb9696;dc1f00=dfbdb8;f32200=f4dcda",
+    "emoteDirectives" : "?replace;c7815b=354377;ffe2c5=829bc2;ffc181=6a83b1;d39c6c=4f6395?replace;951500=a37277;be1b00=bb9696;dc1f00=dfbdb8;f32200=f4dcda",
+    "hairDirectives" : "?replace;c7815b=354377;ffe2c5=829bc2;ffc181=6a83b1;d39c6c=4f6395?replace;951500=a37277;be1b00=bb9696;dc1f00=dfbdb8;f32200=f4dcda"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "headCosmetic": [ { "name": "aliposhead" } ],
+          "chestCosmetic": [ { "name": "plumpaliposchest", "parameters": {"tempSize": "plump"} } ],
+          "legsCosmetic": [ { "name": "plumpaliposlegs", "parameters": {"tempSize": "plump"} } ]
+        }
+      ]]
+    ]
+  }
+}

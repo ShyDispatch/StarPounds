@@ -2477,6 +2477,7 @@ starPounds.toggleEnable = function()
 	starPounds.optionChanged = true
 	if not storage.starPounds.enabled then
 		starPounds.movementModifier = 1
+		starPounds.jumpModifier = 1
 		starPounds.equipCheck(starPounds.getSize(0))
 		world.sendEntityMessage(entity.id(), "starPounds.expire")
 		status.clearPersistentEffects("starpounds")

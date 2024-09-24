@@ -41,102 +41,11 @@
 
   "teleporterFootPosition" : [0, 1],
 
-  "scripts" : [ "2stoptele.lua" ],
+  "scripts" : [ "fattiesbarteleporter.lua" ],
   "scriptDelta" : 60,
 
   "spawnInterval" : [60, 180],
   "spawnOffset" : [0.5, 3.5],
 
-  "npctypes" : [
-    {
-      "type" : "starpoundsshydispatchvisitor",
-      "species" : [ "human" ]
-    },
-    {
-      "type" : "starpoundsapplevisitor",
-      "species" : [ "human" ]
-    },
-    {
-      "type" : "starpoundsblossomdancervisitor",
-      "species" : [ "floran" ]
-    },
-
-    {
-      "type" : "starpoundsminervisitor",
-      "species" : [ "human" ]
-    },
-    {
-      "type" : "starpoundsgluttonistvisitor",
-      "species" : [ "floran" ]
-    },
-    {
-      "type" : "starpoundsponderousvisitor",
-      "species" : [ "glitch" ]
-    },
-    {
-      "type" : "starpoundsvelhanufollowervisitor",
-      "species" : [ "avian" ]
-    },
-    {
-      "type" : "starpoundsminiknogvisitor",
-      "species" : [ "apex" ]
-    },
-    {
-      "type" : "starpoundsmootantvisitor",
-      "species" : [ "mootant" ]
-    },
-    {
-      "type" : "starpoundsscientistvisitor",
-      "species" : [ "human", "avian", "apex", "floran", "glitch", "hylotl" ]
-    },
-    {
-      "type" : "starpoundschefvisitor",
-      "species" : [ "human", "avian", "apex", "floran", "glitch", "hylotl" ]
-    },
-    {
-      "type" : "starpoundspenguinvisitor",
-      "species" : [ "penguin" ]
-    },
-    {
-      "type" : "feneroxvisitor",
-      "species" : [ "fenerox" ]
-    },
-    {
-      "type" : "froggvisitor",
-      "species" : [ "hylotl" ]
-    },
-    {
-      "type" : "alpacavisitor",
-      "species" : [ "human" ]
-    },
-
-    {
-      "type" : "starpoundstonauacvisitor",
-      "species" : [ "avian" ]
-    },
-    {
-      "type" : "starpoundscuiavisitor",
-      "species" : [ "avian" ]
-    },
-    {
-      "type" : "starpoundsdustyvisitor",
-      "species" : [ "novakid" ]
-    },
-    {
-      "type" : "starpoundsmamvisitor",
-      "species" : [ "human" ]
-    },
-    {
-      "type" : "starpoundsminivisitor",
-      "species" : [ "human" ]
-    },
-    {
-      "type" : "starpoundssusiehaltmannvisitor",
-      "species" : [ "human" ]
-    },
-    {
-      "type" : "spacethumperpilotvisitor",
-      "species" : [ "human" ]
-    }
-  ]
+  "npcTypes" : "/objects/fattiesbar/fattiesbarteleporter/npcs.config"
 }

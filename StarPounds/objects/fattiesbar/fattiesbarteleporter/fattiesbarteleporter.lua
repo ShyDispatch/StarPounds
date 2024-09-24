@@ -5,7 +5,10 @@ function init()
   self.spawnInterval = config.getParameter("spawnInterval")
   self.spawnPosition = vec2.add(entity.position(), config.getParameter("spawnOffset"))
 
-  self.types = config.getParameter("npctypes")
+  self.types = config.getParameter("npcTypes")
+  if type(self.types) == "string" then
+    self.types = root.assetJson(self.types)
+  end
 end
 
 function update(dt)

@@ -78,6 +78,10 @@ end
 
 function uninit()
   status.clearPersistentEffects("starpoundsslam")
+  if self.slamTimer > 0 then
+    tech.setParentState()
+    tech.setParentOffset({0, 0})
+  end
 end
 
 -- after the original ground jump has finished, start applying the new jump modifier

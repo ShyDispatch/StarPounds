@@ -228,12 +228,25 @@ function buildTraitPreview(traitType, trait)
   slotCount = math.min(slotCount, 5)
   _ENV[traitType.."TraitSkills"].columns = slotCount
   _ENV[traitType.."TraitSkills"]:setNumSlots(slotCount)
+  local refundExperience = 0
   for _, skill in ipairs(trait.skills or jarray()) do
     _ENV[traitType.."TraitSkills"]:setItem(slotPosition, {name = "starpoundsskill", count = 1, parameters = {skill = skill[1], level = skill[2]}})
     _ENV[traitType.."TraitSkills"].children[slotPosition].hideRarity = true
     slotPosition = slotPosition + 1
+    if traitType ~= "species" then
+      local currentSkillLevel = starPounds.getSkillLevel(skill[1])
+      local targetLevel = skill[2] or 1
+      local cost = skills[skill[1]].cost
+      for i = 1, targetLevel do
+        if currentSkillLevel >= i then
+          refundExperience = refundExperience + math.min(cost.base + (cost.increase or 0) * i, cost.max or math.huge)
+        end
+      end
+    end
   end
+  -- 50% refund on already obtained skills. Separate variable for refund as default trait experience is applied through setTrait.
   trait.refundExperience = math.ceil(refundExperience * 0.5)
+  trait.experience = (trait.experience or 0) + trait.refundExperience
   _ENV[traitType.."TraitSkills"]:setVisible(slotCount > 0)
   _ENV[traitType.."TraitSkillsLabel"]:setVisible(slotCount == 0)
   -- Default values for traitStats. (Starting weight/milk/XP)
@@ -250,6 +263,7 @@ function buildTraitPreview(traitType, trait)
     traitStats[#traitStats + 1] = string.format("^#%s;Starting Milk:", starPounds.stats.breastProduction.colour)
     traitStatValues[#traitStatValues + 1] = tostring(trait.breasts)
   end
+  if trait.experience > 0 then
     traitStats[#traitStats + 1] = string.format("^#%s;Starting XP:", starPounds.stats.experienceMultiplier.colour)
     traitStatValues[#traitStatValues + 1] = tostring(trait.experience)
   end

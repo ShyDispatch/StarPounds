@@ -577,6 +577,10 @@ starPounds.updateStats = function(force, dt)
 			airJumpModifier = starPounds.jumpModifier,
 			liquidJumpModifier = movementModifier
 		}
+		-- Silly, but better than updating modifiers every tick.
+		starPounds.controlModifiersAlt = (movementModifier < starPounds.settings.minimumAltSpeedMultiplier) and sb.jsonMerge(starPounds.controlModifiers, {
+			speedModifier = starPounds.settings.minimumAltSpeedMultiplier
+		}) or nil
 		starPounds.controlParameters = weightMultiplier == 1 and {} or {
 			mass = parameters.mass * weightMultiplier,
 			airForce = parameters.airForce * weightMultiplier,
@@ -595,7 +599,7 @@ starPounds.updateStats = function(force, dt)
 			starPounds.controlParameters = sb.jsonMerge(starPounds.controlParameters, (size.controlParameters[starPounds.getVisualSpecies()] or size.controlParameters.default))
 		end
 	end
-	mcontroller.controlModifiers(starPounds.controlModifiers)
+	mcontroller.controlModifiers((not starPounds.controlModifiersAlt or mcontroller.groundMovement()) and starPounds.controlModifiers or starPounds.controlModifiersAlt)
 	mcontroller.controlParameters(starPounds.controlParameters)
 end
 

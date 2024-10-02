@@ -1,0 +1,19 @@
+{
+  "name" : "starpoundsrocketboost",
+  "type" : "legs",
+
+  "scripts" : ["starpoundsrocketboost.lua"],
+  "animator" : "starpoundsrocketboost.animation",
+
+  "description" : "Use energy to propel yourself high into the air!",
+  "shortDescription" : "Throg Thruster",
+  "rarity" : "Legendary",
+  "icon" : "/tech/starpoundsrocketboost.png",
+
+  "chipCost" : 8,
+
+  "energyCost" : 10,
+  "energyCostPerSecond" : 100,
+  "boostSpeed" : 15,
+  "boostForce" : 75
+}

@@ -1,0 +1,43 @@
+{
+  "particleEmitters" : {
+    "boost" : {
+      "emissionRate" : 40.0,
+      "particles" : [
+        {
+          "particle" : "starpoundsrocketboost",
+          "offset" : [0, -0.5]
+        }
+      ]
+    },
+    "ember" : {
+      "emissionRate" : 100.0,
+      "particles" : [
+        {
+          "particle" : "starpoundsrocketboost2",
+          "offset" : [-0.15, -2.125]
+        },
+        {
+          "particle" : "starpoundsrocketboost2",
+          "offset" : [-0.15, -2.125]
+        },
+        {
+          "particle" : "starpoundsrocketboost3",
+          "offset" : [0.15, -2.125]
+        },
+        {
+          "particle" : "starpoundsrocketboost3",
+          "offset" : [0.15, -2.125]
+        },
+        {
+          "particle" : "starpoundsrocketboost4",
+          "offset" : [0.15, -2.125]
+        }
+      ]
+    }
+  },
+
+  "sounds" : {
+    "boostStart" : [ "/sfx/tech/tech_rocketjump_release.ogg" ],
+    "boost" : [ "/sfx/tech/mech_jetpack_loop3.ogg" ]
+  }
+}

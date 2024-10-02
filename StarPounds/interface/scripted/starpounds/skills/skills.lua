@@ -233,6 +233,7 @@ function buildTraitPreview(traitType, trait)
     _ENV[traitType.."TraitSkills"].children[slotPosition].hideRarity = true
     slotPosition = slotPosition + 1
   end
+  trait.refundExperience = math.ceil(refundExperience * 0.5)
   _ENV[traitType.."TraitSkills"]:setVisible(slotCount > 0)
   _ENV[traitType.."TraitSkillsLabel"]:setVisible(slotCount == 0)
   -- Default values for traitStats. (Starting weight/milk/XP)
@@ -249,7 +250,6 @@ function buildTraitPreview(traitType, trait)
     traitStats[#traitStats + 1] = string.format("^#%s;Starting Milk:", starPounds.stats.breastProduction.colour)
     traitStatValues[#traitStatValues + 1] = tostring(trait.breasts)
   end
-  if trait.experience then
     traitStats[#traitStats + 1] = string.format("^#%s;Starting XP:", starPounds.stats.experienceMultiplier.colour)
     traitStatValues[#traitStatValues + 1] = tostring(trait.experience)
   end
@@ -730,6 +730,7 @@ function setTrait(trait, isSpecies)
   if starPounds.setTrait(trait) then
     traitButtons(false)
     checkSkills()
+    starPounds.gainExperience(selectedTrait.refundExperience, nil, true)
     widget.playSound("/sfx/interface/crafting_medical.ogg")
   end
 end

@@ -1201,7 +1201,6 @@ starPounds.getDirectives = function(target)
 	local target = tonumber(target) or entity.id()
 	local directives = ""
 	-- Get entity species.
-	local species = world.entitySpecies(target)
 	local species = (target ~= entity.id()) and world.entitySpecies(target) or starPounds.getSpecies()
 	local speciesData = starPounds.getSpeciesData(species)
 	-- Generate a nude portrait.
@@ -1735,6 +1734,7 @@ starPounds.eatEntity = function(preyId, options, check)
 	if world.entityType(preyId) == "npc" then
 		if not contains(root.npcConfig(preyType).scripts or jarray(), "/scripts/starpounds/starpounds_npc.lua") then return false end
 		if world.getNpcScriptParameter(preyId, "starPounds_options", jarray()).disablePrey then return false end
+		if starPounds.type == "player" and starPounds.hasOption("disableCrewVore") and world.getNpcScriptParameter(preyId, "ownerUuid") ~= entity.uniqueId() then return false end
 	end
 
 	if world.entityDamageTeam(preyId).type == "ghostly" then return false end

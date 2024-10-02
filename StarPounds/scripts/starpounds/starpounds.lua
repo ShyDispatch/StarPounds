@@ -2509,6 +2509,17 @@ starPounds.reset = function()
 			end
 		end
 	end
+	-- Re-unlock default trait skills.
+	if starPounds.type == "monster" then
+		if not starPounds.getTrait() then
+			starPounds.setTrait(config.getParameter("starPounds_trait"))
+		end
+	else
+		local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default
+		for _, skill in ipairs(speciesTrait.skills or jarray()) do
+			starPounds.forceUnlockSkill(skill[1], skill[2])
+		end
+	end
 	return true
 end
 

@@ -1,0 +1,22 @@
+{
+  "kind" : "starpoundsrocketboost4",
+  "definition" : {
+    "type" : "ember",
+    "size" : 1.25,
+    "color" : [254, 253, 255, 255],
+    "fade" : 0.9,
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.25,
+    "initialVelocity" : [0, -15],
+    "finalVelocity" : [0, 0],
+    "approach" : [0.5, 20],
+    "timeToLive" : 0.1,
+    "collidesForeground": true,
+    "layer" : "back",
+    "variance" : {
+      "initialVelocity" : [1, 0],
+      "size" : 0.25,
+      "position" : [1, 1]
+    }
+  }
+}

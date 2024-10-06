@@ -1,0 +1,19 @@
+{
+  "kind" : "starpoundsrocketboost",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/rocketjump/rocketjump.animation?replace;00a3beba=7650c5ba;59e8ffba=b6a2e0ba;fffefeba=fefdffba;00a3be61=7650c561;59e8ff61=b6a2e061;fffefe61=fefdff61;00a3be2e=7650c52e;59e8ff2e=b6a2e02e;fffefe2e=fefdff2e",
+    "position" : [0, 0],
+    "finalVelocity" : [0, 0],
+    "approach" : [20, 20],
+    "fade" : 1,
+    "size" : 1,
+    "layer" : "back",
+    "light" : [91, 69, 138],
+    "timeToLive" : 0.5,
+    "variance" : {
+      "initialVelocity" : [2, 2],
+      "finalVelocity" : [0, 0]
+    }
+  }
+}

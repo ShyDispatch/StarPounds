@@ -566,16 +566,17 @@ starPounds.updateStats = function(force, dt)
 		end
 
 		starPounds.jumpModifier = math.max(starPounds.settings.minimumJumpMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("jumpPenalty")))
+		starPounds.swimModifier = math.max(starPounds.settings.minimumSwimMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("swimPenalty")))
 
 		local movementModifier = starPounds.movementModifier
 		local weightMultiplier = starPounds.weightMultiplier
 
 		starPounds.controlModifiers = weightMultiplier == 1 and {} or {
 			groundMovementModifier = movementModifier,
-			liquidMovementModifier = movementModifier,
+			liquidMovementModifier = starPounds.swimModifier,
 			speedModifier = movementModifier,
 			airJumpModifier = starPounds.jumpModifier,
-			liquidJumpModifier = movementModifier
+			liquidJumpModifier = starPounds.swimModifier
 		}
 		-- Silly, but better than updating modifiers every tick.
 		starPounds.controlModifiersAlt = (movementModifier < starPounds.settings.minimumAltSpeedMultiplier) and sb.jsonMerge(starPounds.controlModifiers, {

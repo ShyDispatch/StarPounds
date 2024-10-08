@@ -40,7 +40,7 @@ function init()
   barPadding:setVisible(not isAdmin)
   enableUpgrades = metagui.inputData.isObject or isAdmin
   selectedSkill = nil
-  setProgress(starPounds.experience, starPounds.level)
+  setProgress(starPounds.experience or starPounds.getData("experience"), starPounds.level or starPounds.getData("level"))
   -- Make the trait tab show first if we don't have one.
   if not (starPounds.getTrait() or starPounds.hasOption("lowerTraitTab")) then
     populateTraitTab()

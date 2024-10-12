@@ -57,12 +57,12 @@
   {
     "op": "add",
     "path": "/traits/duramerling",
-    "value": { "description": "Merling", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+    "value": { "description": "Merling", "stats": [ ["absorption", "mult", 1.25], ["swimPenalty", "sub", 0.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
     "path": "/traits/durasharkling",
-    "value": { "description": "Sharkling", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+    "value": { "description": "Sharkling", "stats": [ ["absorption", "mult", 1.25], ["swimPenalty", "sub", 0.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
@@ -72,7 +72,7 @@
   {
     "op": "add",
     "path": "/traits/mindflayer",
-    "value": { "description": "Mindflayer", "stats": [ ["experienceMultiplier", "add", 0.25], ["movement", "sub", 0.05] ], "skills": [ ["voreCritter", 1] ] }
+    "value": { "description": "Mindflayer", "stats": [ ["swimPenalty", "sub", 0.25], ["movement", "sub", 0.05] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
     "op": "add",
@@ -107,7 +107,7 @@
   {
     "op": "add",
     "path": "/traits/halfsea",
-    "value": { "description": "Halfsea", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["digestion", "mult", 0.8] ] }
+    "value": { "description": "Halfsea", "stats": [ ["movement", "add", 0.1, ["swimPenalty", "sub", 0.25], ["metabolism", "mult", 1.25] ] }
   },
   {
     "op": "add",
@@ -137,7 +137,7 @@
   {
     "op": "add",
     "path": "/traits/argonian",
-    "value": { "description": "Argonian", "stats": [ ["poisonResistance", "add", 0.2] ], "skills": [ ["poisonImmunity", 1] ] }
+    "value": { "description": "Argonian", "stats": [ ["poisonResistance", "add", 0.2], ["swimPenalty", "sub", 0.25] ], "skills": [ ["poisonImmunity", 1] ] }
   },
   {
     "op": "add",
@@ -157,7 +157,7 @@
   {
     "op": "add",
     "path": "/traits/vaporeon",
-    "value": { "description": "Vaporeon", "stats": [ ["absorption", "mult", 1.25], ["healing", "mult", 1.5], ["health", "mult", 0.8] ] }
+    "value": { "description": "Vaporeon", "stats": [ ["absorption", "mult", 1.25], ["swimPenalty", "sub", 0.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",

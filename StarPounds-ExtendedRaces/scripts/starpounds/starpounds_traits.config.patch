@@ -107,7 +107,7 @@
   {
     "op": "add",
     "path": "/traits/halfsea",
-    "value": { "description": "Halfsea", "stats": [ ["movement", "add", 0.1, ["swimPenalty", "sub", 0.25], ["metabolism", "mult", 1.25] ] }
+    "value": { "description": "Halfsea", "stats": [ ["movement", "add", 0.1], ["swimPenalty", "sub", 0.25], ["metabolism", "mult", 1.25] ] }
   },
   {
     "op": "add",

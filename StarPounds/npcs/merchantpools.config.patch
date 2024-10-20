@@ -79,5 +79,56 @@
         { "item": { "name": "accessorybox" }, "rarity" : 1.0 }
       ] ]
     ]
+  },
+  { "op" : "add",
+    "path" : "/accessoriesmerchant",
+    "value" : [
+      [ 0, [
+        { "item" : { "name" : "commonpendant" }, "rarity" : 0.75 },
+        { "item" : { "name" : "uncommonpendant" }, "rarity" : 0.5 },
+        { "item" : { "name" : "rarependant" }, "rarity" : 0.25 },
+        { "item" : { "name" : "commonring" }, "rarity" : 0.75 },
+        { "item" : { "name" : "uncommonring" }, "rarity" : 0.5 },
+        { "item" : { "name" : "rarering" }, "rarity" : 0.25 },
+        { "item" : { "name" : "commontrinket" }, "rarity" : 0.75 },
+        { "item" : { "name" : "uncommontrinket" }, "rarity" : 0.5 },
+        { "item" : { "name" : "raretrinket" }, "rarity" : 0.25 },
+        { "item" : { "name" : "belchpendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "cassandrapendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "keapendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "lotuspendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "mithrapendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "mooshipendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "predatorpendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rivierapendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "sweetdullpendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "treebuddypendant" }, "rarity" : 0.05 },
+        { "item" : { "name" : "apexring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "audreyring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "avianring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "blossomring" }, "rarity" : 0.01 },
+        { "item" : { "name" : "blubberbuttring" }, "rarity" : 0.01 },
+        { "item" : { "name" : "ferrianring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "feyrethring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "floranring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "glitchring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "gracering" }, "rarity" : 0.01 },
+        { "item" : { "name" : "humanring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "hylotlring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "lotusring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "mootantring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "novakidring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "throgring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "unfitbitring" }, "rarity" : 0.05 },
+        { "item" : { "name" : "angeltrinket" }, "rarity" : 0.05 },
+        { "item" : { "name" : "blueberrytrinket" }, "rarity" : 0.05 },
+        { "item" : { "name" : "cinditrinket" }, "rarity" : 0.05 },
+        { "item" : { "name" : "lotustrinket" }, "rarity" : 0.05 },
+        { "item" : { "name" : "minitrinket" }, "rarity" : 0.05 },
+        { "item" : { "name" : "rustedtrinket" }, "rarity" : 0.05 },
+        { "item" : { "name" : "accessorybox" }, "rarity" : 0.75 },
+        { "item" : { "name" : "uniqueaccessorybox" }, "rarity" : 0.25 }
+      ] ]
+    ]
   }
 ]

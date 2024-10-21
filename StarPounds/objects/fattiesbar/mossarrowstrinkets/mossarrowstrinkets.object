@@ -1,0 +1,119 @@
+{
+  "objectName" : "mossarrowstrinkets",
+  "colonyTags" : ["starpounds"],
+  "rarity" : "Common",
+  "category" : "other",
+  "description" : "Books owned by the Hylotl adventurer, Hiraki Corale.",
+  "shortdescription" : "MossArrow's Trinkets",
+  "race" : "glitch",
+  "printable" : false,
+
+  "apexDescription" : "These books belong to this Hylotl adventurer.",
+  "avianDescription" : "Quite a collection of books. This Hylotl must be an avid reader.",
+  "floranDescription" : "Floran ssseess boring booksss.",
+  "glitchDescription" : "Curious. A fine bundle of books. I wonder what they're about.",
+  "humanDescription" : "The Hylotl Adventurer sure has a lot of books.",
+  "hylotlDescription" : "These are, not what I was expecting from Hiraki Corale.",
+  "novakidDescription" : "Not too keen on the whole readin' thing.",
+  "throgDescription" : "Heh, I'm not one for reading. But I feel like these books might be an exception.",
+
+  "inventoryIcon" : "icon.png",
+  "orientations" : [
+    {
+      "image" : "mossarrowstrinkets.png:<color>",
+      "imagePosition" : [-8, 0],
+
+      "direction" : "right",
+
+      "frames" : 1,
+      "animationCycle" : 4.0,
+      "questIndicatorPosition" : [1.3, -4.5],
+
+      "spaceScan" : 0.1,
+      "interactiveSpaces": [
+        [-6, 0], [-5, 0], [-4, 0], [-3, 0], [-2, 0],
+        [-6, 1], [-5, 1], [-4, 1], [-3, 1], [-2, 1],
+        [-6, 2], [-5, 2], [-4, 2], [-3, 2], [-2, 2],
+        [-5, 3], [-4, 3], [-3, 3]
+      ],
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "uniqueId" : "mossarrowstrinkets",
+  
+  "scripts" : [ "mossarrowstrinkets.lua" ],
+  "scriptDelta" : 0,
+
+  "interactData" : {
+    "config" : "/interface/windowconfig/craftingmerchant.config",
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "MossArrow's Trinkets",
+        "subtitle" : " ^#b9b5b2;Offers new accessories every day!",
+        "icon" : {
+          "file" : "/interface/fattyshops/icons/starpoundsmossarrow.png"
+        }
+      }
+    },
+    "filter" : []
+  },
+  "rotationTime" : 8,
+  "selectCount" : 12,
+  "inventoryPool" : [
+    "commonpendant",
+    "commonpendant",
+    "commonpendant",
+    "uncommonpendant",
+    "uncommonpendant",
+    "rarependant",
+    "commonring",
+    "commonring",
+    "commonring",
+    "uncommonring",
+    "uncommonring",
+    "rarering",
+    "commontrinket",
+    "commontrinket",
+    "commontrinket",
+    "uncommontrinket",
+    "uncommontrinket",
+    "raretrink",
+    "belchpendant",
+    "cassandrapendant",
+    "keapendant",
+    "lotuspendant",
+    "mithrapendant",
+    "mooshipendant",
+    "predatorpendant",
+    "rivierapendant",
+    "sweetdullpendant",
+    "treebuddypendant",
+    "apexring",
+    "audreyring",
+    "avianring",
+    "blossomring",
+    "blubberbuttring",
+    "ferrianring",
+    "feyrethring",
+    "floranring",
+    "glitchring",
+    "gracering",
+    "humanring",
+    "hylotlring",
+    "lotusring",
+    "mootantring",
+    "novakidring",
+    "throgring",
+    "unfitbitring",
+    "angeltrinket",
+    "blueberrytrinket",
+    "cinditrinket",
+    "lotustrinket",
+    "minitrinket",
+    "rustedtrinket",
+    "accessorybox",
+    "accessorybox",
+    "uniqueaccessorybox"
+  ]
+}

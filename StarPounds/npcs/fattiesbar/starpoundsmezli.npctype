@@ -1,0 +1,92 @@
+{
+  "type" : "starpoundsmezli",
+  "baseType" : "villager",
+
+  "npcname" : "Tonauac",
+  "identity" : {
+    "imagePath" : "starpoundsmezli",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "fluffGroup" : "fluff",
+    "fluffType" : "1",
+    "beaksGroup" : "beaks",
+    "beaksType" : "1",
+    "personalityArmIdle": "idle.1",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "personalityIdle": "idle.2",
+    "species": "avian"
+  },
+
+  "damageTeamType" : "assistant",
+  "damageTeam" : 1,
+
+  "persistent" : true,
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_trait": "npc_alphaPredator",
+    "starPounds_options": {
+      "disablePrey": true,
+      "disableGain": true
+    },
+    "behavior" : "tonauacoutpost",
+
+    "behaviorConfig" : {
+      "blessings" : [
+        "regeneration1",
+        "glow",
+        "jumpboost",
+        "nofalldamage",
+        "rage",
+        "runboost",
+        "thorns"
+      ],
+      "blessingDuration" : 1800,
+      "rotationTime" : 86400
+    },
+
+    "chatPortrait" : "/interface/chatbubbles/tonauac.png:<frame>",
+    
+    "dialog" : {
+      "converse" : {
+        "default" : {
+          "default" : [
+            "This place is a wonder for gorging and indulgence. Though the Throgs aren't as kind as Velhanu's teachings."
+          ]
+        }
+      },
+      "bless" : {
+        "default" : {
+          "default" : [
+            "And Velhanu said, 'Enjoy the bounties of life, for it is meant to be a joyous one'",
+            "In the old text, no one ever went hungry under Velhanu.",
+            "May your waistline grow vast, and your appetite unending.",
+            "Let food you find be delicious and fattening."
+          ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "primary" : [
+              ""
+            ]
+          }
+        ] ]
+    ]
+  }
+}

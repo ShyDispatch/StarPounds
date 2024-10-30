@@ -18,5 +18,5 @@
   "maxStack" : 12,
   "itemAgingScripts" : ["/scripts/items/rotting.lua"],
   "rottingMultiplier" : 5.0,
-  "learnBlueprintsOnPickup" : [ "starpoundscookie" ]
+  "learnBlueprintsOnPickup" : [ "starpoundsgingercookie" ]
 }

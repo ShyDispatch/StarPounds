@@ -6,7 +6,7 @@
   "rarity" : "Legendary",
   "category" : "mysteriousReward",
   "description" : "Use this to open it and reveal its contents. How exciting!",
-  "shortdescription" : "Throgg Tribute Box",
+  "shortdescription" : "Throg Tribute Box",
   "twoHanded" : true,
 
   "inventoryIcon" : "uniqueaccessoryboxicon.png",

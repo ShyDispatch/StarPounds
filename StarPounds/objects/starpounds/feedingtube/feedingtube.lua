@@ -25,8 +25,6 @@ function init()
 	if liquidName then
 		defaultLiquid = {
 			name = liquidName,
-			food = self.drinkableVolume * (self.drinkables[liquidName] or 0),
-			bloat = math.max(0, self.drinkableVolume - (self.drinkables[liquidName] or 0)),
 			statusEffects = root.liquidConfig(liquidName).config.statusEffects or jarray(),
 			item = root.liquidConfig(liquidName).config.itemDrop
 		}
@@ -63,8 +61,8 @@ function update(dt)
 					animator.playSound("drink")
 					storage.amount = math.max(0, storage.amount - 1)
 					setLiquidLevel(storage.amount)
-					world.sendEntityMessage(feedTarget, "starPounds.feed", storage.liquid.food)
-					world.sendEntityMessage(feedTarget, "starPounds.gainBloat", storage.liquid.bloat)
+					world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinkableVolume * (self.drinkables[storage.liquid.name] or 0), "liquidFood")
+					world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinkableVolume * (1 - (self.drinkables[storage.liquid.name] or 0)), "liquid")
 					for _, statusEffect in pairs(storage.liquid.statusEffects) do
 						if not contains(self.statusBlacklist, statusEffect) then
 							world.sendEntityMessage(feedTarget, "applyStatusEffect", statusEffect)
@@ -134,8 +132,6 @@ function findLiquidDrops()
 					if itemDrop then
 						storage.liquid = {
 							name = liquidName,
-							food = self.drinkableVolume * (self.drinkables[liquidName] or 0),
-							bloat = math.max(0, self.drinkableVolume - self.drinkableVolume * (self.drinkables[liquidName] or 0)),
 							statusEffects = root.liquidConfig(liquidName).config.statusEffects or jarray(),
 							item = item.name
 						}

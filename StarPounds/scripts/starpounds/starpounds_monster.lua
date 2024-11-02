@@ -49,14 +49,15 @@ function starPoundsInit()
 	end
 
 	starPounds.parseSkills()
+	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.parseEffectStats(1)
+	starPounds.parseStatusEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant()
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
-	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)
+	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/entity.weight), 1)
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
@@ -90,7 +91,8 @@ function update(dt)
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
 	-- Stat/status updating stuff.
-	starPounds.parseEffectStats(dt)
+	starPounds.updateEffects(dt)
+	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStatuses()
 	starPounds.optionChanged = false
 end
@@ -110,17 +112,14 @@ function makeOverrideFunction()
 			entity.setDamageOnTouch = monster.setDamageOnTouch
 			entity.setDamageSources = monster.setDamageSources
 			entity.setDamageTeam = monster.setDamageTeam
-			-- Monsters cause a lot of bloat to make the stomach look full, but not be too overpowered for food.
 			local boundBox = mcontroller.boundBox()
 			local monsterArea = math.abs(boundBox[1]) + math.abs(boundBox[3]) * math.abs(boundBox[2]) + math.abs(boundBox[4])
-			entity.bloat = math.round(monsterArea * starPounds.settings.voreMonsterBloat)
 			entity.weight = math.min(math.round(monsterArea * starPounds.settings.voreMonsterFood), starPounds.settings.voreMonsterFoodCap)
 			local deathActions = config.getParameter("behaviorConfig.deathActions", {})
 			-- Remove base weight if the monster is 'replaced'.
 			for _, action in ipairs(deathActions) do
 				if action.name == "action-spawnmonster" and action.parameters.replacement then
-						entity.bloat = 0
-						entity.weight = 0
+					entity.weight = 0
 				end
 			end
 			for _, action in ipairs(deathActions) do
@@ -128,19 +127,17 @@ function makeOverrideFunction()
 					local monsterPoly = root.monsterParameters(action.parameters.monsterType).movementSettings.collisionPoly
 					local boundBox = util.boundBox(monsterPoly)
 					local monsterArea = math.abs(boundBox[1]) + math.abs(boundBox[3]) * math.abs(boundBox[2]) + math.abs(boundBox[4])
-					entity.bloat = entity.bloat + math.round(monsterArea * 20)
-					entity.weight = entity.weight + math.min(math.round(monsterArea * 10), 50)
+					entity.weight = entity.weight + math.min(math.round(monsterArea * starPounds.settings.voreMonsterFood), starPounds.settings.voreMonsterFoodCap)
 				end
 			end
-			entity.experience = entity.weight * starPounds.settings.monsterExperienceMultiplier
-			-- No XP if the monster is a pet (prevents infinite XP).
-			if (capturable and (capturable.tetherUniqueId() or capturable.ownerUuid())) then
-				entity.experience = 0
-			end
-			-- Robotic monsters only give bloat, but still give XP.
+			-- Robotic monsters don't give food.
+			entity.foodType = "preyMonster"
 			if status.statusProperty("targetMaterialKind") == "robotic" then
-				entity.bloat = entity.bloat + entity.weight
-				entity.weight = 0
+				entity.foodType = "preyMonsterInedible"
+			end
+			-- No XP if the monster is a pet (prevents infinite XP). Using configParameter instead of hasOption because default options aren't merged yet when this runs.
+			if config.getParameter("starPounds_options.disableExperience") or (capturable and (capturable.tetherUniqueId() or capturable.ownerUuid())) then
+				entity.foodType = entity.foodType.."_noExperience"
 			end
 			-- Monsters don't have a food stat, and trying to adjust it crashes the script.
 			starPounds.feed = starPounds.eat
@@ -156,7 +153,6 @@ function makeOverrideFunction()
 			starPounds.equipSize = nullFunction
 			starPounds.equipCheck = nullFunction
 			starPounds.updateStats = nullFunction
-			starPounds.gainBloat = nullFunction
 			starPounds.gainWeight = nullFunction
 			starPounds.loseWeight = nullFunction
 			starPounds.setWeight = nullFunction

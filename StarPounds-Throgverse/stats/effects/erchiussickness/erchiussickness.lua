@@ -35,7 +35,7 @@ function update(dt)
 
   status.modifyResource("health", -self.dps * dt)
   if self.bps > 0 then
-    world.sendEntityMessage(entity.id(), "starPounds.gainBloat", self.bps * dt)
+    world.sendEntityMessage(entity.id(), "starPounds.feed", self.bps * dt, "bloat")
   end
 
   local monsterPosition = self.findMonster()

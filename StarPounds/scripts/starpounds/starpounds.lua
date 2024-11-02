@@ -10,8 +10,10 @@ starPounds = {
 	settings = root.assetJson("/scripts/starpounds/starpounds.config:settings"),
 	sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes"),
 	stats = root.assetJson("/scripts/starpounds/starpounds_stats.config"),
+	foods = root.assetJson("/scripts/starpounds/starpounds_foods.config"),
 	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills"),
 	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits"),
+	effects = root.assetJson("/scripts/starpounds/starpounds_effects.config:effects"),
 	selectableTraits = root.assetJson("/scripts/starpounds/starpounds_traits.config:selectableTraits"),
 	species = root.assetJson("/scripts/starpounds/starpounds_species.config"),
 	baseData = root.assetJson("/scripts/starpounds/starpounds.config:baseData")
@@ -27,14 +29,14 @@ starPounds.getData = function(key)
 	return storage.starPounds
 end
 
-starPounds.digest = function(dt, isGurgle, bloatMultiplier)
+starPounds.digest = function(dt, isGurgle, isBelch)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	dt = math.max(tonumber(dt) or 0, 0)
 	if dt == 0 then return end
-	bloatMultiplier = tonumber(bloatMultiplier) or 1
-
+	-- A bit silly.
+	isBelch = isGurgle and isBelch
 	-- Rumbles. (Outside of the other block, because we still want them to happen without food if the rumble rate is above 0)
 	if not starPounds.hasOption("disableRumbles") then
 		if (starPounds.stomach.contents + starPounds.getStat("baseRumbleRate")) > 0 then
@@ -52,7 +54,8 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 	end
 
 	-- Don't do anything if stomach is empty.
-	if starPounds.stomach.contents == 0 then
+	if starPounds.stomach.amount == 0 then
+		starPounds.digestTimer = 0
 		starPounds.voreDigestTimer = 0
 		starPounds.gurgleTimer = nil
 		if starPounds.getStat("baseRumbleRate") == 0 then starPounds.rumbleTimer = nil end
@@ -87,76 +90,111 @@ starPounds.digest = function(dt, isGurgle, bloatMultiplier)
 		end
 	end
 
-	local food = storage.starPounds.stomach
-	local bloat = storage.starPounds.bloat
-	local absorption = starPounds.getStat("absorption")
-	local foodValue = starPounds.getStat("foodValue")
-	local digestion = starPounds.getStat("digestion")
-	local bloatDigestion = starPounds.getStat("bloatDigestion")
-	-- Skip the rest if there's nothing to digest.
-	if (food == 0 or digestion == 0) and (bloat == 0 or bloatDigestion == 0) then return end
-	-- Split between food and bloat.
-	local foodRatio = math.min(math.max(math.round(food/(food + bloat), 2), (food > 0) and 0.05 or 0), (bloat > 0) and 0.95 or 1)
-	-- Amount is 1 + 1% of food value, or the remaining food value.
-	local baseAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * digestion) * foodRatio
-	local amount = math.min(math.round(baseAmount * dt, 4), food)
-	storage.starPounds.stomach = math.round(math.max(food - amount, 0), 3)
-	-- Ditto for bloat.
-	local baseBloatAmount = (food * starPounds.settings.digestionPercent + starPounds.settings.digestionBase * bloatDigestion) * (1 - foodRatio) * bloatMultiplier
-	local bloatAmount = math.min(math.round(baseBloatAmount * dt, 4), bloat)
-	storage.starPounds.bloat = math.round(math.max(bloat - bloatAmount, 0), 3)
-	-- Don't need to run the rest if there's no actual food.
-	if amount == 0 then return end
-	-- Subtract food used to fill up hunger from weight gain.
-	if status.isResource("food") then
-		-- Food for weight gain reduced by up to half when filling hunger.
-		local foodAmount = math.min(status.resourceMax("food") - status.resource("food"), amount)
-		amount = math.round(amount - (foodAmount/2), 4)
-		status.giveResource("food", foodAmount * foodValue + (not isGurgle and math.abs(math.min(status.stat("foodDelta") * dt, 0)) or 0))
+	-- Timer overrun incase function is called directly with multiple seconds.
+	local diff = math.abs(math.min((starPounds.digestTimer or 0) - dt, 0))
+	starPounds.digestTimer = math.max((starPounds.digestTimer or 0) - dt, 0)
+	if starPounds.digestTimer == 0 then
+		starPounds.digestTimer = starPounds.settings.digestTimer
+		local seconds = starPounds.settings.digestTimer + diff
+
+		local absorption = starPounds.getStat("absorption")
+		local foodValue = starPounds.getStat("foodValue")
+		local healing = starPounds.getStat("healing")
+		local digestionEnergy = starPounds.getStat("digestionEnergy")
+		local breastEfficiency = starPounds.getStat("breastEfficiency")
+
+		local maxHealth = status.resourceMax("health")
+		local maxEnergy = status.isResource("energy") and status.resourceMax("energy") or 0
+		local maxFood = status.isResource("food") and status.resourceMax("food") or 0
+		local foodDelta = status.stat("foodDelta")
+
+		local stomachContents = starPounds.stomach.contents or starPounds.getStomach().contents
+		local digestionStatCache = {}
+		-- Iterate through food types
+		for foodType, amount in pairs(storage.starPounds.stomachContents) do
+			if starPounds.foods[foodType] and (storage.starPounds.stomachContents[foodType] > 0) then
+				local foodConfig = starPounds.foods[foodType]
+				local ratio = 1
+				if not foodConfig.ignoreCapacity then
+					ratio = math.max(math.round((amount * foodConfig.multipliers.capacity) / stomachContents, 2), 0.05)
+				end
+				-- Add up all the digestion stats.
+				local digestionRate = 0
+				for _, digestStat in ipairs(foodConfig.digestionStats) do
+					-- Cache the stat for other food types
+					if not digestionStatCache[digestStat[1]] then
+						digestionStatCache[digestStat[1]] = starPounds.getStat(digestStat[1])
+					end
+					digestionRate = digestionRate + digestionStatCache[digestStat[1]] * digestStat[2]
+				end
+				-- Bonus digestion for belches.
+				if isBelch and foodConfig.multipliers.belch > 0 then
+					digestionRate = digestionRate + digestionRate * foodConfig.multipliers.belch
+				end
+				local digestAmount = math.min(amount, math.round(digestionRate * ratio * seconds * (starPounds.settings.digestionBase + amount * starPounds.settings.digestionPercent), 4))
+				starPounds.digestionExperience = (starPounds.digestionExperience or 0) + digestAmount * foodConfig.multipliers.experience
+				storage.starPounds.stomachContents[foodType] = math.round(math.max(amount - digestAmount, 0), 3)
+				-- Subtract food used to fill up hunger from weight gain.
+				if status.isResource("food") and (foodConfig.multipliers.food > 0) then
+					local foodAmount = math.min(maxFood - status.resource("food"), digestAmount)
+					-- Stops the player losing hunger while they digest food.
+					local foodDeltaDiff = not isGurgle and math.abs(math.min(foodDelta * seconds, 0)) or 0
+					status.giveResource("food", foodAmount * foodValue * foodConfig.multipliers.food + foodDeltaDiff)
+				end
+
+				local milkProduced, milkCost = starPounds.milkProduction(digestAmount * absorption)
+				starPounds.gainMilk(milkProduced)
+				-- Gain weight based on amount digested, milk production, and digestion efficiency.
+				starPounds.gainWeight((digestAmount * absorption * foodConfig.multipliers.weight) - (milkCost/math.max(1, breastEfficiency)))
+				-- Don't heal if eaten.
+				if not storage.starPounds.pred then
+					-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
+					if status.resourcePositive("health") then
+						local healBaseAmount = digestAmount * absorption * foodConfig.multipliers.healing
+						local healAmount = math.min(healBaseAmount * healing * starPounds.settings.healingRatio, maxHealth * starPounds.settings.healingCap)
+						status.modifyResource("health", healAmount)
+						-- Energy regenerates faster than health, and energy lock time gets reduced.
+						if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and digestionEnergy > 0 then
+							local energyAmount = math.min(healBaseAmount * digestionEnergy * starPounds.settings.energyRatio, maxEnergy * starPounds.settings.energyCap)
+							if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
+								status.modifyResource("energy", energyAmount)
+							end
+							-- Energy regen block is capped at 2x the speed (decreases by the delta). Does not happen while strained.
+							if not starPounds.strained then
+								status.modifyResource("energyRegenBlock", math.max(-digestAmount * absorption * digestionEnergy, -seconds))
+							end
+						end
+					end
+				end
+			end
+		end
+
+		starPounds.digestionExperience = starPounds.digestionExperience or 0
+		local gainedExperience = math.floor(starPounds.digestionExperience)
+		starPounds.digestionExperience = starPounds.digestionExperience - gainedExperience
+		starPounds.gainExperience(gainedExperience)
 	end
-	-- Don't need to run the rest if there's no actual food after we divert some to hunger.
-	if amount == 0 then return end
+end
+
+starPounds.milkProduction = function(food)
 	local milkCost = 0
+	local milkProduced = 0
 	if (starPounds.getStat("breastProduction") > 0) and (starPounds.getStat("breastEfficiency") > 0) and not starPounds.hasOption("disableMilkGain") then
 		local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type]
-		local milkProduced = 0
 		local milkCurrent = storage.starPounds.breasts
 		local milkCapacity = starPounds.breasts.capacity
 		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
 		if starPounds.breasts.contents < maxCapacity then
-			milkCost = amount * absorption * starPounds.getStat("breastProduction")
+			milkCost = food * starPounds.getStat("breastProduction")
 			milkProduced = math.round((milkCost/milkValue) * math.min(1, starPounds.getStat("breastEfficiency")), 4)
 			if (milkCapacity - milkCurrent) < milkProduced then
 				-- Free after you've maxed out capacity, but you only gain a third as much.
 				milkProduced = math.min(math.max((milkCapacity - milkCurrent), milkProduced/3), maxCapacity - milkCurrent)
 				milkCost = math.max(0, milkCapacity - milkCurrent) * milkValue
 			end
-			starPounds.gainMilk(milkProduced)
 		end
 	end
-	-- Gain weight based on amount digested, milk production, and digestion efficiency.
-	starPounds.gainWeight((amount * absorption) - (milkCost/math.max(1, starPounds.getStat("breastEfficiency"))))
-	-- Don't heal if eaten.
-	if not storage.starPounds.pred then
-		-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
-		if status.resourcePositive("health") then
-			local healBaseAmount = amount * absorption
-			local healAmount = math.min(healBaseAmount * starPounds.getStat("healing") * starPounds.settings.healingRatio, status.resourceMax("health") * starPounds.settings.healingCap)
-			status.modifyResource("health", healAmount)
-			-- Energy regenerates faster than health, and energy lock time gets reduced.
-			local digestionEnergy = starPounds.getStat("digestionEnergy")
-			if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and digestionEnergy > 0 then
-				local energyAmount = math.min(healBaseAmount * digestionEnergy * starPounds.settings.energyRatio, status.resourceMax("energy") * starPounds.settings.energyCap)
-				if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
-					status.modifyResource("energy", energyAmount)
-				end
-				-- Energy regen block is capped at 2x the speed (decreases by the delta). Does not happen while strained.
-				if not starPounds.strained then
-					status.modifyResource("energyRegenBlock", math.max(-amount * absorption * digestionEnergy, -dt))
-				end
-			end
-		end
-	end
+	return milkProduced, milkCost
 end
 
 starPounds.gurgle = function(noDigest)
@@ -167,16 +205,16 @@ starPounds.gurgle = function(noDigest)
 	-- Instantly digest 1 - 3 seconds worth of food.
 	local seconds = starPounds.getStat("gurgleAmount") * math.random(100, 300)/100
 	if not noDigest then
-		-- Chance to belch if they have bloat.
-		local bloat = storage.starPounds.bloat
-		local bloatMultiplier = 0
-		if starPounds.getStat("belchChance") > math.random() and bloat > 0 and starPounds.getStat("bloatDigestion") > 0 then
-			-- Every 100 bloat pitches the sound down and volume up by 10%, max 25%
-			local belchMultiplier = math.min(bloat/1000, 0.25)
-			bloatMultiplier = starPounds.getStat("belchAmount")
+		-- Chance to belch.
+		local isBelch = false
+		local belchable = starPounds.stomach.belchable
+		if starPounds.getStat("belchChance") > math.random() and belchable > 0 then
+			isBelch = true
+			-- Every 100 pitches the sound down and volume up by 10%, max 25%.
+			local belchMultiplier = math.min(belchable/1000, 0.25)
 			starPounds.belch(0.5 + belchMultiplier, starPounds.belchPitch(1 - belchMultiplier))
 		end
-		starPounds.digest(seconds, true, bloatMultiplier)
+		starPounds.digest(seconds, true, isBelch)
 	end
 	if not starPounds.hasOption("disableGurgleSounds") then
 		world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, (2 - seconds/5) - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
@@ -278,7 +316,7 @@ starPounds.slosh = function(dt)
 	-- Check for relevant skill.
 	if not starPounds.hasSkill("sloshing") then return end
 	-- Skip if nothing in stomach.
-	if starPounds.stomach.contents == 0 then return end
+	if starPounds.stomach.amount == 0 then return end
 	-- Only works with energy.
 	if status.isResource("energy") and status.resourceLocked("energy") then return end
 	local crouching = mcontroller.crouching()
@@ -419,9 +457,8 @@ starPounds.drink = function(dt)
 			drinkTimer = 1/(1 + drinkCounter)
 			-- Add to entities's stomach based on liquid consumed.
 			local foodAmount = starPounds.settings.drinkableVolume * (starPounds.settings.drinkables[root.liquidName(consumedLiquid[1])] or 0)
-			local bloatAmount = math.max(0, starPounds.settings.drinkableVolume - foodAmount)
-			starPounds.feed(foodAmount * consumedLiquid[2])
-			starPounds.gainBloat(bloatAmount * consumedLiquid[2], true)
+			starPounds.feed(foodAmount * consumedLiquid[2], "liquidFood")
+			starPounds.feed(math.max(0, starPounds.settings.drinkableVolume - foodAmount) * consumedLiquid[2], "liquid")
 			-- Play drinking sound. Volume increased by amount of liquid consumed.
 			world.sendEntityMessage(entity.id(), "starPounds.playSound", "drink", 0.5 + 0.5 * consumedLiquid[2], math.random(8, 12)/10)
 		end
@@ -438,21 +475,32 @@ end
 
 starPounds.updateFoodItem = function(item)
 	if configParameter(item, "foodValue") and not configParameter(item, "starpounds_effectApplied", false) then
-		local experienceRatio = starPounds.settings.foodExperienceMultipliers
+		local experienceBonus = starPounds.settings.foodExperienceBonus
 		local effects = configParameter(item, "effects", jarray())
 
 		if not effects[1] then
 			table.insert(effects, jarray())
 		end
 
-		table.insert(effects[1], {effect = "starpoundsfood", duration = configParameter(item, "foodValue", 0)})
-		if not configParameter(item, "starpounds_disableExperience", false) then
-			table.insert(effects[1], {effect = "starpoundsexperience", duration = configParameter(item, "foodValue", 0) * experienceRatio[string.lower(configParameter(item, "rarity", "common"))]})
+		-- Set the food type.
+		local category = configParameter(item, "category", ""):lower()
+		local foodType = (category == "drink") and "drink" or "food"
+		local foodValue = configParameter(item, "foodValue", 0)
+		local disableExperience = configParameter(item, "starpounds_disableExperience", false)
+
+		local rarity = configParameter(item, "rarity", "common"):lower()
+		local bonusExperience = foodValue * (experienceBonus[rarity] or 0)
+		table.insert(effects[1], {
+			effect = string.format("starpoundsfood_%sitem%s", foodType, disableExperience and "_noexperience" or ""),
+			duration = foodValue
+		})
+		if not disableExperience and bonusExperience > 0 then
+			table.insert(effects[1], {effect = "starpoundsfood_bonusexperience", duration = bonusExperience})
 		end
 
 		item.parameters.starpounds_effectApplied = true
 		item.parameters.effects = effects
-		item.parameters.starpounds_foodValue = configParameter(item, "foodValue", 0)
+		item.parameters.starpounds_foodValue = foodValue
 		item.parameters.foodValue = 0
 
 		return item
@@ -515,7 +563,7 @@ starPounds.updateStats = function(force, dt)
 		local gritReduction = status.stat("activeMovementAbilities") <= 1 and -((starPounds.weightMultiplier - 1) * math.max(0, 1 - starPounds.getStat("knockbackResistance"))) or 0
 		local persistentEffects = {
 			{stat = "maxHealth", baseMultiplier = math.round(1 + size.healthBonus * starPounds.getStat("health"), 2)},
-			{stat = "foodDelta", effectiveMultiplier = ((storage.starPounds.stomach > 0) or starPounds.hasOption("disableHunger")) and 0 or math.round(starPounds.getStat("hunger"), 2)},
+			{stat = "foodDelta", effectiveMultiplier = ((starPounds.stomach.food > 0) or starPounds.hasOption("disableHunger")) and 0 or math.round(starPounds.getStat("hunger"), 2)},
 			{stat = "grit", amount = gritReduction},
 			{stat = "shieldHealth", effectiveMultiplier = 1 + starPounds.getStat("shieldHealth") * bonusEffectiveness},
 			{stat = "knockbackThreshold", effectiveMultiplier = 1 - gritReduction},
@@ -563,10 +611,12 @@ starPounds.updateStats = function(force, dt)
 
 		if size.movementPenalty >= 1 then
 			starPounds.movementModifier = 0
+			starPounds.jumpModifier = starPounds.settings.minimumJumpMultiplier
+			starPounds.swimModifier = starPounds.settings.minimumSwimMultiplier
+		else
+			starPounds.jumpModifier = math.max(starPounds.settings.minimumJumpMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("jumpPenalty")))
+			starPounds.swimModifier = math.max(starPounds.settings.minimumSwimMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("swimPenalty")))
 		end
-
-		starPounds.jumpModifier = math.max(starPounds.settings.minimumJumpMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("jumpPenalty")))
-		starPounds.swimModifier = math.max(starPounds.settings.minimumSwimMultiplier, 1 - ((1 - starPounds.movementModifier) * starPounds.getStat("swimPenalty")))
 
 		local movementModifier = starPounds.movementModifier
 		local weightMultiplier = starPounds.weightMultiplier
@@ -732,12 +782,14 @@ starPounds.getStat = function(stat)
 		local accessoryBonus = (starPounds.stats[stat].base ~= 0 and starPounds.stats[stat].base or 1) * starPounds.getAccessoryModifiers(stat)
 		-- Base stat + Skill bonuses + Accessory bonuses.
 		local statAmount = starPounds.stats[stat].base + starPounds.getSkillBonus(stat) + accessoryBonus
-		-- Trait multiplier + Trait bonus
-		statAmount = statAmount * starPounds.getTraitMultiplier(stat) + starPounds.getTraitBonus(stat)
+		-- Trait multiplier and effect multiplier.
+		statAmount = statAmount * starPounds.getTraitMultiplier(stat) * starPounds.getEffectMultiplier(stat)
+		-- Trait bonus and effect bonus
+		statAmount = statAmount + starPounds.getTraitBonus(stat) + starPounds.getEffectBonus(stat)
 		-- Override stat. (Used for legacy BF option)
 		statAmount = starPounds.getOptionsOverride(stat) or statAmount
 		-- Status effect multipliers and bonuses.
-		statAmount = statAmount * starPounds.getEffectMultiplier(stat) + starPounds.getEffectBonus(stat)
+		statAmount = statAmount * starPounds.getStatusEffectMultiplier(stat) + starPounds.getStatusEffectBonus(stat)
 		-- Option multipliers.
 		statAmount = statAmount * starPounds.getOptionsMultiplier(stat)
 		-- Cap the stat between 0 and it's maxValue.
@@ -789,6 +841,7 @@ starPounds.upgradeSkill = function(skill, cost)
 	storage.starPounds.experience = math.round(experienceProgress * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
 	starPounds.gainExperience()
 	starPounds.parseSkills()
+	starPounds.parseStats()
 	starPounds.updateStats(true)
 	starPounds.optionChanged = true
 end
@@ -806,6 +859,7 @@ starPounds.forceUnlockSkill = function(skill, level)
 		storage.starPounds.skills[skill][2] = math.max(level, starPounds.getSkillUnlockedLevel(skill))
 	end
 	starPounds.parseSkills()
+	starPounds.parseStats()
 	-- Update stats if we're already up and running.
 	if starPounds.currentSize then
 	 	starPounds.updateStats(true)
@@ -825,11 +879,13 @@ starPounds.setSkill = function(skill, level)
 		storage.starPounds.skills[skill][1] = math.max(math.min(level, starPounds.getSkillUnlockedLevel(skill)), 0)
 	end
 	starPounds.parseSkills()
+	starPounds.parseStats()
 	starPounds.updateStats(true)
 	starPounds.optionChanged = true
 end
 
 starPounds.parseStats = function()
+	-- Skill stats
 	storage.starPounds.stats = {}
 	for skillName in pairs(storage.starPounds.skills) do
 		local skill = starPounds.skills[skillName]
@@ -843,6 +899,7 @@ starPounds.parseStats = function()
 		end
 	end
 
+	-- Trait Stats
 	storage.starPounds.traitStats = {}
 	local selectedTrait = starPounds.traits[starPounds.getTrait() or "default"]
 	local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default
@@ -855,6 +912,24 @@ starPounds.parseStats = function()
 				storage.starPounds.traitStats[stat[1]][1] = storage.starPounds.traitStats[stat[1]][1] - stat[3]
 			elseif stat[2] == "mult" then
 				storage.starPounds.traitStats[stat[1]][2] = storage.starPounds.traitStats[stat[1]][2] * stat[3]
+			end
+		end
+	end
+
+	-- Effect stats
+	starPounds.effectStats = {}
+	for effectName, effectData in pairs(storage.starPounds.effects) do
+		local effectConfig = starPounds.effects[effectName]
+		if effectConfig then
+			for _, stat in ipairs(effectConfig.stats or jarray()) do
+				starPounds.effectStats[stat[1]] = starPounds.effectStats[stat[1]] or {0, 1}
+				if stat[2] == "add" then
+					starPounds.effectStats[stat[1]][1] = starPounds.effectStats[stat[1]][1] + stat[3] + (effectData.level - 1) * (stat[4] or 0)
+				elseif stat[2] == "sub" then
+					starPounds.effectStats[stat[1]][1] = starPounds.effectStats[stat[1]][1] - (stat[3] + (effectData.level - 1) * (stat[4] or 0))
+				elseif stat[2] == "mult" then
+					starPounds.effectStats[stat[1]][2] = starPounds.effectStats[stat[1]][2] * stat[3] + (effectData.level - 1) * (stat[4] or 0)
+				end
 			end
 		end
 	end
@@ -876,7 +951,6 @@ starPounds.parseSkills = function()
 	end
 	-- This is stupid, but prevents 'null' data being saved.
 	getmetatable(storage.starPounds.skills).__nils = {}
-	starPounds.parseStats()
 end
 
 starPounds.getTrait = function()
@@ -925,7 +999,7 @@ starPounds.setTrait = function(trait)
 			player.giveItem(item)
 		end
 	end
-	-- Refresh trait stats.
+	-- Refresh stats.
 	starPounds.parseStats()
 	-- Set the trait successfully.
 	return true
@@ -933,7 +1007,101 @@ end
 
 starPounds.resetTrait = function()
 	storage.starPounds.trait = nil
-	-- Refresh trait stats.
+	-- Refresh stats.
+	starPounds.parseStats()
+end
+
+starPounds.updateEffects = function(dt)
+	-- Don't do anything if the mod is disabled.
+	if not storage.starPounds.enabled then return end
+	starPounds.effectTimer = math.max((starPounds.effectTimer or 0) - dt, 0)
+	-- Update effect durations.
+	if starPounds.effectTimer == 0 then
+		for effectName, effectData in pairs(storage.starPounds.effects) do
+			local effectData = storage.starPounds.effects[effectName]
+			if effectData.duration then
+				effectData.duration = math.max(effectData.duration - starPounds.settings.effectTimer, 0)
+				if effectData.duration == 0 then
+					local effectConfig = starPounds.effects[effectName]
+					if effectConfig.expirePerLevel and (effectData.level > 1) then
+						effectData.level = effectData.level - 1
+						effectData.duration = effectConfig.duration
+						starPounds.parseStats()
+					else
+						starPounds.removeEffect(effectName)
+					end
+				end
+			end
+		end
+		starPounds.effectTimer = starPounds.settings.effectTimer
+	end
+end
+
+starPounds.addEffect = function(effect, duration)
+	-- Don't do anything if the mod is disabled.
+	if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	effect = tostring(effect)
+	local effectConfig = starPounds.effects[effect]
+	local effectData = storage.starPounds.effects[effect] or {}
+	if effectConfig then
+		if effectConfig.particle then
+			duration = tonumber(duration) or effectConfig.duration
+			local spec = starPounds.settings.particleTemplates.effect
+			world.spawnProjectile("invisibleprojectile", vec2.add(mcontroller.position(), mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
+				damageKind = "hidden",
+				universalDamage = false,
+				onlyHitTerrain = true,
+				timeToLive = 5/60,
+				periodicActions = {
+					{ action = "loop", time = 0, ["repeat"] = false, count = 5, body = {
+						{ action = "particle", specification = spec },
+						{ action = "particle", specification = sb.jsonMerge(spec, {layer = "front"}) }
+					}}
+				}
+			})
+			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.5, (math.random(120,150)/100))
+		end
+		effectData.duration = math.max(effectData.duration or 0, duration)
+		effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
+		storage.starPounds.effects[effect] = effectData
+		storage.starPounds.discoveredEffects[effect] = true
+		starPounds.parseStats()
+		return true
+	end
+	return false
+end
+
+starPounds.removeEffect = function(effect)
+	-- Don't do anything if the mod is disabled.
+	if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	effect = tostring(effect)
+	if storage.starPounds.effects[effect] then
+		storage.starPounds.effects[effect] = nil
+		starPounds.parseStats()
+		return true
+	end
+	return false
+end
+
+starPounds.getEffect = function(effect)
+	-- Return empty if the mod is disabled.
+	--if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	effect = tostring(effect)
+	return storage.starPounds.effects[effect]
+end
+
+starPounds.hasDiscoveredEffect = function(effect)
+	-- Argument sanitisation.
+	effect = tostring(effect)
+	return storage.starPounds.discoveredEffects[effect] ~= nil
+end
+
+starPounds.resetEffects = function()
+	storage.starPounds.effects = {}
+	storage.starPounds.discoveredEffects = {}
 	starPounds.parseStats()
 end
 
@@ -955,7 +1123,19 @@ starPounds.getTraitBonus = function(stat)
 	return (storage.starPounds.traitStats[stat] or {0, 1})[1]
 end
 
-starPounds.parseEffectStats = function(dt)
+starPounds.getEffectMultiplier = function(stat)
+	-- Argument sanitisation.
+	stat = tostring(stat)
+	return (starPounds.effectStats[stat] or {0, 1})[2]
+end
+
+starPounds.getEffectBonus = function(stat)
+	-- Argument sanitisation.
+	stat = tostring(stat)
+	return (starPounds.effectStats[stat] or {0, 1})[1]
+end
+
+starPounds.parseStatusEffectStats = function(dt)
 	starPounds.statusEffectModifierTimer = math.max((starPounds.statusEffectModifierTimer or 0) - dt, 0)
 	if starPounds.statusEffectModifierTimer == 0 then
 		starPounds.statusEffectModifiers = {
@@ -984,22 +1164,22 @@ starPounds.parseEffectStats = function(dt)
 	end
 end
 
-starPounds.getEffectMultiplier = function(stat)
+starPounds.getStatusEffectMultiplier = function(stat)
 	-- Argument sanitisation.
 	stat = tostring(stat)
 	return starPounds.statusEffectModifiers.multipliers[stat] or 1
 end
 
-starPounds.getEffectBonus = function(stat)
+starPounds.getStatusEffectBonus = function(stat)
 	-- Argument sanitisation.
 	stat = tostring(stat)
 	return starPounds.statusEffectModifiers.bonuses[stat] or 0
 end
 
-starPounds.getAccessory = function(slot)
-	-- Argument sanitisation.
-	slot = tostring(slot)
-	return storage.starPounds.accessories[slot]
+starPounds.getAccessory = function()
+	if storage.starPounds.accessory then
+		return root.createItem(storage.starPounds.accessory)
+	end
 end
 
 starPounds.getAccessoryModifiers = function(stat)
@@ -1007,7 +1187,8 @@ starPounds.getAccessoryModifiers = function(stat)
 	stat = stat and tostring(stat) or nil
 	if not stat then
 		local accessoryModifiers = {}
-		for _, accessory in pairs(storage.starPounds.accessories) do
+		local accessory = starPounds.getAccessory()
+		if accessory then
 			for _, stat in pairs(configParameter(accessory, "stats", {})) do
 				if starPounds.stats[stat.name] then
 					accessoryModifiers[stat.name] = math.round((accessoryModifiers[stat.name] or 0) + stat.modifier, 3)
@@ -1020,11 +1201,12 @@ starPounds.getAccessoryModifiers = function(stat)
 	end
 end
 
-starPounds.setAccessory = function(item, slot)
+starPounds.setAccessory = function(item)
 	-- Argument sanitisation.
-	slot = tostring(slot)
-	if not slot then return end
-	storage.starPounds.accessories[slot] = item
+	if item and type(item) ~= "table" then
+		item = tostring(item)
+	end
+	storage.starPounds.accessory = item and root.createItem(item) or nil
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.optionChanged = true
 	starPounds.backup()
@@ -1099,37 +1281,60 @@ starPounds.hunger = function(dt)
 end
 
 starPounds.getStomach = function()
-		local stomachContents = storage.starPounds.stomach + storage.starPounds.bloat
-		local stomachCapacity = starPounds.settings.stomachCapacity * starPounds.getStat("capacity")
-		-- Add how heavy every entity in the stomach is to the counter.
-		for _, v in pairs(storage.starPounds.stomachEntities) do
-			stomachContents = stomachContents + v.weight + v.bloat
-		end
+	local capacity = starPounds.settings.stomachCapacity * starPounds.getStat("capacity")
 
-		return {
-			capacity = stomachCapacity,
-			food = math.round(storage.starPounds.stomach, 3),
-			contents = math.round(stomachContents, 3),
-			fullness = math.round(stomachContents/stomachCapacity, 2),
-			interpolatedContents = math.round(storage.starPounds.stomachLerp, 3),
-			interpolatedFullness = math.round(storage.starPounds.stomachLerp/stomachCapacity, 2),
-			bloat = math.round(storage.starPounds.bloat, 3)
-		}
+	local totalAmount = 0
+	local contents = 0
+	local food = 0
+	local belchable = 0
+
+	for foodType, amount in pairs(storage.starPounds.stomachContents) do
+		if starPounds.foods[foodType] and (amount > 0) then
+			local foodType = sb.jsonMerge(starPounds.foods.default, starPounds.foods[foodType])
+			totalAmount = totalAmount + amount
+			contents = contents + amount * foodType.multipliers.capacity
+			food = food + amount * foodType.multipliers.food
+			if foodType.triggersBelch then
+				belchable = belchable + amount
+			end
+		else
+			storage.starPounds.stomachContents[foodType] = nil
+			getmetatable(storage.starPounds.stomachContents).__nils = {}
+		end
+	end
+
+	-- Add how heavy every entity in the stomach is to the counter.
+	for _, v in pairs(storage.starPounds.stomachEntities) do
+		local foodType = sb.jsonMerge(starPounds.foods.default, starPounds.foods[v.foodType] or {})
+		contents = contents + (v.base * foodType.multipliers.capacity) + v.weight
+		totalAmount = totalAmount + v.base + v.weight
+	end
+
+	return {
+		capacity = capacity,
+		food = math.round(food, 3),
+		belchable = math.round(belchable, 3),
+		fullness = math.round(contents/capacity, 2),
+		contents = math.round(contents, 3),
+		amount = math.round(totalAmount, 3),
+		interpolatedContents = math.round(storage.starPounds.stomachLerp, 3),
+		interpolatedFullness = math.round(storage.starPounds.stomachLerp/capacity, 2)
+	}
 end
 
 starPounds.getBreasts = function()
-		local breastCapacity = 10 * starPounds.getStat("breastCapacity")
-		if starPounds.hasOption("disableLeaking") then
-			storage.starPounds.breasts = math.min(storage.starPounds.breasts, breastCapacity)
-		end
-		local breastContents = storage.starPounds.breasts
+	local breastCapacity = 10 * starPounds.getStat("breastCapacity")
+	if starPounds.hasOption("disableLeaking") then
+		storage.starPounds.breasts = math.min(storage.starPounds.breasts, breastCapacity)
+	end
+	local breastContents = storage.starPounds.breasts
 
-		return {
-			capacity = breastCapacity,
-			type = storage.starPounds.breastType or "milk",
-			contents = math.round(breastContents, 4),
-			fullness = math.round(breastContents/breastCapacity, 4)
-		}
+	return {
+		capacity = breastCapacity,
+		type = storage.starPounds.breastType or "milk",
+		contents = math.round(breastContents, 4),
+		fullness = math.round(breastContents/breastCapacity, 4)
+	}
 end
 
 starPounds.getChestVariant = function(size)
@@ -1410,41 +1615,46 @@ starPounds.equipCheck = function(size)
 	end
 end
 
-starPounds.feed = function(amount)
+starPounds.feed = function(amount, foodType)
 	-- Runs eat, but adapts for player food.
 	-- Use this rather than eat() unless we don't care about the hunger bar for some reason.
 
 	-- Argument sanitisation.
 	amount = math.max(tonumber(amount) or 0, 0)
-
+	-- Don't do anything if there's no food.
+	if amount == 0 then return end
 	if not storage.starPounds.enabled then
 		if status.isResource("food") then
 			status.giveResource("food", amount)
 		end
 	else
-		starPounds.eat(amount)
+		starPounds.eat(amount, foodType)
 	end
 end
 
-starPounds.eat = function(amount)
+starPounds.eat = function(amount, foodType)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	amount = math.max(tonumber(amount) or 0, 0)
+	foodType = foodType and tostring(foodType) or "default"
+	if not starPounds.foods[foodType] then foodType = "default" end
+	-- Don't do anything if there's no food.
+	if amount == 0 then return end
+	-- Food type capacity cap.
+	local maxCapacity = math.huge
+	if starPounds.foods[foodType].maxCapacity then
+		maxCapacity = starPounds.stomach.capacity * (starPounds.foods[foodType].maxCapacity / starPounds.foods[foodType].multipliers.capacity)
+	end
+	-- Stats that affect the amount gained.
+	if starPounds.foods[foodType].amountStats then
+		for _, stat in pairs(starPounds.foods[foodType].amountStats) do
+			amount = math.max(amount * starPounds.getStat(stat), 0)
+		end
+	end
 	-- Insert food into stomach.
 	amount = math.round(amount, 3)
-	storage.starPounds.stomach = storage.starPounds.stomach + amount
-end
-
-starPounds.gainBloat = function(amount, fullAmount)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Argument sanitisation.
-	amount = math.max(tonumber(amount) or 0, 0)
-	-- Set bloat, rounded to 4 decimals.
-	amount = math.round(amount * (fullAmount and 1 or starPounds.getStat("bloatAmount")), 3)
-	local bloatCap = starPounds.settings.stomachCapacity * starPounds.settings.maximumBloatCapacity * starPounds.getStat("capacity")
-	storage.starPounds.bloat = math.min(storage.starPounds.bloat + amount, bloatCap)
+	storage.starPounds.stomachContents[foodType] = math.min((storage.starPounds.stomachContents[foodType] or 0) + amount, maxCapacity)
 end
 
 starPounds.gainWeight = function(amount, fullAmount)
@@ -1743,11 +1953,12 @@ starPounds.eatEntity = function(preyId, options, check)
 	if check then return true end
 	-- Ask the entity to be eaten, add to stomach if the promise is successful.
 	promises:add(world.sendEntityMessage(preyId, "starPounds.getEaten", entity.id()), function(prey)
-		if not (prey and (prey.weight or prey.bloat)) then return end
+		if not (prey and (prey.base or prey.weight)) then return end
 		table.insert(storage.starPounds.stomachEntities, {
 			id = preyId,
+			base = prey.base or 0,
 			weight = prey.weight or 0,
-			bloat = prey.bloat or 0,
+			foodType = prey.foodType or "prey",
 			experience = prey.experience or 0,
 			world = (starPounds.type == "player") and player.worldId() or nil,
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
@@ -1756,7 +1967,7 @@ starPounds.eatEntity = function(preyId, options, check)
 		if not options.noEnergyCost then
 			local preyHealth = world.entityHealth(preyId)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
-			local preySizeMult = (1 + (((prey.weight or 0) + (prey.bloat or 0))/starPounds.species.default.weight)) * 0.5
+			local preySizeMult = (1 + (((prey.base or 0) + (prey.weight or 0))/starPounds.species.default.weight)) * 0.5
 			if isCritter then
 				preySizeMult = preySizeMult * starPounds.settings.voreCritterEnergyMultiplier
 			end
@@ -1870,7 +2081,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
 	-- Burp/Stomach rumble.
-	local belchMultiplier = 1 - math.round((digestedEntity.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
+	local belchMultiplier = 1 - math.round(((digestedEntity.base + digestedEntity.weight) - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
 	starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 	-- Iterate over and edit the items.
 	local regurgitatedItems = jarray()
@@ -1955,9 +2166,8 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 			items = regurgitatedItems
 		})
 	end
-	starPounds.feed(digestedEntity.weight, digestedEntity.type)
-	starPounds.gainBloat(digestedEntity.bloat, true)
-	starPounds.gainExperience(digestedEntity.experience)
+	starPounds.feed(digestedEntity.base, digestedEntity.foodType)
+	starPounds.feed(digestedEntity.weight, "preyWeight")
 	return true
 end
 
@@ -2001,7 +2211,7 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			end
 
 			if not starPounds.hasOption("disableStruggleSounds") then
-				local totalPreyWeight = (prey.weight or 0) + (prey.bloat or 0)
+				local totalPreyWeight = (prey.base or 0) + (prey.weight or 0)
 				local soundVolume = math.min(1, 0.25 + preyHealthPercent * (totalPreyWeight/(starPounds.species.default.weight * 2)))
 				world.sendEntityMessage(entity.id(), "starPounds.playSound", "struggle", soundVolume)
 			end
@@ -2026,7 +2236,7 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 			end
 		end
 		if releasedEntity and world.entityExists(releasedEntity.id) then
-			local belchMultiplier = 1 - math.round((releasedEntity.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
+			local belchMultiplier = 1 - math.round((releasedEntity.weight + storage.starPounds.weight - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
 			starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 		end
 		storage.starPounds.stomachEntities = jarray()
@@ -2123,7 +2333,7 @@ starPounds.struggle = function(dt)
 	-- Separate calculation for monsters since their power stat is (basically) pointless.
 	if starPounds.type == "monster" then
 		-- Using the NPC power function because the monster one gets stupid high.
-		local weightRatio = math.max((entity.bloat + entity.weight) / starPounds.species.default.weight, 0.1)
+		local weightRatio = math.max((entity.weight + storage.starPounds.weight) / starPounds.species.default.weight, 0.1)
 		local monsterMultiplier = root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreMonsterStruggleMultiplier + 1
 		if starPounds.isCritter then
 			monsterMultiplier = root.evalFunction("npcLevelPowerMultiplierModifier", monster.level()) * starPounds.settings.voreCritterStruggleMultiplier
@@ -2248,9 +2458,9 @@ starPounds.getEaten = function(predId)
 	entity.setDamageOnTouch(false)
 	entity.setDamageSources()
 	return {
-		weight = entity.weight + storage.starPounds.weight,
-		bloat = entity.bloat,
-		experience = starPounds.hasOption("disableExperience") and 0 or math.round(entity.experience)
+		base = entity.weight,
+		foodType = entity.foodType,
+		weight = storage.starPounds.weight
 	}
 end
 
@@ -2420,14 +2630,17 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.upgradeSkill", simpleHandler(starPounds.upgradeSkill))
 	message.setHandler("starPounds.getStat", simpleHandler(starPounds.getStat))
 	message.setHandler("starPounds.parseStats", simpleHandler(starPounds.parseStats))
-	message.setHandler("starPounds.parseEffectStats", simpleHandler(starPounds.parseEffectStats))
+	message.setHandler("starPounds.parseStatusEffectStats", simpleHandler(starPounds.parseStatusEffectStats))
 	message.setHandler("starPounds.getSkillLevel", simpleHandler(starPounds.getSkillLevel))
 	message.setHandler("starPounds.hasSkill", simpleHandler(starPounds.hasSkill))
 	message.setHandler("starPounds.getAccessory", simpleHandler(starPounds.getAccessory))
 	message.setHandler("starPounds.getAccessoryModifiers", simpleHandler(starPounds.getAccessoryModifiers))
 	message.setHandler("starPounds.getTrait", simpleHandler(starPounds.getTrait))
 	message.setHandler("starPounds.setTrait", localHandler(starPounds.setTrait))
-	message.setHandler("starPounds.resetTrait", localHandler(starPounds.resetTrait))
+	message.setHandler("starPounds.addEffect", simpleHandler(starPounds.addEffect))
+	message.setHandler("starPounds.removeEffect", simpleHandler(starPounds.removeEffect))
+	message.setHandler("starPounds.getEffect", localHandler(starPounds.getEffect))
+	message.setHandler("starPounds.hasDiscoveredEffect", localHandler(starPounds.hasDiscoveredEffect))
 	-- Handlers for affecting the entity.
 	message.setHandler("starPounds.digest", simpleHandler(starPounds.digest))
 	message.setHandler("starPounds.gurgle", simpleHandler(starPounds.gurgle))
@@ -2436,7 +2649,6 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.belchPitch", simpleHandler(starPounds.belchPitch))
 	message.setHandler("starPounds.feed", simpleHandler(starPounds.feed))
 	message.setHandler("starPounds.eat", simpleHandler(starPounds.eat))
-	message.setHandler("starPounds.gainBloat", simpleHandler(starPounds.gainBloat))
 	message.setHandler("starPounds.gainWeight", simpleHandler(starPounds.gainWeight))
 	message.setHandler("starPounds.loseWeight", simpleHandler(starPounds.loseWeight))
 	message.setHandler("starPounds.setWeight", simpleHandler(starPounds.setWeight))
@@ -2465,6 +2677,8 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.resetWeight", localHandler(starPounds.resetWeight))
 	message.setHandler("starPounds.resetStomach", localHandler(starPounds.resetStomach))
 	message.setHandler("starPounds.resetBreasts", localHandler(starPounds.resetBreasts))
+	message.setHandler("starPounds.resetTrait", localHandler(starPounds.resetTrait))
+	message.setHandler("starPounds.resetEffects", localHandler(starPounds.resetEffects))
 	message.setHandler("starPounds.setResource", localHandler(status.setResource))
 end
 
@@ -2538,7 +2752,6 @@ end
 starPounds.resetWeight = function()
 	-- Set weight.
 	storage.starPounds.weight = starPounds.sizes[(starPounds.getSkillLevel("minimumSize") + 1)].weight
-	storage.starPounds.bloat = 0
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
 	-- Reset the fat items.
 	starPounds.equipCheck(starPounds.getSize(storage.starPounds.weight))
@@ -2547,8 +2760,7 @@ starPounds.resetWeight = function()
 end
 
 starPounds.resetStomach = function()
-	storage.starPounds.stomach = 0
-	storage.starPounds.bloat = 0
+	storage.starPounds.stomachContents = {}
 	storage.starPounds.stomachEntities = jarray()
 	return true
 end

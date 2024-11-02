@@ -8,13 +8,10 @@ function init()
   self.food = config.getParameter("food", 1000)/(self.bitesPerStage * self.stages)
   self.strainedThresholds = root.assetJson("/scripts/starpounds/starpounds.config:settings.thresholds.strain")
 
-  self.experienceRatio = {
-    common = 0.5,
-    uncommon = 0.55,
-    rare = 0.625,
-    legendary = 0.75,
-    essential = 0.75
-  }
+
+  self.experienceBonus = root.assetJson("/scripts/starpounds/starpounds.config:settings.foodExperienceBonus")
+  self.rarity = config.getParameter("rarity", "common"):lower()
+  self.bonusExperience = self.food * (self.experienceBonus[self.rarity] or 0) / 2
 
   object.setInteractive(true)
 
@@ -36,8 +33,8 @@ function onInteraction(args)
       animator.burstParticleEmitter("bite")
       animator.playSound("bite")
 
-      world.sendEntityMessage(args.sourceId, "starPounds.feed", self.food)
-      world.sendEntityMessage(args.sourceId, "starPounds.gainExperience", self.food * self.experienceRatio[string.lower(config.getParameter("rarity", "common"))])
+      world.sendEntityMessage(args.sourceId, "starPounds.feed", self.food, "default")
+      world.sendEntityMessage(args.sourceId, "starPounds.feed", self.bonusExperience, "bonusExperience")
 
       storage.bites = storage.bites + 1
       if storage.bites >= self.bitesPerStage then

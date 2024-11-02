@@ -12,6 +12,7 @@ function init()
   	end
   ))
   message.setHandler("treadmill.uninit", simpleHandler(effect.expire))
+  effectTimer = 10
 end
 
 function update(dt)
@@ -30,6 +31,12 @@ function update(dt)
     elseif mcontroller.running() then
       status.addEphemeralEffect("sweat")
       status.overConsumeResource("energy", status.resourceMax("energy") * 0.05 * dt)
+      effectTimer = math.max(effectTimer - dt, 0)
+    end
+
+    if effectTimer == 0 then
+      effectTimer = 10
+      world.sendEntityMessage(entity.id(), "starPounds.addEffect", "treadmill")
     end
   end
 end

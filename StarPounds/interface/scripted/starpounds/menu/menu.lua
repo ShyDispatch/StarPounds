@@ -24,8 +24,8 @@ function skills:onClick()
   pane.dismiss()
 end
 
-function accessories:onClick()
-  player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:accessories"})
+function effects:onClick()
+  player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:effects"})
   pane.dismiss()
 end
 

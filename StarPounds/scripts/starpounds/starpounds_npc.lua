@@ -53,8 +53,9 @@ function init()
 	end
 
 	starPounds.parseSkills()
+	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.parseEffectStats(1)
+	starPounds.parseStatusEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
@@ -92,7 +93,7 @@ function update(dt)
 	starPounds.currentVariant = starPounds.getChestVariant(modifierSize or starPounds.currentSize)
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
-	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1)
+	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/entity.weight), 1)
 	if storage.starPounds.enabled then
 		if starPounds.currentSize.movementPenalty == 1 then
 			mcontroller.controlModifiers({
@@ -120,7 +121,8 @@ function update(dt)
 	starPounds.exercise(dt)
 	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
-	starPounds.parseEffectStats(dt)
+	starPounds.updateEffects(dt)
+	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStatuses()
 	starPounds.updateStats(nil, dt)
 	-- Save for comparison later.
@@ -165,9 +167,8 @@ function makeOverrideFunction()
       entity.setDamageOnTouch = npc.setDamageOnTouch
 			entity.setDamageSources = nullFunction
       entity.setDamageTeam = npc.setDamageTeam
-      entity.weight = math.round(speciesData.weight * speciesData.foodRatio)
-      entity.bloat = math.round(speciesData.weight * (1 - speciesData.foodRatio))
-      entity.experience = speciesData.experience
+      entity.weight = speciesData.weight
+      entity.foodType = speciesData.foodType
       -- NPCs don't have a food stat, and trying to adjust it crashes the script.
       starPounds.feed = starPounds.eat
       -- Disable stuff NPCs don't use.
@@ -200,7 +201,6 @@ function makeOverrideFunction()
       	starPounds.getBreasts = function() return {capacity = 10 * starPounds.getStat("breastCapacity"), contents = 0, fullness = 0, type = "milk"} end
       	starPounds.equipSize = nullFunction
       	starPounds.equipCheck = nullFunction
-      	starPounds.gainBloat = nullFunction
       	starPounds.gainWeight = nullFunction
       	starPounds.loseWeight = nullFunction
       	starPounds.setWeight = nullFunction

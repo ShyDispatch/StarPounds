@@ -1,7 +1,7 @@
 {
 	"name": "starpoundsratebloatrapid",
 	"effectConfig": {
-		"type": "gainBloat",
+		"data": "bloat",
 		"rate": 50
 	},
 	"defaultDuration": 5,

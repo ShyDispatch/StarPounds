@@ -1,7 +1,7 @@
 {
 	"name": "starpoundsratebloatfast",
 	"effectConfig": {
-		"type": "gainBloat",
+		"data": "bloat",
 		"rate": 25
 	},
 	"defaultDuration": 5,

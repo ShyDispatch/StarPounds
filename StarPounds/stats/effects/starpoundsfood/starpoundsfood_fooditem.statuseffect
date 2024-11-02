@@ -1,0 +1,10 @@
+{
+	"name": "starpoundsfood_fooditem",
+	"defaultDuration": 1,
+	"effectConfig" : {
+		"type" : "foodItem"
+	},
+	"scripts": [
+		"starpoundsfood.lua"
+	]
+}

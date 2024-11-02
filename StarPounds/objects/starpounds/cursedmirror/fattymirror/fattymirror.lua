@@ -62,7 +62,7 @@ function use(args)
       end,
       -- Gain bloat
       gainBloat = function()
-        world.sendEntityMessage(targetId, "starPounds.gainBloat", 50 + math.random(0, 150))
+        world.sendEntityMessage(targetId, "starPounds.feed", 50 + math.random(0, 150), "bloat")
         deactivate()
         animator.playSound("use")
       end,

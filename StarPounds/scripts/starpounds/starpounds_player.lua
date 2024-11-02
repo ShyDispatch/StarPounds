@@ -38,8 +38,9 @@ function init()
 	starPounds.statCache = {}
 	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	starPounds.parseSkills()
+	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.parseEffectStats(1)
+	starPounds.parseStatusEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
@@ -92,7 +93,7 @@ function update(dt)
 	starPounds.weight = storage.starPounds.weight
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
-	starPounds.weightMultiplier = storage.starPounds.enabled and math.round(1 + (storage.starPounds.weight/(entity.weight + entity.bloat)), 1) or 1
+	starPounds.weightMultiplier = storage.starPounds.enabled and math.round(1 + (storage.starPounds.weight/entity.weight), 1) or 1
 
 	local doBlobProjectile = false
 	local blobProjectileActive = starPounds.blobProjectile and world.entityExists(starPounds.blobProjectile)
@@ -156,8 +157,9 @@ function update(dt)
 	starPounds.drink(dt)
 	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
+	starPounds.updateEffects(dt)
 	starPounds.hunger(dt)
-	starPounds.parseEffectStats(dt)
+	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStatuses()
 	starPounds.updateStats(starPounds.optionChanged, dt)
 	-- Save for comparison later.
@@ -185,12 +187,12 @@ function update(dt)
 		local data = storage.starPounds
 		local stomach = starPounds.stomach
 		local breasts = starPounds.breasts
-		local accessories = data.accessories
+		local accessory = data.accessory
 		local enabled = data.enabled
-		starPounds.debug("accessories", enabled and string.format("^#665599,set;Pendant: ^gray;%s ^reset;Ring: ^gray;%s ^reset;Trinket: ^gray;%s", accessories.pendant and accessories.pendant.name or "None", accessories.ring and accessories.ring.name or "None", accessories.trinket and accessories.trinket.name or "None") or "^gray;Mod disabled")
+		starPounds.debug("accessory", enabled and string.format("^#665599,set;Accessory: ^gray;%s", accessory and accessory.name or "None") or "^gray;Mod disabled")
 		starPounds.debug("experience", enabled and string.format("^#665599,set;Level: ^gray;%s ^reset;Experience: ^gray;%.0f/%.0f ^reset;Multiplier: ^gray;%s", data.level, data.experience, starPounds.settings.experienceAmount * (1 + data.level * starPounds.settings.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0)) or "^gray;Mod disabled")
 		starPounds.debug("stomach", enabled and string.format("^#665599,set;Fullness: ^gray;%.0f%%%% ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Hunger: ^gray;%.1f/%.0f", stomach.interpolatedFullness * 100, stomach.contents, stomach.capacity, status.resource("food"), status.resourceMax("food")) or "^gray;Mod disabled")
-		starPounds.debug("stomachContents", enabled and string.format("^#665599,set;Food: ^gray;%.1f ^reset;Bloat: ^gray;%.1f ^reset;Entity: ^gray;%.1f (%d)", stomach.food, stomach.bloat, stomach.contents - (stomach.food + stomach.bloat), #data.stomachEntities) or "^gray;Mod disabled")
+		starPounds.debug("stomachContents", enabled and string.format("^#665599,set;Contents: ^gray;%.1f ^#665599,set;Food: ^gray;%.1f ^reset;Entities: ^gray;%d", stomach.contents, stomach.food, #data.stomachEntities) or "^gray;Mod disabled")
 		starPounds.debug("breasts", enabled and string.format("^#665599,set;Type: ^gray;%s ^reset;Capacity: ^gray;%.1f/%.1f ^reset;Contents: ^gray;%.1f", breasts.type, breasts.contents, breasts.capacity, data.breasts) or "^gray;Mod disabled")
 		starPounds.debug("size", enabled and string.format("^#665599,set;Size: ^gray;%s ^reset;Weight: ^gray;%.2flb ^reset;Multiplier: ^gray;%.1fx", (starPounds.currentSize.size == "" and "none" or starPounds.currentSize.size)..(starPounds.currentVariant and ": "..starPounds.currentVariant or ""), data.weight, starPounds.weightMultiplier) or "^gray;Mod disabled")
 		starPounds.debug("timers", enabled and string.format("^#665599,set;Gurgle: ^gray;%.1f ^reset;Rumble: ^gray;%.1f", starPounds.gurgleTimer or 0, starPounds.rumbleTimer or 0) or "^gray;Mod disabled")
@@ -266,9 +268,8 @@ function makeOverrideFunction()
 			local speciesData = starPounds.getSpeciesData(player.species())
       entity = {
         id = player.id,
-	      weight = math.round(speciesData.weight * speciesData.foodRatio),
-	      bloat = math.round(speciesData.weight * (1 - speciesData.foodRatio)),
-	      experience = speciesData.experience
+	      weight = speciesData.weight,
+	      foodType = speciesData.foodType
       }
 			local mt = {__index = function () return nullFunction end}
 			setmetatable(entity, mt)
@@ -279,7 +280,6 @@ function makeOverrideFunction()
     		starPounds.getBreasts = function() return {capacity = 10 * starPounds.getStat("breastCapacity"), contents = 0, fullness = 0, type = "milk"} end
     		starPounds.equipSize = nullFunction
     		starPounds.equipCheck = nullFunction
-    		starPounds.gainBloat = nullFunction
     		starPounds.gainWeight = nullFunction
     		starPounds.loseWeight = nullFunction
     		starPounds.setWeight = nullFunction

@@ -1,6 +1,6 @@
 function init()
   if effect.duration() > 0 then
-    world.sendEntityMessage(entity.id(), "starPounds.gainBloat", effect.duration(), effect.getParameter("full", false))
+    world.sendEntityMessage(entity.id(), "starPounds.feed", effect.duration(), "bloat")
   end
 end
 

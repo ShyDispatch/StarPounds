@@ -131,7 +131,7 @@ starPounds.digest = function(dt, isGurgle, isBelch)
 				if isBelch and foodConfig.multipliers.belch > 0 then
 					digestionRate = digestionRate + digestionRate * foodConfig.multipliers.belch
 				end
-				local digestAmount = math.min(amount, math.round(digestionRate * ratio * seconds * (starPounds.settings.digestionBase + amount * starPounds.settings.digestionPercent), 4))
+				local digestAmount = math.min(amount, math.round(digestionRate * ratio * seconds * (foodConfig.digestionRate + amount * foodConfig.percentDigestionRate), 4))
 				starPounds.digestionExperience = (starPounds.digestionExperience or 0) + digestAmount * foodConfig.multipliers.experience
 				storage.starPounds.stomachContents[foodType] = math.round(math.max(amount - digestAmount, 0), 3)
 				-- Subtract food used to fill up hunger from weight gain.

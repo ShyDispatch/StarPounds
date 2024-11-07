@@ -8,6 +8,15 @@
           "offset" : [0.2, -3]
         }
       ]
+    },
+    "slamParticles" : {
+      "emissionRate" : 40.0,
+      "particles" : [
+        {
+          "particle" : "starpoundsdash",
+          "flip" : true
+        }
+      ]
     }
   },
 

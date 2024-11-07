@@ -1,17 +1,33 @@
 require "/scripts/vec2.lua"
-require "/scripts/util.lua"
+require "/tech/doubletap.lua"
 
 function init()
-  self.multiJumpCount = 1
+  self.multiJumpCount = config.getParameter("multiJumpCount")
   self.slamCooldown = 0
   self.slamTimer = 0
+  self.slamWaitTimer = 0
   self.rechargeEffectTimer = 0
   refreshJumps()
+
+  self.doubleTap = DoubleTap:new({"down"}, config.getParameter("maximumDoubleTapTime"), function(dashKey)
+    if self.slamTimer == 0
+      and self.slamCooldown == 0
+      and not mcontroller.groundMovement()
+      and not status.statPositive("activeMovementAbilities") then
+
+      if canSlam() then doSlam() end
+    end
+  end)
 end
 
 function update(args)
   starPounds = getmetatable ''.starPounds
-  self.slamTimer = math.max(self.slamTimer - args.dt, 0)
+  self.slamWaitTimer = math.max(0, self.slamWaitTimer - args.dt)
+  if self.slamWaitTimer == 0 then
+    self.slamTimer = math.max(0, self.slamTimer - args.dt)
+  end
+
+  self.doubleTap:update(args.dt, args.moves)
 
   if self.slamCooldown > 0 then
     self.slamCooldown = math.max(0, self.slamCooldown - args.dt)
@@ -34,19 +50,27 @@ function update(args)
   end
 
   if self.slamTimer > 0 then
-    mcontroller.setYVelocity(-75)
     tech.setParentState("sit")
     tech.setParentOffset({0, -0.5})
-    if mcontroller.onGround() then
-      tech.setParentState()
-      tech.setParentOffset({0, 0})
-      local slammed = shockwave.fireShockwave()
-      self.slamTimer = 0
-      self.slamCooldown = 0.5
-      if slammed then
-        mcontroller.setYVelocity(30)
-        self.slamCooldown = math.max(self.slamCooldown, 3 * starPounds.getStat("groundSlamCooldown"))
+    if self.slamWaitTimer == 0 then
+      if math.min(self.slamTimer + args.dt, 1) == 1 then
+          mcontroller.setXVelocity(self.xVelocity)
       end
+      animator.setParticleEmitterActive("slamParticles", true)
+      mcontroller.setYVelocity(-75)
+      if mcontroller.onGround() then
+        tech.setParentState()
+        tech.setParentOffset({0, 0})
+        local slammed = shockwave.fireShockwave()
+        self.slamTimer = 0
+        self.slamCooldown = 0.5
+        if slammed then
+          mcontroller.setYVelocity(30)
+          self.slamCooldown = math.max(self.slamCooldown, 3 * starPounds.getStat("groundSlamCooldown"))
+        end
+      end
+    else
+      mcontroller.setVelocity({0,0})
     end
   else
     if self.slammed then
@@ -55,6 +79,7 @@ function update(args)
       tech.setParentState()
       tech.setParentOffset({0, 0})
     end
+    animator.setParticleEmitterActive("slamParticles", false)
     status.clearPersistentEffects("starpoundsslam")
   end
 
@@ -66,9 +91,7 @@ function update(args)
   updateJumpModifier()
 
   if jumpActivated and canMultiJump() then
-      doMultiJump()
-  elseif jumpActivated and canSlam() then
-      doSlam()
+    doMultiJump()
   else
     if mcontroller.groundMovement() or mcontroller.liquidMovement() then
       refreshJumps()
@@ -115,7 +138,6 @@ function canSlam()
   return not self.slammed
       and self.slamCooldown == 0
       and not mcontroller.jumping()
-      and not mcontroller.canJump()
       and not mcontroller.liquidMovement()
       and not status.statPositive("activeMovementAbilities")
       and math.abs(world.gravity(mcontroller.position())) > 0
@@ -135,6 +157,8 @@ function doSlam()
   self.scale = math.min(math.floor(0.5 + 10 * self.weightMultiplier ^ (1/3))/10, 4)
   self.slammed = true
   self.slamTimer = 1
+  self.slamWaitTimer = 0.1
+  self.xVelocity = mcontroller.xVelocity()
   animator.playSound("startSlam")
   status.setPersistentEffects("starpoundsslam", {
     {stat = "fallDamageMultiplier", effectiveMultiplier = 0},

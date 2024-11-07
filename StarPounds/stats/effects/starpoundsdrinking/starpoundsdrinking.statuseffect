@@ -1,0 +1,5 @@
+{ // Only exists to stop belching while an entity drinks.
+  "name" : "starpoundsdrinking",
+  "effectConfig" : {},
+  "defaultDuration" : 1
+}

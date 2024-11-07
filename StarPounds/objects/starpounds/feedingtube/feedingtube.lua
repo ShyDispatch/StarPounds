@@ -68,6 +68,7 @@ function update(dt)
 							world.sendEntityMessage(feedTarget, "applyStatusEffect", statusEffect)
 						end
 					end
+					world.sendEntityMessage(feedTarget, "applyStatusEffect", "starpoundsdrinking")
 				end
 			else
 				setLiquidType()

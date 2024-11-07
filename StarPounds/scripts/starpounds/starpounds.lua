@@ -461,6 +461,7 @@ starPounds.drink = function(dt)
 			starPounds.feed(math.max(0, starPounds.settings.drinkableVolume - foodAmount) * consumedLiquid[2], "liquid")
 			-- Play drinking sound. Volume increased by amount of liquid consumed.
 			world.sendEntityMessage(entity.id(), "starPounds.playSound", "drink", 0.5 + 0.5 * consumedLiquid[2], math.random(8, 12)/10)
+			status.addEphemeralEffect("starpoundsdrinking")
 		end
 	else
 		-- Reset the drink counter if there is nothing to drink.

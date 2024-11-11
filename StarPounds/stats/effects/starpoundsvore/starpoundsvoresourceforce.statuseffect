@@ -1,10 +1,11 @@
 {
-	"name": "starpoundsvoresource",
+	"name": "starpoundsvoresourceforce",
 	"effectConfig": {
 		"options" : {
 			"ignoreSkills" : true,
 			"ignoreCapacity" : true,
-			"noEnergyCost" : true
+			"noEnergyCost" : true,
+			"noRelease" : true
 		}
 	},
 	"defaultDuration": 1,

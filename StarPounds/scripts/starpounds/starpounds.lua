@@ -1962,6 +1962,7 @@ starPounds.eatEntity = function(preyId, options, check)
 			foodType = prey.foodType or "prey",
 			experience = prey.experience or 0,
 			world = (starPounds.type == "player") and player.worldId() or nil,
+			noRelease = prey.noRelease or options.noRelease,
 			noBelch = prey.noBelch or options.noBelch,
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
 			typeName = world.entityTypeName(preyId)
@@ -2254,14 +2255,15 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 		end
 		storage.starPounds.stomachEntities = jarray()
 	else
-		for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
-			if prey.id == preyId then
-				releasedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)
-				break
-			end
-			if not preyId then
-				releasedEntity = table.remove(storage.starPounds.stomachEntities)
-				break
+		-- Reverse order, lastest prey gets removed first (if not specified).
+		for preyIndex = #storage.starPounds.stomachEntities, 1, -1 do
+			local prey = storage.starPounds.stomachEntities[preyIndex]
+			if not prey.noRelease then
+				-- Release the first (allowed) prey, or a specific ID if given.
+				if (not preyId) or (prey.id == preyId) then
+					releasedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)
+					break
+				end
 			end
 		end
 		-- Call back to release the entity incase the pred is releasing them.

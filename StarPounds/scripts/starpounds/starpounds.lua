@@ -1962,6 +1962,8 @@ starPounds.eatEntity = function(preyId, options, check)
 			foodType = prey.foodType or "prey",
 			experience = prey.experience or 0,
 			world = (starPounds.type == "player") and player.worldId() or nil,
+			noBelch = prey.noBelch or options.noBelch,
+			noBelchParticles = options.noBelchParticles,
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
 			typeName = world.entityTypeName(preyId)
 		})
@@ -2081,9 +2083,6 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	-- More accurately calculate where the enities's mouth is.
 	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
 	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
-	-- Burp/Stomach rumble.
-	local belchMultiplier = 1 - math.round(((digestedEntity.base + digestedEntity.weight) - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
-	starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
 	-- Iterate over and edit the items.
 	local regurgitatedItems = jarray()
 	-- We get purple particles if we digest something that gives ancient essence.
@@ -2123,12 +2122,20 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 			hasEssence = true
 		end
 	end
+	local doBelch = not (starPounds.hasOption("disableBelches") or starPounds.hasOption("disablePredBelches") or digestedEntity.noBelch)
+	-- No belching up items if belching (or their particles) is disabled on the pred or prey side.
+	local doBelchParticles = doBelch and not starPounds.hasOption("disableBelchParticles")
+	-- Burp/Stomach rumble.
+	if doBelch then
+		local belchMultiplier = 1 - math.round(((digestedEntity.base + digestedEntity.weight) - starPounds.species.default.weight)/(starPounds.settings.maxWeight * 4), 2)
+		starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
+	end
 
 	if not starPounds.hasOption("disableGurgleSounds") then
 		world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, 0.75)
 	end
 	-- Fancy little particles similar to the normal death animation.
-	if not starPounds.hasOption("disableBelchParticles") then
+	if doBelchParticles then
 		local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
 		local particle = sb.jsonMerge(starPounds.settings.particleTemplates.vore, {})
 		particle.color = {188, 235, 96}
@@ -2163,9 +2170,15 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	end
 
 	if not starPounds.hasOption("disableItemRegurgitation") and (#regurgitatedItems > 0) then
-		world.spawnProjectile("regurgitateditems", mouthPosition, entity.id(), vec2.rotate({math.random(1,2) * mcontroller.facingDirection(), math.random(0, 2)/2}, mcontroller.rotation()), false, {
-			items = regurgitatedItems
-		})
+		if doBelchParticles then
+			world.spawnProjectile("regurgitateditems", mouthPosition, entity.id(), vec2.rotate({math.random(1,2) * mcontroller.facingDirection(), math.random(0, 2)/2}, mcontroller.rotation()), false, {
+				items = regurgitatedItems
+			})
+		elseif starPounds.type == "player" then
+			for _, regurgitatedItem in pairs(regurgitatedItems) do
+				player.giveItem(regurgitatedItem)
+			end
+		end
 	end
 	starPounds.feed(digestedEntity.base, digestedEntity.foodType)
 	starPounds.feed(digestedEntity.weight, "preyWeight")
@@ -2461,7 +2474,8 @@ starPounds.getEaten = function(predId)
 	return {
 		base = entity.weight,
 		foodType = entity.foodType,
-		weight = storage.starPounds.weight
+		weight = storage.starPounds.weight,
+		noBelch = starPounds.hasOption("disablePreyBelches")
 	}
 end
 

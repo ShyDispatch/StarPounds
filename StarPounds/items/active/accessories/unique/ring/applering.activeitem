@@ -1,11 +1,11 @@
 {
-  "itemName" : "gracering",
+  "itemName" : "applering",
   "price" : 10000,
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "Warm to the touch, the crystal on this ring pulses with other-worldly energy.",
   "shortdescription" : "Ring of the Fox",
-  "inventoryIcon" : "gracering.png",
+  "inventoryIcon" : "applering.png",
   "category" : "starpoundsuniqueaccessory",
 
   "tooltipKind": "accessory",

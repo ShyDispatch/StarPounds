@@ -112,7 +112,7 @@
         { "item" : { "name" : "feyrethring" }, "rarity" : 0.05 },
         { "item" : { "name" : "floranring" }, "rarity" : 0.05 },
         { "item" : { "name" : "glitchring" }, "rarity" : 0.05 },
-        { "item" : { "name" : "gracering" }, "rarity" : 0.01 },
+        { "item" : { "name" : "applering" }, "rarity" : 0.01 },
         { "item" : { "name" : "humanring" }, "rarity" : 0.05 },
         { "item" : { "name" : "hylotlring" }, "rarity" : 0.05 },
         { "item" : { "name" : "lotusring" }, "rarity" : 0.05 },

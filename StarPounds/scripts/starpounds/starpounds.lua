@@ -2258,7 +2258,7 @@ starPounds.releaseEntity = function(preyId, releaseAll)
 		-- Reverse order, lastest prey gets removed first (if not specified).
 		for preyIndex = #storage.starPounds.stomachEntities, 1, -1 do
 			local prey = storage.starPounds.stomachEntities[preyIndex]
-			if not prey.noRelease then
+			if not prey.noRelease or (starPounds.type == "player" and player.isAdmin()) then
 				-- Release the first (allowed) prey, or a specific ID if given.
 				if (not preyId) or (prey.id == preyId) then
 					releasedEntity = table.remove(storage.starPounds.stomachEntities, preyIndex)

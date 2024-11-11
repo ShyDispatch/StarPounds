@@ -1963,7 +1963,6 @@ starPounds.eatEntity = function(preyId, options, check)
 			experience = prey.experience or 0,
 			world = (starPounds.type == "player") and player.worldId() or nil,
 			noBelch = prey.noBelch or options.noBelch,
-			noBelchParticles = options.noBelchParticles,
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
 			typeName = world.entityTypeName(preyId)
 		})

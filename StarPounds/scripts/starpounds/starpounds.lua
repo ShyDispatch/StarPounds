@@ -277,7 +277,7 @@ end
 starPounds.belchPitch = function(multiplier)
 	multiplier = tonumber(multiplier) or 1
 	local pitch = util.randomInRange(starPounds.settings.belchPitch)
-	if not starPounds.hasOption("ungenderedBelches") then
+	if not starPounds.hasOption("genderlessBelches") then
 		local gender = world.entityGender(entity.id())
 		if gender then
 			pitch = pitch + (starPounds.settings.belchGenderModifiers[gender] or 0)

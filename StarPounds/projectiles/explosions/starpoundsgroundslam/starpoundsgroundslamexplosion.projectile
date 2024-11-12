@@ -1,0 +1,17 @@
+{
+  "projectileName" : "starpoundsgroundslamexplosion",
+  "image" : "/projectiles/invisibleprojectile/invisibleprojectile.png",
+  "damageKindImage" : "icon.png",
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/starpoundsgroundslam/starpoundsgroundslamexplosion.config"
+    }
+  ],
+  "powerMultiplier" : 0,
+  "power" : 0,
+  "onlyHitTerrain" : true,
+  "statusEffects" : [ ],
+  "damageKind" : "default",
+  "timeToLive" : 0
+}

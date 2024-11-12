@@ -5,7 +5,7 @@
   "scripts" : ["starpoundsgroundslam.lua"],
   "animator" : "starpoundsgroundslam.animation",
 
-  "description" : "Double tap ^#ccbbff;[S]^reset; to perform a slam that damages enemies!",
+  "description" : "Double tap ^#ccbbff;[S]^reset; or ^#ccbbff;[SPACE]^reset; to perform a ground slam!",
   "shortDescription" : "Ground Slam",
   "rarity" : "Legendary",
   "icon" : "/tech/starpoundsgroundslam.png",

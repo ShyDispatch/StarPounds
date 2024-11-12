@@ -9,7 +9,7 @@ function init()
   self.rechargeEffectTimer = 0
   refreshJumps()
 
-  self.doubleTap = DoubleTap:new({"down"}, config.getParameter("maximumDoubleTapTime"), function(dashKey)
+  local doubleTapCheck = function(dashKey)
     if self.slamTimer == 0
       and self.slamCooldown == 0
       and not mcontroller.groundMovement()
@@ -17,17 +17,25 @@ function init()
 
       if canSlam() then doSlam() end
     end
-  end)
+  end
+
+  self.doubleTap = DoubleTap:new({"down"}, config.getParameter("maximumDoubleTapTime"), doubleTapCheck)
+  self.doubleTapJump = DoubleTap:new({"jump"}, config.getParameter("maximumDoubleTapTime"), doubleTapCheck)
 end
 
 function update(args)
   starPounds = getmetatable ''.starPounds
+
   self.slamWaitTimer = math.max(0, self.slamWaitTimer - args.dt)
   if self.slamWaitTimer == 0 then
     self.slamTimer = math.max(0, self.slamTimer - args.dt)
   end
 
   self.doubleTap:update(args.dt, args.moves)
+  self.doubleTapJump:update(args.dt, args.moves)
+  if self.multiJumps > 0 then
+    self.doubleTapJump.currentKey = nil
+  end
 
   if self.slamCooldown > 0 then
     self.slamCooldown = math.max(0, self.slamCooldown - args.dt)
@@ -54,20 +62,49 @@ function update(args)
     tech.setParentOffset({0, -0.5})
     if self.slamWaitTimer == 0 then
       if math.min(self.slamTimer + args.dt, 1) == 1 then
-          mcontroller.setXVelocity(self.xVelocity)
+        mcontroller.setXVelocity(self.xVelocity)
       end
       animator.setParticleEmitterActive("slamParticles", true)
       mcontroller.setYVelocity(-75)
       if mcontroller.onGround() then
         tech.setParentState()
         tech.setParentOffset({0, 0})
-        local slammed = shockwave.fireShockwave()
+
+        local width = {0, 0}
+        local position = vec2.add(mcontroller.position(), (starPounds.currentSize.isBlob and {0, -1.5} or {0, 0}))
+        for _,v in ipairs(mcontroller.collisionPoly()) do
+          width[1] = (v[1] < width[1]) and v[1] or width[1]
+          width[2] = (v[1] > width[2]) and v[1] or width[2]
+        end
+        width = (math.abs(width[1]) + math.abs(width[2])) * 0.5
+
+        local slammed = shockwave.fireShockwave(math.round(width))
+        -- Plays impact sound for taking fall damage, but at any height.
+        status.applySelfDamageRequest({
+          damageType = "IgnoresDef",
+          damage = 0,
+          damageSourceKind = "falling",
+          sourceEntityId = entity.id()
+        })
         self.slamTimer = 0
         self.slamCooldown = 0.5
-        if slammed then
-          mcontroller.setYVelocity(30)
+        -- Try and grab the nearest edible entity.
+        local hasPrey = false
+        if self.voreSlam then
+          local entities = world.entityQuery(vec2.add(position, {-(0.25 + width * 0.5), -3}), vec2.add(position, {0.25 + width * 0.5, -1.5}), {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()})
+          for _, preyId in pairs(entities) do
+            if starPounds.eatEntity(preyId, {ignoreCapacity = true, noEnergyCost = true}) then
+              hasPrey = true
+              break
+            end
+          end
+        end
+        -- Full cooldown if we did a slam or ate an entity.
+        if slammed or hasPrey then
           self.slamCooldown = math.max(self.slamCooldown, 3 * starPounds.getStat("groundSlamCooldown"))
         end
+        -- Little upwards bounce, bigger if kaboom.
+        mcontroller.setYVelocity(slammed and 30 or 15)
       end
     else
       mcontroller.setVelocity({0,0})
@@ -153,6 +190,7 @@ end
 
 function doSlam()
   mcontroller.setYVelocity(-75)
+  self.voreSlam = starPounds.hasSkill("voreSlam")
   self.weightMultiplier = 1 + math.floor(0.5 + (starPounds.currentSize or {weight = 0}).weight/1.2)/100
   self.scale = math.min(math.floor(0.5 + 10 * self.weightMultiplier ^ (1/3))/10, 4)
   self.slammed = true
@@ -184,40 +222,29 @@ shockwave = {
 	shockwaveHeight = 1.375,
 	impactLine = {{0, -1.5}, {0, -4.5}},
 
-	fireShockwave = function()
+	fireShockwave = function(width)
 		local impact
-		local position = vec2.add(mcontroller.position(), (starPounds.currentSize.isBlob and {0, -2} or {0, 0}))
+		local position = vec2.add(mcontroller.position(), (starPounds.currentSize.isBlob and {0, -1.5} or {0, 0}))
 		local blocks = world.collisionBlocksAlongLine(vec2.add(position, shockwave.impactLine[1]), vec2.add(position, shockwave.impactLine[2]), {"Null", "Block"})
 		if #blocks > 0 then
 			impact = vec2.add(blocks[1], {0.5, 0.5})
 		end
 
-    local width = {0, 0}
-    for _,v in ipairs(mcontroller.collisionPoly()) do
-      width[1] = (v[1] < width[1]) and v[1] or width[1]
-      width[2] = (v[1] > width[2]) and v[1] or width[2]
-    end
-    local baseWidth = math.round((math.abs(width[1]) + math.abs(width[2])) * 0.5)
-
 	  if impact then
-      local actions = root.assetJson("/projectiles/explosions/regularexplosion2/regularexplosionknockback.config").list
-      actions[5] = {action = "sound", options = {"/sfx/melee/shockwave_physical_slam.ogg"}}
-      actions[7].harvestLevel = 1
+      local explosionConfig = "starpoundsgroundslamexplosion"
+      -- No tile damage with the option, or on ship worlds.
       if starPounds.hasOption("disableTileDamage") or world.type() == "unknown" then
-        table.remove(actions, 7)
+        explosionConfig = "starpoundsgroundslamexplosionprotected"
       end
-      table.remove(actions, 4)
-      table.remove(actions, 3)
-      table.remove(actions, 1)
-      local params = {
-        actionOnReap = {{action = "actions", list = actions}},
-	      powerMultiplier = 0,
-	      power = 0,
-        onlyHitTerrain = true
-      }
-      world.spawnProjectile("physicalexplosionknockback", vec2.add(position, {0, -2.5}), entity.id(), {0, 0}, false, params)
-      local maxDistance = 1 + 2 * (self.weightMultiplier - 1)^(1/3)
-	    local positions = shockwave.shockwaveProjectilePositions(impact, maxDistance + baseWidth)
+      -- No tile damage, and a softer/quieter sound for vore.
+      if self.voreSlam then
+        explosionConfig = "starpoundsgroundslamexplosionvore"
+      end
+      world.spawnProjectile("starpoundsgroundslamexplosion", vec2.add(position, {0, -2.5}), entity.id(), {0, 0}, false, {
+        actionOnReap = {{action = "config", file = string.format("/projectiles/explosions/starpoundsgroundslam/%s.config", explosionConfig)}}
+      })
+      local maxDistance = 1 + (self.voreSlam and 1 or 2) * (self.weightMultiplier - 1)^(1/3)
+	    local positions = shockwave.shockwaveProjectilePositions(impact, maxDistance + width)
 	    if #positions > 0 then
         local damageUuid = sb.makeUuid()
 	      local params = copy(shockwave.projectileParameters)
@@ -226,22 +253,24 @@ shockwave = {
 	      params.actionOnReap = {
 	        {
 	          action = "projectile",
-	          inheritDamageFactor = 1,
+	          inheritDamageFactor = self.voreSlam and 0 or 1,
 	          type = shockwave.projectileType,
 						config = {
+  	          processing = self.voreSlam and "?multiply=0000" or "",
 							damageRepeatGroup = "starpoundsgroundslam_"..damageUuid,
-							damageRepeatTimeout = 1
+							damageRepeatTimeout = 1,
+              damageKind = self.voreSlam and "bugnet" or nil -- Silly, but it works.
 						}
 	        }
 	      }
 	      for i, position in pairs(positions) do
 	        local xDistance = world.distance(position, impact)[1]
 	        local dir = util.toDirection(xDistance)
-          local distance = (math.floor(math.max(math.abs(xDistance) - baseWidth, 0)))
+          local distance = (math.floor(math.max(math.abs(xDistance) - width, 0)))
           local multiplier = (maxDistance - distance * 0.75) / maxDistance
-	        params.timeToLive = distance * 0.025
-  	      params.power = math.floor(10 + 30 * (self.scale - 1) + 0.5) * multiplier
-          if not starPounds.hasOption("disableTileDamage") and world.type() ~= "unknown" then
+	        params.timeToLive = distance * 0.05
+  	      params.power = self.voreSlam and 0 or math.floor(10 + 30 * (self.scale - 1) + 0.5) * multiplier
+          if not self.voreSlam and not starPounds.hasOption("disableTileDamage") and world.type() ~= "unknown" then
             params.actionOnReap[2] = {
               action = "explosion",
               foregroundRadius = 2.5,

@@ -246,7 +246,7 @@ function buildTraitPreview(traitType, trait)
   end
   -- 50% refund on already obtained skills. Separate variable for refund as default trait experience is applied through setTrait.
   trait.refundExperience = math.ceil(refundExperience * 0.5)
-  trait.experience = (trait.experience or 0) + trait.refundExperience
+  trait.experience = trait.experience or 0
   _ENV[traitType.."TraitSkills"]:setVisible(slotCount > 0)
   _ENV[traitType.."TraitSkillsLabel"]:setVisible(slotCount == 0)
   -- Default values for traitStats. (Starting weight/milk/XP)
@@ -263,9 +263,9 @@ function buildTraitPreview(traitType, trait)
     traitStats[#traitStats + 1] = string.format("^#%s;Starting Milk:", starPounds.stats.breastProduction.colour)
     traitStatValues[#traitStatValues + 1] = tostring(trait.breasts)
   end
-  if trait.experience > 0 then
+  if trait.experience + trait.refundExperience > 0 then
     traitStats[#traitStats + 1] = string.format("^#%s;Starting XP:", starPounds.stats.experienceMultiplier.colour)
-    traitStatValues[#traitStatValues + 1] = tostring(trait.experience)
+    traitStatValues[#traitStatValues + 1] = tostring(trait.experience + trait.refundExperience)
   end
 
   -- Space out attributes from stats.

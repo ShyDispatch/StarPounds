@@ -2198,7 +2198,7 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 		if prey.id == preyId then
 			local preyHealth = world.entityHealth(prey.id)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
-			local struggleStrength = struggleStrength/math.max(1, status.stat("powerMultiplier"))
+			local struggleStrength = root.evalFunction2("protection", struggleStrength, status.stat("protection"))
 			local escapeChance = math.max(world.entityType(preyId) == "player" and starPounds.settings.vorePlayerEscape or 0, 0.5 * struggleStrength)
 			if escape and (math.random() < escapeChance) then
 				if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > starPounds.settings.voreUnescapableHealth) then

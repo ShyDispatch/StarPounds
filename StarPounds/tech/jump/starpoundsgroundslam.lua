@@ -93,7 +93,7 @@ function update(args)
         if self.voreSlam then
           local entities = world.entityQuery(vec2.add(position, {-(0.25 + width * 0.5), -3}), vec2.add(position, {0.25 + width * 0.5, -1.5}), {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()})
           for _, preyId in pairs(entities) do
-            if starPounds.eatEntity(preyId, {ignoreCapacity = true, noEnergyCost = true}) then
+            if starPounds.eatEntity(preyId, {ignoreCapacity = true, ignoreEnergyRequirement = true, energyMultiplier = 0.5}) then
               hasPrey = true
               break
             end

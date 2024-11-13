@@ -26,7 +26,7 @@ function update(dt)
   if not didQuery then
     local entities = world.entityQuery(mcontroller.position(), 1, {order = "nearest", includedTypes = {"player", "npc"}, withoutEntityId = entity.id()}) or jarray()
     for _, target in ipairs(entities) do
-      promises:add(world.sendEntityMessage(target, "starPounds.eatEntity", entity.id(), {ignoreSkills = true, ignoreCapacity = true, noEnergyCost = true, noSwallowSound = true}), function(success)
+      promises:add(world.sendEntityMessage(target, "starPounds.eatEntity", entity.id(), {ignoreSkills = true, ignoreCapacity = true, ignoreEnergyRequirment = true, energyMultiplier = 0, noSwallowSound = true}), function(success)
         if success then foundTarget = true end
       end)
     end

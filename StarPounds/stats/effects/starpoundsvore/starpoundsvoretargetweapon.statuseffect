@@ -2,7 +2,8 @@
 	"name": "starpoundsvoretargetweapon",
 	"effectConfig": {
 		"options" : {
-			"noEnergyCost" : true
+			"ignoreEnergyRequirment" : true,
+			"energyMultiplier" : 0
 		}
 	},
 	"defaultDuration": 1,

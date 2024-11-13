@@ -40,7 +40,7 @@ function activate(fireMode, shiftHeld)
 	local entities = world.entityQuery(targetPosition, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = activeItem.ownerEntityId()}) or jarray()
 	for _, target in ipairs(entities) do
 		if isTargetValid(target) then
-			world.sendEntityMessage(target, "starPounds.eatEntity", activeItem.ownerEntityId(), {ignoreSkills = true, ignoreCapacity = true, noEnergyCost = true})
+			world.sendEntityMessage(target, "starPounds.eatEntity", activeItem.ownerEntityId(), {ignoreSkills = true, ignoreCapacity = true, ignoreEnergyRequirment = true, energyMultiplier = 0})
 			return
 		end
 	end

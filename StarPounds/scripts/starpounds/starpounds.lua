@@ -161,7 +161,7 @@ starPounds.digest = function(dt, isGurgle, isBelch)
 							end
 							-- Energy regen block is capped at 2x the speed (decreases by the delta). Does not happen while strained.
 							if not starPounds.strained then
-								status.modifyResource("energyRegenBlock", math.max(-digestAmount * absorption * digestionEnergy, -seconds))
+								status.modifyResource("energyRegenBlock", -math.min(digestAmount * absorption * digestionEnergy, seconds))
 							end
 						end
 					end
@@ -1912,7 +1912,7 @@ starPounds.eatEntity = function(preyId, options, check)
 		table.insert(compatibleEntities, "player")
 	end
 	local preyType = world.entityTypeName(preyId)
-	if not options.noEnergyCost and status.isResource("energy") and status.resourceLocked("energy") then return false end
+	if not options.ignoreEnergyRequirement and status.isResource("energy") and status.resourceLocked("energy") then return false end
 	if not options.ignoreSkills then
 		if not contains(compatibleEntities, world.entityType(preyId)) then return false end
 		-- Need the upgrades for the specific entity type
@@ -1967,14 +1967,15 @@ starPounds.eatEntity = function(preyId, options, check)
 			type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
 			typeName = world.entityTypeName(preyId)
 		})
-		if not options.noEnergyCost then
+		local energyMult = options.energyMultiplier or 1
+		if energyMult > 0 then
 			local preyHealth = world.entityHealth(preyId)
 			local preyHealthPercent = preyHealth[1]/preyHealth[2]
 			local preySizeMult = (1 + (((prey.base or 0) + (prey.weight or 0))/starPounds.species.default.weight)) * 0.5
 			if isCritter then
 				preySizeMult = preySizeMult * starPounds.settings.voreCritterEnergyMultiplier
 			end
-			local energyCost = starPounds.settings.voreEnergyBase + starPounds.settings.voreEnergy * preyHealthPercent * preySizeMult
+			local energyCost = (options.energyMultiplier or 1) * (starPounds.settings.voreEnergyBase + starPounds.settings.voreEnergy * preyHealthPercent * preySizeMult)
 			status.overConsumeResource("energy", energyCost)
 		end
 		-- Swallow sound

@@ -107,7 +107,7 @@ function update(args)
         mcontroller.setYVelocity(slammed and 30 or 15)
       end
     else
-      mcontroller.setVelocity({0,0})
+      mcontroller.setVelocity({0, 10})
     end
   else
     if self.slammed then

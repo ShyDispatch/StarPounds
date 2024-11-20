@@ -23,7 +23,7 @@ end
 
 function heartbeat()
 	-- Makes the animation stop a little more in sync, but still finish the whole loop.
-	if heartbeatTimer < 0.15 then
+	if heartbeatTimer < 0.25 then
   	heartbeatTimer = heartbeatTimer + 0.5
 	end
 end

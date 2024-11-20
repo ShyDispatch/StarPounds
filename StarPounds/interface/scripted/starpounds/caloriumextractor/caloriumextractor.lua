@@ -1,8 +1,10 @@
 starPounds = getmetatable ''.starPounds
 function init()
   maxStack = root.assetJson("/items/defaultParameters.config:defaultMaxStack")
+  caloriumFood = starPounds.settings.drinkableVolume * starPounds.settings.drinkables.starpoundscaloriumliquid
   extracting = false
   extractTimer = 0.1
+  effectTarget = 1000
   updateButtonIcon()
 end
 
@@ -15,17 +17,22 @@ function update()
     if canExtract() then
       if extractTimer == 0 then
         local nextWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
-        local caloriumCost = 10 + math.floor(0.02 * (nextWeight - starPounds.currentSize.weight) + 0.5)
+        local caloriumCost = caloriumFood + math.floor(0.02 * (nextWeight - starPounds.currentSize.weight) + 0.5)
         local converted = math.floor(starPounds.loseWeight(caloriumCost, true)/caloriumCost + 0.5)
-        if (converted / 25) > math.random() then
+        starPounds.caloriumExtractTracker = (starPounds.caloriumExtractTracker or 0) + (caloriumCost * converted)
+        -- Roughly every 1000lb (effectTarget), add a stack. Slightly random for funsies.
+        local chance = starPounds.caloriumExtractTracker / effectTarget
+        if (chance > math.random()) then
+          starPounds.caloriumExtractTracker = starPounds.caloriumExtractTracker - effectTarget
           starPounds.addEffect("caloriumExtractor")
         end
+
         addCalorium(converted)
         world.sendEntityMessage(pane.sourceEntity(), "heartbeat")
-        extractTimer = 0.1
+        extractTimer = 0.2
       end
     else
-      extractTimer = 0.1
+      extractTimer = 0.2
       extracting = false
       widget.playSound("/sfx/objects/apexcoolcomputer_switchoff.ogg")
     end

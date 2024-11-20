@@ -102,6 +102,7 @@ function update(args)
         -- Full cooldown if we did a slam or ate an entity.
         if slammed or hasPrey then
           self.slamCooldown = math.max(self.slamCooldown, 3 * starPounds.getStat("groundSlamCooldown"))
+          starPounds.addEffect("groundSlam")
         end
         -- Little upwards bounce, bigger if kaboom.
         mcontroller.setYVelocity(slammed and 30 or 15)

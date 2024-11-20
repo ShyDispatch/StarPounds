@@ -1,12 +1,13 @@
 {
   "frameGrid" : {
     "size" : [16, 16],
-    "dimensions" : [8, 3],
+    "dimensions" : [8, 4],
 
     "names" : [
-      [ "default", "prey.default", "prey.0", "prey.1", "prey.2", "prey.3", "prey.4", "prey.5"],
-      [ "nearby.0", "nearby.1", "nearby.2", "nearby.3", "nearby.4", "nearby.5", "nearby.6", "nearby.7" ],
-      [ "valid.0", "valid.1", "valid.2", "valid.3", "valid.4", "valid.5", "valid.6", "valid.7" ]
+      [ "cooldown.0", "cooldown.1", "cooldown.2", "cooldown.3", "cooldown.4", "cooldown.5", "cooldown.6", "cooldown.7"],
+      [ "ready.0", "ready.1", "ready.2", "ready.3", "ready.4", "ready.5", "ready.6", "ready.7"],
+      [ "release.default", "release.0", "release.1", "release.2", "release.3", "release.4", "release.5", null],
+      [ "prey.default", "prey.0", "prey.1", "prey.2", "prey.3", "prey.4", "prey.5", null ]
     ]
   }
 }

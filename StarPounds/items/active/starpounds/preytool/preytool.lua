@@ -5,7 +5,7 @@ function init()
 	range = config.getParameter("range", 3)
 	querySize = config.getParameter("querySize", 1)
 	activeItem.setHoldingItem(false)
-	activeItem.setCursor("/cursors/starpoundsvoreprey.cursor")
+	activeItem.setCursor("/cursors/starpoundsvore.cursor:prey")
 	script.setUpdateDelta(world.getProperty("nonCombat") and 0 or 5)
 	settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
 end
@@ -28,7 +28,7 @@ function update(dt)
 			end
 		end
 	end
-	activeItem.setCursor(validTarget and "/cursors/starpoundsvorepreyvalid.cursor" or "/cursors/starpoundsvoreprey.cursor")
+	activeItem.setCursor(validTarget and "/cursors/starpoundsvore.cursor:prey_valid" or "/cursors/starpoundsvore.cursor:prey")
 end
 
 function activate(fireMode, shiftHeld)

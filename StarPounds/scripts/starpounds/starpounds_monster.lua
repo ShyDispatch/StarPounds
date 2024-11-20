@@ -58,6 +58,7 @@ function starPoundsInit()
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
 	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/entity.weight), 1)
+	starPounds.initScriptedEffects()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
@@ -95,6 +96,11 @@ function update(dt)
 	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStatuses()
 	starPounds.optionChanged = false
+end
+
+function uninit()
+	starPounds.uninitScriptedEffects()
+	uninit_old()
 end
 
 function makeOverrideFunction()

@@ -59,6 +59,7 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
+	starPounds.initScriptedEffects()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
@@ -135,6 +136,11 @@ function update(dt)
 	end
 
 	starPounds.optionChanged = false
+end
+
+function uninit()
+	starPounds.uninitScriptedEffects()
+	uninit_old()
 end
 
 function makeOverrideFunction()

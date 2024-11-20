@@ -44,6 +44,7 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
+	starPounds.initScriptedEffects()
 	starPounds.damageHitboxTiles = damageHitboxTiles
 	-- Damage listener for fall/fire damage.
 	starPounds.damageListener = damageListener("damageTaken", function(notifications)

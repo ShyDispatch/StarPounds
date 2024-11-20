@@ -1012,16 +1012,33 @@ starPounds.resetTrait = function()
 	starPounds.parseStats()
 end
 
+starPounds.effect = {}
+function starPounds.effect:new(data)
+  local newEffect = {}
+	newEffect.data = data or {}
+  setmetatable(newEffect, extend(self))
+  return newEffect
+end
+
+function starPounds.effect:init() end -- Runs whenever the effect gets initially applied, the target loads in, or the mod gets enabled.
+function starPounds.effect:update(dt) end -- Runs every effectTimer update.
+function starPounds.effect:uninit() end -- Runs whenever the target unloads, or the mod gets disabled.
+function starPounds.effect:apply() end -- Runs whenever the effect gets applied, or reapplied.
+function starPounds.effect:expire() end -- Runs whenever the effect times out, or gets removed.
+
 starPounds.updateEffects = function(dt)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	starPounds.effectTimer = math.max((starPounds.effectTimer or 0) - dt, 0)
 	-- Update effect durations.
 	if starPounds.effectTimer == 0 then
-		for effectName, effectData in pairs(storage.starPounds.effects) do
+		for effectName, effect in pairs(storage.starPounds.effects) do
 			local effectData = storage.starPounds.effects[effectName]
 			if effectData.duration then
 				effectData.duration = math.max(effectData.duration - starPounds.settings.effectTimer, 0)
+				if starPounds.scriptedEffects[effectName] then
+					starPounds.scriptedEffects[effectName]:update(starPounds.settings.effectTimer)
+				end
 				if effectData.duration == 0 then
 					local effectConfig = starPounds.effects[effectName]
 					if effectConfig.expirePerLevel and (effectData.level > 1) then
@@ -1035,6 +1052,34 @@ starPounds.updateEffects = function(dt)
 			end
 		end
 		starPounds.effectTimer = starPounds.settings.effectTimer
+	end
+end
+
+starPounds.loadScriptedEffect = function(effect)
+	-- Don't do anything if the mod is disabled.
+	if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	effect = tostring(effect)
+	local effectConfig = starPounds.effects[effect]
+	if effectConfig then
+		if effectConfig.script and not starPounds.scriptedEffects[effect] then
+			require(effectConfig.script)
+			_SBLOADED[effectConfig.script] = nil
+			starPounds.scriptedEffects[effect]:init()
+		end
+	end
+end
+
+starPounds.initScriptedEffects = function()
+	starPounds.scriptedEffects = {}
+	for effect in pairs(storage.starPounds.effects) do
+		starPounds.loadScriptedEffect(effect)
+	end
+end
+
+starPounds.uninitScriptedEffects = function()
+	for _, effect in pairs(starPounds.scriptedEffects) do
+		effect:uninit()
 	end
 end
 
@@ -1063,6 +1108,11 @@ starPounds.addEffect = function(effect, duration)
 			})
 			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.5, (math.random(120,150)/100))
 		end
+		-- Scripted effects.
+		if effectConfig.script then
+			starPounds.loadScriptedEffect(effect)
+			starPounds.scriptedEffects[effect]:apply()
+		end
 		effectData.duration = math.max(effectData.duration or 0, duration)
 		effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
 		storage.starPounds.effects[effect] = effectData
@@ -1081,6 +1131,10 @@ starPounds.removeEffect = function(effect)
 	if storage.starPounds.effects[effect] then
 		storage.starPounds.effects[effect] = nil
 		starPounds.parseStats()
+		if starPounds.scriptedEffects[effect] then
+			starPounds.scriptedEffects[effect]:expire()
+			starPounds.scriptedEffects[effect] = nil
+		end
 		return true
 	end
 	return false
@@ -2712,12 +2766,15 @@ starPounds.toggleEnable = function()
 	starPounds.updateStats(true)
 	starPounds.optionChanged = true
 	if not storage.starPounds.enabled then
+		starPounds.uninitScriptedEffects()
 		starPounds.movementModifier = 1
 		starPounds.jumpModifier = 1
 		starPounds.equipCheck(starPounds.getSize(0))
 		world.sendEntityMessage(entity.id(), "starPounds.expire")
 		status.clearPersistentEffects("starpounds")
 		status.clearPersistentEffects("starpoundseaten")
+	else
+		starPounds.initScriptedEffects()
 	end
 	return storage.starPounds.enabled
 end

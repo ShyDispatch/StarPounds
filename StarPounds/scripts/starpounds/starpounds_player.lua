@@ -358,12 +358,16 @@ function checkBindings(dt)
 		starPounds.belch(0.75, starPounds.belchPitch(), nil, false)
 	end
 	-- Eat entity.
+	starPounds.oSB_voreCooldown = math.max((starPounds.oSB_voreCooldown or 0) - (dt/starPounds.getStat("voreCooldown")), 0)
 	if input.bindDown("starpounds", "voreEat") then
-		local mouthPosition = starPounds.mouthPosition()
-		local aimPosition = player.aimPosition()
-		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), 2)
-		local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
-		starPounds.eatNearbyEntity(targetPosition, 3, 1)
+		if player.isAdmin() or starPounds.oSB_voreCooldown == 0 then
+			local mouthPosition = starPounds.mouthPosition()
+			local aimPosition = player.aimPosition()
+			local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), 2)
+			local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
+			local success = starPounds.eatNearbyEntity(targetPosition, 3, 1)
+			if success then starPounds.oSB_voreCooldown = starPounds.settings.voreCooldown end
+		end
 	end
 	-- Regurgitate last entity.
 	if input.bindDown("starpounds", "voreRegurgitate") then

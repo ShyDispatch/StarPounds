@@ -12,13 +12,16 @@ function init()
 	canRelease = false
 	cursorType = "pred"
 	updateCursor()
+
+	crouching = mcontroller.crouching()
+	facing = mcontroller.facingDirection()
 end
 
 function activate(fireMode, shiftHeld)
 	if shiftHeld then
 		world.sendEntityMessage(activeItem.ownerEntityId(), "starPounds.releaseEntity")
 	elseif cooldown == 0 then
-		local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
+		local mouthOffset = {0.375 * facing * (crouching and 1.5 or 1), crouching and -1 or 0}
 		local mouthPosition = vec2.add(world.entityMouthPosition(activeItem.ownerEntityId()), mouthOffset)
 		local aimPosition = activeItem.ownerAimPosition()
 		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize)
@@ -33,8 +36,10 @@ end
 
 function update(dt, _, shiftHeld)
 	promises:update()
+	crouching = mcontroller.crouching()
+	facing = mcontroller.facingDirection()
 	cooldown = math.max((cooldown or cooldownTimer) - dt, 0)
-	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
+	local mouthOffset = {0.375 * facing * (crouching and 1.5 or 1), crouching and -1 or 0}
 	local mouthPosition = vec2.add(world.entityMouthPosition(activeItem.ownerEntityId()), mouthOffset)
 	local aimPosition = activeItem.ownerAimPosition()
 	local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize)

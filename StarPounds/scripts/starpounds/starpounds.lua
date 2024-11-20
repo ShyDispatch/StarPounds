@@ -260,11 +260,7 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 	end
 	-- Skip if we're not doing particles.
 	if starPounds.hasOption("disableBelchParticles") then return end
-	-- More accurately calculate where the enities's mouth is.
-	local mouthOffset = {0.375 * facingDirection * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-	-- Silly, but when the uninitialising (e.g. player releases stored entities when teleporting, causing a belch), mouth position returns nil.
-	if world.entityMouthPosition(entity.id()) == nil then return end
-	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+	local mouthPosition = starPounds.mouthPosition()
 	local gravity = world.gravity(mouthPosition)
 	local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
 	local particle = sb.jsonMerge(starPounds.settings.particleTemplates.belch, {})
@@ -287,17 +283,22 @@ starPounds.belchPitch = function(multiplier)
 	return pitch
 end
 
+starPounds.mouthPosition = function()
+	-- Silly, but when the uninitialising this returns nil.
+	if world.entityMouthPosition(entity.id()) == nil then return mcontroller.position() end
+	local facingDirection = mcontroller.facingDirection()
+	local crouching = mcontroller.crouching()
+	local mouthOffset = {0.375 * mcontroller.facingDirection() * (crouching and 1.5 or 1), (crouching and -1 or 0)}
+	return vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+end
+
 starPounds.spawnMouthProjectile = function(actions, count)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Argument sanitisation.
 	if not actions then return end
 	count = tonumber(count) or 1
-	if world.entityMouthPosition(entity.id()) == nil then return end
-	-- More accurately calculate where the enities's mouth is.
-	local facingDirection = mcontroller.facingDirection()
-	local mouthOffset = {0.375 * facingDirection * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+	local mouthPosition = starPounds.mouthPosition()
 	world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
 		damageKind = "hidden",
 		universalDamage = false,
@@ -437,9 +438,7 @@ starPounds.drink = function(dt)
 	elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 then
 		return
 	end
-	-- More accurately calculate where the entities's mouth is.
-	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+	local mouthPosition = starPounds.mouthPosition()
 	local mouthLiquid = world.liquidAt(mouthPosition) or world.liquidAt(vec2.add(mouthPosition, {0, 0.25}))
 	-- Space out 'drinks', otherwise they'll happen every script update.
 	drinkTimer = math.max((drinkTimer or 0) - dt, 0)
@@ -1888,8 +1887,7 @@ starPounds.eatNearbyEntity = function(position, range, querySize, options, check
 	querySize = math.max(tonumber(querySize) or 0, 0)
 	options = type(options) == "table" and options or {}
 
-	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+	local mouthPosition = starPounds.mouthPosition()
 	local preferredEntities = position and world.entityQuery(position, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()}) or jarray()
 	local nearbyEntities = world.entityQuery(mouthPosition, range, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()})
 	local eatenTargets = jarray()
@@ -2135,9 +2133,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	for _, prey in ipairs(preyStomach or jarray()) do
 		world.sendEntityMessage(prey.id, "starPounds.predEaten", entity.id())
 	end
-	-- More accurately calculate where the enities's mouth is.
-	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-	local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+	local mouthPosition = starPounds.mouthPosition()
 	-- Iterate over and edit the items.
 	local regurgitatedItems = jarray()
 	-- We get purple particles if we digest something that gives ancient essence.

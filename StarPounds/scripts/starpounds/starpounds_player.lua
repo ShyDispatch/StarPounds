@@ -359,8 +359,7 @@ function checkBindings(dt)
 	end
 	-- Eat entity.
 	if input.bindDown("starpounds", "voreEat") then
-		local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-		local mouthPosition = vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
+		local mouthPosition = starPounds.mouthPosition()
 		local aimPosition = player.aimPosition()
 		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), 2)
 		local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))

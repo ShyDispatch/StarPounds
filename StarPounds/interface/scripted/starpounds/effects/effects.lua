@@ -42,7 +42,7 @@ function update()
       if effectData then
         if widgetParent then
           if widgetDuration then
-            widgetDuration:setText(effectData.duration and (starPounds.enabled and "^lightgray;" or "^darkgray;")..timeFormat(effectData.duration) or "")
+            widgetDuration:setText((starPounds.enabled and "^lightgray;" or "^darkgray;")..(effectData.duration and timeFormat(effectData.duration) or "--:--"))
           end
           if widgetLevels then
             for i=1, math.min(effect.levels or 1, 10) do
@@ -190,7 +190,7 @@ function makeEffectWidget(tab, effectKey, effect)
       id = string.format("%s_%sEffect_duration", tab, effectKey),
       type = "label", position = {22, 6}, size = {112, 9},
       align = "right",
-      text = (effectData and effectData.duration) and (starPounds.enabled and "^lightgray;" or "^darkgray;")..timeFormat(effectData.duration) or ""
+      text = (starPounds.enabled and "^lightgray;" or "^darkgray;")..(effectData.duration and timeFormat(effectData.duration) or "--:--")
     })
 
     local effectData = starPounds.getEffect(effectKey)

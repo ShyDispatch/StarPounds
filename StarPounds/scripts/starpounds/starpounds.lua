@@ -1091,6 +1091,8 @@ starPounds.addEffect = function(effect, duration)
 	local effectData = storage.starPounds.effects[effect] or {}
 	if effectConfig then
 		duration = tonumber(duration) or effectConfig.duration
+		-- Negative durations become infinite.
+		if duration < 0 then duration = nil end
 		if effectConfig.particle then
 			local spec = starPounds.settings.particleTemplates.effect
 			world.spawnProjectile("invisibleprojectile", vec2.add(mcontroller.position(), mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
@@ -1112,7 +1114,8 @@ starPounds.addEffect = function(effect, duration)
 			starPounds.loadScriptedEffect(effect)
 			starPounds.scriptedEffects[effect]:apply()
 		end
-		effectData.duration = math.max(effectData.duration or 0, duration)
+
+		effectData.duration = duration and math.max(effectData.duration or 0, duration) or nil
 		effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
 		storage.starPounds.effects[effect] = effectData
 		storage.starPounds.discoveredEffects[effect] = true

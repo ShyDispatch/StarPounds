@@ -1090,8 +1090,8 @@ starPounds.addEffect = function(effect, duration)
 	local effectConfig = starPounds.effects[effect]
 	local effectData = storage.starPounds.effects[effect] or {}
 	if effectConfig then
+		duration = tonumber(duration) or effectConfig.duration
 		if effectConfig.particle then
-			duration = tonumber(duration) or effectConfig.duration
 			local spec = starPounds.settings.particleTemplates.effect
 			world.spawnProjectile("invisibleprojectile", vec2.add(mcontroller.position(), mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
 				damageKind = "hidden",

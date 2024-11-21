@@ -1309,19 +1309,20 @@ starPounds.hunger = function(dt)
 	-- Argument sanitisation.
 	dt = math.max(tonumber(dt) or 0, 0)
 	if dt == 0 then return end
+	-- Check if the player is starving.
+	starPounds.isStarving = status.uniqueStatusEffectActive("starving")
 	-- Check upgrade for preventing starving and they have weight loss enabled.
 	if starPounds.hasSkill("preventStarving") and not starPounds.hasOption("disableLoss") then
 		-- 1% more than the food delta.
-		local threshold = math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt
-		-- Check if the player is about to starve.
-		local isStarving = status.resource("food") < (math.max(status.stat("foodDelta") * -1, 0) * 1.01 * dt)
-		if isStarving then
-			local minimumOffset = starPounds.getSkillLevel("minimumSize")
-			local foodAmount = math.min((minimumOffset > 0 and (storage.starPounds.weight - starPounds.sizes[minimumOffset + 1].weight) or storage.starPounds.weight) * 0.1, threshold - status.resource("food"))
-			status.giveResource("food", foodAmount)
-			local lossMultiplier = math.max(1, 1/math.max(0.01, (starPounds.getStat("foodValue") * starPounds.getStat("absorption"))))
-			-- Converting fat, so ignore weight loss modifiers.
-			starPounds.loseWeight(foodAmount * lossMultiplier, true)
+		if starPounds.isStarving then
+			local foodDelta = math.max(status.stat("foodDelta") * -1, 0) * dt
+			local availableWeight = storage.starPounds.weight - starPounds.sizes[starPounds.getSkillLevel("minimumSize") + 1].weight
+			if availableWeight > 0 then
+				starPounds.isStarving = false
+				local lossMultiplier = math.max(1, 1/math.max(0.01, (starPounds.getStat("foodValue") * starPounds.getStat("absorption"))))
+				-- Converting fat, so ignore weight loss modifiers.
+				starPounds.loseWeight(foodDelta * lossMultiplier, true)
+			end
 		end
 	end
 	-- Set the statuses.

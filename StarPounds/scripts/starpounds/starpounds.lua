@@ -1265,6 +1265,7 @@ starPounds.setAccessory = function(item)
 	end
 	storage.starPounds.accessory = item and root.createItem(item) or nil
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
+	starPounds.statCacheTimer = 0 -- Force a cache update to immediately apply the bonuses.
 	starPounds.optionChanged = true
 	starPounds.backup()
 end

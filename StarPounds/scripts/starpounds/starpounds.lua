@@ -221,13 +221,15 @@ starPounds.gurgle = function(noDigest)
 	end
 end
 
-starPounds.rumble = function()
+starPounds.rumble = function(volume)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
+	-- Argument sanitisation.
+	volume = tonumber(volume) or 1
 	-- Don't do anything if rumbles are disabled.
 	if starPounds.hasOption("disableRumbles") then return end
 	-- Rumble sound every 10 seconds.
-	world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", 0.75, (math.random(90,110)/100))
+	world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", math.max(math.min(volume, 2), 0) * 0.75, (math.random(90,110)/100))
 end
 
 starPounds.belch = function(volume, pitch, loops, addMomentum)

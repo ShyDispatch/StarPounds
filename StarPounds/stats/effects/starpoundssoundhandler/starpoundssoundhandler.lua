@@ -2,6 +2,9 @@ require "/scripts/messageutil.lua"
 
 function init()
 	message.setHandler("starPounds.playSound", simpleHandler(playSound))
+	message.setHandler("starPounds.stopSound", simpleHandler(animator.stopAllSounds))
+	message.setHandler("starPounds.setSoundVolume", simpleHandler(animator.setSoundVolume))
+	message.setHandler("starPounds.setSoundPitch", simpleHandler(animator.setSoundPitch))
 	message.setHandler("starPounds.expire", localHandler(effect.expire))
 end
 
@@ -32,8 +35,8 @@ function playSound(soundPool, volume, pitch, loops)
 			if starPounds.hasOption("higherBelches") then pitch = pitch * 1.25 end
 			if starPounds.hasOption("deeperBelches") then pitch = pitch * 0.75 end
 		end
-
 	end
+
 	animator.setSoundVolume(soundPool, volume or 1, 0)
 	animator.setSoundPitch(soundPool, pitch or 1, 0)
 	animator.playSound(soundPool, loops)

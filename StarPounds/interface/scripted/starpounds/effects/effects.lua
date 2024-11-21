@@ -155,7 +155,9 @@ function populateTabs()
   end
 
   for effectKey, effect in pairs(effects) do
-    table.insert(sortedEffectKeys, effectKey)
+    if not effect.hidden then
+      table.insert(sortedEffectKeys, effectKey)
+    end
   end
   table.sort(sortedEffectKeys, sort)
 
@@ -498,7 +500,7 @@ end
 
 function timeFormat(seconds)
   local minutes = math.floor(seconds/60)
-  local seconds = seconds % 60
+  local seconds = math.ceil(seconds) % 60
   if (minutes < 10) then
     minutes = tostring(minutes)
   end

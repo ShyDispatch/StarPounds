@@ -1064,6 +1064,7 @@ starPounds.loadScriptedEffect = function(effect)
 		if effectConfig.script and not starPounds.scriptedEffects[effect] then
 			require(effectConfig.script)
 			_SBLOADED[effectConfig.script] = nil
+			starPounds.scriptedEffects[effect].data = storage.starPounds.effects[effect]
 			starPounds.scriptedEffects[effect]:init()
 		end
 	end
@@ -1109,16 +1110,18 @@ starPounds.addEffect = function(effect, duration)
 			})
 			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.5, (math.random(120,150)/100))
 		end
+		effectData.duration = duration and math.max(effectData.duration or 0, duration) or nil
+		effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
+		storage.starPounds.effects[effect] = effectData
+		if not effectConfig.hidden then
+			storage.starPounds.discoveredEffects[effect] = true
+		end
 		-- Scripted effects.
 		if effectConfig.script then
 			starPounds.loadScriptedEffect(effect)
 			starPounds.scriptedEffects[effect]:apply()
 		end
 
-		effectData.duration = duration and math.max(effectData.duration or 0, duration) or nil
-		effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
-		storage.starPounds.effects[effect] = effectData
-		storage.starPounds.discoveredEffects[effect] = true
 		starPounds.parseStats()
 		return true
 	end

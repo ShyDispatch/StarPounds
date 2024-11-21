@@ -1,6 +1,6 @@
 -- Sets up the effect object, a data table, and placeholder functions for those below.
 -- Adding blank functions is unnecessary unless you need the functionality.
--- Data table isn't special, just exists for consistency/convenience.
+-- Data table contains a reference to the effect's duration/level, and can be used for persistent storage.
 local example = starPounds.effect:new()
 example.data.something = "example"
 -- Runs when the entity with the effect loads, or enables the mod.

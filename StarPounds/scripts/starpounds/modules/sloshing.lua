@@ -6,7 +6,6 @@ function sloshing:init()
   self.sloshActivations = 0
 end
 
-
 function sloshing:update(dt)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
@@ -33,6 +32,9 @@ function sloshing:update(dt)
   		status.modifyResource("energy", -self.data.sloshEnergy * energyMultiplier)
   		starPounds.gurgleTimer = math.max((starPounds.gurgleTimer or 0) - (self.data.sloshPercent * starPounds.settings.gurgleTime), 0)
   		starPounds.rumbleTimer = math.max((starPounds.rumbleTimer or 0) - (self.data.sloshPercent * starPounds.settings.rumbleTime), 0)
+      if starPounds.modules.effect_fizzy then
+        starPounds.modules.effect_fizzy:shake(sloshEffectiveness)
+      end
   	end
   	self.sloshActivations = math.min(self.sloshActivations + 1, self.data.sloshActivationCount)
   	self.sloshTimer = self.data.sloshTimer

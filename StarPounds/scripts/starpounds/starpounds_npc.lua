@@ -120,12 +120,10 @@ function update(dt)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
-	starPounds.exercise(dt)
 	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
 	starPounds.parseStatusEffectStats(dt)
-	starPounds.updateStatuses()
 	starPounds.updateStats(nil, dt)
 	-- Modules.
 	starPounds.moduleUpdate(dt)
@@ -180,9 +178,6 @@ function makeOverrideFunction()
       entity.foodType = speciesData.foodType
       -- NPCs don't have a food stat, and trying to adjust it crashes the script.
       starPounds.feed = starPounds.eat
-      -- Disable stuff NPCs don't use.
-      starPounds.hunger = nullFunction
-      starPounds.drink = nullFunction
       -- Save default functions.
       npc.say_old = npc.say_old or npc.say
 			notify_old = notify_old or notify

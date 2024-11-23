@@ -95,7 +95,6 @@ function update(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
 	starPounds.parseStatusEffectStats(dt)
-	starPounds.updateStatuses()
 	-- Modules.
 	starPounds.moduleUpdate(dt)
 	starPounds.optionChanged = false
@@ -150,11 +149,8 @@ function makeOverrideFunction()
 			end
 			-- Monsters don't have a food stat, and trying to adjust it crashes the script.
 			starPounds.feed = starPounds.eat
-			starPounds.hunger = nullFunction
 			-- Disable stuff monsters don't use
 			starPounds.gainExperience = nullFunction
-			starPounds.exercise = nullFunction
-			starPounds.drink = nullFunction
 			starPounds.getChestVariant = function() return "" end
 			starPounds.getDirectives = function() return "" end
 			starPounds.getSpecies = function() return "" end

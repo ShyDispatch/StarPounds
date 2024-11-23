@@ -386,78 +386,6 @@ starPounds.spawnMouthProjectile = function(actions, count)
 	})
 end
 
-starPounds.exercise = function(dt)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Argument sanitisation.
-	dt = math.max(tonumber(dt) or 0, 0)
-	if dt == 0 then return end
-	-- Assume we're not strained.
-	starPounds.strained = false
-	-- Skip this if we're in a sphere.
-	if status.stat("activeMovementAbilities") > 1 then return end
-	-- Jumping > Running > Walking
-	local weightLoss = starPounds.settings.weightLoss
-	local effort = 0
-	local consumeEnergy = false
-	if mcontroller.groundMovement() then
-		if mcontroller.walking() then effort = weightLoss.walking end
-		if mcontroller.running() then effort = weightLoss.running consumeEnergy = true end
-		-- Reset jump checker while on ground.
-		didJump = false
-		-- Moving through liquid takes up to 50% more effort.
-		effort = effort * (1 + math.min(math.round(mcontroller.liquidPercentage(), 1), 0.5))
-	elseif not mcontroller.liquidMovement() and mcontroller.jumping() and not didJump then
-		effort = weightLoss.jumping
-		consumeEnergy = true
-	else
-		didJump = true
-	end
-
-	-- Skip the rest if we're not moving.
-	if effort == 0 then return end
-	local thresholds = starPounds.settings.thresholds.strain
-	local speedModifier = 1
-	local runningSuppressed = false
-	-- Consume energy based on how far over capacity they are.
-	local strainedPenalty = starPounds.getStat("strainedPenalty")
-	if starPounds.stomach.fullness > thresholds.starpoundsstomach then
-		starPounds.strained = true
-		speedModifier = math.max(0.5, (1 - math.max(0, math.min(starPounds.stomach.fullness - thresholds.starpoundsstomach, 2)/4) * strainedPenalty * (1 - (status.resourcePercentage("energy")))))
-		runningSuppressed = status.isResource("energy") and (not status.resourcePositive("energy") or status.resourceLocked("energy"))
-		-- Consume and lock energy when running.
-		if status.isResource("energy") and not status.resourceLocked("energy") and consumeEnergy then
-			local energyCost = status.resourceMax("energy") * strainedPenalty * status.resourcePercentage("energyRegenBlock") * effort * 0.25 * dt
-			-- Double energy cost from super tummy-too-big-itus
-			if starPounds.stomach.fullness >= thresholds.starpoundsstomach2 then
-				energyCost = energyCost * 2
-			end
-			status.modifyResource("energy", -energyCost)
-			if status.isResource("energyRegenBlock") then
-				starPounds.energyRegenBlockDelta = starPounds.energyRegenBlockDelta or root.assetJson("/player.config:statusControllerSettings.resources.energyRegenBlock.deltaValue")
-				status.modifyResource("energyRegenBlock", ((1 + effort) * strainedPenalty - starPounds.energyRegenBlockDelta) * dt)
-			end
-		end
-	end
-	-- Sweat if we can't run and moving.
-	if runningSuppressed and effort > 0 then
-		status.addEphemeralEffect("sweat")
-	end
-	-- Move speed stuffs.
-	mcontroller.controlModifiers({
-		runningSuppressed = runningSuppressed,
-		airJumpModifier = runningSuppressed and (1 - (0.5 * strainedPenalty)) or nil,
-		speedModifier = speedModifier
-	})
-	-- Lose weight based on weight, effort, and the multiplier.
-	local amount = effort * (starPounds.weightMultiplier ^ 0.5) * dt * weightLoss.base * starPounds.getStat("metabolism")
-	-- Weight loss reduced by 75% if you're full, and have food in your stomach.
-	if status.isResource("food") and status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")) and starPounds.stomach.food > 0 then
-		amount = amount * 0.25
-	end
-	starPounds.loseWeight(amount)
-end
-
 starPounds.updateFoodItem = function(item)
 	if configParameter(item, "foodValue") and not configParameter(item, "starpounds_effectApplied", false) then
 		local experienceBonus = starPounds.settings.foodExperienceBonus
@@ -491,45 +419,6 @@ starPounds.updateFoodItem = function(item)
 		return item
 	end
 	return false
-end
-
-starPounds.updateStatuses = function()
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Check if statuses don't exist. (using the sound handler first since it doesn't change)
-	if not status.uniqueStatusEffectActive("starpoundssoundhandler") then
-		starPounds.createStatuses()
-		return
-	end
-
-	if not (starPounds.type == "player") then return end
-	-- Stomach status.
-	if not (starPounds.hasOption("disableStomachMeter") or starPounds.hasOption("legacyMode")) then
-		local stomachTracker = "starpoundsstomach"
-		if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach2 then
-			stomachTracker = "starpoundsstomach3"
-		elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach then
-			stomachTracker = "starpoundsstomach2"
-		end
-		if not status.uniqueStatusEffectActive(stomachTracker) then
-			starPounds.createStatuses()
-			return
-		end
-	end
-	-- Size status.
-	if not starPounds.hasOption("disableSizeMeter") then
-		if not status.uniqueStatusEffectActive("starpounds"..starPounds.currentSize.size) then
-			starPounds.createStatuses()
-			return
-		end
-	end
-	-- Tiddy status.
-	if starPounds.hasOption("breastMeter") then
-		if not status.uniqueStatusEffectActive("starpoundsbreast") then
-			starPounds.createStatuses()
-			return
-		end
-	end
 end
 
 starPounds.updateStats = function(force, dt)
@@ -1288,41 +1177,6 @@ starPounds.getSize = function(weight)
 	end
 
 	return starPounds.sizes[sizeIndex], sizeIndex
-end
-
-starPounds.hunger = function(dt)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Argument sanitisation.
-	dt = math.max(tonumber(dt) or 0, 0)
-	if dt == 0 then return end
-	-- Check if the player is starving.
-	starPounds.isStarving = status.uniqueStatusEffectActive("starving")
-	-- Check upgrade for preventing starving and they have weight loss enabled.
-	if starPounds.hasSkill("preventStarving") and not starPounds.hasOption("disableLoss") then
-		-- 1% more than the food delta.
-		if starPounds.isStarving then
-			local foodDelta = math.max(status.stat("foodDelta") * -1, 0) * dt
-			local availableWeight = storage.starPounds.weight - starPounds.sizes[starPounds.getSkillLevel("minimumSize") + 1].weight
-			if availableWeight > 0 then
-				starPounds.isStarving = false
-				local lossMultiplier = math.max(1, 1/math.max(0.01, (starPounds.getStat("foodValue") * starPounds.getStat("absorption"))))
-				-- Converting fat, so ignore weight loss modifiers.
-				starPounds.loseWeight(foodDelta * lossMultiplier, true)
-			end
-		end
-	end
-	-- Set the statuses.
-	if not (starPounds.type == "player") then return end
-	if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach and not starPounds.hasSkill("wellfedProtection") then
-		status.addEphemeralEffect("wellfed")
-	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 then
-		status.addEphemeralEffect("wellfed")
-	else
-		if status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")) and starPounds.stomach.food > 0 then
-			status.addEphemeralEffect("starpoundswellfed")
-		end
-	end
 end
 
 starPounds.getStomach = function()

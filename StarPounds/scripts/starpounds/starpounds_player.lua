@@ -73,10 +73,6 @@ function init()
 end
 
 function update(dt)
-	-- Holy shit why can we not detect what gamemode the player is using.
-	if starPounds.hasOption("disableHunger") then
-		status.setResourcePercentage("food", 1)
-	end
 	-- Check promises.
 	promises:update()
 	-- Reset stat cache.
@@ -154,13 +150,10 @@ function update(dt)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
-	starPounds.exercise(dt)
 	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
-	starPounds.hunger(dt)
 	starPounds.parseStatusEffectStats(dt)
-	starPounds.updateStatuses()
 	starPounds.updateStats(starPounds.optionChanged, dt)
 	-- Modules.
 	starPounds.moduleUpdate(dt)

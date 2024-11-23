@@ -1,21 +1,10 @@
--- Sets up the effect object, a data table, and placeholder functions for those below.
--- Adding blank functions is unnecessary unless you need the functionality.
--- Data table contains a reference to the effect's duration/level, and can be used for persistent storage.
+-- Effects are almost identical to modules (/scripts/starpounds/modules/example.lua), with a few exceptions:
+--  Effects don't have config files, instead use starPounds.effects.example to get the effect's config.
+--  Data table is persistent across loads, and gets baked into the save until the effect expires.
+--  Data table contains direct references to effect's duration and level. Editing these to change it.
+--  Additional functions for when the effect is applied (or reapplied), and expires (or gets removed).
 local example = starPounds.effect:new()
-example.data.something = "example"
--- Runs when the entity with the effect loads, or enables the mod.
-function example:init()
-  sb.logInfo("Example: init")
-  example.data.somethingElse = "example"
-end
--- Runs every effect update tick. (Delta is the effectTimer value in /scripts/starpounds/starpounds.config)
-function example:update(dt)
-  sb.logInfo("Example: update ("..sb.print(dt)..")")
-end
--- Runs when the entity with the effect unloads, or disables the mod.
-function example:uninit()
-  sb.logInfo("Example: uninit")
-end
+example.data.something = "I'm persistent across reloads!"
 -- Runs when the effect is applied, or increases in level.
 function example:apply()
   sb.logInfo("Example: apply")
@@ -23,6 +12,8 @@ end
 -- Runs when the effect expires, or otherwise gets removed.
 function example:expire()
   sb.logInfo("Example: expire")
+  -- Doesn't trigger when effects expire by default. Just call it here if you want it to.
+  self:uninit()
 end
 -- Add the effect.
 starPounds.scriptedEffects.example = example

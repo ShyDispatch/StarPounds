@@ -44,8 +44,8 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
-	starPounds.effectInit()
 	starPounds.moduleInit(starPounds.type)
+	starPounds.effectInit()
 	starPounds.damageHitboxTiles = damageHitboxTiles
 	-- Damage listener for fall/fire damage.
 	starPounds.damageListener = damageListener("damageTaken", function(notifications)
@@ -154,7 +154,6 @@ function update(dt)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
-	starPounds.slosh(dt)
 	starPounds.exercise(dt)
 	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
@@ -218,7 +217,6 @@ function uninit()
 		starPounds.resetBreasts()
 	end
 	starPounds.releaseEntity(nil, true)
-	starPounds.effectUninit()
 	starPounds.moduleUninit()
 	starPounds.backup()
 end

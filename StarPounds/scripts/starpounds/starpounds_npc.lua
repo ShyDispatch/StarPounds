@@ -59,8 +59,8 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
-	starPounds.effectInit()
 	starPounds.moduleInit(starPounds.type)
+	starPounds.effectInit()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
@@ -142,7 +142,6 @@ function update(dt)
 end
 
 function uninit()
-	starPounds.effectUninit()
 	starPounds.moduleUninit()
 	uninit_old()
 end

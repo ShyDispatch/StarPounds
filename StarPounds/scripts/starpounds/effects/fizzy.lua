@@ -49,7 +49,7 @@ function fizzy:update(dt)
 end
 
 function fizzy:expire()
-  world.sendEntityMessage(entity.id(), "starPounds.stopSound", "fizz")
+  self:uninit()
 end
 
 function fizzy:uninit()

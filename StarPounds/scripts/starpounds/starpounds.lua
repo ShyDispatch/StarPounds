@@ -29,6 +29,82 @@ starPounds.getData = function(key)
 	return storage.starPounds
 end
 
+starPounds.moduleInit = function(entityType)
+	starPounds.modules = starPounds.modules or {}
+	local moduleString = "/scripts/starpounds/modules/%s.lua"
+	for i = 1, #starPounds.settings.modules.default do
+		require(string.format(moduleString, starPounds.settings.modules.default[i]))
+		local module = starPounds.modules[starPounds.settings.modules.default[i]]
+		module:moduleInit()
+	end
+	-- Entity specific modules.
+	if entityType then
+		for i = 1, #starPounds.settings.modules[entityType] do
+			require(string.format(moduleString, starPounds.settings.modules[entityType][i]))
+			local module = starPounds.modules[starPounds.settings.modules[entityType][i]]
+			module:moduleInit()
+		end
+	end
+end
+
+starPounds.moduleUpdate = function(dt)
+	for _, module in pairs(starPounds.modules) do
+		module:moduleUpdate(dt)
+	end
+end
+
+starPounds.moduleUninit = function()
+	for _, module in pairs(starPounds.modules) do
+		module:uninit()
+	end
+end
+
+starPounds.module = {}
+function starPounds.module:new(name)
+  local module = {}
+	local moduleString = "/scripts/starpounds/modules/%s.config"
+	module.data = root.assetJson(string.format(moduleString, name))
+  setmetatable(module, extend(self))
+  return module
+end
+
+-- Specific module initialising.
+function starPounds.module:moduleInit()
+	-- Sticking all the management stuff under a module table just in case.
+	self.module = {
+		parentDelta = math.round(60 * script.updateDt()),
+		tickCounter = 0,
+		updateTicks = 1
+	}
+	self:setUpdateDelta(self.data.scriptDelta)
+	self:init()
+end
+-- Instead of a timer, just count update ticks of the main script.
+-- E.g. If the module delta is 10, and the main script is 5, update every 2 main script ticks.
+function starPounds.module:moduleUpdate(dt) -- Updates the module's update loop based on it's delta.
+	if self.module.updateTicks == 0 then return end
+	self.module.tickCounter = (self.module.tickCounter + 1) % self.module.updateTicks
+	if self.module.tickCounter == 0 then
+		-- Run the actual update loop.
+		self:update(dt * self.module.updateTicks)
+	end
+end
+
+function starPounds.module:setUpdateDelta(dt)
+	-- Argument sanitisation.
+	dt = math.max(tonumber(dt) or 1, 0)
+	-- 0 = No update.
+	if dt == 0 then
+		self.module.updateTicks = 0
+		return
+	end
+	self.module.updateTicks = math.max(math.round(dt / self.module.parentDelta), 1)
+end
+-- Standard functions.
+function starPounds.module:init() end -- Runs whenever the target loads in, or the mod gets enabled.
+function starPounds.module:update(dt) end -- Update loop.
+function starPounds.module:uninit() end -- Runs whenever the target unloads, or the mod gets disabled.
+
 starPounds.digest = function(dt, isGurgle, isBelch)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
@@ -422,57 +498,6 @@ starPounds.exercise = function(dt)
 		amount = amount * 0.25
 	end
 	starPounds.loseWeight(amount)
-end
-
-starPounds.drink = function(dt)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Argument sanitisation.
-	dt = math.max(tonumber(dt) or 0, 0)
-	if dt == 0 then return end
-	-- Don't do anything if drinking is disabled.
-	if starPounds.hasOption("disableDrinking") then return end
-	-- Don't drink inside distortion spheres.
-	if status.stat("activeMovementAbilities") > 1 then return end
-	-- Can only drink if you're below capacity.
-	if starPounds.stomach.fullness >= 1 and not starPounds.hasSkill("wellfedProtection") then
-		return
-	elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 then
-		return
-	end
-	local mouthPosition = starPounds.mouthPosition()
-	local mouthLiquid = world.liquidAt(mouthPosition) or world.liquidAt(vec2.add(mouthPosition, {0, 0.25}))
-	-- Space out 'drinks', otherwise they'll happen every script update.
-	drinkTimer = math.max((drinkTimer or 0) - dt, 0)
-	drinkCounter = drinkCounter or 0
-	-- Check if drinking isn't on cooldown.
-	if not (drinkTimer == 0) then return end
-	-- Check if there is liquid in front of the entities's mouth, and if it is drinkable.
-	if mouthLiquid and (starPounds.settings.drinkables[root.liquidName(mouthLiquid[1])] or starPounds.hasOption("universalDrinking")) then
-		-- Remove liquid at the entities's mouth, and store how much liquid was removed.
-		local consumedLiquid = world.destroyLiquid(mouthPosition) or world.destroyLiquid(vec2.add(mouthPosition, {0, 0.25}))
-		if consumedLiquid and consumedLiquid[1] and consumedLiquid[2] then
-			-- Increment counter up to 2 (20 times).
-			drinkCounter = math.min(drinkCounter + 0.1, 2)
-			-- Reset the drink cooldown, shorter based on how high drinkCounter is.
-			drinkTimer = 1/(1 + drinkCounter)
-			-- Add to entities's stomach based on liquid consumed.
-			local foodAmount = starPounds.settings.drinkableVolume * (starPounds.settings.drinkables[root.liquidName(consumedLiquid[1])] or 0)
-			starPounds.feed(foodAmount * consumedLiquid[2], "liquidFood")
-			starPounds.feed(math.max(0, starPounds.settings.drinkableVolume - foodAmount) * consumedLiquid[2], "liquid")
-			-- Play drinking sound. Volume increased by amount of liquid consumed.
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "drink", 0.5 + 0.5 * consumedLiquid[2], math.random(8, 12)/10)
-			status.addEphemeralEffect("starpoundsdrinking")
-		end
-	else
-		-- Reset the drink counter if there is nothing to drink.
-		if drinkCounter >= 1 then
-			-- Gets up to 25% deeper depending on how many 'sips' over 10 were taken.
-			local belchMultiplier = 1 - (drinkCounter - 1) * 0.25
-			starPounds.belch(0.75, starPounds.belchPitch(belchMultiplier))
-		end
-		drinkCounter = 0
-	end
 end
 
 starPounds.updateFoodItem = function(item)
@@ -1072,14 +1097,14 @@ starPounds.loadScriptedEffect = function(effect)
 	end
 end
 
-starPounds.initScriptedEffects = function()
+starPounds.effectInit = function()
 	starPounds.scriptedEffects = {}
 	for effect in pairs(storage.starPounds.effects) do
 		starPounds.loadScriptedEffect(effect)
 	end
 end
 
-starPounds.uninitScriptedEffects = function()
+starPounds.effectUninit = function()
 	for _, effect in pairs(starPounds.scriptedEffects) do
 		effect:uninit()
 	end
@@ -2747,7 +2772,6 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.predEaten", simpleHandler(starPounds.predEaten))
 	message.setHandler("starPounds.getDigested", simpleHandler(starPounds.getDigested))
 	message.setHandler("starPounds.getReleased", simpleHandler(starPounds.getReleased))
-	message.setHandler("starPounds.digestedPizzaEmployee", simpleHandler(starPounds.digestedPizzaEmployee))
 	-- Interface/debug stuff.
 	message.setHandler("starPounds.reset", localHandler(starPounds.reset))
 	message.setHandler("starPounds.resetConfirm", localHandler(starPounds.reset))
@@ -2772,7 +2796,7 @@ starPounds.toggleEnable = function()
 	starPounds.updateStats(true)
 	starPounds.optionChanged = true
 	if not storage.starPounds.enabled then
-		starPounds.uninitScriptedEffects()
+		starPounds.effectUninit()
 		starPounds.movementModifier = 1
 		starPounds.jumpModifier = 1
 		starPounds.equipCheck(starPounds.getSize(0))
@@ -2780,7 +2804,7 @@ starPounds.toggleEnable = function()
 		status.clearPersistentEffects("starpounds")
 		status.clearPersistentEffects("starpoundseaten")
 	else
-		starPounds.initScriptedEffects()
+		starPounds.effectInit()
 	end
 	return storage.starPounds.enabled
 end

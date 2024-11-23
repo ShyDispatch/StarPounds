@@ -44,7 +44,8 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
-	starPounds.initScriptedEffects()
+	starPounds.effectInit()
+	starPounds.moduleInit(starPounds.type)
 	starPounds.damageHitboxTiles = damageHitboxTiles
 	-- Damage listener for fall/fire damage.
 	starPounds.damageListener = damageListener("damageTaken", function(notifications)
@@ -155,7 +156,6 @@ function update(dt)
 	starPounds.digest(dt)
 	starPounds.slosh(dt)
 	starPounds.exercise(dt)
-	starPounds.drink(dt)
 	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
@@ -163,6 +163,8 @@ function update(dt)
 	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStatuses()
 	starPounds.updateStats(starPounds.optionChanged, dt)
+	-- Modules.
+	starPounds.moduleUpdate(dt)
 	-- Save for comparison later.
 	oldSize = starPounds.currentSize
 	oldVariant = starPounds.currentVariant
@@ -216,6 +218,8 @@ function uninit()
 		starPounds.resetBreasts()
 	end
 	starPounds.releaseEntity(nil, true)
+	starPounds.effectUninit()
+	starPounds.moduleUninit()
 	starPounds.backup()
 end
 
@@ -286,15 +290,6 @@ function makeOverrideFunction()
     		starPounds.setWeight = nullFunction
     		starPounds.getSize = function() return starPounds.sizes[1], 1 end
     	end
-
-			-- Pizza stuff.
-			starPounds.digestedPizzaEmployee = function()
-				storage.starPounds.pizzaEmployeesEaten = (storage.starPounds.pizzaEmployeesEaten or 0) + 1
-			end
-
-			starPounds.boughtPizza = function()
-				storage.starPounds.pizzaEmployeesEaten = nil
-			end
 
       -- Only ever run this once per load.
       starPounds.didOverrides = true

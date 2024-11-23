@@ -10,6 +10,7 @@ function init()
   self.minimumLiquid = root.assetJson("/player.config:statusControllerSettings.minimumLiquidStatusEffectPercentage")
   self.sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes")
 	self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
+  self.caloriumFood = drinking.drinkableVolume * drinking.drinkables.starpoundscaloriumliquid
 
   animator.setSoundVolume("digest", 0.75)
   animator.setSoundPitch("digest", 2/(1 + self.tickTime))
@@ -47,11 +48,9 @@ function update(dt)
         self.tickTime = math.max(self.tickTime - self.tickTimeStep, self.tickTimeMinimum)
         self.tickTimer = self.tickTime
 
-        local foodAmount = self.settings.drinkableVolume * (self.settings.drinkables.starpoundscaloriumliquid or 0)
-
         promises:add(world.sendEntityMessage(entity.id(), "starPounds.getData"), function(starPounds)
           increaseWeightProgress(starPounds.weight, self.progressStep * consumedLiquid)
-          world.sendEntityMessage(entity.id(), "starPounds.gainWeight", foodAmount * consumedLiquid, true)
+          world.sendEntityMessage(entity.id(), "starPounds.gainWeight", self.caloriumFood * consumedLiquid, true)
         end)
 
         animator.setSoundPitch("digest", 2/(1 + self.tickTime))

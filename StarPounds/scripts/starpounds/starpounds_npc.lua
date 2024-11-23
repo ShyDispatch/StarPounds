@@ -59,7 +59,8 @@ function init()
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
-	starPounds.initScriptedEffects()
+	starPounds.effectInit()
+	starPounds.moduleInit(starPounds.type)
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
 	end
@@ -126,6 +127,8 @@ function update(dt)
 	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStatuses()
 	starPounds.updateStats(nil, dt)
+	-- Modules.
+	starPounds.moduleUpdate(dt)
 	-- Save for comparison later.
 	oldSize = starPounds.currentSize
 	oldVariant = starPounds.currentVariant
@@ -139,7 +142,8 @@ function update(dt)
 end
 
 function uninit()
-	starPounds.uninitScriptedEffects()
+	starPounds.effectUninit()
+	starPounds.moduleUninit()
 	uninit_old()
 end
 

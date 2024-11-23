@@ -204,7 +204,7 @@ function refreshOrderCost()
     {randomFeeName, (randomFeeName == "Free Delivery Fee" and 100 or 0) + 0.2 * orderCost},
     locationalFee and {locationalFee.name, locationalFee.price} or {"-", 0},
     rareFee and {rareFee.name, rareFee.price} or {"-", 0},
-    {"^red;ª Staff Replacement Fee", (starPounds.getData("pizzaEmployeesEaten") or 0) * 1000},
+    {"^red;ª Staff Replacement Fee", starPounds.modules.pizza:employeeFee()},
     {"^yellow; Couples Discount", (foodValue >= 210 and foodValue < 420) and -0.025 * orderCost or 0},
     {"^yellow; Family Discount", (foodValue >= 420 and foodValue < 1260) and -0.05 * orderCost or 0},
     {"^yellow; Party Discount", (foodValue >= 1260 and foodValue < 5040) and -0.075 * orderCost or 0},
@@ -287,7 +287,7 @@ function order:onClick()
       player.consumeCurrency("money", math.max(orderCost, 0))
     end
 
-    starPounds.boughtPizza()
+    starPounds.modules.pizza:boughtPizza()
     widget.playSound("/sfx/objects/coinstack_medium1.ogg")
     pane.dismiss()
   end

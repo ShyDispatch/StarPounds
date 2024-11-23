@@ -8,8 +8,7 @@ function init()
 	self.animationRate = 1
 	self.capacity = config.getParameter("capacity", 1000)
 	self.maxWeight = root.assetJson("/scripts/starpounds/starpounds.config:settings.maxWeight")
-	self.drinkables = root.assetJson("/scripts/starpounds/starpounds.config:settings.drinkables")
-	self.drinkableVolume = root.assetJson("/scripts/starpounds/starpounds.config:settings.drinkableVolume")
+  self.drinking = root.assetJson("/scripts/starpounds/modules/drinking.config")
 	self.boundBox = object.boundBox()
 	self.statusBlacklist = {
 		"wet",
@@ -61,8 +60,8 @@ function update(dt)
 					animator.playSound("drink")
 					storage.amount = math.max(0, storage.amount - 1)
 					setLiquidLevel(storage.amount)
-					world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinkableVolume * (self.drinkables[storage.liquid.name] or 0), "liquidFood")
-					world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinkableVolume * (1 - (self.drinkables[storage.liquid.name] or 0)), "liquid")
+					world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinking.drinkableVolume * (self.drinking.drinkables[storage.liquid.name] or 0), "liquidFood")
+					world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinking.drinkableVolume * (1 - (self.drinking.drinkables[storage.liquid.name] or 0)), "liquid")
 					for _, statusEffect in pairs(storage.liquid.statusEffects) do
 						if not contains(self.statusBlacklist, statusEffect) then
 							world.sendEntityMessage(feedTarget, "applyStatusEffect", statusEffect)

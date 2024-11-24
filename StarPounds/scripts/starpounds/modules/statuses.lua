@@ -1,7 +1,8 @@
 local statuses = starPounds.module:new("statuses")
 
 function statuses:init()
-  statuses:update(1)
+  self.bonuses = {}
+  self.multipliers = {}
 end
 
 function statuses:update(dt)
@@ -9,8 +10,8 @@ function statuses:update(dt)
   if not storage.starPounds.enabled then return end
   self.bonuses = {}
   self.multipliers = {}
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
+  -- Don't create if we can't add statuses anyway.
+	if status.statPositive("statusImmunity") then return end
 	for effectName, stats in pairs(self.data.bonuses) do
 		if status.uniqueStatusEffectActive(effectName) then
 			for stat, bonus in pairs(stats) do

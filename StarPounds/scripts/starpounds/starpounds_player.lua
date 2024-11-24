@@ -135,13 +135,14 @@ function update(dt)
 	if starPounds.currentSize.size ~= (oldSize and oldSize.size or nil) then
 		-- Force stat update.
 		starPounds.updateStats(true)
-		-- Update status effect trackers.
-		starPounds.createStatuses()
 		-- Don't play the sound on the first load.
 		if oldSize then
 			-- Play sound to indicate size change.
 			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, math.random(10,15) * 0.1 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
 		end
+		-- Update status effect tracker.
+		world.sendEntityMessage(entity.id(), "starPounds.expireSizeTracker")
+		starPounds.modules.tracking:createStatuses()
 	end
 	-- Checks
 	starPounds.voreCheck()

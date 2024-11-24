@@ -533,37 +533,10 @@ starPounds.createStatuses = function()
 	if not storage.starPounds.enabled then return end
 	-- Don't recreate if we can't add statuses anyway.
 	if status.statPositive("statusImmunity") then return end
-	-- Remove all old statuses.
-	world.sendEntityMessage(entity.id(), "starPounds.expire")
-	status.addEphemeralEffect("starpoundssoundhandler")
-
 	status[((storage.starPounds.pred or not status.resourcePositive("health")) and "set" or "clear").."PersistentEffects"]("starpoundseaten", {
 		{stat = "statusImmunity", effectiveMultiplier = 0}
 	})
 	status[((storage.starPounds.pred or not status.resourcePositive("health")) and "add" or "remove").."EphemeralEffect"]("starpoundseaten")
-
-	if not (starPounds.type == "player") then return end
-
-	local stomachTracker = "starpoundsstomach"
-	if starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach2 then
-		stomachTracker = "starpoundsstomach3"
-	elseif starPounds.stomach.interpolatedFullness >= starPounds.settings.thresholds.strain.starpoundsstomach then
-		stomachTracker = "starpoundsstomach2"
-	end
-	-- Removing them just puts them back in order (Size tracker before stomach tracker)
-	local sizeTracker = "starpounds"..starPounds.currentSize.size
-	status.removeEphemeralEffect(sizeTracker)
-	if not starPounds.hasOption("disableSizeMeter") then
-		status.addEphemeralEffect(sizeTracker)
-	end
-	status.removeEphemeralEffect(stomachTracker)
-	if not (starPounds.hasOption("disableStomachMeter") or starPounds.hasOption("legacyMode")) then
-		status.addEphemeralEffect(stomachTracker)
-	end
-	status.removeEphemeralEffect("starpoundsbreast")
-	if starPounds.hasOption("breastMeter") then
-		status.addEphemeralEffect("starpoundsbreast")
-	end
 end
 
 starPounds.gainExperience = function(amount, multiplier, isLevel)
@@ -945,12 +918,6 @@ starPounds.effectInit = function()
 	starPounds.scriptedEffects = {}
 	for effect in pairs(storage.starPounds.effects) do
 		starPounds.loadScriptedEffect(effect)
-	end
-end
-
-starPounds.effectUninit = function()
-	for _, effect in pairs(starPounds.scriptedEffects) do
-		effect:uninit()
 	end
 end
 
@@ -2551,7 +2518,7 @@ starPounds.toggleEnable = function()
 	starPounds.updateStats(true)
 	starPounds.optionChanged = true
 	if not storage.starPounds.enabled then
-		starPounds.effectUninit()
+		starPounds.moduleUninit()
 		starPounds.movementModifier = 1
 		starPounds.jumpModifier = 1
 		starPounds.equipCheck(starPounds.getSize(0))
@@ -2559,6 +2526,7 @@ starPounds.toggleEnable = function()
 		status.clearPersistentEffects("starpounds")
 		status.clearPersistentEffects("starpoundseaten")
 	else
+		starPounds.moduleInit(starPounds.type)
 		starPounds.effectInit()
 	end
 	return storage.starPounds.enabled

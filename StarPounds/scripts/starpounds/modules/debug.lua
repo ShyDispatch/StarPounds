@@ -24,8 +24,7 @@ function debug:update(dt)
 end
 
 function debug:format(k, v, ...)
-  if not storage.starPounds.enabled then v = "<c:3>Mod disabled" end
-  v = self:colourString(k, v)
+  v = storage.starPounds.enabled and self:colourString(k, v) or self:colourString("disabled", "<c:3>Mod disabled")
   sb.setLogMap(string.format("%s%s", "^#ccbbff;StarPounds_", k), sb.print(string.format(v, ...)))
 end
 

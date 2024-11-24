@@ -163,7 +163,6 @@ function makeOverrideFunction()
 			starPounds.setWeight = nullFunction
 			starPounds.gainMilk = nullFunction
 			starPounds.lactate = nullFunction
-			starPounds.lactating = nullFunction
 			-- Save default functions.
 			openDoors_old = openDoors_old or openDoors
 			closeDoors_old = closeDoors_old or closeDoors

@@ -120,7 +120,6 @@ function update(dt)
 	-- Actions.
 	starPounds.eaten(dt)
 	starPounds.digest(dt)
-	starPounds.lactating(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
 	starPounds.parseStatusEffectStats(dt)

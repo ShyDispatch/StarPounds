@@ -1594,30 +1594,6 @@ end
 
 -- Milky functions
 ----------------------------------------------------------------------------------
-starPounds.lactating = function(dt)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Don't do anything if eaten.
-	if storage.starPounds.pred then return end
-	-- Argument sanitisation.
-	dt = math.max(tonumber(dt) or 0, 0)
-	if dt == 0 then return end
-	-- Check if breast capacity is exceeded.
-	if starPounds.breasts.contents > starPounds.breasts.capacity then
-		if starPounds.hasOption("disableLeaking") then
-			if not starPounds.hasOption("disableMilkGain") then
-				storage.starPounds.breasts = starPounds.breasts.capacity
-			end
-			return
-		end
-		if math.random(1, math.round(3/dt)) == 1 then
-			local amount = math.min(math.round(starPounds.breasts.fullness * 0.5, 1), 1, starPounds.breasts.contents - starPounds.breasts.capacity)
-			-- Lactate away excess
-			starPounds.lactate(amount)
-		end
-	end
-end
-
 starPounds.lactate = function(amount, noConsume)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
@@ -2688,10 +2664,6 @@ starPounds.backup = function()
 	if starPounds.type == "player" then
 		player.setProperty("starPoundsBackup", storage.starPounds)
 	end
-end
-
-starPounds.debug = function(k, v)
-	sb.setLogMap(string.format("%s%s", "^#ccbbff;StarPounds_", k), sb.print(v))
 end
 
 -- Other functions

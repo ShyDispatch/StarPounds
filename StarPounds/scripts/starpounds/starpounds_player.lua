@@ -35,16 +35,15 @@ function init()
 		starPounds.forceUnlockSkill(skill[1], skill[2])
 	end
 	-- Reload whenever the entity loads in/beams/etc.
+	starPounds.moduleInit(starPounds.type)
 	starPounds.statCache = {}
 	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.parseStatusEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
-	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
 	starPounds.damageHitboxTiles = damageHitboxTiles
 	-- Damage listener for fall/fire damage.
@@ -152,7 +151,6 @@ function update(dt)
 	starPounds.digest(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
-	starPounds.parseStatusEffectStats(dt)
 	starPounds.updateStats(starPounds.optionChanged, dt)
 	-- Modules.
 	starPounds.moduleUpdate(dt)
@@ -175,19 +173,6 @@ function update(dt)
 end
 
 function uninit()
-	if not status.resourcePositive("health") then
-		local experienceProgress = storage.starPounds.experience/(starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
-		local experienceCost = math.ceil(starPounds.settings.deathExperiencePercentile * storage.starPounds.level * starPounds.getStat("deathPenalty"))
-		local weightCost = math.ceil(storage.starPounds.weight * starPounds.settings.deathWeightPercentile * starPounds.getStat("deathPenalty"))
-		-- Reduce levels and progress to next experience level.
-		storage.starPounds.level = math.max(storage.starPounds.level - experienceCost, 0)
-		storage.starPounds.experience = math.max(experienceProgress - (starPounds.settings.deathExperiencePercentile * starPounds.getStat("deathPenalty")), 0) * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement)
-		-- Lose weight.
-		starPounds.loseWeight(weightCost)
-		-- Reset stomach.
-		starPounds.resetStomach()
-		starPounds.resetBreasts()
-	end
 	starPounds.releaseEntity(nil, true)
 	starPounds.moduleUninit()
 	starPounds.backup()

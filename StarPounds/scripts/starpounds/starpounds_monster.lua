@@ -48,17 +48,16 @@ function starPoundsInit()
 		storage.starPounds.parsedInitialSkills = true
 	end
 
+	starPounds.moduleInit(starPounds.type)
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.parseStatusEffectStats(1)
 	starPounds.stomach = starPounds.getStomach()
 	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant()
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
 	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/entity.weight), 1)
-	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
@@ -94,7 +93,6 @@ function update(dt)
 	starPounds.digest(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
-	starPounds.parseStatusEffectStats(dt)
 	-- Modules.
 	starPounds.moduleUpdate(dt)
 	starPounds.optionChanged = false

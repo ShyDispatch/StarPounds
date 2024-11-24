@@ -1067,45 +1067,12 @@ starPounds.getEffectBonus = function(stat)
 	return (starPounds.effectStats[stat] or {0, 1})[1]
 end
 
-starPounds.parseStatusEffectStats = function(dt)
-	starPounds.statusEffectModifierTimer = math.max((starPounds.statusEffectModifierTimer or 0) - dt, 0)
-	if starPounds.statusEffectModifierTimer == 0 then
-		starPounds.statusEffectModifiers = {
-			bonuses = {},
-			multipliers = {}
-		}
-		-- Don't do anything if the mod is disabled.
-		if not storage.starPounds.enabled then return end
-		for effectName, stats in pairs(starPounds.settings.statusEffectModifiers.bonuses) do
-			if status.uniqueStatusEffectActive(effectName) then
-				for stat, bonus in pairs(stats) do
-					local currentBonus = starPounds.statusEffectModifiers.bonuses[stat] or 0
-					starPounds.statusEffectModifiers.bonuses[stat] = currentBonus + bonus
-				end
-			end
-		end
-		for effectName, stats in pairs(starPounds.settings.statusEffectModifiers.multipliers) do
-			if status.uniqueStatusEffectActive(effectName) then
-				for stat, multiplier in pairs(stats) do
-					local currentMultiplier = starPounds.statusEffectModifiers.multipliers[stat] or 1
-					starPounds.statusEffectModifiers.multipliers[stat] = currentMultiplier * multiplier
-				end
-			end
-		end
-		starPounds.statusEffectModifierTimer = starPounds.settings.effectRefreshTimer
-	end
-end
-
 starPounds.getStatusEffectMultiplier = function(stat)
-	-- Argument sanitisation.
-	stat = tostring(stat)
-	return starPounds.statusEffectModifiers.multipliers[stat] or 1
+	return 1
 end
 
 starPounds.getStatusEffectBonus = function(stat)
-	-- Argument sanitisation.
-	stat = tostring(stat)
-	return starPounds.statusEffectModifiers.bonuses[stat] or 0
+	return 0
 end
 
 starPounds.getAccessory = function()

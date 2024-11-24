@@ -323,7 +323,7 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 	-- Ends up yielding around 10 - 15 particles if the belch is very loud and deep, 3 - 5 at normal volume and pitch, and none if it's half volume or twice as high pitch.
 	local volumeMultiplier = math.max(math.min(volume, 1.5), 0)
 	local pitchMultiplier = 1/math.max(pitch, 2/3)
-	local particleCount = math.round(math.max(math.random(75, 100) * 0.1 * pitchMultiplier * volumeMultiplier - 5, 0))
+	local particleCount = starPounds.hasOption("disableBelchParticles") and 0 or math.round(math.max(math.random(75, 100) * 0.1 * pitchMultiplier * volumeMultiplier - 5, 0))
 	-- Belches give momentum in zero g based on the particle count, because why not.
 	local facingDirection = mcontroller.facingDirection()
 	if addMomentum and mcontroller.zeroG() then
@@ -337,7 +337,7 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 		end
 	end
 	-- Skip if we're not doing particles.
-	if starPounds.hasOption("disableBelchParticles") then return end
+	if particleCount == 0 then return end
 	local mouthPosition = starPounds.mouthPosition()
 	local gravity = world.gravity(mouthPosition)
 	local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
@@ -1601,7 +1601,9 @@ starPounds.lactate = function(amount, noConsume)
 	if storage.starPounds.pred then return end
 	-- Argument sanitisation.
 	amount = math.max(tonumber(amount) or 0, 0)
+	-- Skip if no milk.
 	if amount == 0 then return end
+	if starPounds.breasts.contents == 0 then return end
 	-- Don't spawn milk automatically if leaking is disabled, gain it instead.
 	if starPounds.hasOption("disableLeaking") and noConsume then starPounds.gainMilk(amount) return end
 	amount = math.min(math.round(amount, 4), starPounds.breasts.contents)
@@ -1668,7 +1670,7 @@ starPounds.voreCheck = function()
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
 	-- Don't do anything if there's no eaten entities.
-	if not (#storage.starPounds.stomachEntities > 0) then return end
+	if storage.starPounds.stomachEntities == 0 then return end
 	-- table.remove is doodoo poop water.
 	local newStomach = jarray()
 	for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do

@@ -42,12 +42,12 @@ function update(dt, _, shiftHeld)
 	local valid = starPounds.eatNearbyEntity(targetPosition, range - (starPounds.currentSize.yOffset or 0), querySize, nil, true)
 	cursorType = (valid and valid[1]) and (valid[2] and "pred_valid" or "pred_nearby") or "pred"
 	-- Stomach icon updater.
-	local stomachEntities = starPounds.getData("stomachEntities")
 	updateCursor(shiftHeld)
 end
 
 function canRelease()
-	canRelease = false
+	local canRelease = false
+	local stomachEntities = getmetatable ''.starPounds.getData("stomachEntities")
 	for preyIndex = #stomachEntities, 1, -1 do
 		local prey = stomachEntities[preyIndex]
 		if not prey.noRelease then

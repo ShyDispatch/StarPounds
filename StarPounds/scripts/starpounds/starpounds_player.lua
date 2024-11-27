@@ -92,28 +92,6 @@ function update(dt)
 	starPounds.experience = storage.starPounds.experience
 	starPounds.weightMultiplier = storage.starPounds.enabled and math.round(1 + (storage.starPounds.weight/entity.weight), 1) or 1
 
-	local doBlobProjectile = false
-	local blobProjectileActive = starPounds.blobProjectile and world.entityExists(starPounds.blobProjectile)
-	if storage.starPounds.enabled then
-		starPounds.damageListener:update()
-		if starPounds.currentSize.isBlob then
-			-- Automatically open doors in front/close doors behind since blob's cant reach to interact.
-			if not starPounds.hasOption("disableBlobDoors") then
-				useDoors()
-			end
-			-- Spawn blob projectile.
-			doBlobProjectile = status.stat("activeMovementAbilities") < 1 and not starPounds.hasOption("disableBlobCollision")
-			if doBlobProjectile and not blobProjectileActive then
-				starPounds.blobProjectile = world.spawnProjectile("starpoundsblobhitbox", mcontroller.position(), entity.id(), {0, 0}, true)
-			end
-		end
-	end
-	-- Kill the blob projectile if we don't need it.
-	if blobProjectileActive and not doBlobProjectile then
-		world.callScriptedEntity(starPounds.blobProjectile, "projectile.die")
-		starPounds.blobProjectile = nil
-	end
-
 	local currentSizeWeight = starPounds.currentSize.weight
 	local nextSizeWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
 	if nextSizeWeight ~= starPounds.settings.maxWeight and starPounds.sizes[starPounds.currentSizeIndex + 1].isBlob and starPounds.hasOption("disableBlob") then
@@ -251,44 +229,4 @@ function makeOverrideFunction()
       starPounds.didOverrides = true
     end
   end
-end
-
-function useDoors()
-  if not (mcontroller.running() or mcontroller.walking()) then
-    return
-  end
-
-	local playerBounds = rect.pad(mcontroller.boundBox(), {0, -1})
-	local playerWidth = math.abs(playerBounds[3] - playerBounds[1]) * 0.5
-  local openBounds = rect.translate(playerBounds, mcontroller.position())
-  local closeBounds = {table.unpack(openBounds)}
-
-  if mcontroller.movingDirection() > 0 then
-		openBounds[1], openBounds[3] = openBounds[3], openBounds[3] + 0.5
-    closeBounds[3], closeBounds[1] = closeBounds[1] - 3, closeBounds[1] - 3.5
-  else
-    openBounds[3], openBounds[1] = openBounds[1], openBounds[1] - 0.5
-    closeBounds[1], closeBounds[3] = closeBounds[3] + 3, closeBounds[3] + 3.5
-  end
-
-	local function sendDoorMessage(doorId, minimumDistance, message)
-    local canInteract = world.isEntityInteractive(doorId)
-    local isDoor = contains(world.getObjectParameter(doorId, "scripts", jarray()), "/objects/wired/door/door.lua")
-    if canInteract and isDoor then
-      local distance = math.floor(math.abs(world.distance(mcontroller.position(), world.entityPosition(doorId))[1]) - playerWidth)
-      if not minimumDistance or distance <= minimumDistance then
-        world.sendEntityMessage(doorId, message)
-      end
-    end
-  end
-
-  local function queryDoors(bounds, minimumDistance, message)
-    local doorIds = world.objectQuery(rect.ll(bounds), rect.ur(bounds))
-    for _, doorId in ipairs(doorIds) do
-      sendDoorMessage(doorId, minimumDistance, message)
-    end
-  end
-
-  queryDoors(openBounds, nil, "openDoor")
-  queryDoors(closeBounds, 1, "closeDoor")
 end

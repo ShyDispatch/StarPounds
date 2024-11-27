@@ -71,7 +71,7 @@ function update(args)
         tech.setParentOffset({0, 0})
 
         local width = {0, 0}
-        local position = vec2.add(mcontroller.position(), (starPounds.currentSize.isBlob and {0, -1.5} or {0, 0}))
+        local position = vec2.add(mcontroller.position(), ({0, starPounds.currentSize.yOffset or 0}))
         for _,v in ipairs(mcontroller.collisionPoly()) do
           width[1] = (v[1] < width[1]) and v[1] or width[1]
           width[2] = (v[1] > width[2]) and v[1] or width[2]
@@ -225,7 +225,7 @@ shockwave = {
 
 	fireShockwave = function(width)
 		local impact
-		local position = vec2.add(mcontroller.position(), (starPounds.currentSize.isBlob and {0, -1.5} or {0, 0}))
+		local position = vec2.add(mcontroller.position(), ({0, starPounds.currentSize.yOffset or 0}))
 		local blocks = world.collisionBlocksAlongLine(vec2.add(position, shockwave.impactLine[1]), vec2.add(position, shockwave.impactLine[2]), {"Null", "Block"})
 		if #blocks > 0 then
 			impact = vec2.add(blocks[1], {0.5, 0.5})

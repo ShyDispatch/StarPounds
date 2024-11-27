@@ -16,7 +16,7 @@ function startDash(direction)
     statusEffects = {{effect = "ragdoll", duration = 0.25 * multiplier}}
   }
   for offset = width, -1, -2 do
-    spawnKnockbackProjectile(vec2.add(mcontroller.position(), {(offset) * self.dashDirection, -3 - (starPounds.currentSize.isBlob and 2 or 0)}), params)
+    spawnKnockbackProjectile(vec2.add(mcontroller.position(), vec2.add({(offset) * self.dashDirection, -3}, {0, starPounds.currentSize.yOffset or 0})), params)
   end
 end
 

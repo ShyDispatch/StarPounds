@@ -1645,6 +1645,10 @@ starPounds.eatNearbyEntity = function(position, range, querySize, options, check
 	options = type(options) == "table" and options or {}
 
 	local mouthPosition = starPounds.mouthPosition()
+	if starPounds.currentSize.yOffset then
+		mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+	end
+
 	local preferredEntities = position and world.entityQuery(position, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()}) or jarray()
 	local nearbyEntities = world.entityQuery(mouthPosition, range, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()})
 	local eatenTargets = jarray()

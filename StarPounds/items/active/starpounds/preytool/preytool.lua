@@ -2,8 +2,8 @@ require "/scripts/vec2.lua"
 require "/scripts/util.lua"
 
 function init()
-	range = config.getParameter("range", 3)
-	querySize = config.getParameter("querySize", 1)
+	range = config.getParameter("range", 2.5)
+	querySize = config.getParameter("querySize", 0.5)
 	activeItem.setHoldingItem(false)
 	activeItem.setCursor("/cursors/starpoundsvore.cursor:prey")
 	script.setUpdateDelta(world.getProperty("nonCombat") and 0 or 5)
@@ -13,12 +13,13 @@ end
 function update(dt)
 	local starPounds = getmetatable ''.starPounds
 	local validTarget = false
-	if starPounds and starPounds.isEnabled() and not starPounds.hasOption("disablePrey") then
-		position = activeItem.ownerAimPosition()
-		local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-		local mouthPosition = vec2.add(world.entityMouthPosition(activeItem.ownerEntityId()), mouthOffset)
+	if starPounds.isEnabled() and not starPounds.hasOption("disablePrey") then
+		local mouthPosition = starPounds.mouthPosition()
+		if starPounds.currentSize.yOffset then
+			mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+		end
 		local aimPosition = activeItem.ownerAimPosition()
-		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize)
+		local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize - (starPounds.currentSize.yOffset or 0))
 		local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
 		local entities = world.entityQuery(targetPosition, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = activeItem.ownerEntityId()}) or jarray()
 		for _, target in ipairs(entities) do
@@ -32,10 +33,12 @@ function update(dt)
 end
 
 function activate(fireMode, shiftHeld)
-	local mouthOffset = {0.375 * mcontroller.facingDirection() * (mcontroller.crouching() and 1.5 or 1), (mcontroller.crouching() and 0 or 1) - 1}
-	local mouthPosition = vec2.add(world.entityMouthPosition(activeItem.ownerEntityId()), mouthOffset)
+	local mouthPosition = starPounds.mouthPosition()
+	if starPounds.currentSize.yOffset then
+		mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+	end
 	local aimPosition = activeItem.ownerAimPosition()
-	local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize)
+	local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize - (starPounds.currentSize.yOffset or 0))
 	local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
 	local entities = world.entityQuery(targetPosition, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = activeItem.ownerEntityId()}) or jarray()
 	for _, target in ipairs(entities) do

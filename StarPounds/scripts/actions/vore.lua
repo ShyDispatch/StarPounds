@@ -32,5 +32,8 @@ function isEaten(args, board)
 end
 
 function blobOffset(args, board)
-  return offsetPosition({position = args.position, offset = ((starPounds.currentSize and starPounds.currentSize.isBlob) and {0, 2} or {0, 0})}, board)
+  return offsetPosition({
+    position = args.position,
+    offset = {0, -(starPounds.currentSize and starPounds.currentSize.yOffset or 0)}
+  }, board)
 end

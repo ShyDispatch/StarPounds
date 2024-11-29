@@ -33,6 +33,7 @@ function update(dt)
 end
 
 function activate(fireMode, shiftHeld)
+	local starPounds = getmetatable ''.starPounds
 	local mouthPosition = starPounds.mouthPosition()
 	if starPounds.currentSize.yOffset then
 		mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset

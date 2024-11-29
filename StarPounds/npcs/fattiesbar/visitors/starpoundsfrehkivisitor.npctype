@@ -4,7 +4,7 @@
 
   "scriptConfig" : {
     "initialStorage": {
-      "homePosition": [0 ,0]
+      "homePosition": [0, 0]
     },
     "starPounds_overrideSpecies": "frehki",
     "starPounds_skills": {

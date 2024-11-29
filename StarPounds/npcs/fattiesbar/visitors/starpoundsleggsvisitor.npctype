@@ -1,0 +1,62 @@
+{
+  "type" : "starpoundsleggsvisitor",
+  "baseType" : "fattiesbarvisitor",
+
+  "scriptConfig" : {
+    "initialStorage": {
+      "homePosition": [0, 0]
+    },
+    "starPounds_skills": {
+      "minimumSize": [3, 5]
+    },
+    "starPounds_overrideSpecies": "leggs",
+		"dialogMode": "tutorial",
+		"dialog": {
+			"converse": {
+				"default": {
+					"default": [
+            "Oh hello! Pleasure to meet you. Name's Leggs.",
+            "I am not from this part of the galaxy, but mostly come here for the food.",
+            "Have you seen a massive bear recently? He waddles through here sometimes.",
+            "Don't mind me, just stopping for a light snack."
+					]
+				}
+			}
+		}
+  },
+
+  "identity":  {
+    "facialHairType" : "",
+    "facialHairGroup" : "",
+    "personalityArmOffset" : [1, 0],
+    "hairType" : "1",
+    "bodyDirectives" : "?replace;c7815b=9c9c98;d39c6c=e7dfdf;ffc181=ffffff;ffe2c5=ffffff?replace;951500=010101;be1b00=1b1a1b;dc1f00=272529;f32200=2e2e2e?replace;a38d59=1b1a1b;d9c189=272529;f7e7b2=2e2e2e",
+    "emoteDirectives" : "?replace;c7815b=9c9c98;d39c6c=e7dfdf;ffc181=ffffff;ffe2c5=ffffff?replace;951500=010101;be1b00=1b1a1b;dc1f00=272529;f32200=2e2e2e?replace;a38d59=1b1a1b;d9c189=272529;f7e7b2=2e2e2e",
+    "hairDirectives" : "?replace;c7815b=9c9c98;d39c6c=e7dfdf;ffc181=ffffff;ffe2c5=ffffff?replace;951500=010101;be1b00=1b1a1b;dc1f00=272529;f32200=2e2e2e?replace;a38d59=1b1a1b;d9c189=272529;f7e7b2=2e2e2e",
+    "personalityArmIdle" : "idle.3",
+    "gender" : "male",
+    "color" : [51, 117, 237],
+    "personalityHeadOffset" : [-1, 0],
+    "hairGroup" : "hair",
+    "facialMaskDirectives" : "",
+    "species" : "human",
+    "imagePath" : "starpoundsleggs",
+    "personalityIdle" : "idle.4",
+    "facialMaskGroup" : "",
+    "name" : "Leggs",
+    "facialHairDirectives" : "",
+    "facialMaskType" : ""
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "headCosmetic": [ { "name": "" } ],
+            "chestCosmetic": [ { "name": "hoodiechest", "parameters" : { "colorIndex" : 1 } } ],
+            "legsCosmetic": [ { "name": "jeans1legs", "parameters" : { "colorIndex" : 2 } } ]
+          }
+        ] ]
+    ]
+  }
+}

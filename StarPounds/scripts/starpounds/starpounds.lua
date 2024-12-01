@@ -34,8 +34,6 @@ starPounds.moduleFunc = function(name, func, ...)
 	local module = starPounds.modules[name]
 	if module then
 		return module[func](module, ...)
-	else
-		return default
 	end
 end
 

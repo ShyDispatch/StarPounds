@@ -10,7 +10,7 @@ function debug:update(dt)
 	if starPounds.hasOption("showDebug") then
 		local data = storage.starPounds
 		local stomach = starPounds.stomach
-		local breasts = starPounds.breasts
+		local breasts = starPounds.moduleFunc("breasts", "get")
 		local accessory = data.accessory
 		self:format("accessory", "<c:1>Accessory: <c:3>%s", accessory and accessory.name or "None")
 		self:format("experience", "<c:1>Level: <c:3>%s <c:1>Experience: <c:3>%.0f/%.0f <c:1>Multiplier: <c:3>%s", data.level, data.experience, starPounds.settings.experienceAmount * (1 + data.level * starPounds.settings.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0))

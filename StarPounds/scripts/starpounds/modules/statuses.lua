@@ -30,8 +30,6 @@ function statuses:update(dt)
 	end
 end
 
-starPounds.modules.statuses = statuses
-
 -- Overwrite stub functions.
 starPounds.getStatusEffectMultiplier = function(stat)
 	-- Argument sanitisation.
@@ -44,3 +42,5 @@ starPounds.getStatusEffectBonus = function(stat)
 	stat = tostring(stat)
 	return starPounds.modules.statuses.bonuses[stat] or 0
 end
+
+starPounds.modules.statuses = statuses

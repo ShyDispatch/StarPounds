@@ -16,4 +16,21 @@ function sound:update(dt)
     status.addEphemeralEffect("starpoundssoundhandler")
   end
 end
+
+function sound:play(soundPool, volume, pitch, loops)
+  world.sendEntityMessage(entity.id(), "starPounds.playSound", soundPool, volume, pitch, loops)
+end
+
+function sound:stop(soundPool)
+  world.sendEntityMessage(entity.id(), "starPounds.stopSound", soundPool)
+end
+
+function sound:setVolume(soundPool, volume, rampTime)
+  world.sendEntityMessage(entity.id(), "starPounds.setSoundVolume", soundPool, volume, rampTime)
+end
+
+function sound:setPitch(soundPool, pitch, rampTime)
+  world.sendEntityMessage(entity.id(), "starPounds.setSoundPitch", soundPool, pitch, rampTime)
+end
+
 starPounds.modules.sound = sound

@@ -29,6 +29,16 @@ starPounds.getData = function(key)
 	return storage.starPounds
 end
 
+-- Runs a function in a module. Same as calling directly, but makes sure it exists.
+starPounds.moduleFunc = function(name, func, ...)
+	local module = starPounds.modules[name]
+	if module then
+		return module[func](module, ...)
+	else
+		return default
+	end
+end
+
 starPounds.moduleInit = function(entityType)
 	starPounds.modules = starPounds.modules or {}
 	local moduleString = "/scripts/starpounds/modules/%s.lua"
@@ -218,10 +228,10 @@ starPounds.digest = function(dt, isGurgle, isBelch)
 					status.giveResource("food", foodAmount * foodValue * foodConfig.multipliers.food + foodDeltaDiff)
 				end
 
-				local milkProduced, milkCost = starPounds.milkProduction(digestAmount * absorption)
-				starPounds.gainMilk(milkProduced)
+				local milkProduced, milkCost = starPounds.moduleFunc("breasts", "milkProduction", digestAmount * absorption)
+				starPounds.moduleFunc("breasts", "gainMilk", milkProduced)
 				-- Gain weight based on amount digested, milk production, and digestion efficiency.
-				starPounds.gainWeight((digestAmount * absorption * foodConfig.multipliers.weight) - (milkCost/math.max(1, breastEfficiency)))
+				starPounds.gainWeight((digestAmount * absorption * foodConfig.multipliers.weight) - ((milkCost or 0)/math.max(1, breastEfficiency)))
 				-- Don't heal if eaten.
 				if not storage.starPounds.pred then
 					-- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
@@ -252,27 +262,6 @@ starPounds.digest = function(dt, isGurgle, isBelch)
 	end
 end
 
-starPounds.milkProduction = function(food)
-	local milkCost = 0
-	local milkProduced = 0
-	if (starPounds.getStat("breastProduction") > 0) and (starPounds.getStat("breastEfficiency") > 0) and not starPounds.hasOption("disableMilkGain") then
-		local milkValue = starPounds.settings.drinkableVolume * starPounds.settings.drinkables[starPounds.breasts.type]
-		local milkCurrent = storage.starPounds.breasts
-		local milkCapacity = starPounds.breasts.capacity
-		local maxCapacity = milkCapacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
-		if starPounds.breasts.contents < maxCapacity then
-			milkCost = food * starPounds.getStat("breastProduction")
-			milkProduced = math.round((milkCost/milkValue) * math.min(1, starPounds.getStat("breastEfficiency")), 4)
-			if (milkCapacity - milkCurrent) < milkProduced then
-				-- Free after you've maxed out capacity, but you only gain a third as much.
-				milkProduced = math.min(math.max((milkCapacity - milkCurrent), milkProduced/3), maxCapacity - milkCurrent)
-				milkCost = math.max(0, milkCapacity - milkCurrent) * milkValue
-			end
-		end
-	end
-	return milkProduced, milkCost
-end
-
 starPounds.gurgle = function(noDigest)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
@@ -293,7 +282,7 @@ starPounds.gurgle = function(noDigest)
 		starPounds.digest(seconds, true, isBelch)
 	end
 	if not starPounds.hasOption("disableGurgleSounds") then
-		world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, (2 - seconds/5) - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
+		starPounds.moduleFunc("sound", "play", 0.75, (2 - seconds/5) - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
 	end
 end
 
@@ -305,7 +294,7 @@ starPounds.rumble = function(volume)
 	-- Don't do anything if rumbles are disabled.
 	if starPounds.hasOption("disableRumbles") then return end
 	-- Rumble sound every 10 seconds.
-	world.sendEntityMessage(entity.id(), "starPounds.playSound", "rumble", math.max(math.min(volume, 2), 0) * 0.75, (math.random(90,110)/100))
+	starPounds.moduleFunc("sound", "play", "rumble", math.max(math.min(volume, 2), 0) * 0.75, (math.random(90,110)/100))
 end
 
 starPounds.belch = function(volume, pitch, loops, addMomentum)
@@ -318,7 +307,7 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
 	if addMomentum == nil then addMomentum = true end
 	-- Skip if belches are disabled.
 	if starPounds.hasOption("disableBelches") then return end
-	world.sendEntityMessage(entity.id(), "starPounds.playSound", "belch", volume, pitch, loops)
+	starPounds.moduleFunc("sound", "play", "belch", volume, pitch, loops)
 	-- 7.5 (Rounded to 8) to 10 particles, decreased or increased by up to 2x, -5
 	-- Ends up yielding around 10 - 15 particles if the belch is very loud and deep, 3 - 5 at normal volume and pitch, and none if it's half volume or twice as high pitch.
 	local volumeMultiplier = math.max(math.min(volume, 1.5), 0)
@@ -837,7 +826,7 @@ starPounds.setTrait = function(trait)
 	starPounds.setWeight(storage.starPounds.weight)
 	-- Give trait milk
 	storage.starPounds.breasts = math.max(storage.starPounds.breasts, selectedTrait.breasts)
-	starPounds.setMilk(storage.starPounds.breasts)
+	starPounds.moduleFunc("breasts", "setMilk", storage.starPounds.breasts)
 	-- Give trait experience.
 	storage.starPounds.level = storage.starPounds.level + selectedTrait.experience
 	-- Give trait items to players.
@@ -946,7 +935,7 @@ starPounds.addEffect = function(effect, duration)
 					}}
 				}
 			})
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.5, (math.random(120,150)/100))
+			starPounds.moduleFunc("sound", "play", "digest", 0.5, (math.random(120,150)/100))
 		end
 		effectData.duration = duration and math.max(effectData.duration or 0, duration) or nil
 		effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
@@ -1155,21 +1144,6 @@ starPounds.getStomach = function()
 	}
 end
 
-starPounds.getBreasts = function()
-	local breastCapacity = 10 * starPounds.getStat("breastCapacity")
-	if starPounds.hasOption("disableLeaking") then
-		storage.starPounds.breasts = math.min(storage.starPounds.breasts, breastCapacity)
-	end
-	local breastContents = storage.starPounds.breasts
-
-	return {
-		capacity = breastCapacity,
-		type = storage.starPounds.breastType or "milk",
-		contents = math.round(breastContents, 4),
-		fullness = math.round(breastContents/breastCapacity, 4)
-	}
-end
-
 starPounds.getChestVariant = function(size)
 	-- Don't do anything if the mod is disabled.
 	if not storage.starPounds.enabled then return end
@@ -1181,7 +1155,7 @@ starPounds.getChestVariant = function(size)
 	local breastThresholds = starPounds.settings.thresholds.breasts
 	local stomachThresholds = starPounds.settings.thresholds.stomach
 
-	local breastSize = (starPounds.hasOption("disableBreastGrowth") and 0 or starPounds.breasts.contents) + (
+	local breastSize = (starPounds.hasOption("disableBreastGrowth") and 0 or (starPounds.moduleFunc("breasts", "get").contents or 0)) + (
 		starPounds.hasOption("busty") and breastThresholds[1].amount * thresholdMultiplier or (
 		starPounds.hasOption("milky") and breastThresholds[2].amount * thresholdMultiplier or 0)
 	)
@@ -1420,7 +1394,7 @@ starPounds.equipCheck = function(size)
 				currentItem = nil
 
 				if not returnedItems then
-					world.sendEntityMessage(entity.id(), "starPounds.playSound", "clothingrip", 0.75)
+					starPounds.moduleFunc("sound", "play", "clothingrip", 0.75)
 					returnedItems = true
 				end
 			end
@@ -1524,80 +1498,6 @@ starPounds.setWeight = function(amount)
 	-- Set weight, rounded to 4 decimals.
 	amount = math.round(amount, 4)
 	storage.starPounds.weight = math.max(math.min(amount, starPounds.settings.maxWeight), starPounds.sizes[(starPounds.getSkillLevel("minimumSize") + 1)].weight)
-end
-
--- Milky functions
-----------------------------------------------------------------------------------
-starPounds.lactate = function(amount, noConsume)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Don't do anything if eaten.
-	if storage.starPounds.pred then return end
-	-- Argument sanitisation.
-	amount = math.max(tonumber(amount) or 0, 0)
-	-- Skip if no milk.
-	if amount == 0 then return end
-	if starPounds.breasts.contents == 0 then return end
-	-- Don't spawn milk automatically if leaking is disabled, gain it instead.
-	if starPounds.hasOption("disableLeaking") and noConsume then starPounds.gainMilk(amount) return end
-	amount = math.min(math.round(amount, 4), starPounds.breasts.contents)
-	-- Slightly below and in front the head.
-	local spawnPosition = vec2.add(world.entityMouthPosition(entity.id()), {mcontroller.facingDirection(), -1})
-	local existingLiquid = world.liquidAt(spawnPosition) and world.liquidAt(spawnPosition)[1] or nil
-	local lactationLiquid = root.liquidId(starPounds.breasts.type)
-	local doLactation = not existingLiquid or (lactationLiquid == existingLiquid)
-	-- Only remove the milk if it actually spawns.
-	if doLactation and world.spawnLiquid(spawnPosition, lactationLiquid, amount) and not noConsume then
-		starPounds.loseMilk(amount)
-	end
-end
-
-starPounds.setMilkType = function(liquidType)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Argument sanitisation.
-	liquidType = tostring(liquidType)
-	-- Skip if it's the same type of milk.
-	if liquidType == storage.starPounds.breastType then return end
-	-- Only allow liquids we have values for.
-	if not starPounds.settings.drinkables[liquidType] then return end
-	local currentMilkRatio = starPounds.settings.drinkables[starPounds.breasts.type]
-	local newMilkRatio = starPounds.settings.drinkables[liquidType]
-	local convertRatio = currentMilkRatio/newMilkRatio
-	storage.starPounds.breastType = liquidType
-	starPounds.setMilk(starPounds.breasts.contents * convertRatio, 4)
-end
-
-starPounds.setMilk = function(amount)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Argument sanitisation.
-	amount = math.max(tonumber(amount) or 0, 0)
-	-- Set milk, rounded to 4 decimals.
-	amount = math.round(amount, 4)
-	storage.starPounds.breasts = amount
-end
-
-starPounds.gainMilk = function(amount)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return 0 end
-	-- Argument sanitisation.
-	amount = math.max(tonumber(amount) or 0, 0)
-	-- Set milk, rounded to 4 decimals.
-	if starPounds.hasOption("disableMilkGain") then return end
-	amount = math.max(math.round(math.min(amount, (starPounds.breasts.capacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)) - starPounds.breasts.contents), 4), 0)
-	storage.starPounds.breasts = math.round(storage.starPounds.breasts + amount, 4)
-end
-
-starPounds.loseMilk = function(amount)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return 0 end
-	-- Argument sanitisation.
-	amount = math.max(tonumber(amount) or 0, 0)
-	-- Decrease milk by amount (min: 0)
-	amount = math.min(amount, storage.starPounds.breasts)
-	storage.starPounds.breasts = math.max(0, math.round(storage.starPounds.breasts - amount, 4))
-	return amount
 end
 
 starPounds.voreCheck = function()
@@ -1793,11 +1693,11 @@ starPounds.eatEntity = function(preyId, options, check)
 		end
 		-- Swallow sound
 		if not (options.noSound or options.noSwallowSound) then
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "swallow", 1 + math.random(0, 10)/100, 1)
+			wstarPounds.moduleFunc("sound", "play", "swallow", 1 + math.random(0, 10)/100, 1)
 		end
 		-- Stomach sound
 		if not (options.noSound or options.noDigestSound) then
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 1, 0.75)
+			starPounds.moduleFunc("sound", "play", "digest", 1, 0.75)
 		end
 	end)
 	return true
@@ -1944,7 +1844,7 @@ starPounds.digestEntity = function(preyId, items, preyStomach)
 	end
 
 	if not starPounds.hasOption("disableGurgleSounds") then
-		world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, 0.75)
+		starPounds.moduleFunc("sound", "play", "digest", 0.75, 0.75)
 	end
 	-- Fancy little particles similar to the normal death animation.
 	if doBelchParticles then
@@ -2039,7 +1939,7 @@ starPounds.preyStruggle = function(preyId, struggleStrength, escape)
 			if not starPounds.hasOption("disableStruggleSounds") then
 				local totalPreyWeight = (prey.base or 0) + (prey.weight or 0)
 				local soundVolume = math.min(1, 0.25 + preyHealthPercent * (totalPreyWeight/(starPounds.species.default.weight * 2)))
-				world.sendEntityMessage(entity.id(), "starPounds.playSound", "struggle", soundVolume)
+				starPounds.moduleFunc("sound", "play", "struggle", soundVolume)
 			end
 			break
 		end
@@ -2480,12 +2380,6 @@ starPounds.messageHandlers = function()
 	message.setHandler("starPounds.gainWeight", simpleHandler(starPounds.gainWeight))
 	message.setHandler("starPounds.loseWeight", simpleHandler(starPounds.loseWeight))
 	message.setHandler("starPounds.setWeight", simpleHandler(starPounds.setWeight))
-	-- Ditto but lactation.
-	message.setHandler("starPounds.setMilkType", simpleHandler(starPounds.setMilkType))
-	message.setHandler("starPounds.setMilk", simpleHandler(starPounds.setMilk))
-	message.setHandler("starPounds.gainMilk", simpleHandler(starPounds.gainMilk))
-	message.setHandler("starPounds.loseMilk", simpleHandler(starPounds.loseMilk))
-	message.setHandler("starPounds.lactate", simpleHandler(starPounds.lactate))
 	-- Ditto but vore.
 	message.setHandler("starPounds.voreDigest", simpleHandler(starPounds.voreDigest))
 	message.setHandler("starPounds.eatNearbyEntity", simpleHandler(starPounds.eatNearbyEntity))

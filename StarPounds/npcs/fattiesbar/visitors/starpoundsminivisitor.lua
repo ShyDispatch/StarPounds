@@ -28,7 +28,7 @@ function update(dt)
     -- Fast way to force a size reequip.
     starPounds.optionChanged = true
     starPounds.equipCheck(starPounds.currentSize)
-    world.sendEntityMessage(entity.id(), "starPounds.playSound", "clothingrip", 0.75)
+    starPounds.moduleFunc("sound", "play", "clothingrip", 0.75)
   end
 
   teleportVoreDelay = math.max((teleportVoreDelay or 1) - dt, 0)

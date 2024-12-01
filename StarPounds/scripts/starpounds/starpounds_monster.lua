@@ -48,16 +48,15 @@ function starPoundsInit()
 		storage.starPounds.parsedInitialSkills = true
 	end
 
-	starPounds.moduleInit(starPounds.type)
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.stomach = starPounds.getStomach()
-	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant()
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
 	starPounds.weightMultiplier = math.round(1 + (storage.starPounds.weight/entity.weight), 1)
+	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
@@ -152,7 +151,6 @@ function makeOverrideFunction()
 			starPounds.getChestVariant = function() return "" end
 			starPounds.getDirectives = function() return "" end
 			starPounds.getSpecies = function() return "" end
-			starPounds.getBreasts = function() return {capacity = 10 * starPounds.getStat("breastCapacity"), contents = 0, fullness = 0, type = "milk"} end
 			starPounds.equipSize = nullFunction
 			starPounds.equipCheck = nullFunction
 			starPounds.updateStats = nullFunction

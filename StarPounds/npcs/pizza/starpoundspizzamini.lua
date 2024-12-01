@@ -58,7 +58,7 @@ function update(dt)
     starPounds.optionChanged = true
     starPounds.equipCheck(starPounds.currentSize)
     if self.ateEntity or self.ateOrder then
-      world.sendEntityMessage(entity.id(), "starPounds.playSound", "clothingrip", 0.75)
+      starPounds.moduleFunc("sound", "play", "clothingrip", 0.75)
     end
   end
 

@@ -4,6 +4,7 @@ function exercise:init()
   self.hasFood = status.isResource("food")
   self.energyRegenBlockDelta = root.assetJson("/player.config:statusControllerSettings.resources.energyRegenBlock.deltaValue")
   self.thresholds = starPounds.settings.thresholds.strain
+  self.didJump = false
 end
 
 function exercise:update(dt)
@@ -20,14 +21,14 @@ function exercise:update(dt)
 		if mcontroller.walking() then effort = self.data.multipliers.walking end
 		if mcontroller.running() then effort = self.data.multipliers.running consumeEnergy = true end
 		-- Reset jump checker while on ground.
-		didJump = false
+		self.didJump = false
 		-- Moving through liquid takes up to 50% more effort.
 		effort = effort * (1 + math.min(math.round(mcontroller.liquidPercentage(), 1), 0.5))
-	elseif not mcontroller.liquidMovement() and mcontroller.jumping() and not didJump then
+	elseif not mcontroller.liquidMovement() and mcontroller.jumping() and not self.didJump then
 		effort = self.data.multipliers.jumping
 		consumeEnergy = true
 	else
-		didJump = true
+		self.didJump = true
 	end
 
 	-- Skip the rest if we're not moving.

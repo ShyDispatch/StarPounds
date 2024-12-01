@@ -75,12 +75,12 @@ end
 function oSB:lactateBind(dt)
   if input.bind("starpounds", "lactate") then
     if input.bindDown("starpounds", "lactate") then
-      starPounds.lactate(math.random(5, 10)/10)
+      starPounds.moduleFunc("breasts", "lactate", math.random(5, 10)/10)
     end
     -- Lactate constantly after holding for 1 second.
     self.lactateBindTimer = math.max(self.lactateBindTimer - dt, 0)
     if self.lactateBindTimer == 0 then
-      starPounds.lactate(math.random(5, 10)/10)
+      starPounds.moduleFunc("breasts", "lactate", math.random(5, 10)/10)
       self.lactateBindTimer = self.data.lactateInterval
     end
   else

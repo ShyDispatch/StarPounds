@@ -38,7 +38,7 @@ function drinking:update(dt)
 			starPounds.feed(foodAmount * consumedLiquid[2], "liquidFood")
 			starPounds.feed(math.max(0, self.data.drinkableVolume - foodAmount) * consumedLiquid[2], "liquid")
 			-- Play drinking sound. Volume increased by amount of liquid consumed.
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "drink", 0.5 + 0.5 * consumedLiquid[2], math.random(8, 12)/10)
+			starPounds.moduleFunc("sound", "play", "drink", 0.5 + 0.5 * consumedLiquid[2], math.random(8, 12)/10)
 			status.addEphemeralEffect("starpoundsdrinking")
 		end
 	else
@@ -50,6 +50,13 @@ function drinking:update(dt)
 		end
 		self.drinkCounter = 0
 	end
+end
+
+function drinking:config()
+  return {
+    drinkables = self.data.drinkables or {},
+    drinkableVolume = self.data.drinkableVolume
+  }
 end
 -- Add the module.
 starPounds.modules.drinking = drinking

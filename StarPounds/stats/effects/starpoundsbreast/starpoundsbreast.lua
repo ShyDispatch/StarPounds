@@ -10,7 +10,7 @@ end
 function update(dt)
   -- Cross script voodoo witch magic.
   local starPounds = getmetatable ''.starPounds
-  local progress = math.min(starPounds.breasts.fullness, 1) * 100
+  local progress = math.min(starPounds.moduleFunc("breasts", "get").fullness, 1) * 100
   if effect.duration() and (effect.duration() > 0) then
     -- "Center" the animation.
     effect.modifyDuration((progress * self.scale) + self.buffer + dt - effect.duration())

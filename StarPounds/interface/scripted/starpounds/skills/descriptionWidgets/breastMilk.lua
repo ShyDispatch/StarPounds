@@ -1,3 +1,3 @@
 descriptionFunctions.breastMilk = descriptionFunctions.breastMilk or function(id)
-  starPounds.setMilkType("milk")
+  starPounds.moduleFunc("breasts", "setMilkType", "milk")
 end

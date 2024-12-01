@@ -8,7 +8,7 @@ function fizzy:init()
   self.firstUpdate = false
   self.expiring = false
   self.baseDuration = starPounds.effects.fizzy.duration
-  world.sendEntityMessage(entity.id(), "starPounds.stopSound", "fizz")
+  starPounds.moduleFunc("sound", "stop", "fizz")
 end
 
 function fizzy:apply()
@@ -21,22 +21,22 @@ function fizzy:update(dt)
   self.volumeMultiplier = (self.fizzMultiplier + 1) * 0.5
   -- Update the sound volume after the first update.
   if self.firstUpdate then
-    world.sendEntityMessage(entity.id(), "starPounds.setSoundVolume", "fizz", self.fizzVolume * self.volumeMultiplier, dt)
+    starPounds.moduleFunc("sound", "setVolume", "fizz", self.fizzVolume * self.volumeMultiplier, dt)
   end
   -- Gurgle sound that plays when enabling the mod overrides if we trigger it on init.
   if not self.firstUpdate then
-    world.sendEntityMessage(entity.id(), "starPounds.playSound", "fizz", self.fizzVolume * self.volumeMultiplier, 0.75, -1)
+    starPounds.moduleFunc("sound", "play", "fizz", self.fizzVolume * self.volumeMultiplier, 0.75, -1)
     self.firstUpdate = true
   end
   -- Ramp down sound as it expires.
   if not self.expiring and (self.data.duration + dt) <= 1 then
     self.expiring = true
-    world.sendEntityMessage(entity.id(), "starPounds.setSoundVolume", "fizz", 0, 1)
+    starPounds.moduleFunc("sound", "setVolume", "fizz", 0, 1)
   end
   -- Add air bloat.
   if not (mcontroller.zeroG() or mcontroller.liquidMovement()) and not mcontroller.onGround() then
     if not self.jumped then
-      world.sendEntityMessage(entity.id(), "starPounds.playSound", "slosh", 0.5 * self.volumeMultiplier)
+      starPounds.moduleFunc("sound", "play", "slosh", 0.5 * self.volumeMultiplier)
       self:shake(1)
       self.jumped = true
     end
@@ -51,7 +51,7 @@ function fizzy:expire()
 end
 
 function fizzy:uninit()
-  world.sendEntityMessage(entity.id(), "starPounds.stopSound", "fizz")
+  starPounds.moduleFunc("sound", "stop", "fizz")
 end
 
 function fizzy:shake(duration)

@@ -52,13 +52,12 @@ function init()
 		storage.starPounds.parsedInitialSkills = true
 	end
 
-	starPounds.moduleInit(starPounds.type)
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.stomach = starPounds.getStomach()
-	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
+	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
 	if not starPounds.getTrait() then
 		starPounds.setTrait(config.getParameter("starPounds_trait"))
@@ -90,7 +89,6 @@ function update(dt)
 	-- Check if the entity has gone up a size.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
 	starPounds.stomach = starPounds.getStomach()
-	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant(modifierSize or starPounds.currentSize)
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
@@ -110,7 +108,7 @@ function update(dt)
 		-- Don't play the sound on the first load.
 		if oldSize then
 			-- Play sound to indicate size change.
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, math.random(10,15) * 0.1 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
+			starPounds.moduleFunc("sound", "play", "digest", 0.75, math.random(10,15) * 0.1 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
 		end
 	end
 	-- Checks
@@ -199,7 +197,6 @@ function makeOverrideFunction()
       if not speciesData.weightGain then
       	starPounds.getChestVariant = function() return "" end
       	starPounds.getDirectives = function() return "" end
-      	starPounds.getBreasts = function() return {capacity = 10 * starPounds.getStat("breastCapacity"), contents = 0, fullness = 0, type = "milk"} end
       	starPounds.equipSize = nullFunction
       	starPounds.equipCheck = nullFunction
       	starPounds.gainWeight = nullFunction

@@ -35,15 +35,14 @@ function init()
 		starPounds.forceUnlockSkill(skill[1], skill[2])
 	end
 	-- Reload whenever the entity loads in/beams/etc.
-	starPounds.moduleInit(starPounds.type)
 	starPounds.statCache = {}
 	starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
 	starPounds.stomach = starPounds.getStomach()
-	starPounds.breasts = starPounds.getBreasts()
 	starPounds.setWeight(storage.starPounds.weight)
+	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
 	starPounds.damageHitboxTiles = damageHitboxTiles
 	-- Damage listener for fall/fire damage.
@@ -85,7 +84,6 @@ function update(dt)
 	-- Check if the entity has gone up a size.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
 	starPounds.stomach = starPounds.getStomach()
-	starPounds.breasts = starPounds.getBreasts()
 	starPounds.currentVariant = starPounds.getChestVariant(modifierSize or starPounds.currentSize)
 	starPounds.weight = storage.starPounds.weight
 	starPounds.level = storage.starPounds.level
@@ -116,11 +114,11 @@ function update(dt)
 		-- Don't play the sound on the first load.
 		if oldSize then
 			-- Play sound to indicate size change.
-			world.sendEntityMessage(entity.id(), "starPounds.playSound", "digest", 0.75, math.random(10,15) * 0.1 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
+		starPounds.moduleFunc("sound", "play", "digest", 0.75, math.random(10,15) * 0.1 - storage.starPounds.weight/(starPounds.settings.maxWeight * 2))
 		end
 		-- Update status effect tracker.
-		world.sendEntityMessage(entity.id(), "starPounds.expireSizeTracker")
-		starPounds.modules.tracking:createStatuses()
+		starPounds.moduleFunc("tracking", "clearStatuses")
+		starPounds.moduleFunc("tracking", "createStatuses")
 	end
 	-- Checks
 	starPounds.voreCheck()
@@ -216,7 +214,6 @@ function makeOverrideFunction()
     		message.setHandler("starPounds.feed", simpleHandler(function(amount) status.giveResource("food", amount) end))
     		starPounds.getChestVariant = function() return "" end
     		starPounds.getDirectives = function() return "" end
-    		starPounds.getBreasts = function() return {capacity = 10 * starPounds.getStat("breastCapacity"), contents = 0, fullness = 0, type = "milk"} end
     		starPounds.equipSize = nullFunction
     		starPounds.equipCheck = nullFunction
     		starPounds.gainWeight = nullFunction

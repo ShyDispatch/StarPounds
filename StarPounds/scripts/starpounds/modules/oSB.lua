@@ -5,6 +5,7 @@ function oSB:init()
   self.interactRadius = root.assetJson("/player.config:interactRadius")
   self.voreCooldown = 0
   self.lactateBindTimer = self.data.lactateBindTime
+  self.damageTeam = world.entityDamageTeam(entity.id())
 end
 
 function oSB:update(dt)
@@ -23,6 +24,10 @@ function oSB:update(dt)
       player.setInteractRadius(self.interactRadius + self.offset)
       self.offsetOld = self.offset
     end
+  end
+
+  if storage.starPounds.pred and player.setDamageTeam then
+    player.setDamageTeam("ghostly")
   end
 end
 

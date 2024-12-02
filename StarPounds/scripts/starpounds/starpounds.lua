@@ -256,7 +256,7 @@ starPounds.digest = function(dt, isGurgle, isBelch)
 		starPounds.digestionExperience = starPounds.digestionExperience or 0
 		local gainedExperience = math.floor(starPounds.digestionExperience)
 		starPounds.digestionExperience = starPounds.digestionExperience - gainedExperience
-		starPounds.gainExperience(gainedExperience)
+		starPounds.moduleFunc("experience", "add", gainedExperience)
 	end
 end
 
@@ -526,35 +526,6 @@ starPounds.createStatuses = function()
 	status[((storage.starPounds.pred or not status.resourcePositive("health")) and "add" or "remove").."EphemeralEffect"]("starpoundseaten")
 end
 
-starPounds.gainExperience = function(amount, multiplier, isLevel)
-	-- Don't do anything if the mod is disabled.
-	if not storage.starPounds.enabled then return end
-	-- Legacy mode gains no experience.
-	if starPounds.hasOption("legacyMode") then return end
-	-- Argument sanitisation.
-	amount = tonumber(amount) or 0
-	local hungerPenalty = starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0
-	multiplier = tonumber(multiplier) or math.max(starPounds.getStat("experienceMultiplier") - hungerPenalty, 0)
-	-- Skip everything else if we're just adding straight levels.
-	if isLevel then
-		storage.starPounds.level = storage.starPounds.level + math.max(math.round(amount))
-		return
-	end
-
-	-- Main stuff.
-	local levelModifier = 1 + storage.starPounds.level * starPounds.settings.experienceIncrement
-	local amount = math.round((amount or 0) * multiplier)
-	local amountRequired = math.round(starPounds.settings.experienceAmount * levelModifier - storage.starPounds.experience)
-	if amount < amountRequired then
-		storage.starPounds.experience = math.round(storage.starPounds.experience + amount)
-	else
-		amount = amount - amountRequired
-		storage.starPounds.level = storage.starPounds.level + 1
-		storage.starPounds.experience = 0
-		starPounds.gainExperience(amount, 1)
-	end
-end
-
 starPounds.setOptionsMultipliers = function(options)
 	storage.starPounds.optionMultipliers = {}
 	for _, option in ipairs(options) do
@@ -670,10 +641,11 @@ starPounds.upgradeSkill = function(skill, cost)
 	end
 	storage.starPounds.skills[skill][2] = math.min(starPounds.getSkillUnlockedLevel(skill) + 1, starPounds.skills[skill].levels or 1)
 
-	local experienceProgress = storage.starPounds.experience/(starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
+	local experienceConfig = starPounds.moduleFunc("experience", "config")
+	local experienceProgress = storage.starPounds.experience/(experienceConfig.experienceAmount * (1 + storage.starPounds.level * experienceConfig.experienceIncrement))
 	storage.starPounds.level = math.max(storage.starPounds.level - math.round(cost), 0)
-	storage.starPounds.experience = math.round(experienceProgress * starPounds.settings.experienceAmount * (1 + storage.starPounds.level * starPounds.settings.experienceIncrement))
-	starPounds.gainExperience()
+	storage.starPounds.experience = math.round(experienceProgress * experienceConfig.experienceAmount * (1 + storage.starPounds.level * experienceConfig.experienceIncrement))
+	starPounds.moduleFunc("experience", "add")
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.updateStats(true)
@@ -1691,7 +1663,7 @@ starPounds.eatEntity = function(preyId, options, check)
 		end
 		-- Swallow sound
 		if not (options.noSound or options.noSwallowSound) then
-			wstarPounds.moduleFunc("sound", "play", "swallow", 1 + math.random(0, 10)/100, 1)
+			starPounds.moduleFunc("sound", "play", "swallow", 1 + math.random(0, 10)/100, 1)
 		end
 		-- Stomach sound
 		if not (options.noSound or options.noDigestSound) then
@@ -2351,7 +2323,6 @@ starPounds.messageHandlers = function()
 	-- Handlers for skills/stats/options
 	message.setHandler("starPounds.hasOption", simpleHandler(starPounds.hasOption))
 	message.setHandler("starPounds.setOption", localHandler(starPounds.setOption))
-	message.setHandler("starPounds.gainExperience", simpleHandler(starPounds.gainExperience))
 	message.setHandler("starPounds.upgradeSkill", simpleHandler(starPounds.upgradeSkill))
 	message.setHandler("starPounds.getStat", simpleHandler(starPounds.getStat))
 	message.setHandler("starPounds.parseStats", simpleHandler(starPounds.parseStats))

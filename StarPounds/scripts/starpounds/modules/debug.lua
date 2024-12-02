@@ -12,8 +12,9 @@ function debug:update(dt)
 		local stomach = starPounds.stomach
 		local breasts = starPounds.moduleFunc("breasts", "get")
 		local accessory = data.accessory
+    local experienceConfig = starPounds.moduleFunc("experience", "config")
 		self:format("accessory", "<c:1>Accessory: <c:3>%s", accessory and accessory.name or "None")
-		self:format("experience", "<c:1>Level: <c:3>%s <c:1>Experience: <c:3>%.0f/%.0f <c:1>Multiplier: <c:3>%s", data.level, data.experience, starPounds.settings.experienceAmount * (1 + data.level * starPounds.settings.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0))
+		self:format("experience", "<c:1>Level: <c:3>%s <c:1>Experience: <c:3>%.0f/%.0f <c:1>Multiplier: <c:3>%s", data.level, data.experience, experienceConfig.experienceAmount * (1 + data.level * experienceConfig.experienceIncrement), math.max(starPounds.getStat("experienceMultiplier") - (starPounds.hasOption("disableHunger") and math.max((starPounds.getStat("hunger") - starPounds.stats.hunger.base) * 0.2, 0) or 0), 0))
 		self:format("stomach", "<c:1>Fullness: <c:3>%.0f%%%% <c:1>Capacity: <c:3>%.1f/%.1f <c:1>Hunger: <c:3>%.1f/%.0f", stomach.interpolatedFullness * 100, stomach.contents, stomach.capacity, status.resource("food"), status.resourceMax("food"))
 		self:format("stomachContents", "<c:1>Contents: <c:3>%.1f <c:1>Food: <c:3>%.1f <c:1>Entities: <c:3>%d", stomach.contents, stomach.food, #data.stomachEntities)
 		self:format("breasts", "<c:1>Type: <c:3>%s <c:1>Capacity: <c:3>%.1f/%.1f <c:1>Contents: <c:3>%.1f", breasts.type, breasts.contents, breasts.capacity, data.breasts)

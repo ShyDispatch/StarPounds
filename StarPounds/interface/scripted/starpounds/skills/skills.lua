@@ -744,7 +744,7 @@ function setTrait(trait, isSpecies)
   if starPounds.setTrait(trait) then
     traitButtons(false)
     checkSkills()
-    starPounds.gainExperience(selectedTrait.refundExperience, nil, true)
+    starPounds.moduleFunc("experience", "add", selectedTrait.refundExperience, nil, true)
     widget.playSound("/sfx/interface/crafting_medical.ogg")
   end
 end
@@ -800,7 +800,8 @@ function statInfo:onClick()
 end
 
 function setProgress(experience, level)
-  local progress = experience/(starPounds.settings.experienceAmount * (1 + level * starPounds.settings.experienceIncrement))
+  local experienceConfig = starPounds.moduleFunc("experience", "config")
+  local progress = experience/(experienceConfig.experienceAmount * (1 + level * experienceConfig.experienceIncrement))
   experienceBar:setFile(string.format("bar.png?crop;0;0;%s;14", math.floor(70 * (progress or 0) + 0.5)))
 end
 

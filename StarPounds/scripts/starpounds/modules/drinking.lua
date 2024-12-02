@@ -54,7 +54,7 @@ end
 
 function drinking:config()
   return {
-    drinkables = self.data.drinkables or {},
+    drinkables = self.data.drinkables,
     drinkableVolume = self.data.drinkableVolume
   }
 end

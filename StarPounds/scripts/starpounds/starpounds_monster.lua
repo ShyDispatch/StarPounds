@@ -147,7 +147,6 @@ function makeOverrideFunction()
 			-- Monsters don't have a food stat, and trying to adjust it crashes the script.
 			starPounds.feed = starPounds.eat
 			-- Disable stuff monsters don't use
-			starPounds.gainExperience = nullFunction
 			starPounds.getChestVariant = function() return "" end
 			starPounds.getDirectives = function() return "" end
 			starPounds.getSpecies = function() return "" end

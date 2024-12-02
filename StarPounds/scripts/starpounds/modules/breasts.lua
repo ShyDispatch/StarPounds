@@ -4,11 +4,12 @@ function breasts:init()
   self.lactationTimer = 0
   self.breasts = self:get()
 
-  message.setHandler("starPounds.setMilkType", simpleHandler(self.setMilkType))
-  message.setHandler("starPounds.setMilk", simpleHandler(self.setMilk))
-  message.setHandler("starPounds.gainMilk", simpleHandler(self.gainMilk))
-  message.setHandler("starPounds.loseMilk", simpleHandler(self.loseMilk))
-  message.setHandler("starPounds.lactate", simpleHandler(self.lactate))
+  message.setHandler("starPounds.getBreasts", function(_, _, ...) return self:get(...) end)
+  message.setHandler("starPounds.setMilkType", function(_, _, ...) return self:setMilkType(...) end)
+  message.setHandler("starPounds.setMilk", function(_, _, ...) return self:setMilk(...) end)
+  message.setHandler("starPounds.gainMilk", function(_, _, ...) return self:gainMilk(...) end)
+  message.setHandler("starPounds.loseMilk", function(_, _, ...) return self:loseMilk(...) end)
+  message.setHandler("starPounds.lactate", function(_, _, ...) return self:lactate(...) end)
 end
 
 function breasts:update(dt)

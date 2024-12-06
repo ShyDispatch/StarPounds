@@ -91,11 +91,6 @@
   },
   {
     "op": "add",
-    "path": "/traits/neki",
-    "value": { "description": "Neki", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["hunger", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
-  },
-  {
-    "op": "add",
     "path": "/traits/ningen",
     "value": { "description": "Ningen", "stats": [ ["experienceMultiplier", "add", 0.25] ] }
   },

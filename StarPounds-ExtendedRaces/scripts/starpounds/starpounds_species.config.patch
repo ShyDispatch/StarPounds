@@ -96,11 +96,6 @@
   },
   {
 	"op": "add",
-	"path": "/neki",
-	"value": { "weightGain": true }
-  },
-  {
-	"op": "add",
 	"path": "/ningen",
 	"value": { "weightGain": true, "override": "human" }
   },

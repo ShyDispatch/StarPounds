@@ -1,235 +1,235 @@
 [
   {
-	"op": "add",
-	"path": "/attack/throg",
-	"value": {
-	  "default" : [
-		"You wanna mess with a Throg? You got a deathwish pal.",
-		"I'll savor the taste of a foolish Peacekeeper for trying to take me down.",
-		"You're way over your head taking on ^orange;<gangName>^reset;!",
-		"Sure, fight a Throg. See what happens idiot.",
-		"You're gonna be cooked in my stew, you fool!",
-		"Good, I was starting to get hungry!",
-		"Messing with the ^orange;<gangName>^reset; ain't gonna end well for ya!"
-	  ]
-	}
+  "op": "add",
+  "path": "/attack/throg",
+  "value": {
+    "default" : [
+    "You wanna mess with a Throg? You got a deathwish pal.",
+    "I'll savor the taste of a foolish Peacekeeper for trying to take me down.",
+    "You're way over your head taking on ^orange;<gangName>^reset;!",
+    "Sure, fight a Throg. See what happens idiot.",
+    "You're gonna be cooked in my stew, you fool!",
+    "Good, I was starting to get hungry!",
+    "Messing with the ^orange;<gangName>^reset; ain't gonna end well for ya!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/resistArrest/throg",
-	"value": { 
-	  "default" : [
-		"Hahaha! You're gonna need bigger cuffs, copper!",
-		"Oh, we're having THIS kind of fight, are we?",
-		"You think those things are gonna fit arund my hands? Hah!",
-		"Good luck trying to arrest me while you're inside my stomach!",
-		"You're really gonna do this? Fine by me, I'll have you roasted before you know it.",
-		"Good, I was starting to get hungry!",
-		"Messing with the ^orange;<gangName>^reset; ain't gonna end well for ya!",
-		"Don't you point that thing at me! Do you know who I am?!",
-		"You can't catch me - the ^orange;<gangName>^reset; are always two steps ahead of you!",
-		"We're the ^orange;<gangName>^reset; - you can't stop us that easily!",
-		"Are you really trying to catch a member of the ^orange;<gangName>^reset;?",
-		"It won't be easy to catch a member of the ^orange;<gangName>^reset;!"
-	  ]
-	}
+  "op": "add",
+  "path": "/resistArrest/throg",
+  "value": { 
+    "default" : [
+    "Hahaha! You're gonna need bigger cuffs, copper!",
+    "Oh, we're having THIS kind of fight, are we?",
+    "You think those things are gonna fit arund my hands? Hah!",
+    "Good luck trying to arrest me while you're inside my stomach!",
+    "You're really gonna do this? Fine by me, I'll have you roasted before you know it.",
+    "Good, I was starting to get hungry!",
+    "Messing with the ^orange;<gangName>^reset; ain't gonna end well for ya!",
+    "Don't you point that thing at me! Do you know who I am?!",
+    "You can't catch me - the ^orange;<gangName>^reset; are always two steps ahead of you!",
+    "We're the ^orange;<gangName>^reset; - you can't stop us that easily!",
+    "Are you really trying to catch a member of the ^orange;<gangName>^reset;?",
+    "It won't be easy to catch a member of the ^orange;<gangName>^reset;!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/arrested/throg",
-	"value": { 
-	  "default" : [
-		"Grr, so your cuffs were big enough...",
-		"How did I lose to a pipsqueak like you?",
-		"...",
-		"Take these off me!",
-		"This operation was a failure...",
-		"Ow, these handcuffs are chafing me!",
-		"These handcuffs aren't my size! You should probably take them off me.",
-		"These handcuffs are such crude devices. How humiliating...",
-		"Bested by an inferior weakling. Where did I go so wrong?",
-		"Why are you arresting me? What is the charge, huh?!",
-		"Well, this is unfortunate.",
-		"Hmph."
-	  ]
-	}
+  "op": "add",
+  "path": "/arrested/throg",
+  "value": { 
+    "default" : [
+    "Grr, so your cuffs were big enough...",
+    "How did I lose to a pipsqueak like you?",
+    "...",
+    "Take these off me!",
+    "This operation was a failure...",
+    "Ow, these handcuffs are chafing me!",
+    "These handcuffs aren't my size! You should probably take them off me.",
+    "These handcuffs are such crude devices. How humiliating...",
+    "Bested by an inferior weakling. Where did I go so wrong?",
+    "Why are you arresting me? What is the charge, huh?!",
+    "Well, this is unfortunate.",
+    "Hmph."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/completeArrest/throg",
-	"value": { 
-	  "default" : [
-		"Remember my face, Peacekeeper. It won't be the last time you see it.",
-		"Your days are numbered, Peacekeeper. Watch your back.",
-		"...",
-		"Those prison handlers better be careful not to get too close during meal time.",
-		"You know, prisons aren't as good against Throgs compared to other races.",
-		"I won't be locked up for long... And I'll be back for you.",
-		"Urgh...",
-		"So be it...",
-		"^orange;<gangName>^reset; won't let a Throg like me go to waste, you know.",
-		"We're the ^orange;<gangName>^reset; - you can't stop us that easily!",
-		"This isn't the end! You hear me!?",
-		"I won't rest until you're my supper, Peacekeeper!"
-	  ]
-	}
+  "op": "add",
+  "path": "/completeArrest/throg",
+  "value": { 
+    "default" : [
+    "Remember my face, Peacekeeper. It won't be the last time you see it.",
+    "Your days are numbered, Peacekeeper. Watch your back.",
+    "...",
+    "Those prison handlers better be careful not to get too close during meal time.",
+    "You know, prisons aren't as good against Throgs compared to other races.",
+    "I won't be locked up for long... And I'll be back for you.",
+    "Urgh...",
+    "So be it...",
+    "^orange;<gangName>^reset; won't let a Throg like me go to waste, you know.",
+    "We're the ^orange;<gangName>^reset; - you can't stop us that easily!",
+    "This isn't the end! You hear me!?",
+    "I won't rest until you're my supper, Peacekeeper!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/reattack/throg",
-	"value": { 
-	  "default" : [
-		"Ha! You want to try again? You'll regret giving up a second chance at life!",
-		"You came back, Peacekeeper? I didn't think you had it in you!",
-		"You came back for another round against the ^orange;<gangName>^reset;?",
-		"Just dying to be my meal I see!",
-		"I thought you were smarter than that, Peacekeeper.",
-		"You should've ran far away while you still had the chance!",
-		"You came back to fight a Throg? Are you stupid or something?"
-	  ]
-	}
+  "op": "add",
+  "path": "/reattack/throg",
+  "value": { 
+    "default" : [
+    "Ha! You want to try again? You'll regret giving up a second chance at life!",
+    "You came back, Peacekeeper? I didn't think you had it in you!",
+    "You came back for another round against the ^orange;<gangName>^reset;?",
+    "Just dying to be my meal I see!",
+    "I thought you were smarter than that, Peacekeeper.",
+    "You should've ran far away while you still had the chance!",
+    "You came back to fight a Throg? Are you stupid or something?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/killedTarget/throg",
-	"value": { 
-	  "default" : [
-		"That was it?",
-		"Oh how the mighty fall.",
-		"I'm in such a good mood, I could sing!",
-		"Not even worth being a meal.",
-		"How pathetic.",
-		"Another weakling falls.",
-		"Nobody beats a Throg.",
-		"And they say crime never pays."
-	  ]
-	}
+  "op": "add",
+  "path": "/killedTarget/throg",
+  "value": { 
+    "default" : [
+    "That was it?",
+    "Oh how the mighty fall.",
+    "I'm in such a good mood, I could sing!",
+    "Not even worth being a meal.",
+    "How pathetic.",
+    "Another weakling falls.",
+    "Nobody beats a Throg.",
+    "And they say crime never pays."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/lostTarget/throg",
-	"value": { 
-	  "default" : [
-		"Hey, did they give up? Haha, no-one will ever stop ME!",
-		"Looks like the Peacekeeper chickened out! Just as I thought.",
-		"I can't find them... They must have fled in fear!",
-		"I suppose they fled. I don't blame them - they WERE messing with the ^orange;<gangName>^reset;!",
-		"Looks like those Peacekepers are nothing but bark.",
-		"How disappointing, I was getting hungry.",
-		"Hah! Coward."
-	  ]
-	}
+  "op": "add",
+  "path": "/lostTarget/throg",
+  "value": { 
+    "default" : [
+    "Hey, did they give up? Haha, no-one will ever stop ME!",
+    "Looks like the Peacekeeper chickened out! Just as I thought.",
+    "I can't find them... They must have fled in fear!",
+    "I suppose they fled. I don't blame them - they WERE messing with the ^orange;<gangName>^reset;!",
+    "Looks like those Peacekepers are nothing but bark.",
+    "How disappointing, I was getting hungry.",
+    "Hah! Coward."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/attack/mootant",
-	"value": {
-	  "default" : [
-		"You think to get me, but it is YOU who will be got!",
-		"Let's dance!",
-		"One-on-one, let's go!",
-		"I've been waiting for you, Peacekeeper!",
-		"You're gonna wish you didn't come after the ^orange;<gangName>^reset;!",
-		"You've made a mistake messing with the ^orange;<gangName>^reset;!",
-		"I'm a member of the ^orange;<gangName>^reset; - couldn't you tell?",
-		"Can you stand against the might of the ^orange;<gangName>^reset;?"
-	  ]
-	}
+  "op": "add",
+  "path": "/attack/mootant",
+  "value": {
+    "default" : [
+    "You think to get me, but it is YOU who will be got!",
+    "Let's dance!",
+    "One-on-one, let's go!",
+    "I've been waiting for you, Peacekeeper!",
+    "You're gonna wish you didn't come after the ^orange;<gangName>^reset;!",
+    "You've made a mistake messing with the ^orange;<gangName>^reset;!",
+    "I'm a member of the ^orange;<gangName>^reset; - couldn't you tell?",
+    "Can you stand against the might of the ^orange;<gangName>^reset;?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/resistArrest/mootant",
-	"value": { 
-	  "default" : [
-		"You'll never take me alive!",
-		"Oh, we're having THIS kind of fight, are we?",
-		"I warn you, I'm not easily caught!",
-		"You have to be quicker than that if you want to catch me!",
-		"You don't think I'll make this easy for you, do you?",
-		"You're trying to arrest me? How cute!",
-		"You're going to try and arrest me? I was hoping for a gunfight!",
-		"Don't you point that thing at me! Do you know who I am?!",
-		"You can't catch me - the ^orange;<gangName>^reset; are always two steps ahead of you!",
-		"We're the ^orange;<gangName>^reset; - you can't stop us that easily!",
-		"Are you really trying to catch a member of the ^orange;<gangName>^reset;?",
-		"It won't be easy to catch a member of the ^orange;<gangName>^reset;!"
-	  ]
-	}
+  "op": "add",
+  "path": "/resistArrest/mootant",
+  "value": { 
+    "default" : [
+    "You'll never take me alive!",
+    "Oh, we're having THIS kind of fight, are we?",
+    "I warn you, I'm not easily caught!",
+    "You have to be quicker than that if you want to catch me!",
+    "You don't think I'll make this easy for you, do you?",
+    "You're trying to arrest me? How cute!",
+    "You're going to try and arrest me? I was hoping for a gunfight!",
+    "Don't you point that thing at me! Do you know who I am?!",
+    "You can't catch me - the ^orange;<gangName>^reset; are always two steps ahead of you!",
+    "We're the ^orange;<gangName>^reset; - you can't stop us that easily!",
+    "Are you really trying to catch a member of the ^orange;<gangName>^reset;?",
+    "It won't be easy to catch a member of the ^orange;<gangName>^reset;!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/arrested/mootant",
-	"value": { 
-	  "default" : [
-		"Get these things off me!",
-		"No, don't! I'm allergic to handcuffs - you need to take them off quick!",
-		"This is NOT how I wanted this day to go.",
-		"This is... oh god... I'm having a panic attack.",
-		"Oh no... oh no no no no no no...",
-		"I should've ran... why didn't I run?",
-		"Ow, these handcuffs are chafing me!",
-		"Set me free - I promise I'll be good in future! I promise!",
-		"These handcuffs aren't my size! You should probably take them off me.",
-		"No... NO! Not again!",
-		"Whatever they're paying you, I'll pay double! Just get these things off me, okay?!",
-		"Why are you arresting me? What is the charge, huh?!",
-		"I am a sovereign galactic citizen and you have no right to arrest me!"
-	  ]
-	}
+  "op": "add",
+  "path": "/arrested/mootant",
+  "value": { 
+    "default" : [
+    "Get these things off me!",
+    "No, don't! I'm allergic to handcuffs - you need to take them off quick!",
+    "This is NOT how I wanted this day to go.",
+    "This is... oh god... I'm having a panic attack.",
+    "Oh no... oh no no no no no no...",
+    "I should've ran... why didn't I run?",
+    "Ow, these handcuffs are chafing me!",
+    "Set me free - I promise I'll be good in future! I promise!",
+    "These handcuffs aren't my size! You should probably take them off me.",
+    "No... NO! Not again!",
+    "Whatever they're paying you, I'll pay double! Just get these things off me, okay?!",
+    "Why are you arresting me? What is the charge, huh?!",
+    "I am a sovereign galactic citizen and you have no right to arrest me!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/completeArrest/mootant",
-	"value": { 
-	  "default" : [
-		"I got out of one cell... I can get out of this one.",
-		"I have many regrets right now!",
-		"I'll be back!",
-		"No prison can hold me!",
-		"Don't send me to prison - I don't wanna go back!",
-		"Don't send me to space jail - I HATE space jail!",
-		"Please... anything but the cell again... I can't...",
-		"It's... it's not a USCM prison... it's not a USCM prison...",
-		"You've just made an enemy for life!",
-		"No... not like this... not again... please...",
-		"You haven't seen the last of me, Peacekeeper!",
-		"Don't think the ^orange;<gangName>^reset; will let this slide easily!"
-	  ]
-	}
+  "op": "add",
+  "path": "/completeArrest/mootant",
+  "value": { 
+    "default" : [
+    "I got out of one cell... I can get out of this one.",
+    "I have many regrets right now!",
+    "I'll be back!",
+    "No prison can hold me!",
+    "Don't send me to prison - I don't wanna go back!",
+    "Don't send me to space jail - I HATE space jail!",
+    "Please... anything but the cell again... I can't...",
+    "It's... it's not a USCM prison... it's not a USCM prison...",
+    "You've just made an enemy for life!",
+    "No... not like this... not again... please...",
+    "You haven't seen the last of me, Peacekeeper!",
+    "Don't think the ^orange;<gangName>^reset; will let this slide easily!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/reattack/mootant",
-	"value": { 
-	  "default" : [
-		"Ha! You want to try again? You won't catch me!",
-		"You came back, Peacekeeper? I didn't think you had it in you!",
-		"You came back for another round against the ^orange;<gangName>^reset;?"
-	  ]
-	}
+  "op": "add",
+  "path": "/reattack/mootant",
+  "value": { 
+    "default" : [
+    "Ha! You want to try again? You won't catch me!",
+    "You came back, Peacekeeper? I didn't think you had it in you!",
+    "You came back for another round against the ^orange;<gangName>^reset;?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/killedTarget/mootant",
-	"value": { 
-	  "default" : [
-		"That's what you get for trying to lock ME up!",
-		"That's what you get for messing with the ^orange;<gangName>^reset;!",
-		"Ha! ^orange;<gangName>^reset; forever!",
-		"Another win for the ^orange;<gangName>^reset;!"
-	  ]
-	}
+  "op": "add",
+  "path": "/killedTarget/mootant",
+  "value": { 
+    "default" : [
+    "That's what you get for trying to lock ME up!",
+    "That's what you get for messing with the ^orange;<gangName>^reset;!",
+    "Ha! ^orange;<gangName>^reset; forever!",
+    "Another win for the ^orange;<gangName>^reset;!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/lostTarget/mootant",
-	"value": { 
-	  "default" : [
-		"Hey, did they give up? Haha, no-one will ever stop ME!",
-		"Looks like the Peacekeeper chickened out! Just as I thought.",
-		"I can't find them... They must have fled in fear!",
-		"I suppose they fled. I don't blame them - they WERE messing with the ^orange;<gangName>^reset;!"
-	  ]
-	}
+  "op": "add",
+  "path": "/lostTarget/mootant",
+  "value": { 
+    "default" : [
+    "Hey, did they give up? Haha, no-one will ever stop ME!",
+    "Looks like the Peacekeeper chickened out! Just as I thought.",
+    "I can't find them... They must have fled in fear!",
+    "I suppose they fled. I don't blame them - they WERE messing with the ^orange;<gangName>^reset;!"
+    ]
+  }
   }
 ]

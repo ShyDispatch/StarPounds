@@ -12,16 +12,16 @@
     "starPounds_options": {
       "disableGain": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"-Todo-"
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "-Todo-"
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

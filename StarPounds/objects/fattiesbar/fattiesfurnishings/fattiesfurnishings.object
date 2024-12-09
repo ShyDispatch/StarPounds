@@ -52,44 +52,44 @@
       }
     },
     "filter" : [],
-  	"modTab" : [{
+    "modTab" : [{
       "file": "/interface/fattyshops/tabs/feedingtube.png",
-  	  "label": " FeedTube",
+      "label": " FeedTube",
       "filter": [ "feedingtube" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/scale.png",
-  	  "label": " Scales",
+      "label": " Scales",
       "filter": [ "scales" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/treadmill.png",
-  	  "label": " Tread",
+      "label": " Tread",
       "filter": [ "treadmill" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/junkfood.png",
-  	  "label": " JunkFood",
+      "label": " JunkFood",
       "filter": [ "junkfood" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/decorations.png",
-  	  "label": " Decor",
+      "label": " Decor",
       "filter": [ "decor" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/plushes.png",
-  	  "label": " Plushes",
+      "label": " Plushes",
       "filter": [ "plushes" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/interactives.png",
-  	  "label": " Interact",
+      "label": " Interact",
       "filter": [ "interactables" ]
     },
-  	{
+    {
       "file": "/interface/fattyshops/tabs/materials.png",
-  	  "label": " Material",
+      "label": " Material",
       "filter": [ "materials" ]
     }]
   },
@@ -105,15 +105,15 @@
     ],
     "junkfood" : [
       "smokespecialobject", "blubberbassobject", "starpoundspizzabox", "starpoundspizzaboxstack", "starpoundspizzaboxopen", "starpoundsmessypizzaboxstack", "starpoundsdonutbox", "starpoundsdonutboxopen", "starpoundsdonutboxopen2", "emptyfattypeanutbutter", "emptyhappygirlbox", "novakiddrink1", "novakiddrink2",
-  	  "sodawastebin", "strewnsodacan1", "strewnsodacan2", "strewnsodacans1", "strewnsodacans2", "strewnsodacans3", "starpoundstakeoutbag1", "greaseburgerobject", "starpoundsskewerplate", "starpoundsskullsmashsoup", "starpoundsixolingroast", "starpoundsgluttonisthangingmeat1", "starpoundsgluttonisthangingmeat2",
-  	  "starpoundsgluttonisthangingsoup", "starpoundschocomilkbottle1", "starpoundschocomilkbottle2", "starpoundsmilkbottle1", "starpoundsmilkbottle2", "starpoundsemptybottle1", "starpoundsemptybottle2"
+      "sodawastebin", "strewnsodacan1", "strewnsodacan2", "strewnsodacans1", "strewnsodacans2", "strewnsodacans3", "starpoundstakeoutbag1", "greaseburgerobject", "starpoundsskewerplate", "starpoundsskullsmashsoup", "starpoundsixolingroast", "starpoundsgluttonisthangingmeat1", "starpoundsgluttonisthangingmeat2",
+      "starpoundsgluttonisthangingsoup", "starpoundschocomilkbottle1", "starpoundschocomilkbottle2", "starpoundsmilkbottle1", "starpoundsmilkbottle2", "starpoundsemptybottle1", "starpoundsemptybottle2"
     ],
     "decor" : [
       "feaststatue", "apexweightreassign", "apexfatsign", "apexfatsign2", "apexfatsign3", "apexfatpod", "apexfattv", "starpounds871", "redberryfatposter", "humanfatposter1", "humanfatposter2", "humanfatposter3",
-  	  "hylotlfatposter1", "hylotlfatposter2", "hylotlfatposter3", "hylotlfatposter4", "hylotlfathologram", "fatstudiesinfemalehylotlgy", "starpoundschocolatefountain", "velhanustatuettee", "starpoundsgoldstatuette",
-  	  "bellyemblem", "buttemblem", "starpoundsponderousknightarmor", "starpoundsblossomknightsarmor", "starpoundsgluttonistfeastpainting1", "starpoundsgluttonistfeastpainting2", "starpoundsgluttonistfeastpainting3", "starpoundsgluttonistfeasttable",
-  	  "gluttonistlamp1", "gluttonistlight", "gluttonistlight1", "gluttonistlight2", "gluttonistlight3", "gluttoniststatue", "starpoundsavianpedestal",
-  	  "gluttonistmamstatue", "mamfathologram", "starpoundsmamblueprint", "starpoundsmambuttposter", "starpoundsmamcavepainting", "starpoundsmampainting", "starpoundsmamportrait", "starpoundsmamposter", "wamfatsign", "mamwantedposter", "mamfrontierpainting", "mamfatsign1", "mamfatsign2", "mamsarco",
+      "hylotlfatposter1", "hylotlfatposter2", "hylotlfatposter3", "hylotlfatposter4", "hylotlfathologram", "fatstudiesinfemalehylotlgy", "starpoundschocolatefountain", "velhanustatuettee", "starpoundsgoldstatuette",
+      "bellyemblem", "buttemblem", "starpoundsponderousknightarmor", "starpoundsblossomknightsarmor", "starpoundsgluttonistfeastpainting1", "starpoundsgluttonistfeastpainting2", "starpoundsgluttonistfeastpainting3", "starpoundsgluttonistfeasttable",
+      "gluttonistlamp1", "gluttonistlight", "gluttonistlight1", "gluttonistlight2", "gluttonistlight3", "gluttoniststatue", "starpoundsavianpedestal",
+      "gluttonistmamstatue", "mamfathologram", "starpoundsmamblueprint", "starpoundsmambuttposter", "starpoundsmamcavepainting", "starpoundsmampainting", "starpoundsmamportrait", "starpoundsmamposter", "wamfatsign", "mamwantedposter", "mamfrontierpainting", "mamfatsign1", "mamfatsign2", "mamsarco",
       "starpoundsminiwrenchposter", "starpoundsminispaceposter"
     ],
     "plushes" : [
@@ -124,16 +124,16 @@
     ],
     "materials" : [
       {"input": [["money", 10]], "output": "starpoundschocolateblock"},
-  	  {"input": [["money", 10]], "output": "starpoundschocolateplatform"},
-  	  {"input": [["money", 10]], "output": "starpoundswhitechocolateblock"},
-  	  {"input": [["money", 10]], "output": "starpoundswhitechocolateplatform"},
-  	  {"input": [["money", 10]], "output": "starpoundsgingerbreadblock"},
-  	  {"input": [["money", 10]], "output": "starpoundsgingerbreadplatform"},
-  	  {"input": [["money", 10]], "output": "starpoundshive"},
+      {"input": [["money", 10]], "output": "starpoundschocolateplatform"},
+      {"input": [["money", 10]], "output": "starpoundswhitechocolateblock"},
+      {"input": [["money", 10]], "output": "starpoundswhitechocolateplatform"},
+      {"input": [["money", 10]], "output": "starpoundsgingerbreadblock"},
+      {"input": [["money", 10]], "output": "starpoundsgingerbreadplatform"},
+      {"input": [["money", 10]], "output": "starpoundshive"},
       {"input": [["money", 10]], "output": "throgmetal"},
-  	  {"input": [["money", 10]], "output": "throgpanel"},
-  	  {"input": [["money", 10]], "output": "throgpolygon"},
-  	  {"input": [["money", 10]], "output": "throgtech"}
+      {"input": [["money", 10]], "output": "throgpanel"},
+      {"input": [["money", 10]], "output": "throgpolygon"},
+      {"input": [["money", 10]], "output": "throgtech"}
     ]
   }
 }

@@ -3,13 +3,13 @@ require "/scripts/vec2.lua"
 
 function init()
   message.setHandler("treadmill.init", simpleHandler(
-  	function(pos, direction, id)
+    function(pos, direction, id)
       position = pos
       facing = direction
       target = id
 
       world.sendEntityMessage(entity.id(), "queueRadioMessage", "starpounds_treadmill")
-  	end
+    end
   ))
   message.setHandler("treadmill.uninit", simpleHandler(effect.expire))
   effectTimer = 10

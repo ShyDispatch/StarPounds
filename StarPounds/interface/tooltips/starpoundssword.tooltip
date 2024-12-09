@@ -102,15 +102,15 @@
     "wrapWidth" : 126
   },
   "damagePerSpeedTitleLabel" : {
-	"type" : "label",
-	"position" : [9, 100],
-	"hAnchor" : "left",
-	"value" : "DPS:"
+  "type" : "label",
+  "position" : [9, 100],
+  "hAnchor" : "left",
+  "value" : "DPS:"
   },
   "dpsLabel" :{
-	"type" : "label",
-	"position" : [130, 100],
-	"hAnchor" : "right",
-	"wrapWidth" : 126
+  "type" : "label",
+  "position" : [130, 100],
+  "hAnchor" : "right",
+  "wrapWidth" : 126
   }
 }

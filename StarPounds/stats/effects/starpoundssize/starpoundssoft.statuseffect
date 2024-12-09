@@ -1,12 +1,12 @@
 {
-	"name": "starpoundssoft",
-	"effectConfig" : {
-		"fillRange" : [2, 14]
-	},
-	"scripts": [
-		"starpoundssize.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Soft",
-	"icon": "/interface/statuses/starpoundssize/starpoundssoft.png"
+  "name": "starpoundssoft",
+  "effectConfig" : {
+    "fillRange" : [2, 14]
+  },
+  "scripts": [
+    "starpoundssize.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Soft",
+  "icon": "/interface/statuses/starpoundssize/starpoundssoft.png"
 }

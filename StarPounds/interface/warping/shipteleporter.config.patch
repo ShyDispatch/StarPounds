@@ -1,12 +1,12 @@
 [
-	{
-		"op" : "add",
-		"path" : "/destinations/-",
-		"value" : {
-				"name" : "Hog Diner",
-				"planetName" : "Throg Blubberbutt",
-				"warpAction" : "InstanceWorld:fattiesbar",
-				"icon" : "fattiesbar"
-		}
-	}
+  {
+    "op" : "add",
+    "path" : "/destinations/-",
+    "value" : {
+        "name" : "Hog Diner",
+        "planetName" : "Throg Blubberbutt",
+        "warpAction" : "InstanceWorld:fattiesbar",
+        "icon" : "fattiesbar"
+    }
+  }
 ]

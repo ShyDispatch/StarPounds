@@ -65,21 +65,21 @@
       "Wants to open a restaurant chain"
     ],
 
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Hello there, I'm Susie Haltmann."
-					],
-					"generic": [
-						"Pay and ergonomic seating~ Give us favors such as these~",
-						"I wonder how good the ice cream here is.",
-						"So many planets to mechanize, so little time."
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Hello there, I'm Susie Haltmann."
+          ],
+          "generic": [
+            "Pay and ergonomic seating~ Give us favors such as these~",
+            "I wonder how good the ice cream here is.",
+            "So many planets to mechanize, so little time."
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

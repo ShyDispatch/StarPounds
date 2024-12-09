@@ -55,30 +55,30 @@
       "Craving violence",
       "On his sixth bottle of soda"
     ],
-	  
-    "chatPortrait" : "/interface/chatbubbles/blossom.png:<frame>",	  
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Oh hi- just here to look for inspiration. For art.",
-						"Mmmmm... Chocolate sounds really good right now...",
-						"Hmmm. Fat Novakid or stuffed Floran, which should I draw next?",
-						"Dungeon designing is harder than people think it is.",
-						"Roasted poulty sounds nice right now... What do you mean \"it's pronounced poultry\"?",
-						"Would it be a bit self indulgent of myself to add stuff related to me to my side of a project?",
-						"You ever get those moods where you stare at someone and think \"damn they look tasty\"?",
-						"Oh, uh hi!... I'm not used to people approaching me, ha.",
-						"Sol is kind of a drunk, but she's nice to be around.",						
-						"You would not believe the amount of self restraint it takes to not put \"try jumping\" in front of every lethal drop in my dungeons.",
-						"I'm just passing through. Don't think I can handle this kinda volume for too long.",
-						"Chika's a pretty chill fellow... Just try not to stay around him too long or you're stewing in their gut for a week. /n Personal experience.",
-						"Burn out's a bitch but it's nice to come back after a while~"
-					]
-				}
-			}
-		}
+    
+    "chatPortrait" : "/interface/chatbubbles/blossom.png:<frame>",    
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Oh hi- just here to look for inspiration. For art.",
+            "Mmmmm... Chocolate sounds really good right now...",
+            "Hmmm. Fat Novakid or stuffed Floran, which should I draw next?",
+            "Dungeon designing is harder than people think it is.",
+            "Roasted poulty sounds nice right now... What do you mean \"it's pronounced poultry\"?",
+            "Would it be a bit self indulgent of myself to add stuff related to me to my side of a project?",
+            "You ever get those moods where you stare at someone and think \"damn they look tasty\"?",
+            "Oh, uh hi!... I'm not used to people approaching me, ha.",
+            "Sol is kind of a drunk, but she's nice to be around.",            
+            "You would not believe the amount of self restraint it takes to not put \"try jumping\" in front of every lethal drop in my dungeons.",
+            "I'm just passing through. Don't think I can handle this kinda volume for too long.",
+            "Chika's a pretty chill fellow... Just try not to stay around him too long or you're stewing in their gut for a week. /n Personal experience.",
+            "Burn out's a bitch but it's nice to come back after a while~"
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

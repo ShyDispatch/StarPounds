@@ -96,7 +96,7 @@
       { "item" : "starpoundshugepancakes-recipe" },
       { "item" : "starpoundshugechunkofmeat-recipe" },
       { "item" : "digestionaid" },
-	    { "item" : { "name" : "digestionaid-recipe", "parameters" : { "price" : 10 } } },
+      { "item" : { "name" : "digestionaid-recipe", "parameters" : { "price" : 10 } } },
       { "item" : "lactaid" },
       { "item" : "lactaidoverdrive" },
       { "item" : "lactaidmilktank" },

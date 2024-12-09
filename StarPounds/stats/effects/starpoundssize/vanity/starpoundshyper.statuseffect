@@ -1,7 +1,7 @@
 {
-	"name": "starpoundshyper",
-	"scripts": [ ],
-	"defaultDuration": 1,
-	"label": "Hyper",
-	"icon": "/interface/statuses/starpoundsvanity/starpoundshyper.png"
+  "name": "starpoundshyper",
+  "scripts": [ ],
+  "defaultDuration": 1,
+  "label": "Hyper",
+  "icon": "/interface/statuses/starpoundsvanity/starpoundshyper.png"
 }

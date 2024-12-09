@@ -23,8 +23,8 @@
     "starPounds_options": {
       "disablePrey": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
+    "dialogMode": "tutorial",
+    "dialog": {
       "attack" : "/dialog/vore.config:attack",
       "reattack" : "/dialog/vore.config:reattack",
       "killedTarget" : "/dialog/vore.config:killedTarget",
@@ -32,16 +32,16 @@
       "outOfSight" : "/dialog/vore.config:outOfSight",
       "cheerOn" : "/dialog/vore.config:cheerOn",
       "cantReach" : "/dialog/vore.config:cantReach",
-			"converse": {
-				"default": {
-					"default": [
+      "converse": {
+        "default": {
+          "default": [
             "This place is dangerous - the food is way too tempting!",
             "This place makes my ship feel archaic.",
             "Nice to see people who know how to eat."
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
 
   "identity" : {

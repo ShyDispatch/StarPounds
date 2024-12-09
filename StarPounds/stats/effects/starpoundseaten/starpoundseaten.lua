@@ -23,5 +23,5 @@ function init()
 end
 
 function update(dt)
-	effect.modifyDuration(dt)
+  effect.modifyDuration(dt)
 end

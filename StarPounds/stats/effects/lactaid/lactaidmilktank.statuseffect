@@ -3,8 +3,8 @@
   "effectConfig" : {
     "skill": "breastCapacity"
   },
-	"scripts": [
-		"lactaid.lua"
-	],
+  "scripts": [
+    "lactaid.lua"
+  ],
   "defaultDuration" : 1
 }

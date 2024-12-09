@@ -249,9 +249,9 @@
     "teamType" : "enemy",
     "damageSourceKind" : "plasma",
     "damageType" : "Environment",
-	  "statusEffects" : [
+    "statusEffects" : [
       {"effect": "fatray", "duration" : 6}
-	  ],
+    ],
     "knockback" : 0,
     "damageRepeatTimeout" : 0.5
   }

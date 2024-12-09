@@ -1,14 +1,14 @@
 [
   { "op" : "add",
-	"path" : "/0/1/-",
-	"value" : [
-	  [ "generic" ],
-	  {
-		"name" : "Gluttonist veteran",
-		"species" : "floran",
-		"typeName" : "starpoundsgluttonistveteran",
-		"seed" : "stable"
-	  }
-	]
+  "path" : "/0/1/-",
+  "value" : [
+    [ "generic" ],
+    {
+    "name" : "Gluttonist veteran",
+    "species" : "floran",
+    "typeName" : "starpoundsgluttonistveteran",
+    "seed" : "stable"
+    }
+  ]
   }
 ]

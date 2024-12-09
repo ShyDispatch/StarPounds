@@ -19,7 +19,7 @@
       ],
       "def" : [ "tmx", "gluttonistcookout1.json" ]
     },
-	{
+  {
       "name" : "gluttonistcookout2",
       "rules" : [
         [ "maxSpawnCount", [1] ]

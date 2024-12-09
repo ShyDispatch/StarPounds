@@ -1,11 +1,11 @@
 {
-	"name": "starpoundsrategainslow",
-	"effectConfig": {
-		"type": "gainWeight",
-		"rate": 1
-	},
-	"defaultDuration": 5,
-	"scripts": [
-		"starpoundsrate.lua"
-	]
+  "name": "starpoundsrategainslow",
+  "effectConfig": {
+    "type": "gainWeight",
+    "rate": 1
+  },
+  "defaultDuration": 5,
+  "scripts": [
+    "starpoundsrate.lua"
+  ]
 }

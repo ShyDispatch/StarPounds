@@ -1,10 +1,10 @@
 {
   "input" : [
     { "item" : "rawpoultry", "count" : 1 },
-    { "item" : "starpoundsbuttersnack", "count" : 1 },	
-    { "item" : "rawbacon", "count" : 1 },	
+    { "item" : "starpoundsbuttersnack", "count" : 1 },  
+    { "item" : "rawbacon", "count" : 1 },  
     { "item" : "alienmeat", "count" : 1 },
-    { "item" : "rawribmeat", "count" : 1 }	
+    { "item" : "rawribmeat", "count" : 1 }  
   ],
   "output" : { "item" : "starpoundsmeatwich", "count" : 1 },
   "groups" : [ "craftingfood", "mains" ]

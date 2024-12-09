@@ -1,9 +1,9 @@
 {
   "input" : [
     { "item" : "wheat", "count" : 1 },
-    { "item" : "sugar", "count" : 1 },	
+    { "item" : "sugar", "count" : 1 },  
     { "item" : "milk", "count" : 1 },
-    { "item" : "egg", "count" : 1 },	
+    { "item" : "egg", "count" : 1 },  
     { "item" : "chocolate", "count" : 1 }
   ],
   "output" : { "item" : "starpoundschocodonut", "count" : 1 },

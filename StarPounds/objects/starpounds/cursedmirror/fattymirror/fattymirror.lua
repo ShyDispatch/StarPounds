@@ -4,7 +4,7 @@ function init()
   self.chatOptions = config.getParameter("chatOptions", {})
   self.chatTimer = 0
   self.sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes")
-	self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
+  self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
   self.activationTime = config.getParameter("activationTime") or 60
 
   if storage.active == nil then activate() end
@@ -100,13 +100,13 @@ function deactivate()
 end
 
 function getSize(weight)
-	local sizeIndex = 0
-	-- Go through all sizes (smallest to largest) to find which size.
-	for i in ipairs(self.sizes) do
-		if weight >= self.sizes[i].weight then
-			sizeIndex = i
-		end
-	end
+  local sizeIndex = 0
+  -- Go through all sizes (smallest to largest) to find which size.
+  for i in ipairs(self.sizes) do
+    if weight >= self.sizes[i].weight then
+      sizeIndex = i
+    end
+  end
 
-	return self.sizes[sizeIndex], sizeIndex
+  return self.sizes[sizeIndex], sizeIndex
 end

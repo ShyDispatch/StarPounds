@@ -1,7 +1,7 @@
 {
-	"name": "starpoundsbloat",
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundsbloat.lua"
-	]
+  "name": "starpoundsbloat",
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundsbloat.lua"
+  ]
 }

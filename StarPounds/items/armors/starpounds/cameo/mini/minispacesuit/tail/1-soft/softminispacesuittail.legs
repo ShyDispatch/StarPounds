@@ -13,7 +13,7 @@
   "femaleFrames" : "pants.png",
 
   "colorOptions" : [
-	// DEFAULT
+  // DEFAULT
     { "ffca8a" : "d3dede", "e0975c" : "c6d0d1", "a85636" : "97a7ad", "6f2919" : "66787f" },
     // BLACK
     { "ffca8a" : "838383", "e0975c" : "555555", "a85636" : "383838", "6f2919" : "151515" },

@@ -1,9 +1,9 @@
 [
-	{
-		"op": "add",
-		"path": "/scripts/-",
-		"value": "/scripts/starpounds/starpounds_npc.lua"
-	},
+  {
+    "op": "add",
+    "path": "/scripts/-",
+    "value": "/scripts/starpounds/starpounds_npc.lua"
+  },
   {
     "op": "add",
     "path": "/identity",

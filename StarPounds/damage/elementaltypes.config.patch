@@ -1,16 +1,16 @@
 [
   { 
     "op" : "add",
-	"path" : "/caloric",
-	"value" : {
-	  "resistanceStat" : "physicalResistance",
-	  "damageNumberParticles" : {
-		"hit" : "caloricdamagenumber",
-		"stronghit" : "caloricdamagenumberstrong",
-		"weakhit" : "caloricdamagenumberweak",
-		"shieldhit" : "caloricdamagenumber",
-		"kill" : "caloricdamagenumber"
-	  }
-	}
+  "path" : "/caloric",
+  "value" : {
+    "resistanceStat" : "physicalResistance",
+    "damageNumberParticles" : {
+    "hit" : "caloricdamagenumber",
+    "stronghit" : "caloricdamagenumberstrong",
+    "weakhit" : "caloricdamagenumberweak",
+    "shieldhit" : "caloricdamagenumber",
+    "kill" : "caloricdamagenumber"
+    }
+  }
   }
 ]

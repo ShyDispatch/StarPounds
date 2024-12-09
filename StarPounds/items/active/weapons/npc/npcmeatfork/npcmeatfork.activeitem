@@ -42,7 +42,7 @@
 
     "baseDps" : 60.5,
     "energyUsage" : 25.5,
-    "fireTime" : 0.045,	
+    "fireTime" : 0.045,  
     "inaccuracy" : 0.15,
 
     "projectileCount" : 5,
@@ -50,7 +50,7 @@
 
     "projectileType" : "starpoundsgreatforkmeat",
     "projectileParameters" : {
-      "speed" : 60	
+      "speed" : 60  
     },
     "stances" : {
       "idle" : {

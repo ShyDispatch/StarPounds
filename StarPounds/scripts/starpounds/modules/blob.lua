@@ -28,8 +28,8 @@ function blob:update(dt)
   if self.size ~= starPounds.currentSize.size then
     self.size = starPounds.currentSize.size
     if self.isBlob then
-    	self.bounds = rect.translate(rect.pad(mcontroller.boundBox(), {0, self.data.boundsPadding}), self.data.boundsOffset)
-    	self.width = math.abs(self.bounds[3] - self.bounds[1]) * 0.5
+      self.bounds = rect.translate(rect.pad(mcontroller.boundBox(), {0, self.data.boundsPadding}), self.data.boundsOffset)
+      self.width = math.abs(self.bounds[3] - self.bounds[1]) * 0.5
     end
   end
   -- Automatically open doors in front/close doors behind since blob's cant reach to interact.
@@ -59,7 +59,7 @@ function blob:automaticDoors(dt)
   local closeBounds = {table.unpack(openBounds)}
 
   if mcontroller.movingDirection() > 0 then
-		openBounds[1], openBounds[3] = openBounds[3] + self.data.openRange[1], openBounds[3] + self.data.openRange[2]
+    openBounds[1], openBounds[3] = openBounds[3] + self.data.openRange[1], openBounds[3] + self.data.openRange[2]
     closeBounds[3], closeBounds[1] = closeBounds[1] - self.data.closeRange[1], closeBounds[1] - self.data.closeRange[2]
   else
     openBounds[3], openBounds[1] = openBounds[1] + self.data.openRange[1], openBounds[1] - self.data.openRange[2]

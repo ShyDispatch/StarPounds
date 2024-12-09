@@ -28,13 +28,13 @@
       "flipImages" : true,
       "frames" : 1,
       "animationCycle" : 0.5,
-	  
+    
       "animationParts" : {
         "bg" : "velhanustatuette.png",
         "fg" : "velhanustatuettelit.png"
       },
       "animationPosition" : [-8, 0],
-	  
+    
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
 

@@ -54,9 +54,9 @@
         {"weight" : 0.05, "item" : [ "floranring", 1]}
       ],
       "poolRounds" : [
-	    [0.80, 2],
+      [0.80, 2],
         [0.40, 3]
-	  ],
+    ],
       "allowDuplication" : false
     }]
   ],
@@ -82,7 +82,7 @@
         {"weight" : 0.17, "item" : "gluttonistlore2-codex"},
         {"weight" : 0.17, "item" : "howfloransgetfat-codex"},
         {"weight" : 0.16, "item" : "florfeast-codex"},
-        {"weight" : 0.16, "item" : "chika1feasthall-codex"}		
+        {"weight" : 0.16, "item" : "chika1feasthall-codex"}    
       ],
       "poolRounds" : 1,
       "allowDuplication" : false

@@ -8,7 +8,7 @@
           "idle" : {
             "frames" : 13,
             "cycle" : 2,
-            "mode" : "loop"			
+            "mode" : "loop"      
           },
           "jump" : {
             "frames" : 2,

@@ -1,12 +1,12 @@
 {
-	"name": "starpoundsthick",
-	"effectConfig" : {
-		"fillRange" : [2, 14]
-	},
-	"scripts": [
-		"starpoundssize.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Thick",
-	"icon": "/interface/statuses/starpoundssize/starpoundsthick.png"
+  "name": "starpoundsthick",
+  "effectConfig" : {
+    "fillRange" : [2, 14]
+  },
+  "scripts": [
+    "starpoundssize.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Thick",
+  "icon": "/interface/statuses/starpoundssize/starpoundsthick.png"
 }

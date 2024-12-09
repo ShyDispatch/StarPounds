@@ -1,12 +1,12 @@
 {
-	"name": "starpoundsimmobile",
-	"effectConfig" : {
-		"fillRange" : [3, 14]
-	},
-	"scripts": [
-		"starpoundssize.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Immobile",
-	"icon": "/interface/statuses/starpoundssize/starpoundsimmobile.png"
+  "name": "starpoundsimmobile",
+  "effectConfig" : {
+    "fillRange" : [3, 14]
+  },
+  "scripts": [
+    "starpoundssize.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Immobile",
+  "icon": "/interface/statuses/starpoundssize/starpoundsimmobile.png"
 }

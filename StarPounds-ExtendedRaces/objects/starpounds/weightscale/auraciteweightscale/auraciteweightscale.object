@@ -30,7 +30,7 @@
       "dualImage" : "auraciteweightscale.png",
 
       "imagePosition" : [-8, 0],
-	  
+    
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
       "collision" : "platform",

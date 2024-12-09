@@ -1,15 +1,15 @@
 {
-	"name": "starpoundsvoretargetforce",
-	"effectConfig": {
-		"options" : {
-			"ignoreSkills" : true,
-			"ignoreCapacity" : true,
-			"ignoreEnergyRequirment" : true,
-			"energyMultiplier" : 0
-		}
-	},
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundsvoretarget.lua"
-	]
+  "name": "starpoundsvoretargetforce",
+  "effectConfig": {
+    "options" : {
+      "ignoreSkills" : true,
+      "ignoreCapacity" : true,
+      "ignoreEnergyRequirment" : true,
+      "energyMultiplier" : 0
+    }
+  },
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundsvoretarget.lua"
+  ]
 }

@@ -1,7 +1,7 @@
 {
-	"name": "starpoundsgorged",
-	"scripts": [ ],
-	"defaultDuration": 1,
-	"label": "Gorged",
-	"icon": "/interface/statuses/starpoundsvanity/starpoundsgorged.png"
+  "name": "starpoundsgorged",
+  "scripts": [ ],
+  "defaultDuration": 1,
+  "label": "Gorged",
+  "icon": "/interface/statuses/starpoundsvanity/starpoundsgorged.png"
 }

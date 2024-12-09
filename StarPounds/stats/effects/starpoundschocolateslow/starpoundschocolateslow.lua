@@ -6,7 +6,7 @@ end
 function update(dt)
   mcontroller.controlModifiers({
       groundMovementModifier = 0.75,
-	  airJumpModifier = 0.7,	  
+    airJumpModifier = 0.7,    
       speedModifier = 0.70
     })
 end

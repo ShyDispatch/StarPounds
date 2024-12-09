@@ -24,7 +24,7 @@
       "disablePrey": true
     },
     "dialogMode": "tutorial",
-		"dialog": {
+    "dialog": {
       "attack" : "/dialog/vore.config:attack",
       "reattack" : "/dialog/vore.config:reattack",
       "killedTarget" : "/dialog/vore.config:killedTarget",
@@ -32,16 +32,16 @@
       "outOfSight" : "/dialog/vore.config:outOfSight",
       "cheerOn" : "/dialog/vore.config:cheerOn",
       "cantReach" : "/dialog/vore.config:cantReach",
-			"converse": {
-				"default": {
-					"default": [
+      "converse": {
+        "default": {
+          "default": [
             "You might be wondering how a naked panda travels through space. Ancient panda secret.",
             "Do you get to the Vore District very often? Oh, what am I saying - of course you don't.",
             "Careful, getting this close to me is dangerous."
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
 
   "identity" : {

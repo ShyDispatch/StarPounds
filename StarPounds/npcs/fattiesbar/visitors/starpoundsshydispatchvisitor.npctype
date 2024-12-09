@@ -13,32 +13,32 @@
     "starPounds_options": {
       "extraBottomHeavy": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Sorry I'm kind of busy.",
-						"I am me, yet this place is also me. Am I the constant?",
-						"Sorry if I don't remember your name, my headspace is already at max capacity with useless hyperfixation trivia.",
-						"Floran, it's Floran! Why do people keep saying Florean or Florian?",
-						"Is it so wrong to want to be spoiled rotten?",
-						"Did you know? Throgs are canon to starbound. I merely added them in.",
-						"Me? The Blubberbutt? That does sound fitting.",
-						"Don't think too much on what it means to be seeing me like this.",
-						"Sometimes I really just wanna let go and pig out.",
-						"Have you heard of Thief? No not the reboot.",
-						"I love the kind of woman that can just kill me.",
-						"What? I don't have an obsession with witches and secretaries and masked ladies. Not at all.",
-						"Think I should drink a mootagenic milkshake?",
-						"Buns? Do you mean like cinnamon buns? Where?",
-						"Do you have any cinnamon rolls on you? No reason in particular.",
-						"They say you should finish what you start, but does that beat starting over every few months over perfectionism?",
-						"What? Oh yeah I guess I do have a rather big butt."
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Sorry I'm kind of busy.",
+            "I am me, yet this place is also me. Am I the constant?",
+            "Sorry if I don't remember your name, my headspace is already at max capacity with useless hyperfixation trivia.",
+            "Floran, it's Floran! Why do people keep saying Florean or Florian?",
+            "Is it so wrong to want to be spoiled rotten?",
+            "Did you know? Throgs are canon to starbound. I merely added them in.",
+            "Me? The Blubberbutt? That does sound fitting.",
+            "Don't think too much on what it means to be seeing me like this.",
+            "Sometimes I really just wanna let go and pig out.",
+            "Have you heard of Thief? No not the reboot.",
+            "I love the kind of woman that can just kill me.",
+            "What? I don't have an obsession with witches and secretaries and masked ladies. Not at all.",
+            "Think I should drink a mootagenic milkshake?",
+            "Buns? Do you mean like cinnamon buns? Where?",
+            "Do you have any cinnamon rolls on you? No reason in particular.",
+            "They say you should finish what you start, but does that beat starting over every few months over perfectionism?",
+            "What? Oh yeah I guess I do have a rather big butt."
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

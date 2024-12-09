@@ -1,7 +1,7 @@
 {
   "input" : [
     { "item" : "sugar", "count" : 1 },
-    { "item" : "starpoundsbuttersnack", "count" : 1 },	
+    { "item" : "starpoundsbuttersnack", "count" : 1 },  
     { "item" : "milk", "count" : 1 }
   ],
   "output" : { "item" : "starpoundsmooshake", "count" : 1 },

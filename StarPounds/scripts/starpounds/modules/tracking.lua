@@ -6,32 +6,32 @@ function tracking:init()
 end
 
 function tracking:update(dt)
-	-- Don't do anything if the mod is disabled.
+  -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Don't create if we can't add statuses anyway.
-	if status.statPositive("statusImmunity") then return end
+  if status.statPositive("statusImmunity") then return end
   -- Check if statuses don't exist.
   if not (starPounds.hasOption("disableStomachMeter") or starPounds.hasOption("legacyMode")) then
     local stomachTracker = self:getStomachTracker()
-		if not status.uniqueStatusEffectActive(stomachTracker) then
-			self:createStatuses()
-			return
-		end
-	end
-	-- Size status.
-	if not starPounds.hasOption("disableSizeMeter") then
-		if not status.uniqueStatusEffectActive("starpounds"..starPounds.currentSize.size) then
-			self:createStatuses()
-			return
-		end
-	end
-	-- Tiddy status.
-	if starPounds.hasOption("breastMeter") then
-		if not status.uniqueStatusEffectActive("starpoundsbreast") then
-			self:createStatuses()
-			return
-		end
-	end
+    if not status.uniqueStatusEffectActive(stomachTracker) then
+      self:createStatuses()
+      return
+    end
+  end
+  -- Size status.
+  if not starPounds.hasOption("disableSizeMeter") then
+    if not status.uniqueStatusEffectActive("starpounds"..starPounds.currentSize.size) then
+      self:createStatuses()
+      return
+    end
+  end
+  -- Tiddy status.
+  if starPounds.hasOption("breastMeter") then
+    if not status.uniqueStatusEffectActive("starpoundsbreast") then
+      self:createStatuses()
+      return
+    end
+  end
 end
 
 function tracking:uninit()
@@ -39,7 +39,7 @@ function tracking:uninit()
 end
 
 function tracking:createStatuses()
-	-- Don't do anything if the mod is disabled.
+  -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   local stomachTracker = self:getStomachTracker()
   local sizeTracker = "starpounds"..starPounds.currentSize.size

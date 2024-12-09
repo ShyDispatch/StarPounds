@@ -26,9 +26,9 @@ function onInteraction(args)
   promises:add(world.sendEntityMessage(args.sourceId, "starPounds.getStomach"), function(stomach)
     promises:add(world.sendEntityMessage(args.sourceId, "starPounds.hasSkill", "wellfedProtection"), function(wellfedProtection)
       if stomach.fullness >= self.strainedThresholds.starpoundsstomach and not wellfedProtection then
-      	return
+        return
       elseif stomach.fullness >= self.strainedThresholds.starpoundsstomach3 then
-      	return
+        return
       end
       animator.burstParticleEmitter("bite")
       animator.playSound("bite")

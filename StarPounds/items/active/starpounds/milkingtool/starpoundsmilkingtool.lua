@@ -11,7 +11,7 @@ function init()
 end
 
 function update(dt, fireMode, shiftHeld)
-	promises:update()
+  promises:update()
   updateAim()
 
   storage.fireTimer = math.max(storage.fireTimer - dt, 0)
@@ -34,8 +34,8 @@ function update(dt, fireMode, shiftHeld)
         if player and liquidConfig.itemDrop then
           player.giveItem({name = liquidConfig.itemDrop, count = amount})
         end
-    	end)
-  	end)
+      end)
+    end)
     storage.firing = false
     return
   end

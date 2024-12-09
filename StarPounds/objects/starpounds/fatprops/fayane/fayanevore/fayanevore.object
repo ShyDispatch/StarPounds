@@ -22,40 +22,40 @@
   "dialog": {
     "swallow": [
       "^#aa99dd;Fayane^reset; wass hungry, thankss for the meal.",
-			"<player> iss about to become tushy pudge, how do they feel~?",
-			"Can <player> try find fish person down there? ^#aa99dd;Fayane^reset; thinks she accidentally ate while ssleep-walking.",
-			"Does <player> want to go on ^#aa99dd;Fayane^reset;'s belly, boobsss, or butt~?",
-			"If <player> wants to go in ^#aa99dd;Fayane^reset;'s tummy, all they need to do is asssk~.",
-			"^#aa99dd;Fayane^reset; may swallow down a sssnack for <player>. If they ask nicely~."
+      "<player> iss about to become tushy pudge, how do they feel~?",
+      "Can <player> try find fish person down there? ^#aa99dd;Fayane^reset; thinks she accidentally ate while ssleep-walking.",
+      "Does <player> want to go on ^#aa99dd;Fayane^reset;'s belly, boobsss, or butt~?",
+      "If <player> wants to go in ^#aa99dd;Fayane^reset;'s tummy, all they need to do is asssk~.",
+      "^#aa99dd;Fayane^reset; may swallow down a sssnack for <player>. If they ask nicely~."
     ],
     "struggle": [
       "Keep moving, feelss almost like ^#aa99dd;Fayane^reset; is getting massssage.",
-			"<player> really thinksss they can get out before turning to fat, iss cute~.",
-			"Ssstruggling jusst makess it quicker~.",
-			"^#aa99dd;Fayane^reset; can feel <player> sssquirming inside, it tickless.",
-			"Place your betsss, can <player> get outss before ^#aa99dd;Fayane^reset; makess them mush~?"
+      "<player> really thinksss they can get out before turning to fat, iss cute~.",
+      "Ssstruggling jusst makess it quicker~.",
+      "^#aa99dd;Fayane^reset; can feel <player> sssquirming inside, it tickless.",
+      "Place your betsss, can <player> get outss before ^#aa99dd;Fayane^reset; makess them mush~?"
     ],
     "stop": [
       "Floran ssstill hungry!",
-			"^#aa99dd;Fayane^reset; not sssay you could leave!",
-			"If ^#aa99dd;Fayane^reset; askss nicely, can she ssswallow <player> again?",
-			"<player> leaving ssso soon?",
-			"Can <player> sstay in floran for five more minutess? Please?",
-			"Where doess <player> think <player> is going?",
-			"<player> isn't allowed to leave ^#aa99dd;Fayane^reset;'s tummy!",
-			"<player> knowsss they want to slide back insside."
+      "^#aa99dd;Fayane^reset; not sssay you could leave!",
+      "If ^#aa99dd;Fayane^reset; askss nicely, can she ssswallow <player> again?",
+      "<player> leaving ssso soon?",
+      "Can <player> sstay in floran for five more minutess? Please?",
+      "Where doess <player> think <player> is going?",
+      "<player> isn't allowed to leave ^#aa99dd;Fayane^reset;'s tummy!",
+      "<player> knowsss they want to slide back insside."
     ],
     "digested": [
       "^#aa99dd;Fayane^reset; thankss <player> for the meal~.",
-			"^#aa99dd;Fayane^reset; hopess <player> likesss being butt fat.",
-			"<player> should bring friendss next time, floran ssstill hungry.",
-			"<player> wass deliciouss, floran should find more like them.",
-			"Is <player> going onto ^#aa99dd;Fayane^reset;'sss tum or tushy? Let'ss wait and ssee~.",
-			"Aw, <player> didn't lasst long at all, ^#aa99dd;Fayane^reset; ssstill sstarving!",
-			"Iss much easier to become fat when prey comesss to you, hehe~.",
-			"Floran could really use a belly rub right about now.",
-			"^#aa99dd;Fayane^reset; isss disappointed in <player>, turned to mush sso quick~.",
-			"And people wonder how ^#aa99dd;Fayane^reset; got ssso big and ssoft~."
+      "^#aa99dd;Fayane^reset; hopess <player> likesss being butt fat.",
+      "<player> should bring friendss next time, floran ssstill hungry.",
+      "<player> wass deliciouss, floran should find more like them.",
+      "Is <player> going onto ^#aa99dd;Fayane^reset;'sss tum or tushy? Let'ss wait and ssee~.",
+      "Aw, <player> didn't lasst long at all, ^#aa99dd;Fayane^reset; ssstill sstarving!",
+      "Iss much easier to become fat when prey comesss to you, hehe~.",
+      "Floran could really use a belly rub right about now.",
+      "^#aa99dd;Fayane^reset; isss disappointed in <player>, turned to mush sso quick~.",
+      "And people wonder how ^#aa99dd;Fayane^reset; got ssso big and ssoft~."
     ]
   },
 

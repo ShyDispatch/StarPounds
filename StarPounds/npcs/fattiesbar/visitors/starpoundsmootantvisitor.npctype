@@ -22,22 +22,22 @@
       "bottomHeavy": true,
       "milky": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Moo?",
-						"It... hurts to remember.",
-						"Was I always like this?",
-						"I needed... I need some food.",
-						"Why can I not remember?",
-						"I'm... What am I?",
-						"Need to distract myself, with food."
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Moo?",
+            "It... hurts to remember.",
+            "Was I always like this?",
+            "I needed... I need some food.",
+            "Why can I not remember?",
+            "I'm... What am I?",
+            "Need to distract myself, with food."
+          ]
+        }
+      }
+    }
   },
 
   "items" : {

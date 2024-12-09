@@ -79,7 +79,7 @@
         "properties" : {
           "transformationGroups" : [ "body" ],  
           "zLevel" : 2,
-		  "fullbright" : true	  		  
+      "fullbright" : true          
         },
 
         "partStates" : {
@@ -134,7 +134,7 @@
         "properties" : {
           "transformationGroups" : [ "body" ],  
           "zLevel" : 3,
-		  "fullbright" : true	  		  
+      "fullbright" : true          
         },
 
         "partStates" : {

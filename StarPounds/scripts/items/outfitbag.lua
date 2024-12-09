@@ -16,40 +16,40 @@ end
 
 function update(dt, fireMode, shiftHeld)
   promises:update()
-	updateAim()
+  updateAim()
 
-	storage.fireTimer = math.max(storage.fireTimer - dt, 0)
+  storage.fireTimer = math.max(storage.fireTimer - dt, 0)
 
-	self.recoilRate = self.active and 0 or math.max(1, self.recoilRate + (10 * dt))
-	self.recoil = math.max(self.recoil - dt * self.recoilRate, 0)
+  self.recoilRate = self.active and 0 or math.max(1, self.recoilRate + (10 * dt))
+  self.recoil = math.max(self.recoil - dt * self.recoilRate, 0)
 
-	if self.active and not storage.firing and storage.fireTimer <= 0 then
-		if self.fireMode == "alt" then
-			local entityIds = world.entityQuery(activeItem.ownerAimPosition(), 2, {["order"] = "nearest", includedTypes = {"npc", "player"}, withoutEntityId = player.id()})
-			for _, id in ipairs(entityIds) do
-				if world.entityHealth(id)[1] > 0 then self.entityId = id break end
-			end
-		else
-			self.entityId = player.id()
-		end
+  if self.active and not storage.firing and storage.fireTimer <= 0 then
+    if self.fireMode == "alt" then
+      local entityIds = world.entityQuery(activeItem.ownerAimPosition(), 2, {["order"] = "nearest", includedTypes = {"npc", "player"}, withoutEntityId = player.id()})
+      for _, id in ipairs(entityIds) do
+        if world.entityHealth(id)[1] > 0 then self.entityId = id break end
+      end
+    else
+      self.entityId = player.id()
+    end
 
-		if not self.entityId then
-			self.active = false
-			return nil
-		end
+    if not self.entityId then
+      self.active = false
+      return nil
+    end
 
-		self.recoil = math.pi/2 - self.aimAngle
-		activeItem.setArmAngle(math.pi/2)
-		if animator.animationState("firing") == "off" then
-			animator.setAnimationState("firing", "fire")
-		end
-		storage.fireTimer = config.getParameter("fireTime", 1.0)
-		storage.firing = true
-	end
+    self.recoil = math.pi/2 - self.aimAngle
+    activeItem.setArmAngle(math.pi/2)
+    if animator.animationState("firing") == "off" then
+      animator.setAnimationState("firing", "fire")
+    end
+    storage.fireTimer = config.getParameter("fireTime", 1.0)
+    storage.firing = true
+  end
 
-	self.active = false
+  self.active = false
 
-	if storage.firing and animator.animationState("firing") == "off" and self.entityId then
+  if storage.firing and animator.animationState("firing") == "off" and self.entityId then
     promises:add(world.sendEntityMessage(activeItem.ownerEntityId(), "starPounds.getDirectives", self.entityId), function(directives)
     promises:add(world.sendEntityMessage(activeItem.ownerEntityId(), "starPounds.getVisualSpecies", world.entitySpecies(self.entityId)), function(species)
       for _, outfitType in ipairs(self.outfitTypes) do
@@ -59,22 +59,22 @@ function update(dt, fireMode, shiftHeld)
           count = 1
         }
         if pcall(root.itemType, itemConfig.name) then
-      		player.giveItem(itemConfig)
+          player.giveItem(itemConfig)
         else
           sb.logError("%s","Outfit bag could not find item: "..itemConfig.name)
         end
       end
       item.consume(1)
     end) end)
-		storage.firing = false
-	end
+    storage.firing = false
+  end
 end
 
 function activate(fireMode, shiftHeld)
-	if not storage.firing then
-		self.active = true
-		self.fireMode = fireMode
-	end
+  if not storage.firing then
+    self.active = true
+    self.fireMode = fireMode
+  end
 end
 
 function updateAim()

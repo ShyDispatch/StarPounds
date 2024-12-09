@@ -19,7 +19,7 @@
       ],
       "def" : [ "tmx", "gluttonisthut1.json" ]
     },
-	{
+  {
       "name" : "gluttonisthut2",
       "rules" : [
         [ "maxSpawnCount", [1] ]

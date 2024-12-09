@@ -15,7 +15,7 @@
   "animation" : "shieldfullbright.animation",
   "animationParts" : {
     "shield" : "images/throgdinnerplate.png",
-	"shieldFullbright" : "images/throgdinnerplatefullbright.png"
+  "shieldFullbright" : "images/throgdinnerplatefullbright.png"
   },
   "animationCustom" : {
     "animatedParts" : { "parts" : { "shield" : { "properties" : {

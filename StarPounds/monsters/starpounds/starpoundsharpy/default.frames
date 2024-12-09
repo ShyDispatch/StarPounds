@@ -5,13 +5,13 @@
 
     "names" : [
       [ "idle.1", "blink.1", null, null, null, null ],
-      [ "fly.1", "fly.2", "fly.3", "fly.4", "fly.5", "fly.6" ],	  
+      [ "fly.1", "fly.2", "fly.3", "fly.4", "fly.5", "fly.6" ],    
       [ "hurt.1", "hurt.2", "hurt.3", "hurt.4", "hurt.5", "hurt.6" ],
       [ "windup.1", "windup.2", "windup.3", "windup.4", null, null ],
       [ "winduploop.1", "winduploop.2", "winduploop.3", "winduploop.4", "winduploop.5", "winduploop.6" ],
       [ "fire.1", "fire.2", "fire.3", "fire.4", "fire.5", "fire.6" ],
       [ "thickidle.1", "thickblink.1", null, null, null, null ],
-      [ "thickfly.1", "thickfly.2", "thickfly.3", "thickfly.4", "thickfly.5", "thickfly.6" ],	  
+      [ "thickfly.1", "thickfly.2", "thickfly.3", "thickfly.4", "thickfly.5", "thickfly.6" ],    
       [ "thickhurt.1", "thickhurt.2", "thickhurt.3", "thickhurt.4", "thickhurt.5", "thickhurt.6" ],
       [ "thickwindup.1", "thickwindup.2", "thickwindup.3", "thickwindup.4", null, null ],
       [ "thickwinduploop.1", "thickwinduploop.2", "thickwinduploop.3", "thickwinduploop.4", "thickwinduploop.5", "thickwinduploop.6" ],

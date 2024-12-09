@@ -73,44 +73,44 @@
       }
     },
     "filter" : [],
-	"modTab" : [{
+  "modTab" : [{
       "file": "/interface/fattyshops/tabs/mains.png",
-	  "label": "Mains",
+    "label": "Mains",
       "filter": [ "mains" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/sides.png",
-	  "label": "Sides",
+    "label": "Sides",
       "filter": [ "sides" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/snacks.png",
-	  "label": "Snacks",
+    "label": "Snacks",
       "filter": [ "snacks" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/drinks.png",
-	  "label": "Drinks",
+    "label": "Drinks",
       "filter": [ "drinks" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/desserts.png",
-	  "label": "Desserts",
+    "label": "Desserts",
       "filter": [ "desserts" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/hugefoods.png",
-	  "label": "Big Food",
+    "label": "Big Food",
       "filter": [ "hugefood" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/liquids.png",
-	  "label": "Liquids",
+    "label": "Liquids",
       "filter": [ "liquids" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/medicine.png",
-	  "label": "Medicine",
+    "label": "Medicine",
       "filter": [ "medicine" ]
     }]
   },
@@ -135,12 +135,12 @@
     ],
     "liquids" : [
       {"input": [["money", 10]], "output": "liquidmilk"},
-	  {"input": [["money", 20]], "output": "starpoundsliquidchocolate"},
-	  {"input": [["money", 20]], "output": "starpoundsliquidjelly"},
-	  {"input": [["money", 20]], "output": "starpoundsliquidsoda"},
-	  {"input": [["money", 20]], "output": "starpoundsliquidcream"},
-	  {"input": [["money", 30]], "output": "liquidgrease"},
-	  {"input": [["money", 30]], "output": "starpoundsliquidhoney"}
+    {"input": [["money", 20]], "output": "starpoundsliquidchocolate"},
+    {"input": [["money", 20]], "output": "starpoundsliquidjelly"},
+    {"input": [["money", 20]], "output": "starpoundsliquidsoda"},
+    {"input": [["money", 20]], "output": "starpoundsliquidcream"},
+    {"input": [["money", 30]], "output": "liquidgrease"},
+    {"input": [["money", 30]], "output": "starpoundsliquidhoney"}
     ],
     "medicine" : [
       "digestionaid", "digestionaid-recipe", "lactaid", "lactaidoverdrive", "lactaidmilktank"

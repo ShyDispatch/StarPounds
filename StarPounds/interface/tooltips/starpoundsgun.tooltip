@@ -119,31 +119,31 @@
     "position" : [9, 70],
     "hAnchor" : "left",
     "vAnchor" : "top",
-    "color" : "gray",	
+    "color" : "gray",  
     "wrapWidth" : 126
   },
   "damagePerEnergyTitleLabel" : {
-	"type" : "label",
-	"position" : [9, 164],
-	"hAnchor" : "left",
-	"value" : ""
+  "type" : "label",
+  "position" : [9, 164],
+  "hAnchor" : "left",
+  "value" : ""
   },
   "damagePerEnergyLabel" : {
-	"type" : "label",
-	"position" : [9, 164],
-	"hAnchor" : "left",
-	"wrapWidth" : 126
+  "type" : "label",
+  "position" : [9, 164],
+  "hAnchor" : "left",
+  "wrapWidth" : 126
   },
   "damagePerSpeedTitleLabel" : {
-	"type" : "label",
-	"position" : [9, 109],
-	"hAnchor" : "left",
-	"value" : "DPS:"
+  "type" : "label",
+  "position" : [9, 109],
+  "hAnchor" : "left",
+  "value" : "DPS:"
   },
   "dpsLabel" : {
-	"type" : "label",
-	"position" : [130, 109],
-	"hAnchor" : "right",
-	"wrapWidth" : 126
+  "type" : "label",
+  "position" : [130, 109],
+  "hAnchor" : "right",
+  "wrapWidth" : 126
   }
 }

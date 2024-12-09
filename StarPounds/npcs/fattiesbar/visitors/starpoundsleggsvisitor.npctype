@@ -10,19 +10,19 @@
       "minimumSize": [3, 5]
     },
     "starPounds_overrideSpecies": "leggs",
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
             "Oh hello! Pleasure to meet you. Name's Leggs.",
             "I am not from this part of the galaxy, but mostly come here for the food.",
             "Have you seen a massive bear recently? He waddles through here sometimes.",
             "Don't mind me, just stopping for a light snack."
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

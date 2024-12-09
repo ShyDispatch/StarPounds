@@ -49,12 +49,12 @@
             "onGround" : false,
             "windupStopForce" : 50,
             "windupTime" : 0.4,
-			"windupState" : "firewindup",
+      "windupState" : "firewindup",
 
-            "projectileType" : "wispknife",			
+            "projectileType" : "wispknife",      
             "projectileCount" : 1,
-            "projectileInterval" : 0.0,	
-			
+            "projectileInterval" : 0.0,  
+      
             "fireOffset" : [1.0, 0.0],
             "aimAtTarget" : true,
             "fireState" : "fire",
@@ -81,7 +81,7 @@
 
             "winddownState" : ""
           }
-        }		
+        }    
       ],
 
       "periodicActions" : [ ],
@@ -123,7 +123,7 @@
             "xVelocity" : 8,
             "yVelocity" : 12
           }
-		  }
+      }
       ],
 
       "concurrentActions" : [ ],

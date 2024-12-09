@@ -46,7 +46,7 @@
       "play" : false,
       "chat" : false
     },
-	
+  
     "merchant" : {
       "waitTime" : 40,
       "storeRadius" : 0,
@@ -72,7 +72,7 @@
 
   "chatPortrait" : "/interface/chatbubbles/mossarrow.png:<frame>",
 
-	"dialogMode": "tutorial",
+  "dialogMode": "tutorial",
     "dialog" : {
       "merchant" : {
         "start" : {

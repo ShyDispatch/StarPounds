@@ -72,18 +72,18 @@
     ],
 
     "dialogMode" : "",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
             "I'm going to be honest, I have no idea how I got here.",
             "Fun fact! Did you know that apples can be blue?",
             "No, I don't use dye. Yes, it grows this colour.",
             "Next person to say \"I could just eat you up\" is losing fingers."
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
 
   "identity" : {

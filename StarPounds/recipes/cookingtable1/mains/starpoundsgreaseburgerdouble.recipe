@@ -2,7 +2,7 @@
   "input" : [
     { "item" : "tomato", "count" : 2 },
     { "item" : "relish", "count" : 2 },
-    { "item" : "starpoundsbuttersnack", "count" : 2 },	
+    { "item" : "starpoundsbuttersnack", "count" : 2 },  
     { "item" : "alienmeat", "count" : 2 },
     { "item" : "cheese", "count" : 2 },
     { "item" : "bread", "count" : 1 }

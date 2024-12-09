@@ -12,22 +12,22 @@
     "starPounds_options": {
       "extraBottomHeavy": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Sorry I'm kind of busy.",
-						"I am me, yet this place is also me. Am I the constant?",
-						"Me? The Blubberbutt? That does sound fitting.",
-						"Don't think too much on what it means to be seeing me like this.",
-						"Do you have any cinnamon rolls on you? No reason in particular.",
-						"They say you should finish what you start, but does that beat starting over every few months over perfectionism?",
-						"What? Oh yeah I guess I do have a rather big butt."
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Sorry I'm kind of busy.",
+            "I am me, yet this place is also me. Am I the constant?",
+            "Me? The Blubberbutt? That does sound fitting.",
+            "Don't think too much on what it means to be seeing me like this.",
+            "Do you have any cinnamon rolls on you? No reason in particular.",
+            "They say you should finish what you start, but does that beat starting over every few months over perfectionism?",
+            "What? Oh yeah I guess I do have a rather big butt."
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

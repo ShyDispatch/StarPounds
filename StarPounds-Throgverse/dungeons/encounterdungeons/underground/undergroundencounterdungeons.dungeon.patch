@@ -3,7 +3,7 @@
   "op": "add",
   "path": "/metadata/anchor/-",
   "value":  
-	 "starpounds_gluttonistcamp1"	
+   "starpounds_gluttonistcamp1"  
 },
 {
   "op": "add",
@@ -15,13 +15,13 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starpounds_gluttonistcamp1.json" ]
-    }	
+    }  
 },
 {
   "op": "add",
   "path": "/metadata/anchor/-",
   "value":  
-	 "starpounds_gluttonistcamp2"	
+   "starpounds_gluttonistcamp2"  
 },
 {
   "op": "add",
@@ -33,13 +33,13 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starpounds_gluttonistcamp2.json" ]
-    }	
+    }  
 },
 {
   "op": "add",
   "path": "/metadata/anchor/-",
   "value":  
-	 "starpounds_mysteriousmirror"	
+   "starpounds_mysteriousmirror"  
 },
 {
   "op": "add",
@@ -51,13 +51,13 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starpounds_mysteriousmirror.json" ]
-    }	
+    }  
 },
 {
   "op": "add",
   "path": "/metadata/anchor/-",
   "value":  
-	 "starpounds_merchant_throg"	
+   "starpounds_merchant_throg"  
 },
 {
   "op": "add",
@@ -69,6 +69,6 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "starpounds_merchant_throg.json" ]
-    }	
+    }  
 }
 ]

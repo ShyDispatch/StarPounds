@@ -6,8 +6,8 @@ starPounds = getmetatable ''.starPounds
 function init()
   local buttonIcon = string.format("%s.png", starPounds.enabled and "enabled" or "disabled")
   enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
-	skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills")
-	traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits")
+  skills = root.assetJson("/scripts/starpounds/starpounds_skills.config:skills")
+  traits = root.assetJson("/scripts/starpounds/starpounds_traits.config:traits")
   tabs = root.assetJson("/scripts/starpounds/starpounds_skills.config:tabs")
   tabNames = {}
 

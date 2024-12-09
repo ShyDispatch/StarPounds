@@ -27,7 +27,7 @@
       "flipImages" : true,
       "frames" : 1,
       "animationCycle" : 0.5,
-	  
+    
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ]
 

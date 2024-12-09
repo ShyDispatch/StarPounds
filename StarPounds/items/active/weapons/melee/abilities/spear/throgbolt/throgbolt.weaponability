@@ -85,9 +85,9 @@
     "freezeTime" : 0.1,
 
     "damageConfig" : {
-    	"baseDamage" : 6,
-    	"timeout" : 0.25,
-    	"timeoutGroup" : "alt"
+      "baseDamage" : 6,
+      "timeout" : 0.25,
+      "timeoutGroup" : "alt"
     },
     "baseDps" : 6, // overrides baseDamage in damageConfig
 

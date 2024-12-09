@@ -1,122 +1,122 @@
 [
-	[
-		{
-			"op": "add",
-			"path": "/fattiesbar",
-			"value": {
-				"primaryDungeon": "fattiesbar",
-				"threatLevel": 1,
-				"gravity": 80,
-				"worldSize": [2000, 2000],
-				"dungeonBaseHeight": 1000,
-				"ambientLightLevel": [141, 120, 169],
-				"ambientNoises": "/sfx/environmental/fattiesbar.ogg",
-				"musicTrack": "/music/the-peacekeepers.ogg",
-				"biome": "fattiesbar"
-			}
-		},
-		{
-			"op": "add",
-			"path": "/mootantintro",
-			"value": {
-				"primaryDungeon": "mootantintro",
-				"threatLevel": 1,
-				"gravity": 80,
-				"worldSize": [2000, 2000],
-				"dungeonBaseHeight": 800,
-				"dungeonSurfaceHeight": 340,
-				"ambientLightLevel": [141, 120, 169],
-				"ambientNoises" : "/sfx/environmental/space_loop4.ogg",
-				"biome": "jungle",
-				"environmentStatusEffects": [ "dontstarve", "starpoundsmootantintro" ]
-			}
-		}
-	],
-	// Main story missions
-	[
-		{ "op": "test", "path": "/lunarbase/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/lunarbase/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/floranmission1/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/floranmission1/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/hylotlmission1/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/hylotlmission1/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/avianmission1/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/avianmission1/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/apexmission1/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/apexmission1/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/glitchmission1/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/glitchmission1/environmentStatusEffects", "value": [] }
-	],
-	[
-		{
-			"op": "add",
-			"path": "/lunarbase/environmentStatusEffects/-",
-			"value": "starpoundsmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/floranmission1/environmentStatusEffects/-",
-			"value": "starpoundsmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/hylotlmission1/environmentStatusEffects/-",
-			"value": "starpoundsmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/avianmission1/environmentStatusEffects/-",
-			"value": "starpoundsmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/apexmission1/environmentStatusEffects/-",
-			"value": "starpoundsmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/glitchmission1/environmentStatusEffects/-",
-			"value": "starpoundsmissionmobility"
-		}
-	],
-	// Tech unlock missions
-	[
-		{ "op": "test", "path": "/techchallenge_doublejump/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/techchallenge_doublejump/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/techchallenge_dash/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/techchallenge_dash/environmentStatusEffects", "value": [] }
-	],
-	[
-		{ "op": "test", "path": "/techchallenge_morphball/environmentStatusEffects", "inverse": true },
-		{ "op": "add", "path": "/techchallenge_morphball/environmentStatusEffects", "value": [] }
-	],
-	[
-		{
-			"op": "add",
-			"path": "/techchallenge_doublejump/environmentStatusEffects/-",
-			"value": "starpoundstechmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/techchallenge_dash/environmentStatusEffects/-",
-			"value": "starpoundstechmissionmobility"
-		},
-		{
-			"op": "add",
-			"path": "/techchallenge_morphball/environmentStatusEffects/-",
-			"value": "starpoundstechmissionmobility"
-		}
-	]
+  [
+    {
+      "op": "add",
+      "path": "/fattiesbar",
+      "value": {
+        "primaryDungeon": "fattiesbar",
+        "threatLevel": 1,
+        "gravity": 80,
+        "worldSize": [2000, 2000],
+        "dungeonBaseHeight": 1000,
+        "ambientLightLevel": [141, 120, 169],
+        "ambientNoises": "/sfx/environmental/fattiesbar.ogg",
+        "musicTrack": "/music/the-peacekeepers.ogg",
+        "biome": "fattiesbar"
+      }
+    },
+    {
+      "op": "add",
+      "path": "/mootantintro",
+      "value": {
+        "primaryDungeon": "mootantintro",
+        "threatLevel": 1,
+        "gravity": 80,
+        "worldSize": [2000, 2000],
+        "dungeonBaseHeight": 800,
+        "dungeonSurfaceHeight": 340,
+        "ambientLightLevel": [141, 120, 169],
+        "ambientNoises" : "/sfx/environmental/space_loop4.ogg",
+        "biome": "jungle",
+        "environmentStatusEffects": [ "dontstarve", "starpoundsmootantintro" ]
+      }
+    }
+  ],
+  // Main story missions
+  [
+    { "op": "test", "path": "/lunarbase/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/lunarbase/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/floranmission1/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/floranmission1/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/hylotlmission1/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/hylotlmission1/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/avianmission1/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/avianmission1/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/apexmission1/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/apexmission1/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/glitchmission1/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/glitchmission1/environmentStatusEffects", "value": [] }
+  ],
+  [
+    {
+      "op": "add",
+      "path": "/lunarbase/environmentStatusEffects/-",
+      "value": "starpoundsmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/floranmission1/environmentStatusEffects/-",
+      "value": "starpoundsmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/hylotlmission1/environmentStatusEffects/-",
+      "value": "starpoundsmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/avianmission1/environmentStatusEffects/-",
+      "value": "starpoundsmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/apexmission1/environmentStatusEffects/-",
+      "value": "starpoundsmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/glitchmission1/environmentStatusEffects/-",
+      "value": "starpoundsmissionmobility"
+    }
+  ],
+  // Tech unlock missions
+  [
+    { "op": "test", "path": "/techchallenge_doublejump/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/techchallenge_doublejump/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/techchallenge_dash/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/techchallenge_dash/environmentStatusEffects", "value": [] }
+  ],
+  [
+    { "op": "test", "path": "/techchallenge_morphball/environmentStatusEffects", "inverse": true },
+    { "op": "add", "path": "/techchallenge_morphball/environmentStatusEffects", "value": [] }
+  ],
+  [
+    {
+      "op": "add",
+      "path": "/techchallenge_doublejump/environmentStatusEffects/-",
+      "value": "starpoundstechmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/techchallenge_dash/environmentStatusEffects/-",
+      "value": "starpoundstechmissionmobility"
+    },
+    {
+      "op": "add",
+      "path": "/techchallenge_morphball/environmentStatusEffects/-",
+      "value": "starpoundstechmissionmobility"
+    }
+  ]
 ]

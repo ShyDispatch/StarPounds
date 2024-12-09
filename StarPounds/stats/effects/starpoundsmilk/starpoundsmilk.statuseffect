@@ -1,7 +1,7 @@
 {
-	"name": "starpoundsmilk",
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundsmilk.lua"
-	]
+  "name": "starpoundsmilk",
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundsmilk.lua"
+  ]
 }

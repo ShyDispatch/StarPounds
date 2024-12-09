@@ -1,15 +1,15 @@
 {
-	"name": "starpoundsoption",
-	"effectConfig": {
-		"options" : [
-			{"name": "topHeavy", "value": true, "children": ["topHeavy", "extraTopHeavy"]},
-			{"name": "bottomHeavy", "value": true, "children": ["bottomHeavy", "extraBottomHeavy"]},
-			{"name": "stuffed", "value": true, "children": ["stuffed", "filled", "gorged"]},
-			{"name": "busty", "value": true, "children": ["busty", "milky"]}
-		]
-	},
-	"defaultDuration": 0,
-	"scripts": [
-		"starpoundsoption.lua"
-	]
+  "name": "starpoundsoption",
+  "effectConfig": {
+    "options" : [
+      {"name": "topHeavy", "value": true, "children": ["topHeavy", "extraTopHeavy"]},
+      {"name": "bottomHeavy", "value": true, "children": ["bottomHeavy", "extraBottomHeavy"]},
+      {"name": "stuffed", "value": true, "children": ["stuffed", "filled", "gorged"]},
+      {"name": "busty", "value": true, "children": ["busty", "milky"]}
+    ]
+  },
+  "defaultDuration": 0,
+  "scripts": [
+    "starpoundsoption.lua"
+  ]
 }

@@ -18,7 +18,7 @@ function onInteraction(args)
 end
 
 function update(dt)
-	promises:update()
+  promises:update()
   if isTimeToActivate() and not world.isVisibleToPlayer(object.boundBox()) then
     activate()
   end

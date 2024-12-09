@@ -16,7 +16,7 @@ function update(dt)
     --Check if the target is something we CANNOT damage (therefore not an enemy)
     if not world.entityCanDamage(ourId, targetId) then
   if world.lineCollision(mcontroller.position(), world.entityPosition(targetId), {"slippery", "dynamic", "block"}) then
-	end
+  end
       --Give them the effect via entity messaging
       world.sendEntityMessage(targetId, "applyStatusEffect", statusEffect)
     end

@@ -8,7 +8,7 @@ function init()
   self.tickTimeMinimum = effect.getParameter("tickTimeMinimum", self.tickTime)
   self.tickTimer = self.tickTime
   self.minimumLiquid = root.assetJson("/player.config:statusControllerSettings.minimumLiquidStatusEffectPercentage")
-	self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
+  self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
 
   animator.setSoundVolume("digest", 0.75)
   animator.setSoundPitch("digest", 2/(1 + self.tickTime))
@@ -17,8 +17,8 @@ end
 function update(dt)
   if status.uniqueStatusEffectActive("caloriumliquid") then return end
   if world.entityType(entity.id()) == "npc" or (getmetatable ''.starPounds and getmetatable ''.starPounds.enabled) then
-  	-- Check promises.
-  	promises:update()
+    -- Check promises.
+    promises:update()
     self.tickTimer = self.tickTimer - dt
     if self.tickTimer <= 0 then
       self.tickTime = math.max(self.tickTime - self.tickTimeStep, self.tickTimeMinimum)

@@ -25,7 +25,7 @@
 
   "inventoryIcon" : "icon.png",
   "orientations" : [
-	{
+  {
       "imageLayers" : [ { "image" : "scarlettusedclothes.png:<color>.<frame>", "fullbright" : true }, { "image" : "scarlettusedclotheslit.png:<color>.<frame>" } ],
       "imagePosition" : [-48, 0],
 
@@ -81,43 +81,43 @@
       }
     },
     "filter" : [],
-	"modTab" : [{
+  "modTab" : [{
       "file": "/interface/fattyshops/tabs/exclusive.png",
-	  "label": " Exclusive",
+    "label": " Exclusive",
       "filter": [ "exclusive" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/racial.png",
-	  "label": " Racial",
+    "label": " Racial",
       "filter": [ "racial" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/costume.png",
-	  "label": " Costume",
+    "label": " Costume",
       "filter": [ "costume" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/invisible.png",
-	  "label": " Invisible",
+    "label": " Invisible",
       "filter": [ "invisible" ]
     }]
   },
   "storeInventory" : {
     "exclusive" : [
       "cosmicbanditchest", "cosmicbanditlegs", "cosmicblacksmithchest", "cosmicblacksmithlegs", "meatdresserhead", "starpoundsbunnysuithead", "starpoundsbunnysuitchest", "starpoundsbunnysuitlegs", "starpoundsrubberhead", "starpoundsrubberchest", "starpoundsrubberlegs", "starpoundsimmunesuithead", "starpoundstalihead", "starpoundsbarriersuithead", "starpoundshaldenhead",
-  	  "starpoundshaydeehead", "starpoundshaydeechest", "starpoundshaydeelegs", "starpoundsponderoushead", "starpoundsponderouschest", "starpoundsponderouslegs", "starpoundsponderousback", "starpoundsmooshihead", "starpoundsuniformhead", "mootantcostumelegs", "starpoundsgiantlips", "starpoundsartificerhead", "starpoundshuntresshead",
-  	  "starpoundsmerleehead", "starpoundsmerleettydhead", "starpoundsmerluvleehead", "starpoundsmerluvleettydhead", "starpoundsmerlarhead", "starpoundsjellyfishsisterhead", "starpoundsmagegeneralhead", "starpoundssusiehaltmannhead", "starpoundsgladoshead", "starpoundsgladoschest", "starpoundsgladoslegs", "cotlredcrownhead", "raventeamleaderhead", "raventeamleaderchest", "raventeamleaderlegs",
-  	  "spacethumperchest", "spacethumperpants",
+      "starpoundshaydeehead", "starpoundshaydeechest", "starpoundshaydeelegs", "starpoundsponderoushead", "starpoundsponderouschest", "starpoundsponderouslegs", "starpoundsponderousback", "starpoundsmooshihead", "starpoundsuniformhead", "mootantcostumelegs", "starpoundsgiantlips", "starpoundsartificerhead", "starpoundshuntresshead",
+      "starpoundsmerleehead", "starpoundsmerleettydhead", "starpoundsmerluvleehead", "starpoundsmerluvleettydhead", "starpoundsmerlarhead", "starpoundsjellyfishsisterhead", "starpoundsmagegeneralhead", "starpoundssusiehaltmannhead", "starpoundsgladoshead", "starpoundsgladoschest", "starpoundsgladoslegs", "cotlredcrownhead", "raventeamleaderhead", "raventeamleaderchest", "raventeamleaderlegs",
+      "spacethumperchest", "spacethumperpants",
       "minispacesuithead", "minispacesuitchest", "minispacesuitlegs", "minispacesuittaillegs"
     ],
     "racial" : [
       "protectoratechest", "protectoratepants", "protectorateshirtchest", "protectoratevestchest", "jeans1legs", "workoutlegs", "tshirtchest", "hoodiechest", "sweatervestchest", "coolchest", "conceptchest", "shirtchest", "noblechest", "noblelegs", "merchantchest", "merchantlegs",
-	    "apexofficerjacket", "apexofficerpants", "apexnavyjacket", "apexnavypants", "kimonochest", "kimonolegs", "traditionalchest", "traditionallegs", "novakidsuspenders", "novakidsuspenderspants"
+      "apexofficerjacket", "apexofficerpants", "apexnavyjacket", "apexnavypants", "kimonochest", "kimonolegs", "traditionalchest", "traditionallegs", "novakidsuspenders", "novakidsuspenderspants"
     ],
     "costume" : [
       "cowboychest", "cowboylegs", "chefhead", "chefchest", "cheflegs", "bettyhead", "bettychest", "bettylegs", "jumpsuitchest", "jumpsuitlegs", "hazmathead", "hazmatchest", "hazmatlegs", "scientisthead", "scientistchest", "scientistlegs",
-	    "neohead", "neochest", "neolegs", "pilothead", "pilotchest", "pilotlegs", "moneybagschest", "moneybagspants", "mrclauschest", "mrclauspants", "startrackchest", "startracklegs", "slimehead", "slimechest", "slimelegs", "darkdisguisechest", "darkdisguiselegs",
-	    "prismchest", "prismlegs", "neckruffle", "snowinfantrychest", "snowinfantrypants", "explorerchest", "explorerlegs", "tarchest", "tarlegs", "icearmorchest", "icearmorlegs"
+      "neohead", "neochest", "neolegs", "pilothead", "pilotchest", "pilotlegs", "moneybagschest", "moneybagspants", "mrclauschest", "mrclauspants", "startrackchest", "startracklegs", "slimehead", "slimechest", "slimelegs", "darkdisguisechest", "darkdisguiselegs",
+      "prismchest", "prismlegs", "neckruffle", "snowinfantrychest", "snowinfantrypants", "explorerchest", "explorerlegs", "tarchest", "tarlegs", "icearmorchest", "icearmorlegs"
     ],
     "invisible" : [
       "starpoundsinvisiblehead", "starpoundsinvisiblechest", "starpoundsinvisiblelegs", "starpoundsinvisibleback", "starpoundsinvisiblearmorsblueprint"

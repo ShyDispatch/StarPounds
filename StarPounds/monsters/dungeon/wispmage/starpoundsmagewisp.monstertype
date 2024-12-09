@@ -49,13 +49,13 @@
             "onGround" : false,
             "windupStopForce" : 50,
             "windupTime" : 0.4,
-			"windupState" : "firewindupfast",
+      "windupState" : "firewindupfast",
 
             "projectileType" : "wispflameprojectile",
-            "inaccuracy" : 0.20,			
+            "inaccuracy" : 0.20,      
             "projectileCount" : 3,
-            "projectileInterval" : 0.0,	
-			
+            "projectileInterval" : 0.0,  
+      
             "fireOffset" : [1.0, 0.0],
             "aimAtTarget" : true,
             "fireState" : "fire",
@@ -75,7 +75,7 @@
             "onGround" : false,
             "windupStopForce" : 50,
             "windupTime" : 0.8,
-			"windupState" : "firewindupslow",
+      "windupState" : "firewindupslow",
 
             "projectileType" : "wispbomb",
             "projectileParameters" : {
@@ -132,7 +132,7 @@
             "xVelocity" : 8,
             "yVelocity" : 12
           }
-		  }
+      }
       ],
 
       "concurrentActions" : [ ],

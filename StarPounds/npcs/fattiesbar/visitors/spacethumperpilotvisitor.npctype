@@ -14,61 +14,61 @@
       "minimumSize": [3, 3]
     },
   "behavior" : "outpostvisitor",
-	
+  
   "chatPortrait" : "/interface/chatbubbles/spacethumperpilot.png:<frame>",
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Oh, hello."
-					],
-					"generic": [
-						"I'm just glad to be off that rock.",
-						"Just happy to be back in some form of civilization.",
-						"I heard there are space slimes in this part of the galaxy, is that true? Please tell me it isn't.",
-						"Can't tell if I regret coming here or not."
-					],
-					"avian": [
-						"So you use red crystals for your tech?"
-					],
-					"apex": [
-						"Don't think I've had bananas before."
-					],
-					"floran": [
-						"... Don't eye me up like that.",
-						"I won't take any nonsense from the likes of you.",
-						"No offense but you're a bit unnerving."
-					],
-					"glitch": [
-						"Huh... So you're robot knights?",
-						"Wait how are you robotic but stuck in the medieval ages?"
-					],
-					"human": [
-						"So I'm in Terran space then?",
-						"Wasn't expecting to see Terrans here.",
-						"I'm at a loss on what's going on with Terrans."
-					],
-					"hylotl": [
-						"You're an interesting look species."
-					],
-					"novakid": [
-						"Are you real?",
-						"Ouch! You kind of hurt to look at.",
-						"Can safely say I've never seen something like you before."
-					],
-					"throg": [
-						"Ugh, are all your kind total slobs?",
-						"I feel like I shouldn't disclose a certain something to a fat obsessed alien society.",
-						"Glad I haven't had to deal with any of you back home."
-					],
-					"mootant": [
-						"Dealing with uh... problems? I can vouch these suits are pretty stretchy.",
-						"You don't seem natural to me."
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Oh, hello."
+          ],
+          "generic": [
+            "I'm just glad to be off that rock.",
+            "Just happy to be back in some form of civilization.",
+            "I heard there are space slimes in this part of the galaxy, is that true? Please tell me it isn't.",
+            "Can't tell if I regret coming here or not."
+          ],
+          "avian": [
+            "So you use red crystals for your tech?"
+          ],
+          "apex": [
+            "Don't think I've had bananas before."
+          ],
+          "floran": [
+            "... Don't eye me up like that.",
+            "I won't take any nonsense from the likes of you.",
+            "No offense but you're a bit unnerving."
+          ],
+          "glitch": [
+            "Huh... So you're robot knights?",
+            "Wait how are you robotic but stuck in the medieval ages?"
+          ],
+          "human": [
+            "So I'm in Terran space then?",
+            "Wasn't expecting to see Terrans here.",
+            "I'm at a loss on what's going on with Terrans."
+          ],
+          "hylotl": [
+            "You're an interesting look species."
+          ],
+          "novakid": [
+            "Are you real?",
+            "Ouch! You kind of hurt to look at.",
+            "Can safely say I've never seen something like you before."
+          ],
+          "throg": [
+            "Ugh, are all your kind total slobs?",
+            "I feel like I shouldn't disclose a certain something to a fat obsessed alien society.",
+            "Glad I haven't had to deal with any of you back home."
+          ],
+          "mootant": [
+            "Dealing with uh... problems? I can vouch these suits are pretty stretchy.",
+            "You don't seem natural to me."
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

@@ -14,8 +14,8 @@ function experience:add(amount, multiplier, isLevel)
   multiplier = tonumber(multiplier) or math.max(starPounds.getStat("experienceMultiplier") - hungerPenalty, 0)
   -- Skip everything else if we're just adding straight levels.
   if isLevel then
-  	storage.starPounds.level = storage.starPounds.level + math.max(math.round(amount))
-  	return
+    storage.starPounds.level = storage.starPounds.level + math.max(math.round(amount))
+    return
   end
 
   local levelModifier = 1 + storage.starPounds.level * self.data.experienceIncrement

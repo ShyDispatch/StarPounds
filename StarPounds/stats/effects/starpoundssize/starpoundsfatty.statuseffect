@@ -1,12 +1,12 @@
 {
-	"name": "starpoundsfatty",
-	"effectConfig" : {
-		"fillRange" : [3, 14]
-	},
-	"scripts": [
-		"starpoundssize.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Fatty",
-	"icon": "/interface/statuses/starpoundssize/starpoundsfatty.png"
+  "name": "starpoundsfatty",
+  "effectConfig" : {
+    "fillRange" : [3, 14]
+  },
+  "scripts": [
+    "starpoundssize.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Fatty",
+  "icon": "/interface/statuses/starpoundssize/starpoundsfatty.png"
 }

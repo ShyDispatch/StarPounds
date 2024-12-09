@@ -30,7 +30,7 @@
               "persistentSound" : "/sfx/melee/staff_charge4_fire.ogg",
               "persistentSoundStopTime" : 1.0
             }
-			
+      
           },
           "fire" : {
             "frames" : 3,
@@ -38,7 +38,7 @@
             "properties" : {
               "persistentSound" : "/sfx/melee/travelingslash_fire1.ogg",
               "persistentSoundStopTime" : 1.0
-			  }
+        }
           }
         }
       },
@@ -82,7 +82,7 @@
           "transformationGroups" : [ "body" ],
           "offset" : [0.0, 0.125],
           "zLevel" : 1
-		  
+      
         },
         "partStates" : {
           "body" : {
@@ -212,7 +212,7 @@
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
-        { "particle" : "wispflame" }		
+        { "particle" : "wispflame" }    
       ]
     },
     "captureParticles" : {

@@ -1,623 +1,623 @@
 [
   {
-	"op": "add",
-	"path": "/share_secret/pleaseTakeReply/throg",
-	"value": {
-	  "default" : [
-		"Here's my reply for <questGiver>.",
-		"Juicy! Give my reply back to <questGiver>.",
-		"Alright, give <questGiver> my reply."
-	  ]
-	}
+  "op": "add",
+  "path": "/share_secret/pleaseTakeReply/throg",
+  "value": {
+    "default" : [
+    "Here's my reply for <questGiver>.",
+    "Juicy! Give my reply back to <questGiver>.",
+    "Alright, give <questGiver> my reply."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/intimidate/intimidated/throg",
-	"value": { 
-	  "default" : [
-		"Alright, alright! Don't hurt me with <item>. I'll do what <questGiver> wants.",
-		"Why you! Don't hurt me with <item>. I'll do whatever <questGiver> asks."
-	  ]
-	}
+  "op": "add",
+  "path": "/intimidate/intimidated/throg",
+  "value": { 
+    "default" : [
+    "Alright, alright! Don't hurt me with <item>. I'll do what <questGiver> wants.",
+    "Why you! Don't hurt me with <item>. I'll do whatever <questGiver> asks."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/intimidate/notIntimidated/throg",
-	"value": { 
-	  "default" : [
-		"Why should I do favors for <questGiver>? Get lost.",
-		"What a fool you are, get lost and tell <questGiver> to piss off.",
-		"<questGiver> is gonna have to do more than send you to scare me.",
-		"Hah! You don't scare me. Get out of my sight before I gobble you up."
-	  ]
-	}
+  "op": "add",
+  "path": "/intimidate/notIntimidated/throg",
+  "value": { 
+    "default" : [
+    "Why should I do favors for <questGiver>? Get lost.",
+    "What a fool you are, get lost and tell <questGiver> to piss off.",
+    "<questGiver> is gonna have to do more than send you to scare me.",
+    "Hah! You don't scare me. Get out of my sight before I gobble you up."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/bribe/giftAccepted/throg",
-	"value": { 
-	  "default" : [
-		"A bribe huh? Sure, I'll take off of your hands. Thank <questGiver> for me.",
-		"Heheh. Oh I do love bribes. I'll keep <questGiver> in mind.",
-		"Ah, pleasure doing business with ya and <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/bribe/giftAccepted/throg",
+  "value": { 
+    "default" : [
+    "A bribe huh? Sure, I'll take off of your hands. Thank <questGiver> for me.",
+    "Heheh. Oh I do love bribes. I'll keep <questGiver> in mind.",
+    "Ah, pleasure doing business with ya and <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/bribe/giftAccepted2/throg",
-	"value": { 
-	  "default" : [
-		"Eh... this favor better be worth it <questGiver>.",
-		"Great, what does <questGiver> want from me anyways?",
-		"Ugh, this bribe better match the favor <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/bribe/giftAccepted2/throg",
+  "value": { 
+    "default" : [
+    "Eh... this favor better be worth it <questGiver>.",
+    "Great, what does <questGiver> want from me anyways?",
+    "Ugh, this bribe better match the favor <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/bribe/requestAdditionToHouse/throg",
-	"value": { 
-	  "default" : [
-		"This is a nice gift, why not put it up in my home for me?",
-		"A pleasant surprise. Put it up in my home for me, why don't you?",
-		"I'll take it. Display it in my home for me."
-	  ]
-	}
+  "op": "add",
+  "path": "/bribe/requestAdditionToHouse/throg",
+  "value": { 
+    "default" : [
+    "This is a nice gift, why not put it up in my home for me?",
+    "A pleasant surprise. Put it up in my home for me, why don't you?",
+    "I'll take it. Display it in my home for me."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/gift/giftAccepted/throg",
-	"value": { 
-	  "default" : [
-		"A gift? Wow I'm touched. Thank <questGiver> for me.",
-		"<questGiver> got me a gift? Sure I'll take it, I guess.",
-		"Hmmph, fine I'll take the gift <questGiver> got me."
-	  ]
-	}
+  "op": "add",
+  "path": "/gift/giftAccepted/throg",
+  "value": { 
+    "default" : [
+    "A gift? Wow I'm touched. Thank <questGiver> for me.",
+    "<questGiver> got me a gift? Sure I'll take it, I guess.",
+    "Hmmph, fine I'll take the gift <questGiver> got me."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/gift/giftAccepted2/throg",
-	"value": { 
-	  "default" : [
-		"<questGiver> must really like me.",
-		"What a lovely friend <questGiver> is.",
-		"I'll be spoiled rotten at this rate thanks to <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/gift/giftAccepted2/throg",
+  "value": { 
+    "default" : [
+    "<questGiver> must really like me.",
+    "What a lovely friend <questGiver> is.",
+    "I'll be spoiled rotten at this rate thanks to <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/gift/requestAdditionToHouse/throg",
-	"value": { 
-	  "default" : [
-		"This is a nice gift, why not put it up in my home for me?",
-		"A pleasant surprise. Put it up in my home for me, why don't you?",
-		"I'll take it. Display it in my home for me."
-	  ]
-	}
+  "op": "add",
+  "path": "/gift/requestAdditionToHouse/throg",
+  "value": { 
+    "default" : [
+    "This is a nice gift, why not put it up in my home for me?",
+    "A pleasant surprise. Put it up in my home for me, why don't you?",
+    "I'll take it. Display it in my home for me."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/return_stolen/objectTaken/throg",
-	"value": { 
-	  "default" : [
-		"Hey I had nothing to do with stealing <item>! I just bought it, take the damn thing.",
-		"Gah, I'm not looking to be eaten by the guard over <item>. Take it.",
-		"I had no idea <item> was stolen, honest! Take it."
-	  ]
-	}
+  "op": "add",
+  "path": "/return_stolen/objectTaken/throg",
+  "value": { 
+    "default" : [
+    "Hey I had nothing to do with stealing <item>! I just bought it, take the damn thing.",
+    "Gah, I'm not looking to be eaten by the guard over <item>. Take it.",
+    "I had no idea <item> was stolen, honest! Take it."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/collect_fine/fineCollected/throg",
-	"value": { 
-	  "default" : [
-		"Gah! Here, I'll pay my fine. Now let me go in peace.",
-		"It wasn't supposed to turn out like this! Here! Take your fine and leave me alone!",
-		"You! Aargh, fine I'll pay up. Just let me go, I'll behave."
-	  ]
-	}
+  "op": "add",
+  "path": "/collect_fine/fineCollected/throg",
+  "value": { 
+    "default" : [
+    "Gah! Here, I'll pay my fine. Now let me go in peace.",
+    "It wasn't supposed to turn out like this! Here! Take your fine and leave me alone!",
+    "You! Aargh, fine I'll pay up. Just let me go, I'll behave."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/collect_gift/giftProvided/throg",
-	"value": { 
-	  "default" : [
-		"Here's the <item>. Pleasure doing business with <questGiver>.",
-		"Got the <item> right here for <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/collect_gift/giftProvided/throg",
+  "value": { 
+    "default" : [
+    "Here's the <item>. Pleasure doing business with <questGiver>.",
+    "Got the <item> right here for <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/request_craft/giftProvided/throg",
-	"value": { 
-	  "default" : [
-		"Got the <item> made. Pleasure doing business with <questGiver>.",
-		"Already have <item> right here for <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/request_craft/giftProvided/throg",
+  "value": { 
+    "default" : [
+    "Got the <item> made. Pleasure doing business with <questGiver>.",
+    "Already have <item> right here for <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/borrow/giftProvided/throg",
-	"value": { 
-	  "default" : [
-		"Hmmph, <questGiver> better give back the <item> once they're done.",
-		"I'm eating <questGiver> if they don't give me back the <item> in a reasonable time."
-	  ]
-	}
+  "op": "add",
+  "path": "/borrow/giftProvided/throg",
+  "value": { 
+    "default" : [
+    "Hmmph, <questGiver> better give back the <item> once they're done.",
+    "I'm eating <questGiver> if they don't give me back the <item> in a reasonable time."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/extort/giftProvided/throg",
-	"value": { 
-	  "default" : [
-		"You'll regret this! Fine take the <item>!",
-		"<questGiver> will rue the day they threatened me. They can have the <item> for now.",
-		"I'll get back at you for this. Just take the <item>!"
-	  ]
-	}
+  "op": "add",
+  "path": "/extort/giftProvided/throg",
+  "value": { 
+    "default" : [
+    "You'll regret this! Fine take the <item>!",
+    "<questGiver> will rue the day they threatened me. They can have the <item> for now.",
+    "I'll get back at you for this. Just take the <item>!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/hat/crafting/throg",
-	"value": { 
-	  "default" : [
-		"Got the materials? Then give me a moment.",
-		"Good, you have the materials. Now for my part.",
-		"This'll take a moment so cool your jets."
-	  ]
-	}
+  "op": "add",
+  "path": "/hat/crafting/throg",
+  "value": { 
+    "default" : [
+    "Got the materials? Then give me a moment.",
+    "Good, you have the materials. Now for my part.",
+    "This'll take a moment so cool your jets."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/hat/crafted/throg",
-	"value": { 
-	  "default" : [
-		"Alright it's done. Give this parcel to <questGiver>.",
-		"That's finished, get this parcel to <questGiver>.",
-		"Finally. Take this parcel to <questGiver> for me."
-	  ]
-	}
+  "op": "add",
+  "path": "/hat/crafted/throg",
+  "value": { 
+    "default" : [
+    "Alright it's done. Give this parcel to <questGiver>.",
+    "That's finished, get this parcel to <questGiver>.",
+    "Finally. Take this parcel to <questGiver> for me."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/helmet/crafting/throg",
-	"value": { 
-	  "default" : [
-		"Got the materials? Then give me a moment.",
-		"Good, you have the materials. Now for my part.",
-		"This'll take a moment so cool your jets."
-	  ]
-	}
+  "op": "add",
+  "path": "/helmet/crafting/throg",
+  "value": { 
+    "default" : [
+    "Got the materials? Then give me a moment.",
+    "Good, you have the materials. Now for my part.",
+    "This'll take a moment so cool your jets."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/helmet/crafted/throg",
-	"value": { 
-	  "default" : [
-		"Alright it's done. Give this parcel to <questGiver>.",
-		"That's finished, get this parcel to <questGiver>.",
-		"Finally. Take this parcel to <questGiver> for me."
-	  ]
-	}
+  "op": "add",
+  "path": "/helmet/crafted/throg",
+  "value": { 
+    "default" : [
+    "Alright it's done. Give this parcel to <questGiver>.",
+    "That's finished, get this parcel to <questGiver>.",
+    "Finally. Take this parcel to <questGiver> for me."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/new_stock/trade/throg",
-	"value": { 
-	  "default" : [
-		"This seems like the right stuff... Ok. Let's trade. Take this parcel to <questGiver>.",
-		"Yeah okay that's acceptable. Take this parcel over to <questGiver>.",
-		"Finally. Take this parcel to <questGiver> for me."
-	  ]
-	}
+  "op": "add",
+  "path": "/new_stock/trade/throg",
+  "value": { 
+    "default" : [
+    "This seems like the right stuff... Ok. Let's trade. Take this parcel to <questGiver>.",
+    "Yeah okay that's acceptable. Take this parcel over to <questGiver>.",
+    "Finally. Take this parcel to <questGiver> for me."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kidnapping/kidnappersDead/throg",
-	"value": { 
-	  "default" : [
-		"I could've eaten them, just for the record.",
-		"I had the situation under control, you know.",
-		"Thanks... I guess..."
-	  ]
-	}
+  "op": "add",
+  "path": "/kidnapping/kidnappersDead/throg",
+  "value": { 
+    "default" : [
+    "I could've eaten them, just for the record.",
+    "I had the situation under control, you know.",
+    "Thanks... I guess..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kidnapping/followHome/throg",
-	"value": { 
-	  "default" : [
-		"Since you're playing hero, can you escort me to <questGiver>?",
-		"Alright then hero, lead the way to <questGiver> since you wanna help.",
-		"Not like I need the help or anything, but maybe you could also escort me to <questGiver>?"
-	  ]
-	}
+  "op": "add",
+  "path": "/kidnapping/followHome/throg",
+  "value": { 
+    "default" : [
+    "Since you're playing hero, can you escort me to <questGiver>?",
+    "Alright then hero, lead the way to <questGiver> since you wanna help.",
+    "Not like I need the help or anything, but maybe you could also escort me to <questGiver>?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/escort/found/throg",
-	"value": { 
-	  "default" : [
-		"My navigation device is busted, can you lead me back to <questGiver>?",
-		"My nose isn't usually this stuffy, can't make sense of where I should go. Can you guide me to <questGiver>?",
-		"I hate to admit it but I'm lost. Do you know the way back to <questGiver>?"
-	  ]
-	}
+  "op": "add",
+  "path": "/escort/found/throg",
+  "value": { 
+    "default" : [
+    "My navigation device is busted, can you lead me back to <questGiver>?",
+    "My nose isn't usually this stuffy, can't make sense of where I should go. Can you guide me to <questGiver>?",
+    "I hate to admit it but I'm lost. Do you know the way back to <questGiver>?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/barter/trade/throg",
-	"value": { 
-	  "default" : [
-		"Yeah that'll do. Here's <questGiver>'s <receivedItems>",
-		"Everything's in order. This is <questGiver>'s <receivedItems>",
-		"Would prefer if <questGiver> showed up themself but here's the <receivedItems>"
-	  ]
-	}
+  "op": "add",
+  "path": "/barter/trade/throg",
+  "value": { 
+    "default" : [
+    "Yeah that'll do. Here's <questGiver>'s <receivedItems>",
+    "Everything's in order. This is <questGiver>'s <receivedItems>",
+    "Would prefer if <questGiver> showed up themself but here's the <receivedItems>"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/escort_trade/collectDelivery/throg",
-	"value": { 
-	  "default" : [
-		"You have the goods?",
-		"I'm getting hungry waiting here, you got what I need?",
-		"Are you the one with the delivery?"
-	  ]
-	}
+  "op": "add",
+  "path": "/escort_trade/collectDelivery/throg",
+  "value": { 
+    "default" : [
+    "You have the goods?",
+    "I'm getting hungry waiting here, you got what I need?",
+    "Are you the one with the delivery?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/escort_trade/provideDelivery/throg",
-	"value": { 
-	  "default" : [
-		"These are for you. Pleasure doing business.",
-		"Finally. These are for you.",
-		"This stuff is yours. Our business is finished."
-	  ]
-	}
+  "op": "add",
+  "path": "/escort_trade/provideDelivery/throg",
+  "value": { 
+    "default" : [
+    "These are for you. Pleasure doing business.",
+    "Finally. These are for you.",
+    "This stuff is yours. Our business is finished."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kill_npcs/assistantIntro/throg",
-	"value": { 
-	  "default" : [
-		"<questGiver> also contracted me. Let's go get that target.",
-		"Looks like <questGiver> is making us partners on this contract. Let's head out.",
-		"I prefer going solo, but <questGiver> insisted we work together on this one."
-	  ]
-	}
+  "op": "add",
+  "path": "/kill_npcs/assistantIntro/throg",
+  "value": { 
+    "default" : [
+    "<questGiver> also contracted me. Let's go get that target.",
+    "Looks like <questGiver> is making us partners on this contract. Let's head out.",
+    "I prefer going solo, but <questGiver> insisted we work together on this one."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kill_npc/surrender/throg",
-	"value": { 
-	  "default" : [
-		"I'd wave a flag as white as my eyes if I could! I surrender!",
-		"This isn't worth my life, I give up!",
-		"I can't eat you with a stomachache like this! I yield, I yield!"
-	  ]
-	}
+  "op": "add",
+  "path": "/kill_npc/surrender/throg",
+  "value": { 
+    "default" : [
+    "I'd wave a flag as white as my eyes if I could! I surrender!",
+    "This isn't worth my life, I give up!",
+    "I can't eat you with a stomachache like this! I yield, I yield!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kill_npc/betray/throg",
-	"value": { 
-	  "default" : [
-		"You actually fell for that?",
-		"Idiot.",
-		"Wow you are gullible!"
-	  ]
-	}
+  "op": "add",
+  "path": "/kill_npc/betray/throg",
+  "value": { 
+    "default" : [
+    "You actually fell for that?",
+    "Idiot.",
+    "Wow you are gullible!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/share_secret/pleaseTakeReply/mootant",
-	"value": {
-	  "default" : [
-		"Please take this reply back to <questGiver>.",
-		"Alright, give <questGiver> my reply."
-	  ]
-	}
+  "op": "add",
+  "path": "/share_secret/pleaseTakeReply/mootant",
+  "value": {
+    "default" : [
+    "Please take this reply back to <questGiver>.",
+    "Alright, give <questGiver> my reply."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/intimidate/intimidated/mootant",
-	"value": { 
-	  "default" : [
-		"Don't point that <item> at me! Tell <questGiver> I'll do anything!",
-		"Don't hurt me with that <item>! Tell <questGiver> I will comply!"
-	  ]
-	}
+  "op": "add",
+  "path": "/intimidate/intimidated/mootant",
+  "value": { 
+    "default" : [
+    "Don't point that <item> at me! Tell <questGiver> I'll do anything!",
+    "Don't hurt me with that <item>! Tell <questGiver> I will comply!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/intimidate/notIntimidated/mootant",
-	"value": { 
-	  "default" : [
-		"Why should I do what <questGiver> wants?",
-		"You don't scare me, and neither does <questGiver>!",
-		"Has <questGiver> sent you to intimidate me?"
-	  ]
-	}
+  "op": "add",
+  "path": "/intimidate/notIntimidated/mootant",
+  "value": { 
+    "default" : [
+    "Why should I do what <questGiver> wants?",
+    "You don't scare me, and neither does <questGiver>!",
+    "Has <questGiver> sent you to intimidate me?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/bribe/giftAccepted/mootant",
-	"value": { 
-	  "default" : [
-		"Is this a bribe? Ah, who cares... Please give my thanks to <questGiver>!",
-		"Is this bribery? Oh well! Please give my thanks to <questGiver>!",
-		"Being bribed is pretty great! Please give my thanks to <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/bribe/giftAccepted/mootant",
+  "value": { 
+    "default" : [
+    "Is this a bribe? Ah, who cares... Please give my thanks to <questGiver>!",
+    "Is this bribery? Oh well! Please give my thanks to <questGiver>!",
+    "Being bribed is pretty great! Please give my thanks to <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/bribe/giftAccepted2/mootant",
-	"value": { 
-	  "default" : [
-		"I wonder what <questGiver> wants from me though..."
-	  ]
-	}
+  "op": "add",
+  "path": "/bribe/giftAccepted2/mootant",
+  "value": { 
+    "default" : [
+    "I wonder what <questGiver> wants from me though..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/bribe/requestAdditionToHouse/mootant",
-	"value": { 
-	  "default" : [
-		"This gift would look good in my home. Can you place it in there for me?",
-		"What a nice gift! Could you place it in my home, so I can show it off?",
-		"This gift would look good displayed in my home. Will you put it there for me?"
-	  ]
-	}
+  "op": "add",
+  "path": "/bribe/requestAdditionToHouse/mootant",
+  "value": { 
+    "default" : [
+    "This gift would look good in my home. Can you place it in there for me?",
+    "What a nice gift! Could you place it in my home, so I can show it off?",
+    "This gift would look good displayed in my home. Will you put it there for me?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/gift/giftAccepted/mootant",
-	"value": { 
-	  "default" : [
-		"Oh, wow! Please thank <questGiver> for me!",
-		"How nice! Please thank <questGiver> for me!",
-		"Please tell <questGiver> how happy this gift has made me!"
-	  ]
-	}
+  "op": "add",
+  "path": "/gift/giftAccepted/mootant",
+  "value": { 
+    "default" : [
+    "Oh, wow! Please thank <questGiver> for me!",
+    "How nice! Please thank <questGiver> for me!",
+    "Please tell <questGiver> how happy this gift has made me!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/gift/giftAccepted2/mootant",
-	"value": { 
-	  "default" : [
-		"<questGiver> is pretty nice!",
-		"<questGiver> is a good friend.",
-		"<questGiver> is clearly someone I can trust."
-	  ]
-	}
+  "op": "add",
+  "path": "/gift/giftAccepted2/mootant",
+  "value": { 
+    "default" : [
+    "<questGiver> is pretty nice!",
+    "<questGiver> is a good friend.",
+    "<questGiver> is clearly someone I can trust."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/gift/requestAdditionToHouse/mootant",
-	"value": { 
-	  "default" : [
-		"This gift would look good in my home. Can you place it in there for me?",
-		"What a nice gift! Could you place it in my home, so I can show it off?",
-		"This gift would look good displayed in my home. Will you put it there for me?"
-	  ]
-	}
+  "op": "add",
+  "path": "/gift/requestAdditionToHouse/mootant",
+  "value": { 
+    "default" : [
+    "This gift would look good in my home. Can you place it in there for me?",
+    "What a nice gift! Could you place it in my home, so I can show it off?",
+    "This gift would look good displayed in my home. Will you put it there for me?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/return_stolen/objectTaken/mootant",
-	"value": { 
-	  "default" : [
-		"I assure you, that <item> was acquired legally!",
-		"Fine, take the <item> - I don't need it anyway!",
-		"That <item> was acquired legitimately - I swear!"
-	  ]
-	}
+  "op": "add",
+  "path": "/return_stolen/objectTaken/mootant",
+  "value": { 
+    "default" : [
+    "I assure you, that <item> was acquired legally!",
+    "Fine, take the <item> - I don't need it anyway!",
+    "That <item> was acquired legitimately - I swear!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/collect_fine/fineCollected/mootant",
-	"value": { 
-	  "default" : [
-		"Fine, fine, I'll pay the fine. Don't judge me!",
-		"You caught me! I'll play fair.",
-		"You caught me - I will pay the fine. Just don't get me in bigger trouble."
-	  ]
-	}
+  "op": "add",
+  "path": "/collect_fine/fineCollected/mootant",
+  "value": { 
+    "default" : [
+    "Fine, fine, I'll pay the fine. Don't judge me!",
+    "You caught me! I'll play fair.",
+    "You caught me - I will pay the fine. Just don't get me in bigger trouble."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/collect_gift/giftProvided/mootant",
-	"value": { 
-	  "default" : [
-		"Here you go! One <item>, just for <questGiver>!",
-		"Here's the <item> you need!"
-	  ]
-	}
+  "op": "add",
+  "path": "/collect_gift/giftProvided/mootant",
+  "value": { 
+    "default" : [
+    "Here you go! One <item>, just for <questGiver>!",
+    "Here's the <item> you need!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/request_craft/giftProvided/mootant",
-	"value": { 
-	  "default" : [
-		"Here's the <item> you needed me to make!",
-		"Here's one I made earlier!"
-	  ]
-	}
+  "op": "add",
+  "path": "/request_craft/giftProvided/mootant",
+  "value": { 
+    "default" : [
+    "Here's the <item> you needed me to make!",
+    "Here's one I made earlier!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/borrow/giftProvided/mootant",
-	"value": { 
-	  "default" : [
-		"Fine, <questGiver> can borrow my <item>. Will you bring it back eventually?",
-		"Sure, I can lend <questGiver> my <item>."
-	  ]
-	}
+  "op": "add",
+  "path": "/borrow/giftProvided/mootant",
+  "value": { 
+    "default" : [
+    "Fine, <questGiver> can borrow my <item>. Will you bring it back eventually?",
+    "Sure, I can lend <questGiver> my <item>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/extort/giftProvided/mootant",
-	"value": { 
-	  "default" : [
-		"H-here, take my <item>. Just don't h-hurt me!",
-		"<questGiver> can have my <item>, just don't hurt me!",
-		"Extortion is not new to me. Take my <item>..."
-	  ]
-	}
+  "op": "add",
+  "path": "/extort/giftProvided/mootant",
+  "value": { 
+    "default" : [
+    "H-here, take my <item>. Just don't h-hurt me!",
+    "<questGiver> can have my <item>, just don't hurt me!",
+    "Extortion is not new to me. Take my <item>..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/hat/crafting/mootant",
-	"value": { 
-	  "default" : [
-		"Oh, you have the items we need? Hold on a second...",
-		"You brought the materials? Great, hold on a moment then... ",
-		"Thank you for bringing me the materials - Give me a moment and I can make this..."
-	  ]
-	}
+  "op": "add",
+  "path": "/hat/crafting/mootant",
+  "value": { 
+    "default" : [
+    "Oh, you have the items we need? Hold on a second...",
+    "You brought the materials? Great, hold on a moment then... ",
+    "Thank you for bringing me the materials - Give me a moment and I can make this..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/hat/crafted/mootant",
-	"value": { 
-	  "default" : [
-		"Here you go! You can take this parcel to <questGiver> for me.",
-		"And... Finished! Take this parcel to <questGiver>.",
-		"Thank you for waiting. Here, take this to <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/hat/crafted/mootant",
+  "value": { 
+    "default" : [
+    "Here you go! You can take this parcel to <questGiver> for me.",
+    "And... Finished! Take this parcel to <questGiver>.",
+    "Thank you for waiting. Here, take this to <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/helmet/crafting/mootant",
-	"value": { 
-	  "default" : [
-		"Oh, you have the items we need? Hold on a second...",
-		"You brought the materials? Great, hold on a moment then... ",
-		"Thank you for bringing me the materials - Give me a moment and I can make this..."
-	  ]
-	}
+  "op": "add",
+  "path": "/helmet/crafting/mootant",
+  "value": { 
+    "default" : [
+    "Oh, you have the items we need? Hold on a second...",
+    "You brought the materials? Great, hold on a moment then... ",
+    "Thank you for bringing me the materials - Give me a moment and I can make this..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/helmet/crafted/mootant",
-	"value": { 
-	  "default" : [
-		"Here you go! You can take this parcel to <questGiver> for me.",
-		"And... Finished! Take this parcel to <questGiver>.",
-		"Thank you for waiting. Here, take this to <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/helmet/crafted/mootant",
+  "value": { 
+    "default" : [
+    "Here you go! You can take this parcel to <questGiver> for me.",
+    "And... Finished! Take this parcel to <questGiver>.",
+    "Thank you for waiting. Here, take this to <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/new_stock/trade/mootant",
-	"value": { 
-	  "default" : [
-		"Thanks for the goods, here's <questGiver>'s parcel. Pass on my regards!"
-	  ]
-	}
+  "op": "add",
+  "path": "/new_stock/trade/mootant",
+  "value": { 
+    "default" : [
+    "Thanks for the goods, here's <questGiver>'s parcel. Pass on my regards!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kidnapping/kidnappersDead/mootant",
-	"value": { 
-	  "default" : [
-		"Don't kill me, I have so much to give... Wait, you're saving me? Thank you!",
-		"I'm still alive? You saved my life! Thank you!",
-		"I don't know how I keep getting into situations like that..."
-	  ]
-	}
+  "op": "add",
+  "path": "/kidnapping/kidnappersDead/mootant",
+  "value": { 
+    "default" : [
+    "Don't kill me, I have so much to give... Wait, you're saving me? Thank you!",
+    "I'm still alive? You saved my life! Thank you!",
+    "I don't know how I keep getting into situations like that..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kidnapping/followHome/mootant",
-	"value": { 
-	  "default" : [
-		"Um. I'm still pretty frightened. Can you take me home to <questGiver>?",
-		"I'm still pretty shook up - can you take me home to <questGiver>?",
-		"Can you take me home to <questGiver>? Just to be on the safe side..."
-	  ]
-	}
+  "op": "add",
+  "path": "/kidnapping/followHome/mootant",
+  "value": { 
+    "default" : [
+    "Um. I'm still pretty frightened. Can you take me home to <questGiver>?",
+    "I'm still pretty shook up - can you take me home to <questGiver>?",
+    "Can you take me home to <questGiver>? Just to be on the safe side..."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/escort/found/mootant",
-	"value": { 
-	  "default" : [
-		"I'm so lost. Can you take me back to <questGiver>?",
-		"I am incredibly lost right now. Would you mind taking me to <questGiver>?",
-		"I have no idea where I am. Please take me back to <questGiver>."
-	  ]
-	}
+  "op": "add",
+  "path": "/escort/found/mootant",
+  "value": { 
+    "default" : [
+    "I'm so lost. Can you take me back to <questGiver>?",
+    "I am incredibly lost right now. Would you mind taking me to <questGiver>?",
+    "I have no idea where I am. Please take me back to <questGiver>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/barter/trade/mootant",
-	"value": { 
-	  "default" : [
-		"Thanks for the goods, here's <questGiver>'s <receivedItems>. Pass on my regards!",
-		"Thank you for delivering this. Here's <questGiver>'s <receivedItems>."
-	  ]
-	}
+  "op": "add",
+  "path": "/barter/trade/mootant",
+  "value": { 
+    "default" : [
+    "Thanks for the goods, here's <questGiver>'s <receivedItems>. Pass on my regards!",
+    "Thank you for delivering this. Here's <questGiver>'s <receivedItems>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/escort_trade/collectDelivery/mootant",
-	"value": { 
-	  "default" : [
-		"Do you have a delivery for me?",
-		"Hey, do you have the delivery?"
-	  ]
-	}
+  "op": "add",
+  "path": "/escort_trade/collectDelivery/mootant",
+  "value": { 
+    "default" : [
+    "Do you have a delivery for me?",
+    "Hey, do you have the delivery?"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/escort_trade/provideDelivery/mootant",
-	"value": { 
-	  "default" : [
-		"Here's your goods. Enjoy!"
-	  ]
-	}
+  "op": "add",
+  "path": "/escort_trade/provideDelivery/mootant",
+  "value": { 
+    "default" : [
+    "Here's your goods. Enjoy!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kill_npcs/assistantIntro/mootant",
-	"value": { 
-	  "default" : [
-		"Hi! <questGiver> contracted me to help you fight the <enemy>.",
-		"Hey there! <questGiver> is a friend of mine, and wanted me to help you fight the <enemy>."
-	  ]
-	}
+  "op": "add",
+  "path": "/kill_npcs/assistantIntro/mootant",
+  "value": { 
+    "default" : [
+    "Hi! <questGiver> contracted me to help you fight the <enemy>.",
+    "Hey there! <questGiver> is a friend of mine, and wanted me to help you fight the <enemy>."
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kill_npc/surrender/mootant",
-	"value": { 
-	  "default" : [
-		"I surrender! Put away your weapon!",
-		"I know when I've been beaten! Put your weapon away, please!",
-		"Okay, okay, I surrender! Please, put your weapon away!"
-	  ]
-	}
+  "op": "add",
+  "path": "/kill_npc/surrender/mootant",
+  "value": { 
+    "default" : [
+    "I surrender! Put away your weapon!",
+    "I know when I've been beaten! Put your weapon away, please!",
+    "Okay, okay, I surrender! Please, put your weapon away!"
+    ]
+  }
   },
   {
-	"op": "add",
-	"path": "/kill_npc/betray/mootant",
-	"value": { 
-	  "default" : [
-		"You actually fell for that?",
-		"I'm not that easy to take down!",
-		"Surprise!"
-	  ]
-	}
+  "op": "add",
+  "path": "/kill_npc/betray/mootant",
+  "value": { 
+    "default" : [
+    "You actually fell for that?",
+    "I'm not that easy to take down!",
+    "Surprise!"
+    ]
+  }
   }
 ]

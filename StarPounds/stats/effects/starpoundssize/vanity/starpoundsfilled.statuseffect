@@ -1,7 +1,7 @@
 {
-	"name": "starpoundsfilled",
-	"scripts": [ ],
-	"defaultDuration": 1,
-	"label": "Filled",
-	"icon": "/interface/statuses/starpoundsvanity/starpoundsfilled.png"
+  "name": "starpoundsfilled",
+  "scripts": [ ],
+  "defaultDuration": 1,
+  "label": "Filled",
+  "icon": "/interface/statuses/starpoundsvanity/starpoundsfilled.png"
 }

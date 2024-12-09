@@ -214,24 +214,24 @@ end
 
 -- Hammer ability, but ground slams.
 shockwave = {
-	projectileType = "physicalshockwave",
-	projectileParameters = {
-		knockback = 40,
-		knockbackMode = "facing"
-	},
-	shockWaveBounds = {-0.4, -1.375, 0.4, 0.0},
-	shockwaveHeight = 1.375,
-	impactLine = {{0, -1.5}, {0, -4.5}},
+  projectileType = "physicalshockwave",
+  projectileParameters = {
+    knockback = 40,
+    knockbackMode = "facing"
+  },
+  shockWaveBounds = {-0.4, -1.375, 0.4, 0.0},
+  shockwaveHeight = 1.375,
+  impactLine = {{0, -1.5}, {0, -4.5}},
 
-	fireShockwave = function(width)
-		local impact
-		local position = vec2.add(mcontroller.position(), ({0, starPounds.currentSize.yOffset or 0}))
-		local blocks = world.collisionBlocksAlongLine(vec2.add(position, shockwave.impactLine[1]), vec2.add(position, shockwave.impactLine[2]), {"Null", "Block"})
-		if #blocks > 0 then
-			impact = vec2.add(blocks[1], {0.5, 0.5})
-		end
+  fireShockwave = function(width)
+    local impact
+    local position = vec2.add(mcontroller.position(), ({0, starPounds.currentSize.yOffset or 0}))
+    local blocks = world.collisionBlocksAlongLine(vec2.add(position, shockwave.impactLine[1]), vec2.add(position, shockwave.impactLine[2]), {"Null", "Block"})
+    if #blocks > 0 then
+      impact = vec2.add(blocks[1], {0.5, 0.5})
+    end
 
-	  if impact then
+    if impact then
       local explosionConfig = "starpoundsgroundslamexplosion"
       -- No tile damage with the option, or on ship worlds.
       if starPounds.hasOption("disableTileDamage") or world.type() == "unknown" then
@@ -245,32 +245,32 @@ shockwave = {
         actionOnReap = {{action = "config", file = string.format("/projectiles/explosions/starpoundsgroundslam/%s.config", explosionConfig)}}
       })
       local maxDistance = 1 + (self.voreSlam and 1 or 2) * (self.weightMultiplier - 1)^(1/3)
-	    local positions = shockwave.shockwaveProjectilePositions(impact, maxDistance + width)
-	    if #positions > 0 then
+      local positions = shockwave.shockwaveProjectilePositions(impact, maxDistance + width)
+      if #positions > 0 then
         local damageUuid = sb.makeUuid()
-	      local params = copy(shockwave.projectileParameters)
-	      params.powerMultiplier = status.stat("powerMultiplier")
-				params.onlyHitTerrain = true
-	      params.actionOnReap = {
-	        {
-	          action = "projectile",
-	          inheritDamageFactor = self.voreSlam and 0 or 1,
-	          type = shockwave.projectileType,
-						config = {
-  	          processing = self.voreSlam and "?multiply=0000" or "",
-							damageRepeatGroup = "starpoundsgroundslam_"..damageUuid,
-							damageRepeatTimeout = 1,
+        local params = copy(shockwave.projectileParameters)
+        params.powerMultiplier = status.stat("powerMultiplier")
+        params.onlyHitTerrain = true
+        params.actionOnReap = {
+          {
+            action = "projectile",
+            inheritDamageFactor = self.voreSlam and 0 or 1,
+            type = shockwave.projectileType,
+            config = {
+              processing = self.voreSlam and "?multiply=0000" or "",
+              damageRepeatGroup = "starpoundsgroundslam_"..damageUuid,
+              damageRepeatTimeout = 1,
               damageKind = self.voreSlam and "bugnet" or nil -- Silly, but it works.
-						}
-	        }
-	      }
-	      for i, position in pairs(positions) do
-	        local xDistance = world.distance(position, impact)[1]
-	        local dir = util.toDirection(xDistance)
+            }
+          }
+        }
+        for i, position in pairs(positions) do
+          local xDistance = world.distance(position, impact)[1]
+          local dir = util.toDirection(xDistance)
           local distance = (math.floor(math.max(math.abs(xDistance) - width, 0)))
           local multiplier = (maxDistance - distance * 0.75) / maxDistance
-	        params.timeToLive = distance * 0.05
-  	      params.power = self.voreSlam and 0 or math.floor(10 + 30 * (self.scale - 1) + 0.5) * multiplier
+          params.timeToLive = distance * 0.05
+          params.power = self.voreSlam and 0 or math.floor(10 + 30 * (self.scale - 1) + 0.5) * multiplier
           if not self.voreSlam and not starPounds.hasOption("disableTileDamage") and world.type() ~= "unknown" then
             params.actionOnReap[2] = {
               action = "explosion",
@@ -280,41 +280,41 @@ shockwave = {
               explosiveDamageAmount = math.floor(0.25 + 0.25 * (self.scale - 1) + 0.5) * multiplier^2
             }
           end
-	        world.spawnProjectile("shockwavespawner", position, entity.id(), {dir, 0}, false, params)
-	      end
-	    end
-	  end
+          world.spawnProjectile("shockwavespawner", position, entity.id(), {dir, 0}, false, params)
+        end
+      end
+    end
     return impact ~= nil
-	end,
+  end,
 
-	shockwaveProjectilePositions = function(impactPosition, maxDistance)
-	  local positions = {}
+  shockwaveProjectilePositions = function(impactPosition, maxDistance)
+    local positions = {}
 
-	  for _,direction in pairs({1, -1}) do
-	    local position = copy(impactPosition)
-	    for i = 0, maxDistance do
-	      local continue = false
-	      for _,yDir in ipairs({-2, -1, 0, 1}) do
-	        local wavePosition = {position[1] + direction * i, position[2] + 0.5 + yDir + shockwave.shockwaveHeight}
-	        local groundPosition = {position[1] + direction * i, position[2] + yDir}
-	        local bounds = {
-						shockwave.shockWaveBounds[1] + wavePosition[1],
-						shockwave.shockWaveBounds[2] + wavePosition[2],
-						shockwave.shockWaveBounds[3] + wavePosition[1],
-						shockwave.shockWaveBounds[4] + wavePosition[2]
-					}
+    for _,direction in pairs({1, -1}) do
+      local position = copy(impactPosition)
+      for i = 0, maxDistance do
+        local continue = false
+        for _,yDir in ipairs({-2, -1, 0, 1}) do
+          local wavePosition = {position[1] + direction * i, position[2] + 0.5 + yDir + shockwave.shockwaveHeight}
+          local groundPosition = {position[1] + direction * i, position[2] + yDir}
+          local bounds = {
+            shockwave.shockWaveBounds[1] + wavePosition[1],
+            shockwave.shockWaveBounds[2] + wavePosition[2],
+            shockwave.shockWaveBounds[3] + wavePosition[1],
+            shockwave.shockWaveBounds[4] + wavePosition[2]
+          }
 
-	        if world.pointTileCollision(groundPosition, {"Null", "Block", "Dynamic", "Slippery"}) and not world.rectTileCollision(bounds, {"Null", "Block", "Dynamic", "Slippery"}) then
-	          table.insert(positions, wavePosition)
-	          position[2] = position[2] + yDir
-	          continue = true
-	          break
-	        end
-	      end
-	      if not continue then break end
-	    end
-	  end
+          if world.pointTileCollision(groundPosition, {"Null", "Block", "Dynamic", "Slippery"}) and not world.rectTileCollision(bounds, {"Null", "Block", "Dynamic", "Slippery"}) then
+            table.insert(positions, wavePosition)
+            position[2] = position[2] + yDir
+            continue = true
+            break
+          end
+        end
+        if not continue then break end
+      end
+    end
 
-	  return positions
-	end
+    return positions
+  end
 }

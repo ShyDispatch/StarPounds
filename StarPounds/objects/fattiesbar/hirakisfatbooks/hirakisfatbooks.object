@@ -55,59 +55,59 @@
       }
     },
     "filter" : [],
-	"modTab" : [{
+  "modTab" : [{
       "file": "/interface/fattyshops/tabs/tabhiraki.png",
-	  "label": " Hiraki",
+    "label": " Hiraki",
       "filter": [ "tabhiraki" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabthrog.png",
-	  "label": " Throg",
+    "label": " Throg",
       "filter": [ "tabthrog" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabgluttonist.png",
-	  "label": " Floran",
+    "label": " Floran",
       "filter": [ "tabgluttonist" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabvelhanu.png",
-	  "label": " Avian",
+    "label": " Avian",
       "filter": [ "tabvelhanu" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabponderous.png",
-	  "label": " Glitch",
+    "label": " Glitch",
       "filter": [ "tabponderous" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabumiyoni.png",
-	  "label": " Hylotl",
+    "label": " Hylotl",
       "filter": [ "tabumiyoni" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabminik.png",
-	  "label": " Apex",
+    "label": " Apex",
       "filter": [ "tabminik" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabuscm.png",
-	  "label": " Human",
+    "label": " Human",
       "filter": [ "tabuscm" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabnovakid.png",
-	  "label": " Novakid",
+    "label": " Novakid",
       "filter": [ "tabnovakid" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/tabmonsters.png",
-	  "label": " Monster",
+    "label": " Monster",
       "filter": [ "tabmonsters" ]
     },
-	{
+  {
       "file": "/interface/fattyshops/tabs/racial.png",
-	  "label": " Misc",
+    "label": " Misc",
       "filter": [ "tabmisc" ]
     }]
   },
@@ -117,7 +117,7 @@
     ],
     "tabthrog" : [
       "throgreportancients-codex", "throgreportpoptops-codex", "throgreportapex-codex", "throgreportavians-codex", "throgreportflorans-codex","throgreportglitch-codex", "throgreporthumans-codex", "throgreporthylotl-codex", "throgreportnovakid-codex", "throgreportpenguins-codex",
-	  "starpoundsblubberbuttfirst-codex", "starpoundsblubberbuttsecond-codex", "starpoundsthrogculture-codex", "starpoundsthrogempire-codex"
+    "starpoundsblubberbuttfirst-codex", "starpoundsblubberbuttsecond-codex", "starpoundsthrogculture-codex", "starpoundsthrogempire-codex"
     ],
     "tabgluttonist" : [
       "howfloransgetfat-codex", "florantribegluttonists-codex", "gluttonistlore1-codex", "gluttonistlore2-codex",
@@ -137,7 +137,7 @@
     ],
     "tabuscm" : [
       "mootant-codex", "mootantcapturedprotectorate-codex", "mootantinstructions-codex", "mootantmattermanipulator-codex", "mootantoutbreak-codex",
-	  "mootantprisonreport-codex", "mootantsecret-codex", "mootantunexpected-codex", "starpoundsuscmremnants-codex"
+    "mootantprisonreport-codex", "mootantsecret-codex", "mootantunexpected-codex", "starpoundsuscmremnants-codex"
     ],
     "tabnovakid" : [
     ],

@@ -1,26 +1,26 @@
 [
-	{
-		"op": "add",
-		"path": "/species/-",
-		"value": "throg"
-	},{
-		"op": "add",
-		"path": "/defaultCodexes/throg",
-		"value": [ "protectorate1", "protectorate2" ]
-	},{
-		"op": "add",
-		"path": "/species/-",
-		"value": "mootant"
-	},{
-		"op": "add",
-		"path": "/defaultCodexes/mootant",
-		"value":
-			[ "protectorate1", "protectorate2" ]
-	},{
-		"op": "add",
-		"path": "/genericScriptContexts/starpounds",
-		"value": "/scripts/starpounds/starpounds_player.lua"
-	},{
+  {
+    "op": "add",
+    "path": "/species/-",
+    "value": "throg"
+  },{
+    "op": "add",
+    "path": "/defaultCodexes/throg",
+    "value": [ "protectorate1", "protectorate2" ]
+  },{
+    "op": "add",
+    "path": "/species/-",
+    "value": "mootant"
+  },{
+    "op": "add",
+    "path": "/defaultCodexes/mootant",
+    "value":
+      [ "protectorate1", "protectorate2" ]
+  },{
+    "op": "add",
+    "path": "/genericScriptContexts/starpounds",
+    "value": "/scripts/starpounds/starpounds_player.lua"
+  },{
     "op": "add",
     "path": "/companionsConfig/scripts/-",
     "value": "/scripts/companions/starpounds.lua"

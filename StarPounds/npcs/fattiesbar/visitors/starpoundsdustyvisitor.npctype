@@ -10,11 +10,11 @@
   "starPounds_options": {
       "disableGain": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
         "Y'all aren't from around here, are ya?",
         "You look like the travellin' type - you from over yonder?",
         "What do you think o' this place. Sorta nice, ain't it?",
@@ -33,10 +33,10 @@
         "If it looks like it ain't worth the effort, it probably ain't.",
         "Little advice for yer - if you wanna get out a hole, you gotta stop diggin'.",
         "You got a sharp eye. How about a shootin' match between you and I?"
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
   
   "identity":  {

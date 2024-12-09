@@ -15,8 +15,8 @@
             "cycle" : 0.4,
             "mode" : "loop"
           },
-		  
-		  "chargewindup" : {
+      
+      "chargewindup" : {
             "frames" : 5,
             "cycle" : 0.4,
             "properties" : {
@@ -28,15 +28,15 @@
             "properties" : {
               "immediateSound" : "/sfx/melee/swing_hammer.ogg"
             
-			  }
+        }
           },
-		  "chargewinddown" : {
+      "chargewinddown" : {
             "frames" : 2,
             "cycle" : 0.4,
             "properties" : {
             }
-          },		  
-		  
+          },      
+      
           "shieldwindup" : {
             "frames" : 2,
             "cycle" : 0.25,
@@ -47,14 +47,14 @@
             "frames" : 1,
             "cycle" : 1.0,
             "properties" : {
-			  }
+        }
           },
           "shieldwinddown" : {
             "frames" : 2,
             "cycle" : 0.25,
             "properties" : {
             }
-          }		  
+          }      
         }
       },
       "damage" : {
@@ -97,7 +97,7 @@
           "transformationGroups" : [ "body" ],
           "offset" : [0.0, 0.125],
           "zLevel" : 1
-		  
+      
         },
         "partStates" : {
           "body" : {
@@ -125,7 +125,7 @@
               "properties" : {
                 "image" : "<partImage>:chargewinddown.<frame>"
               }
-            },			
+            },      
             "shieldwindup" : {
               "properties" : {
                 "image" : "<partImage>:shieldwindup.<frame>"
@@ -185,7 +185,7 @@
               "properties" : {
                 "image" : "<partImage>:chargewinddown.<frame>"
               }
-            },			
+            },      
             "shieldwindup" : {
               "properties" : {
                 "image" : "<partImage>:shieldwindup.<frame>"
@@ -258,7 +258,7 @@
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
-        { "particle" : "wispflame" }		
+        { "particle" : "wispflame" }    
       ]
     },
     "captureParticles" : {

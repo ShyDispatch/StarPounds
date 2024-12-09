@@ -11,17 +11,17 @@
     ]
   },
   "aliases" : {
-  	"idle.2" : "idle.1",
-  	"idle.3" : "idle.1",
-  	"idle.4" : "idle.1",
-  	"idle.5" : "idle.1",
-  	"idle.6" : "idle.1",
-  	"idle.7" : "blink.1",
-  	"idle.8" :  "idle.1",
-  	"idle.9" :  "blink.1",
-  	"idle.10" : "idle.1",
-  	"idle.11" : "idle.1",
-  	"idle.12" : "idle.1",
-  	"idle.13" : "idle.1"
+    "idle.2" : "idle.1",
+    "idle.3" : "idle.1",
+    "idle.4" : "idle.1",
+    "idle.5" : "idle.1",
+    "idle.6" : "idle.1",
+    "idle.7" : "blink.1",
+    "idle.8" :  "idle.1",
+    "idle.9" :  "blink.1",
+    "idle.10" : "idle.1",
+    "idle.11" : "idle.1",
+    "idle.12" : "idle.1",
+    "idle.13" : "idle.1"
   }
 }

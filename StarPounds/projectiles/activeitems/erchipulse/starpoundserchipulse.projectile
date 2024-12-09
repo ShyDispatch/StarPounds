@@ -19,7 +19,7 @@
       "action" : "sound",
       "options" : [ "/sfx/gun/pulsecannon_blast1.ogg" ]
     },
-  	{
+    {
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "caloricsmoke",
@@ -47,7 +47,7 @@
       "fuzzAngle" : 30,
       "angleAdjust" : 270
     },
-	  {
+    {
       "action" : "projectile",
       "inheritDamageFactor" : 0.05,
       "type" : "caloricsmoke",

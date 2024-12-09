@@ -19,29 +19,29 @@
       "inheritSpeedFactor" : 0,
       "angleAdjust" : 0
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
       "fuzzAngle" : 180,
       "inheritSpeedFactor" : 0.1,
       "inheritDamageFactor" : 0.0
-	  },
+    },
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
       "fuzzAngle" : 180,
       "inheritSpeedFactor" : 0.1,
       "inheritDamageFactor" : 0.0 
-	  },
+    },
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
       "fuzzAngle" : 180,
       "inheritSpeedFactor" : 0.1,
       "inheritDamageFactor" : 0.0
-	  },
-	
+    },
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
@@ -66,7 +66,7 @@
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 30
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
@@ -91,7 +91,7 @@
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 60
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
@@ -116,7 +116,7 @@
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 90
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
@@ -141,7 +141,7 @@
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 120
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
@@ -166,7 +166,7 @@
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 150
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",
@@ -191,7 +191,7 @@
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 180
     },
-	
+  
     {
       "action" : "projectile",
       "type" : "lethalcaloricsmoke",

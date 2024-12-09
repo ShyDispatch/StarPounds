@@ -27,5 +27,5 @@
   "emitters" : [ "wispflame", "wispflame" ],
   "renderLayer" : "Monster+10",
     "fullbright" : true
-	
+  
 }

@@ -1,12 +1,12 @@
 {
-	"name": "starpoundsbreast",
-	"effectConfig" : {
-		"fillRange" : [5, 12]
-	},
-	"scripts": [
-		"starpoundsbreast.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Breast Capacity",
-	"icon": "/interface/statuses/breast.png"
+  "name": "starpoundsbreast",
+  "effectConfig" : {
+    "fillRange" : [5, 12]
+  },
+  "scripts": [
+    "starpoundsbreast.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Breast Capacity",
+  "icon": "/interface/statuses/breast.png"
 }

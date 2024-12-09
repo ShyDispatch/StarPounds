@@ -1,7 +1,7 @@
 {
-	"name": "anomalouscake",
-	"scripts": [
-		"anomalouscake.lua"
-	],
-	"defaultDuration": 60
+  "name": "anomalouscake",
+  "scripts": [
+    "anomalouscake.lua"
+  ],
+  "defaultDuration": 60
 }

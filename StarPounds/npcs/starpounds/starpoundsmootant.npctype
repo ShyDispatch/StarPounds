@@ -7,18 +7,18 @@
     "starPounds_skills": {
       "minimumSize": [1, 4]
     },
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Moooo.",
-						"Moo.",
-						"Moo?",
-						"Moooo~"
-					]
-				}
-			}
-		}
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Moooo.",
+            "Moo.",
+            "Moo?",
+            "Moooo~"
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

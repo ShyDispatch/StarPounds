@@ -1,16 +1,16 @@
 {
-	"name": "starpoundsvoresourceforce",
-	"effectConfig": {
-		"options" : {
-			"ignoreSkills" : true,
-			"ignoreCapacity" : true,
-			"ignoreEnergyRequirment" : true,
-			"energyMultiplier" : 0,
-			"noRelease" : true
-		}
-	},
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundsvoresource.lua"
-	]
+  "name": "starpoundsvoresourceforce",
+  "effectConfig": {
+    "options" : {
+      "ignoreSkills" : true,
+      "ignoreCapacity" : true,
+      "ignoreEnergyRequirment" : true,
+      "energyMultiplier" : 0,
+      "noRelease" : true
+    }
+  },
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundsvoresource.lua"
+  ]
 }

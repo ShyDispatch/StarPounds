@@ -10,13 +10,13 @@
   },
   "aliases" : {
     "hurt.1" : "fly.2",
-	"charge.1" : "fly.2",
-	"charge.2" : "fly.2",
-	"charge.3" : "fly.2",
-	"charge.4" : "fly.2",
-	"fire.1" : "fly.2",
-	"fire.2" : "fly.2",
-	"fire.3" : "fly.2",
-	"fire.4" : "fly.2"
+  "charge.1" : "fly.2",
+  "charge.2" : "fly.2",
+  "charge.3" : "fly.2",
+  "charge.4" : "fly.2",
+  "fire.1" : "fly.2",
+  "fire.2" : "fly.2",
+  "fire.3" : "fly.2",
+  "fire.4" : "fly.2"
   }
 }

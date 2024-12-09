@@ -1,7 +1,7 @@
 {
-	"name": "starpoundsexperience",
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundsexperience.lua"
-	]
+  "name": "starpoundsexperience",
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundsexperience.lua"
+  ]
 }

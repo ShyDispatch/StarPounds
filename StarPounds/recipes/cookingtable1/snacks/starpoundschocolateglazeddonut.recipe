@@ -4,7 +4,7 @@
     { "item" : "sugar", "count" : 1 },
     { "item" : "milk", "count" : 1 },
     { "item" : "egg", "count" : 1 },
-    { "item" : "chocolate", "count" : 1 },	
+    { "item" : "chocolate", "count" : 1 },  
     { "item" : "starpoundsbuttersnack", "count" : 1 }
   ],
   "output" : { "item" : "starpoundschocoglazeddonut", "count" : 1 },

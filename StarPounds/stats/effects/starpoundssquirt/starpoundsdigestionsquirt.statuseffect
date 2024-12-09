@@ -1,11 +1,11 @@
 {
-	"name": "starpoundsdigestionsquirt",
-	"effectConfig": {
-		"statusEffects": [{"effect": "digesting", "duration": 5}],
-		"sourceStatusEffects": [{"effect": "digesting", "duration": 1}]
-	},
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundssquirt.lua"
-	]
+  "name": "starpoundsdigestionsquirt",
+  "effectConfig": {
+    "statusEffects": [{"effect": "digesting", "duration": 5}],
+    "sourceStatusEffects": [{"effect": "digesting", "duration": 1}]
+  },
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundssquirt.lua"
+  ]
 }

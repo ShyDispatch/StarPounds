@@ -7,12 +7,12 @@
 
   "damageTeam" : 3,
 
-	"identity" : {
+  "identity" : {
      "species" : "floran"
-	 },
+   },
 
   "scriptConfig" : {
-  	"behaviorConfig" : {
+    "behaviorConfig" : {
       "leapWindup" : 0.75,
       "leapCooldown": 3,
       "leapChance" : 0.9,
@@ -51,16 +51,16 @@
     }
   },
 
-	"touchDamage": {
-		"damage": 0,
-		"teamType": "enemy",
-		"damageType": "knockback",
-		"damageSourceKind": "nodamage",
-		"damageRepeatGroup": "npcTouchKnockback",
-		"damageRepeatTimeout": 0.5,
-		"knockback": 35,
-		"statusEffects": []
-	},
+  "touchDamage": {
+    "damage": 0,
+    "teamType": "enemy",
+    "damageType": "knockback",
+    "damageSourceKind": "nodamage",
+    "damageRepeatGroup": "npcTouchKnockback",
+    "damageRepeatTimeout": 0.5,
+    "knockback": 35,
+    "statusEffects": []
+  },
 
   "items" : {
     "override" : [

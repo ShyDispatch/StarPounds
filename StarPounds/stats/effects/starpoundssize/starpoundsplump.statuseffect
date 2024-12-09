@@ -1,12 +1,12 @@
 {
-	"name": "starpoundsplump",
-	"effectConfig" : {
-		"fillRange" : [3, 14]
-	},
-	"scripts": [
-		"starpoundssize.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Plump",
-	"icon": "/interface/statuses/starpoundssize/starpoundsplump.png"
+  "name": "starpoundsplump",
+  "effectConfig" : {
+    "fillRange" : [3, 14]
+  },
+  "scripts": [
+    "starpoundssize.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Plump",
+  "icon": "/interface/statuses/starpoundssize/starpoundsplump.png"
 }

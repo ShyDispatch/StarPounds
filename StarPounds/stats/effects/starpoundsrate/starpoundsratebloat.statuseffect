@@ -1,11 +1,11 @@
 {
-	"name": "starpoundsratebloat",
-	"effectConfig": {
-		"data": "bloat",
-		"rate": 10
-	},
-	"defaultDuration": 5,
-	"scripts": [
-		"starpoundsrate.lua"
-	]
+  "name": "starpoundsratebloat",
+  "effectConfig": {
+    "data": "bloat",
+    "rate": 10
+  },
+  "defaultDuration": 5,
+  "scripts": [
+    "starpoundsrate.lua"
+  ]
 }

@@ -26,6 +26,6 @@ My heart skipped a beat to know she liked eating and being big just as I do. She
     "itemConfig" : {
     "rarity" : "common",
     "price" : 250,
-    "radioMessagesOnPickup" : [ "fathylotlghostintro", "fathylotlghostintro2", "fathylotlghostintro3", "fathylotlghostintro4", "fathylotlghostintro5", "fathylotlghostintro6" ]   	
+    "radioMessagesOnPickup" : [ "fathylotlghostintro", "fathylotlghostintro2", "fathylotlghostintro3", "fathylotlghostintro4", "fathylotlghostintro5", "fathylotlghostintro6" ]     
   } 
 }

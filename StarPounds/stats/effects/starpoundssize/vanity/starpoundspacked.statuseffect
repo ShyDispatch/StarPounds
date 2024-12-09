@@ -1,7 +1,7 @@
 {
-	"name": "starpoundspacked",
-	"scripts": [ ],
-	"defaultDuration": 1,
-	"label": "Packed",
-	"icon": "/interface/statuses/starpoundsvanity/starpoundspacked.png"
+  "name": "starpoundspacked",
+  "scripts": [ ],
+  "defaultDuration": 1,
+  "label": "Packed",
+  "icon": "/interface/statuses/starpoundsvanity/starpoundspacked.png"
 }

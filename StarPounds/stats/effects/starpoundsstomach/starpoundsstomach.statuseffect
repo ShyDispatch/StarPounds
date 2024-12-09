@@ -1,13 +1,13 @@
 {
-	"name": "starpoundsstomach",
-	"defaultDuration": 100,
-	"effectConfig": {
-		"fillRange" : [3, 15],
-		"range": [0, 1]
-	},
-	"scripts": [
-		"starpoundsstomach.lua"
-	],
-	"label": "Stomach Capacity",
-	"icon": "/interface/statuses/stomach.png"
+  "name": "starpoundsstomach",
+  "defaultDuration": 100,
+  "effectConfig": {
+    "fillRange" : [3, 15],
+    "range": [0, 1]
+  },
+  "scripts": [
+    "starpoundsstomach.lua"
+  ],
+  "label": "Stomach Capacity",
+  "icon": "/interface/statuses/stomach.png"
 }

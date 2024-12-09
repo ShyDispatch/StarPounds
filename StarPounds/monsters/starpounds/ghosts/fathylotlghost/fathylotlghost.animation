@@ -80,7 +80,7 @@
           }
         }
       },
-	  
+    
       "head" : {
         "properties" : {
           "transformationGroups" : [ "body" ],
@@ -108,7 +108,7 @@
             }
           }
         }
-      }	  
+      }    
     }
   },
 

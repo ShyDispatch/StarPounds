@@ -8,7 +8,7 @@
     ]
   },
   "aliases" : {
-  	"walk.1" : "idle.1",
+    "walk.1" : "idle.1",
     "fall.1" : "hurt.1"
   }
 }

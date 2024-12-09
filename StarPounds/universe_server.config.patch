@@ -1,34 +1,34 @@
 [
   { "op" : "add",
-	"path" : "/speciesShips/throg",
-	"value" : [
-	  "/ships/throg/throgt0.structure",
-	  "/ships/throg/throgt1.structure",
-	  "/ships/throg/throgT2.structure",
-	  "/ships/throg/throgT3.structure",
-	  "/ships/throg/throgT4.structure",
-	  "/ships/throg/throgT5.structure",
-	  "/ships/throg/throgT6.structure",
-	  "/ships/throg/throgT7.structure",
-	  "/ships/throg/throgT8.structure"
-	]
+  "path" : "/speciesShips/throg",
+  "value" : [
+    "/ships/throg/throgt0.structure",
+    "/ships/throg/throgt1.structure",
+    "/ships/throg/throgT2.structure",
+    "/ships/throg/throgT3.structure",
+    "/ships/throg/throgT4.structure",
+    "/ships/throg/throgT5.structure",
+    "/ships/throg/throgT6.structure",
+    "/ships/throg/throgT7.structure",
+    "/ships/throg/throgT8.structure"
+  ]
   },
   { "op" : "add",
-	"path" : "/speciesShips/mootant",
-	"value" : [
-	  "/ships/human/humant0.structure",
-	  "/ships/human/humant1.structure",
-	  "/ships/human/humanT2.structure",
-	  "/ships/human/humanT3.structure",
-	  "/ships/human/humanT4.structure",
-	  "/ships/human/humanT5.structure",
-	  "/ships/human/humanT6.structure",
-	  "/ships/human/humanT7.structure",
-	  "/ships/human/humanT8.structure"
-	]
+  "path" : "/speciesShips/mootant",
+  "value" : [
+    "/ships/human/humant0.structure",
+    "/ships/human/humant1.structure",
+    "/ships/human/humanT2.structure",
+    "/ships/human/humanT3.structure",
+    "/ships/human/humanT4.structure",
+    "/ships/human/humanT5.structure",
+    "/ships/human/humanT6.structure",
+    "/ships/human/humanT7.structure",
+    "/ships/human/humanT8.structure"
+  ]
   },
   { "op" : "add",
-	"path" : "/introInstance/mootant",
-	"value" : "mootantintro"
+  "path" : "/introInstance/mootant",
+  "value" : "mootantintro"
   }
-]	
+]  

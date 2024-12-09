@@ -1,12 +1,12 @@
 {
-	"name": "starpoundsblob",
-	"effectConfig" : {
-		"fillRange" : [3, 14]
-	},
-	"scripts": [
-		"starpoundssize.lua"
-	],
-	"defaultDuration": 100,
-	"label": "Blob",
-	"icon": "/interface/statuses/starpoundssize/starpoundsblob.png"
+  "name": "starpoundsblob",
+  "effectConfig" : {
+    "fillRange" : [3, 14]
+  },
+  "scripts": [
+    "starpoundssize.lua"
+  ],
+  "defaultDuration": 100,
+  "label": "Blob",
+  "icon": "/interface/statuses/starpoundssize/starpoundsblob.png"
 }

@@ -1,10 +1,10 @@
 {
-	"name": "starpoundsfood_drinkitem_noexperience",
-	"defaultDuration": 1,
-	"effectConfig" : {
-		"type" : "drinkItem_noExperience"
-	},
-	"scripts": [
-		"starpoundsfood.lua"
-	]
+  "name": "starpoundsfood_drinkitem_noexperience",
+  "defaultDuration": 1,
+  "effectConfig" : {
+    "type" : "drinkItem_noExperience"
+  },
+  "scripts": [
+    "starpoundsfood.lua"
+  ]
 }

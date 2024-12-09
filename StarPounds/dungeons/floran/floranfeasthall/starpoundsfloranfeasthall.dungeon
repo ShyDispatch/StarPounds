@@ -40,8 +40,8 @@
       ],
       "def" : [ "tmx", "lobby1.json" ]
     },
-	
-	//tunnels
+  
+  //tunnels
     {
       "name" : "tunnel1",
       "rules" : [
@@ -76,48 +76,48 @@
       "name" : "tunnelrightendgluttonist1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ],		
+        [ "ignorePartMaximumRule" ],    
         [ "doNotConnectToPart", [ "lobby1" ] ],
-        [ "doNotCombineWith", [ "tunnelleftendgluttonist1"] ]		
+        [ "doNotCombineWith", [ "tunnelleftendgluttonist1"] ]    
     ],
       "def" : [ "tmx", "tunnelrightendgluttonist1.json" ],
       "chance" : 0.5
-    },	
+    },  
     {
       "name" : "tunnelleftendgluttonist1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ],		
+        [ "ignorePartMaximumRule" ],    
         [ "doNotConnectToPart", [ "lobby1" ] ],
-        [ "doNotCombineWith", [ "tunnelrightendgluttonist1" ] ]		
+        [ "doNotCombineWith", [ "tunnelrightendgluttonist1" ] ]    
       ],
       "def" : [ "tmx", "tunnelleftendgluttonist1.json" ],
       "chance" : 0.5
-    },	
+    },  
     {
       "name" : "tunnelrightend1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ],		
+        [ "ignorePartMaximumRule" ],    
         [ "doNotConnectToPart", [ "lobby1" ] ],
-        [ "doNotCombineWith", [ "tunnelleftend1", "tunnelrightendgluttonist1" ] ]			
+        [ "doNotCombineWith", [ "tunnelleftend1", "tunnelrightendgluttonist1" ] ]      
     ],
       "def" : [ "tmx", "tunnelrightend1.json" ],
       "chance" : 0.5
-    },	
+    },  
     {
       "name" : "tunnelleftend1",
       "rules" : [
-        [ "maxSpawnCount", [1] ],	
-        [ "ignorePartMaximumRule" ],		
+        [ "maxSpawnCount", [1] ],  
+        [ "ignorePartMaximumRule" ],    
         [ "doNotConnectToPart", [ "lobby1" ] ],
-        [ "doNotCombineWith", [ "tunnelrightend1", "tunnelleftendgluttonist1" ] ]		
+        [ "doNotCombineWith", [ "tunnelrightend1", "tunnelleftendgluttonist1" ] ]    
       ],
       "def" : [ "tmx", "tunnelleftend1.json" ],
       "chance" : 0.5
-    },	
-	
-	//rooms
+    },  
+  
+  //rooms
     {
       "name" : "sidekitchen1",
       "rules" : [
@@ -133,7 +133,7 @@
         [ "maxSpawnCount", [1] ],
         [ "ignorePartMaximumRule" ],
         [ "doNotCombineWith", [ "sidekitchen1"] ]
-		
+    
       ],
       "def" : [ "tmx", "sidekitchen1alt.json" ]
     },
@@ -142,7 +142,7 @@
       "rules" : [
         [ "maxSpawnCount", [1] ],
         [ "ignorePartMaximumRule" ],
-        [ "doNotCombineWith", [ "sidekitchen2alt"] ]		
+        [ "doNotCombineWith", [ "sidekitchen2alt"] ]    
       ],
       "def" : [ "tmx", "sidekitchen2.json" ]
     },
@@ -159,24 +159,24 @@
       "name" : "sidekitchen3",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidekitchen3.json" ]
-    },	
+    },  
     {
       "name" : "sidekitchen4",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidekitchen4.json" ]
-    },	
-	
+    },  
+  
     {
       "name" : "sidefreezer1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidefreezer1.json" ]
     },
@@ -184,7 +184,7 @@
       "name" : "sidefreezer2",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidefreezer2.json" ]
     },
@@ -192,7 +192,7 @@
       "name" : "sidesmoker1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidesmoker1.json" ]
     },
@@ -200,7 +200,7 @@
       "name" : "sidesmoker2",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidesmoker2.json" ]
     },
@@ -208,7 +208,7 @@
       "name" : "sidesparringroom1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidesparringroom1.json" ]
     },
@@ -216,7 +216,7 @@
       "name" : "sidehoney1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidehoney1.json" ]
     },
@@ -224,7 +224,7 @@
       "name" : "sidehoney2",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidehoney2.json" ]
     },
@@ -232,7 +232,7 @@
       "name" : "sidehoney3",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidehoney3.json" ]
     },
@@ -240,7 +240,7 @@
       "name" : "sideweighingroom1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sideweighingroom1.json" ]
     },
@@ -248,7 +248,7 @@
       "name" : "sideweighingroom2",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sideweighingroom2.json" ]
     },
@@ -256,7 +256,7 @@
       "name" : "sidekennel1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidekennel1.json" ]
     },
@@ -264,7 +264,7 @@
       "name" : "sidekennel2",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidekennel2.json" ]
     },
@@ -272,7 +272,7 @@
       "name" : "sidefeastroom1",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidefeastroom1.json" ]
     },
@@ -280,7 +280,7 @@
       "name" : "sidefeastroom2",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidefeastroom2.json" ]
     },
@@ -288,7 +288,7 @@
       "name" : "sidefeastroom3",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidefeastroom3.json" ]
     },
@@ -296,17 +296,17 @@
       "name" : "sidefeastroom4",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "sidefeastroom4.json" ]
     },
 
-	//encounters
+  //encounters
     {
       "name" : "encounter1",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter1.json" ]
     },
@@ -314,7 +314,7 @@
       "name" : "encounter2",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter2.json" ]
     },
@@ -322,7 +322,7 @@
       "name" : "encounter3",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter3.json" ]
     },
@@ -330,7 +330,7 @@
       "name" : "encounter4",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter4.json" ]
     },
@@ -338,7 +338,7 @@
       "name" : "encounter5",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter5.json" ]
     },
@@ -346,7 +346,7 @@
       "name" : "encounter6",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter6.json" ]
     },
@@ -354,7 +354,7 @@
       "name" : "encounter7",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter7.json" ]
     },
@@ -362,7 +362,7 @@
       "name" : "encounter8",
       "rules" : [
         [ "maxSpawnCount", [4] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ]    
       ],
       "def" : [ "tmx", "encounter8.json" ]
     }

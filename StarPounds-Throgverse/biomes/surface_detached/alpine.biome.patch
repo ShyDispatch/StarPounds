@@ -1,14 +1,14 @@
 [
-	{
-		"op": "add",
-		"path": "/spawnProfile/groups/-",
-		"value":
-		{
-			"select": 1,
-			"pool":
-			[
-				[1, "starpoundsharpy"]
-			]
-		}
-	}
+  {
+    "op": "add",
+    "path": "/spawnProfile/groups/-",
+    "value":
+    {
+      "select": 1,
+      "pool":
+      [
+        [1, "starpoundsharpy"]
+      ]
+    }
+  }
 ]

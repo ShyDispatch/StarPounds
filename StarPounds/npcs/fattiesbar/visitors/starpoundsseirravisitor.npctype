@@ -14,19 +14,19 @@
     "starPounds_options": {
       "disablePrey": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
             "With so much good food here, I can hardly decide on where to start- I don't suppose you'd like to help?",
             "I'll have my summer bod ready in no time here! And maybe a bit extra for good measure.",
             "Have you seen the portions you can get here? They really know how to treat a lady!",
             "Care to help a hungry gal out? I certainly wouldn't mind the help of a snack such as yourself~"
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
 
   "identity" : {

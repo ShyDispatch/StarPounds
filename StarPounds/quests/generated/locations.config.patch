@@ -2,43 +2,43 @@
  {"op" : "add", 
   "path" : "/starpoundsfloranfeasthall",
   "value" : 
-	  {
-	    "entrance" : {
-	      "name" : "entrance to the feast hall",
-	      "tags" : [ "floran", "friendly"]
-	    },
-	    "depths" : {
-	      "name" : "depths of the feast hall",
-	      "tags" : [ "floran", "friendly"]
-	    }
-	  }
+    {
+      "entrance" : {
+        "name" : "entrance to the feast hall",
+        "tags" : [ "floran", "friendly"]
+      },
+      "depths" : {
+        "name" : "depths of the feast hall",
+        "tags" : [ "floran", "friendly"]
+      }
+    }
   },
  {"op" : "add", 
   "path" : "/gluttonist",
   "value" : 
-	  {
-	    "house" : {
-	      "name" : "weird floran hut",
-	      "tags" : [ "floran", "friendly"]
-	    },
-	    "cookout" : {
-	      "name" : "creepy floran cookout",
-	      "tags" : [ "floran", "friendly"]
-	    }
-	  }
+    {
+      "house" : {
+        "name" : "weird floran hut",
+        "tags" : [ "floran", "friendly"]
+      },
+      "cookout" : {
+        "name" : "creepy floran cookout",
+        "tags" : [ "floran", "friendly"]
+      }
+    }
   },  
  {"op" : "add", 
   "path" : "/starpoundsglitchponderouskeep",
   "value" : 
-	  {
-	    "entrance" : {
-	      "name" : "entrance to the ponderous keep",
-	      "tags" : [ "floran", "friendly"]
-	    },
-	    "depths" : {
-	      "name" : "depths of the ponderous keep",
-	      "tags" : [ "floran", "friendly"]
-	    }
-	  }
-  }			
+    {
+      "entrance" : {
+        "name" : "entrance to the ponderous keep",
+        "tags" : [ "floran", "friendly"]
+      },
+      "depths" : {
+        "name" : "depths of the ponderous keep",
+        "tags" : [ "floran", "friendly"]
+      }
+    }
+  }      
 ]

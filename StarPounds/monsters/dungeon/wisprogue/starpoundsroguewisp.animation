@@ -15,8 +15,8 @@
             "cycle" : 0.4,
             "mode" : "loop"
           },
-		  
-		  "chargewindup" : {
+      
+      "chargewindup" : {
             "frames" : 4,
             "cycle" : 0.3,
             "properties" : {
@@ -27,9 +27,9 @@
             "cycle" : 0.3,
             "properties" : {
               "immediateSound" : "/sfx/melee/swing_dagger.ogg"
-            			  
-			  
-			  }
+                    
+        
+        }
           },
           "firewindup" : {
             "frames" : 8,
@@ -41,14 +41,14 @@
             "frames" : 2,
             "cycle" : 0.2,
             "properties" : {
-			  }
+        }
           },
           "firewinddown" : {
             "frames" : 6,
             "cycle" : 0.25,
             "properties" : {
             }
-          }		  
+          }      
         }
       },
       "damage" : {
@@ -91,7 +91,7 @@
           "transformationGroups" : [ "body" ],
           "offset" : [0.0, 0.125],
           "zLevel" : 1
-		  
+      
         },
         "partStates" : {
           "body" : {
@@ -241,7 +241,7 @@
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
-        { "particle" : "wispflame" }		
+        { "particle" : "wispflame" }    
       ]
     },
     "captureParticles" : {

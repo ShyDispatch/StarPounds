@@ -55,7 +55,7 @@
             "winddownState" : "chargewinddown"
           }
         }
-		
+    
       ],
 
 
@@ -81,7 +81,7 @@
 
       "periodicActions" : [
 
-	  ],
+    ],
 
       "approachActions" : [
         {
@@ -120,14 +120,14 @@
             "xVelocity" : 8,
             "yVelocity" : 12
         }
-		}
+    }
       ],
 
       "concurrentActions" : [ ],
 
       "concurrentHostileActions" : [
 
-	  ]
+    ]
     },
 
     "touchDamage" : {

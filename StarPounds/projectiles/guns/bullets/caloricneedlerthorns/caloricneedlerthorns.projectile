@@ -42,13 +42,13 @@
         }
       ]
     },
-	{
+  {
       "action" : "projectile",
       "type" : "smallregularexplosion",
       "inheritDamageFactor" : 1,
-	  "config" : {
-	    "damageKind" : "caloric"
-	  }
+    "config" : {
+      "damageKind" : "caloric"
+    }
     }
   ],
   "actionOnCollide" : [

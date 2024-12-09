@@ -1,7 +1,7 @@
 {
   "input" : [
     { "item" : "rawbacon", "count" : 1 },
-    { "item" : "starpoundsbuttersnack", "count" : 1 }	
+    { "item" : "starpoundsbuttersnack", "count" : 1 }  
   ],
   "output" : { "item" : "starpoundsmeatfries", "count" : 1 },
   "groups" : [ "craftingfood", "sides" ]

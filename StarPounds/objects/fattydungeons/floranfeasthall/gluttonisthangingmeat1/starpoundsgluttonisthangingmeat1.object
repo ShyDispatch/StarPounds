@@ -24,7 +24,7 @@
       "imagePosition" : [-16, -32],
       "frames" : 1,
       "animationCycle" : 0.5,
-	  
+    
       "spaceScan" : 0.1,
       "anchors" : [ "top" ]
 

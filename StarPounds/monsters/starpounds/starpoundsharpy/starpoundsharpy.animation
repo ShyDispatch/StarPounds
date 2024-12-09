@@ -18,8 +18,8 @@
             "cycle" : 0.75,
             "mode" : "loop",
             "properties" : {
-              "immediateSoundRangeMultiplier" : 0.5		
-            },			  
+              "immediateSoundRangeMultiplier" : 0.5    
+            },        
             "frameProperties" : {
               "immediateSound" : [ "", "/sfx/starpounds/npc/starpoundsharpy_flap.ogg", "", "", "", "" ]
             }
@@ -31,7 +31,7 @@
             "transition" : "winduploop",
             "properties" : {
               "immediateSoundRangeMultiplier" : 0.5
-            },			  
+            },        
             "frameProperties" : {
               "immediateSound" : [ "", "/sfx/starpounds/npc/starpoundsharpy_flap.ogg", "", "" ]
             }
@@ -68,7 +68,7 @@
             "mode" : "loop",
             "properties" : {
               "immediateSoundRangeMultiplier" : 0.5
-            },					
+            },          
             "frameProperties" : {
               "immediateSound" : [ "", "/sfx/starpounds/npc/starpoundsharpy_flap.ogg", "", "", "", "" ]
             }
@@ -101,7 +101,7 @@
       "body" : {
         "properties" : {
           "transformationGroups" : [ "body" ],
-          "zLevel" : 2,		  
+          "zLevel" : 2,      
           "offset" : [0.25, -0.25]
         },
         "partStates" : {
@@ -145,7 +145,7 @@
       "head" : {
         "properties" : {
           "transformationGroups" : [ "body" ],
-          "zLevel" : 3,		  
+          "zLevel" : 3,      
           "offset" : [0.25, -0.25]
         },
         "partStates" : {

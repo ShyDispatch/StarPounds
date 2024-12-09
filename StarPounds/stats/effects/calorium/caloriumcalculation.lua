@@ -21,13 +21,13 @@ function decreaseWeightProgress(weight, step)
 end
 
 function getSize(weight)
-	local sizeIndex = 0
-	-- Go through all sizes (smallest to largest) to find which size.
-	for i in ipairs(sizes) do
-		if weight >= sizes[i].weight then
-			sizeIndex = i
-		end
-	end
+  local sizeIndex = 0
+  -- Go through all sizes (smallest to largest) to find which size.
+  for i in ipairs(sizes) do
+    if weight >= sizes[i].weight then
+      sizeIndex = i
+    end
+  end
 
-	return sizes[sizeIndex], sizeIndex
+  return sizes[sizeIndex], sizeIndex
 end

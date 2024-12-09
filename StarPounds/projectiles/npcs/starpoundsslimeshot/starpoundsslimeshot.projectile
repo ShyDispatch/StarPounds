@@ -32,7 +32,7 @@
         }
       ]
     },
-	{
+  {
       "action" : "config",
       "file" : "/projectiles/explosions/acidspitexplosion/acidspitexplosion.config"
     }

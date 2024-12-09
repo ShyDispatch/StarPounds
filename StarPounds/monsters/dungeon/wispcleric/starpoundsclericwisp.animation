@@ -25,22 +25,22 @@
           "pray" : {
             "frames" : 4,
             "cycle" : 0.6,
-            "mode" : "loop",			
+            "mode" : "loop",      
             "properties" : {
 //              "persistentSound" : "/sfx/melee/travelingslash_fire1.ogg",
 //              "persistentSoundStopTime" : 1.0
-			  }
+        }
           },
           "winddown" : {
             "frames" : 5,
             "cycle" : 0.4,
             "mode" : "transition",
             "transition" : "idle"
-          }		  
-		  
+          }      
+      
         }
       },
-	  
+    
       "damage" : {
         "priority" : 3,
         "default" : "none",
@@ -81,7 +81,7 @@
           "transformationGroups" : [ "body" ],
           "offset" : [0.0, 0.125],
           "zLevel" : 1
-		  
+      
         },
         "partStates" : {
           "body" : {
@@ -112,7 +112,7 @@
                 "image" : "<partImage>:winddown.<frame>"
               }
             }
-			
+      
           },
           "damage" : {
             "stunned" : {
@@ -159,7 +159,7 @@
                 "image" : "<partImage>:winddown.<frame>"
               }
           }
-		  },
+      },
           "damage" : {
             "stunned" : {
               "properties" : {
@@ -216,7 +216,7 @@
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
         { "particle" : "wispflame" },
-        { "particle" : "wispflame" }		
+        { "particle" : "wispflame" }    
       ]
     },
     "captureParticles" : {

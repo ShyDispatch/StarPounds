@@ -23,7 +23,7 @@
     {
       "image" : "naomibutt.png:default.default",
       "imagePosition" : [-16, -24],
-	  
+    
       "direction" : "right",
 
       "spaceScan" : 0.1,

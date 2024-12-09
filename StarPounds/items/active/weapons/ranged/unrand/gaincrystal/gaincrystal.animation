@@ -7,7 +7,7 @@
           "idle" : {
             "properties" : {
               "lightsOff" : ["pink"],
-              "lightsOn" : ["purple"]			  
+              "lightsOn" : ["purple"]        
             }
           },
           "squirm" : {
@@ -17,7 +17,7 @@
             "properties" : {
               "lightsOff" : ["pink"],
               "lightsOn" : ["purple"]
-			  
+        
             }
           },
           "fire" : {

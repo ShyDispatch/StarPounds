@@ -13,11 +13,11 @@
     "starPounds_options": {
       "milky": true
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
             "Don't mind me~ Just browsing what's on offer... Hm? Vendors?",
             "I should head back soon, my next batch of rice should've grown by now.",
             "Another broken pump... Maybe they'll start stocking industrial ones soon...",
@@ -32,10 +32,10 @@
             "Wait, why did I teleport here again?",
             "I never know why this place keeps being so alluring to hang around... probably all the friendly faces.",
             "You ever just want to take a bite out of a block of aerogel? I think about it a lot."
-					]
-				}
-			}
-		}
+          ]
+        }
+      }
+    }
   },
 
   "identity":  {

@@ -136,7 +136,7 @@
     "inventoryIcon" : "erchipudgesprayer_l6.png",
     "animationParts" : {
       "middle" : "erchipudgesprayer_l6.png",
-	  "middleFullbright" : "erchipudgesprayerlit_l6.png"
+    "middleFullbright" : "erchipudgesprayerlit_l6.png"
     },
     "shortdescription" : "Erchipudge Sprayer ^yellow;^reset;"
   }

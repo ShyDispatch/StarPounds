@@ -1,11 +1,11 @@
 {
-	"name": "starpoundshoneysquirt",
-	"effectConfig": {
-		"statusEffects": [{"effect": "starpoundsfood", "duration": 7.5}, {"effect": "starpoundsbloat", "duration": 2.5}, {"effect": "starpoundshoneyslow", "duration": 1}],
-		"sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 3}, {"effect": "starpoundsbloat", "duration": 7}, {"effect": "starpoundshoneyslow", "duration": 1}]
-	},
-	"defaultDuration": 1,
-	"scripts": [
-		"starpoundssquirt.lua"
-	]
+  "name": "starpoundshoneysquirt",
+  "effectConfig": {
+    "statusEffects": [{"effect": "starpoundsfood", "duration": 7.5}, {"effect": "starpoundsbloat", "duration": 2.5}, {"effect": "starpoundshoneyslow", "duration": 1}],
+    "sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 3}, {"effect": "starpoundsbloat", "duration": 7}, {"effect": "starpoundshoneyslow", "duration": 1}]
+  },
+  "defaultDuration": 1,
+  "scripts": [
+    "starpoundssquirt.lua"
+  ]
 }

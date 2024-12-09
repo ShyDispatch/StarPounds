@@ -3,30 +3,30 @@
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Gluttonist Visitor",
   
-	"identity" : {
+  "identity" : {
      "species" : "floran"
-	 },
+   },
 
   "scriptConfig" : {
   "starPounds_skills": {
       "minimumSize": [2, 5]
     },
-		"dialogMode": "tutorial",
-		"dialog": {
-			"converse": {
-				"default": {
-					"default": [
-						"Floran heard thisss place hasss fattening mealsss.",
-						"Floran likesss to ssee like minded fattiesss not from Gluttonissst tribe.",
-						"Floran wantsss to be bessst fatty like Champion.",
-						"In the Gluttonissst tribe, ssstrength comess from fat.",
-						"Never hasss Floran heard of a Throg, Floran likesss them.",
-						"Gluttonissst Floranss aren't like other Floransss, much ssstronger.",
-						"That big Floran, ^#aa99dd;Fayane^reset;, ssshe'd make good Gluttonissst Champion."
-					]
-				}
-			}
-		}
+    "dialogMode": "tutorial",
+    "dialog": {
+      "converse": {
+        "default": {
+          "default": [
+            "Floran heard thisss place hasss fattening mealsss.",
+            "Floran likesss to ssee like minded fattiesss not from Gluttonissst tribe.",
+            "Floran wantsss to be bessst fatty like Champion.",
+            "In the Gluttonissst tribe, ssstrength comess from fat.",
+            "Never hasss Floran heard of a Throg, Floran likesss them.",
+            "Gluttonissst Floranss aren't like other Floransss, much ssstronger.",
+            "That big Floran, ^#aa99dd;Fayane^reset;, ssshe'd make good Gluttonissst Champion."
+          ]
+        }
+      }
+    }
   },
 
   "items" : {

@@ -18,7 +18,7 @@
     "portraits" : {},
     "descriptions" : {},
     "turnInEntityUid" : "starpoundsfayane",
-    "instanceWorld" : "InstanceWorld:fattiesbar",	
+    "instanceWorld" : "InstanceWorld:fattiesbar",  
 
     "targetValue" : 50,
     "objectValues" : {
@@ -86,7 +86,7 @@
         "senderName" : "Fayane",
         "text" : "Guessss you don't need to learn the ropes.",
         "portraitImage" : "/interface/chatbubbles/fayane.png:<frame>"
-      },	  
+      },    
       "complete" : {
         "messageId" : "fattiesbarend",
         "type" : "quest",

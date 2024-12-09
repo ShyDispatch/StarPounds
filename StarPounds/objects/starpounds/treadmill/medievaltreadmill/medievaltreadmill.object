@@ -26,7 +26,7 @@
       "direction" : "left",
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
-	    "collision" : "platform",
+      "collision" : "platform",
       "collisionSpaces" : [ [-1, 0], [0, 0], [1, 0], [2, 0], [3, 0] ]
     },
     {
@@ -36,7 +36,7 @@
       "direction" : "right",
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
-	    "collision" : "platform",
+      "collision" : "platform",
       "collisionSpaces" : [ [-1, 0], [0, 0], [1, 0], [2, 0], [3, 0] ]
     }
   ],

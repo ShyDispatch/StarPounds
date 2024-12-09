@@ -11,6 +11,8 @@ function debug:update(dt)
 		local data = storage.starPounds
 		local stomach = starPounds.stomach
 		local breasts = starPounds.moduleFunc("breasts", "get")
+    local gurgleTimer = starPounds.modules.stomach and starPounds.modules.stomach.gurgleTimer or 0
+    local rumbleTimer = starPounds.modules.stomach and starPounds.modules.stomach.rumbleTimer or 0
 		local accessory = data.accessory
     local experienceConfig = starPounds.moduleFunc("experience", "config")
 		self:format("accessory", "<c:1>Accessory: <c:3>%s", accessory and accessory.name or "None")
@@ -19,7 +21,7 @@ function debug:update(dt)
 		self:format("stomachContents", "<c:1>Contents: <c:3>%.1f <c:1>Food: <c:3>%.1f <c:1>Entities: <c:3>%d", stomach.contents, stomach.food, #data.stomachEntities)
 		self:format("breasts", "<c:1>Type: <c:3>%s <c:1>Capacity: <c:3>%.1f/%.1f <c:1>Contents: <c:3>%.1f", breasts.type, breasts.contents, breasts.capacity, data.breasts)
 		self:format("size", "<c:1>Size: <c:3>%s <c:1>Weight: <c:3>%.2flb <c:1>Multiplier: <c:3>%.1fx", (starPounds.currentSize.size == "" and "none" or starPounds.currentSize.size)..(starPounds.currentVariant and ": "..starPounds.currentVariant or ""), data.weight, starPounds.weightMultiplier)
-		self:format("timers", "<c:1>Gurgle: <c:3>%.1f <c:1>Rumble: <c:3>%.1f", starPounds.gurgleTimer or 0, starPounds.rumbleTimer or 0)
+		self:format("timers", "<c:1>Gurgle: <c:3>%.1f <c:1>Rumble: <c:3>%.1f", gurgleTimer or 0, rumbleTimer or 0)
 		self:format("trait", "<c:1>Trait: <c:3>%s", data.trait or "None")
 	end
 end

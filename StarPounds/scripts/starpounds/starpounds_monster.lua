@@ -51,7 +51,6 @@ function starPoundsInit()
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.stomach = starPounds.getStomach()
 	starPounds.currentVariant = starPounds.getChestVariant()
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
@@ -84,12 +83,10 @@ function update(dt)
 		starPounds.statCache = {}
 		starPounds.statCacheTimer = starPounds.settings.statCacheTimer
 	end
-	starPounds.stomach = starPounds.getStomach()
 	-- Checks
 	starPounds.voreCheck()
 	-- Actions.
 	starPounds.eaten(dt)
-	starPounds.digest(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
 	-- Modules.

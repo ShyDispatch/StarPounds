@@ -58,7 +58,7 @@ function fizzy:shake(duration)
   -- Remove duration for double the air.
   starPounds.feed(duration * self.airAmount * self.fizzMultiplier * 2, "air")
   self.data.duration = math.max(self.data.duration - duration, 0)
-  starPounds.rumble(self.volumeMultiplier)
+  starPounds.moduleFunc("stomach", "rumble", self.volumeMultiplier)
 end
 -- Add the effect.
 starPounds.scriptedEffects.fizzy = fizzy

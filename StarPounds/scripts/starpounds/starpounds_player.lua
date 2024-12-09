@@ -40,7 +40,6 @@ function init()
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.stomach = starPounds.getStomach()
 	starPounds.setWeight(storage.starPounds.weight)
 	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
@@ -83,7 +82,6 @@ function update(dt)
 	starPounds.damageListener:update()
 	-- Check if the entity has gone up a size.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
-	starPounds.stomach = starPounds.getStomach()
 	starPounds.currentVariant = starPounds.getChestVariant(modifierSize or starPounds.currentSize)
 	starPounds.weight = storage.starPounds.weight
 	starPounds.level = storage.starPounds.level
@@ -125,7 +123,6 @@ function update(dt)
 	starPounds.equipCheck(starPounds.currentSize)
 	-- Actions.
 	starPounds.eaten(dt)
-	starPounds.digest(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
 	starPounds.updateStats(starPounds.optionChanged, dt)
@@ -136,16 +133,6 @@ function update(dt)
 	oldVariant = starPounds.currentVariant
 	oldWeightMultiplier = starPounds.weightMultiplier
 
-	if storage.starPounds.enabled then
-		if starPounds.stomach.contents > storage.starPounds.stomachLerp and (starPounds.stomach.contents - storage.starPounds.stomachLerp) > 1 then
-			storage.starPounds.stomachLerp = math.round(util.lerp(5 * dt, storage.starPounds.stomachLerp, starPounds.stomach.contents), 4)
-		else
-			storage.starPounds.stomachLerp = math.round(util.lerp(10 * dt, storage.starPounds.stomachLerp, starPounds.stomach.contents), 4)
-		end
-		if math.abs(starPounds.stomach.contents - storage.starPounds.stomachLerp) < 1 then
-			storage.starPounds.stomachLerp = starPounds.stomach.contents
-		end
-	end
 	starPounds.optionChanged = false
 end
 

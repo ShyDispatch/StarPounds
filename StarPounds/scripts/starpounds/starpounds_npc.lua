@@ -55,7 +55,6 @@ function init()
 	starPounds.parseSkills()
 	starPounds.parseStats()
 	starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-	starPounds.stomach = starPounds.getStomach()
 	starPounds.setWeight(storage.starPounds.weight)
 	starPounds.moduleInit(starPounds.type)
 	starPounds.effectInit()
@@ -88,7 +87,6 @@ function update(dt)
 	end
 	-- Check if the entity has gone up a size.
 	starPounds.currentSize, starPounds.currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
-	starPounds.stomach = starPounds.getStomach()
 	starPounds.currentVariant = starPounds.getChestVariant(modifierSize or starPounds.currentSize)
 	starPounds.level = storage.starPounds.level
 	starPounds.experience = storage.starPounds.experience
@@ -116,7 +114,6 @@ function update(dt)
 	starPounds.equipCheck(starPounds.currentSize)
 	-- Actions.
 	starPounds.eaten(dt)
-	starPounds.digest(dt)
 	-- Stat/status updating stuff.
 	starPounds.updateEffects(dt)
 	starPounds.updateStats(nil, dt)

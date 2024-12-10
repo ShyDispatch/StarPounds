@@ -72,7 +72,48 @@ You can craft an Infusion Table at the [Inventor's Table](https://starbounder.or
 
 #### How do I get Accessories?
 
-Accessories are found as random loot, and themed accessories have a higher chance to spawn in some of the mod's dungeons. You can also purchase jewellery boxes from random Throg merchants you encounter.
+Accessories are found as random loot, and themed accessories have a higher chance to spawn in some of the mod's dungeons. You can also purchase jewellery boxes from random Throg merchants you encounter, or directly from Mossarrow in the Hog Diner.
+
+#### Can I use Big Fatties with Starpounds?
+
+Big Fatties is the predecessor of Starpounds, and has undergone many changes such as an entire rewrite of the code. To summarize, it is the outdated version of Starpounds and cannot be used together.
+
+#### Can I use Big Fatties addons with Starpounds?
+
+Any unofficial addons made for Big Fatties will not work correctly with Starpounds.
+
+#### The Quickbar for Starpounds doesn't do anything when I click on it.
+
+You have either Quickbar Mini, Stardust Core, Community Framework, or any other potential Quickbar alternative that is not Stardust Lite. Any of these will conflict with Stardust Lite, and Starpounds depends on the Metagui that Stardust Lite has over other Quickbar mods.
+
+#### How do I fill the Feeding Tube?
+
+Drop an item of liquid, not pouring liquid into the world but the item in your inventory, in front of the Feeding Tube. Either by dragging it out of your inventory or using the Drop Item key while holding it. Usually the [Q] button by default. If the dropped item is not in front of the Feeding Tube it may not be picked up.
+
+#### How do I get to the Hog Diner?
+
+The Hog Diner will be available to warp to from your ships teleporter.
+
+#### Clothing won't grow with size
+
+Make sure clothing is put into the cosmetic armor slots of your ui, the place where the fat armors show up. If it doesn't stick in, that means that piece of clothing is currently not supported for weight gain.
+
+#### How do I vore?
+
+Once you unlock a vore skill, you can either use the hotkey for it if you have either OpenStarbound or StarExtensions installed. Or click on the mouth button that shows up in any vore skill tree to get the vore tool.
+
+#### Food doesn't give xp or cause weight gain
+
+Do prevent issues with mods overwriting the food lua, or not having to patch every modded food item. A script is applied to all food items whenever it's clicked on. This means the script will not run if you eat food that pops up in your hotbar that you didn't click.
+
+#### Does Starpounds work with Cutebound?
+
+No. It Overhauls too much and causes inconsistences.
+We have a modified version that does some reversions and some improvements.
+
+#### Why won't npcs get fatter/why can't I eat npcs at the Outpost?
+
+Npcs at the Outpost, Hog Diner, or any other form of hub area generally has protection that prevents them from being fattened up or vored.
 
 #### What species are supported by Extended Races?
 Currently, the following species are supported:
@@ -81,8 +122,9 @@ Currently, the following species are supported:
 - [Aegi](https://steamcommunity.com/sharedfiles/filedetails/?id=850109963)
 - [Saturnian](https://steamcommunity.com/workshop/filedetails/?id=1103027918)
 - [Arcanian](https://steamcommunity.com/sharedfiles/filedetails/?id=2359135864)
-- [Shoggoth (Shoggoth & Friends Beta)](https://steamcommunity.com/sharedfiles/filedetails/?id=2066322624)
-- [Nightgaunt (Shoggoth & Friends Beta)](https://steamcommunity.com/sharedfiles/filedetails/?id=2066322624)
+- [Shoggoth (Shoggoth & Friends Beta)](https://github.com/ShyDispatch/StarPounds)
+- [Mindflayer (Shoggoth & Friends Beta)](https://github.com/ShyDispatch/StarPounds)
+- [Nightgaunt (Shoggoth & Friends Beta)](https://github.com/ShyDispatch/StarPounds)
 - [NostOS](https://steamcommunity.com/workshop/filedetails/?id=2740791476)
 - [Kitsune](https://steamcommunity.com/workshop/filedetails/?id=1396610566)
 - [Halfsea](https://steamcommunity.com/workshop/filedetails/?id=1396610566)
@@ -90,9 +132,25 @@ Currently, the following species are supported:
 - [Angel](https://steamcommunity.com/workshop/filedetails/?id=1686520464)
 - [Goblin](https://steamcommunity.com/sharedfiles/filedetails/?id=2925162796)
 - [Oni](https://steamcommunity.com/sharedfiles/filedetails/?id=2978143703)
+- [Merling](https://steamcommunity.com/sharedfiles/filedetails/?id=3287386033)
+- [Sharkling](https://steamcommunity.com/sharedfiles/filedetails/?id=3287386033)
+- [Springeonton](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Brokenton](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Kanashimi](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Deerclops](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Void Glitches](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Nightmares](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Healon](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Narfin](https://steamcommunity.com/sharedfiles/filedetails/?id=2865339320)
+- [Fennix](https://steamcommunity.com/sharedfiles/filedetails/?id=3194891396)
+- [Eevee](https://steamcommunity.com/sharedfiles/filedetails/?id=3194891396)
 - [Glaceon](https://steamcommunity.com/sharedfiles/filedetails/?id=2012704863)
+- [Vaporeon](https://steamcommunity.com/sharedfiles/filedetails/?id=3283738255)
+- [Sylveon](https://steamcommunity.com/sharedfiles/filedetails/?id=2843385916)
 - [Lucario](https://steamcommunity.com/sharedfiles/filedetails/?id=1356955138)
 - [Zoroark](https://steamcommunity.com/sharedfiles/filedetails/?id=2811625141)
 - [Hisuian Zoroark](https://steamcommunity.com/sharedfiles/filedetails/?id=2813977483)
 - [Felin](https://steamcommunity.com/sharedfiles/filedetails/?id=729429063)
+- [Offworlder](https://steamcommunity.com/sharedfiles/filedetails/?id=1380631785)
+- [Dark Latex](https://steamcommunity.com/sharedfiles/filedetails/?id=1818502101)
 - [Troll](https://steamcommunity.com/sharedfiles/filedetails/?id=1301907771)

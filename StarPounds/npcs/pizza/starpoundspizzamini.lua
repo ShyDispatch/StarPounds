@@ -131,8 +131,8 @@ function update(dt)
     local entities = world.entityQuery(mcontroller.position(), 1, {order = "nearest", includedTypes = {"player", "npc"}, withoutEntityId = entity.id()}) or jarray()
     local eatOptions = {ignoreProtection = true, ignoreSkills = true, ignoreCapacity = true, ignoreEnergyRequirment = true, energyMultiplier = 0, noSwallowSound = true}
     for _, target in ipairs(entities) do
-      if starPounds.eatEntity(target, eatOptions, true) then
-        starPounds.eatEntity(target, eatOptions)
+      if starPounds.moduleFunc("pred", "eat", target, eatOptions, true) then
+        starPounds.moduleFunc("pred", "eat", target, eatOptions)
         break
       end
     end

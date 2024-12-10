@@ -52,8 +52,6 @@ function update(dt)
     starPounds.statCache = {}
     starPounds.statCacheTimer = starPounds.settings.statCacheTimer
   end
-  -- Checks
-  starPounds.voreCheck()
   -- Stat/status updating stuff.
   starPounds.updateEffects(dt)
   -- Modules.

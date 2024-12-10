@@ -65,7 +65,6 @@ function update(dt)
     end
   end
   -- Checks
-  starPounds.voreCheck()
   starPounds.equipCheck(starPounds.currentSize)
   -- Stat/status updating stuff.
   starPounds.updateEffects(dt)

@@ -4,7 +4,7 @@ function prey:init()
   message.setHandler("starPounds.getEaten", function(_, _, ...) return self:swallowed(...) end)
   message.setHandler("starPounds.getReleased", function(_, _, ...) return self:released(...) end)
   message.setHandler("starPounds.getDigested", function(_, _, ...) return self:digesting(...) end)
-  message.setHandler("starPounds.predEaten", function(_, _, ...) return self:newPred(...) end)
+  message.setHandler("starPounds.newPred", function(_, _, ...) return self:newPred(...) end)
 end
 
 function prey:update(dt)
@@ -313,7 +313,7 @@ function prey:digesting(digestionRate, protectionMultiplier)
   -- Remove the health.
   status.overConsumeResource("health", amount)
   if not status.resourcePositive("health") then
-    world.sendEntityMessage(storage.starPounds.pred, "starPounds.digestEntity", entity.id(), self:createDrops(), storage.starPounds.stomachEntities)
+    world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyDigested", entity.id(), self:createDrops(), storage.starPounds.stomachEntities)
     -- Player stuff.
     if starPounds.type == "player" then
       if starPounds.hasOption("spectatePred") then

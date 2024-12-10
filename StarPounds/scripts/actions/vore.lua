@@ -1,7 +1,7 @@
 -- param entity
 function tryEatEntity(args, board)
   if args.entity == nil then return false end
-  return starPounds.eatEntity(args.entity)
+  return starPounds.moduleFunc("pred", "eat", args.entity)
 end
 
 -- param entity

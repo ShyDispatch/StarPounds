@@ -63,7 +63,6 @@ function update(dt)
     starPounds.moduleFunc("trackers", "createStatuses")
   end
   -- Checks
-  starPounds.voreCheck()
   starPounds.equipCheck(starPounds.currentSize)
   -- Stat/status updating stuff.
   starPounds.updateEffects(dt)
@@ -79,7 +78,7 @@ function update(dt)
 end
 
 function uninit()
-  starPounds.releaseEntity(nil, true)
+  starPounds.moduleFunc("pred", "release", nil, true)
   starPounds.moduleUninit()
   starPounds.backup()
 end

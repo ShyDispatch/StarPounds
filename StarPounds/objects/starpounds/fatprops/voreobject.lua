@@ -63,6 +63,7 @@ starPounds = {
     -- Need to update this whole script to use modules at some point.
     starPounds.settings.minimumGurgleTime = 5
     starPounds.settings.gurgleTime = 30
+    starPounds.settings.voreDigestTimer = 0.25
   end,
   -- Mod functions
   ----------------------------------------------------------------------------------
@@ -230,7 +231,7 @@ starPounds = {
     -- Ditto but vore.
     message.setHandler("starPounds.eatEntity", simpleHandler(starPounds.eatEntity))
     message.setHandler("starPounds.ateEntity", simpleHandler(starPounds.ateEntity))
-    message.setHandler("starPounds.digestEntity", simpleHandler(starPounds.digestEntity))
+    message.setHandler("starPounds.preyDigested", simpleHandler(starPounds.digestEntity))
     message.setHandler("starPounds.preyStruggle", simpleHandler(starPounds.preyStruggle))
     message.setHandler("starPounds.releaseEntity", simpleHandler(starPounds.releaseEntity))
     -- sounds

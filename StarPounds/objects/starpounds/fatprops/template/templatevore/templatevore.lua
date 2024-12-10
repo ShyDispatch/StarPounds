@@ -100,6 +100,10 @@ starPounds = {
   init = function()
     starPounds.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
     starPounds.baseData = root.assetJson("/scripts/starpounds/starpounds.config:baseData")
+    -- Need to update this whole script to use modules at some point.
+    starPounds.settings.minimumGurgleTime = 5
+    starPounds.settings.gurgleTime = 30
+    starPounds.settings.voreDigestTimer = 0.25
   end,
   -- Mod functions
   ----------------------------------------------------------------------------------

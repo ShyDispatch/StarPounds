@@ -149,7 +149,7 @@ function stomach:digest(dt, isGurgle, isBelch)
       self.voreDigestTimer = math.max((self.voreDigestTimer or 0) - dt, 0)
       if self.voreDigestTimer == 0 then
         self.voreDigestTimer = self.data.voreDigestTimer
-        self:voreDigest(self.data.voreDigestTimer + diff)
+        starPounds.moduleFunc("pred", "digest", self.data.voreDigestTimer + diff)
       end
     end
     -- Gurgle stuff.
@@ -165,7 +165,7 @@ function stomach:digest(dt, isGurgle, isBelch)
   else
     if not starPounds.hasOption("disablePredDigestion") then
       -- 25% strength for vore digestion on gurgles.
-      self:voreDigest(dt * 0.25)
+      starPounds.moduleFunc("pred", "digest", dt * 0.25)
     end
   end
 
@@ -286,26 +286,6 @@ function stomach:rumble(volume)
   if starPounds.hasOption("disableRumbles") then return end
   -- Rumble sound.
   starPounds.moduleFunc("sound", "play", "rumble", math.max(math.min(volume, 2), 0) * 0.75, (math.random(90,110)/100))
-end
-
-function stomach:voreDigest(dt)
-  -- Don't do anything if the mod is disabled.
-  if not storage.starPounds.enabled then return end
-  -- Argument sanitisation.
-  dt = math.max(tonumber(dt) or 0, 0)
-  if dt == 0 then return end
-  -- Don't do anything if disabled.
-  if starPounds.hasOption("disablePredDigestion") then return end
-  -- Don't do anything if there's no eaten entities.
-  if not (#storage.starPounds.stomachEntities > 0) then return end
-  -- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
-  local vorePenalty = math.min(1 + math.max(self.stomach.fullness - starPounds.settings.thresholds.strain.starpoundsstomach3, 0), 3)
-  local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
-  local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
-  -- Reduce health of all entities.
-  for _, prey in pairs(storage.starPounds.stomachEntities) do
-    world.sendEntityMessage(prey.id, "starPounds.getDigested", (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
-  end
 end
 
 function stomach:sloshing(dt)

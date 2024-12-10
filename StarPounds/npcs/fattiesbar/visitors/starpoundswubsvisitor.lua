@@ -10,11 +10,11 @@ function init()
   end
 
   -- Ignore world protection.
-  local eatEntity_old = starPounds.eatEntity
-  starPounds.eatEntity = function(preyId, options, check)
+  starPounds.modules.pred.eat_old = starPounds.modules.pred.eat
+  function starPounds.modules.pred:eat(preyId, options, check)
     options = type(options) == "table" and options or {}
     options.ignoreProtection = true
     options.ignoreCapacity = true
-    return eatEntity_old(preyId, options, check)
+    return self:eat_old(preyId, options, check)
   end
 end

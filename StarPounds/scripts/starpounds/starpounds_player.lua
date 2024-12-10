@@ -28,9 +28,9 @@ function init()
   starPounds.parseSkills()
   starPounds.parseStats()
   starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
-  starPounds.setWeight(storage.starPounds.weight)
   starPounds.moduleInit({"humanoid", "player", "vore"})
   starPounds.effectInit()
+  starPounds.setWeight(storage.starPounds.weight)
 end
 
 function update(dt)

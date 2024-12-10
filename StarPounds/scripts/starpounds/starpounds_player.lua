@@ -29,7 +29,7 @@ function init()
   starPounds.parseStats()
   starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
   starPounds.setWeight(storage.starPounds.weight)
-  starPounds.moduleInit({"humanoid", "player"})
+  starPounds.moduleInit({"humanoid", "player", "vore"})
   starPounds.effectInit()
 end
 
@@ -65,8 +65,6 @@ function update(dt)
   -- Checks
   starPounds.voreCheck()
   starPounds.equipCheck(starPounds.currentSize)
-  -- Actions.
-  starPounds.eaten(dt)
   -- Stat/status updating stuff.
   starPounds.updateEffects(dt)
   starPounds.updateStats(starPounds.optionChanged, dt)

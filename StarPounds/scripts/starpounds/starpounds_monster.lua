@@ -23,7 +23,7 @@ function starPoundsInit()
   starPounds.accessoryModifiers = starPounds.getAccessoryModifiers()
   starPounds.level = storage.starPounds.level
   starPounds.experience = storage.starPounds.experience
-  starPounds.moduleInit("monster")
+  starPounds.moduleInit({"monster", "vore"})
   starPounds.effectInit()
   if not starPounds.getTrait() then
     starPounds.setTrait(config.getParameter("starPounds_trait"))
@@ -54,8 +54,6 @@ function update(dt)
   end
   -- Checks
   starPounds.voreCheck()
-  -- Actions.
-  starPounds.eaten(dt)
   -- Stat/status updating stuff.
   starPounds.updateEffects(dt)
   -- Modules.

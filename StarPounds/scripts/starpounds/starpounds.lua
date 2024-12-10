@@ -37,20 +37,17 @@ starPounds.moduleFunc = function(name, func, ...)
   end
 end
 
-starPounds.moduleInit = function(entityType)
+starPounds.moduleInit = function(moduleGroups)
   starPounds.modules = starPounds.modules or {}
-  local moduleString = "/scripts/starpounds/modules/%s.lua"
-  for i = 1, #starPounds.settings.modules.default do
-    require(string.format(moduleString, starPounds.settings.modules.default[i]))
-    local module = starPounds.modules[starPounds.settings.modules.default[i]]
-    module:moduleInit()
-  end
-  -- Entity specific modules.
-  if entityType then
-    for i = 1, #starPounds.settings.modules[entityType] do
-      require(string.format(moduleString, starPounds.settings.modules[entityType][i]))
-      local module = starPounds.modules[starPounds.settings.modules[entityType][i]]
-      module:moduleInit()
+  local modulePath = "/scripts/starpounds/modules/%s.lua"
+  if moduleGroups then
+    if type(moduleGroups) == "string" then moduleGroups = {moduleGroups} end
+    for _, moduleGroup in ipairs(moduleGroups) do
+      for i = 1, #starPounds.settings.modules[moduleGroup] do
+        require(string.format(modulePath, starPounds.settings.modules[moduleGroup][i]))
+        local module = starPounds.modules[starPounds.settings.modules[moduleGroup][i]]
+        module:moduleInit()
+      end
     end
   end
 end
@@ -70,8 +67,8 @@ end
 starPounds.module = {}
 function starPounds.module:new(name)
   local module = {}
-  local moduleString = "/scripts/starpounds/modules/%s.config"
-  module.data = root.assetJson(string.format(moduleString, name))
+  local modulePath = "/scripts/starpounds/modules/%s.config"
+  module.data = root.assetJson(string.format(modulePath, name))
   setmetatable(module, extend(self))
   return module
 end
@@ -189,41 +186,6 @@ starPounds.spawnMouthProjectile = function(actions, count)
     timeToLive = 5/60,
     periodicActions = {{action = "loop", time = 0, ["repeat"] = false, count = count, body = actions}}
   })
-end
-
-starPounds.updateFoodItem = function(item)
-  if configParameter(item, "foodValue") and not configParameter(item, "starpounds_effectApplied", false) then
-    local experienceBonus = starPounds.settings.foodExperienceBonus
-    local effects = configParameter(item, "effects", jarray())
-
-    if not effects[1] then
-      table.insert(effects, jarray())
-    end
-
-    -- Set the food type.
-    local category = configParameter(item, "category", ""):lower()
-    local foodType = (category == "drink") and "drink" or "food"
-    local foodValue = configParameter(item, "foodValue", 0)
-    local disableExperience = configParameter(item, "starpounds_disableExperience", false)
-
-    local rarity = configParameter(item, "rarity", "common"):lower()
-    local bonusExperience = foodValue * (experienceBonus[rarity] or 0)
-    table.insert(effects[1], {
-      effect = string.format("starpoundsfood_%sitem%s", foodType, disableExperience and "_noexperience" or ""),
-      duration = foodValue
-    })
-    if not disableExperience and bonusExperience > 0 then
-      table.insert(effects[1], {effect = "starpoundsfood_bonusexperience", duration = bonusExperience})
-    end
-
-    item.parameters.starpounds_effectApplied = true
-    item.parameters.effects = effects
-    item.parameters.starpounds_foodValue = foodValue
-    item.parameters.foodValue = 0
-
-    return item
-  end
-  return false
 end
 
 starPounds.updateStats = function(force, dt)
@@ -938,8 +900,8 @@ end
 -- world.entitySpecies can be unreliable on the first tick.
 starPounds.getSpecies = function()
   if storage.starPounds.overrideSpecies then return storage.starPounds.overrideSpecies end
-  if player and player.species() then return player.species() end
-  if npc and npc.species() then return npc.species() end
+  if player and player.species then return player.species() end
+  if npc and npc.species then return npc.species() end
   return world.entitySpecies(entity.id())
 end
 
@@ -1112,7 +1074,7 @@ starPounds.equipCheck = function(size)
   end
   -- Check if there's a chest variant, and if it exists.
   if modifiers.chestVariant then
-     modifiers.chestVariant = contains(starPounds.sizes[sizeIndex].variants, modifiers.chestVariant) and modifiers.chestVariant or nil
+    modifiers.chestVariant = contains(starPounds.sizes[sizeIndex].variants, modifiers.chestVariant) and modifiers.chestVariant or nil
   end
 
   -- Iterate over worn clothing.
@@ -1261,26 +1223,6 @@ starPounds.voreCheck = function()
     end
   end
   storage.starPounds.stomachEntities = newStomach
-end
-
-starPounds.voreDigest = function(dt)
-  -- Don't do anything if the mod is disabled.
-  if not storage.starPounds.enabled then return end
-  -- Argument sanitisation.
-  dt = math.max(tonumber(dt) or 0, 0)
-  if dt == 0 then return end
-  -- Don't do anything if disabled.
-  if starPounds.hasOption("disablePredDigestion") then return end
-  -- Don't do anything if there's no eaten entities.
-  if not (#storage.starPounds.stomachEntities > 0) then return end
-  -- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
-  local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.thresholds.strain.starpoundsstomach3, 0), 3)
-  local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
-  local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
-  -- Reduce health of all entities.
-  for _, prey in pairs(storage.starPounds.stomachEntities) do
-    world.sendEntityMessage(prey.id, "starPounds.getDigested", (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
-  end
 end
 
 starPounds.eatNearbyEntity = function(position, range, querySize, options, check)
@@ -2164,8 +2106,9 @@ starPounds.toggleEnable = function()
     status.clearPersistentEffects("starpounds")
     status.clearPersistentEffects("starpoundseaten")
   else
-    starPounds.moduleInit(starPounds.type)
-    starPounds.effectInit()
+    for _, module in pairs(starPounds.modules or {}) do
+      module:moduleInit()
+    end
   end
   return storage.starPounds.enabled
 end

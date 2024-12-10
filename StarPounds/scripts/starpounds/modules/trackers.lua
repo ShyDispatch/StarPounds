@@ -1,11 +1,11 @@
-local tracking = starPounds.module:new("tracking")
+local trackers = starPounds.module:new("trackers")
 
-function tracking:init()
+function trackers:init()
   local currentSize, currentSizeIndex = starPounds.getSize(storage.starPounds.weight)
   self.thresholds = starPounds.settings.thresholds.strain
 end
 
-function tracking:update(dt)
+function trackers:update(dt)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Don't create if we can't add statuses anyway.
@@ -34,11 +34,11 @@ function tracking:update(dt)
   end
 end
 
-function tracking:uninit()
+function trackers:uninit()
   self:clearStatuses()
 end
 
-function tracking:createStatuses()
+function trackers:createStatuses()
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   local stomachTracker = self:getStomachTracker()
@@ -56,7 +56,7 @@ function tracking:createStatuses()
   end
 end
 
-function tracking:clearStatuses()
+function trackers:clearStatuses()
   local stomachTracker = self:getStomachTracker()
   local sizeTracker = "starpounds"..starPounds.currentSize.size
   status.removeEphemeralEffect(stomachTracker)
@@ -65,7 +65,7 @@ function tracking:clearStatuses()
   world.sendEntityMessage(entity.id(), "starPounds.expireSizeTracker")
 end
 
-function tracking:getStomachTracker()
+function trackers:getStomachTracker()
   local stomachTracker = "starpoundsstomach"
   if starPounds.stomach.interpolatedFullness >= self.thresholds.starpoundsstomach2 then
     stomachTracker = "starpoundsstomach3"
@@ -75,4 +75,4 @@ function tracking:getStomachTracker()
   return stomachTracker
 end
 
-starPounds.modules.tracking = tracking
+starPounds.modules.trackers = trackers

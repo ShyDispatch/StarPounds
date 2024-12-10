@@ -34,6 +34,7 @@ function onInteraction(args)
 
       world.sendEntityMessage(args.sourceId, "starPounds.feed", self.food, "hugeFood")
       world.sendEntityMessage(args.sourceId, "starPounds.feed", self.bonusExperience, "bonusExperience")
+      world.sendEntityMessage(args.sourceId, "starPounds.playSound", "swallow", 0.75)
 
       storage.bites = storage.bites + 1
       if storage.bites >= self.bitesPerStage then

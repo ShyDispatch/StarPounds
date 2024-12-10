@@ -81,7 +81,13 @@ function blob:queryDoors(bounds, minimumDistance, message)
       local spaces = world.getObjectParameter(doorId, "closedMaterialSpaces", world.objectSpaces(doorId))
       -- Check if the object is actually in the rect because queries suck.
       for i = 1, #spaces do
-        local space = vec2.add(spaces[i], world.entityPosition(doorId))
+        -- The space can also be {{x, y}, "material"} instead of {x, y}
+        local pos = spaces[i]
+        if type(pos[1]) == "table" then
+          pos = pos[1]
+        end
+
+        local space = vec2.add(pos, world.entityPosition(doorId))
         if rect.contains(bounds, space) then
           valid = true
           break

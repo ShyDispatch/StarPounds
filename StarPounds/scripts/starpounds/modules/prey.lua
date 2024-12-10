@@ -123,7 +123,7 @@ function prey:swallowed(pred)
     end
   end
   -- Non-player.
-  if not starPounds.type == "player" then
+  if not (starPounds.type == "player") then
     -- Save the old damage team.
     -- Make other entities ignore it.
     entity.setDamageTeam({type = "ghostly", team = storage.starPounds.damageTeam.team})

@@ -3,7 +3,7 @@ local prey = starPounds.module:new("prey")
 function prey:init()
   message.setHandler("starPounds.getEaten", function(_, _, ...) return self:swallowed(...) end)
   message.setHandler("starPounds.getReleased", function(_, _, ...) return self:released(...) end)
-  message.setHandler("starPounds.getDigested", function(_, _, ...) return self:digest(...) end)
+  message.setHandler("starPounds.getDigested", function(_, _, ...) return self:digesting(...) end)
   message.setHandler("starPounds.predEaten", function(_, _, ...) return self:newPred(...) end)
 end
 
@@ -296,7 +296,7 @@ function prey:newPred(pred)
   return true
 end
 
-function prey:digest(digestionRate, protectionMultiplier)
+function prey:digesting(digestionRate, protectionMultiplier)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Argument sanitisation.
@@ -328,6 +328,8 @@ function prey:digest(digestionRate, protectionMultiplier)
           player.equipTech(v)
         end
       end
+      -- Getting digested removes all your fat.
+      starPounds.setWeight(0)
     end
     -- NPC stuff.
     if starPounds.type == "npc" then

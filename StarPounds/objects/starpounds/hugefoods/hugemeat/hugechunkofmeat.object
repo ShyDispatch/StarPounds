@@ -12,7 +12,7 @@
 
   "stages": 5,
   "bitesPerStage": 4,
-  "food": 2500,
+  "food": 1200,
 
   "apexDescription" : "An incredibly large chunk of meat. The beast this used to be must've been massive.",
   "avianDescription" : "I've never seen such a large amount of meat before, all from the same creature.",
@@ -30,6 +30,8 @@
   "orientations" : [
     {
       "dualImage" : "hugechunkofmeat.png:<stage>",
+      "imagePosition" : [-49.5, -16],
+      "animationPosition" : [-49.5, -16],
       "spaceScan" : 0.1,
       "anchors" : ["bottom"]
     }

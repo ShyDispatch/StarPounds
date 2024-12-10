@@ -12,7 +12,7 @@
 
   "stages": 5,
   "bitesPerStage": 3,
-  "food": 1000,
+  "food": 675,
 
   "apexDescription" : "These pancakes are thicker then bricks.",
   "avianDescription" : "Oh my, this is a lot of super sized pancakes!",
@@ -30,6 +30,8 @@
   "orientations" : [
     {
       "dualImage" : "pancakes.png:<stage>",
+      "imagePosition" : [-28, -16],
+      "animationPosition" : [-28, -16],
       "spaceScan" : 0.1,
       "anchors" : ["bottom"]
     }

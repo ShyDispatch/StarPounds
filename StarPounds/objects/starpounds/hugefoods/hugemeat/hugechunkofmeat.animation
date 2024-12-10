@@ -3,13 +3,14 @@
     "parts" : {
       "meat" : {
         "properties" : {
+          "image" : "<partImage>:<stage>",
           "centered" : false,
-          "image" : "<partImage>:<stage>"
+          "imagePosition" : [49.5, 0]
         }
       }
     }
   },
-  
+
   "particleEmitters" : {
     "bite" : {
       "enabled" : false,
@@ -79,7 +80,7 @@
       ]
     }
   },
-  
+
   "sounds" : {
     "bite" : ["/sfx/humanoid/eat1.ogg", "/sfx/humanoid/eat2.ogg"]
   }

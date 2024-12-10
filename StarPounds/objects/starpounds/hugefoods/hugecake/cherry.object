@@ -12,7 +12,7 @@
 
   "stages": 5,
   "bitesPerStage": 4,
-  "food": 1750,
+  "food": 840,
 
   "apexDescription" : "This is an absurdly big cake.",
   "avianDescription" : "What a huge cake. The amount of sugar in this would make a person sick.",
@@ -30,6 +30,8 @@
   "orientations" : [
     {
       "dualImage" : "cherry.png:<stage>",
+      "imagePosition" : [-32, -16],
+      "animationPosition" : [-32, -16],
       "spaceScan" : 0.1,
       "anchors" : ["bottom"]
     }

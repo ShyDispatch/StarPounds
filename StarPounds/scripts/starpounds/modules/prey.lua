@@ -83,6 +83,8 @@ function prey:swallowed(pred)
   if not world.entityExists(pred) then return false end
   -- Don't get eaten if already dead.
   if not status.resourcePositive("health") then return false end
+  -- Save the entityId of the pred.
+  storage.starPounds.pred = pred
   -- Eaten entities can't be interacted with. This looks very silly atm since I need to figure out a way to dynamically detect it.
   self.wasInteractable = false
   if starPounds.type == "npc" then
@@ -130,8 +132,6 @@ function prey:swallowed(pred)
     entity.setDamageOnTouch(false)
     entity.setDamageSources()
   end
-  -- Save the entityId of the pred.
-  storage.starPounds.pred = pred
   -- Make the entity immune to outside damage/invisible, and disable regeneration.
   status.setPersistentEffects("starpoundseaten", {
     {stat = "statusImmunity", effectiveMultiplier = 0}

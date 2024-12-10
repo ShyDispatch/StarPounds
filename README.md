@@ -118,7 +118,6 @@ Npcs at the Outpost, Hog Diner, or any other form of hub area generally has prot
 #### What species are supported by Extended Races?
 Currently, the following species are supported:
 - [Avali](https://steamcommunity.com/workshop/filedetails/?id=729558042)
-- [Felin](https://steamcommunity.com/workshop/filedetails/?id=729429063)
 - [Aegi](https://steamcommunity.com/sharedfiles/filedetails/?id=850109963)
 - [Saturnian](https://steamcommunity.com/workshop/filedetails/?id=1103027918)
 - [Arcanian](https://steamcommunity.com/sharedfiles/filedetails/?id=2359135864)

@@ -328,8 +328,6 @@ function prey:digesting(digestionRate, protectionMultiplier)
           player.equipTech(v)
         end
       end
-      -- Getting digested removes all your fat.
-      starPounds.setWeight(0)
     end
     -- NPC stuff.
     if starPounds.type == "npc" then
@@ -348,7 +346,12 @@ function prey:digesting(digestionRate, protectionMultiplier)
         return
       end
     end
-
+    -- Getting digested by a player removes all your fat.
+    local predType = world.entityType(storage.starPounds.pred)
+    if (predType == "player") or (predType == "npc") then
+      starPounds.setWeight(0)
+    end
+    -- Run standard monster/NPC death stuff.
     if die then die() end
   end
 end

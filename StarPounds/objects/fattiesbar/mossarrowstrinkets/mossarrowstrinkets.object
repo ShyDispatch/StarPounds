@@ -45,19 +45,6 @@
   "scripts" : [ "mossarrowstrinkets.lua" ],
   "scriptDelta" : 0,
 
-  "interactData" : {
-    "config" : "/interface/windowconfig/craftingmerchant.config",
-    "paneLayoutOverride" : {
-      "windowtitle" : {
-        "title" : "MossArrow's Trinkets",
-        "subtitle" : " ^#b9b5b2;Offers new accessories every day!",
-        "icon" : {
-          "file" : "/interface/fattyshops/icons/starpoundsmossarrow.png"
-        }
-      }
-    },
-    "filter" : []
-  },
   "rotationTime" : 8,
   "selectCount" : 12,
   "inventoryPool" : [

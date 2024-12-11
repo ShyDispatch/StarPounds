@@ -21,7 +21,7 @@ function oSB:update(dt)
   if player.setInteractRadius then
     self.offset = starPounds.currentSize.yOffset or 0
     if self.offset ~= self.offsetOld then
-      player.setInteractRadius(self.interactRadius + self.offset)
+      player.setInteractRadius(self.interactRadius + math.round(math.abs(self.offset), 2))
       self.offsetOld = self.offset
     end
   end

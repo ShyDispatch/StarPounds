@@ -5,6 +5,8 @@ function prey:init()
   message.setHandler("starPounds.getReleased", function(_, _, ...) return self:released(...) end)
   message.setHandler("starPounds.getDigested", function(_, _, ...) return self:digesting(...) end)
   message.setHandler("starPounds.newPred", function(_, _, ...) return self:newPred(...) end)
+
+  self.heartbeat = self.data.heartbeat
 end
 
 function prey:update(dt)
@@ -17,7 +19,7 @@ function prey:eaten(dt)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Don't do anything if we're not eaten.
-  if not storage.starPounds.pred then self.heartbeat = nil return end
+  if not storage.starPounds.pred then self.heartbeat = self.data.heartbeat return end
   -- Spectating pred stuff.
   if storage.starPounds.spectatingPred then
     if not (starPounds.hasOption("spectatePred") and world.entityExists(storage.starPounds.pred)) then
@@ -34,7 +36,7 @@ function prey:eaten(dt)
     return
   end
 
-  self.heartbeat = math.max((self.heartbeat or self.data.heartbeat) - dt, 0)
+  self.heartbeat = math.max(self.heartbeat - dt, 0)
   if not storage.starPounds.spectatingPred and self.heartbeat == 0 then
     self.heartbeat = self.data.heartbeat
     promises:add(world.sendEntityMessage(storage.starPounds.pred, "starPounds.ateEntity", entity.id()), function(isEaten)
@@ -268,10 +270,12 @@ function prey:released(source, overrideStatus)
       player.equipTech(v)
     end
   end
-  -- Tell the pred we're out.
+  -- Out.
   if world.entityExists(pred) then
     -- Callback incase the entity calls this.
-    world.sendEntityMessage(pred, "starPounds.releaseEntity", entity.id())
+    if source ~= pred then
+      world.sendEntityMessage(pred, "starPounds.releaseEntity", entity.id())
+    end
     -- Don't get stuck in the ground.
     mcontroller.setPosition(world.entityPosition(pred))
     -- Make them wet.
@@ -296,9 +300,15 @@ function prey:newPred(pred)
   return true
 end
 
-function prey:digesting(digestionRate, protectionMultiplier)
+function prey:digesting(pred, digestionRate, protectionMultiplier)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
+  -- Don't do anything if a pred ID isn't specified.
+  if not pred or not world.entityExists(tonumber(pred) or 0) then return end
+  -- Tell the pred we're not eaten there's an ID mismatch.
+  if storage.starPounds.pred ~= pred then
+    world.sendEntityMessage(pred, "starPounds.releaseEntity", entity.id())
+  end
   -- Argument sanitisation.
   digestionRate = math.max(tonumber(digestionRate) or 0, 0)
   protectionMultiplier = math.max(tonumber(protectionMultiplier) or 1, 0)

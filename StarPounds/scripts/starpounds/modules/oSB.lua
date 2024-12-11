@@ -27,7 +27,7 @@ function oSB:update(dt)
   end
 
   if storage.starPounds.pred and player.setDamageTeam then
-    player.setDamageTeam("ghostly")
+    player.setDamageTeam(starExtensions and {type = "ghostly", team = storage.starPounds.damageTeam.team} or "ghostly")
   end
 end
 

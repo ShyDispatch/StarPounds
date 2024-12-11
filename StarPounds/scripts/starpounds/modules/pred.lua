@@ -30,7 +30,7 @@ function pred:digest(dt)
   local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
   -- Reduce health of all entities.
   for _, prey in pairs(storage.starPounds.stomachEntities) do
-    world.sendEntityMessage(prey.id, "starPounds.getDigested", (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
+    world.sendEntityMessage(prey.id, "starPounds.getDigested", entity.id(), (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
   end
 end
 
@@ -286,9 +286,10 @@ function pred:struggle(preyId, struggleStrength, escape)
       local preyHealthPercent = preyHealth[1]/preyHealth[2]
       local struggleStrength = root.evalFunction2("protection", struggleStrength, status.stat("protection"))
       local escapeChance = math.max(world.entityType(preyId) == "player" and self.data.playerEscape or 0, 0.5 * struggleStrength)
+      local released = false
       if escape and (math.random() < escapeChance) then
         if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > self.data.inescapableHealth) then
-          self:release(preyId)
+          released = self:release(preyId)
         end
       end
 
@@ -304,11 +305,11 @@ function pred:struggle(preyId, struggleStrength, escape)
         end
       end
 
-      if not starPounds.hasOption("disablePredDigestion") then
+      if not (released or starPounds.hasOption("disablePredDigestion")) then
         -- 1 second worth of digestion per struggle.
         local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
         local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
-        world.sendEntityMessage(preyId, "starPounds.getDigested", damageMultiplier, protectionMultiplier)
+        world.sendEntityMessage(preyId, "starPounds.getDigested", entity.id(), damageMultiplier, protectionMultiplier)
       end
 
       if not starPounds.hasOption("disableStruggleSounds") then
@@ -360,6 +361,8 @@ function pred:release(preyId, releaseAll)
       world.sendEntityMessage(releasedEntity.id, "starPounds.getReleased", entity.id(), statusEffect)
     end
   end
+  -- Callback.
+  if releasedEntity then return true end
 end
 
 function pred:preyCheck()
@@ -373,7 +376,7 @@ function pred:preyCheck()
     if world.entityExists(prey.id) then
       newStomach[#newStomach + 1] = prey
     elseif (starPounds.type == "player") and (prey.world == player.worldId()) then
-      starPounds.digestEntity(prey.id)
+      self:preyDigested(prey.id)
     end
   end
   storage.starPounds.stomachEntities = newStomach

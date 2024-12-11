@@ -122,7 +122,7 @@ starPounds = {
     if not (#storage.starPounds.stomachEntities > 0) then return end
     -- Reduce health of all entities.
     for _, prey in pairs(storage.starPounds.stomachEntities) do
-      world.sendEntityMessage(prey.id, "starPounds.getDigested", digestionRate)
+      world.sendEntityMessage(prey.id, "starPounds.getDigested", entity.id(), digestionRate)
     end
   end,
 
@@ -198,7 +198,7 @@ starPounds = {
           starPounds.releaseEntity(preyId)
         end
         -- 1 second worth of digestion per struggle.
-        world.sendEntityMessage(preyId, "starPounds.getDigested", 1)
+        world.sendEntityMessage(preyId, "starPounds.getDigested", entity.id(), 1)
         break
       end
     end

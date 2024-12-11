@@ -1,8 +1,16 @@
 {
   "name": "starpoundschocolatemilkshakesquirt",
   "effectConfig": {
-    "statusEffects": [{"effect": "starpoundsfood", "duration": 5}, {"effect": "starpoundsbloat", "duration": 5}],
-    "sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 2}, {"effect": "starpoundsbloat", "duration": 8}]
+    "statusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquidfood_noexperience", "duration": 5}, {"effect": "starpoundsfood_liquid", "duration": 5}
+      // Statuses
+    ],
+    "sourceStatusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquidfood_noexperience", "duration": 2}, {"effect": "starpoundsfood_liquid", "duration": 8}
+      // Statuses
+    ]
   },
   "defaultDuration": 1,
   "scripts": [

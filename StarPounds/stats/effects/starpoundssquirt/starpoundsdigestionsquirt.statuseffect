@@ -1,8 +1,18 @@
 {
   "name": "starpoundsdigestionsquirt",
   "effectConfig": {
-    "statusEffects": [{"effect": "digesting", "duration": 5}],
-    "sourceStatusEffects": [{"effect": "digesting", "duration": 1}]
+    "statusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquid", "duration": 10},
+      // Statuses
+      {"effect": "digesting", "duration": 5}
+    ],
+    "sourceStatusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquid", "duration": 10},
+      // Statuses
+      {"effect": "digesting", "duration": 1}
+    ]
   },
   "defaultDuration": 1,
   "scripts": [

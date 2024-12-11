@@ -1,8 +1,18 @@
 {
   "name": "starpoundscaloriumsquirt",
   "effectConfig": {
-    "statusEffects": [{"effect": "starpoundsfood", "duration": 10}, {"effect": "caloriumsquirt", "duration": 1}],
-    "sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 4}, {"effect": "starpoundsbloat", "duration": 6}, {"effect": "caloriumsquirt", "duration": 0.25}]
+    "statusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquidfood_noexperience", "duration": 10},
+      // Statuses
+      {"effect": "caloriumsquirt", "duration": 1}
+    ],
+    "sourceStatusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquidfood_noexperience", "duration": 4}, {"effect": "starpoundsfood_liquid", "duration": 6},
+      // Statuses
+      {"effect": "caloriumsquirt", "duration": 0.25}
+    ]
   },
   "defaultDuration": 1,
   "scripts": [

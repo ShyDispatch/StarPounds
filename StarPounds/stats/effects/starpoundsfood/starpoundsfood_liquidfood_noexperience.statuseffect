@@ -1,0 +1,10 @@
+{
+  "name": "starpoundsfood_liquidfood_noexperience",
+  "defaultDuration": 1,
+  "effectConfig" : {
+    "type" : "liquidFood_noExperience"
+  },
+  "scripts": [
+    "starpoundsfood.lua"
+  ]
+}

@@ -1,8 +1,18 @@
 {
   "name": "starpoundshoneysquirt",
   "effectConfig": {
-    "statusEffects": [{"effect": "starpoundsfood", "duration": 7.5}, {"effect": "starpoundsbloat", "duration": 2.5}, {"effect": "starpoundshoneyslow", "duration": 1}],
-    "sourceStatusEffects": [{"effect": "starpoundsfood", "duration": 3}, {"effect": "starpoundsbloat", "duration": 7}, {"effect": "starpoundshoneyslow", "duration": 1}]
+    "statusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquidfood_noexperience", "duration": 7.5}, {"effect": "starpoundsfood_liquid", "duration": 2.5},
+      // Statuses
+      {"effect": "starpoundshoneyslow", "duration": 1}
+    ],
+    "sourceStatusEffects": [
+      // Food
+      {"effect": "starpoundsfood_liquidfood_noexperience", "duration": 3}, {"effect": "starpoundsfood_liquid", "duration": 7},
+      // Statuses
+      {"effect": "starpoundshoneyslow", "duration": 1}
+    ]
   },
   "defaultDuration": 1,
   "scripts": [

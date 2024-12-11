@@ -1,0 +1,10 @@
+{
+  "name": "starpoundsfood_liquid",
+  "defaultDuration": 1,
+  "effectConfig" : {
+    "type" : "liquid"
+  },
+  "scripts": [
+    "starpoundsfood.lua"
+  ]
+}

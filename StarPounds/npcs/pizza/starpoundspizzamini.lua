@@ -69,7 +69,7 @@ function update(dt)
     end
   end
 
-  if targetEntityId and starPounds.ateEntity(targetEntityId) then
+  if targetEntityId and starPounds.moduleFunc("pred", "hasPrey", targetEntityId) then
     self.voreWaitTime = math.max(self.voreWaitTime - dt, 0)
     if not self.eatOrder and self.voreWaitTime == 0 then
       storage.collectedTime = os.time()
@@ -93,7 +93,7 @@ function update(dt)
       starPounds.feed(itemFood)
       self.ateOrder = true
     end
-    if self.ateCustomer and not starPounds.ateEntity(targetEntityId) then
+    if self.ateCustomer and not starPounds.moduleFunc("pred", "hasPrey", targetEntityId) then
       self.voreEscapeTalkDelay = math.max(self.voreEscapeTalkDelay - dt, 0)
       if not self.voreEscaped and self.voreEscapeTalkDelay == 0 then
         self.voreEscaped = true
@@ -113,7 +113,7 @@ function update(dt)
       npc.emote("oh")
       self.belched = true
     end
-    if not self.voreAte and self.voreBelchTime == 0 and self.ateCustomer and starPounds.ateEntity(targetEntityId) then
+    if not self.voreAte and self.voreBelchTime == 0 and self.ateCustomer and starPounds.moduleFunc("pred", "hasPrey", targetEntityId) then
       self.voreEatTalkDelay = math.max(self.voreEatTalkDelay - dt, 0)
       if self.voreEatTalkDelay == 0 then
         self.voreAte = true
@@ -141,7 +141,7 @@ function update(dt)
 end
 
 function handleInteract(args)
-  if not (args.sourceId and starPounds.ateEntity(args.sourceId)) then
+  if not (args.sourceId and starPounds.moduleFunc("pred", "hasPrey", args.sourceId)) then
     handleInteract_old(args)
     if world.entityUniqueId(args.sourceId) == self.deliveryTarget then
       if self.ateItems and dialogKey == "dialog.collect" then

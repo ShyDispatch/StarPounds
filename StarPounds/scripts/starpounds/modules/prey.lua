@@ -39,8 +39,8 @@ function prey:eaten(dt)
   self.heartbeat = math.max(self.heartbeat - dt, 0)
   if not storage.starPounds.spectatingPred and self.heartbeat == 0 then
     self.heartbeat = self.data.heartbeat
-    promises:add(world.sendEntityMessage(storage.starPounds.pred, "starPounds.ateEntity", entity.id()), function(isEaten)
-      if not isEaten then self:released() end
+    promises:add(world.sendEntityMessage(storage.starPounds.pred, "starPounds.hasPrey", entity.id()), function(eaten)
+      if not eaten then self:released() end
     end)
   end
   -- Disable knockback while eaten.

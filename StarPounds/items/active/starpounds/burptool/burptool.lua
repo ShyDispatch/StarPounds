@@ -3,5 +3,8 @@ function init()
 end
 
 function activate(fireMode, shiftHeld)
-  getmetatable ''.starPounds.belch(0.75, starPounds.belchPitch(), nil, false)
+  local starPounds = getmetatable ''.starPounds
+  if starPounds then
+    starPounds.belch(0.75, starPounds.belchPitch(), nil, false)
+  end
 end

@@ -197,7 +197,7 @@ starPounds = {
     return true
   end,
 
-  ateEntity = function(preyId)
+  hasPrey = function(preyId)
     if regurgitateTimer > 0 then return true end
     for _, prey in ipairs(storage.starPounds.stomachEntities) do
       if prey.id == preyId then return true end
@@ -268,8 +268,8 @@ starPounds = {
     message.setHandler("starPounds.digest", simpleHandler(starPounds.digest))
     -- Ditto but vore.
     message.setHandler("starPounds.eatEntity", simpleHandler(starPounds.eatEntity))
-    message.setHandler("starPounds.ateEntity", simpleHandler(starPounds.ateEntity))
-    message.setHandler("starPounds.digestEntity", simpleHandler(starPounds.digestEntity))
+    message.setHandler("starPounds.hasPrey", simpleHandler(starPounds.hasPrey))
+    message.setHandler("starPounds.preyDigested", simpleHandler(starPounds.digestEntity))
     message.setHandler("starPounds.preyStruggle", simpleHandler(starPounds.preyStruggle))
     message.setHandler("starPounds.releaseEntity", simpleHandler(starPounds.releaseEntity))
     -- sounds

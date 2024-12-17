@@ -320,7 +320,7 @@ function stomach:sloshing(dt)
   if self.sloshDeactivateTimer == 0 or (starPounds.mcontroller.walking or starPounds.mcontroller.running) then
     self.sloshActivations = 0
   end
-  self.wasCrouching = crouching
+  self.wasCrouching = starPounds.mcontroller.crouching
 end
 
 function stomach:stepTimer(timer, dt)

@@ -514,7 +514,7 @@ function pred:belchParticles(prey, essence)
   local friction = world.breathable(starPounds.mcontroller.mouthPosition) or world.liquidAt(starPounds.mcontroller.mouthPosition)
   local particle = sb.jsonMerge(starPounds.settings.particleTemplates.vore, {})
   particle.color = {188, 235, 96}
-  particle.initialVelocity = vec2.add({(friction and 2 or 3) * starPounds.mcontroller.facingDirection, 0}, vec2.add(starPounds.mcontroller.velocity, {0, world.gravity(mouthPosition)/62.5})) -- Weird math but it works I guess.
+  particle.initialVelocity = vec2.add({(friction and 2 or 3) * starPounds.mcontroller.facingDirection, 0}, vec2.add(starPounds.mcontroller.velocity, {0, world.gravity(starPounds.mcontroller.mouthPosition)/62.5})) -- Weird math but it works I guess.
   particle.finalVelocity = {starPounds.mcontroller.facingDirection, 10}
   particle.approach = friction and {5, 10} or {0, 0}
   particle.timeToLive = friction and 0.2 or 0.075

@@ -8,10 +8,15 @@ function pred:init()
   message.setHandler("starPounds.preyDigested", function(_, _, ...) return self:preyDigested(...) end)
   message.setHandler("starPounds.preyStruggle", function(_, _, ...) return self:struggle(...) end)
   message.setHandler("starPounds.releaseEntity", function(_, _, ...) return self:release(...) end)
+
+  self.voreCooldown = 0
+  self.preyCheckTimer = self.data.preyCheckTimer
 end
 
 function pred:update(dt)
-  self:preyCheck()
+  -- Tick down tool/hotkey cooldown.
+  self.voreCooldown = math.max(self.voreCooldown - (dt / starPounds.getStat("voreCooldown")), 0)
+  self:preyCheck(dt)
 end
 
 function pred:digest(dt)
@@ -200,6 +205,18 @@ function pred:eatNearby(position, range, querySize, options, check)
   end
 end
 
+function pred:cooldown()
+  return self.voreCooldown
+end
+
+function pred:cooldownTime()
+  return self.data.cooldown
+end
+
+function pred:cooldownStart()
+  self.voreCooldown = self.data.cooldown
+end
+
 function pred:preyDigested(preyId, items, preyStomach)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
@@ -364,11 +381,17 @@ function pred:release(preyId, releaseAll)
   if releasedEntity then return true end
 end
 
-function pred:preyCheck()
+function pred:preyCheck(dt)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Don't do anything if there's no eaten entities.
-  if storage.starPounds.stomachEntities == 0 then return end
+  if #storage.starPounds.stomachEntities == 0 then return end
+  -- Run on a timer unless manually called.
+  if dt then
+    self.preyCheckTimer = math.max(self.preyCheckTimer - dt, 0)
+    if self.preyCheckTimer > 0 then return end
+  end
+  chat.send('preyCheck')
   -- table.remove is doodoo poop water.
   local newStomach = jarray()
   for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do
@@ -379,6 +402,8 @@ function pred:preyCheck()
     end
   end
   storage.starPounds.stomachEntities = newStomach
+
+  self.preyCheckTimer = self.data.preyCheckTimer
 end
 
 function pred:hasPrey(preyId)

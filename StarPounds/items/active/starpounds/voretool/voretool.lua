@@ -17,7 +17,7 @@ function activate(fireMode, shiftHeld)
   if shiftHeld then
     starPounds.moduleFunc("pred", "release")
   elseif cooldown == 0 then
-    local mouthPosition = vec2.add(starPounds.mouthPosition(), {0, (starPounds.currentSize.yOffset or 0)})
+    local mouthPosition = vec2.add(starPounds.mcontroller.mouthPosition, {0, (starPounds.currentSize.yOffset or 0)})
     local aimPosition = activeItem.ownerAimPosition()
     local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize - (starPounds.currentSize.yOffset or 0))
     local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))
@@ -31,9 +31,9 @@ end
 function update(dt, _, shiftHeld)
   local starPounds = getmetatable ''.starPounds
   cooldown = math.max((cooldown or cooldownTime) - (dt/starPounds.getStat("voreCooldown")), 0)
-  local mouthPosition = starPounds.mouthPosition()
+  local mouthPosition = starPounds.mcontroller.mouthPosition
   if starPounds.currentSize.yOffset then
-    mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+    mouthPosition = vec2.add(mouthPosition, {0, starPounds.currentSize.yOffset})
   end
   local aimPosition = activeItem.ownerAimPosition()
   local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize - (starPounds.currentSize.yOffset or 0))

@@ -39,13 +39,16 @@ end
 
 starPounds.moduleInit = function(moduleGroups)
   starPounds.modules = starPounds.modules or {}
+  starPounds.moduleKeys = jarray()
   local modulePath = "/scripts/starpounds/modules/%s.lua"
   if moduleGroups then
     if type(moduleGroups) == "string" then moduleGroups = {moduleGroups} end
     for _, moduleGroup in ipairs(moduleGroups) do
       for i = 1, #starPounds.settings.modules[moduleGroup] do
-        require(string.format(modulePath, starPounds.settings.modules[moduleGroup][i]))
-        local module = starPounds.modules[starPounds.settings.modules[moduleGroup][i]]
+        local moduleName = starPounds.settings.modules[moduleGroup][i]
+        starPounds.moduleKeys[#starPounds.moduleKeys + 1] = moduleName
+        require(string.format(modulePath, moduleName))
+        local module = starPounds.modules[moduleName]
         module:moduleInit()
       end
     end
@@ -53,8 +56,18 @@ starPounds.moduleInit = function(moduleGroups)
 end
 
 starPounds.moduleUpdate = function(dt)
-  for _, module in pairs(starPounds.modules) do
-    module:moduleUpdate(dt)
+  local updated = {}
+  -- Do modules in order if they're loaded with starPounds.moduleInit.
+  for i = 1, #starPounds.moduleKeys do
+    local moduleName = starPounds.moduleKeys[i]
+    updated[moduleName] = true
+    starPounds.modules[moduleName]:moduleUpdate(dt)
+  end
+  -- Do others with regular pairs.
+  for moduleName, module in pairs(starPounds.modules) do
+    if not updated[moduleName] then
+      module:moduleUpdate(dt)
+    end
   end
 end
 
@@ -127,12 +140,11 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
   local pitchMultiplier = 1/math.max(pitch, 2/3)
   local particleCount = starPounds.hasOption("disableBelchParticles") and 0 or math.round(math.max(math.random(75, 100) * 0.1 * pitchMultiplier * volumeMultiplier - 5, 0))
   -- Belches give momentum in zero g based on the particle count, because why not.
-  local facingDirection = mcontroller.facingDirection()
-  if addMomentum and mcontroller.zeroG() then
-    mcontroller.addMomentum({-0.5 * facingDirection * (0.5 + starPounds.weightMultiplier * 0.5) * particleCount, 0})
+  if addMomentum and starPounds.mcontroller.zeroG then
+    mcontroller.addMomentum({-0.5 * starPounds.mcontroller.facingDirection * (0.5 + starPounds.weightMultiplier * 0.5) * particleCount, 0})
   end
   -- Alert nearby enemies.
-  local targets = world.entityQuery(mcontroller.position(), starPounds.settings.belchAlertRadius * volume, { includedTypes = {"npc", "monster"} })
+  local targets = world.entityQuery(starPounds.mcontroller.position, starPounds.settings.belchAlertRadius * volume, { includedTypes = {"npc", "monster"} })
   for _, target in pairs(targets) do
     if world.entityAggressive(target) and world.entityCanDamage(target, entity.id()) then
       world.sendEntityMessage(target, "starPounds.notifyDamage", {sourceId = entity.id()})
@@ -140,11 +152,11 @@ starPounds.belch = function(volume, pitch, loops, addMomentum)
   end
   -- Skip if we're not doing particles.
   if particleCount == 0 then return end
-  local mouthPosition = starPounds.mouthPosition()
+  local mouthPosition = starPounds.mcontroller.mouthPosition
   local gravity = world.gravity(mouthPosition)
   local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
   local particle = sb.jsonMerge(starPounds.settings.particleTemplates.belch, {})
-  particle.initialVelocity = vec2.add({7 * facingDirection, 0}, vec2.add(mcontroller.velocity(), {0, gravity/62.5})) -- Weird math but it works I guess.
+  particle.initialVelocity = vec2.add({7 * starPounds.mcontroller.facingDirection, 0}, vec2.add(starPounds.mcontroller.velocity, {0, gravity/62.5})) -- Weird math but it works I guess.
   particle.finalVelocity = {0, -gravity}
   particle.approach = {friction and 5 or 0, gravity}
   starPounds.spawnMouthProjectile({{action = "particle", specification = particle}}, particleCount)
@@ -163,23 +175,13 @@ starPounds.belchPitch = function(multiplier)
   return pitch
 end
 
-starPounds.mouthPosition = function()
-  -- Silly, but when the uninitialising this returns nil.
-  if world.entityMouthPosition(entity.id()) == nil then return mcontroller.position() end
-  local facingDirection = mcontroller.facingDirection()
-  local crouching = mcontroller.crouching()
-  local mouthOffset = {0.375 * mcontroller.facingDirection() * (crouching and 1.5 or 1), (crouching and -1 or 0)}
-  return vec2.add(world.entityMouthPosition(entity.id()), mouthOffset)
-end
-
 starPounds.spawnMouthProjectile = function(actions, count)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Argument sanitisation.
   if not actions then return end
   count = tonumber(count) or 1
-  local mouthPosition = starPounds.mouthPosition()
-  world.spawnProjectile("invisibleprojectile", vec2.add(mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
+  world.spawnProjectile("invisibleprojectile", vec2.add(starPounds.mcontroller.mouthPosition, mcontroller.isNullColliding() and 0 or vec2.div(starPounds.mcontroller.velocity, 60)), entity.id(), {0,0}, true, {
     damageKind = "hidden",
     universalDamage = false,
     onlyHitTerrain = true,
@@ -291,7 +293,7 @@ starPounds.updateStats = function(force, dt)
       starPounds.controlParameters = sb.jsonMerge(starPounds.controlParameters, (size.controlParameters[starPounds.getVisualSpecies()] or size.controlParameters.default))
     end
   end
-  mcontroller.controlModifiers((not starPounds.controlModifiersAlt or mcontroller.groundMovement()) and starPounds.controlModifiers or starPounds.controlModifiersAlt)
+  mcontroller.controlModifiers((not starPounds.controlModifiersAlt or starPounds.mcontroller.groundMovement) and starPounds.controlModifiers or starPounds.controlModifiersAlt)
   mcontroller.controlParameters(starPounds.controlParameters)
 end
 
@@ -673,7 +675,7 @@ starPounds.addEffect = function(effect, duration)
     if duration < 0 then duration = nil end
     if effectConfig.particle then
       local spec = starPounds.settings.particleTemplates.effect
-      world.spawnProjectile("invisibleprojectile", vec2.add(mcontroller.position(), mcontroller.isNullColliding() and 0 or vec2.div(mcontroller.velocity(), 60)), entity.id(), {0,0}, true, {
+      world.spawnProjectile("invisibleprojectile", vec2.add(starPounds.mcontroller.position, mcontroller.isNullColliding() and 0 or vec2.div(starPounds.mcontroller.velocity, 60)), entity.id(), {0,0}, true, {
         damageKind = "hidden",
         universalDamage = false,
         onlyHitTerrain = true,

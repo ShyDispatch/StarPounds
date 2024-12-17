@@ -16,7 +16,7 @@ function blob:update(dt)
   -- Projectile spawner for the hitbox/magnet.
   self.blobProjectileActive = self.blobProjectile and world.entityExists(self.blobProjectile)
   if not self.blobProjectileActive and self:doProjectile() then
-    self.blobProjectile = world.spawnProjectile("starpoundsblobhitbox", mcontroller.position(), entity.id(), {0, 0}, true)
+    self.blobProjectile = world.spawnProjectile("starpoundsblobhitbox", starPounds.mcontroller.position, entity.id(), {0, 0}, true)
   elseif self.blobProjectileActive and not self:doProjectile() then
     world.callScriptedEntity(self.blobProjectile, "projectile.die")
   end
@@ -51,11 +51,13 @@ function blob:automaticDoors(dt)
   if self.doorTimer > 0 then return end
   self.doorTimer = self.doorDeltaTime * dt
 
-  if not (mcontroller.running() or mcontroller.walking()) then
+  local walking = starPounds.mcontroller.walking
+  local running = starPounds.mcontroller.running
+  if not (running or walking) then
     return
   end
 
-  local openBounds = rect.translate(self.bounds, mcontroller.position())
+  local openBounds = rect.translate(self.bounds, starPounds.mcontroller.position)
   local closeBounds = {table.unpack(openBounds)}
 
   if mcontroller.movingDirection() > 0 then

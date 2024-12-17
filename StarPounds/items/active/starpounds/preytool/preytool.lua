@@ -14,9 +14,9 @@ function update(dt)
   local starPounds = getmetatable ''.starPounds
   local validTarget = false
   if starPounds.isEnabled() and not starPounds.hasOption("disablePrey") then
-    local mouthPosition = starPounds.mouthPosition()
+    local mouthPosition = starPounds.mcontroller.mouthPosition
     if starPounds.currentSize.yOffset then
-      mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+      mouthPosition = vec2.add(mouthPosition, {0, starPounds.currentSize.yOffset})
     end
     local aimPosition = activeItem.ownerAimPosition()
     local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize - (starPounds.currentSize.yOffset or 0))
@@ -34,9 +34,9 @@ end
 
 function activate(fireMode, shiftHeld)
   local starPounds = getmetatable ''.starPounds
-  local mouthPosition = starPounds.mouthPosition()
+  local mouthPosition = starPounds.mcontroller.mouthPosition
   if starPounds.currentSize.yOffset then
-    mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+    mouthPosition = vec2.add(mouthPosition, {0, starPounds.currentSize.yOffset})
   end
   local aimPosition = activeItem.ownerAimPosition()
   local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), range - querySize - (starPounds.currentSize.yOffset or 0))

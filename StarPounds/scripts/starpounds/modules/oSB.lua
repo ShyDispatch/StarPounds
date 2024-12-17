@@ -62,7 +62,7 @@ function oSB:voreBinds(dt)
   self.voreCooldown = math.max((self.voreCooldown or 0) - (dt/starPounds.getStat("voreCooldown")), 0)
   if input.bindDown("starpounds", "voreEat") then
     if player.isAdmin() or self.voreCooldown == 0 then
-      local mouthPosition = starPounds.mouthPosition()
+      local mouthPosition = starPounds.mcontroller.mouthPosition
       local aimPosition = player.aimPosition()
       local positionMagnitude = math.min(world.magnitude(mouthPosition, aimPosition), self.data.voreRange - self.data.voreQuerySize - self.offset)
       local targetPosition = vec2.add(mouthPosition, vec2.mul(vec2.norm(world.distance(aimPosition, mouthPosition)), math.max(positionMagnitude, 0)))

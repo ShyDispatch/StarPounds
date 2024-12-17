@@ -34,13 +34,13 @@ function fizzy:update(dt)
     starPounds.moduleFunc("sound", "setVolume", "fizz", 0, 1)
   end
   -- Add air bloat.
-  if not (mcontroller.zeroG() or mcontroller.liquidMovement()) and not mcontroller.onGround() then
+  if not (starPounds.mcontroller.zeroG or starPounds.mcontroller.liquidMovement) and not starPounds.mcontroller.onGround then
     if not self.jumped then
       starPounds.moduleFunc("sound", "play", "slosh", 0.5 * self.volumeMultiplier)
       self:shake(1)
       self.jumped = true
     end
-  elseif mcontroller.onGround() then
+  elseif starPounds.mcontroller.onGround then
     self.jumped = false
   end
   starPounds.feed(self.airAmount * self.fizzMultiplier * dt, "air")

@@ -18,7 +18,7 @@ function drinking:update(dt)
   elseif starPounds.stomach.fullness >= starPounds.settings.thresholds.strain.starpoundsstomach3 then
     return
   end
-  local mouthPosition = starPounds.mouthPosition()
+  local mouthPosition = starPounds.mcontroller.mouthPosition
   local mouthLiquid = world.liquidAt(mouthPosition) or world.liquidAt(vec2.add(mouthPosition, {0, 0.25}))
   -- Space out 'drinks', otherwise they'll happen every script update.
   self.drinkTimer = math.max(self.drinkTimer - dt, 0)

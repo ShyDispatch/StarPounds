@@ -121,7 +121,7 @@ function prey:swallowed(pred)
       end
     end
 
-    local nearbyNpcs = world.npcQuery(mcontroller.position(), 50, {withoutEntityId = entity.id(), callScript = "entity.entityInSight", callScriptArgs = {entity.id()}, callScriptResult = true})
+    local nearbyNpcs = world.npcQuery(starPounds.mcontroller.position, 50, {withoutEntityId = entity.id(), callScript = "entity.entityInSight", callScriptArgs = {entity.id()}, callScriptResult = true})
     for _, nearbyNpc in ipairs(nearbyNpcs) do
       world.callScriptedEntity(nearbyNpc, "notify", {type = "attack", sourceId = entity.id(), targetId = storage.starPounds.pred})
     end
@@ -158,8 +158,8 @@ function prey:playerStruggle(dt)
   -- Player struggles are directional.
   self.startedStruggling = self.startedStruggling or os.clock()
   -- Follow the pred's position, struggle if the player is using movement keys.
-  local horizontalDirection = (mcontroller.xVelocity() > 0) and 1 or ((mcontroller.xVelocity() < 0) and -1 or 0)
-  local verticalDirection = (mcontroller.yVelocity() > 0) and 1 or ((mcontroller.yVelocity() < 0) and -1 or 0)
+  local horizontalDirection = (starPounds.mcontroller.xVelocity > 0) and 1 or ((starPounds.mcontroller.xVelocity < 0) and -1 or 0)
+  local verticalDirection = (starPounds.mcontroller.yVelocity > 0) and 1 or ((starPounds.mcontroller.yVelocity < 0) and -1 or 0)
   self.cycle = vec2.lerp(5 * dt, (self.cycle or {0, 0}), vec2.mul({horizontalDirection, verticalDirection}, self.struggled and 0.25 or 1))
   local struggleMagnitude = vec2.mag(self.cycle)
   if not (horizontalDirection == 0 and verticalDirection == 0) then
@@ -182,13 +182,13 @@ function prey:playerStruggle(dt)
   local predPosition = world.entityPosition(storage.starPounds.pred)
   if storage.starPounds.spectatingPred then
     mcontroller.setPosition(vec2.add(world.entityPosition(storage.starPounds.pred), {0, -1}))
-    local distance = world.distance(predPosition, mcontroller.position())
+    local distance = world.distance(predPosition, starPounds.mcontroller.position)
     mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
   else
     local predPosition = vec2.add(predPosition, vec2.mul(self.cycle, 2 + (math.sin((os.clock() - self.startedStruggling) * 2) + 1)/4))
     -- Slowly drift up/down.
     predPosition = vec2.add(predPosition, {0, math.sin(os.clock() * 0.5) * 0.25 - 0.25})
-    local distance = world.distance(predPosition, mcontroller.position())
+    local distance = world.distance(predPosition, starPounds.mcontroller.position)
     mcontroller.translate(vec2.lerp(10 * dt, {0, 0}, distance))
   end
   -- No air.

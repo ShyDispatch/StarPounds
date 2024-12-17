@@ -232,15 +232,13 @@ function stomach:digest(dt, isGurgle, isBelch)
             local healAmount = math.min(healBaseAmount * healing * self.data.healingRatio, maxHealth * self.data.healingCap)
             status.modifyResource("health", healAmount)
             -- Energy regenerates faster than health, and energy lock time gets reduced.
-            if not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and digestionEnergy > 0 then
+            if not starPounds.moduleFunc("strain", "straining") and not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and digestionEnergy > 0 then
               local energyAmount = math.min(healBaseAmount * digestionEnergy * self.data.energyRatio, maxEnergy * self.data.energyCap)
               if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
                 status.modifyResource("energy", energyAmount)
               end
-              -- Energy regen block is capped at 2x the speed (decreases by the delta). Does not happen while strained.
-              if not starPounds.strained then
-                status.modifyResource("energyRegenBlock", -math.min(digestAmount * absorption * digestionEnergy, seconds))
-              end
+              -- Energy regen block is capped at 2x the speed (decreases by the delta)
+              status.modifyResource("energyRegenBlock", -math.min(digestAmount * absorption * digestionEnergy, seconds))
             end
           end
         end
@@ -297,10 +295,9 @@ function stomach:sloshing(dt)
   if not starPounds.hasSkill("sloshing") then return end
   -- Only works with energy.
   if status.isResource("energy") and status.resourceLocked("energy") then return end
-  local crouching = mcontroller.crouching()
   self.sloshTimer = math.max(self.sloshTimer - dt, 0)
   self.sloshDeactivateTimer = math.max(self.sloshDeactivateTimer - dt, 0)
-  if crouching and not self.wasCrouching and self.sloshTimer < (self.data.sloshTimer - self.data.minimumSloshTimer) then
+  if starPounds.mcontroller.crouching and not self.wasCrouching and self.sloshTimer < (self.data.sloshTimer - self.data.minimumSloshTimer) then
     local activationMultiplier = self.sloshActivations/self.data.sloshActivationCount
     local sloshEffectiveness = (1 - (self.sloshTimer/self.data.sloshTimer)) * activationMultiplier
     -- Sloshy sound, with volume increasing until activated.
@@ -320,10 +317,26 @@ function stomach:sloshing(dt)
     self.sloshTimer = self.data.sloshTimer
     self.sloshDeactivateTimer = self.data.sloshDeactivateTimer
   end
-  if self.sloshDeactivateTimer == 0 or (mcontroller.walking() or mcontroller.running()) then
+  if self.sloshDeactivateTimer == 0 or (starPounds.mcontroller.walking or starPounds.mcontroller.running) then
     self.sloshActivations = 0
   end
   self.wasCrouching = crouching
+end
+
+function stomach:stepTimer(timer, dt)
+  -- Don't do anything if the mod is disabled.
+  if not storage.starPounds.enabled then return end
+  -- Argument sanitisation.
+  dt = math.max(tonumber(dt) or 0, 0)
+  if dt == 0 then return end
+  -- Rumble increment.
+  if timer == "rumble" and self.rumbleTimer then
+    self.rumbleTimer = math.max(self.rumbleTimer - dt, 0)
+  end
+  -- Gurgle increment.
+  if timer == "gurgle" and self.gurgleTimer then
+    self.gurgleTimer = math.max(self.gurgleTimer - dt, 0)
+  end
 end
 
 starPounds.modules.stomach = stomach

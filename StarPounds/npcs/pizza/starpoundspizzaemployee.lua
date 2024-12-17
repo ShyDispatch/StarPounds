@@ -42,7 +42,7 @@ function update(dt)
   update_old(dt)
   beamOut()
 
-  if mcontroller.liquidMovement() then
+  if starPounds.mcontroller.liquidMovement then
     mcontroller.controlParameters({liquidBuoyancy = 1})
   end
 end

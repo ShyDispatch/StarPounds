@@ -89,7 +89,7 @@ function _player:damageHitboxTiles(tileDamage)
   local groundLevel = 0
   local height = 0
   local width = {0, 0}
-  local position = mcontroller.position()
+  local position = starPounds.mcontroller.position
   -- Calculate height, groundLevel, and width.
   for _, v in ipairs(mcontroller.collisionPoly()) do
     height = math.max(height, v[2])

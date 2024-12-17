@@ -165,14 +165,14 @@ end
 
 function pred:eatNearby(position, range, querySize, options, check)
   -- Argument sanitisation.
-  position = (type(position) == "table" and type(position[1]) == "number" and type(position[2]) == "number") and position or mcontroller.position()
+  position = (type(position) == "table" and type(position[1]) == "number" and type(position[2]) == "number") and position or starPounds.mcontroller.position
   range = math.max(tonumber(range) or 0, 0)
   querySize = math.max(tonumber(querySize) or 0, 0)
   options = type(options) == "table" and options or {}
 
-  local mouthPosition = starPounds.mouthPosition()
+  local mouthPosition = starPounds.mcontroller.mouthPosition
   if starPounds.currentSize.yOffset then
-    mouthPosition[2] = mouthPosition[2] + starPounds.currentSize.yOffset
+    mouthPosition = vec2.add(mouthPosition, {0, starPounds.currentSize.yOffset})
   end
 
   local preferredEntities = position and world.entityQuery(position, querySize, {order = "nearest", includedTypes = {"player", "npc", "monster"}, withoutEntityId = entity.id()}) or jarray()
@@ -256,8 +256,7 @@ function pred:preyDigested(preyId, items, preyStomach)
 
   if not starPounds.hasOption("disableItemRegurgitation") and (#regurgitatedItems > 0) then
     if doBelchParticles then
-      local mouthPosition = starPounds.mouthPosition()
-      world.spawnProjectile("regurgitateditems", mouthPosition, entity.id(), vec2.rotate({math.random(1,2) * mcontroller.facingDirection(), math.random(0, 2)/2}, mcontroller.rotation()), false, {
+      world.spawnProjectile("regurgitateditems", starPounds.mcontroller.mouthPosition, entity.id(), vec2.rotate({math.random(1,2) * starPounds.mcontroller.facingDirection, math.random(0, 2)/2}, starPounds.mcontroller.rotation), false, {
         items = regurgitatedItems
       })
     elseif starPounds.type == "player" then
@@ -487,12 +486,11 @@ end
 
 function pred:belchParticles(prey, essence)
   -- Fancy little particles similar to the normal death animation.
-  local mouthPosition = starPounds.mouthPosition()
-  local friction = world.breathable(mouthPosition) or world.liquidAt(mouthPosition)
+  local friction = world.breathable(starPounds.mcontroller.mouthPosition) or world.liquidAt(starPounds.mcontroller.mouthPosition)
   local particle = sb.jsonMerge(starPounds.settings.particleTemplates.vore, {})
   particle.color = {188, 235, 96}
-  particle.initialVelocity = vec2.add({(friction and 2 or 3) * mcontroller.facingDirection(), 0}, vec2.add(mcontroller.velocity(), {0, world.gravity(mouthPosition)/62.5})) -- Weird math but it works I guess.
-  particle.finalVelocity = {mcontroller.facingDirection(), 10}
+  particle.initialVelocity = vec2.add({(friction and 2 or 3) * starPounds.mcontroller.facingDirection, 0}, vec2.add(starPounds.mcontroller.velocity, {0, world.gravity(mouthPosition)/62.5})) -- Weird math but it works I guess.
+  particle.finalVelocity = {starPounds.mcontroller.facingDirection, 10}
   particle.approach = friction and {5, 10} or {0, 0}
   particle.timeToLive = friction and 0.2 or 0.075
   local particles = {{

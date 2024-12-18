@@ -391,7 +391,6 @@ function pred:preyCheck(dt)
     self.preyCheckTimer = math.max(self.preyCheckTimer - dt, 0)
     if self.preyCheckTimer > 0 then return end
   end
-  chat.send('preyCheck')
   -- table.remove is doodoo poop water.
   local newStomach = jarray()
   for preyIndex, prey in ipairs(storage.starPounds.stomachEntities) do

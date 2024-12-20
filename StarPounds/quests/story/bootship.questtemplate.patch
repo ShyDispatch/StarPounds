@@ -1,5 +1,1 @@
-[
-  { "op" : "remove",
-    "path" : "/prerequisites"
-  }
-]
+[[ { "op": "test", "path": "/prerequisites" }, { "op": "remove", "path": "/prerequisites" } ]]

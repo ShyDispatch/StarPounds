@@ -1,9 +1,0 @@
-[
-  {
-    "op": "replace",
-    "path": "/tenants/species",
-    "value": {
-      "deadbeat"
-    }
-  }
-]

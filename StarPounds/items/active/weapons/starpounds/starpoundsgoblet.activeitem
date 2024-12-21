@@ -1,0 +1,88 @@
+{
+  "itemName" : "starpoundsgoblet",
+  "price" : 2500,
+  "level" : 1,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "May we tempt you?",
+  "shortdescription" : "Tempting Goblet",
+  "tooltipKind" : "sword",
+  "category" : "dagger",
+  "twoHanded" : false,
+  "itemTags" : ["weapon","melee","dagger", "upgradeableWeapon"],
+
+  "inventoryIcon" : "starpoundsgoblet.png",
+
+  "animation" : "/items/active/weapons/melee/dagger/dagger.animation",
+  "animationParts" : {
+    "handle": "",
+    "blade" : "starpoundsgoblet.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/melee/swing_dagger.ogg" ]
+    }
+  },
+
+  "scripts" : ["/items/active/weapons/melee/meleeweapon.lua"],
+
+  "elementalType" : "caloric",
+
+  "aimOffset" : 0.0,
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/melee/meleeslash.lua"],
+    "class" : "MeleeSlash",
+
+    "fireTime" : 0.15,
+    "baseDps" : 1.0,
+    "damageConfig" : {
+      "damageSourceKind" : "dagger",
+      "statusEffects" : [ 
+    {"effect": "starpoundsrategain", "duration": 1},
+    {"effect": "starpoundsratebloat", "duration": 1}	  
+	  ],
+      "knockbackMode" : "aim",
+      "knockback" : 5,
+      "timeoutGroup" : "primary"
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : -90,
+        "weaponRotation" : -10,
+        "weaponOffset" : [0, 2.25],
+
+        "allowFlip" : true,
+        "allowRotate" : true
+      },
+      "windup" : {
+        "duration" : 0.05,
+        "armRotation" : -20,
+        "weaponRotation" : -20,
+        "weaponOffset" : [0, 2.25],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      },
+      "fire" : {
+        "duration" : 0.2,
+        "armRotation" : -135,
+        "weaponRotation" : 40,
+        "weaponOffset" : [0, 2.5],
+
+        "allowFlip" : true,
+        "allowRotate" : false
+      }
+    }
+  },
+  "fireSounds" : [ "/sfx/melee/swing_dagger.ogg" ],
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua",
+
+  "upgradeParameters" : {
+    "inventoryIcon" : "starpoundsgobletl6.png",
+    "animationParts" : {
+      "blade" : "/items/active/weapons/starpounds/starpoundsgobletl6.png"
+    },
+    "shortdescription" : "Soup Ladle ^yellow;^reset;"
+  }
+}

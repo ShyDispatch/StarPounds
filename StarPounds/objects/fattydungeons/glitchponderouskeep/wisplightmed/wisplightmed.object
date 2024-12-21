@@ -20,7 +20,7 @@
 
   "statusEffects" : [ ],
     
-  "lightColor" : [168, 84, 0],
+  "lightColor" : [128, 36, 0],
 
   "flickerPeriod" : 0.6,
   "flickerMinIntensity" : 0.95,

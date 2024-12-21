@@ -1,0 +1,54 @@
+{
+  "objectName" : "ponderousdesk",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","commerce","storage"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "description" : "A reinforced desk. You can spot small grease stains on it.",
+  "shortdescription" : "Ponderous Desk",
+  "race" : "glitch",
+  "category" : "furniture",
+  "price" : 130,
+  "health" : 1.5,
+
+  "apexDescription" : "An ornate desk. Seems like it was more used as an impromptu dinner table though.",
+  "avianDescription" : "A scholar's desk, though I can see small splotches of grease amid the ink.",
+  "floranDescription" : "Floran faintly ssmellsss food here. But desssk iss for read-y thingss?",
+  "glitchDescription" : "Curious. I can see grease stains alongside the expected ink stains. Suppose the Ponderous weren't above snacking and studying.",
+  "humanDescription" : "I see someone tried to mix lunch and study on this desk.",
+  "hylotlDescription" : "Hmph, grease stains. This was meant to be for scholarly pursuits, not gorging oneself!",
+  "novakidDescription" : "A pretty desk. Could use a tiny 'ol bit of cleaning for those grease stains though.",
+
+  "inventoryIcon" : "ponderousdeskicon.png",
+  "orientations" : [
+    {
+      "image" : "ponderousdesk.png:<color>",
+      "imagePosition" : [-24, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform",
+      "collisionSpaces" : [ [-3, 1], [-2, 1], [-1, 1], [0, 1], [1, 1], [2, 1] ]
+    },
+    {
+      "image" : "ponderousdesk.png:<color>",
+      "imagePosition" : [-24, 0],
+      "direction" : "right",
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform",
+      "collisionSpaces" : [ [-3, 1], [-2, 1], [-1, 1], [0, 1], [1, 1], [2, 1] ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/woodenbox_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/woodenbox_close.ogg" ],
+  "slotCount" : 9,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+
+}

@@ -1,0 +1,40 @@
+{
+  "objectName" : "ponderouschest1",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","storage"],
+  "rarity" : "Common",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 100,
+  "description" : "A heavy, reinforced chest.",
+  "shortdescription" : "Small Ponderous Chest",
+  "race" : "glitch",
+  "health" : 1.5,
+
+  "apexDescription" : "A well made chest. Perhaps there could be treasure inside.",
+  "avianDescription" : "This sturdy chest ought to hold something interesting.",
+  "floranDescription" : "Floran wondersss what'ss in shiny metalman chessst...",
+  "glitchDescription" : "Enticed. A lost order's treasure must be worth something!",
+  "humanDescription" : "A pretty chest, gotta be something important inside.",
+  "hylotlDescription" : "A finely crafted chest. Wonder what could be inside...",
+  "novakidDescription" : "I can see myself in this here chest's bracing.",
+
+  "inventoryIcon" : "ponderouschest1icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderouschest1.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_small_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/chest_small_close.ogg" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

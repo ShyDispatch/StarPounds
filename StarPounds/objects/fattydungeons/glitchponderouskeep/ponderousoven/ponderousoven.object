@@ -1,0 +1,71 @@
+{
+  "objectName" : "ponderousoven",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","cooking","light"],
+  "price" : 125,
+  "rarity" : "Common",
+  "category" : "crafting",
+  "description" : "This cooking pot expels the odour of a hundred hearty meals.",
+  "shortdescription" : "Ponderous Oven",
+  "race" : "glitch",
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+    "config" : "/interface/windowconfig/craftingcampfire.config",
+    "filter" : [ "campfire" ],
+    "paneLayoutOverride" : {
+      "windowtitle" : {
+        "title" : "  Ponderous Oven",
+        "subtitle" : "  Imbued with lipic magic!"
+      }
+    }
+  },
+
+  "apexDescription" : "An unconventional heating source for sure.",
+  "avianDescription" : "The goop in the bottom seems to be the heat source.",
+  "floranDescription" : "Goop cooking? Sssmart metalmen!",
+  "glitchDescription" : "Wary. I'm not sure if I could trust that energy to make healthy food.",
+  "humanDescription" : "Looks perfect for cooking pizza!",
+  "hylotlDescription" : "I cannot help but think food cooked in this might not be the healthiest.",
+  "novakidDescription" : "Interestin' choice of cookin heat.",
+
+  "lightColor" : [128, 36, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+
+  "inventoryIcon" : "ponderousovenicon.png",
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "ponderousoven.png:<color>.<frame>", "fullbright" : true }, { "image" : "ponderousovenlit.png:<color>.<frame>" } ],
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+
+      "frames" : 4,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+    },
+    {
+      "imageLayers" : [ { "image" : "ponderousoven.png:<color>.<frame>", "fullbright" : true }, { "image" : "ponderousovenlit.png:<color>.<frame>" } ],
+      "imagePosition" : [-8, 0],
+      "direction" : "right",
+
+      "frames" : 4,
+      "animationCycle" : 0.9,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+	  
+    }
+  ],
+
+  "statusEffects" : [ ]
+
+}

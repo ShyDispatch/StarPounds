@@ -1,0 +1,40 @@
+{
+  "objectName" : "ponderouschest2",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","storage"],
+  "rarity" : "Uncommon",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+
+  "category" : "storage",
+  "price" : 100,
+  "description" : "A large, heavy reinforced chest. Perfect for protecting your sweets!",
+  "shortdescription" : "Large Ponderous Chest",
+  "race" : "glitch",
+  "health" : 1.5,
+
+  "apexDescription" : "Reinforcing suggests there could be something valuable inside.",
+  "avianDescription" : "What could such a well protected chest hide?",
+  "floranDescription" : "Floran smellsss sweetsss from giant chest!",
+  "glitchDescription" : "Anticipation. What treasures could the Ponderous Order keep in here?",
+  "humanDescription" : "Dunun dunuh!",
+  "hylotlDescription" : "Oh the anticipation... What precious treasures could be inside?",
+  "novakidDescription" : "Smells a bit sweet, maybe I could find some tasty snacks!",
+
+  "inventoryIcon" : "ponderouschest2icon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderouschest2.png:<color>.<key>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/chest_medium_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/chest_medium_close.ogg" ],
+  "slotCount" : 24,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+}

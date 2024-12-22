@@ -9,8 +9,8 @@ function init()
   self.tickTimer = self.tickTime
   self.minimumLiquid = root.assetJson("/player.config:statusControllerSettings.minimumLiquidStatusEffectPercentage")
   self.sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes")
-  self.settings = root.assetJson("/scripts/starpounds/starpounds.config:settings")
-  self.caloriumFood = drinking.drinkableVolume * drinking.drinkables.starpoundscaloriumliquid
+  self.drinking = root.assetJson("/scripts/starpounds/modules/drinking.config")
+  self.caloriumFood = self.drinking.drinkableVolume * self.drinking.drinkables.starpoundscaloriumliquid
 
   animator.setSoundVolume("digest", 0.75)
   animator.setSoundPitch("digest", 2/(1 + self.tickTime))

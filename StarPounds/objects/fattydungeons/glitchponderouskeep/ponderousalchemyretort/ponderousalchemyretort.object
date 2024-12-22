@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderousalchemyretort",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","science"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 75,
+  "description" : "A flask perfect for your alchemical research.",
+  "shortdescription" : "Lipomantic Retort",
+  "race" : "generic",
+
+  "apexDescription" : "A distilling bottle.",
+  "avianDescription" : "Looking at small things isn't as interesting as looking at the stars.",
+  "floranDescription" : "Floran likesss drippy flasssk",
+  "glitchDescription" : "Neutral. An oddly shaped bottle commonly used for distilling.",
+  "humanDescription" : "Retort? What argument could you make?",
+  "hylotlDescription" : "A strange bottle.",
+  "novakidDescription" : "Think I've seen an old buddy use these to brew starshine.",
+
+  "inventoryIcon" : "ponderousalchemyretorticon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousalchemyretort.png:<color>",
+
+      "imagePosition" : [-8, -8],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

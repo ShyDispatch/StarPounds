@@ -1,0 +1,59 @@
+{
+  "objectName" : "ponderousdoorlarge",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","door"],
+  "rarity" : "Rare",
+
+  "category" : "door",
+  "price" : 200,
+  "description" : "A towering massive door made of heavy brass and bronze.",
+  "shortdescription" : "Giant Ponderous Door ",
+  "race" : "glitch",
+
+  "apexDescription" : "An impressive door. I presume the figure represents some lost order.",
+  "avianDescription" : "A very well made giant door. I shudder to imagine how hard it'd be to push open.",
+  "floranDescription" : "Fat door makesss Floran feel ssmall.",
+  "glitchDescription" : "Awed. This door bears the Ponderous Order's sigil. It still bears the awe of their glory days...",
+  "humanDescription" : "Never thought I'd see a door with big... tracts of land.",
+  "hylotlDescription" : "A monolithic union of form and function.",
+  "novakidDescription" : "Now that's a big 'ol lady!",
+
+  "inventoryIcon" : "ponderousdoorlargeicon.png",
+
+  "tooltipKind" : "door",
+  "largeImage" : "ponderousdoorlarge.png:right",
+  
+  "orientations" : [
+    {
+      "dualImage" : "ponderousdoorlarge.png:default",
+      "imagePosition" : [-24, 0],
+      "renderLayer" : "Object+5",
+
+      "spaces" : [ [0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7] ],
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/stonedoor_open.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/stonedoor_close.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "ponderousdoorlarge.png"
+  },
+  "animationPosition" : [-24, 0],
+
+  "inputNodes" : [ [0, 7] ],
+  "outputNodes" : [ [0, 0] ]
+}

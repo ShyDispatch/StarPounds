@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderousalchemypestle",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","science","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "description" : "A mortar and pestle. You can see smears of some strange glowing substance inside.",
+  "shortdescription" : "Lipomantic Pestle",
+  "race" : "glitch",
+
+  "apexDescription" : "A basic mashing tool.",
+  "avianDescription" : "Pestles are great for seed feed.",
+  "floranDescription" : "Sssmashy bowl!",
+  "glitchDescription" : "Curious. A mortar and pestle, commonly seen in the company of chefs and alchemists.",
+  "humanDescription" : "Pestle, you are the bestle.",
+  "hylotlDescription" : "Bit small to be used for mochi.",
+  "novakidDescription" : "Mortar and pestle. I dunno what this has to do with guns or varmints.",
+
+
+  "inventoryIcon" : "ponderousalchemypestleicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousalchemypestle.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderousalchemybottlerack",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","science"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "description" : "A rack of small bottles.",
+  "shortdescription" : "Lipomantic Bottlerack",
+  "race" : "glitch",
+
+  "apexDescription" : "A rack of bottles. I presume these might have been samples.",
+  "avianDescription" : "Lab bottles.",
+  "floranDescription" : "Boring metalman bottles.",
+  "glitchDescription" : "Observant. I notice faint glowing specks of goop inside these flasks.",
+  "humanDescription" : "Reminds me of chemistry class.",
+  "hylotlDescription" : "Basic set of bottles.",
+  "novakidDescription" : "Buncha bottles.",
+
+
+  "inventoryIcon" : "ponderousalchemybottlerackicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousalchemybottlerack.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

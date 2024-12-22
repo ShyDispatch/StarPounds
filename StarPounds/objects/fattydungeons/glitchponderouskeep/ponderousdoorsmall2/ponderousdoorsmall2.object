@@ -1,0 +1,59 @@
+{
+  "objectName" : "ponderousdoorsmall2",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","door"],
+  "rarity" : "Uncommon",
+
+  "category" : "door",
+  "price" : 120,
+  "description" : "A well decorated door of the Ponderous Order.",
+  "shortdescription" : "Ornate Ponderous Door",
+  "race" : "glitch",
+
+  "apexDescription" : "An ornate door. No doubt meant to protect treasures.",
+  "avianDescription" : "How ornate, wonder what could be behind it.",
+  "floranDescription" : "What could shiny door hide?",
+  "glitchDescription" : "Excited. What could be behind this door?",
+  "humanDescription" : "I can see myself in the brass.",
+  "hylotlDescription" : "A lavishly decorated door.",
+  "novakidDescription" : "Oughta be somethin' special to warrant a door like this 'ere.",
+
+  "inventoryIcon" : "ponderousdoorsmall2icon.png",
+
+  "tooltipKind" : "door",
+  "largeImage" : "ponderousdoorsmall2.png:right",
+  
+  "orientations" : [
+    {
+      "dualImage" : "ponderousdoorsmall2.png:default",
+      "imagePosition" : [-16, 0],
+      "renderLayer" : "Object+5",
+
+      "spaces" : [ [0, 0], [0, 1], [0, 2], [0, 3], [0, 4] ],
+      "anchors" : [ "bottom", "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/woodendoor_open.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/woodendoor_close.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "ponderousdoorsmall2.png"
+  },
+  "animationPosition" : [-16, 0],
+
+  "inputNodes" : [ [0, 4] ],
+  "outputNodes" : [ [0, 0] ]
+}

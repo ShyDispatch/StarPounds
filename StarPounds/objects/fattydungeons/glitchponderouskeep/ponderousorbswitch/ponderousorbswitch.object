@@ -1,0 +1,59 @@
+{
+  "objectName" : "ponderousorbswitch",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","wired"],
+  "rarity" : "Common",
+  "category" : "wire",
+  "price" : 145,
+  "lightColor" : [128, 36, 0],
+
+  "flickerPeriod" : 0.6,
+  "flickerMinIntensity" : 0.95,
+  "flickerMaxIntensity" : 1,
+  "flickerPeriodVariance" : 0.075,
+  "flickerIntensityVariance" : 0.025,
+  
+  "description" : "An otherworldly energy emanates from this orb.",
+  "shortdescription" : "Ponderous Orb Switch",
+  "race" : "glitch",
+
+  "apexDescription" : "Odd, this device doesn't seem to use electricity.",
+  "avianDescription" : "A crystal ball. I'm tempted to touch it.",
+  "floranDescription" : "Floran touch shiny ball!",
+  "glitchDescription" : "Baffled. This orb seems to be a switch, but there's no technology to be found inside!",
+  "humanDescription" : "Time to ponder!",
+  "hylotlDescription" : "I don't think I can see any obvious tech, but this cannot be magic!",
+  "novakidDescription" : "I wonna touch that orb!",
+
+  "inventoryIcon" : "ponderousorbswitchicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousorbswitch.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "scripts" : [
+    "/objects/wired/switch/switch.lua"
+  ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/fattydungeons/glitchponderouskeep/ponderousorbswitch/ponderousorbswitch.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "on" : [ "/sfx/objects/mechbeacon_pulse2.ogg" ],
+      "off" : [ "/sfx/objects/mechbeacon_pulse1.ogg" ]
+    }
+  },
+  "animationParts" : {
+    "switch" : "ponderousorbswitch.png",
+    "switchlit" : "ponderousorbswitchlit.png"
+  },
+  "animationPosition" : [-8, 0],
+
+  "outputNodes" : [ [0, 0] ]
+  
+}

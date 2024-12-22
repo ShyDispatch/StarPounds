@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderoushalberdrack",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","combat"],
+  "rarity" : "Common",
+  "description" : "An antique halberd belonging to the Ponderous Order.",
+  "shortdescription" : "Ponderous Halberd Rack",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 70,
+
+  "apexDescription" : "An antique halberd. Remarkably sharp looking for a display piece.",
+  "avianDescription" : "A sharp looking halberd.",
+  "floranDescription" : "Axessspear? How have Floran not thought of thisss!",
+  "glitchDescription" : "Positve. A finely made halberd.",
+  "humanDescription" : "I'd be terrified of this toppling over and axing me in the face.",
+  "hylotlDescription" : "Chopping swings and piercing thrusts. Respectable.",
+  "novakidDescription" : "An odd looking spear",
+
+  "inventoryIcon" : "ponderoushalberdrackicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderoushalberdrack.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

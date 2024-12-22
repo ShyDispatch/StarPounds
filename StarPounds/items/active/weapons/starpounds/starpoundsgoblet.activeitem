@@ -74,7 +74,7 @@
       }
     }
   },
-  "fireSounds" : [ "/sfx/melee/swing_dagger.ogg" ],
+  "fireSounds" : [ "/sfx/projectiles/waterballoon2.ogg" ],
 
   "builder" : "/items/buildscripts/buildunrandweapon.lua",
 

@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderoustankard",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","cooking"],
+  "rarity" : "Common",
+  "description" : "An old cup you'd typically see in a tavern.",
+  "shortdescription" : "Ponderous Tankard",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 20,
+
+  "apexDescription" : "A sturdy tankard.",
+  "avianDescription" : "A humble tankard.",
+  "floranDescription" : "Floran could ssslam back whole cup.",
+  "glitchDescription" : "Cheery. A tankard! I'll take all the mead!",
+  "humanDescription" : "Cheers!",
+  "hylotlDescription" : "A tavern's tankard.",
+  "novakidDescription" : "Bottoms up!",
+
+  "inventoryIcon" : "ponderoustankardicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderoustankard.png:<color>",
+
+      "imagePosition" : [0, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

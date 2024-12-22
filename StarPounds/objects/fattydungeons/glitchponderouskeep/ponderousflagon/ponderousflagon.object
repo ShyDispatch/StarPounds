@@ -1,0 +1,33 @@
+{
+  "objectName" : "ponderousflagon",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","cooking"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 50,
+  "description" : "A flagon for old Glitch liquor.",
+  "shortdescription" : "Ponderous Flagon",
+  "race" : "glitch",
+
+  "apexDescription" : "An empty flagon.",
+  "avianDescription" : "An old flagon.",
+  "floranDescription" : "Tall booze cup.",
+  "glitchDescription" : "Nostalgic. A flagon's always a sign of merriment.",
+  "humanDescription" : "Cheers, mate.",
+  "hylotlDescription" : "A liquor receptacle.",
+  "novakidDescription" : "Now we're talkin!",
+
+
+  "inventoryIcon" : "ponderousflagonicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderousflagon.png:<color>",
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

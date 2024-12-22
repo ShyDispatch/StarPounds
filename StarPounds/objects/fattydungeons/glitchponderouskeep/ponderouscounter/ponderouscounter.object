@@ -1,0 +1,45 @@
+{
+  "objectName" : "ponderouscounter",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","storage"],
+  "rarity" : "Common",
+  "category" : "storage",
+  "objectType" : "container",
+  "tooltipKind" : "container",
+  "price" : 110,
+  "description" : "A sturdy set of cabinets, for lab or kitchen use!.",
+  "shortdescription" : "Ponderous Cabinet",
+  "race" : "apex",
+  "health" : 1.5,
+
+  "apexDescription" : "Old-fashioned but functional.",
+  "avianDescription" : "A good place to store food.",
+  "floranDescription" : "Ssstorage for food. Mmmmmm.",
+  "glitchDescription" : "Eager. The possibility of food excites even the Glitch.",
+  "humanDescription" : "Looks like a kitchen counter.",
+  "hylotlDescription" : "What dishes might dwell within, I wonder?",
+  "novakidDescription" : "Just a good ol' kitchen counter.",
+
+
+  "inventoryIcon" : "ponderouscountericon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderouscounter.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.5,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+      "collision" : "platform"
+
+    }
+  ],
+
+  "openSounds" : [ "/sfx/objects/woodendoor_open.ogg" ],
+  "closeSounds" : [ "/sfx/objects/woodendoor_close.ogg" ],
+  "slotCount" : 16,
+  "uiConfig" : "/interface/chests/chest<slots>.config",
+  "frameCooldown" : 5,
+  "autoCloseCooldown" : 3600
+
+}

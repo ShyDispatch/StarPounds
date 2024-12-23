@@ -96,13 +96,13 @@
     ],
 
       "approachActions" : [
-//            {
-//          "name" : "approach-fly",
-//          "parameters" : {
-//            "usePathfinding" : true,
-//            "excludeLiquidIds" : [1]
-//          }
-//        }
+            {
+          "name" : "approach-fly",
+          "parameters" : {
+            "usePathfinding" : true,
+            "excludeLiquidIds" : [1]
+          }
+        }
       ],
 
       "followActions" : [

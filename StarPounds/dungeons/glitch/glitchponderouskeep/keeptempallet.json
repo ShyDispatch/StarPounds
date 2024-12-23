@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt2csJwCAQRVF7Si8p2HosImQhiDD5zFPikHvhbQYXJ+uUlFIJvqh5\/bnZk\/usPP7TtjfLN\/eZvfX3xtZq3WeGH78S\/n\/5t4Hz+Os39Lu6r+ZXwo9fCT9+Jfz4lfDjV8KPXwm\/7bfe4MePHz9+\/Cv7I\/b1f88ROwC2Fkot",
+         "data":"eJzt2bsNwCAMBFAmyRBhl8yS+TIPQ0TpTsiIjzEBdCddYYviFYgUCc65sHhXDfo9VJoxD7Rkb5UW\/2e7oE9mb5laf2xEa2pvmdr7P7P\/gEqzyzjpr89O\/pLM7I\/fbukt1\/p9x7b4433qfOobNoNfE0v\/iFj6b6g000\/\/zvf\/hEoz\/fTvfP9HhH76NaGffk0s\/akz9NNPP\/300z+zf8X8\/d+zR19keml3",
          "encoding":"base64",
          "height":40,
          "name":"back",
@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt18EJwCAQBEB7Sv+95S+BJKDuJc7Afd3Fx4mtAbMd3QCs0u+fEbPS6Dz9s3n6Z\/P0z+bt2r\/Ke7Pr\/VfJ0z+bp382T\/+sP\/Wv8kd7o3K3J\/S\/P3\/2AN+3YlfYP9dOAnAerw==",
+         "data":"eJzt1cENgCAMRmEmcQhdzvmczGtjjJLQv7TkfUmv5YUDtIYMDjMV0d+\/v+odKW1mKqIfIy4zCs\/3x2Oi+5X7qverqftPMwr0f++r3q+m7t\/NKGTp9\/pvRq12\/2r0a\/dFn0f\/3PPon2ul\/qg\/01Pmth70\/+9XD4D6It4K3p93N1bKLlQ=",
          "encoding":"base64",
          "height":40,
          "name":"front",
@@ -523,6 +523,182 @@
                  "width":24,
                  "x":40,
                  "y":232
+                }, 
+                {
+                 "height":24,
+                 "id":746,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"castlewalls1",
+                     "colorVariant":"5",
+                     "front":"castlewalls1"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string",
+                     "front":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":16,
+                 "y":16
+                }, 
+                {
+                 "height":24,
+                 "id":747,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"castlewalls1",
+                     "colorVariant":"5"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":48,
+                 "y":16
+                }, 
+                {
+                 "height":24,
+                 "id":750,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"castlewalls2",
+                     "colorVariant":"5",
+                     "front":"castlewalls2"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string",
+                     "front":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":16,
+                 "y":48
+                }, 
+                {
+                 "height":24,
+                 "id":751,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"castlewalls2",
+                     "colorVariant":"5"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":48,
+                 "y":48
+                }, 
+                {
+                 "height":24,
+                 "id":752,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"slopedrustypanel",
+                     "colorVariant":"4",
+                     "front":"slopedrustypanel"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string",
+                     "front":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":16,
+                 "y":80
+                }, 
+                {
+                 "height":24,
+                 "id":753,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"slopedrustypanel",
+                     "colorVariant":"4"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":48,
+                 "y":80
+                }, 
+                {
+                 "height":24,
+                 "id":756,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"ornateroofing",
+                     "colorVariant":"6",
+                     "front":"ornateroofing"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string",
+                     "front":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":16,
+                 "y":112
+                }, 
+                {
+                 "height":24,
+                 "id":757,
+                 "name":"",
+                 "properties":
+                    {
+                     "back":"ornateroofing",
+                     "colorVariant":"6"
+                    },
+                 "propertytypes":
+                    {
+                     "back":"string",
+                     "colorVariant":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":48,
+                 "y":112
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -677,7 +853,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":746,
+ "nextobjectid":758,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

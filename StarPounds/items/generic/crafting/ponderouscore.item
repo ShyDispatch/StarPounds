@@ -4,7 +4,7 @@
   "rarity" : "Legendary",
   "category" : "craftingMaterial",
   "inventoryIcon" : "ponderouscore.png",
-  "description" : "Surging with strange power, this artifact of the Ponderous order belonged to a strong lipomancer.",
+  "description" : "Surging with strange power, this artifact belonged to a powerful lipomancer.",
   "shortdescription" : "Ponderous Core",
   "itemTags" : [ "reagent" ]
 }

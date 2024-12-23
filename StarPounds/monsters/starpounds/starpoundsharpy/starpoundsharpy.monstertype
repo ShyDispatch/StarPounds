@@ -19,7 +19,7 @@
 
     "seeThroughLiquid" : false,
     "behaviorConfig" : {
-      "damageOnTouch" : true,
+      "damageOnTouch" : false,
 
       "targetQueryRange" : 20,
       "targetOnDamage" : true,
@@ -65,10 +65,11 @@
 
       "approachActions" : [
         {
-          "name" : "approach-fly",
+          "name" : "starpounds-wisp-fly",
           "parameters" : {
-            "minRange" : 4,
-            "maxRange" : 8
+            "excludeLiquidIds" : [1],
+            "maxRange" : 20,
+            "minRange" : 10
           }
         }
       ],

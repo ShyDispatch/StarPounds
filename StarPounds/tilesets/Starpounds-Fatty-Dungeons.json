@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Starpounds-Fatty-Dungeons",
  "spacing":0,
- "tilecount":22,
+ "tilecount":60,
  "tileheight":88,
  "tileproperties":
     {
@@ -52,6 +52,13 @@
          "imagePositionX":"-8",
          "imagePositionY":"0",
          "object":"floranweightscale",
+         "tilesetDirection":"right"
+        },
+     "14":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"gluttonistlamp1",
          "tilesetDirection":"right"
         },
      "15":
@@ -110,11 +117,137 @@
          "object":"bossdoor_feasthall",
          "tilesetDirection":"right"
         },
+     "22":
+        {
+         "imagePositionX":"0",
+         "imagePositionY":"0",
+         "object":"ponderoustankard",
+         "tilesetDirection":"right"
+        },
+     "23":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderoushalberdrack",
+         "tilesetDirection":"right"
+        },
+     "24":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"ponderouscounter",
+         "tilesetDirection":"right"
+        },
+     "25":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousflagon",
+         "tilesetDirection":"right"
+        },
+     "26":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousalchemypestle",
+         "tilesetDirection":"right"
+        },
+     "27":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousalchemybottlerack",
+         "tilesetDirection":"right"
+        },
+     "28":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"-8",
+         "object":"ponderousalchemyretort",
+         "tilesetDirection":"right"
+        },
+     "29":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderouskeg2",
+         "tilesetDirection":"right"
+        },
      "3":
         {
          "imagePositionX":"-32",
          "imagePositionY":"-32",
          "object":"starpoundsgluttonistfeastpainting2",
+         "tilesetDirection":"right"
+        },
+     "30":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousorbswitch",
+         "tilesetDirection":"right"
+        },
+     "31":
+        {
+         "imagePositionX":"-24",
+         "imagePositionY":"0",
+         "object":"ponderousdoorlarge",
+         "tilesetDirection":"right"
+        },
+     "32":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"ponderousdoorsmall2",
+         "tilesetDirection":"right"
+        },
+     "33":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"ponderousdoorsmall1",
+         "tilesetDirection":"right"
+        },
+     "34":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousbarrel",
+         "tilesetDirection":"right"
+        },
+     "35":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"bossdoor_ponderouskeep",
+         "tilesetDirection":"right"
+        },
+     "36":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderouschest2",
+         "tilesetDirection":"right"
+        },
+     "37":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderouschest1",
+         "tilesetDirection":"right"
+        },
+     "38":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"starpoundsponderousidol",
+         "tilesetDirection":"right"
+        },
+     "39":
+        {
+         "imagePositionX":"1",
+         "imagePositionY":"0",
+         "object":"wispflamelamp",
          "tilesetDirection":"right"
         },
      "4":
@@ -124,11 +257,151 @@
          "object":"starpoundsgluttonistfeastpainting3",
          "tilesetDirection":"right"
         },
+     "40":
+        {
+         "imagePositionX":"0",
+         "imagePositionY":"0",
+         "object":"wispflametorch",
+         "tilesetDirection":"right"
+        },
+     "41":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"-16",
+         "object":"wisplightlarge",
+         "tilesetDirection":"right"
+        },
+     "42":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"-16",
+         "object":"wisplightmed",
+         "tilesetDirection":"right"
+        },
+     "43":
+        {
+         "imagePositionX":"0",
+         "imagePositionY":"-16",
+         "object":"wisplightsmall",
+         "tilesetDirection":"right"
+        },
+     "44":
+        {
+         "imagePositionX":"0",
+         "imagePositionY":"-24",
+         "object":"wisplighttall",
+         "tilesetDirection":"right"
+        },
+     "45":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"wispflamebrazier",
+         "tilesetDirection":"right"
+        },
+     "46":
+        {
+         "imagePositionX":"-24",
+         "imagePositionY":"0",
+         "object":"ponderousdesk",
+         "tilesetDirection":"right"
+        },
+     "47":
+        {
+         "imagePositionX":"-40",
+         "imagePositionY":"0",
+         "object":"ponderouscauldron",
+         "tilesetDirection":"right"
+        },
+     "48":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousoven",
+         "tilesetDirection":"right"
+        },
+     "49":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"starpoundsponderousbookshelf",
+         "tilesetDirection":"right"
+        },
      "5":
         {
          "imagePositionX":"-40",
          "imagePositionY":"0",
          "object":"starpoundsgluttonistfeasttable",
+         "tilesetDirection":"right"
+        },
+     "50":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"starpoundsponderousknightarmor",
+         "tilesetDirection":"right"
+        },
+     "51":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"-32",
+         "object":"starpoundsstainedglassiron",
+         "tilesetDirection":"right"
+        },
+     "52":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"-32",
+         "object":"starpoundsstainedglassbronze",
+         "tilesetDirection":"right"
+        },
+     "53":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"-16",
+         "object":"starpoundsponderoustapestry",
+         "tilesetDirection":"right"
+        },
+     "54":
+        {
+         "imagePositionX":"-40",
+         "imagePositionY":"0",
+         "object":"starpoundsponderoustable",
+         "tilesetDirection":"right"
+        },
+     "55":
+        {
+         "imagePositionX":"-32",
+         "imagePositionY":"0",
+         "object":"ponderousfoundersstatue",
+         "tilesetDirection":"right"
+        },
+     "56":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"starpoundsponderouscouch",
+         "tilesetDirection":"right"
+        },
+     "57":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"-16",
+         "object":"starpoundsponderousbannersmall",
+         "tilesetDirection":"right"
+        },
+     "58":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"-32",
+         "object":"starpoundsponderousbannerlarge",
+         "tilesetDirection":"right"
+        },
+     "59":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderousidolpedestal",
          "tilesetDirection":"right"
         },
      "6":
@@ -204,6 +477,13 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "14":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "15":
         {
          "imagePositionX":"string",
@@ -260,7 +540,133 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "22":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "23":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "24":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "25":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "26":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "27":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "28":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "29":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "3":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "30":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "31":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "32":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "33":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "34":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "35":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "36":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "37":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "38":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "39":
         {
          "imagePositionX":"string",
          "imagePositionY":"string",
@@ -274,7 +680,147 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "40":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "41":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "42":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "43":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "44":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "45":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "46":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "47":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "48":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "49":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "5":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "50":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "51":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "52":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "53":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "54":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "55":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "56":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "57":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "58":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "59":
         {
          "imagePositionX":"string",
          "imagePositionY":"string",
@@ -402,11 +948,119 @@
          "imageheight":40,
          "imagewidth":16
         },
+     "22":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderoustankard.png",
+         "imageheight":8,
+         "imagewidth":8
+        },
+     "23":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderoushalberdrack.png",
+         "imageheight":40,
+         "imagewidth":16
+        },
+     "24":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouscounter.png",
+         "imageheight":16,
+         "imagewidth":32
+        },
+     "25":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousflagon.png",
+         "imageheight":16,
+         "imagewidth":16
+        },
+     "26":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousalchemypestle.png",
+         "imageheight":16,
+         "imagewidth":16
+        },
+     "27":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousalchemybottlerack.png",
+         "imageheight":16,
+         "imagewidth":16
+        },
+     "28":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousalchemyretort.png",
+         "imageheight":24,
+         "imagewidth":16
+        },
+     "29":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouskeg2.png",
+         "imageheight":24,
+         "imagewidth":24
+        },
      "3":
         {
          "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsgluttonistfeastpainting2.png",
          "imageheight":80,
          "imagewidth":64
+        },
+     "30":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousorbswitch.png",
+         "imageheight":24,
+         "imagewidth":24
+        },
+     "31":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousdoorlarge.png",
+         "imageheight":64,
+         "imagewidth":56
+        },
+     "32":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousdoorsmall2.png",
+         "imageheight":40,
+         "imagewidth":40
+        },
+     "33":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousdoorsmall1.png",
+         "imageheight":40,
+         "imagewidth":40
+        },
+     "34":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousbarrel.png",
+         "imageheight":24,
+         "imagewidth":24
+        },
+     "35":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/bossdoor_ponderouskeep.png",
+         "imageheight":40,
+         "imagewidth":16
+        },
+     "36":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouschest2.png",
+         "imageheight":16,
+         "imagewidth":24
+        },
+     "37":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouschest1.png",
+         "imageheight":16,
+         "imagewidth":16
+        },
+     "38":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderousidol.png",
+         "imageheight":24,
+         "imagewidth":24
+        },
+     "39":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wispflamelamp.png",
+         "imageheight":24,
+         "imagewidth":6
         },
      "4":
         {
@@ -414,11 +1068,131 @@
          "imageheight":40,
          "imagewidth":32
         },
+     "40":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wispflametorch.png",
+         "imageheight":16,
+         "imagewidth":8
+        },
+     "41":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wisplightlarge.png",
+         "imageheight":40,
+         "imagewidth":24
+        },
+     "42":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wisplightmed.png",
+         "imageheight":32,
+         "imagewidth":16
+        },
+     "43":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wisplightsmall.png",
+         "imageheight":32,
+         "imagewidth":8
+        },
+     "44":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wisplighttall.png",
+         "imageheight":40,
+         "imagewidth":8
+        },
+     "45":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wispflamebrazier.png",
+         "imageheight":24,
+         "imagewidth":16
+        },
+     "46":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousdesk.png",
+         "imageheight":24,
+         "imagewidth":48
+        },
+     "47":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouscauldron.png",
+         "imageheight":42,
+         "imagewidth":80
+        },
+     "48":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousoven.png",
+         "imageheight":24,
+         "imagewidth":24
+        },
+     "49":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderousbookshelf.png",
+         "imageheight":40,
+         "imagewidth":24
+        },
      "5":
         {
          "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsgluttonistfeasttable.png",
          "imageheight":16,
          "imagewidth":80
+        },
+     "50":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderousknightarmor.png",
+         "imageheight":48,
+         "imagewidth":32
+        },
+     "51":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsstainedglassiron.png",
+         "imageheight":64,
+         "imagewidth":40
+        },
+     "52":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsstainedglassbronze.png",
+         "imageheight":64,
+         "imagewidth":40
+        },
+     "53":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderoustapestry.png",
+         "imageheight":32,
+         "imagewidth":32
+        },
+     "54":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderoustable.png",
+         "imageheight":16,
+         "imagewidth":80
+        },
+     "55":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousfoundersstatue.png",
+         "imageheight":48,
+         "imagewidth":64
+        },
+     "56":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderouscouch.png",
+         "imageheight":18,
+         "imagewidth":32
+        },
+     "57":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderousbannersmall.png",
+         "imageheight":24,
+         "imagewidth":16
+        },
+     "58":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsponderousbannerlarge.png",
+         "imageheight":40,
+         "imagewidth":24
+        },
+     "59":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderousidolpedestal.png",
+         "imageheight":16,
+         "imagewidth":24
         },
      "6":
         {

@@ -35,7 +35,7 @@
             "position" : [0.0, 0.0],
             "approach" : [0, 20],
             "timeToLive" : 0.85,
-            "light" : [255, 195, 37],
+            "light" : [128, 36, 0],
             "layer" : "front",
             "variance" : {
               "initialVelocity" : [0, 0.5],

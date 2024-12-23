@@ -5,7 +5,7 @@
   "range" : 16,
     "statusEffect": "wispregeneration"
   },
-  "defaultDuration" : 1,
+  "defaultDuration" : 0.5,
 
   "scripts" : [
     "wisphealprayer.lua"

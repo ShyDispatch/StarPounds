@@ -38,5 +38,5 @@
 
   "scripts" : ["/objects/fattydungeons/dungeonartifactshield.lua"],
   "scriptDelta" : 0,
-  "breakDropPool" : "starpoundsmeatberrypool"  
+  "breakDropPool" : "starpoundsponderouscorepool"  
 }

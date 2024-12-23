@@ -107,6 +107,14 @@
         {"item" : [ "meatberries", 1]}
       ]
     }]
+  ],
+  
+  "starpoundsponderouscorepool" : [
+    [1, {
+      "fill" : [
+        {"item" : [ "ponderouscore", 1]}
+      ]
+    }]
   ]
   
 

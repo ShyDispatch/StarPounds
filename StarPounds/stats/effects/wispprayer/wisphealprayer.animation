@@ -28,7 +28,7 @@
           "particle" : {
             "type" : "ember",
             "size" : 1,
-            "color" : [255, 295, 37, 255],
+            "color" : [255, 188, 71, 255],
             "destructionAction" : "shrink",
             "destructionTime" : 0.5,
             "initialVelocity" : [0, 0.5],
@@ -36,7 +36,7 @@
             "position" : [0.0, 0.0],
             "approach" : [0, 20],
             "timeToLive" : 0.85,
-            "light" : [255, 195, 37],
+            "light" : [255, 226, 176],
             "layer" : "front",
             "variance" : {
               "initialVelocity" : [0, 0.5],

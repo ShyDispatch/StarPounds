@@ -20,7 +20,7 @@
     "renderLayer" : "foregroundEntity",
 
     "behaviorConfig" : {
-      "damageOnTouch" : true,
+      "damageOnTouch" : false,
 
       "targetQueryRange" : 35,
       "targetOnDamage" : true,
@@ -97,10 +97,11 @@
 
       "approachActions" : [
             {
-          "name" : "approach-fly",
+          "name" : "starpounds-wisp-fly",
           "parameters" : {
-            "usePathfinding" : true,
-            "excludeLiquidIds" : [1]
+            "excludeLiquidIds" : [1],
+            "maxRange" : 20,
+            "minRange" : 10
           }
         }
       ],

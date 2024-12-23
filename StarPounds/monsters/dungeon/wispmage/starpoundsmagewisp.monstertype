@@ -19,7 +19,7 @@
 
 
     "behaviorConfig" : {
-      "damageOnTouch" : true,
+      "damageOnTouch" : false,
 
       "targetQueryRange" : 35,
       "targetOnDamage" : true,
@@ -40,23 +40,24 @@
       "hostileActions" : [
         {
           "name" : "action-fire",
-          "cooldown" : 1.0,
+          "cooldown" : 2.0,
           "parameters" : {
             "requireLineOfSight" : true,
             "maximumRange" : 30,
-            "minimumRange" : 1,
+            "minimumRange" : 5,
             "onGround" : false,
             "windupStopForce" : 50,
             "windupTime" : 0.4,
-      "windupState" : "firewindupfast",
+            "windupState" : "firewindupfast",
 
             "projectileType" : "wispflameprojectile",
-            "inaccuracy" : 0.20,      
+            "inaccuracy" : 0.20,
             "projectileCount" : 3,
-            "projectileInterval" : 0.0,  
-      
+            "projectileInterval" : 0.0,
+
             "fireOffset" : [1.0, 0.0],
             "aimAtTarget" : true,
+            "holdAim" : false,
             "fireState" : "fire",
             "fireSound" : "",
 
@@ -70,11 +71,11 @@
           "parameters" : {
             "requireLineOfSight" : true,
             "maximumRange" : 40,
-            "minimumRange" : 4,
+            "minimumRange" : 5,
             "onGround" : false,
             "windupStopForce" : 50,
             "windupTime" : 0.8,
-      "windupState" : "firewindupslow",
+            "windupState" : "firewindupslow",
 
             "projectileType" : "wispbomb",
             "projectileParameters" : {
@@ -82,6 +83,7 @@
             },
             "fireOffset" : [1.0, 0.0],
             "aimAtTarget" : true,
+            "holdAim" : false,
             "inaccuracy" : 0.0,
             "fireState" : "fire",
             "fireSound" : "",
@@ -96,10 +98,11 @@
 
       "approachActions" : [
         {
-          "name" : "approach-fly",
+          "name" : "starpounds-wisp-fly",
           "parameters" : {
-            "usePathfinding" : true,
-            "excludeLiquidIds" : [1]
+            "excludeLiquidIds" : [1],
+            "maxRange" : 15,
+            "minRange" : 5
           }
         }
       ],

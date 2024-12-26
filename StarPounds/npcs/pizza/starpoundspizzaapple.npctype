@@ -17,7 +17,6 @@
       "disableGain" : true,
       "disableGurgles" : true,
       "disableHitbox" : true,
-      "disableLeaking" : true,
       "disableLoss" : true,
       "disableMilkGain" : true,
       "disableLeaking" : true,

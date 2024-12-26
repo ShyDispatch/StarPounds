@@ -27,6 +27,7 @@
       "disableLeaking" : true,
       "disableLoss" : true,
       "disableMilkGain" : true,
+      "disableLeaking" : true,
       "disablePred" : true,
       "disableSound" : true,
       "disableStomachGrowth" : true

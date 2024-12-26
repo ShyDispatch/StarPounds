@@ -22,8 +22,8 @@
       "play" : false,
       "chat" : false
     },
-  
-  "behavior" : "tutorial",  
+
+    "behavior" : "tutorial",  
 
     "chatPortrait" : "/interface/chatbubbles/hiraki.png:<frame>",
     "dialogMode": "tutorial",

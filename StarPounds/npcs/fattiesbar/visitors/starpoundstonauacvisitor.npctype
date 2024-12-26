@@ -1,7 +1,7 @@
 {
   "type" : "starpoundstonauacvisitor",
   "baseType" : "fattiesbarvisitor",
-  
+
   "npcname" : "Tonauac",
   "identity" : {
     "imagePath" : "tonauac",
@@ -16,7 +16,7 @@
   "humanoidConfig" : "/npcs/story/tonauacoid.config",
   "chatPortrait" : "/interface/chatbubbles/tonauactalk.png:<frame>",
   "scriptConfig" : {
-  "starPounds_options": {
+    "starPounds_options": {
       "disableGain": true
     },
     "dialogMode": "tutorial",

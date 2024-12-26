@@ -2,16 +2,16 @@
   "type" : "starpoundsminiknogvisitor",
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Miniknog Visitor",
-  
+
   "identity" : {
      "species" : "apex"
    },
 
   "scriptConfig" : {
-  "starPounds_skills": {
+    "starPounds_skills": {
       "minimumSize": [0, 2]
     },
-  "starPounds_options": {
+    "starPounds_options": {
       "disableGain": true
     },
     "dialogMode": "tutorial",

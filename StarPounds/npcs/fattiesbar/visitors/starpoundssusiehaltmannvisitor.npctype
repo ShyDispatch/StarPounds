@@ -3,7 +3,7 @@
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Lovable Slime Gal",
   "humanoidConfig" : "/npcs/fattiesbar/susieoid.config",
-  
+
   "scripts" : [
     "/npcs/bmain.lua",
     "/scripts/starpounds/starpounds_npc.lua",
@@ -20,8 +20,8 @@
     "starPounds_skills": {
       "minimumSize": [0, 0]
     },
-  "behavior" : "outpostvisitor",
-  
+    "behavior" : "outpostvisitor",
+
     "statuses" : [
       "Feeling unhinged",
       "Wondering what's for breakfast",

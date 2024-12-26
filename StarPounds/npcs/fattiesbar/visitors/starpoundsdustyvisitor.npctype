@@ -4,10 +4,10 @@
   "displayTitle" : "Cowgirl Visitor",
 
   "scriptConfig" : {
-  "starPounds_skills": {
+    "starPounds_skills": {
       "minimumSize": [0, 0]
     },
-  "starPounds_options": {
+    "starPounds_options": {
       "disableGain": true
     },
     "dialogMode": "tutorial",
@@ -38,7 +38,7 @@
       }
     }
   },
-  
+
   "identity":  {
       "bodyDirectives": "?replace;fff8b5=c7feff;fde03f=56ebf8;f6b919=12c2e8;806319=0c2b4b;f32200=c7feff;dc1f00=56ebf8;be1b00=56ebf8;951500=12c2e8",
       "emoteDirectives": "?replace;fff8b5=c7feff;fde03f=56ebf8;f6b919=12c2e8;806319=0c2b4b",

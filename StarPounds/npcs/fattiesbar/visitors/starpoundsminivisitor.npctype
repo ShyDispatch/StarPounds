@@ -20,6 +20,11 @@
     "starPounds_skills": {
       "minimumSize": [2, 4]
     },
+    // ======================== PLEASE READ ========================
+    // This character belongs to someone, and these settings reflect
+    // their preferences. Please respect them and don't remove,
+    // change, or otherwise alter these settings.
+    // ======================== PLEASE READ ========================
     "starPounds_options": {
       "disablePrey": true
     },

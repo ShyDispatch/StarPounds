@@ -2,13 +2,13 @@
   "type" : "starpoundsponderousvisitor",
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Ponderous Order Visitor",
-  
+
   "identity" : {
      "species" : "glitch"
    },
 
   "scriptConfig" : {
-  "starPounds_skills": {
+    "starPounds_skills": {
       "minimumSize": [3, 3]
     },
     "dialogMode": "tutorial",

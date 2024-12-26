@@ -56,7 +56,7 @@
     },
 
     "chatPortrait" : "/interface/chatbubbles/tonauac.png:<frame>",
-    
+
     "dialog" : {
       "converse" : {
         "default" : {

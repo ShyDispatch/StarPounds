@@ -2,13 +2,13 @@
   "type" : "starpoundspenguinvisitor",
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Penguin Visitor",
-  
+
   "identity" : {
      "species" : "penguin"
    },
 
   "scriptConfig" : {
-  "starPounds_options": {
+    "starPounds_options": {
       "disableGain": true
     },
     "dialogMode": "tutorial",

@@ -2,13 +2,13 @@
   "type" : "starpoundsgluttonistvisitor",
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Gluttonist Visitor",
-  
+
   "identity" : {
      "species" : "floran"
    },
 
   "scriptConfig" : {
-  "starPounds_skills": {
+    "starPounds_skills": {
       "minimumSize": [2, 5]
     },
     "dialogMode": "tutorial",

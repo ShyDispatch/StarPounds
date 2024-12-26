@@ -13,9 +13,9 @@
     "starPounds_skills": {
       "minimumSize": [3, 3]
     },
-  "behavior" : "outpostvisitor",
-  
-  "chatPortrait" : "/interface/chatbubbles/starpoundsmam.png:<frame>",
+    "behavior" : "outpostvisitor",
+
+    "chatPortrait" : "/interface/chatbubbles/starpoundsmam.png:<frame>",
     "dialogMode": "tutorial",
     "dialog": {
       "converse": {

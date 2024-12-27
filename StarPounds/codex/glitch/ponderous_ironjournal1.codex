@@ -1,0 +1,29 @@
+{
+  "id" : "ponderous_ironjournal1",
+  "species" : "glitch",
+  "title" : "Ironlace: Reminiscing",
+  "description" : "The journal of the legendary Ponderous Knightess. 1 of 2.",
+  "icon" : "ponderouscover3.png",
+  "contentPages" : [
+"Feels odd looking at myself in the mirror. Not long ago I was an amazon among Glitch- well tempered iron, towering over the other villagers. Now I'm known for my girth and weight.
+
+Though the added weight has had its benefits: harder for my foes to move me, more padding means less damage, so on.",
+
+"Still, feels odd feeling how far out my belly pushes, how plump my rear is. The envious glances of other Glitch as I pass. It feels pleasant, though I do wish I could go back to my old physique.
+
+Suppose it could just be me being nostalgic- sometimes I wished to be back adventuring alongside Bronzefinger, instead of being burdened with managing the Order. Oh well, such is life.",
+
+"Speaking of, I have noticed something. Sometimes while sparring or training, out of the corner of my visor I can see Bronzefinger staring at me- though just as often she was sheepishly looking away. During lunch and dinner she always insists on bringing me my food.
+
+While I never really put much thought into it (we have been companions for years now), Goldthread seems to think she's flirting with me in her own way.",
+
+"Now I'll admit, I never really considered anything beyond close friends- I haven't really been one for romance. But Bronzie is someone I can make an exception for- we're already quite close, perhaps becoming closer could be on the table...
+
+Maybe I should invite her to my little secret hideaway. Bring some apple cider and a feast just for her~"
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

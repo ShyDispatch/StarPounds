@@ -1,0 +1,45 @@
+{
+  "id" : "ponderous_backstory2",
+  "species" : "glitch",
+  "title" : "Dawn of the Ponderous",
+  "description" : "An old book detailing the history of the Ponderous Order. Ponderous Historia; 2 of 2.",
+  "icon" : "ponderouscover1.png",
+  "contentPages" : [
+"Ironlace and Bronzefinger spent much time exploring the lands, their exploits deeply remembered among the peoples of the lands. From their triumph over the bandits of Ratchetwood to valiantly defending the town of Sprocketdale from the vicious hordes of Smoglins.
+
+Over their travels, the two picked up many followers, including the slippery thief Copperhand and the passionate cleric Goldthread.",
+
+"Famine wracked the nearby country side; many towns barely able to survive on their measly crops as plague and monsters ravaged the farms. The party sought to remedy this, fending off the beasts as best they could and that supplies could come in. But despite their best efforts, the famine could never be fully remedied.
+
+The party claimed a windmill near the town of Gildheim as a base, attempting to figure out a solution to this problem.",
+
+"Bronzefinger stayed behind, letting the other three go about their adventures as she studied her tomes. Soon she found a particular spell, requiring a vast amount of lipic energy. A spell that could bring untold fertility to the surrounding lands.
+
+And once Ironlace and company returned, Bronzefinger asked for their help in this rite; naturally, Ironlace agreed.",
+
+"That night they traced out a circle, with Ironlace's caloric energy drawn forth to fuel the ritual. Villagers saw a pulse of amber energy radiate out from their windmill, many feeling their bodies slightly swell in size as they felt the warmth of the magic course through them.
+
+Ironlace herself lost much of her weight as a result, and only time could tell if the spell had worked.",
+
+"That morning they were beholden to an amazing sight, seeing that the crops had flourished from the magic. Perhaps a little too well, as much of them swelled to gigantic sizes; soon Gildheim's granaries were practically overstuffed with plump crops and generous grain.
+
+Soon word spread to nearby villages, much of the excess going to the nearby villages, yet even then there was still even more to go around. A green tide of food that seemed to never end.",
+
+"It wasn't long before Copperhand noticed his hips struggled to squeeze through gaps he could easily slip through months prior, or Goldthread found that his robes felt tighter and tighter. Indeed, the party quickly noticed an unforeseen consequence of their little rite as the villagers' waistbands became larger. Bronzefinger realized that the crops had been imbued with fattening properties from her lipommancy.
+
+Yet things seemed far happier.",
+
+"One's weight is a sign of prosperity after all. And one night a feast was declared in the honor of our noble heroes, who joined in gorging themselves on the bounty their deeds created.
+
+Ironlace realized they could use this power to improve life for all of Glitchkind, talking to Bronzefinger about teaching lipomancy to more people to bring prosperity to the lands.",
+
+"So the party brought together all the guilds of the immediate region, and commissioned the creation of a mighty keep to serve as their home base. They sought out the villages mightiest warriors and most studious scholars to help them create the Ponderous Order, named by Bronzefinger in honor of her dearest friend.
+
+Sworn to bring prosperity and keep it, the Order aims to grant the gift of fat to all Glitchkind."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

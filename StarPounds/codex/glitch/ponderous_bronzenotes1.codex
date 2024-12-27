@@ -1,0 +1,41 @@
+{
+  "id" : "ponderous_bronzenotes1",
+  "species" : "glitch",
+  "title" : "LipoAlchemy: Lipic Extraction",
+  "description" : "Some of the legendary Lipomancer Bronzefinger's notes on Lipic energy. 1 of 3.",
+  "icon" : "ponderouscover4.png",
+  "contentPages" : [
+"Recently Goldie and Copper (alongside a small group of order initiates) brought over something quite fascinating!
+
+According to Goldie, they fought off some horrific (and quite rude!) swine-men for these glass canisters containing a roiling pinkish ooze. Apparantly it's called Calorium- a substance well regarded for its fattening properties, no doubt something of massive import to us!",
+
+"So far testing has shown that potions made with it could rapidly fatten someone- one volunteer ended up too fat to be moved out of my lab from drinking a whole bottle of the stuff! Though so far I've yet to find any use for it that could help our Glitchitarian efforts; at most I suppose we could use it as a tool to help with malnourishment but the logistics are not going to work out for us.
+
+Either way, problem for tomorrow's Bronzefinger.",
+
+"Started running more trials today. Distilling it resulted in even more fattening concoctions, while attempting to boil it resulted in prompt conflagration. Thankfully nothing was actually damaged (aside from my favorite hat).
+
+So far spent the night testing every combination of fluids and ingredients we had on stock, but not much really could come of it alas.",
+
+"BUT. I had a thought: is there anything different from Calorium induced fat and normal Glitch fat? What would happen if I put the resulting lipic energy inside a bottle?
+
+So I took a small vial of the distilled calorium, and with a bit of trepidation sipped a tiny singular drop of it. It tasted like apple cider.",
+
+"I could hear my stomach groan as fatty plating spontaneously grew. My belt became tighter, the chest of my robe hugged my bosom far more than it should. And that bloating belly greatly threw me off balance as I felt my rump expand in kind. I was belching out pink smoke as my body swelled... It felt... Pleasant...
+
+Of course, I steeled myself and focused my caloric power into my staff. Directing that power into the bottle on the table before me.",
+
+"The bloating eventually stopped, though the calorium certainly left its mark on me- not that I would complain! I looked inside the bottle and found something quite odd.
+
+Fire! Well, not quite fire. It flowed like a liquid but danced like flame. It wasn't quite boiling, instead it felt like a pleasant warmth radiated from within.",
+
+"I used some of my other calorium-infused lipic energy to fill more bottles for future testing. This substance- which I've dubbed Amberflame- might be useful for aiding Glitchitarian efforts. Perhaps I could bottle some spells!
+
+Regardless that shall conclude research for the night."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

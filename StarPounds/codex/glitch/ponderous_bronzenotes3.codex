@@ -1,0 +1,33 @@
+{
+  "id" : "ponderous_bronzenotes3",
+  "species" : "glitch",
+  "title" : "LipoAlchemy: the Wisps",
+  "description" : "Some of the legendary Lipomancer Bronzefinger's notes on Lipic energy. 3 of 3.",
+  "icon" : "ponderouscover4.png",
+  "contentPages" : [
+"Seems that the Wispflames grew since I last saw them- now I can see eyes on the spheres, though now they cannot fit inside the bottle. So I let them out.
+
+They seemed quite curious, looking all around the room. I quickly Noticed that one of them seemed interested in me- my staff in particular.",
+
+"So I reached for the staff, casting a simple spell to show it what I can do with my Lipomancy. Much to my astonishment it manifested a small wooden scepter, and mimicked the spell I did!
+
+It seems that the Wisps are talented with mimicry, though this one could only mimic me since they were able to imprint on my magical talents. It even copied my fashion sense, with the hat and robe!",
+
+"So perhaps It'd be a good idea to give the other three a set of companion wisps to teach them their own specific fighting styles and talents. Perhaps the wisps could even help maintain the keep!
+
+I called Ironlace, alongside Goldie and Copper, in to see it and I explained it all, including my plan to have them tutor the wisps.",
+
+"Goldthread was quite enthusiastic- his healing prowess would be quite a boon for the wisps to wield, while Copperhand eagerly took his group with him. I could hear the quiet mischevious snickering. Perhaps he was a bad influence. Oh well, as long as they remain loyal to the Order, no harm.
+
+Ironlace seemed somewhat wary of tutoring the wisps. Perhaps she didn't trust herself with the responsibility?",
+
+"In the meantime, me and my group of wisps will resume study. I wish to know the exact limitations of these strange creatures we created. Perhaps their hands could help us aid the people of the kingdoms!
+
+We may very well change Lipomantic history!"
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

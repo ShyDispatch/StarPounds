@@ -1,0 +1,37 @@
+{
+  "id" : "ponderous_bronzenotes2",
+  "species" : "glitch",
+  "title" : "LipoAlchemy: Wispflame",
+  "description" : "Some of the legendary Lipomancer Bronzefinger's notes on Lipic energy. 2 of 3.",
+  "icon" : "ponderouscover4.png",
+  "contentPages" : [
+"With a good night's sleep (and a belly full of food!), I have been revitalized into picking up my research with the Amberflame.
+
+Though for a good bit I haven't really found much. It's waterproof and doesn't burn like flame so I suppose it could be useful as a light source. Could also be useful as a heatsource in particularly brutal winters. Might be worthwhile to mix with other substances?",
+
+"I found that when distilled in the retorts it winds up being more volatile- burning with a more ferocious heat. Just holding the bottle made me feel heavier and plumper... These I suppose could be useful as a non-lethal weapon? I'll leave it on the other counter for now, beside the Calorium bottles.
+
+Going to try seeing if it'll result in anything strange if I mix it with other substances- so far nothing too strange trying to mix it with water or healing water.",
+
+"I am close to finding something of note, with a spell I managed to make it congeal into a distinct shape, though admittedly I am getting frustrated with the lack of meaningful progress.
+
+And it seems Ironlace noticed, as I heard her approaching the door. She offered to take me to a banquet to let myself have a break from the experimentation. Suppose I could do with that break, so put the current trial with the other bottles.",
+
+"She did come over to check on what I was making, though I don't think she retained much information- admittedly I have a bad habit of overloading her. She walked on her way out and accidentally bumped the counter with her mighty rear. I panicked, realizing my samples might have been destroyed!
+
+And just like that a blast of amber smoke covered the room...",
+
+"As the clouds cleared I checked if Lacie was alright- she was fine, just a bit of growth from being exposed to the lipic mist.
+
+But much to my astonishment something wondrous has happened. Turned out the magicked amberflame, when mixed with the calorium and volatile amberflame, created something. A creature! A dancing mote of light emanating the Amberflame flew across the room.",
+
+"I managed to lure it into a jar before it could knock anything over. This creature reminded me of the tales of the Will O' the Wisps, so I dubbed it a wisp and renamed the Amberflame to Wispflame.
+
+It seemed to dance and bounce around its glass home, though it seemed like it was lacking in intelligence. Perhaps this might be worth further study..."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

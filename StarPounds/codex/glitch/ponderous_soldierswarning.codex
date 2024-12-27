@@ -1,0 +1,29 @@
+{
+  "id" : "ponderous_soldierswarning",
+  "species" : "glitch",
+  "title" : "A Soldier's Warning",
+  "description" : "A hastily scrawled note. It's covered in some strange warm goop...",
+  "icon" : "ponderouscover6.png",
+  "contentPages" : [
+"We were sent here to deal with insurgents. We did not expect spheres of living flame. We couldn't have. And now I remain the last of them.
+
+First was the captain, hit clean in her torso. I could hear the metal in her armor straining to hold her girth in before it abruptly snapped. She was practically the size of a barn by the time they took her.",
+
+"Then there went Silverclasp. He was overpowered by the armored ones. Pulled away to Creators-know-where... And Whitelance, overwhelmed by the roguish ones...
+
+Every attack we made, the ghosts regenerated from. I noticed the white ones muttering some profane prayer.
+
+And soon I noticed one bigger than the rest. She floated in the air, wearing a large hat and ornate robes.",
+
+"She was eyeing me like a beast would eye its prey. I had to run. I had to flee. I hid in a crawlspace. I think one of them hit me. I can feel my body growing. Each step felt heavier as I slinked away.
+
+I write this note as a warning. This place is dangerous. Stay out. Run. Before the wisps claim you. I'll try fleeing as best I can.
+
+This weight... almost feels nice..."
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

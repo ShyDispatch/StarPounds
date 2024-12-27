@@ -1,0 +1,28 @@
+{
+  "id" : "ponderous_lipomancylore",
+  "species" : "glitch",
+  "title" : "Grimoire Gulosis",
+  "description" : "A worn book, it seems to be a treatise on the practice of Lipomancy.",
+  "icon" : "ponderouscover2.png",
+  "contentPages" : [
+"Fat stores energy; from inside each Glitch's body lies caloric power that is used up when food in the gastric tank is inadequate for satiating the body's hunger.
+
+But it is possible to draw upon the latent energy found within your lipic batteries; through the power of Lipomancy.",
+
+"The most important lesson for aspiring Lipomancers is quite simple: eat as much as you can when you can. Build up your lipic batteries so that you have power to draw from; the wider your waist the better.
+
+A skinny Lipomancer is a weak Lipomancer after all.",
+
+"Upon building up a suitable level of fat, firmly grasp your staff. Take deep breaths and channel the energy into it; if you see an amber glow at the head of your staff, you're succeeding. Each cast of a spell will eat away at your lipic batteries, requiring you to regain it or risk death, or worse, weight loss.
+
+Focus your building power to the exact gestures defined by the spellbook; be warned that lipomancy may be disastrous for your ally's waistlines.",
+
+"[The rest of the pages are covered in complicated charts and patterns, you can see depictions of glitch magi and clerics making crops grow with the magic and rapidly fattening foes.]"
+
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

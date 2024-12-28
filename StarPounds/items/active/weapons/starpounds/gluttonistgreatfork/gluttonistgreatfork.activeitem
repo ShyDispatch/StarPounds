@@ -8,7 +8,7 @@
   "shortdescription" : "Gluttonist's Greatfork",
   "tooltipKind" : "starpoundssword",
   "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
-  "category" : "uniqueWeapon",
+  "category" : "spear",
   "twoHanded" : true,
   "itemTags" : ["weapon","melee","spear","upgradeableWeapon"],
 

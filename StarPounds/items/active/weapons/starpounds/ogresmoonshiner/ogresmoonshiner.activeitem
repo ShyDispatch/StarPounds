@@ -8,7 +8,7 @@
   "shortdescription" : "Ogre's Moonshiner",
   "tooltipKind" : "starpoundssword",
   "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
-  "category" : "uniqueWeapon",
+  "category" : "hammer",
   "twoHanded" : true,
   "itemTags" : ["weapon","melee","hammer","upgradeableWeapon"],
 

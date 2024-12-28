@@ -8,7 +8,7 @@
   "shortdescription" : "Staff of the Ponderous",
   "tooltipKind" : "starpoundsstaff",
   "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
-  "category" : "uniqueWeapon",
+  "category" : "staff",
   "twoHanded" : true,
   "itemTags" : ["weapon","staff","upgradeableWeapon"],
 

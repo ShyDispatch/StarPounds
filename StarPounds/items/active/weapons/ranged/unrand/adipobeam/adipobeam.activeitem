@@ -7,7 +7,7 @@
   "description" : "An experimental fattening laser made for reasons known only to its inventor.",
   "shortdescription" : "Adipobeam",
   "tooltipKind" : "starpoundsgun",
-  "category" : "uniqueWeapon",
+  "category" : "assaultRifle",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","upgradeableWeapon"],
 

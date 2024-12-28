@@ -6,6 +6,7 @@
   "description" : "Filled with a modified erchius solution for rapid bloating.",
   "shortdescription" : "Erchipudge Sprayer",
   "tooltipKind" : "starpoundsgun",
+  "tooltipFields" : {"subtitle":"Flamethrower"},
   "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","pistol","upgradeableWeapon"],

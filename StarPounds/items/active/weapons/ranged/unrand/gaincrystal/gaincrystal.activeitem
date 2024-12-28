@@ -8,7 +8,7 @@
   "description" : "This sacred artifact is infused with Velhanu's love, and it wishes to be spread~",
   "shortdescription" : "Crystal of Gain",
   "tooltipKind" : "starpoundsgun",
-  "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png"},
+  "tooltipFields" : {"damageKindImage" : "/interface/elements/caloric.png", "subtitle":"Laser Beam"},
   "category" : "uniqueWeapon",
   "itemTags" : ["weapon","ranged","upgradeableWeapon"],
   "twoHanded" : true,

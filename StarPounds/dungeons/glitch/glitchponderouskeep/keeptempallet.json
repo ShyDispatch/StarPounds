@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt1cENgCAMRmEmcQhdzvmczGtjjJLQv7TkfUmv5YUDtIYMDjMV0d+\/v+odKW1mKqIfIy4zCs\/3x2Oi+5X7qverqftPMwr0f++r3q+m7t\/NKGTp9\/pvRq12\/2r0a\/dFn0f\/3PPon2ul\/qg\/01Pmth70\/+9XD4D6It4K3p93N1bKLlQ=",
+         "data":"eJztmMEJwDAMAzNJh2iX63ydo8P0a0oIheRMZXSgr3L4YYhbM3\/gCFHE\/t\/7VWdEsoUoYn8zwxVC8N4\/K5LtT\/ap+9PQ\/mcIgf3Hfer+NLT\/HkJg\/3Gfuj8N7X+HEHj+bF\/2e5X9iTuB+vxXU8l\/5g93d5JBpfkrQvsT9wbfUI2pR8au8P7p8wA72TSb",
          "encoding":"base64",
          "height":40,
          "name":"front",
@@ -121,6 +121,14 @@
                  "height":16,
                  "id":703,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderouscounter\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -217,6 +225,14 @@
                  "height":24,
                  "id":712,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderousbarrel\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -361,6 +377,14 @@
                  "height":40,
                  "id":724,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderousbookshelf\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -449,8 +473,8 @@
                  "type":"",
                  "visible":true,
                  "width":24,
-                 "x":120,
-                 "y":152
+                 "x":96,
+                 "y":232
                 }, 
                 {
                  "gid":7723,
@@ -473,8 +497,8 @@
                  "type":"",
                  "visible":true,
                  "width":24,
-                 "x":120,
-                 "y":136
+                 "x":96,
+                 "y":216
                 }, 
                 {
                  "gid":7692,
@@ -505,6 +529,14 @@
                  "height":16,
                  "id":742,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderoussmallchest\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -517,6 +549,14 @@
                  "height":16,
                  "id":743,
                  "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderousbigchest\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -699,6 +739,119 @@
                  "width":24,
                  "x":48,
                  "y":112
+                }, 
+                {
+                 "gid":2147491378,
+                 "height":48,
+                 "id":758,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":336,
+                 "y":80
+                }, 
+                {
+                 "gid":7706,
+                 "height":16,
+                 "id":759,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderousbosschest\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":40,
+                 "y":208
+                }, 
+                {
+                 "gid":7706,
+                 "height":16,
+                 "id":760,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderoussecretchest\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":72,
+                 "y":232
+                }, 
+                {
+                 "gid":7716,
+                 "height":24,
+                 "id":761,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderoussecretdesk\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":296,
+                 "y":304
+                }, 
+                {
+                 "gid":7716,
+                 "height":24,
+                 "id":763,
+                 "name":"",
+                 "properties":
+                    {
+                     "parameters":"{ \"treasurePools\" : [ \"starpoundsglitchponderousdesk\" ] }"
+                    },
+                 "propertytypes":
+                    {
+                     "parameters":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":48,
+                 "x":120,
+                 "y":232
+                }, 
+                {
+                 "height":8,
+                 "id":765,
+                 "name":"",
+                 "properties":
+                    {
+                     "colorVariant":"4",
+                     "front":"copperplatform"
+                    },
+                 "propertytypes":
+                    {
+                     "colorVariant":"string",
+                     "front":"string"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":16,
+                 "y":176
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -853,7 +1006,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":758,
+ "nextobjectid":766,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

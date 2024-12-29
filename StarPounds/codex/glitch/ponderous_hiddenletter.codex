@@ -1,0 +1,30 @@
+{
+  "id" : "ponderous_hiddenletter",
+  "species" : "glitch",
+  "title" : "To My Old Comrades",
+  "description" : "A sealed letter written by \"IL + BF\", seemingly never sent.",
+  "icon" : "ponderouscover8.png",
+  "contentPages" : [
+"-To my old comrades:
+
+It's been awhile hasn't it? I hope the bitter taste of defeat hasn't lingered on any of your mouths in the many, many years it has been since our Order was shattered.
+
+I hope this letter comes to you in good tidings; I can imagine some of you miss your time as soldiers of the Order.",
+
+"Bronzefinger and I have settled down well in a quaint village on Alcore III-A; a pleasant wintry place. I've certainly gotten bigger in the past couple years- no doubt due to Bronzie's newfound cooking skills~
+
+She's been keeping up her lipomantic studies in secret, studying to see if she can improve her current methods.",
+
+"To Goldthread, I hope you're still your passionate, scholarly self. To Copperhand, I hope you haven't gotten yourself into too much trouble.
+
+And to our former brothers and sisters in arms, I hope that you've settled well into the normal civilian life. We still have memories of the good old days to hang onto. And perhaps one day we can rebuild the Order...
+
+-Yours truly, Ironlace and Bronzefinger."
+
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

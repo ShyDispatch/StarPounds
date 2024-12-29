@@ -1,0 +1,186 @@
+{
+  "projectileName" : "wispflamebottle",
+  "image" : "wispflamebottle.png",
+  "animationCycle" : 0.25,
+  "physics" : "grenade",
+  "frameNumber" : 4,
+  "pointLight" : false,
+  "speed" : 180,
+  "damagePoly" : [ [-6, 0], [-4, -4], [0, -6], [4, -4], [6, 0], [4, 4], [0, 6], [-4, 4] ],
+  "actionOnReap" : [
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/gun/grenadeblast_poison1.ogg", "/sfx/gun/grenadeblast_poison2.ogg", "/sfx/gun/grenadeblast_poison3.ogg" ]
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0 
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 30
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 30
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 30
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 60
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 60
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 60
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 90
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 120
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 120
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 120
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 150
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 150
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 150
+    }
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 180
+    },
+    {
+      "action" : "projectile",
+      "type" : "wispbombcloud",
+      "fuzzAngle" : 180,
+      "inheritSpeedFactor" : 0.1,
+      "inheritDamageFactor" : 0.0,
+      "delaySteps" : 180
+    }
+  ],
+  "power" : 5.0,
+  "damageKind" : "caloric",
+  "damageType" : "NoDamage"
+}
+
+

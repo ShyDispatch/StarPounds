@@ -1,5 +1,6 @@
 {
 
+	//FEAST HALL
 
     "starpoundsfloranfeasthallTreasure" : [
     [1, {
@@ -60,6 +61,7 @@
       "allowDuplication" : false
     }]
   ],
+  
   "starpoundsfloranfeasthallSecretTreasure" : [
     [0, {
       "fill" : [
@@ -108,6 +110,194 @@
       ]
     }]
   ],
+  
+  // KEEP
+  
+    "starpoundsglitchponderoussmallchest" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.85, "pool" : "basicTreasure"},
+        {"weight" : 0.25, "item" : [ "wispflamebottle", 15]},
+		
+        {"weight" : 0.05, "item" : [ "starpoundswispmagehead", 1]},
+        {"weight" : 0.05, "item" : [ "starpoundswispknighthead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswisproguehead", 1]},
+        {"weight" : 0.05, "item" : [ "starpoundswispclerichead", 1]}
+      ],
+      "poolRounds" : [
+        [0.30, 2],
+        [0.50, 3],
+        [0.20, 4]
+      ],
+      "allowDuplication" : false
+    }]
+  ], 
+  
+    "starpoundsglitchponderousbigchest" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.70, "pool" : "valuableTreasure"},
+        {"weight" : 0.25, "pool" : "goodWeapon"},
+		
+        {"weight" : 0.03, "item" : [ "starpoundswispmagehead", 1]},
+        {"weight" : 0.03, "item" : [ "starpoundswispknighthead", 1]},
+        {"weight" : 0.03, "item" : [ "starpoundswisproguehead", 1]},
+        {"weight" : 0.03, "item" : [ "starpoundswispclerichead", 1]},
+		
+        {"weight" : 0.03, "item" : [ "starpoundsponderoushead", 1]},
+        {"weight" : 0.03, "item" : [ "starpoundsponderouschest", 1]},
+        {"weight" : 0.03, "item" : [ "starpoundsponderouslegs", 1]},
+        {"weight" : 0.03, "item" : [ "starpoundsponderousback", 1]}
+      ],
+      "poolRounds" : [
+        [0.60, 5],
+        [0.40, 6]
+      ],
+      "allowDuplication" : false
+    }]
+  ],  
+
+  "starpoundsglitchponderousbosschest" : [
+    [0, {
+      "fill" : [
+        {"pool" : "LargeDungeonReward"},
+        {"pool" : "starpoundsglitchponderousbigchest"}		
+      ],
+      "poolRounds" : [
+      [0.80, 4],
+        [0.40, 5]
+    ],
+      "allowDuplication" : false
+    }]
+  ],
+  
+
+  "starpoundsglitchponderoussecretchest" : [
+    [0, {
+      "fill" : [
+        {"pool" : "LargeDungeonReward"},
+        {"pool" : "starpoundsglitchponderousbigchest"},		
+        {"pool" : "starpoundsBlossompool"}		
+      ],
+      "poolRounds" : [
+      [0.80, 4],
+        [0.40, 5]
+    ],
+      "allowDuplication" : false
+    }]
+  ],
+  
+  
+    "starpoundsglitchponderousbookshelf" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.75, "pool" : "starpoundsglitchponderousLore"},
+        {"weight" : 0.11, "item" : [ "bookpiles", 9]},
+        {"weight" : 0.11, "item" : [ "bookpiles", 13]},
+        {"weight" : 0.11, "item" : [ "bookpiles", 15]},
+        {"weight" : 0.11, "item" : [ "paper", 4]},
+        {"weight" : 0.11, "item" : [ "paper", 7]}
+      ],
+      "poolRounds" : [
+        [0.40, 1],
+        [0.50, 2],
+        [0.10, 3]
+      ],
+      "allowDuplication" : false
+    }]
+  ],  
+
+  
+  "starpoundsglitchponderousLore" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.8, "item" : "howglitchgetfat-codex"},
+        {"weight" : 0.8, "item" : "ponderous_backstory1-codex"},
+        {"weight" : 0.8, "item" : "ponderous_backstory2-codex"},
+        {"weight" : 0.8, "item" : "ponderous_lipomancylore-codex"},
+        {"weight" : 0.8, "item" : "ponderous_bronzenotes1-codex"},
+        {"weight" : 0.8, "item" : "ponderous_bronzenotes2-codex"},
+        {"weight" : 0.8, "item" : "ponderous_bronzenotes3-codex"},
+        {"weight" : 0.8, "item" : "ponderous_ironjournal1-codex"},
+        {"weight" : 0.8, "item" : "ponderous_ironjournal2-codex"},
+        {"weight" : 0.8, "item" : "ponderous_indictment-codex"},
+        {"weight" : 0.8, "item" : "ponderous_warningtotheorder-codex"},
+        {"weight" : 0.8, "item" : "chika2ponderouskeep-codex"}    
+      ],
+      "poolRounds" : 1,
+      "allowDuplication" : false
+    }]
+  ],    
+  
+    "starpoundsglitchponderouscounter" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.02, "item" : [ "starpoundsgoblet", 1]},
+        {"weight" : 0.15, "item" : [ "wheat", 3]},
+        {"weight" : 0.15, "item" : [ "wheat", 6]},
+        {"weight" : 0.15, "item" : [ "sugar", 3]},
+        {"weight" : 0.15, "item" : [ "sugar", 3]},
+        {"weight" : 0.15, "item" : [ "bottle", 3]}
+      ],
+      "poolRounds" : [
+        [0.30, 2],
+        [0.40, 3],
+        [0.30, 4]
+      ],
+      "allowDuplication" : false
+    }]
+  ],  
+  
+    "starpoundsglitchponderousbarrel" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.11, "item" : [ "redapple", 1]},
+        {"weight" : 0.11, "item" : [ "rawham", 1]},
+        {"weight" : 0.11, "item" : [ "rawribmeat", 1]},
+        {"weight" : 0.11, "item" : [ "alienmeat", 1]},
+        {"weight" : 0.11, "item" : [ "rawpoultry", 1]},
+        {"weight" : 0.11, "item" : [ "cheese", 1]},
+        {"weight" : 0.5, "item" : [ "starpoundsroyalcake", 1]},
+        {"weight" : 0.5, "item" : [ "starpoundsfatfriedchicken", 1]},
+        {"weight" : 0.5, "item" : [ "starpounds64tbpizzap", 1]},
+        {"weight" : 0.5, "item" : [ "starpoundsqueenburger", 1]}
+      ],
+      "poolRounds" : [
+        [0.20, 2],
+        [0.50, 3],
+        [0.20, 4],
+        [0.10, 5]
+      ],
+      "allowDuplication" : true
+    }]
+  ],  
+
+    "starpoundsglitchponderousdesk" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.75, "pool" : "starpoundsglitchponderousLore"},
+        {"weight" : 0.11, "item" : [ "bottle", 3]},
+        {"weight" : 0.11, "item" : [ "paper", 4]},
+        {"weight" : 0.11, "item" : [ "paper", 7]}
+      ],
+      "poolRounds" : [
+        [0.40, 1],
+        [0.50, 2],
+        [0.10, 3]
+      ],
+      "allowDuplication" : false
+    }]
+  ],  
+
+  "starpoundsglitchponderoussecretdesk" : [
+    [1, {
+      "pool" : [
+        {"weight" : 0.8, "item" : "ponderous_hiddenletter-codex"}
+      ],
+      "poolRounds" : 1,
+      "allowDuplication" : false
+    }]
+  ],  
   
   "starpoundsponderouscorepool" : [
     [1, {

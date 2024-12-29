@@ -1,0 +1,32 @@
+{
+  "id" : "ponderous_indictment",
+  "species" : "glitch",
+  "title" : "Indictment of Witchcraft",
+  "description" : "A weathered parchment marked by the crest of a Glitch Kingdom.",
+  "icon" : "ponderouscover5.png",
+  "contentPages" : [
+"We, the kingdoms of Amberhallow, Ashlances, Brassramparts, Bronzecradle, etc., have declared your apostate Order as heretics against the unity of Glitchkind. Your witchcraft shall no longer be tolerated in our borders, and we are willing to use appropiate force if faced with resistance.
+
+However, if you do surrender we are willing to compromise with merely imprisoning your soldiers for life.",
+
+"The Ponderous Order is charged with the following:
+- Using witchcraft to spread gluttony and slothfulness.
+- Tainting our crops and livestock with your foul magicks.
+- Promoting disruptive ideals and inciting disorder within our borders.
+- General corruption of decency and morals within the villager's minds.
+- Promotion of heretical beliefs towards the Creators.
+- Cooperation and allegiance with foul outsiders.",
+
+"Again, it is not too late for mercy. But resistance shall be met with equal force. Our righteous army will be able to strike down your forces.
+
+We merely give you the choice to lay down your arms, lest it comes to salting the fields and scorching the earth your profane temples are built on.
+
+By Royal Decree of Kings Amberhallow, Ashlances, Brassramparts, Bronzecradle, etc."
+
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

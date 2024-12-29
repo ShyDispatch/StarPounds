@@ -1,0 +1,30 @@
+{
+  "id" : "ponderous_warningtotheorder",
+  "species" : "glitch",
+  "title" : "TO ALL THE ORDER",
+  "description" : "An old scroll bearing the mark of the Ponderous Order.",
+  "icon" : "ponderouscover7.png",
+  "contentPages" : [
+"TO ALL FOLLOWERS OF THE PONDEROUS ORDER:
+
+Our forces have been routed consistently at each oppurtunity by our enemies. Their forces are too large for us to reasonably defeat, and our lipomancy is failing at slowing their momentum. Things are looking dire.
+
+Our foes do not offer us mercy, no matter what their messengers say. Imprisonment and surrender is not an option. So thus we are left with one choice.",
+
+"I take no pride in saying this: the Ponderous Order must be disbanded. Each member, take flight to the most remote regions of Glitch space, or seek asylum among friendlier faces.
+
+And to the Wisps, our dearest creations: protect our keeps, keep the secrets of Lipomancy from falling into the wrong hands. Our greatest treasure was the knowledge we had accumulated, so make sure only the worthy can pass.",
+
+"Lay low, lest the Kingdoms realize that there are \"heretics\" in their midst. Perhaps one day the Order could be rebuilt. But for now, we're too weak to hold off the onslaught.
+
+I'm sincerely sorry I have failed you all.
+
+-Sincerely, Lady Ironlance the Ponderous, your former leader."
+
+
+  ],
+    "itemConfig" : {
+    "rarity" : "common",
+    "price" : 25
+  }
+}

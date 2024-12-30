@@ -5,8 +5,8 @@
   "printable" : false,
   "category" : "decorative",
   "price" : 50,
-  "description" : "A cute Wisp plush, wizard class.",
-  "shortdescription" : "Wisp Wizard Plush",
+  "description" : "A cute Wisp plush, mage class.",
+  "shortdescription" : "Wisp Mage Plush",
   "race" : "glitch",
 
   "apexDescription" : "It's a plush of a Wisp.",
@@ -17,10 +17,10 @@
   "hylotlDescription" : "Squee! I need this plushie for my collection!",
   "novakidDescription" : "I think the real thing is supposed to glow like me.",
 
-  "inventoryIcon" : "wispwizardplushicon.png",
+  "inventoryIcon" : "wispmageplushicon.png",
   "orientations" : [
     {
-      "dualImage" : "wispwizardplush.png",
+      "dualImage" : "wispmageplush.png",
       "imagePosition" : [-8, -0],
       "frames" : 1,
       "animationCycle" : 0.5,

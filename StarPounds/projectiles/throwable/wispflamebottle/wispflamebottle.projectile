@@ -152,7 +152,7 @@
       "inheritSpeedFactor" : 0.1,
       "inheritDamageFactor" : 0.0,
       "delaySteps" : 150
-    }
+    },
     {
       "action" : "projectile",
       "type" : "wispbombcloud",

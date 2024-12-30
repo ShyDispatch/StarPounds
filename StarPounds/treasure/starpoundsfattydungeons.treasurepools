@@ -229,6 +229,7 @@
     }]
   ],    
   
+  //Recipe Blueprints will be added later
     "starpoundsglitchponderouscounter" : [
     [1, {
       "pool" : [
@@ -248,6 +249,7 @@
     }]
   ],  
   
+  //Add Glitch fatty foodstuffs later
     "starpoundsglitchponderousbarrel" : [
     [1, {
       "pool" : [

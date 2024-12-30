@@ -33,11 +33,11 @@
     {
       "entrance" : {
         "name" : "entrance to the ponderous keep",
-        "tags" : [ "floran", "friendly"]
+        "tags" : [ "glitch", "friendly"]
       },
       "depths" : {
         "name" : "depths of the ponderous keep",
-        "tags" : [ "floran", "friendly"]
+        "tags" : [ "glitch", "friendly"]
       }
     }
   }      

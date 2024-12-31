@@ -1,0 +1,33 @@
+{
+  "objectName" : "starpoundsgourmandplush",
+  "colonyTags" : ["pretty"],
+  "rarity" : "Common",
+  "category" : "decorative",
+  "price" : 70,
+
+  "description" : "A soft plush doll of a very rotund Slugcat.",
+  "shortdescription" : "Gourmand Plushie",
+  "race" : "generic",
+
+  "apexDescription" : "Apparently this is known as a slugcat. More... Rotund than I thought it'd be.",
+  "avianDescription" : "I wonder what secrets could be hiding in your pudgy little belly...",
+  "floranDescription" : "Fat ssscug mussst be great hunter!",
+  "glitchDescription" : "Joyous. A rotund creature! I must squeeze its belly!",
+  "humanDescription" : "Absolutely gormful.",
+  "hylotlDescription" : "Such a soft looking scug...",
+  "novakidDescription" : "Now that's the second biggest snail-mouse I've ever seen.",
+
+  "inventoryIcon" : "starpoundsgourmandplushicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "starpoundsgourmandplush.png:<color>",
+      "imagePosition" : [-16, 0],
+      "frames" : 1,
+      "animationCycle" : 0.4,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ]
+}

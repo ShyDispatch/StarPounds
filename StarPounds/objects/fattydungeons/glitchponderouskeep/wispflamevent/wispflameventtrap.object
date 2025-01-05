@@ -1,0 +1,161 @@
+{
+  "objectName" : "wispflameventtrap",
+  "colonyTags" : ["glitch","fatdungeons","ponderous"],
+  "printable" : false,
+  "rarity" : "Common",
+  "description" : "This trap spews flames to deter invaders.",
+  "shortdescription" : "Wispflame Vent",
+  "race" : "glitch",
+
+  "apexDescription" : "A wispflame trap, definitely one to avoid.",
+  "avianDescription" : "This vent feels comfortably warm...",
+  "floranDescription" : "Floran senses heat...",
+  "glitchDescription" : "Alert. This vent still seems warm.",
+  "humanDescription" : "A suspiciously warm vent.",
+  "hylotlDescription" : "A warmth emanates from this strange vent.",
+  "novakidDescription" : "This thing looks hot!",
+
+  "category" : "trap",
+  "price" : 25,
+
+  "inventoryIcon" : "wispflameventtrapicon.png",
+  "orientations" : [
+    {
+      "image" : "wispflameventtrap.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+      
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "wispflameventtrap.png",
+        "fg" : "wispflameventtrap.png"
+      },
+
+      "projectileDirection" : [0, 1],
+      "projectilePosition" : [0, 0.7],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "wispflameventtrap.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+      
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "wispflameventtrap.png",
+        "fg" : "wispflameventtrap.png"
+      },
+
+      "projectileDirection" : [0, 1],
+      "projectilePosition" : [1, 0.7],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+    },
+    {
+      "image" : "wispflameventtrapleft.png:<color>.<frame>",
+      "imagePosition" : [0, -8],
+      "direction" : "right",
+      
+      "animationPosition" : [0, -8],
+      "animationParts" : {
+        "bg" : "wispflameventtrapleft.png",
+        "fg" : "wispflameventtrapleft.png"
+      },
+
+      "projectileDirection" : [1, 0],
+      "projectilePosition" : [0.7, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "left" ]
+    },
+    {
+      "image" : "wispflameventtrapright.png:<color>.<frame>",
+      "imagePosition" : [0, -8],
+      "direction" : "right",
+      
+      "animationPosition" : [0, -8],
+      "animationParts" : {
+        "bg" : "wispflameventtrapright.png",
+        "fg" : "wispflameventtrapright.png"
+      },
+
+      "projectileDirection" : [-1, 0],
+      "projectilePosition" : [0.3, 0],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "right" ]
+    },
+    {
+      "image" : "wispflameventtrapceiling.png:<color>.<frame>",
+      "imagePosition" : [-8, 0],
+      "direction" : "left",
+      "flipImages" : true,
+      
+      "animationPosition" : [-8, 0],
+      "animationParts" : {
+        "bg" : "wispflameventtrapceiling.png",
+        "fg" : "wispflameventtrapceiling.png"
+      },
+
+      "projectileDirection" : [0, -1],
+      "projectilePosition" : [0, 0.3],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    },
+    {
+      "image" : "wispflameventtrapceiling.png:<color>.<frame>",
+      "imagePosition" : [0, 0],
+      "direction" : "right",
+      
+      "animationPosition" : [0, 0],
+      "animationParts" : {
+        "bg" : "wispflameventtrapceiling.png",
+        "fg" : "wispflameventtrapceiling.png"
+      },
+
+      "projectileDirection" : [0, -1],
+      "projectilePosition" : [1, 0.3],
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "top" ]
+    }
+  ],
+
+  "scripts" : [ "/objects/wired/projectiletrap/projectiletrap.lua" ],
+  "scriptDelta" : 2,
+
+  "animation" : "/objects/wired/projectiletrap/projectiletrap.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "shoot" : [ ],
+      "on" : [ "/sfx/objects/flametrap_on.ogg" ],
+      "off" : [ "/sfx/objects/flametrap_off.ogg" ]
+    }
+  },
+
+  "soundEffect" : "/sfx/objects/flametrap_loop.ogg", // this is a thing that also works
+
+  "inputNodes" : [ [0, 0] ],
+
+  "inactiveLightColor" : [0, 0, 0], // light color to emit when the object is 'off'
+  "activeLightColor" : [0, 0, 0], // light color to emit when the object is 'on'
+
+  "fireTime" : 0.5, // rate of fire
+  "fireTimeVariance" : 0.015, // variation in rate of fire
+  "projectile" : "wispbombclouddamage", // name of projectile (required)
+  "projectileConfig" : { // extra configuration overrides for projectile
+    "damageTeam" : { "type" : "environment" },
+    "power" : 20,
+    "speed" : 7
+  },
+  
+  "health" : 5,
+
+  "smashOnBreak" : true,
+  "smashSounds" : [ "/sfx/objects/rock_break1.ogg", "/sfx/objects/rock_break2.ogg", "/sfx/objects/rock_break3.ogg", "/sfx/objects/rock_break4.ogg", "/sfx/objects/rock_break5.ogg", "/sfx/objects/rock_crumble1.ogg", "/sfx/objects/rock_crumble2.ogg", "/sfx/objects/rock_crumble3.ogg", "/sfx/objects/rock_crumble4.ogg", "/sfx/objects/rock_crumble5.ogg" ]
+}

@@ -121,13 +121,13 @@
     ],
     "tabgluttonist" : [
       "howfloransgetfat-codex", "florantribegluttonists-codex", "gluttonistlore1-codex", "gluttonistlore2-codex",
-      "chika1feasthall-codex", "chika2ponderouskeep"
+      "chika1feasthall-codex", "chika2ponderouskeep-codex"
     ],
     "tabvelhanu" : [
       "howaviansgetfat-codex", "thesunbornchildren-codex", "thesunbornlineage-codex", "sunbornvelhanu-codex"
     ],
     "tabponderous" : [
-      "howglitchgetfat-codex", "ponderous_backstory1", "ponderous_backstory2", "ponderous_lipomancylore"
+      "howglitchgetfat-codex", "ponderous_backstory1-codex", "ponderous_backstory2-codex", "ponderous_lipomancylore-codex"
     ],
     "tabumiyoni" : [
       "howhylotlgetfat-codex", "fatghost-codex"

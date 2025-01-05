@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Starpounds-Fatty-Dungeons",
  "spacing":0,
- "tilecount":61,
+ "tilecount":63,
  "tileheight":88,
  "tileproperties":
     {
@@ -416,6 +416,20 @@
          "imagePositionX":"-16",
          "imagePositionY":"0",
          "object":"starpoundsblossomknightsarmor",
+         "tilesetDirection":"right"
+        },
+     "61":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"wispflameventtrap",
+         "tilesetDirection":"right"
+        },
+     "62":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"wispflameventtrap",
          "tilesetDirection":"right"
         },
      "7":
@@ -848,6 +862,20 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "61":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "62":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "7":
         {
          "imagePositionX":"string",
@@ -1219,6 +1247,18 @@
          "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsblossomknightsarmor.png",
          "imageheight":48,
          "imagewidth":32
+        },
+     "61":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wispflameventtrapfloor.png",
+         "imageheight":8,
+         "imagewidth":16
+        },
+     "62":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wispflameventtrapcieling.png",
+         "imageheight":8,
+         "imagewidth":16
         },
      "7":
         {

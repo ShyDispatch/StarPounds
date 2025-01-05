@@ -37,7 +37,7 @@
   ],
 
   "scripts" : [
-    "/objects/wired/switch/switch.lua"
+    "/objects/wired/momentaryswitch/momentaryswitch.lua"
   ],
   "scriptDelta" : 5,
 
@@ -54,6 +54,9 @@
   },
   "animationPosition" : [-8, 0],
 
-  "outputNodes" : [ [0, 0] ]
+  "outputNodes" : [ [0, 0] ],
+  
+  "interval" : 15
+
   
 }

@@ -4,7 +4,7 @@
     "species" : "generic",
     "rules" : [
     ],
-    "anchor" : [ "keeptempallet" ],
+    "anchor" : [ "keep_base1" ],
     "gravity" : 80,
     "maxRadius" : 1000000,
     "maxParts" : 100,
@@ -12,12 +12,13 @@
   },
 
   "parts" : [
+// Base pieces  
     {
-      "name" : "keeptempallet",
+      "name" : "keep_base1",
       "rules" : [
         [ "maxSpawnCount", [1] ]
       ],
-      "def" : [ "tmx", "keeptempallet.json" ]
+      "def" : [ "tmx", "keep_base1.json" ]
     }
   ]
 }

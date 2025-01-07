@@ -96,6 +96,12 @@ function update()
     checkSkills()
   end
 
+  refreshTimer = math.max((refreshTimer or 0.25) - script.updateDt(), 0)
+  if refreshTimer == 0 then
+    refreshTimer = 0.25
+    checkSkills()
+  end
+
   -- Check promises.
   promises:update()
   level = starPounds.level
@@ -442,30 +448,31 @@ function selectSkill(skill)
 
     if skill.type == "addStat" or skill.type == "subtractStat" then
       infoPanel:setVisible(true)
+      local stat = starPounds.stats[skill.stat]
       local baseAmount = starPounds.stats[skill.stat].base
       local textColour = starPounds.stats[skill.stat].colour or skill.colour
 
       local nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
-      local nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)) * 100)/100
+      local nextIncrease = math.floor(0.5 + ((stat.flat and 1 or 100) * (nextAmount - baseAmount)) * 100)/100
       local nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
-      local nextString = currentLevel == skill.levels and "" or string.format("%s%.2f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+      local nextString = currentLevel == skill.levels and "" or string.format("%s%.2f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "")..(stat.flat and "" or "%")
 
       local bonus = starPounds.getSkillBonus(skill.stat)
       local totalAmount = (bonus ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (bonus * -1) or bonus) or 0) + starPounds.stats[skill.stat].base
-      local totalIncrease = math.floor(0.5 + (100 * totalAmount) * 100)/100
+      local totalIncrease = math.floor(0.5 + ((stat.flat and 1 or 100) * totalAmount) * 100)/100
       local amount = totalIncrease
-      local amountString = string.format("%.2f", amount):gsub("%.?0+$", "").."%"
+      local amountString = string.format("%.2f", amount):gsub("%.?0+$", "")..(stat.flat and "" or "%")
 
       if starPounds.stats[skill.stat].normalizeBase then
         nextAmount = baseAmount + skill.amount * (skill.type == "addStat" and 1 or -1)
-        nextIncrease = math.floor(0.5 + (100 * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 100)/100
+        nextIncrease = math.floor(0.5 + ((stat.flat and 1 or 100) * (nextAmount - baseAmount)/(baseAmount > 0 and baseAmount or 1)) * 100)/100
         nextAmount = (starPounds.stats[skill.stat].invertDescriptor and (nextIncrease * -1) or nextIncrease)
-        nextString = currentLevel == skill.levels and "" or string.format("%s%.2f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "").."%"
+        nextString = currentLevel == skill.levels and "" or string.format("%s%.2f", nextAmount > 0 and "+" or "", nextAmount):gsub("%.?0+$", "")..(stat.flat and "" or "%")
 
 
-        totalIncrease = math.floor(0.5 + (100 * totalAmount/(baseAmount > 0 and baseAmount or 1)) * 100)/100
+        totalIncrease = math.floor(0.5 + ((stat.flat and 1 or 100) * totalAmount/(baseAmount > 0 and baseAmount or 1)) * 100)/100
         amount = totalIncrease ~= 0 and (starPounds.stats[skill.stat].invertDescriptor and (totalIncrease * -1) or totalIncrease) or 0
-        amountString = string.format("%.2f", amount):gsub("%.?0+$", "").."%"
+        amountString = string.format("%.2f", amount):gsub("%.?0+$", "")..(stat.flat and "" or "%")
       end
 
       local function tchelper(first, rest)
@@ -511,7 +518,6 @@ function selectSkill(skill)
           break
         end
       end
-
       if objectConfig then
         local objectName = objectConfig.config.shortdescription
         local useAn = string.find(objectName:gsub("%^.-;", ""):sub(1, 1), "[AEIOUaeiou]")
@@ -526,6 +532,9 @@ function selectSkill(skill)
         for _, item in ipairs(skillItems) do
           local itemCount = player.hasCountOfItem(item[1])
           local itemName = root.itemConfig(item[1]).config.shortdescription
+          if root.itemType(item[1]) == "currency" then
+            itemCount = player.currency(item[1])
+          end
           local hasItem = itemCount >= item[2]
           unlockButton.toolTip = unlockButton.toolTip..string.format("\n^gray;%s ^%s;%s/%s", itemName, hasItem and "green" or "red", itemCount, item[2])
         end
@@ -666,7 +675,11 @@ function unlockButton:onClick()
   end
   if not isAdmin then
     for _, item in ipairs(getSkillItems(selectedSkill)) do
-      player.consumeItem({name = item[1], count = item[2]})
+      if root.itemType(item[1]) == "currency" then
+        player.consumeCurrency(item[1], item[2])
+      else
+        player.consumeItem({name = item[1], count = item[2]})
+      end
     end
   end
   starPounds.upgradeSkill(selectedSkill.name, isAdmin and 0 or experienceCost)
@@ -703,7 +716,11 @@ function hasSkillItems(skill)
   local hasItems = true
   -- Clear the slots.
   for i, item in ipairs(skillItems) do
-    if player.hasCountOfItem(item[1]) < item[2] then
+    local itemCount = player.hasCountOfItem(item[1])
+    if root.itemType(item[1]) == "currency" then
+      itemCount = player.currency(item[1])
+    end
+    if itemCount < item[2] then
       hasItems = false
     end
   end

@@ -6,10 +6,14 @@ function prey:init()
   message.setHandler("starPounds.getDigested", function(_, _, ...) return self:digesting(...) end)
   message.setHandler("starPounds.newPred", function(_, _, ...) return self:newPred(...) end)
 
+  self.voreCooldown = 0
+  self.options = {}
   self.heartbeat = self.data.heartbeat
 end
 
 function prey:update(dt)
+  -- Tick down vore cooldown.
+  self.voreCooldown = math.max(self.voreCooldown - dt, 0)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   self:eaten(dt)
@@ -64,29 +68,36 @@ function prey:eaten(dt)
     pcall(animator.setGlobalTag, "hurt", "hurt")
   end
   -- Struggle mechanics.
-  self[starPounds.type.."Struggle"](self, dt)
+  if not self.options.noStruggle then
+    self[starPounds.type.."Struggle"](self, dt)
+  end
   -- Set velocity to zero.
   mcontroller.setVelocity({0, 0})
   -- Stop the prey from colliding/moving normally.
   mcontroller.controlParameters({ airFriction = 0, groundFriction = 0, liquidFriction = 0, collisionEnabled = false, gravityEnabled = false })
 end
 
-function prey:swallowed(pred)
+function prey:swallowed(pred, options)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return false end
   -- Argument sanitisation.
   pred = tonumber(pred)
+  options = type(options) == "table" and options or {}
   if not pred then return false end
   -- Don't do anything if disabled.
   if starPounds.hasOption("disablePrey") then return false end
   -- Don't do anything if already eaten.
   if storage.starPounds.pred then return false end
+  -- Don't allow if we're on cooldown.
+  if self.voreCooldown > 0 then return false end
   -- Check that the entity actually exists.
   if not world.entityExists(pred) then return false end
   -- Don't get eaten if already dead.
   if not status.resourcePositive("health") then return false end
   -- Save the entityId of the pred.
   storage.starPounds.pred = pred
+  -- Store options locally.
+  self.options = options
   -- Eaten entities can't be interacted with. This looks very silly atm since I need to figure out a way to dynamically detect it.
   self.wasInteractable = false
   if starPounds.type == "npc" then
@@ -121,7 +132,7 @@ function prey:swallowed(pred)
       end
     end
 
-    local nearbyNpcs = world.npcQuery(starPounds.mcontroller.position, 50, {withoutEntityId = entity.id(), callScript = "entity.entityInSight", callScriptArgs = {entity.id()}, callScriptResult = true})
+    local nearbyNpcs = world.npcQuery(starPounds.mcontroller.position, self.data.witnessRange, {withoutEntityId = entity.id(), callScript = "entity.entityInSight", callScriptArgs = {entity.id()}, callScriptResult = true})
     for _, nearbyNpc in ipairs(nearbyNpcs) do
       world.callScriptedEntity(nearbyNpc, "notify", {type = "attack", sourceId = entity.id(), targetId = storage.starPounds.pred})
     end
@@ -247,21 +258,29 @@ function prey:released(source, overrideStatus)
   entity.setDamageTeam(storage.starPounds.damageTeam)
   storage.starPounds.damageTeam = nil
   local pred = storage.starPounds.pred
+  local options = self.options
   -- Remove the pred id from storage.
   storage.starPounds.pred = nil
+  self.options = {}
   storage.starPounds.spectatingPred = nil
   -- Reset struggle cycle.
   self.cycle = nil
   status.clearPersistentEffects("starpoundseaten")
   status.removeEphemeralEffect("starpoundseaten")
   entity.setDamageOnTouch(true)
+  -- Set cooldown if needed.
+  if options.triggerCooldown then
+    self.voreCooldown = self.data.cooldown
+  end
+  -- Reset interaction.
   if self.wasInteractable then
     if starPounds.type == "npc" then
       npc.setInteractive(true)
     end
   end
-  -- Restore techs.
+  -- Restore techs, and set cooldown.
   if starPounds.type == "player" then
+    -- Restore techs.
     for _,v in pairs({"head", "body", "legs"}) do
       player.unequipTech("starpoundseaten_"..v)
       player.makeTechUnavailable("starpoundseaten_"..v)
@@ -281,7 +300,9 @@ function prey:released(source, overrideStatus)
     -- Make them wet.
     status.addEphemeralEffect(overrideStatus or "starpoundsslimy")
     -- Behaviour damage trigger.
-    self.notifyDamage(pred)
+    if not options.noDamage then
+      self.notifyDamage(pred)
+    end
   end
 end
 
@@ -300,7 +321,7 @@ function prey:newPred(pred)
   return true
 end
 
-function prey:digesting(pred, digestionRate, protectionMultiplier)
+function prey:digesting(pred, digestionRate, protectionPierce)
   -- Don't do anything if the mod is disabled.
   if not storage.starPounds.enabled then return end
   -- Don't do anything if a pred ID isn't specified.
@@ -311,7 +332,7 @@ function prey:digesting(pred, digestionRate, protectionMultiplier)
   end
   -- Argument sanitisation.
   digestionRate = math.max(tonumber(digestionRate) or 0, 0)
-  protectionMultiplier = math.max(tonumber(protectionMultiplier) or 1, 0)
+  protectionPierce = math.max(tonumber(protectionPierce) or 0, 0)
   if digestionRate == 0 then return end
   -- Don't do anything if disabled.
   if starPounds.hasOption("disablePreyDigestion") then return end
@@ -319,11 +340,13 @@ function prey:digesting(pred, digestionRate, protectionMultiplier)
   if not storage.starPounds.pred then return end
   -- 0.5% of current health + 0.5 or 0.5% max health, whichever is smaller. (Stops low hp entities dying instantly)
   local amount = (status.resource("health") * 0.005 + math.min(0.005 * status.resourceMax("health"), 1)) * digestionRate
-  amount = root.evalFunction2("protection", amount, status.stat("protection") * protectionMultiplier)
+  amount = root.evalFunction2("protection", amount, status.stat("protection") - protectionPierce)
+  -- Trigger combat stuff if we start taking damage again.
+  if amount > 0 then self.options.noDamage = nil end
   -- Remove the health.
   status.overConsumeResource("health", amount)
   if not status.resourcePositive("health") then
-    world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyDigested", entity.id(), self:createDrops(), storage.starPounds.stomachEntities)
+    world.sendEntityMessage(storage.starPounds.pred, "starPounds.preyDigested", entity.id(), self:createDrops(self.options.items), storage.starPounds.stomachEntities)
     -- Player stuff.
     if starPounds.type == "player" then
       if starPounds.hasOption("spectatePred") then
@@ -366,8 +389,8 @@ function prey:digesting(pred, digestionRate, protectionMultiplier)
   end
 end
 
-function prey:createDrops()
-  local items = {}
+function prey:createDrops(items)
+  local items = items or {}
   for _, slot in ipairs({"head", "chest", "legs", "back"}) do
     local item = player.equippedItem(slot.."Cosmetic") or player.equippedItem(slot)
     if item then

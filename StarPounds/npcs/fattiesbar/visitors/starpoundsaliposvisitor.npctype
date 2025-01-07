@@ -3,6 +3,12 @@
   "baseType" : "fattiesbarvisitor",
   "displayTitle" : "Afthonia Priestess",
 
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/npcs/fattiesbar/visitors/starpoundsaliposvisitor.lua"
+  ],
+
   "scriptConfig" : {
     "initialStorage": {
       "homePosition": [0,0]

@@ -32,10 +32,10 @@ function pred:digest(dt)
   -- Eaten entities take less damage the more food/entities the player has eaten (While over capacity). Max of 3x slower.
   local vorePenalty = math.min(1 + math.max(starPounds.stomach.fullness - starPounds.settings.thresholds.strain.starpoundsstomach3, 0), 3)
   local damageMultiplier = math.max(1, status.stat("powerMultiplier")) * starPounds.getStat("voreDamage")
-  local protectionMultiplier = math.max(0, 1 - starPounds.getStat("voreArmorPiercing"))
+  local protectionPierce = math.max(0, starPounds.getStat("voreArmorPiercing"))
   -- Reduce health of all entities.
   for _, prey in pairs(storage.starPounds.stomachEntities) do
-    world.sendEntityMessage(prey.id, "starPounds.getDigested", entity.id(), (damageMultiplier/vorePenalty) * dt, protectionMultiplier)
+    world.sendEntityMessage(prey.id, "starPounds.getDigested", entity.id(), (damageMultiplier/vorePenalty) * dt, protectionPierce)
   end
 end
 
@@ -130,8 +130,14 @@ function pred:eat(preyId, options, check)
   if world.entityDamageTeam(preyId).type == "ghostly" then return false end
   -- Skip eating if we're only checking for a valid target.
   if check then return true end
+  -- Prey-side options.
+  local preyOptions = {
+    triggerCooldown = options.triggerPreyCooldown,
+    noStruggle = options.noStruggle,
+    noDamage = options.noDamage
+  }
   -- Ask the entity to be eaten, add to stomach if the promise is successful.
-  promises:add(world.sendEntityMessage(preyId, "starPounds.getEaten", entity.id()), function(prey)
+  promises:add(world.sendEntityMessage(preyId, "starPounds.getEaten", entity.id(), preyOptions), function(prey)
     if not (prey and (prey.base or prey.weight)) then return end
     table.insert(storage.starPounds.stomachEntities, {
       id = preyId,
@@ -141,6 +147,7 @@ function pred:eat(preyId, options, check)
       experience = prey.experience or 0,
       world = (starPounds.type == "player") and player.worldId() or nil,
       noRelease = prey.noRelease or options.noRelease,
+      noEscape = prey.noEscape or options.noEscape,
       noBelch = prey.noBelch or options.noBelch,
       type = world.entityType(preyId):gsub(".+", {player = "humanoid", npc = "humanoid", monster = "creature"}),
       typeName = world.entityTypeName(preyId)
@@ -244,13 +251,23 @@ function pred:preyDigested(preyId, items, preyStomach)
   local regurgitatedItems = jarray()
   -- We get purple particles if we digest something that gives ancient essence.
   local hasEssence = false
+  if digestedEntity.type == "humanoid" then
+    for _, item in pairs(root.createTreasure("essenceDrop", world.threatLevel())) do
+      local itemCount = math.round(item.count * starPounds.getStat("voreEssence"))
+      if itemCount > 0 then
+        player.addCurrency(item.name, itemCount)
+        hasEssence = true
+      end
+    end
+  end
   for _, item in pairs(items or jarray()) do
     for _, scrapItem in ipairs(self:digestItem(item)) do
       if scrapItem.name == "essence" then
         if starPounds.type == "player" then player.giveItem(scrapItem) end
         hasEssence = true
+      else
+        regurgitatedItems[#regurgitatedItems + 1] = scrapItem
       end
-      regurgitatedItems[#regurgitatedItems + 1] = scrapItem
     end
   end
 
@@ -304,7 +321,7 @@ function pred:struggle(preyId, struggleStrength, escape)
       local escapeChance = math.max(world.entityType(preyId) == "player" and self.data.playerEscape or 0, 0.5 * struggleStrength)
       local released = false
       if escape and (math.random() < escapeChance) then
-        if world.entityType(preyId) == "player" or (status.resourceLocked("energy") and preyHealthPercent > self.data.inescapableHealth) then
+        if world.entityType(preyId) == "player" or (not prey.noEscape and status.resourceLocked("energy") and preyHealthPercent > self.data.inescapableHealth) then
           released = self:release(preyId)
         end
       end
@@ -446,6 +463,8 @@ function pred:digestItem(item)
         convertedItems[#convertedItems + 1] = item
       end
     end
+  else
+    convertedItems[#convertedItems + 1] = item
   end
   return convertedItems
 end
@@ -534,8 +553,8 @@ function pred:belchParticles(prey, essence)
       world.sendEntityMessage(entity.id(), "addCollectable", collection, collectable)
     end
   end
-  -- Vault monsters get glowy purple particles.
-  if essenece then
+  -- Essence gets glowy purple particles.
+  if essence then
     particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {160, 70, 235}, fullbright = true, collidesLiquid = false, timeToLive = 0.5, light = {134, 71, 179, 255}}})
     particles[#particles + 1] = sb.jsonMerge(particles[1], {specification = {color = {102, 0, 216}, fullbright = true, collidesLiquid = false, timeToLive = 0.5, light = {134, 71, 179, 255}}})
   end

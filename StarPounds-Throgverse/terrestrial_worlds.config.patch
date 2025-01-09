@@ -11,16 +11,16 @@
     {"op" : "add", "path" : "/planetTypes/volcanic/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
     {"op" : "add", "path" : "/planetTypes/scorchedcity/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
 	
-    {"op" : "add", "path" : "/planetTypes/forest/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/desert/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/savannah/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/snow/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/jungle/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/alien/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/tundra/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/midnight/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/volcanic/layers/surface/dungeons/-", "value" : [4, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/scorchedcity/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/forest/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/desert/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/savannah/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/snow/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/jungle/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/alien/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/tundra/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/midnight/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/volcanic/layers/surface/dungeons/-", "value" : [4, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/scorchedcity/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
 
     {"op" : "add", "path" : "/planetTypes/forest/layers/surface/dungeons/-", "value" : [1, "starpoundsbarn"] },
     {"op" : "add", "path" : "/planetTypes/desert/layers/surface/dungeons/-", "value" : [1, "starpoundsbarn"] },
@@ -40,7 +40,7 @@
   [
     {"op" : "test", "path" : "/planetTypes/om_starryplanet" },
     {"op" : "add", "path" : "/planetTypes/om_starryplanet/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
-    {"op" : "add", "path" : "/planetTypes/om_starryplanet/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/om_starryplanet/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
     {"op" : "add", "path" : "/planetTypes/om_starryplanet/layers/surface/dungeons/-", "value" : [1, "starpoundsbarn"] }
   ],
   [
@@ -54,18 +54,18 @@
     {"op" : "add", "path" : "/planetTypes/arcana_ferocious/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
     {"op" : "add", "path" : "/planetTypes/arcana_evoaquatic/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
     {"op" : "add", "path" : "/planetTypes/arcana_ardentTaiga/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_viridescent/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
+    {"op" : "add", "path" : "/planetTypes/arcana_viridescent/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] }
 	
-    {"op" : "add", "path" : "/planetTypes/arcana_arcaneDesert/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_verdant/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_goldenForest/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_illuminated/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_desolate/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_sanguine/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_ferocious/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_evoaquatic/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_ardentTaiga/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
-    {"op" : "add", "path" : "/planetTypes/arcana_viridescent/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] }
+//    {"op" : "add", "path" : "/planetTypes/arcana_arcaneDesert/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_verdant/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_goldenForest/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_illuminated/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_desolate/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_sanguine/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_ferocious/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_evoaquatic/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_ardentTaiga/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/arcana_viridescent/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] }
   ],
   [
     {"op" : "test", "path" : "/planetTypes/m32verdurous" },
@@ -79,7 +79,7 @@
   [
     {"op" : "test", "path" : "/planetTypes/pf_stormy" },
     {"op" : "add", "path" : "/planetTypes/pf_stormy/layers/surface/dungeons/-", "value" : [1, "starpoundsfloranfeasthall"] },
-    {"op" : "add", "path" : "/planetTypes/pf_stormy/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
+//    {"op" : "add", "path" : "/planetTypes/pf_stormy/layers/surface/dungeons/-", "value" : [1, "starpoundsglitchponderouskeep"] },
     {"op" : "add", "path" : "/planetTypes/pf_stormy/layers/surface/dungeons/-", "value" : [1, "starpoundsbarn"] }
   ]
 ]

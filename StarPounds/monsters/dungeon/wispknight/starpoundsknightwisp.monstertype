@@ -114,8 +114,8 @@
           "name" : "wander-fly",
           "parameters" : {
             "wanderTime" : [2,4],
-            "groundDistance" : 8,
-            "ceilingDistance" : 8,
+            "groundDistance" : 12,
+            "ceilingDistance" : 6,
             "xVelocity" : 8,
             "yVelocity" : 12
         }

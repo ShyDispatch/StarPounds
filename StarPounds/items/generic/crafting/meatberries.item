@@ -4,7 +4,7 @@
   "rarity" : "Legendary",
   "category" : "craftingMaterial",
   "inventoryIcon" : "meatberries.png",
-  "description" : "Strange combination of meat and berry. Can spawn meat for others, but not the user.",
+  "description" : "A strange fleshy fruit capable of mimicking the taste and texture of any meat.",
   "shortdescription" : "Meat Berries",
   "itemTags" : [ "reagent" ]
 }

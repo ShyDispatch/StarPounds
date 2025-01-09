@@ -4,7 +4,7 @@
     "species" : "generic",
     "rules" : [
     ],
-    "anchor" : [ "keep_base1" ],
+    "anchor" : [ "keep_base2" ],
     "gravity" : 80,
     "maxRadius" : 1000000,
     "maxParts" : 100,
@@ -12,13 +12,28 @@
   },
 
   "parts" : [
-// Base pieces  
+// Base pieces
     {
       "name" : "keep_base1",
       "rules" : [
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "keep_base1.json" ]
+    },
+    {
+      "name" : "keep_base2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "keep_base2.json" ]
     }
+	
+// Mid Pieces (Red)
+// Layouts (Blue)
+// Normal Rooms (Yellow)
+// Puzzles (Green)  
+  	
+	
   ]
+
 }

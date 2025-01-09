@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Starpounds-Fatty-Dungeons",
  "spacing":0,
- "tilecount":63,
+ "tilecount":67,
  "tileheight":88,
  "tileproperties":
     {
@@ -430,6 +430,34 @@
          "imagePositionX":"-8",
          "imagePositionY":"0",
          "object":"wispflameventtrap",
+         "tilesetDirection":"right"
+        },
+     "63":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"-32",
+         "object":"starpoundsstainedglasscopper",
+         "tilesetDirection":"right"
+        },
+     "64":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"-32",
+         "object":"starpoundsstainedglassgold",
+         "tilesetDirection":"right"
+        },
+     "65":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"0",
+         "object":"ponderouskeephiddendoor",
+         "tilesetDirection":"right"
+        },
+     "66":
+        {
+         "imagePositionX":"-16",
+         "imagePositionY":"-8",
+         "object":"ponderouskeephiddentrapdoor",
          "tilesetDirection":"right"
         },
      "7":
@@ -876,6 +904,34 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "63":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "64":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "65":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
+     "66":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "7":
         {
          "imagePositionX":"string",
@@ -1259,6 +1315,30 @@
          "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/wispflameventtrapcieling.png",
          "imageheight":8,
          "imagewidth":16
+        },
+     "63":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsstainedglasscopper.png",
+         "imageheight":64,
+         "imagewidth":40
+        },
+     "64":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/starpoundsstainedglassgold.png",
+         "imageheight":64,
+         "imagewidth":40
+        },
+     "65":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouskeephiddendoor.png",
+         "imageheight":40,
+         "imagewidth":40
+        },
+     "66":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouskeephiddentrapdoor.png",
+         "imageheight":25,
+         "imagewidth":41
         },
      "7":
         {

@@ -36,6 +36,15 @@
     },
     {
       "op": "add",
+      "path": "/displayDungeons/starpoundsglitchponderouskeep",
+      "value": {
+        "description": "An abandoned Glitch Keep belonging to the Ponderous Order.",
+        "ps_name": "Ponderous Keep",
+        "icon": "/interface/cockpit/dungeons/ponderous.png"
+      }
+    },
+    {
+      "op": "add",
       "path": "/displayDungeons/starpoundsbarn",
       "value": {
         "description": "A red barn stands out in the open. Data inconclusive.",

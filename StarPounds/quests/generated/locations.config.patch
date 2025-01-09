@@ -38,6 +38,10 @@
       "depths" : {
         "name" : "depths of the ponderous keep",
         "tags" : [ "glitch", "friendly"]
+      },
+      "under" : {
+        "name" : "tunnel beneath the ponderous keep",
+        "tags" : [ "glitch", "friendly"]
       }
     }
   }      

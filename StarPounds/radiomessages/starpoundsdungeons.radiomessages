@@ -12,10 +12,16 @@
     "unique": true,
     "text" : "A strange energy is ^orange;protecting this abandoned Glitch keep from any external damage^white;. If you can interact with the object causing it ^orange;you may be able to remove the field^white;."
   },
+  "starpounds_ponderouskeep_taunt" : {
+    "unique": true,
+    "portraitImage" : "/interface/chatbubbles/starpoundslipomancertaunt.png:<frame>",	
+    "text" : "Ohoho? Who dares to step foot in the domain of the Ponderous? A wayward traveller in need of succor, or a craven thief seeking the power of Lipomancy? Step back, or thy shall know the wrath of the wisps!"
+  },
   "starpounds_ponderouskeep_idol" : {
     "unique": true,
     "text" : "Removing the Idol from the pedestal seems to have dissipated the protective field. ^orange;The keep is now free for you to rebuild^white;. I am detecting a strong anomalous energy emanating from the artifact."
   },
+  
   "starpounds_secret_found" : {
       "senderName" : "Blossom",
       "portraitImage" : "/interface/chatbubbles/blossom_smug.png:<frame>",

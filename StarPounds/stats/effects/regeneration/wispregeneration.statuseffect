@@ -5,7 +5,7 @@
   "effectConfig" : {
     "healTime" : 45
   },
-  "defaultDuration" : 2,
+  "defaultDuration" : 6,
 
   "scripts" : [
     "regeneration.lua"

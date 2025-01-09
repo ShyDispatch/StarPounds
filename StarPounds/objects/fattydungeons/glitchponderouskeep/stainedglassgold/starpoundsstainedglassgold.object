@@ -1,0 +1,34 @@
+{
+  "objectName" : "starpoundsstainedglassgold",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","pretty"],
+  "rarity" : "Uncommon",
+  "description" : "A pretty stained glass mural of a well-regarded Cleric.",
+  "shortdescription" : "Cleric Frame",
+  "race" : "glitch",
+  "category" : "decorative",
+  "price" : 200,
+  "printable" : true,
+
+  "apexDescription" : "I presume this Glitch is a religious figure in some obscure faith.",
+  "avianDescription" : "He looks respectable, at least for a cleric.",
+  "floranDescription" : "Floran not know what sssun robot mean.",
+  "glitchDescription" : "Knowing. The legendary cleric, Goldthread. He was said to have wielded the power of lipomancy in healing.",
+  "humanDescription" : "Praise that sun, white mage!",
+  "hylotlDescription" : "A display of religious reverence for a pious Glitch.",
+  "novakidDescription" : "A thick Glitch... Priest? Is that the word?",
+
+  "inventoryIcon" : "starpoundsstainedglassgoldicon.png",
+  "orientations" : [
+    {
+      "image" : "starpoundsstainedglassgold.png:<color>",
+
+      "imagePosition" : [-16, -32],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "background" ]
+
+    }
+  ]
+}

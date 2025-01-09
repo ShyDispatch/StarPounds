@@ -2,7 +2,7 @@
   "name" : "wisphealprayer",
 
   "effectConfig": {
-  "range" : 16,
+  "range" : 32,
     "statusEffect": "wispregeneration"
   },
   "defaultDuration" : 0.5,

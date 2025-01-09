@@ -1,0 +1,69 @@
+{
+  "objectName" : "ponderouskeephiddentrapdoor",
+  "colonyTags" : ["glitch","fatdungeons","ponderous","door"],
+  "rarity" : "Common",
+  "printable" : false,
+  "scannable" : false,
+  "category" : "door",
+  "price" : 140,
+  "description" : "Something isn't quite right with these bricks.",
+  "shortdescription" : "Hidden Ponderous Trapdoor",
+  "race" : "glitch",
+
+  "apexDescription" : "Some of these bricks are misplaced.",
+  "avianDescription" : "These bricks don't look real.",
+  "floranDescription" : "Brickss ssmell different to other brickss.",
+  "glitchDescription" : "Curious. Something is hidden here.",
+  "humanDescription" : "These bricks have an unnatural shine.",
+  "hylotlDescription" : "Something about the way these bricks are crafted is odd.",
+  "nokavidDescription" : "Somethin' ain't right with these bricks.",
+
+  "inventoryIcon" : "ponderouskeephiddentrapdooricon.png",
+
+  "scripts" : [ "/objects/wired/door/door.lua" ],
+  "scriptDelta" : 5,
+
+  "animation" : "/objects/wired/door/door.animation",
+  "animationCustom" : {
+    "sounds" : {
+      "open" : {
+        "pool" : [ "/sfx/objects/stonedoor_open_fast.ogg" ],
+        "rangeMultiplier" : 0.5
+      },
+      "close" : {
+        "pool" : [ "/sfx/objects/stonedoor_close_fast.ogg" ],
+        "rangeMultiplier" : 0.5
+      }
+    }
+  },
+  "animationParts" : {
+    "door" : "ponderouskeephiddentrapdoor.png"
+  },
+  
+    "orientations" : [
+    {
+      "image" : "ponderouskeephiddentrapdoor.png:default",
+      "imagePosition" : [-16, -8],
+      "renderLayer" : "Object+5",
+      "animationPosition" : [-16, -8],
+      "flipImages" : true,
+      "direction" : "left",
+
+      "spaces" : [ [-2, -1], [-1, -1], [0, -1], [1, -1], [2, -1], [-2, 0], [-1, 0], [0, 0], [1, 0], [2, 0], [-2, 1], [-1, 1], [0, 1], [1, 1], [2, 1] ],
+      "anchors" : [ "background" ]
+    },
+    {
+      "image" : "ponderouskeephiddentrapdoor.png:default",
+      "imagePosition" : [-16, -8],
+      "renderLayer" : "Object+5",
+      "animationPosition" : [-16, -8],
+      "direction" : "right",
+
+      "spaces" : [ [-2, -1], [-1, -1], [0, -1], [1, -1], [2, -1], [-2, 0], [-1, 0], [0, 0], [1, 0], [2, 0], [-2, 1], [-1, 1], [0, 1], [1, 1], [2, 1] ],
+      "anchors" : [ "background" ]
+    }
+  ],
+
+  "inputNodes" : [ [-2, 1] ],
+  "outputNodes" : [ [2, -1] ]
+}

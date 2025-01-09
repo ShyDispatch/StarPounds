@@ -43,7 +43,19 @@
          "color":"#ff0000",
          "draworder":"topdown",
          "name":"objects",
-         "objects":[],
+         "objects":[
+                {
+                 "gid":248,
+                 "height":8,
+                 "id":696,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":32,
+                 "y":224
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -113,7 +125,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":696,
+ "nextobjectid":697,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJztz8ENwDAAArHsP2uG6JcJCop8kv9wzzkXAIDfNGt\/Z1uz5S2Qmi1vgdRseQukZstbIDVb3gKp2fIWSM2Wt0BqtrwFUrPlLZCaLW+B1Gx5C6Rmy1sgNVveAqnZ8hZIzZa3QGq2vAVSs+UtkJotb4HUbHkLpGbLWyA1W94CqdnyFkjNlrdAara8BVKz5S2Qmi1vgdRseQukZstbIDVb3gKp2fIWSM2Wt0BqtrwFUrPlLZCaLW+B1Gx5C6Rmy1sgNVveAqnZ8hZIzZa3QGq2vAVSs+UtkJotb4HUbHkLpGbLWyA1W94CqdnyFkjNlrdAara8BVKz5S2Qmi1vgdRseQukZstbIDVb3gKp2fIWSM2Wt0BqtrwFUrPlLZCaLW+B1Gx5C6Rmy1sgNVveAqnZ8hZIzZa3QGrW\/g7AWz7XVekm",
+         "data":"eJzt3VFuE0EQRVGvhEXgLbMSryeLIEiO1FTNdE9j7OqJz5POFxAVGl\/xEeN8XC6XDwAAXqZy1X931hb34+569\/PT7dOvgdv99379ua+v09volleu+jmwtjidQBanE8jidAJZnE4gi9MJZHFn6uR6+fvOVvtrR1b9HFhb3Bk66fXR66XXTPVzYG1xq3ey18gtmP23pfo5sLa4lTuJd7WN7N0TW9m7qfo5sLa4s3XSu61tZXRX9XNgbXGrdvLsu6qfA2uL0wlkcTqBLE4nkMXpBLI4nUAWpxPI4nQCWdy7dBLf91X9HFhbu63X0f\/+vne73i1xOqFSfL3sdbL1XsPeew51wncy08kROuE70olOGNOJThh7105Gt0CrcjO36IRKlZu5RSdUqtzMLTqhUuVmbtEJlSo3c4tOqFS5mVt0QqXKzdyiEypVbuYWnVCpcjO36IRKlZu5RSdUqtzMLTqhUuVmbtEJlSo3c4tOqHRk7fuJ994ffD34tdrN3KITKvXW66PXy9FmZm7RCZX2ttfIoz+Pp93RW\/5MJ1TaWu9zJPZeh1v\/T2u0I7e0N+mEKlt7h88lGt0Crbhnvx7bjW555V3Vz4G1xekEsjidQBanE8jidAJZnE4gi9MJZHFn6uSR7+vE99lUPwfW1m7rdbR6J1vvpTny8yZ0woz4ejljJ\/\/yucc6YYZOdMKYTnTCmE50wthZOnn2qp8Da4vTCWRxOoEsTieQxekEsjidQBZX2QkAPOI3kqP8dw==",
          "encoding":"base64",
          "height":69,
          "name":"back",
@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3Vtu2zAUhGHtKRv0Qr2YgkDdugYpzrmQJtn\/A\/TgxDjSwwxiKxR4XQAAAJjt5\/fRej3qPIBCyc3zuh7Rub3z0BOsTM2NtSv0BCex5MbSFXqCk1hzo3aFnuAkntwoXRnVkx\/j0TsPoPDmpnSlcvz5eXZPrP1o9YWewCMrN8\/O3EhPen8jejNrswCLjNx8dqQ219sTTz9aszNm4f8UzU2tI7W50Z5E0RNERHLT6khtbqQnWegJvALf401z6Ql25slNryO1udH7XVnoCTysuVE6UptLT7AzS27UjtTm0hPsTM2NpSO1ufQEO3vl5vn3eDz\/fW3uyPvc1uvo+73oCTxqufE8b9KbS0+ws1Zuol2hJzjJXW4iXVm9J\/QFCjUv3q6s2pP32fQEPZasnPR8PDDSKc\/HA6Od8Hw8MMPuz8cDs3zz+XhgJ72uWHL\/ee\/t\/Wg8h+8+uC8Mi7tsjj4s1\/KSsUagdi7gzko9uSq\/q713xHoaQDEqN6O+n2SvpwEUK\/TE+rcnYz0NfYFipc9d1p4U0fU09ASKlXpyVX6n5DhjPQ2gWOFzl+f9L9H1NIBi954UkfU0gOKEnhTe9TSA4pSeFJ71NIDipJ4U1v0mAIXnXq3lXm\/vPN73q3r7TQCKVj6j93xX6Imy3wSgeM+N8n+Ouxm1WbXz9K5DeX+Put8EoFA+Q2XMmtkTy34TgCKrI715E7\/HS9cHWGR25G7mjJ549psAFKf0xLvfBKAYlZuZPYnsNwEodu9JdL8JQLF6T0bvNwEoVu\/JO56Px7fs1JOC5+PxDbv1pMjcbwJQ7NiTgufjMcPovMy435XRFeDO6KxMvC\/8MF8csIjJ\/2d8mC4OWMTMnhR0BTua3ZOCrmA33+hJQVewE0vuP++9zTyAO595Gb0fz1026QlW1crLqP14etnM+tylXhdgUcvNiPWGs76fWK8LULRyk73ekO8n2JGSl8z9ePh+gh2peclab0g2AQCj\/AJ+H3bw",
+         "data":"eJzt3V1uKjEMQOGshE2wQRbKYqpI0E6jjBMnzp91PikPveqlPPgIGDJKCAAAAJjt+VmPz0p\/tlrp4wKSdG4k7xBe2se\/m3vt79MJVtJ0EmlboRN4oO0k0rRCJ\/CgpZOothU6gQetnUQ1rYzq5KlcdIIePZ1EsZXM+v136060fdz1QifQ6O0k9U5+tuwknflauVboBBqWnaSNhGDXSUsfd4+de30BJFad5BoJwb6TXnSCFhad3DUSgm0nVugEWgaf40V0Ag86rwsXWXVijU6g0fE9YxU6gQct81jbSAh0Ah+086hpJAQ6gQ\/pPL7\/1uv9\/2d1IyHQCXyQ5rHlfpMUncCD0jz2tkIn8KBmHnta2b2TUY8PX2rnpbWVXTu5\/i06QYlmVlbeHw+cZNX98cBpVtwfD5xo9v3xwKlm3h8PnKzUimbu02tv13VzH37z4rowNKTZHL00z+XLYo9A7m8Bkp06uT6f2ftpAEk6jw\/jNerzifV+GkCyUyfa1x6L\/TS870KNnd53aTuJevfT0Alq7NTJ9florgtb7KcBJDu97woNv\/\/Vu58GkHjpJOrZTwNIPHUSte6nASTeOola9tMAEo+dRNrzJgBJqRPtNaxdOkmVzpsAJKV5bl07dVJz3gQgyc1zzfccOblWVndSe94EIJFeP1rVvL6U\/q9FJ5rzJgDJXSe9VneiPW8CkOQ6sbKqk5bzJgCJt05az5sAJNbXX1MzO+k5bwKQeOmk97wJQHJKJ6PPmwAkp3Ryxf3xmO3ETiLuj8dMp3YSWZ43AUhO7iTi\/njMMHpeZlzvsmgFkIyelYnXhV9dTxRYaPL3jK\/mJwosNLOTiFZwotmdRLSC06zoJKIVnEQz9+m1t5kLkKTzMvo8Hmk26QS7upuXUefxlGbz7vXnYbzSxwUks\/cbtn4+oROsNHu\/IZ9PcKKaebE8j4fPJzhR7bxY7TdkNgEAo\/wAkzLI+A==",
          "encoding":"base64",
          "height":69,
          "name":"front",
@@ -67,6 +67,18 @@
                  "width":8,
                  "x":1584,
                  "y":24
+                }, 
+                {
+                 "gid":250,
+                 "height":8,
+                 "id":698,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":8,
+                 "x":1344,
+                 "y":488
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -137,7 +149,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":698,
+ "nextobjectid":699,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.1.6",

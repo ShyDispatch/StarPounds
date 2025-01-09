@@ -81,7 +81,7 @@
     {"input": [["durasteelbar", 6], ["climbingrope", 4], ["meatberries", 1]], "output": "gluttonistgreatfork"},
     {"input": [["durasteelbar", 6], ["climbingrope", 4], ["onikillersake", 1]], "output": "ogresmoonshiner"},
     {"input": [["durasteelbar", 6], ["copperbar", 4], ["ponderouscore", 1]], "output": "ponderousstaff"},
-    {"input": [["durasteelbar", 6], ["copperbar", 4], ["rootpopfroth", 1]], "output": "scatterpopper"}
+    {"input": [["durasteelbar", 6], ["copperbar", 4], ["stardustrootpop", 1]], "output": "scatterpopper"}
     ],
     "utilities" : [
       {"input": [["money", 500], ["liquidmilk", 100], ["sugar", 3]], "output": "starpoundsmilkshakesquirtgun"},
@@ -99,7 +99,7 @@
     {"input": [["essence", 500]], "output": "meatberries"},
     {"input": [["essence", 500]], "output": "onikillersake"},
     {"input": [["essence", 500]], "output": "ponderouscore"},
-    {"input": [["essence", 500]], "output": "rootpopfroth"}
+    {"input": [["essence", 500]], "output": "stardustrootpop"}
     ]
   }
 }

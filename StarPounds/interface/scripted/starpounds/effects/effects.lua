@@ -144,7 +144,7 @@ function populateTabs()
 
   local sortedEffectKeys = {}
   local sort = function(a, b)
-    local typePriority = {negative = -1, neutral = 0, positive = 1}
+    local typePriority = {negative = -1, neutral = 0, positive = 1, special = 2}
     local aType = effects[a].type or "neutral"
     local bType = effects[b].type or "neutral"
     if aType ~= bType then
@@ -267,7 +267,7 @@ function setEffectStats(effectKey, effect, level, duration)
       else
         local negative = (modStat.negative and amount > 0) or (not modStat.negative and amount < 0)
         if stat[2] == "sub" then negative = not negative end
-        statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and stat[2] == "add") or (modStat.invertDescriptor and stat[2] == "sub")) and "+" or "-", string.format("%.2f", amount * 100):gsub("%.?0+$", "").."%")
+        statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and stat[2] == "add") or (modStat.invertDescriptor and stat[2] == "sub")) and "+" or "-", string.format("%.2f", modStat.flat and amount or (amount * 100)):gsub("%.?0+$", "")..(modStat.flat and "" or "%"))
       end
       local statColour = modStat.colour and ("^#"..modStat.colour..";") or ""
       effectStats[#effectStats + 1] = string.format("%s%s:^reset;", statColour, modStat.pretty)
@@ -319,7 +319,7 @@ function setAccessoryStats(item)
       local modStat = starPounds.stats[stat.name]
       local amount = stat.modifier or 0
       local negative = (modStat.negative and amount > 0) or (not modStat.negative and amount < 0)
-      statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and amount >= 0) or (modStat.invertDescriptor and amount < 0)) and "+" or "-", string.format("%.2f", math.abs(amount * 100)):gsub("%.?0+$", "").."%")
+      statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and amount >= 0) or (modStat.invertDescriptor and amount < 0)) and "+" or "-", string.format("%.2f", math.abs(modStat.flat and amount or (amount * 100))):gsub("%.?0+$", "")..(modStat.flat and "" or "%"))
 
       local statColour = modStat.colour and ("^#"..modStat.colour..";") or ""
       effectStats[#effectStats + 1] = string.format("%s%s:^reset;", statColour, modStat.pretty)
@@ -500,7 +500,7 @@ end
 
 function timeFormat(seconds)
   local minutes = math.floor(seconds/60)
-  local seconds = math.ceil(seconds) % 60
+  local seconds = math.floor(seconds) % 60
   if (minutes < 10) then
     minutes = tostring(minutes)
   end

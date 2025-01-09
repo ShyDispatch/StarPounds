@@ -53,14 +53,14 @@ function populateOptions()
         local modifierColour = (stats[statModifier[1]].negative and statModifier[2] < 0 or statModifier[2] > 0) and "^green;" or "^red;"
         local amount = (stats[statModifier[1]].invertDescriptor and (statModifier[2] * -1) or statModifier[2]) * 100
         local statColour = stats[statModifier[1]].colour and ("^#"..stats[statModifier[1]].colour.."aa;") or "^gray;"
-        statModifierString = statModifierString..string.format("\n%s%s^gray; %s by %s%s%%", statColour, stats[statModifier[1]].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5))
+        statModifierString = statModifierString..string.format("\n%s%s^gray; %s by %s%s", statColour, stats[statModifier[1]].pretty, amount > 0 and "increased" or "reduced", modifierColour, math.floor(math.abs(amount) + 0.5)).."%"
       end
 
       for _, statOverride in ipairs(option.statOverrides or jarray()) do
         local overrideColour = (stats[statOverride[1]].negative and statOverride[2] < stats[statOverride[1]].base or statOverride[2] > stats[statOverride[1]].base) and "^green;" or "^red;"
-        local amount = (stats[statOverride[1]].invertDescriptor and (statOverride[2] * -1) or statOverride[2]) * 100
+        local amount = (stats[statOverride[1]].invertDescriptor and (statOverride[2] * -1) or statOverride[2]) * (stats[statOverride[1]].flat and 1 or 100)
         local statColour = stats[statOverride[1]].colour and ("^#"..stats[statOverride[1]].colour.."aa;") or "^gray;"
-        statModifierString = statModifierString..string.format("\n%s%s^gray; set to %s%s%%", statColour, stats[statOverride[1]].pretty, overrideColour, math.floor(math.abs(amount) + 0.5))
+        statModifierString = statModifierString..string.format("\n%s%s^gray; set to %s%s", statColour, stats[statOverride[1]].pretty, overrideColour, math.floor(math.abs(amount) + 0.5))..(stats[statOverride[1]].flat and "" or "%")
       end
     end
     local optionWidget = {

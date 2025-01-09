@@ -1,11 +1,12 @@
 {
   "frameGrid" : {
     "size" : [5, 5],
-    "dimensions" : [2, 3],
+    "dimensions" : [2, 4],
     "names" : [
       [ "default.on", "default.off"],
       [ "positive.on", "positive.off"],
-      [ "negative.on", "negative.off"]
+      [ "negative.on", "negative.off"],
+      [ "special.on", "special.off"]
     ]
   }
 }

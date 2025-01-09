@@ -373,12 +373,10 @@ starPounds.getStat = function(stat)
     statAmount = statAmount * starPounds.getTraitMultiplier(stat) * starPounds.getEffectMultiplier(stat)
     -- Trait bonus and effect bonus
     statAmount = statAmount + starPounds.getTraitBonus(stat) + starPounds.getEffectBonus(stat)
-    -- Override stat. (Used for legacy BF option)
-    statAmount = starPounds.getOptionsOverride(stat) or statAmount
     -- Status effect multipliers and bonuses.
     statAmount = statAmount * starPounds.getStatusEffectMultiplier(stat) + starPounds.getStatusEffectBonus(stat)
     -- Option multipliers.
-    statAmount = statAmount * starPounds.getOptionsMultiplier(stat)
+    statAmount = starPounds.getOptionsOverride(stat) or (statAmount * starPounds.getOptionsMultiplier(stat))
     -- Cap the stat between 0 and it's maxValue.
     starPounds.statCache[stat] = math.max(math.min(statAmount, starPounds.stats[stat].maxValue or math.huge), starPounds.stats[stat].minValue or 0)
   end
@@ -692,7 +690,7 @@ starPounds.addEffect = function(effect, duration)
     effectData.duration = duration and math.max(effectData.duration or 0, duration) or nil
     effectData.level = math.min((effectData.level or 0) + 1, effectConfig.levels or 1)
     storage.starPounds.effects[effect] = effectData
-    if not effectConfig.hidden then
+    if not (effectConfig.ephemeral or effectConfig.hidden) then
       storage.starPounds.discoveredEffects[effect] = true
     end
     -- Scripted effects.

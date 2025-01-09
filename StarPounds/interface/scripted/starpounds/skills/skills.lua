@@ -74,32 +74,27 @@ function update()
   if isAdmin ~= admin() then
     isAdmin = admin()
     enableUpgrades = metagui.inputData.isObject or isAdmin
-    checkSkills()
-    if selectedSkill then
-      _ENV[string.format("%sSkill", selectedSkill.name)].onClick()
-    end
     weightDecrease:setVisible(isAdmin)
     weightIncrease:setVisible(isAdmin)
     barPadding:setVisible(not isAdmin)
+
+    checkSkills()
+    refreshTimer = 0
   end
 
   if experience ~= starPounds.experience or level ~= starPounds.level then
     setProgress(starPounds.experience, starPounds.level)
+    
     checkSkills()
-  end
-
-  if level ~= starPounds.level then
-    if selectedSkill then
-      _ENV[string.format("%sSkill", selectedSkill.name)].onClick()
-    end
-    experienceText:setText(string.format("%s XP", starPounds.level))
-    checkSkills()
+    refreshTimer = 0
   end
 
   refreshTimer = math.max((refreshTimer or 0.25) - script.updateDt(), 0)
   if refreshTimer == 0 then
+    if selectedSkill then
+      _ENV[string.format("%sSkill", selectedSkill.name)].onClick()
+    end
     refreshTimer = 0.25
-    checkSkills()
   end
 
   -- Check promises.
@@ -290,7 +285,7 @@ function buildTraitPreview(traitType, trait)
       else
         local negative = (modStat.negative and stat[3] > 0) or (not modStat.negative and stat[3] < 0)
         if stat[2] == "sub" then negative = not negative end
-        statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and stat[2] == "add") or (modStat.invertDescriptor and stat[2] == "sub")) and "+" or "-", string.format("%.2f", stat[3] * 100):gsub("%.?0+$", "").."%")
+        statString = string.format("%s%s%s", negative and "^red;" or "^green;", ((not modStat.invertDescriptor and stat[2] == "add") or (modStat.invertDescriptor and stat[2] == "sub")) and "+" or "-", string.format("%.2f", modStat.flat and stat[3] or (stat[3] * 100)):gsub("%.?0+$", "")..(modStat.flat and "" or "%"))
       end
       local statColour = modStat.colour and ("^#"..modStat.colour..";") or ""
       traitStats[#traitStats + 1] = string.format("%s%s:^reset;", statColour, modStat.pretty)
@@ -819,7 +814,9 @@ end
 function setProgress(experience, level)
   local experienceConfig = starPounds.moduleFunc("experience", "config")
   local progress = experience/(experienceConfig.experienceAmount * (1 + level * experienceConfig.experienceIncrement))
+  experienceText:setText(string.format("%s XP", level))
   experienceBar:setFile(string.format("bar.png?crop;0;0;%s;14", math.floor(70 * (progress or 0) + 0.5)))
+  experienceBar:queueRedraw()
 end
 
 function weightDecrease:onClick()

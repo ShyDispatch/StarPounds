@@ -4,8 +4,6 @@
 
   "dropPools" : [ "gluttonistchampiontreasure" ],
   
-  "damageTeam" : 3,
-  
   "identity" : {
      "species" : "floran"
    },

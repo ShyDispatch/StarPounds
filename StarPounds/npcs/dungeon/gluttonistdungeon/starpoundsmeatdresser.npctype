@@ -5,8 +5,6 @@
 
   "dropPools" : [ "gluttonistbutchertreasure" ],
 
-  "damageTeam" : 3,
-
   "scriptConfig" : {
   "behaviorConfig" : {
       "leapWindup" : 0.50,

@@ -179,14 +179,15 @@ function _player:footstep(dt)
 
   self.footstepTimer = self.footstepTimer + dt
   if self.footstepTimer > self.footstepTiming then
-    local volume = 1 - (math.random() * self.footstepVolumeVariance)
+    local volume = 1 - ((math.random() - 0.5) * self.footstepVolumeVariance)
     local stepMult = self:footstepMult()
     local sloshMult = math.round(math.min(0.2 * stepMult + 0.2 * starPounds.stomach.contents / (entity.weight * starPounds.currentSize.thresholdMultiplier), 0.4), 2)
-    if stepMult >= 0.25 then
+
+    if stepMult > 0.3 then
       starPounds.moduleFunc("sound", "play", "footstep", stepMult * volume)
     end
 
-    if sloshMult >= 0.1 then
+    if sloshMult > 0.1 then
       starPounds.moduleFunc("sound", "play", "slosh", sloshMult * volume, 0.75)
     end
 
@@ -198,7 +199,7 @@ function _player:footstepMult()
   -- Just a cache for math so we only do it once.
   self.stepMultipliers = self.stepMultipliers or {}
   if not self.stepMultipliers[starPounds.currentSize.size] then
-    local mult = math.round(math.min(starPounds.currentSize.movementPenalty ^ 0.5, 1), 2)
+    local mult = math.round(math.min(starPounds.currentSize.movementPenalty ^ 0.4, 1), 2)
     self.stepMultipliers[starPounds.currentSize.size] = mult
   end
 

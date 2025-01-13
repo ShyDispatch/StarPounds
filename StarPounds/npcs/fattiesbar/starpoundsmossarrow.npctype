@@ -4,7 +4,7 @@
 
   "npcname" : "^#549191;MossArrow^reset;",
   "identity":  {
-      "imagePath" : "starpounds/other/starpoundsmossarrow",
+      "imagePath" : "starpounds/other/mossarrow",
       "bodyDirectives": "?replace;6f2919=394659;ffca8a=a8c2c4;e0975c=8ca6b7;a85636=5f7387?replace;f7e7b2=894e96;735e3a=271732;d9c189=4f2d6d;a38d59=431e4e;333241=130f1d;a22424=4f2d6d;c65445=894e96",
       "emoteDirectives": "?replace;6f2919=394659;ffca8a=a8c2c4;e0975c=8ca6b7;a85636=5f7387?replace;f7e7b2=894e96;735e3a=271732;d9c189=4f2d6d;a38d59=431e4e;333241=130f1d;a22424=4f2d6d;c65445=894e96;a22424=4f2d6d;c65445=894e96",
       "gender": "female",

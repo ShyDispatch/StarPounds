@@ -45,7 +45,7 @@
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "starpoundsmini/other/alipos",
+    "imagePath": "nonplayable/starpoundsmini/other/alipos",
     "name": "^#6a83b1;Alipos^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.5",

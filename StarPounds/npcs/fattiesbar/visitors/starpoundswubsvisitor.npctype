@@ -54,7 +54,7 @@
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "starpoundswubs",
+    "imagePath": "nonplayable/starpoundswubs",
     "name": "^#884488;Wubs^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.2",

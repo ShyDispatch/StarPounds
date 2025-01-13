@@ -50,7 +50,7 @@
     "hairGroup" : "hair",
     "facialMaskDirectives" : "",
     "species" : "human",
-    "imagePath" : "starpoundsleggs",
+    "imagePath" : "nonplayable/starpoundsleggs",
     "personalityIdle" : "idle.4",
     "facialMaskGroup" : "",
     "name" : "Leggs",

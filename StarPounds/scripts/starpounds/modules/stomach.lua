@@ -15,13 +15,15 @@ function stomach:init()
 
   self.defaultContents = {
     capacity = self.data.stomachCapacity,
+    amount = 0,
+    contents = 0,
     food = 0,
     belchable = 0,
+
     fullness = 0,
-    contents = 0,
-    amount = 0,
-    interpolatedContents = 0,
-    interpolatedFullness = 0
+    baseFullness = 0,
+    interpolatedFullness = 0,
+    interpolatedContents = 0
   }
 
   starPounds.stomach = self:get()
@@ -77,13 +79,15 @@ function stomach:get()
 
   self.stomach = {
     capacity = capacity,
+    amount = math.round(totalAmount, 3),
+    contents = math.round(contents, 3),
     food = math.round(food, 3),
     belchable = math.round(belchable, 3),
+
     fullness = math.round(contents/capacity, 2),
-    contents = math.round(contents, 3),
-    amount = math.round(totalAmount, 3),
-    interpolatedContents = math.round(self.stomachLerp, 3),
-    interpolatedFullness = math.round(self.stomachLerp/capacity, 2)
+    baseFullness = math.round(contents/self.data.stomachCapacity, 2),
+    interpolatedFullness = math.round(self.stomachLerp/capacity, 2),
+    interpolatedContents = math.round(self.stomachLerp, 3)
   }
 
   return self.stomach

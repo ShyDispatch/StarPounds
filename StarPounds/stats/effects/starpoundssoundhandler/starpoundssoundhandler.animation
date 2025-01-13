@@ -79,6 +79,7 @@
       "/sfx/starpounds/belch/belch7.ogg",
       "/sfx/starpounds/belch/belch8.ogg"
     ],
+    "footstep": ["/sfx/starpounds/other/footstep.ogg"],
     "clothingrip": [ "/sfx/starpounds/other/clothingrip.ogg" ],
     "fizz": [ "/sfx/starpounds/other/fizz.ogg" ],
     "secret": ["/sfx/starpounds/other/secret.ogg"]

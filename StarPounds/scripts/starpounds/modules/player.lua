@@ -3,6 +3,10 @@ local _player = starPounds.module:new("player")
 
 function _player:init()
   self:setup()
+  -- Footstep stuff. Initially offset so it lines up nice (hopefully).
+  self.footstepTimer = 2 / 60
+  self.footstepTiming = root.assetJson("/player.config:footstepTiming")
+  self.footstepVolumeVariance = root.assetJson("/sfx.config:footstepVolumeVariance")
   -- Radio message if we have QuickbarMini instead (or with) StardustLite.
   local mmconfig = root.assetJson("/interface/scripted/mmupgrade/mmupgradegui.config")
   if mmconfig.replaced and not pcall(root.assetJson, "/metagui/registry.json") then
@@ -10,35 +14,13 @@ function _player:init()
   elseif not mmconfig.replaced then
     player.radioMessage("starpounds_stardust")
   end
-  -- Damage listener for fall/fire damage.
-  self.damageListener = damageListener("damageTaken", function(notifications)
-    for _, notification in pairs(notifications) do
-      if notification.sourceEntityId == entity.id() and notification.targetEntityId == entity.id() then
-        if notification.damageSourceKind == "falling" and starPounds.currentSizeIndex > 1 then
-          -- "explosive" damage (ignores tilemods) to blocks is reduced by 80%, for a total of 5% damage applied to blocks. (Isn't reduced by the fall damage skill)
-          local baseDamage = (notification.damageDealt)/(1 + starPounds.currentSize.healthBonus * (1 - starPounds.getStat("fallDamageResistance")))
-          local tileDamage = baseDamage * (1 + starPounds.currentSize.healthBonus) * 0.25
-          _player.damageHitboxTiles(_player, tileDamage)
-          break
-        end
-        if starPounds.currentSizeIndex > 1 and string.find(notification.damageSourceKind, "fire") and starPounds.getStat("firePenalty") > 0 then
-          local percentLost = math.round(notification.healthLost/status.resourceMax("health"), 2)
-          percentLost = 2 * percentLost * starPounds.getStat("firePenalty") * (starPounds.currentSizeIndex - 1)/(#starPounds.sizes - 1)
-
-          if percentLost > 0.01 then
-            status.overConsumeResource("energy", status.resourceMax("energy") * percentLost)
-            status.addEphemeralEffect("sweat")
-          end
-        end
-      end
-    end
-  end)
 end
 
 function _player:update(dt)
   -- Update fall damage listener.
   self.damageListener:update()
-
+  -- Footsteps.
+  self:footstep(dt)
   local currentSizeWeight = starPounds.currentSize.weight
   local nextSizeWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
   if nextSizeWeight ~= starPounds.settings.maxWeight and starPounds.sizes[starPounds.currentSizeIndex + 1].isBlob and starPounds.hasOption("disableBlob") then
@@ -81,6 +63,31 @@ function _player:setup()
     starPounds.getSize = function() return starPounds.sizes[1], 1 end
   end
 end
+
+-- Damage listener for fall/fire damage.
+_player.damageListener = damageListener("damageTaken", function(notifications)
+  self = _player
+  for _, notification in pairs(notifications) do
+    if notification.sourceEntityId == entity.id() and notification.targetEntityId == entity.id() then
+      if notification.damageSourceKind == "falling" and starPounds.currentSizeIndex > 1 then
+        -- "explosive" damage (ignores tilemods) to blocks is reduced by 80%, for a total of 5% damage applied to blocks. (Isn't reduced by the fall damage skill)
+        local baseDamage = (notification.damageDealt)/(1 + starPounds.currentSize.healthBonus * (1 - starPounds.getStat("fallDamageResistance")))
+        local tileDamage = baseDamage * (1 + starPounds.currentSize.healthBonus) * 0.25
+        self:damageHitboxTiles(tileDamage)
+        break
+      end
+      if starPounds.currentSizeIndex > 1 and string.find(notification.damageSourceKind, "fire") and starPounds.getStat("firePenalty") > 0 then
+        local percentLost = math.round(notification.healthLost/status.resourceMax("health"), 2)
+        percentLost = 2 * percentLost * starPounds.getStat("firePenalty") * (starPounds.currentSizeIndex - 1)/(#starPounds.sizes - 1)
+
+        if percentLost > 0.01 then
+          status.overConsumeResource("energy", status.resourceMax("energy") * percentLost)
+          status.addEphemeralEffect("sweat")
+        end
+      end
+    end
+  end
+end)
 
 function _player:damageHitboxTiles(tileDamage)
   if starPounds.hasOption("disableTileDamage") then return end
@@ -159,6 +166,43 @@ function _player:updateFoodItem(item)
     return item
   end
   return false
+end
+
+-- Audio doesn't line up to the normal step sound (and can't),
+-- but having the same cadence as it sounds decently good.
+function _player:footstep(dt)
+  if not storage.starPounds.enabled then return end
+  if not starPounds.mcontroller.groundMovement then return end
+  if not (starPounds.mcontroller.walking or starPounds.mcontroller.running) then return end
+  if starPounds.hasOption("disableStepSounds") then return end
+  if status.stat("activeMovementAbilities") > 1 then return end
+
+  self.footstepTimer = self.footstepTimer + dt
+  if self.footstepTimer > self.footstepTiming then
+    local volume = 1 - (math.random() * self.footstepVolumeVariance)
+    local stepMult = self:footstepMult()
+    local sloshMult = math.round(math.min(0.2 * stepMult + 0.2 * starPounds.stomach.contents / (entity.weight * starPounds.currentSize.thresholdMultiplier), 0.4), 2)
+    if stepMult >= 0.25 then
+      starPounds.moduleFunc("sound", "play", "footstep", stepMult * volume)
+    end
+
+    if sloshMult >= 0.1 then
+      starPounds.moduleFunc("sound", "play", "slosh", sloshMult * volume, 0.75)
+    end
+
+    self.footstepTimer = 0
+  end
+end
+
+function _player:footstepMult()
+  -- Just a cache for math so we only do it once.
+  self.stepMultipliers = self.stepMultipliers or {}
+  if not self.stepMultipliers[starPounds.currentSize.size] then
+    local mult = math.round(math.min(starPounds.currentSize.movementPenalty ^ 0.5, 1), 2)
+    self.stepMultipliers[starPounds.currentSize.size] = mult
+  end
+
+  return self.stepMultipliers[starPounds.currentSize.size]
 end
 
 starPounds.modules.player = _player

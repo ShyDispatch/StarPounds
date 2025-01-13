@@ -92,7 +92,7 @@
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "starpoundsmini",
+    "imagePath": "starpounds/cameo/mini/mini",
     "name": "^#c4855d;Mini^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.5",

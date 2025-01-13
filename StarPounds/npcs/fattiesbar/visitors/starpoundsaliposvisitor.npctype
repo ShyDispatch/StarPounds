@@ -27,10 +27,12 @@
     },
     "dialogMode": "tutorial",
     "dialog": {
+      "bless": { "default": { "default": [
+        "Afthonia's blessing upon you!"
+      ]}},
       "converse": {
         "default": {
           "default": [
-            "Afthonia's blessing upon you!",
             "I must say this is quite different from the temple I'm used to, but the offerings are sufficient to say the least!",
             "I can hardly move with all the offerings I've received here! Though, should you wish to pay tribute to our Goddess Afthonia, I am certain I could be gorged further with a little... effort.",
             "It's so nice to see everyone here is well fed. There's little worse than an empty belly!"
@@ -45,7 +47,7 @@
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "nonplayable/starpoundsmini/other/alipos",
+    "imagePath": "starpounds/cameo/mini/alipos",
     "name": "^#6a83b1;Alipos^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.5",

@@ -95,7 +95,7 @@
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "starpoundsapple",
+    "imagePath": "starpounds/dev/apple",
     "name": "^#2862e9;Grace^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.5",

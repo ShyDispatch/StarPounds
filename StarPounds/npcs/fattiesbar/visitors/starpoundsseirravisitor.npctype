@@ -39,7 +39,7 @@
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "nonplayable/starpoundsmini/other/seirra",
+    "imagePath": "starpounds/cameo/mini/seirra",
     "name": "^#4a6691;Seirra^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.5",

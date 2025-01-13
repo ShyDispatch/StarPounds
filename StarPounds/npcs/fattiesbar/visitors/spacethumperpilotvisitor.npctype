@@ -14,7 +14,7 @@
       "minimumSize": [3, 3]
     },
   "behavior" : "outpostvisitor",
-  
+
   "chatPortrait" : "/interface/chatbubbles/spacethumperpilot.png:<frame>",
     "dialogMode": "tutorial",
     "dialog": {
@@ -81,7 +81,7 @@
       "facialMaskGroup": "",
       "facialMaskType": "",
       "gender": "female",
-      "imagePath": "nonplayable/spacethumperpilot",
+      "imagePath": "starpounds/other/spacethumperpilot",
       "hairDirectives" : "",
       "hairGroup": "hair",
       "hairType" : "0",

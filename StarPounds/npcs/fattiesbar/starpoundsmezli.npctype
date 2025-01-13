@@ -4,7 +4,7 @@
 
   "npcname" : "Tonauac",
   "identity" : {
-    "imagePath" : "nonplayable/starpoundsmezli",
+    "imagePath" : "starpounds/other/starpoundsmezli",
     "gender" : "female",
     "hairGroup" : "hair",
     "hairType" : "1",

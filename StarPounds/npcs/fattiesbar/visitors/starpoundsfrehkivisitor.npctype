@@ -57,7 +57,7 @@
     "hairGroup" : "hair",
     "facialMaskDirectives" : "",
     "species" : "human",
-    "imagePath" : "nonplayable/starpoundsfrehki",
+    "imagePath" : "starpounds/cameo/frehki",
     "personalityIdle" : "idle.4",
     "facialMaskGroup" : "",
     "name" : "Freki",

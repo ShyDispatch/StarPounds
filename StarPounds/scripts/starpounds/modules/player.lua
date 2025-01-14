@@ -198,12 +198,14 @@ end
 function _player:footstepMult()
   -- Just a cache for math so we only do it once.
   self.stepMultipliers = self.stepMultipliers or {}
-  if not self.stepMultipliers[starPounds.currentSize.size] then
-    local mult = math.round(math.min(starPounds.currentSize.movementPenalty ^ 0.4, 1), 2)
-    self.stepMultipliers[starPounds.currentSize.size] = mult
+  -- Dumb but the immobile skill edits the movement penalty.
+  local size = starPounds.sizes[starPounds.currentSizeIndex]
+  if not self.stepMultipliers[size.size] then
+    local mult = math.round(math.min(size.movementPenalty ^ 0.4, 1), 2)
+    self.stepMultipliers[size.size] = mult
   end
 
-  return self.stepMultipliers[starPounds.currentSize.size]
+  return self.stepMultipliers[size.size]
 end
 
 starPounds.modules.player = _player

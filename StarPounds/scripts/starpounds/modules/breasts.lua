@@ -85,11 +85,9 @@ function breasts:setMilkType(liquidType)
   -- Skip if it's the same type of milk.
   if liquidType == storage.starPounds.breastType then return end
   -- Only allow liquids we have values for.
-  local liquids = starPounds.moduleFunc("drinking", "config")
-  if not liquids.drinkables[liquidType] then return end
-  local currentMilkRatio = liquids.drinkables[self.breasts.type]
-  local newMilkRatio = liquids.drinkables[liquidType]
-  local convertRatio = currentMilkRatio/newMilkRatio
+  local currentFood = starPounds.moduleFunc("liquid", "getFood", self.breasts.type)
+  local newFood = starPounds.moduleFunc("liquid", "getFood", liquidType)
+  local convertRatio = currentFood/newFood
   storage.starPounds.breastType = liquidType
   self:setMilk(self.breasts.contents * convertRatio, 4)
 end
@@ -97,9 +95,8 @@ end
 function breasts:milkProduction(food)
   local milkCost = 0
   local milkProduced = 0
-  local liquids = starPounds.moduleFunc("drinking", "config")
   if (starPounds.getStat("breastProduction") > 0) and (starPounds.getStat("breastEfficiency") > 0) and not starPounds.hasOption("disableMilkGain") then
-    local milkValue = liquids.drinkableVolume * liquids.drinkables[self.breasts.type]
+    local milkValue = starPounds.moduleFunc("liquid", "getFood", self.breasts.type)
     local maxCapacity = self.breasts.capacity * (starPounds.hasOption("disableLeaking") and 1 or 1.1)
     if self.breasts.contents < maxCapacity then
       milkCost = food * starPounds.getStat("breastProduction")

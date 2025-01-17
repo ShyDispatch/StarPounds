@@ -8,7 +8,7 @@ function init()
   self.animationRate = 1
   self.capacity = config.getParameter("capacity", 1000)
   self.maxWeight = root.assetJson("/scripts/starpounds/starpounds.config:settings.maxWeight")
-  self.drinking = root.assetJson("/scripts/starpounds/modules/drinking.config")
+  self.liquids = root.assetJson("/scripts/starpounds/modules/liquid.config:liquids")
   self.boundBox = object.boundBox()
   self.statusBlacklist = {
     "wet",
@@ -59,9 +59,10 @@ function update(dt)
         elseif self.stateTimer > self.gulpDelay/5 and math.max(0, self.stateTimer - dt) < self.gulpDelay/5 then
           animator.playSound("drink")
           storage.amount = math.max(0, storage.amount - 1)
+          for foodType, foodAmount in pairs(self.liquids[storage.liquid.name] or self.liquids.default) do
+            world.sendEntityMessage(feedTarget, "starPounds.feed", foodAmount, foodType)
+          end
           setLiquidLevel(storage.amount)
-          world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinking.drinkableVolume * (self.drinking.drinkables[storage.liquid.name] or 0), "liquidFood")
-          world.sendEntityMessage(feedTarget, "starPounds.feed", self.drinking.drinkableVolume * (1 - (self.drinking.drinkables[storage.liquid.name] or 0)), "liquid")
           for _, statusEffect in pairs(storage.liquid.statusEffects) do
             if not contains(self.statusBlacklist, statusEffect) then
               world.sendEntityMessage(feedTarget, "applyStatusEffect", statusEffect)

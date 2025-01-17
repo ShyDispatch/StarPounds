@@ -1,8 +1,7 @@
 starPounds = getmetatable ''.starPounds
 function init()
   maxStack = root.assetJson("/items/defaultParameters.config:defaultMaxStack")
-  local drinking = root.assetJson("/scripts/starpounds/modules/drinking.config")
-  caloriumFood = drinking.drinkableVolume * drinking.drinkables.starpoundscaloriumliquid
+  caloriumFood = starPounds.moduleFunc("liquid", "getFood", "starpoundscaloriumliquid")
   extracting = false
   extractTimer = 0.1
   effectTarget = 1000

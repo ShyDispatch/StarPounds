@@ -25,7 +25,7 @@ function drinking:update(dt)
   -- Check if drinking isn't on cooldown.
   if not (self.drinkTimer == 0) then return end
   -- Check if there is liquid in front of the entities's mouth, and if it is drinkable.
-  if mouthLiquid and (self.data.drinkables[root.liquidName(mouthLiquid[1])] or starPounds.hasOption("universalDrinking")) then
+  if mouthLiquid and ((starPounds.moduleFunc("liquid", "getFood", root.liquidName(mouthLiquid[1])) > 0) or starPounds.hasOption("universalDrinking")) then
     -- Remove liquid at the entities's mouth, and store how much liquid was removed.
     local consumedLiquid = world.destroyLiquid(mouthPosition) or world.destroyLiquid(vec2.add(mouthPosition, {0, 0.25}))
     if consumedLiquid and consumedLiquid[1] and consumedLiquid[2] then
@@ -34,9 +34,9 @@ function drinking:update(dt)
       -- Reset the drink cooldown, shorter based on how high drinkCounter is.
       self.drinkTimer = 1/(1 + self.drinkCounter)
       -- Add to entities's stomach based on liquid consumed.
-      local foodAmount = self.data.drinkableVolume * (self.data.drinkables[root.liquidName(consumedLiquid[1])] or 0)
-      starPounds.feed(foodAmount * consumedLiquid[2], "liquidFood")
-      starPounds.feed(math.max(0, self.data.drinkableVolume - foodAmount) * consumedLiquid[2], "liquid")
+      for foodType, foodAmount in pairs(starPounds.moduleFunc("liquid", "get", root.liquidName(consumedLiquid[1]))) do
+        starPounds.feed(foodAmount * consumedLiquid[2], foodType)
+      end
       -- Play drinking sound. Volume increased by amount of liquid consumed.
       starPounds.moduleFunc("sound", "play", "drink", 0.5 + 0.5 * consumedLiquid[2], math.random(8, 12)/10)
       status.addEphemeralEffect("starpoundsdrinking")
@@ -52,11 +52,5 @@ function drinking:update(dt)
   end
 end
 
-function drinking:config()
-  return {
-    drinkables = self.data.drinkables,
-    drinkableVolume = self.data.drinkableVolume
-  }
-end
 -- Add the module.
 starPounds.modules.drinking = drinking

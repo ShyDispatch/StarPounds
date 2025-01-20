@@ -917,22 +917,34 @@ starPounds.getSpeciesData = function(species)
   return sb.jsonMerge(starPounds.species.default, starPounds.species[species] or {})
 end
 
-starPounds.getDirectives = function(target)
-  -- Argument sanitisation.
+starPounds.baseDirectives = function(target)
   local target = tonumber(target) or entity.id()
-  local directives = ""
-  -- Get entity species.
-  local species = (target ~= entity.id()) and world.entitySpecies(target) or starPounds.getSpecies()
-  local speciesData = starPounds.getSpeciesData(species)
+  if target == entity.id() then
+    -- Player shorthand (with oSB or equivalent).
+    if starPounds.type == "player" and player.bodyDirectives then
+      return player.bodyDirectives()
+    end
+    -- NPC shorthand.
+    if starPounds.type == "npc" then
+      return npc.humanoidIdentity().bodyDirectives
+    end
+  end
   -- Generate a nude portrait.
   for _,v in ipairs(world.entityPortrait(target, "fullnude")) do
     -- Find the player's body sprite.
     if string.find(v.image, "body.png") then
       -- Seperate the body sprite's image directives.
-      directives = string.sub(v.image,(string.find(v.image, "?")))
-      break
+      return string.sub(v.image, (string.find(v.image, "?")))
     end
   end
+end
+starPounds.getDirectives = function(target)
+  -- Argument sanitisation.
+  local target = tonumber(target) or entity.id()
+  local directives = starPounds.baseDirectives(target)
+  -- Get entity species.
+  local species = (target ~= entity.id()) and world.entitySpecies(target) or starPounds.getSpecies()
+  local speciesData = starPounds.getSpeciesData(species)
   -- Add append directives, if any. (i.e. novakids have this white patch that doesn't change with default species colours, adding ffffff=ffffff means it gets picked up by the fullbright block)
   if speciesData.appendDirectives then
     directives = string.format("%s;%s", directives, speciesData.appendDirectives):gsub(";;", ";")

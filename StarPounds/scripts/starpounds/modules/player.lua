@@ -3,10 +3,12 @@ local _player = starPounds.module:new("player")
 
 function _player:init()
   self:setup()
-  -- Footstep stuff. Initially offset so it lines up nice (hopefully).
+  -- Footstep sound stuff. Initially offset so it lines up nice (hopefully).
   self.footstepTimer = 2 / 60
   self.footstepTiming = root.assetJson("/player.config:footstepTiming")
   self.footstepVolumeVariance = root.assetJson("/sfx.config:footstepVolumeVariance")
+  -- Landing sound stuff.
+  self.wasFalling = false
   -- Radio message if we have QuickbarMini instead (or with) StardustLite.
   local mmconfig = root.assetJson("/interface/scripted/mmupgrade/mmupgradegui.config")
   if mmconfig.replaced and not pcall(root.assetJson, "/metagui/registry.json") then
@@ -21,6 +23,8 @@ function _player:update(dt)
   self.damageListener:update()
   -- Footsteps.
   self:footstep(dt)
+  -- Landing.
+  self:landing()
   local currentSizeWeight = starPounds.currentSize.weight
   local nextSizeWeight = starPounds.sizes[starPounds.currentSizeIndex + 1] and starPounds.sizes[starPounds.currentSizeIndex + 1].weight or starPounds.settings.maxWeight
   if nextSizeWeight ~= starPounds.settings.maxWeight and starPounds.sizes[starPounds.currentSizeIndex + 1].isBlob and starPounds.hasOption("disableBlob") then
@@ -171,41 +175,77 @@ end
 -- Audio doesn't line up to the normal step sound (and can't),
 -- but having the same cadence as it sounds decently good.
 function _player:footstep(dt)
-  if not storage.starPounds.enabled then return end
   if not starPounds.mcontroller.groundMovement then return end
   if not (starPounds.mcontroller.walking or starPounds.mcontroller.running) then return end
-  if starPounds.hasOption("disableStepSounds") then return end
   if status.stat("activeMovementAbilities") > 1 then return end
+
+  -- Not returning instantly with these so that we can keep the footstep timer somewhat synced.
+  local doSound = true
+  if starPounds.hasOption("disableMovementSounds") then doSound = false end
+  if not storage.starPounds.enabled then doSound = false end
 
   self.footstepTimer = self.footstepTimer + dt
   if self.footstepTimer > self.footstepTiming then
-    local volume = 1 - ((math.random() - 0.5) * self.footstepVolumeVariance)
-    local stepMult = self:footstepMult()
-    local sloshMult = math.round(math.min(0.2 * stepMult + 0.2 * starPounds.stomach.contents / (entity.weight * starPounds.currentSize.thresholdMultiplier), 0.4), 2)
+    -- Skip this if we're not making steppy sounds due to settings/mod status.
+    if not doSound then self.footstepTimer = 0 return end
 
-    if stepMult > 0.3 then
-      starPounds.moduleFunc("sound", "play", "footstep", stepMult * volume)
+    local volume = 1 - ((math.random() - 0.5) * self.footstepVolumeVariance)
+    local stepVolume = self:soundMult()
+
+    local weightMult = self.data.sloshWeightMult * stepVolume
+    local stomachMult = self.data.sloshStomachMult * starPounds.stomach.contents / (entity.weight * starPounds.currentSize.thresholdMultiplier)
+    local sloshVolume = math.round(math.min(weightMult + stomachMult, self.data.maximumSloshVolume), 2)
+
+    -- No step sound if we can't move (i.e. Immobile without the skill), but boost the slosh volume.
+    if starPounds.currentSize.movementPenalty == 1 then
+      stepVolume = 0
+      sloshVolume = sloshVolume ^ 0.8
     end
 
-    if sloshMult > 0.1 then
-      starPounds.moduleFunc("sound", "play", "slosh", sloshMult * volume, 0.75)
+    if stepVolume > self.data.minimumStepVolume then
+      starPounds.moduleFunc("sound", "play", "footstep", stepVolume * volume)
+    end
+
+    if sloshVolume > self.data.minimumSloshVolume then
+      starPounds.moduleFunc("sound", "play", "slosh", sloshVolume * volume, 0.75)
     end
 
     self.footstepTimer = 0
   end
 end
 
-function _player:footstepMult()
+function _player:landing()
+  if not storage.starPounds.enabled then return end
+  if starPounds.hasOption("disableMovementSounds") then return end
+
+  if self.wasFalling and not starPounds.mcontroller.falling then
+    if starPounds.mcontroller.groundMovement then
+      local landVolume = self:soundMult()
+      starPounds.moduleFunc("sound", "play", "land", landVolume * self.data.landingSoundVolume, self.data.landingSoundPitch)
+
+      local weightMult = self.data.sloshWeightMult * landVolume
+      local stomachMult = self.data.sloshStomachMult * starPounds.stomach.contents / (entity.weight * starPounds.currentSize.thresholdMultiplier)
+      local sloshVolume = math.round(math.min(weightMult + stomachMult, self.data.maximumSloshVolume), 2)
+
+      if sloshVolume > self.data.minimumSloshVolume then
+        starPounds.moduleFunc("sound", "play", "slosh", sloshVolume * self.data.landingSoundVolume, 0.75)
+      end
+    end
+  end
+  self.wasFalling = starPounds.mcontroller.falling
+end
+
+function _player:soundMult()
   -- Just a cache for math so we only do it once.
-  self.stepMultipliers = self.stepMultipliers or {}
+  self.sizeMultipliers = self.sizeMultipliers or {}
   -- Dumb but the immobile skill edits the movement penalty.
   local size = starPounds.sizes[starPounds.currentSizeIndex]
-  if not self.stepMultipliers[size.size] then
-    local mult = math.round(math.min(size.movementPenalty ^ 0.4, 1), 2)
-    self.stepMultipliers[size.size] = mult
+  if not self.sizeMultipliers[size.size] then
+    local mult = math.round(math.min(size.movementPenalty ^ 0.4, self.data.maximumStepVolume), 2)
+    self.sizeMultipliers[size.size] = mult
   end
 
-  return self.stepMultipliers[size.size]
+  return self.sizeMultipliers[size.size]
 end
 
 starPounds.modules.player = _player

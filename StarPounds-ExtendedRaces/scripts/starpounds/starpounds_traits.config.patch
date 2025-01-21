@@ -2,7 +2,7 @@
   {
     "op": "add",
     "path": "/traits/avali",
-    "value": { "description": "Avali", "stats": [ ["fallDamageResistance", "add", 0.25], ["iceResistance", "add", 0.2], ["firePenalty", "mult", 1.25] ] }
+    "value": { "description": "Avali", "stats": [ ["jumpPenalty", "sub", 0.25], ["iceResistance", "add", 0.2], ["firePenalty", "mult", 1.25] ] }
   },
   {
     "op": "add",
@@ -32,7 +32,7 @@
   {
     "op": "add",
     "path": "/traits/harpy",
-    "value": { "description": "Harpy", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["health", "mult", 0.8] ] }
+    "value": { "description": "Harpy", "stats": [ ["movement", "add", 0.1], ["jumpPenalty", "sub", 0.25], ["health", "mult", 0.8] ] }
   },
   {
     "op": "add",
@@ -82,7 +82,7 @@
   {
     "op": "add",
     "path": "/traits/nightgaunt",
-    "value": { "description": "Nightgaunt", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["bloatDigestion", "mult", 0.8] ], "skills": [ ["voreCritter", 1] ] }
+    "value": { "description": "Nightgaunt", "stats": [ ["movement", "add", 0.1], ["jumpPenalty", "sub", 0.25], ["bloatDigestion", "mult", 0.8] ], "skills": [ ["voreCritter", 1] ] }
   },
   {
     "op": "add",
@@ -112,7 +112,7 @@
   {
     "op": "add",
     "path": "/traits/felin",
-    "value": { "description": "Felin", "stats": [ ["movement", "add", 0.1], ["fallDamageResistance", "add", 0.25], ["metabolism", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
+    "value": { "description": "Felin", "stats": [ ["movement", "add", 0.1], ["jumpPenalty", "sub", 0.25], ["metabolism", "mult", 1.25] ], "skills": [ ["voreCritter", 1] ], "items": ["voretool"] }
   },
   {
     "op": "add",

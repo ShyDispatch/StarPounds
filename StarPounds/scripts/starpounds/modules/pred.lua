@@ -253,10 +253,12 @@ function pred:preyDigested(preyId, items, preyStomach)
   local hasEssence = false
   if digestedEntity.type == "humanoid" then
     for _, item in pairs(root.createTreasure("essenceDrop", world.threatLevel())) do
-      local itemCount = math.round(item.count * starPounds.getStat("voreEssence"))
-      if itemCount > 0 then
-        player.addCurrency(item.name, itemCount)
-        hasEssence = true
+      if item.name == "essence" then
+        local itemCount = math.round(item.count * starPounds.getStat("voreEssence"))
+        if itemCount > 0 then
+          player.addCurrency(item.name, itemCount)
+          hasEssence = true
+        end
       end
     end
   end

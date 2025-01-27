@@ -79,5 +79,8 @@
   ],
   "power" : 50,
   "damageType" : "NoDamage",
-  "damageKind" : "caloricplasma"
+  "damageKind" : "caloricplasma",
+  "bounceFactor" : 0.5,
+  "piercing" : true,
+  "scripts" : [ "/scripts/projectiles/starPounds_bounce.lua" ]
 }

@@ -71,6 +71,29 @@ function reset:onClick()
   end)
 end
 
+function reset:onClick()
+  local confirmLayout = sb.jsonMerge(root.assetJson("/interface/confirmation/resetstarpoundsconfirmation.config"), {
+    title = "StarPounds Quick Menu",
+    icon = "/interface/scripted/starpounds/menu/icon.png",
+    images = {
+      portrait = world.entityPortrait(player.id(), "full")
+    }
+  })
+  promises:add(player.confirm(confirmLayout), function(response)
+    if response then
+      promises:add(world.sendEntityMessage(player.id(), "starPounds.reset"), function()
+        local buttonIcon = "disabled.png"
+        enable:setImage(buttonIcon, buttonIcon, buttonIcon.."?border=2;00000000;00000000?crop=2;3;88;22")
+      end)
+    end
+  end)
+end
+
+function log:onClick()
+  local data = starPounds.getData() or player.getProperty("starPoundsBackup", {})
+  sb.logInfo(sb.print(data))
+end
+
 function admin()
   return (player.isAdmin() or starPounds.hasOption("admin")) or false
 end

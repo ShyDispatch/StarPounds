@@ -29,8 +29,8 @@
       {"type": "iconButton", "id": "weightIncrease", "visible": false, "toolTip": "Increase your weight by 1 stage.", "image" : "weightIncrease.png", "hoverImage" : "weightIncrease.png", "pressImage" : "weightIncrease.png?border=1;00000000;00000000?crop=1;2;19;21"},
       {"type": "iconButton", "id": "enable", "toolTip": "Enable or Disable the mod.", "image" : "enabled.png", "hoverImage" : "enabled.png", "pressImage" : "enabled.png?border=1;00000000;00000000?crop=1;2;87;21"},
       {"type": "iconButton", "id": "reset", "toolTip": "Reset the mod.", "image" : "reset.png", "hoverImage" : "reset.png", "pressImage" : "reset.png?border=1;00000000;00000000?crop=1;2;19;21"},
-      "spacer",
-      18
+      {"type": "iconButton", "id": "log", "toolTip": "Log ^#ccbbff;StarPounds^reset; data.\n^gray;/Starbound/storage/starbound.log", "image" : "log.png", "hoverImage" : "log.png", "pressImage" : "log.png?border=1;00000000;00000000?crop=1;2;19;21"},
+      "spacer"
     ]
   ]
 }

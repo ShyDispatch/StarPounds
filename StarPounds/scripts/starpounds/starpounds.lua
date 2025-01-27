@@ -7,6 +7,7 @@ local function nullFunction()
 end
 
 starPounds = {
+  version = root.assetJson("/scripts/starpounds/starpounds.config:version"),
   settings = root.assetJson("/scripts/starpounds/starpounds.config:settings"),
   sizes = root.assetJson("/scripts/starpounds/starpounds_sizes.config:sizes"),
   stats = root.assetJson("/scripts/starpounds/starpounds_stats.config"),
@@ -354,7 +355,9 @@ starPounds.setOption = function(option, enable)
   storage.starPounds.options[option] = enable and true or nil
   starPounds.optionChanged = true
   -- This is stupid, but prevents 'null' data being saved.
-  getmetatable(storage.starPounds.options).__nils = {}
+  if getmetatable(storage.starPounds.options) then
+    getmetatable(storage.starPounds.options).__nils = {}
+  end
   starPounds.backup()
   return storage.starPounds.options[option]
 end
@@ -486,18 +489,18 @@ starPounds.parseStats = function()
   end
 
   -- Trait Stats
-  storage.starPounds.traitStats = {}
+  starPounds.traitStats = {}
   local selectedTrait = starPounds.traits[starPounds.getTrait() or "default"]
   local speciesTrait = starPounds.traits[starPounds.getSpecies()] or starPounds.traits.default
   for _, trait in ipairs({speciesTrait, selectedTrait}) do
     for _, stat in ipairs(trait.stats or jarray()) do
-      storage.starPounds.traitStats[stat[1]] = storage.starPounds.traitStats[stat[1]] or {0, 1}
+      starPounds.traitStats[stat[1]] = starPounds.traitStats[stat[1]] or {0, 1}
       if stat[2] == "add" then
-        storage.starPounds.traitStats[stat[1]][1] = storage.starPounds.traitStats[stat[1]][1] + stat[3]
+        starPounds.traitStats[stat[1]][1] = starPounds.traitStats[stat[1]][1] + stat[3]
       elseif stat[2] == "sub" then
-        storage.starPounds.traitStats[stat[1]][1] = storage.starPounds.traitStats[stat[1]][1] - stat[3]
+        starPounds.traitStats[stat[1]][1] = starPounds.traitStats[stat[1]][1] - stat[3]
       elseif stat[2] == "mult" then
-        storage.starPounds.traitStats[stat[1]][2] = storage.starPounds.traitStats[stat[1]][2] * stat[3]
+        starPounds.traitStats[stat[1]][2] = starPounds.traitStats[stat[1]][2] * stat[3]
       end
     end
   end
@@ -752,13 +755,13 @@ end
 starPounds.getTraitMultiplier = function(stat)
   -- Argument sanitisation.
   stat = tostring(stat)
-  return (storage.starPounds.traitStats[stat] or {0, 1})[2]
+  return (starPounds.traitStats[stat] or {0, 1})[2]
 end
 
 starPounds.getTraitBonus = function(stat)
   -- Argument sanitisation.
   stat = tostring(stat)
-  return (storage.starPounds.traitStats[stat] or {0, 1})[1]
+  return (starPounds.traitStats[stat] or {0, 1})[1]
 end
 
 starPounds.getEffectMultiplier = function(stat)

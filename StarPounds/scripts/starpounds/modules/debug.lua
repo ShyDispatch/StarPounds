@@ -3,6 +3,8 @@ local debug = starPounds.module:new("debug")
 function debug:init()
   self.colours = { "^#665599;", "^#ccbbff;", "^gray;" }
   self.colourStrings = {}
+
+  self:log()
 end
 
 function debug:update(dt)
@@ -39,6 +41,34 @@ function debug:colourString(k, v)
   end
   self.colourStrings[k] = v
   return self.colourStrings[k]
+end
+
+function debug:log()
+  local versionString = string.format("%s STARPOUNDS: %s ", self.data.marginCharacter, starPounds.version)
+  local header = string.format("%s%s", versionString, string.rep(self.data.marginCharacter, math.max(self.data.marginSize - string.len(versionString), 0)))
+  local footer = string.rep(self.data.marginCharacter, self.data.marginSize)
+
+  local options = (function ()
+    local first
+    local s = ""
+    for option in pairs(starPounds.getData("options")) do
+      s = s..(first and ", " or "")..sb.print(option)
+      first = true
+    end
+    return first and s or "none"
+  end)()
+
+  local size = starPounds.getSize(storage.starPounds.weight)
+  size = size.size == "" and "none" or size.size
+
+  sb.logInfo(header)
+  sb.logInfo(string.format("Enabled - %s", sb.print(storage.starPounds.enabled)))
+  sb.logInfo(string.format("Species - %s (%s) | %s", sb.print(starPounds.getSpecies()), sb.print(starPounds.getVisualSpecies()), sb.print(player.species())))
+  sb.logInfo(string.format("Trait --- %s", sb.print(starPounds.getTrait())))
+  sb.logInfo(string.format("Size ---- %s | %s", sb.print(size), sb.print(storage.starPounds.weight)))
+  sb.logInfo(string.format("Stomach - %s | %s", sb.print(storage.starPounds.stomachContents), sb.print(#storage.starPounds.stomachEntities)))
+  sb.logInfo(string.format("Options - %s", options))
+  sb.logInfo(footer)
 end
 
 starPounds.modules.debug = debug

@@ -38,8 +38,10 @@ function init()
 
   if storage.liquid then
     setLiquidType(storage.liquid.name)
-    setLiquidLevel(storage.amount)
   end
+
+  self.liquidLevel = storage.amount
+  animator.setGlobalTag("liquidLevel", math.max(0, math.min(math.ceil(self.liquidLevel * 39/self.capacity), 39)))
 end
 
 function update(dt)
@@ -62,7 +64,6 @@ function update(dt)
           for foodType, foodAmount in pairs(self.liquids[storage.liquid.name] or self.liquids.default) do
             world.sendEntityMessage(feedTarget, "starPounds.feed", foodAmount, foodType)
           end
-          setLiquidLevel(storage.amount)
           for _, statusEffect in pairs(storage.liquid.statusEffects) do
             if not contains(self.statusBlacklist, statusEffect) then
               world.sendEntityMessage(feedTarget, "applyStatusEffect", statusEffect)
@@ -80,10 +81,13 @@ function update(dt)
   else
     reset()
   end
+
   if storage.amount <= 0 then
     setLiquidType()
-    setLiquidLevel(0)
   end
+
+  self.liquidLevel = math.round(util.lerp(dt * 2, self.liquidLevel, storage.amount), 4)
+  animator.setGlobalTag("liquidLevel", math.max(0, math.min(math.ceil(self.liquidLevel * 39/self.capacity), 39)))
 
   if self.queryTimer == 0 then
     findLiquidDrops()
@@ -138,7 +142,6 @@ function findLiquidDrops()
             }
             storage.amount = storage.amount + itemDrop.count
             setLiquidType(liquidName)
-            setLiquidLevel(storage.amount)
             if storage.amount > self.capacity then
               local excess = storage.amount - self.capacity
               world.spawnItem(storage.liquid.item, entity.position(), excess)
@@ -164,6 +167,7 @@ function setLiquidType(liquidName)
   end
 end
 
-function setLiquidLevel(itemCount)
-  animator.setGlobalTag("liquidLevel", math.max(0, math.min(math.ceil(itemCount * 39/self.capacity), 39)))
+function math.round(num, numDecimalPlaces)
+  local format = string.format("%%.%df", numDecimalPlaces or 0)
+  return tonumber(string.format(format, num))
 end

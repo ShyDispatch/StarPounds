@@ -1,0 +1,10 @@
+{
+  "name" : "starpoundslipomancer",
+  "category" : "starpoundslipomancer",
+  "type" : "body",
+
+  "frames" : {
+    "body" : "starpoundslipomancer.png",
+    "bodylit" : "starpoundslipomancerlit.png"
+  }
+}

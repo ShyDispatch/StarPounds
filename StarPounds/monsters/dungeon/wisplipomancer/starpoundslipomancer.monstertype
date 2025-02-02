@@ -1,12 +1,12 @@
 {
-  "type" : "starpoundsknightwisp",
-  "shortdescription" : "Wisp Knight",
-  "description" : "A wisp made of Lipic energy. It tries to hide its fear by wearing heavy knight's armor. It barely works.",
+  "type" : "starpoundslipomancer",
+  "shortdescription" : "Carl the Intern",
+  "description" : "Temporary, Standing in for the Lipomancer.",
 
-  "categories" : [ "starpoundsknightwisp" ],
+  "categories" : [ "starpoundslipomancer" ],
   "parts" : [ "body" ],
 
-  "animation" : "starpoundsknightwisp.animation",
+  "animation" : "starpoundslipomancer.animation",
 
   "dropPools" : [ { "default" : "noMeatMonsterTreasure"} ],
 
@@ -19,7 +19,7 @@
 
 
     "behaviorConfig" : {
-      "damageOnTouch" : true,
+      "damageOnTouch" : false,
 
       "targetQueryRange" : 35,
       "targetOnDamage" : true,
@@ -30,64 +30,79 @@
       "hurtTime" : 0.25,
       "hurtWaitForGround" : false,
 
+      "damageTakenActions" : [
+      ],
+
       "foundTargetActions" : [ ],
 
       "fleeActions" : [ ],
 
       "hostileActions" : [
-
         {
-          "name" : "action-charge",
-          "cooldown" : 2.5,
+          "name" : "action-fire",
+          "cooldown" : 2.0,
           "parameters" : {
+            "requireLineOfSight" : true,
             "maximumRange" : 30,
-            "windupStopForce" : 50,
-            "windupTime" : 0.3,
-
+            "minimumRange" : 5,
             "onGround" : false,
-            "wallCollide" : false,
+            "windupStopForce" : 50,
+            "windupTime" : 0.4,
+            "windupState" : "firewindupfast",
+
+            "projectileType" : "wispflameprojectile",
+            "inaccuracy" : 0.20,
+            "projectileCount" : 5,
+            "projectileInterval" : 0.0,
+
+            "fireOffset" : [1.0, 0.0],
             "aimAtTarget" : true,
-            "chargeTime" : 0.35,
-            "chargeSpeed" : 55,
-            "chargeControlForce" : 180,
+            "holdAim" : false,
+            "fireState" : "fire",
+            "fireSound" : "",
 
-            "winddownState" : "chargewinddown"
+            "winddownState" : "",
+            "winddownTime" : 0.1
           }
-        }
-    
-      ],
-
-
-      "damageTakenActions" : [
+        },
         {
-          "name" : "action-invulnerable",
-          "cooldown" : 5,
+          "name" : "action-fire",
+          "cooldown" : 5.0,
           "parameters" : {
-            "windupState" : "shieldwindup",
-            "windupTime" : 0.25,
+            "requireLineOfSight" : true,
+            "maximumRange" : 40,
+            "minimumRange" : 5,
+            "onGround" : false,
+            "windupStopForce" : 50,
+            "windupTime" : 0.8,
+            "windupState" : "firewindupslow",
 
-            "invulnerableState" : "shield",
-            "invulnerableEffect" : "highprotection",
-            "invulnerableTime" : 1.5,
+            "projectileType" : "wispbomb",
+            "projectileParameters" : {
+              "speed" : 40
+            },
+            "fireOffset" : [1.0, 0.0],
+            "aimAtTarget" : true,
+            "holdAim" : false,
+            "inaccuracy" : 0.0,
+            "fireState" : "fire",
+            "fireSound" : "",
 
-            "winddownTime" : 0.25,
-            "winddownState" : "shieldwinddown"
-
+            "winddownState" : "",
+            "winddownTime" : 0.1
           }
         }
       ],
 
-
-      "periodicActions" : [
-
-    ],
+      "periodicActions" : [ ],
 
       "approachActions" : [
         {
-          "name" : "approach-fly",
+          "name" : "starpounds-wisp-fly",
           "parameters" : {
-            "usePathfinding" : true,
-            "excludeLiquidIds" : [1]
+            "excludeLiquidIds" : [1],
+            "maxRange" : 15,
+            "minRange" : 5
           }
         }
       ],
@@ -109,29 +124,17 @@
       "wanderActions" : [
         {
           "name" : "emerge-fly"
-        },
-        {
-          "name" : "wander-fly",
-          "parameters" : {
-            "wanderTime" : [2,4],
-            "groundDistance" : 12,
-            "ceilingDistance" : 6,
-            "xVelocity" : 8,
-            "yVelocity" : 12
         }
-    }
       ],
 
       "concurrentActions" : [ ],
 
-      "concurrentHostileActions" : [
-
-    ]
+      "concurrentHostileActions" : [ ]
     },
 
     "touchDamage" : {
       "poly" : [ [0.625, 1.25], [1.25, 0.875], [1.25, -0.675], [0.625, -1.05], [-0.625, -1.05], [-1.25, -0.675], [-1.25, 0.875], [-0.625, 1.25] ],
-      "damage" : 12,
+      "damage" : 15,
 
       "teamType" : "enemy",
       "damageSourceKind" : "slash",
@@ -181,16 +184,16 @@
 
       "stats" : {
         "knockbackStunTime" : {
-          "baseValue" : 0.20
+          "baseValue" : 0.25
         },
         "knockbackThreshold" : {
-          "baseValue" : 15
+          "baseValue" : 9
         },
         "maxHealth" : {
-          "baseValue" : 250
+          "baseValue" : 500
         },
         "protection" : {
-          "baseValue" : 0.80
+          "baseValue" : 0.0
         },
         "healthRegen" : {
           "baseValue" : 0.0
@@ -205,25 +208,31 @@
           "baseValue" : 0.0
         },
         "fireStatusImmunity" : {
-          "baseValue" : 0.0
+          "baseValue" : 1.0
         },
         "iceResistance" : {
           "baseValue" : 0.0
         },
         "iceStatusImmunity" : {
-          "baseValue" : 0.0
+          "baseValue" : 1.0
         },
         "electricResistance" : {
           "baseValue" : 0.0
         },
         "electricStatusImmunity" : {
-          "baseValue" : 0.0
+          "baseValue" : 1.0
         },
         "poisonResistance" : {
           "baseValue" : 0.0
         },
         "poisonStatusImmunity" : {
-          "baseValue" : 0.0
+          "baseValue" : 1.0
+        },
+        "specialStatusImmunity" : {
+          "baseValue" : 1.0
+        },
+        "healingStatusImmunity" : {
+          "baseValue" : 1.0
         }
       },
 
@@ -242,7 +251,7 @@
 
     "mouthOffset" : [0, 0],
     "feetOffset" : [0, -8],
-    "capturable" : true,
+    "capturable" : false,
     "captureHealthFraction" : 0.5,
     "nametagColor" : [64, 200, 255]
   }

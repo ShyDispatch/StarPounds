@@ -4,10 +4,10 @@
     "species" : "generic",
     "rules" : [
     ],
-    "anchor" : [ "keep_base2" ],
+    "anchor" : [ "keep_base1", "keep_base2", "keep_base3" ],
     "gravity" : 80,
     "maxRadius" : 1000000,
-    "maxParts" : 100,
+    "maxParts" : 3,
     "protected" : true
   },
 
@@ -26,12 +26,271 @@
         [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", "keep_base2.json" ]
-    }
+    },
+    {
+      "name" : "keep_base3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", "keep_base3.json" ]
+    },
 	
 // Mid Pieces (Red)
+
+    {
+      "name" : "towerstairs1",
+      "rules" : [
+        [ "maxSpawnCount", [3] ]
+      ],
+      "def" : [ "tmx", "towerstairs1.json" ]
+    },
+	{
+      "name" : "towerstairs2",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]	
+      ],
+      "def" : [ "tmx", "towerstairs2.json" ]
+    },
+	{
+      "name" : "towerstairs3",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]			
+      ],
+      "def" : [ "tmx", "towerstairs3.json" ]
+    },
+	
+// Tops (Red)
+
+	{
+      "name" : "towertop1_lab",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]		
+      ],
+      "def" : [ "tmx", "towertop1_lab.json" ],
+      "chance" : 0
+    },
+	{
+      "name" : "towertop2_split",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ]		
+      ],
+      "def" : [ "tmx", "towertop2_split.json" ],
+      "chance" : 0
+    },
+
+
 // Layouts (Blue)
 // Normal Rooms (Yellow)
-// Puzzles (Green)  
+
+	// SMALL
+    {
+      "name" : "room_armory_small1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_armory_small1.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_armory_small2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_armory_small2.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_armory_small3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_armory_small3.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "room_kitchen_small1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_kitchen_small1.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_kitchen_small2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_kitchen_small2.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_kitchen_small3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_kitchen_small3.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "room_lab_small1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_small1.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_lab_small2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_small2.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_lab_small3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_small3.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "room_library_small1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_library_small1.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_library_small2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_library_small2.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_library_small3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_library_small3.json" ] ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "room_lounge_small1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lounge_small1.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_lounge_small2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lounge_small2.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "room_lounge_small3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lounge_small3.json" ] ],
+      "chance" : 0
+    },
+	
+	// Tall
+    {
+      "name" : "room_platforming_tall1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ],
+        [ "doNotConnectToPart", [ "keep_base2" ] ]	
+      ],
+      "def" : [ "tmx", [ "room_platforming_tall1.json" ] ]
+    },
+	
+    {
+      "name" : "room_lab_tall1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_tall1.json" ] ]
+    },
+    {
+      "name" : "room_lab_tall2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_tall2.json" ] ]
+    },
+    {
+      "name" : "room_lab_tall3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_tall3.json" ] ]
+    },
+	
+    {
+      "name" : "room_library_tall1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_library_tall1.json" ] ]
+    },
+    {
+      "name" : "room_library_tall2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_library_tall2.json" ] ]
+    },
+    {
+      "name" : "room_library_tall3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_library_tall3.json" ] ]
+    },	
+
+	// WIDE	
+	
+    {
+      "name" : "room_dininghall_wide1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_dininghall_wide1.json" ] ]
+    },
+    {
+      "name" : "room_dininghall_wide2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_dininghall_wide2.json" ] ]
+    },
+    {
+      "name" : "room_dininghall_wide3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_dininghall_wide3.json" ] ]
+    }
+	
+// Puzzle Rooms (Green)  
   	
 	
   ]

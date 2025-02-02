@@ -1,0 +1,38 @@
+{
+  "objectName" : "ponderouschair",
+  "colonyTags" : ["glitch","fatdungeons","ponderous"],
+  "rarity" : "Common",
+  "description" : "A sturdy looking chair.",
+  "shortdescription" : "Ponderous Chair",
+  "race" : "glitch",
+  "category" : "furniture",
+  "price" : 75,
+
+  "apexDescription" : "A decorated chair, no doubt designed to support hefty Glitch.",
+  "avianDescription" : "A well-made medieval chair. It looks sturdy.",
+  "floranDescription" : "Heavy ssseat makesss good weapon in pinch.",
+  "glitchDescription" : "Pleased. A satisfactory chair that can withstand immense weight.",
+  "humanDescription" : "A decorated dining chair. Seems more built for sturdiness than actual comfort.",
+  "hylotlDescription" : "Looks surprisingly comfortable for Glitch furniture.",
+  "novakidDescription" : "A hardy chair, no doubt for bigger metal keisters.",
+
+  "inventoryIcon" : "ponderouschairicon.png",
+  "orientations" : [
+    {
+      "dualImage" : "ponderouschair.png:<color>",
+
+      "imagePosition" : [-8, 0],
+      "frames" : 1,
+      "animationCycle" : 1.0,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ]
+
+    }
+  ],
+
+  "objectType" : "loungeable",
+  "sitFlipDirection" : false,
+  "sitPosition" : [2, 20]
+
+}

@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt0sEJw0AQBMF7K\/8wFYQjMJLA5npFPfo\/BXOutU7pxx2DYmjE0IihEUMjhkYMjRgaMTRiaPRmwwTL1XYGBoYZ2+9adu9iYGBgYGBgYKjE0IihEUMjhkYMjRgaMTT6ZphgudrOwMAwY\/tdy+5d\/\/iU9KQPq6Xb6Q==",
+         "data":"eJzt18EJgCAYgFHPDdESLdjADlGXIEwrKlDjHT7IS\/xPTCiGEKL0cWOmqXLrDHOuO4bas781pO8ZKlaynBlye9GrYf\/ckyE5hwyVDem33ZJhWzMwMDAwMDAwMDwzlP7nWjJczc7AwPCve4mBgYGBgYGBgYGBgYGBgYGBgYGhf8NWy4ar2RkYGI73Ug\/92SC9aQGRRIiN",
          "encoding":"base64",
          "height":65,
          "name":"back",
@@ -17,7 +17,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt1EEKg0AUBUFP4iW8\/92ySTZCIIkSe8Yq+Evh9WJcFjjf+rwtfK+NMze8++5K324qbd\/7paFIQ8enDWUaGjQ0aGjQ0KChQUPDCBuB84zw5u\/wb9XwHxoaNDRoaNDQoKFBQ4OGBg0NGho0NGhouEMDMJdtoJu5AY54APc\/SNw=",
+         "data":"eJzt1FEKgCAQANFO0iW6YEfvKwhRKyob13mwf0I7iE2T9L45M8v3s57NnJkrDQ12v9WRtpw1pN\/4U6mjdD7dnyTtKJ07NhBdaaDewe54F5UzYRrIgjRUd7ShDRsYbGCwgcEGhhEaJMXSw5sf4d9qQxs2MNjAYAODDQw2MNjAYAODDQw2MNjAYAPDCA2SYlk6msgN0hMbNq9fvw==",
          "encoding":"base64",
          "height":65,
          "name":"front",

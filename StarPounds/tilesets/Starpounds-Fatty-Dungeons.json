@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Starpounds-Fatty-Dungeons",
  "spacing":0,
- "tilecount":67,
+ "tilecount":68,
  "tileheight":88,
  "tileproperties":
     {
@@ -458,6 +458,13 @@
          "imagePositionX":"-16",
          "imagePositionY":"-8",
          "object":"ponderouskeephiddentrapdoor",
+         "tilesetDirection":"right"
+        },
+     "67":
+        {
+         "imagePositionX":"-8",
+         "imagePositionY":"0",
+         "object":"ponderouschair",
          "tilesetDirection":"right"
         },
      "7":
@@ -932,6 +939,13 @@
          "object":"string",
          "tilesetDirection":"string"
         },
+     "67":
+        {
+         "imagePositionX":"string",
+         "imagePositionY":"string",
+         "object":"string",
+         "tilesetDirection":"string"
+        },
      "7":
         {
          "imagePositionX":"string",
@@ -1339,6 +1353,12 @@
          "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouskeephiddentrapdoor.png",
          "imageheight":25,
          "imagewidth":41
+        },
+     "67":
+        {
+         "image":"..\/..\/..\/..\/..\/Program Files (x86)\/Steam\/steamapps\/common\/Starbound\/tiled\/blossomsp-custom\/objects\/ponderouschair.png",
+         "imageheight":23,
+         "imagewidth":16
         },
      "7":
         {

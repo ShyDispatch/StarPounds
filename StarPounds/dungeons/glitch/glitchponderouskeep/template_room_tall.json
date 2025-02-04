@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt18EJgCAYgFHPDdESLdjADlGXIEwrKlDjHT7IS\/xPTCiGEKL0cWOmqXLrDHOuO4bas781pO8ZKlaynBlye9GrYf\/ckyE5hwyVDem33ZJhWzMwMDAwMDAwMDwzlP7nWjJczc7AwPCve4mBgYGBgYGBgYGBgYGBgYGBgYGhf8NWy4ar2RkYGI73Ug\/92SC9aQGRRIiN",
+         "data":"eJzt0sEJw0AQBMF7K\/8wFYQjMJLA5npFPfo\/BXOutU7pxx2DYmjE0IihEUMjhkYMjRgaMTRiaPRmwwTL1XYGBoYZ2+9adu9iYGBgYGBgYKjE0IihEUMjhkYMjRgaMTT6ZphgudrOwMAwY\/tdy+5d\/\/iU9KQPq6Xb6Q==",
          "encoding":"base64",
          "height":65,
          "name":"back",
@@ -23,7 +23,7 @@
          "name":"front",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":49,
          "x":0,
          "y":0

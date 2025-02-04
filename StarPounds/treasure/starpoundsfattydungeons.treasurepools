@@ -116,13 +116,13 @@
     "starpoundsglitchponderoussmallchest" : [
     [1, {
       "pool" : [
-        {"weight" : 0.85, "pool" : "basicTreasure"},
-        {"weight" : 0.25, "item" : [ "wispflamebottle", 15]},
+        {"weight" : 0.80, "pool" : "basicTreasure"},
+        {"weight" : 0.20, "item" : [ "wispflamebottle", 15]},
 		
-        {"weight" : 0.05, "item" : [ "starpoundswispmagehead", 1]},
-        {"weight" : 0.05, "item" : [ "starpoundswispknighthead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswispmagehead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswispknighthead", 1]},
         {"weight" : 0.01, "item" : [ "starpoundswisproguehead", 1]},
-        {"weight" : 0.05, "item" : [ "starpoundswispclerichead", 1]}
+        {"weight" : 0.01, "item" : [ "starpoundswispclerichead", 1]}
       ],
       "poolRounds" : [
         [0.30, 2],
@@ -137,17 +137,17 @@
     [1, {
       "pool" : [
         {"weight" : 0.70, "pool" : "valuableTreasure"},
-        {"weight" : 0.25, "pool" : "goodWeapon"},
+        {"weight" : 0.10, "pool" : "goodWeapon"},
 		
-        {"weight" : 0.03, "item" : [ "starpoundswispmagehead", 1]},
-        {"weight" : 0.03, "item" : [ "starpoundswispknighthead", 1]},
-        {"weight" : 0.03, "item" : [ "starpoundswisproguehead", 1]},
-        {"weight" : 0.03, "item" : [ "starpoundswispclerichead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswispmagehead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswispknighthead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswisproguehead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundswispclerichead", 1]},
 		
-        {"weight" : 0.03, "item" : [ "starpoundsponderoushead", 1]},
-        {"weight" : 0.03, "item" : [ "starpoundsponderouschest", 1]},
-        {"weight" : 0.03, "item" : [ "starpoundsponderouslegs", 1]},
-        {"weight" : 0.03, "item" : [ "starpoundsponderousback", 1]}
+        {"weight" : 0.01, "item" : [ "starpoundsponderoushead", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundsponderouschest", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundsponderouslegs", 1]},
+        {"weight" : 0.01, "item" : [ "starpoundsponderousback", 1]}
       ],
       "poolRounds" : [
         [0.60, 5],
@@ -233,12 +233,12 @@
     "starpoundsglitchponderouscounter" : [
     [1, {
       "pool" : [
-        {"weight" : 0.02, "item" : [ "starpoundsgoblet", 1]},
-        {"weight" : 0.15, "item" : [ "wheat", 3]},
-        {"weight" : 0.15, "item" : [ "wheat", 6]},
-        {"weight" : 0.15, "item" : [ "sugar", 3]},
-        {"weight" : 0.15, "item" : [ "sugar", 3]},
-        {"weight" : 0.15, "item" : [ "bottle", 3]}
+        {"weight" : 0.01, "item" : [ "starpoundsgoblet", 1]},
+        {"weight" : 0.50, "item" : [ "wheat", 3]},
+        {"weight" : 0.50, "item" : [ "wheat", 6]},
+        {"weight" : 0.50, "item" : [ "sugar", 3]},
+        {"weight" : 0.50, "item" : [ "sugar", 3]},
+        {"weight" : 0.50, "item" : [ "bottle", 3]}
       ],
       "poolRounds" : [
         [0.30, 2],
@@ -259,10 +259,10 @@
         {"weight" : 0.11, "item" : [ "alienmeat", 1]},
         {"weight" : 0.11, "item" : [ "rawpoultry", 1]},
         {"weight" : 0.11, "item" : [ "cheese", 1]},
-        {"weight" : 0.5, "item" : [ "starpoundsroyalcake", 1]},
-        {"weight" : 0.5, "item" : [ "starpoundsfatfriedchicken", 1]},
-        {"weight" : 0.5, "item" : [ "starpounds64tbpizzap", 1]},
-        {"weight" : 0.5, "item" : [ "starpoundsqueenburger", 1]}
+        {"weight" : 0.2, "item" : [ "starpoundsroyalcake", 1]},
+        {"weight" : 0.2, "item" : [ "starpoundsfatfriedchicken", 1]},
+        {"weight" : 0.2, "item" : [ "starpounds64tbpizzap", 1]},
+        {"weight" : 0.2, "item" : [ "starpoundsqueenburger", 1]}
       ],
       "poolRounds" : [
         [0.20, 2],
@@ -277,10 +277,10 @@
     "starpoundsglitchponderousdesk" : [
     [1, {
       "pool" : [
-        {"weight" : 0.5, "pool" : "starpoundsglitchponderousLore"},
-        {"weight" : 0.7, "item" : [ "bottle", 3]},
-        {"weight" : 0.7, "item" : [ "paper", 4]},
-        {"weight" : 0.7, "item" : [ "paper", 7]}
+        {"weight" : 0.6, "pool" : "starpoundsglitchponderousLore"},
+        {"weight" : 0.6, "item" : [ "bottle", 3]},
+        {"weight" : 0.6, "item" : [ "paper", 4]},
+        {"weight" : 0.6, "item" : [ "paper", 7]}
       ],
       "poolRounds" : [
         [0.40, 1],
@@ -293,11 +293,9 @@
 
   "starpoundsglitchponderoussecretdesk" : [
     [1, {
-      "pool" : [
-        {"weight" : 0.8, "item" : "ponderous_hiddenletter-codex"}
-      ],
-      "poolRounds" : 1,
-      "allowDuplication" : false
+      "fill" : [
+        {"item" : [ "ponderous_hiddenletter-codex", 1]}
+      ]	  
     }]
   ],  
   

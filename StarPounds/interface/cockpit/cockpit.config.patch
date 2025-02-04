@@ -34,15 +34,15 @@
         "icon": "/interface/cockpit/dungeons/gluttonist.png"
       }
     },
-//    {
-//      "op": "add",
-//      "path": "/displayDungeons/starpoundsglitchponderouskeep",
-//      "value": {
-//        "description": "An abandoned Glitch Keep belonging to the Ponderous Order.",
-//        "ps_name": "Ponderous Keep",
-//        "icon": "/interface/cockpit/dungeons/ponderous.png"
-//      }
-//    },
+    {
+      "op": "add",
+      "path": "/displayDungeons/starpoundsglitchponderouskeep",
+      "value": {
+        "description": "An abandoned Glitch Keep belonging to the Ponderous Order.",
+        "ps_name": "Ponderous Keep",
+        "icon": "/interface/cockpit/dungeons/ponderous.png"
+      }
+    },
     {
       "op": "add",
       "path": "/displayDungeons/starpoundsbarn",

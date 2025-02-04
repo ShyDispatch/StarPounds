@@ -4,27 +4,27 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJzt18ENwzAMBEG903+ZLiIdBGAAkSd5HlsADyPAftZajyRt7CP96F8v065PeAPTd+\/YiBdeeOGFF14SNuKFF1544YWXhI144YUXXnjhJWEjXnjhhRdeeEnYiBdeeOGFF14SNuKFF1544YWXhI144aXDywmbTDm5eSNeeOGFF154SdiIF146vEzfeYKb6bt3bMQLLx1e9M54USVeVIkXVeJFlfwf9W2bHC+88MLL9Ea88MILL7zwkrARL7zwwgsvvCRsxAsvvPDCCy8JG\/HCCy+88MJLwka88MILL7zwkrARL7zwwkualxM2mXJy80a88MILL7zwkrARL7x0eJm+8wQ303fv2IgXXjq86J3xokq8qBIvqjT9nSXp\/r7WMgKV",
+         "data":"eJzt3KERgEAQBMHTpEn6HwQexwsYqlp0BDt618wsALadEKJPyvRJmT4p0ydl+qRMn5TpkzJ9UqZPyvRJmT4p0ydl+qRMn5TpkzJ9UqZPyvRJmT4p0ydl+qRMn5TpkzJ9UqZPyvRJmT4p0ydl+qRMn5TpkzJ9UvZmn8ePfL0L+tRnnz71WaZPfZbpU59l+tRnmT71WaZPfZbpU59l+tRnmT71WaZPfZbpU59l+tRnmT71WaZPfZbpU59l+tRnmT71WaZPfZbpU5dl+tRnmT71WaZPfZbpU59l+tRpmT71WeZ\/iTJ9UqZPyvRJ2b1PAJ65AD32o1k=",
          "encoding":"base64",
          "height":68,
          "name":"back",
          "opacity":0.32,
          "type":"tilelayer",
          "visible":true,
-         "width":140,
+         "width":168,
          "x":0,
          "y":0
         }, 
         {
          "compression":"zlib",
-         "data":"eJzt3FuKAjEURVFHUpNwgjX0bqXkFKHiCQnePGovuD9NYR5uFH\/68QCA33oek7Md83luG3jSPUb5X2t\/zWn9fdRJ95g7U66L0l5m0quXwCWb0YvQi0cvQi8evQi9ePQi9OLRi9CLRy9CLx69CL149CL04tGL0ItHL0IvHr0IvXj0IvTi0YvQi0cvQi8evQi9ePQi9OK19pIbeilab9pejvd5v5iqXtznz4ii9zzzHdX0UvKaM+nQy\/uOA5dsdm7jyzMAAADAraz8ezp6ZlJ7pjvfBb3U97ItNNFnWvkOUyufddX1RuiFYa4m1Xs\/zNiTyv39o\/fnYsv3QpQt879VRpx0j7kztfYyk169BC7ZjF6EXjx6EXrx6EXoxaMXoRePXoRePHoRevHoRejFoxehF49ehF48ehF68ehF6MWjF6EXj16EXjx6EXrx6EXoxaMXoRevtZfc0EvRetP2crzP+8VU9eI+f0YUveeZ76iml5LXnUmHXt53HLhks3MbX54BAAAAbmXl39PRM5PaM935LuilvpdtoYk+08p3mFr5rKuuN0IvDHM1qd77YcYeAPi1PylNwss=",
+         "data":"eJzt3EFOw1AQREFOkktw\/7uxyQJZ4Tt2gukeqqTZETPiPyWywHx8APCKz\/vAX\/qpQ32SQJ8ku91nS58k0CfJ9EkyfZJMnyTTJ8n0STJ9kkyfJNMnyfRJMn2STJ8k0yfJ9EkyfZJMnyTz9\/Mk0yeN9EkyfZJMnyTTJ8n0SQL37yTTJ8n8\/ohk+iSZPkm21+fNPPz5cI0r3z8bz7px50n0uda48yRn+vzcmaPfK1njzpM82+dek8902njWjTtPstfn0ffI1dc2nnXjzpMc6fOIR69tPOvGnSd5ps9XfL9O41k37jzJFffv+uQsfa417jyJPtcad55En2uNO0+iz7XGnSfR51rjzpPoc61x50n0uda48yT6XGvceRJ9rjXuPIk+1xp3nuTKPhufaWrceZIrnn\/XJ2dd0Se8mz5Jpk+S6ZNk+iTZmec1zz7Xmaxx50n27t\/12bfzJHt9vuN\/F22v9c5rm\/8xW\/o0SbP1m5\/vxhydrb\/ex5jvA8BrvgC437a2",
          "encoding":"base64",
          "height":68,
          "name":"front",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":140,
+         "width":168,
          "x":0,
          "y":0
         }, 
@@ -53,7 +53,7 @@
                  "type":"",
                  "visible":true,
                  "width":8,
-                 "x":1104,
+                 "x":1328,
                  "y":480
                 }],
          "opacity":1,
@@ -238,5 +238,5 @@
  "tilewidth":8,
  "type":"map",
  "version":1,
- "width":140
+ "width":168
 }

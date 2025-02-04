@@ -44,22 +44,6 @@
       ],
       "def" : [ "tmx", "towerstairs1.json" ]
     },
-	{
-      "name" : "towerstairs2",
-      "rules" : [
-        [ "maxSpawnCount", [1] ],
-        [ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]	
-      ],
-      "def" : [ "tmx", "towerstairs2.json" ]
-    },
-	{
-      "name" : "towerstairs3",
-      "rules" : [
-        [ "maxSpawnCount", [1] ],
-        [ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]			
-      ],
-      "def" : [ "tmx", "towerstairs3.json" ]
-    },
 	
 // Tops (Red)
 
@@ -67,23 +51,59 @@
       "name" : "towertop1_lab",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ],
+		[ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]		
       ],
-      "def" : [ "tmx", "towertop1_lab.json" ],
-      "chance" : 0
+      "def" : [ "tmx", "towertop1_lab.json" ]
+    },
+	{
+      "name" : "towertop1_lab_alt",
+      "rules" : [
+        [ "maxSpawnCount", [1] ],
+        [ "ignorePartMaximumRule" ],
+		[ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]		
+      ],
+      "def" : [ "tmx", "towertop1_lab_alt.json" ],
+      "chance" : 0.5
     },
 	{
       "name" : "towertop2_split",
       "rules" : [
         [ "maxSpawnCount", [1] ],
-        [ "ignorePartMaximumRule" ]		
+        [ "ignorePartMaximumRule" ],
+		[ "doNotConnectToPart", [ "keep_base1", "keep_base2", "keep_base3" ] ]				
       ],
-      "def" : [ "tmx", "towertop2_split.json" ],
-      "chance" : 0
+      "def" : [ "tmx", "towertop2_split.json" ]
     },
 
 
 // Layouts (Blue)
+
+    {
+      "name" : "towerlayout1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "towerlayout1.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "towerlayout2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "towerlayout2.json" ] ],
+      "chance" : 0
+    },
+    {
+      "name" : "towerlayout3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "towerlayout3.json" ] ],
+      "chance" : 0
+    },	
+
 // Normal Rooms (Yellow)
 
 	// SMALL
@@ -288,10 +308,85 @@
         [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
       ],
       "def" : [ "tmx", [ "room_dininghall_wide3.json" ] ]
-    }
+    },	
+	
+    {
+      "name" : "room_lab_wide1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_wide1.json" ] ]
+    },
+    {
+      "name" : "room_lab_wide2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_wide2.json" ] ]
+    },
+    {
+      "name" : "room_lab_wide3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_lab_wide3.json" ] ]
+    },
 	
 // Puzzle Rooms (Green)  
   	
+    {
+      "name" : "room_puzzleleft1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_puzzleleft1.json" ] ],
+      "chance" : 0
+    },  	
+	
+    {
+      "name" : "room_puzzleleft2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_puzzleleft1.json" ] ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "room_puzzleleft3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_puzzleleft1.json" ] ],
+      "chance" : 0
+    },
+	
+    {
+      "name" : "room_puzzleright1",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_puzzleright1.json" ] ],
+      "chance" : 0
+    },  	
+	
+    {
+      "name" : "room_puzzleright2",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_puzzleright1.json" ] ],
+      "chance" : 0
+    },	
+	
+    {
+      "name" : "room_puzzleright3",
+      "rules" : [
+        [ "ignorePartMaximumRule" ], [ "maxSpawnCount", [1] ]
+      ],
+      "def" : [ "tmx", [ "room_puzzleright1.json" ] ],
+      "chance" : 0
+    }
 	
   ]
 

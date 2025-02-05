@@ -216,7 +216,7 @@ function stomach:digest(dt, isGurgle, isBelch)
         local digestAmount = math.min(amount, math.round(digestionRate * ratio * seconds * (foodConfig.digestionRate + amount * foodConfig.percentDigestionRate), 4))
         self.digestionExperience = self.digestionExperience + digestAmount * foodConfig.multipliers.experience
         storage.starPounds.stomachContents[foodType] = math.round(math.max(amount - digestAmount, 0), 3)
-        -- Subtract food used to fill up hunger from weight gain.
+        -- Add food.
         if status.isResource("food") and (foodConfig.multipliers.food > 0) then
           local foodAmount = math.min(maxFood - status.resource("food"), digestAmount)
           -- Stops the player losing hunger while they digest food.

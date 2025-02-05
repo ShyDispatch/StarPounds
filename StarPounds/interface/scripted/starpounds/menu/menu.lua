@@ -18,7 +18,6 @@ function update()
   promises:update()
 end
 
-
 function skills:onClick()
   player.interact("ScriptPane", {gui = {}, scripts = {"/metagui.lua"}, ui = "starpounds:skills"})
   pane.dismiss()

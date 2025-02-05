@@ -120,6 +120,10 @@ function _npc:setup()
     starPounds.setWeight = nullFunction
     starPounds.getSize = function() return starPounds.sizes[1], 1 end
   end
+  -- No XP if disabled.
+  if config.getParameter("starPounds_options.disableExperience") then
+    entity.foodType = entity.foodType.."_noExperience"
+  end
 end
 
 local die_old = die or nullFunction

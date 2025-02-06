@@ -30,14 +30,10 @@ function hunger:update(dt)
     end
   end
   -- Set the statuses.
-  if starPounds.stomach.interpolatedFullness >= self.baseThreshold and not starPounds.hasSkill("wellfedProtection") then
+  if starPounds.stomach.fullness >= self.baseThreshold and not starPounds.hasSkill("wellfedProtection") then
     status.addEphemeralEffect("wellfed")
-  elseif starPounds.stomach.interpolatedFullness >= self.skillThreshold then
+  elseif starPounds.stomach.fullness >= self.skillThreshold then
     status.addEphemeralEffect("wellfed")
-  else
-    if status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")) and starPounds.stomach.food > 0 then
-      status.addEphemeralEffect("starpoundswellfed")
-    end
   end
 end
 

@@ -232,12 +232,12 @@ function stomach:digest(dt, isGurgle, isBelch)
         if not storage.starPounds.pred then
           -- Base amount 1 health (100 food would restore 100 health, modified by healing and absorption)
           if status.resourcePositive("health") then
-            local healBaseAmount = digestAmount * absorption * foodConfig.multipliers.healing
-            local healAmount = math.min(healBaseAmount * healing * self.data.healingRatio, maxHealth * self.data.healingCap)
+            local healBaseAmount = digestAmount * foodConfig.multipliers.healing
+            local healAmount = math.min(healBaseAmount * healing * self.data.healingRatio, maxHealth * self.data.healingCap * seconds)
             status.modifyResource("health", healAmount)
             -- Energy regenerates faster than health, and energy lock time gets reduced.
             if not starPounds.moduleFunc("strain", "straining") and not isGurgle and status.isResource("energy") and status.resourcePercentage("energy") < 1 and digestionEnergy > 0 then
-              local energyAmount = math.min(healBaseAmount * digestionEnergy * self.data.energyRatio, maxEnergy * self.data.energyCap)
+              local energyAmount = math.min(healBaseAmount * digestionEnergy * self.data.energyRatio, maxEnergy * self.data.energyCap * seconds)
               if not status.resourcePositive("energyRegenBlock") and status.resourcePercentage("energy") < 1 then
                 status.modifyResource("energy", energyAmount)
               end

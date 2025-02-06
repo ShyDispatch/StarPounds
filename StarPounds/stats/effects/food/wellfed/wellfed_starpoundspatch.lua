@@ -2,40 +2,31 @@ local init_old = init or function() end
 local update_old = update or function() end
 
 function init()
+  init_old()
+  -- Cross script stuff.
   starPounds = getmetatable ''.starPounds
   starPoundsEnabled = starPounds and starPounds.isEnabled()
-  doHealing = not starPoundsEnabled
-  init_old()
+  -- Turn off the particles if the mod is running.
+  animator.setParticleEmitterActive("healing", config.getParameter("particles", not starPoundsEnabled))
 end
 
 
 function update(dt)
-  starPounds = getmetatable ''.starPounds
-  starPoundsEnabled = starPounds and starPounds.isEnabled()
-
-  local threshold = starPounds.hasSkill("wellfedProtection") and starPounds.settings.thresholds.strain.starpoundsstomach3 or starPounds.settings.thresholds.strain.starpoundsstomach
-  if starPoundsEnabled and starPounds.stomach.interpolatedFullness < threshold then
-    if doHealing then
-      status.addEphemeralEffect("starpoundswellfed", effect.duration())
+  -- Remove the effect if we toggle.
+  if starPoundsEnabled ~= (starPounds and starPounds.isEnabled()) then
+    effect.expire()
+    return
+  end
+  -- Remove the effect if the player falls under the wellfed threshold.
+  if starPoundsEnabled then
+    local threshold = starPounds.hasSkill("wellfedProtection") and starPounds.settings.thresholds.strain.starpoundsstomach3 or starPounds.settings.thresholds.strain.starpoundsstomach
+    if starPounds.stomach.fullness < threshold then
+      effect.expire()
+      return
     end
-    effect.expire()
-    return
   end
-
-  if not doHealing and not starPoundsEnabled then
-    effect.expire()
-    return
-  end
-
-  if not starPoundsEnabled or status.uniqueStatusEffectActive("starpoundswellfed") then
-    doHealing = true
-    status.removeEphemeralEffect("starpoundswellfed")
-  end
-
-  if doHealing then
+  -- Run old stuff if the mod isn't enabled.
+  if not starPoundsEnabled then
     update_old(dt)
   end
-  animator.setParticleEmitterActive("healing", config.getParameter("particles", doHealing))
-
-  doHealing = not starPoundsEnabled or doHealing or ((starPoundsEnabled and starPounds.stomach.food > 0) and status.resource("food") >= (status.resourceMax("food") + status.stat("foodDelta")))
 end

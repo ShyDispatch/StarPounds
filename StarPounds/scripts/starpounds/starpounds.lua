@@ -941,6 +941,7 @@ starPounds.baseDirectives = function(target)
     end
   end
 end
+
 starPounds.getDirectives = function(target)
   -- Argument sanitisation.
   local target = tonumber(target) or entity.id()

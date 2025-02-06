@@ -112,7 +112,9 @@
           {
             "headCosmetic": [ { "name": "blossomhead" } ],
             "chestCosmetic": [ { "name": "blossomchest" } ],
-            "legsCosmetic": [ { "name": "jeans1legs", "parameters" : {  "directives" : "?replace;6f2919=22284a;a85636=263450;e0975c=345070;383838=420808;838383=5b0c0c;b5b5b5=5b0c0c;b6b6b6=881212;e6e6e6=bc1a1a;" } } ]
+            "legsCosmetic": [ { "name": "jeans1legs", "parameters" : {  "directives" : "?replace;6f2919=22284a;a85636=263450;e0975c=345070;383838=420808;838383=5b0c0c;b5b5b5=5b0c0c;b6b6b6=881212;e6e6e6=bc1a1a;" } } ],
+            "backCosmetic": [ { "name": "blossomback" }]
+			
 			}
         ] ]
     ]

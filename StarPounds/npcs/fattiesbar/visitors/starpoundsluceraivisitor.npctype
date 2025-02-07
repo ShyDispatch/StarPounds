@@ -1,0 +1,89 @@
+{
+  "type" : "starpoundsluceraivisitor",
+  "baseType" : "fattiesbarvisitor",
+  "displayTitle" : "Bun",
+
+  "scripts" : [
+    "/npcs/bmain.lua",
+    "/scripts/starpounds/starpounds_npc.lua",
+    "/npcs/starpounds/scripts/applepredator.lua",
+    "/npcs/starpounds/scripts/clothingrip.lua"
+  ],
+
+  "scriptConfig" : {
+    "behavior" : "starpoundsapplepredator",
+
+    "initialStorage": {
+      "homePosition": [0,0]
+    },
+    "starPounds_overrideSpecies": "lucerai",
+    "starPounds_trait": "npc_predator",
+    "dialogMode": "tutorial",
+    "dialog": {
+      "attack" : "/dialog/vore.config:attack",
+      "reattack" : "/dialog/vore.config:reattack",
+      "killedTarget" : "/dialog/vore.config:killedTarget",
+      "lostTarget" : "/dialog/vore.config:lostTarget",
+      "outOfSight" : "/dialog/vore.config:outOfSight",
+      "cheerOn" : "/dialog/vore.config:cheerOn",
+      "cantReach" : "/dialog/vore.config:cantReach",
+      "converse": {
+        "default": {
+          "default": [
+            "I ever tell you about the time my buddy Keith-",
+            "No, you may not play with my ears.",
+            "I'm actually more of a warm weather person, I just think jackets are cool."
+          ]
+        }
+      }
+    }
+  },
+
+  "identity" : {
+    "species" : "human",
+    "gender" : "female",
+    "hairGroup" : "hair",
+    "hairType" : "1",
+    "imagePath": "starpounds/cameo/lucerai",
+    "name": "^#77e186;Lucy^reset;",
+    "personalityIdle" : "idle.1",
+    "personalityArmIdle" : "idle.2",
+    "personalityArmOffset": [
+        0.0,
+        0.0
+    ],
+    "personalityHeadOffset": [
+        -1.0,
+        0.0
+    ],
+    "bodyDirectives" : "?replace;6f2919=623737;a85636=845d57;e0975c=af9287;ffca8a=c8b4ac",
+    "emoteDirectives": "?replace;6f2919=623737;a85636=845d57;e0975c=af9287;ffca8a=c8b4ac",
+    "hairDirectives" : "?replace;735e3a=1e0e0e;a38d59=2b1b18;d9c189=42322c;f7e7b2=6d5d55?replace;6f2919=623737;a85636=845d57;e0975c=af9287;ffca8a=c8b4ac"
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+        {
+          "headCosmetic": [ { "name": "" } ],
+          "chestCosmetic": [ { "name": "pilotchest", "parameters": {"colorIndex": 1} } ],
+          "legsCosmetic": [ { "name": "jeans3legs", "parameters": {"directives": "?replace;e0975c=474f76;a85636=2d2f56;ffca8a=556993;6f2919=22233a"} } ]
+        }
+      ]]
+    ]
+  },
+
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "maxEnergy" : {
+        "baseValue" : 100.0
+      },
+      "knockbackStunTime" : {
+        "baseValue" : 0.1
+      }
+    }
+  }
+}

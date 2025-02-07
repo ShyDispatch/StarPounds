@@ -5,7 +5,7 @@
   "scripts" : [
     "/npcs/bmain.lua",
     "/scripts/starpounds/starpounds_npc.lua",
-    "/npcs/pizza/starpoundspizzaemployee.lua"
+    "/npcs/starpounds/scripts/pizzaemployee.lua"
   ],
 
   "damageTeamType" : "assistant",

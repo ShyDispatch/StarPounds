@@ -1,7 +1,7 @@
 {
-  "type" : "starpoundswubsvisitor",
+  "type" : "starpoundssixfourvisitor",
   "baseType" : "fattiesbarvisitor",
-  "displayTitle" : "Big Panda",
+  "displayTitle" : "Wah",
 
   "scripts" : [
     "/npcs/bmain.lua",
@@ -15,10 +15,10 @@
     "initialStorage": {
       "homePosition": [0,0]
     },
-    "starPounds_overrideSpecies": "wubs",
+    "starPounds_overrideSpecies": "sixfour",
     "starPounds_trait": "npc_predator",
     "starPounds_skills": {
-      "minimumSize": [3, 3]
+      "minimumSize": [1, 2]
     },
     // ======================== PLEASE READ ========================
     // This character belongs to someone, and these settings reflect
@@ -26,7 +26,7 @@
     // change, or otherwise alter these settings.
     // ======================== PLEASE READ ========================
     "starPounds_options": {
-      "disablePrey": true
+      "stuffed": true
     },
     "dialogMode": "tutorial",
     "dialog": {
@@ -40,9 +40,9 @@
       "converse": {
         "default": {
           "default": [
-            "You might be wondering how a naked panda travels through space. Ancient panda secret.",
-            "Do you get to the Vore District very often? Oh, what am I saying - of course you don't.",
-            "Careful, getting this close to me is dangerous."
+            "You know, the word panda was our's before those filthy bears stole it.",
+            "A growing wah needs his apples!",
+            "Say wah?"
           ]
         }
       }
@@ -51,11 +51,11 @@
 
   "identity" : {
     "species" : "human",
-    "gender" : "female",
+    "gender" : "male",
     "hairGroup" : "hair",
     "hairType" : "1",
-    "imagePath": "starpounds/cameo/wubs",
-    "name": "^#884488;Wubs^reset;",
+    "imagePath": "starpounds/cameo/sixfour/sixfour",
+    "name": "^#90d9e2;Six^reset;",
     "personalityIdle" : "idle.2",
     "personalityArmIdle" : "idle.2",
     "personalityArmOffset": [
@@ -66,15 +66,21 @@
         -1.0,
         0.0
     ],
-    "bodyDirectives" : "?replace;c7815b=1f1f1f;ffe2c5=484b5c;ffc181=2e2f34;d39c6c=232426?replace;951500=aaafc1;be1b00=cdd3dc;dc1f00=efefef;f32200=ffffff",
-    "emoteDirectives" : "?replace;c7815b=1f1f1f;ffe2c5=484b5c;ffc181=2e2f34;d39c6c=232426?replace;951500=aaafc1;be1b00=cdd3dc;dc1f00=efefef;f32200=ffffff",
-    "hairDirectives" : "?replace;c7815b=1f1f1f;ffe2c5=484b5c;ffc181=2e2f34;d39c6c=232426?replace;951500=aaafc1;be1b00=cdd3dc;dc1f00=efefef;f32200=ffffff?replace;735e3a=26150f;a38d59=36241a;d9c189=4f3c2a;f7e7b2=725e45;"
+    "bodyDirectives" : "?replace;6f2919=47160f;a85636=662523;e0975c=98493c;ffca8a=d47260?replace;735e3a=772c05;a38d59=ae5707;d9c189=dc7f16;f7e7b2=f7b142;?replace;951500=beb2bd;be1b00=d9d1d6;dc1f00=f1eef0;f32200=fff7fa",
+    "emoteDirectives" : "?replace;6f2919=47160f;a85636=662523;e0975c=98493c;ffca8a=d47260?replace;735e3a=772c05;a38d59=ae5707;d9c189=dc7f16;f7e7b2=f7b142;?replace;951500=beb2bd;be1b00=d9d1d6;dc1f00=f1eef0;f32200=fff7fa",
+    "hairDirectives" : "?replace;735e3a=5f140e;a38d59=8d2117;d9c189=b13c2a;f7e7b2=e4594e?replace;951500=beb2bd;be1b00=d9d1d6;dc1f00=f1eef0;f32200=fff7fa"
   },
 
   "items" : {
-    "override" : [[0,[{}]]]
+    "override" : [
+      [0, [
+        {
+          "legsCosmetic": [ { "name": "jeans1legs", "parameters": {"colorIndex": 1} } ]
+        }
+      ]]
+    ]
   },
-
+  
   "statusControllerSettings" : {
     "stats" : {
       "maxHealth" : {

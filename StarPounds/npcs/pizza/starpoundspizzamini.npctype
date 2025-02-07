@@ -5,15 +5,20 @@
   "scripts" : [
     "/npcs/bmain.lua",
     "/scripts/starpounds/starpounds_npc.lua",
-    "/npcs/pizza/starpoundspizzaemployee.lua",
-    "/npcs/pizza/starpoundspizzamini.lua"
+    "/npcs/starpounds/scripts/pizzaemployee.lua",
+    "/npcs/starpounds/scripts/pizzamini.lua",
+    "/npcs/starpounds/scripts/applepredator.lua",
+    "/npcs/starpounds/scripts/clothingrip.lua",
+    "/npcs/starpounds/scripts/teleportvore.lua"
   ],
 
   "damageTeamType" : "assistant",
   "damageTeam" : 1,
 
   "scriptConfig" : {
+    "behavior" : "starpoundsapplepredator",
     "starPounds_overrideSpecies": "mini",
+    "starPounds_trait": "npc_predator",
     "starPounds_skills": {
       "minimumSize": [2, 4]
     },
@@ -25,8 +30,15 @@
     "starPounds_options": {
       "disablePrey": true
     },
-
-    "dialog" : {
+    "dialogMode": "tutorial",
+    "dialog": {
+      "attack" : "/dialog/vore.config:attack",
+      "reattack" : "/dialog/vore.config:reattack",
+      "killedTarget" : "/dialog/vore.config:killedTarget",
+      "lostTarget" : "/dialog/vore.config:lostTarget",
+      "outOfSight" : "/dialog/vore.config:outOfSight",
+      "cheerOn" : "/dialog/vore.config:cheerOn",
+      "cantReach" : "/dialog/vore.config:cantReach",
       "collect" : { "default" : { "default" : [
         "Enjoy your meal, <entityname>!",
         "Here's your order, <entityname>. Enjoy!",
@@ -122,5 +134,18 @@
         }
       ]]
     ]
+  },
+  "statusControllerSettings" : {
+    "stats" : {
+      "maxHealth" : {
+        "baseValue" : 100.0
+      },
+      "maxEnergy" : {
+        "baseValue" : 100.0
+      },
+      "knockbackStunTime" : {
+        "baseValue" : 0.1
+      }
+    }
   }
 }

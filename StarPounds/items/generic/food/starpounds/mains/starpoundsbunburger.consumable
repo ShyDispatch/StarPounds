@@ -4,7 +4,7 @@
   "price" : 565,
   "category" : "preparedFood",
   "inventoryIcon" : "starpoundsbunburger.png",
-  "description" : "A juicy, greasy hamburger. Topped with cheese, bacon, and extra grease.",
+  "description" : "A big bun-tiful burger, for only the fattiest of bunnies.",
   "shortdescription" : "Bun Burger",
   "effects" : [ [
     {

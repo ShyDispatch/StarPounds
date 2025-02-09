@@ -116,7 +116,7 @@
   },
   "storeInventory" : {
     "mains" : [
-      "starpoundsgreaseburger", "starpoundsdoublegreaseburger", "starpoundsmeatwich", "starpoundsmeatwichdouble", "starpoundsqueenburger", "starpoundsfatfriedchicken", "starpoundschankonabe", "starpoundsgreasepizza", "starpoundsgreasepizzaslice", "starpounds64tbpizzap", "starpoundsramen", "starpoundssoba", "starpoundstaco", "starpoundsburrito"
+      "starpoundsgreaseburger", "starpoundsdoublegreaseburger", "starpoundsmeatwich", "starpoundsmeatwichdouble", "starpoundsqueenburger", "starpoundsbunburger", "starpoundsfatfriedchicken", "starpoundschankonabe", "starpoundsgreasepizza", "starpoundsgreasepizzaslice", "starpounds64tbpizzap", "starpoundsramen", "starpoundssoba", "starpoundstaco", "starpoundsburrito"
     ],
     "sides" : [
       "starpoundstastyfries", "starpoundsmeatfries", "starpoundsblubbernuggets", "starpoundstofu", "starpoundshotsauce", "starpoundsghostpepper", "starpoundsbuttersnack", "starpoundscorndog", "starpoundshotdog", "starpoundshotdogk", "starpoundshotdogm", "starpoundshotdogkm", "starpoundshotdogr", "starpoundshotdogc", "starpoundsdoubledowndog", "starpoundssugarextract"
